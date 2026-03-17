@@ -179,7 +179,7 @@
             btGuardar.FillColor = Color.RoyalBlue;
             btGuardar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btGuardar.ForeColor = Color.Black;
-            btGuardar.Location = new Point(62, 560);
+            btGuardar.Location = new Point(62, 616);
             btGuardar.Name = "btGuardar";
             btGuardar.ShadowDecoration.CustomizableEdges = customizableEdges4;
             btGuardar.Size = new Size(207, 35);
@@ -243,7 +243,7 @@
             cbbRol.Font = new Font("Segoe UI", 10F);
             cbbRol.ForeColor = Color.FromArgb(68, 88, 112);
             cbbRol.ItemHeight = 30;
-            cbbRol.Items.AddRange(new object[] { "Administrador", "Docente", "Tutor" });
+            cbbRol.Items.AddRange(new object[] { "ADMINISTRADOR", "DOCENTE", "TUTOR" });
             cbbRol.Location = new Point(721, 54);
             cbbRol.Name = "cbbRol";
             cbbRol.ShadowDecoration.CustomizableEdges = customizableEdges8;
@@ -255,7 +255,6 @@
             // 
             dataGridViewCellStyle1.BackColor = Color.FromArgb(197, 203, 232);
             dgvUsuarios.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dgvUsuarios.BackgroundColor = SystemColors.Control;
             dgvUsuarios.BorderStyle = BorderStyle.Fixed3D;
             dgvUsuarios.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Sunken;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.TopCenter;
@@ -278,10 +277,10 @@
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             dgvUsuarios.DefaultCellStyle = dataGridViewCellStyle3;
             dgvUsuarios.GridColor = Color.FromArgb(194, 201, 231);
-            dgvUsuarios.Location = new Point(62, 378);
+            dgvUsuarios.Location = new Point(62, 373);
             dgvUsuarios.Name = "dgvUsuarios";
             dgvUsuarios.RowHeadersVisible = false;
-            dgvUsuarios.Size = new Size(911, 164);
+            dgvUsuarios.Size = new Size(911, 225);
             dgvUsuarios.TabIndex = 16;
             dgvUsuarios.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Indigo;
             dgvUsuarios.ThemeStyle.AlternatingRowsStyle.BackColor = Color.FromArgb(197, 203, 232);
@@ -289,7 +288,7 @@
             dgvUsuarios.ThemeStyle.AlternatingRowsStyle.ForeColor = Color.Empty;
             dgvUsuarios.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = Color.Empty;
             dgvUsuarios.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = Color.Empty;
-            dgvUsuarios.ThemeStyle.BackColor = SystemColors.Control;
+            dgvUsuarios.ThemeStyle.BackColor = Color.White;
             dgvUsuarios.ThemeStyle.GridColor = Color.FromArgb(194, 201, 231);
             dgvUsuarios.ThemeStyle.HeaderStyle.BackColor = Color.RoyalBlue;
             dgvUsuarios.ThemeStyle.HeaderStyle.BorderStyle = DataGridViewHeaderBorderStyle.Sunken;
@@ -345,7 +344,7 @@
             cbbSexo.Font = new Font("Segoe UI", 10F);
             cbbSexo.ForeColor = Color.FromArgb(68, 88, 112);
             cbbSexo.ItemHeight = 30;
-            cbbSexo.Items.AddRange(new object[] { "Masculino", "Femenino", "No Binario" });
+            cbbSexo.Items.AddRange(new object[] { "MASCULINO", "FEMENINO" });
             cbbSexo.Location = new Point(80, 138);
             cbbSexo.Name = "cbbSexo";
             cbbSexo.ShadowDecoration.CustomizableEdges = customizableEdges10;
@@ -514,7 +513,7 @@
             cbbEstado.Font = new Font("Segoe UI", 10F);
             cbbEstado.ForeColor = Color.FromArgb(68, 88, 112);
             cbbEstado.ItemHeight = 30;
-            cbbEstado.Items.AddRange(new object[] { "Activo", "Inactivo" });
+            cbbEstado.Items.AddRange(new object[] { "ACTIVO", "INACTIVO" });
             cbbEstado.Location = new Point(750, 180);
             cbbEstado.Name = "cbbEstado";
             cbbEstado.ShadowDecoration.CustomizableEdges = customizableEdges20;
@@ -740,7 +739,7 @@
             btActualizar.FillColor = Color.FromArgb(0, 192, 0);
             btActualizar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btActualizar.ForeColor = Color.Black;
-            btActualizar.Location = new Point(330, 560);
+            btActualizar.Location = new Point(330, 616);
             btActualizar.Name = "btActualizar";
             btActualizar.ShadowDecoration.CustomizableEdges = customizableEdges34;
             btActualizar.Size = new Size(180, 35);
@@ -761,7 +760,7 @@
             btEliminar.FillColor = Color.Gold;
             btEliminar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btEliminar.ForeColor = Color.Black;
-            btEliminar.Location = new Point(554, 560);
+            btEliminar.Location = new Point(554, 616);
             btEliminar.Name = "btEliminar";
             btEliminar.ShadowDecoration.CustomizableEdges = customizableEdges36;
             btEliminar.Size = new Size(180, 35);
@@ -780,7 +779,7 @@
             btLimpiar.FillColor = Color.DimGray;
             btLimpiar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btLimpiar.ForeColor = Color.Black;
-            btLimpiar.Location = new Point(793, 560);
+            btLimpiar.Location = new Point(793, 616);
             btLimpiar.Name = "btLimpiar";
             btLimpiar.ShadowDecoration.CustomizableEdges = customizableEdges38;
             btLimpiar.Size = new Size(180, 35);
@@ -848,10 +847,10 @@
             guna2ContainerControl1.Controls.Add(cbbEstado);
             guna2ContainerControl1.Controls.Add(txtDireccion);
             guna2ContainerControl1.CustomizableEdges = customizableEdges41;
-            guna2ContainerControl1.Location = new Point(62, 130);
+            guna2ContainerControl1.Location = new Point(62, 117);
             guna2ContainerControl1.Name = "guna2ContainerControl1";
             guna2ContainerControl1.ShadowDecoration.CustomizableEdges = customizableEdges42;
-            guna2ContainerControl1.Size = new Size(911, 242);
+            guna2ContainerControl1.Size = new Size(911, 239);
             guna2ContainerControl1.TabIndex = 106;
             guna2ContainerControl1.Text = "guna2ContainerControl1";
             // 
@@ -866,14 +865,14 @@
             lbTituloUsuario.Name = "lbTituloUsuario";
             lbTituloUsuario.Size = new Size(911, 33);
             lbTituloUsuario.TabIndex = 101;
-            lbTituloUsuario.Text = null;
+            lbTituloUsuario.Text = "ROL";
             lbTituloUsuario.TextAlignment = ContentAlignment.MiddleCenter;
             // 
             // FrmGestionUsuarios
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1028, 607);
+            ClientSize = new Size(1028, 674);
             Controls.Add(guna2ContainerControl1);
             Controls.Add(guna2HtmlLabel2);
             Controls.Add(guna2PictureBox1);

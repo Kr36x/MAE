@@ -55,3 +55,7 @@ C:\Users\DELL\OneDrive\Desktop\SistemaGestionAcademicaMAE\MAE\Frontend\GestionAc
 C:\Users\DELL\OneDrive\Desktop\SistemaGestionAcademicaMAE\MAE\Frontend\GestionAcademicaV2\GestionAcademicaV2\obj\Debug\net10.0-windows\ref\GestionAcademicaV2.dll
 C:\Users\DELL\OneDrive\Desktop\SistemaGestionAcademicaMAE\MAE\Frontend\GestionAcademicaV2\GestionAcademicaV2\obj\Debug\net10.0-windows\GestionAcademicaV2.Pantallas.AdminVentanas.FrmGestionUsuarios.resources
 C:\Users\DELL\OneDrive\Desktop\SistemaGestionAcademicaMAE\MAE\Frontend\GestionAcademicaV2\GestionAcademicaV2\obj\Debug\net10.0-windows\GestionAcademicaV2.Pantallas.AdminVentanas.FrmFichaMatricula.resources
+C:\Users\DELL\OneDrive\Desktop\SistemaGestionAcademicaMAE\MAE\Frontend\GestionAcademicaV2\GestionAcademicaV2\obj\Debug\net10.0-windows\GestionAcademicaV2.Pantallas.AdminVentanas.FrmMatricula.resources
+C:\Users\DELL\OneDrive\Desktop\SistemaGestionAcademicaMAE\MAE\Frontend\GestionAcademicaV2\GestionAcademicaV2\bin\Debug\net10.0-windows\WinForms.DataVisualization.Utilities.dll
+C:\Users\DELL\OneDrive\Desktop\SistemaGestionAcademicaMAE\MAE\Frontend\GestionAcademicaV2\GestionAcademicaV2\bin\Debug\net10.0-windows\WinForms.DataVisualization.dll
+C:\Users\DELL\OneDrive\Desktop\SistemaGestionAcademicaMAE\MAE\Frontend\GestionAcademicaV2\GestionAcademicaV2\obj\Debug\net10.0-windows\GestionAcademicaV2.Pantallas.AdminVentanas.FrmDashboard.resources

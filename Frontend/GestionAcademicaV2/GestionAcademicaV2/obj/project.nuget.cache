@@ -1,21 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "zPilH0nylRQ=",
+  "dgSpecHash": "VOrlx7NLDOo=",
   "success": true,
   "projectFilePath": "C:\\Users\\DELL\\OneDrive\\Desktop\\SistemaGestionAcademicaMAE\\MAE\\Frontend\\GestionAcademicaV2\\GestionAcademicaV2\\GestionAcademicaV2.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\DELL\\.nuget\\packages\\guna.ui2.winforms\\2.0.4.7\\guna.ui2.winforms.2.0.4.7.nupkg.sha512",
-    "C:\\Users\\DELL\\.nuget\\packages\\system.management\\7.0.0\\system.management.7.0.0.nupkg.sha512"
+    "C:\\Users\\DELL\\.nuget\\packages\\system.management\\7.0.0\\system.management.7.0.0.nupkg.sha512",
+    "C:\\Users\\DELL\\.nuget\\packages\\winforms.datavisualization\\1.10.0\\winforms.datavisualization.1.10.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1900",
-      "level": "Warning",
-      "message": "Error al obtener los datos de vulnerabilidad del paquete: No se puede cargar el índice de servicio del origen https://api.nuget.org/v3/index.json.",
-      "projectPath": "C:\\Users\\DELL\\OneDrive\\Desktop\\SistemaGestionAcademicaMAE\\MAE\\Frontend\\GestionAcademicaV2\\GestionAcademicaV2\\GestionAcademicaV2.csproj",
-      "warningLevel": 1,
-      "filePath": "C:\\Users\\DELL\\OneDrive\\Desktop\\SistemaGestionAcademicaMAE\\MAE\\Frontend\\GestionAcademicaV2\\GestionAcademicaV2\\GestionAcademicaV2.csproj",
-      "targetGraphs": []
-    }
-  ]
+  "logs": []
 }

@@ -4,10 +4,16 @@
     <Compile Update="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Pantallas\AdminVentanas\FrmDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Pantallas\AdminVentanas\FrmFichaMatricula.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Pantallas\AdminVentanas\FrmGestionUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Pantallas\AdminVentanas\FrmMatricula.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Pantallas\DocenteVentanas\FrmBoletaPrebasica.cs">
