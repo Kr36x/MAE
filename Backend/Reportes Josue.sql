@@ -15,7 +15,7 @@ where a.Fecha between '2026-03-02' and '2026-03-03' and d.Nombre='JUAN PEREZ'
 order by a.Fecha ASC,E.Nombre ASC
 
 go
-create or alter procedure spMAE_Asistencias_por_Grado @fecha_inicial DATE,@fecha_final DATE = NULL,@Docente varchar(100) 
+create or alter procedure spMAE_Asistencias_por_Grado @fecha_inicial DATE,@fecha_final DATE = NULL,@Docente varchar(100),@Estudiante varchar(100)=Null 
 as
 begin
 
@@ -32,14 +32,15 @@ where (
           OR 
           -- ranfo de fechas
           (@fecha_final IS NOT NULL AND A.Fecha BETWEEN @fecha_inicial AND @fecha_final)
-      ) and d.Nombre=@Docente
+      ) and d.Nombre=@Docente 
+      and (@Estudiante IS NULL OR E.Nombre LIKE '%' + @Estudiante + '%')
 order by a.Fecha ASC,E.Nombre ASC
 end
 
 go
 
 --probando
-EXEC spMAE_Asistencias_por_Grado @fecha_inicial='2026-03-02',@fecha_final='2026-03-04',@Docente='JUAN PEREZ'
+EXEC spMAE_Asistencias_por_Grado @fecha_inicial='2026-03-02',@fecha_final='2026-03-04',@Docente='JUAN PEREZ', @Estudiante='Alexis'
 
 
 
