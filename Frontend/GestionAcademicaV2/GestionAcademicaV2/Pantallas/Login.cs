@@ -18,35 +18,45 @@ namespace GestionAcademicaV2.Pantallas
             InitializeComponent();
         }
 
-        private string ValidarLogin(string usuario, string clave)
+        private SesionUsuario ValidarLogin(string acceso, string clave)
         {
             Conexion conexion = new Conexion();
 
             using (SqlConnection cn = conexion.ObtenerConexion())
             {
                 string query = @"
-            SELECT Rol
+            SELECT UsuarioID, Usuario, Correo, Rol
             FROM Usuario
-            WHERE Usuario = @usuario
+            WHERE (Usuario = @acceso OR Correo = @acceso)
               AND [Password] = @clave
               AND Estado = 1";
 
                 using (SqlCommand cmd = new SqlCommand(query, cn))
                 {
-                    cmd.Parameters.AddWithValue("@usuario", usuario);
+                    cmd.Parameters.AddWithValue("@acceso", acceso);
                     cmd.Parameters.AddWithValue("@clave", clave);
 
                     cn.Open();
 
-                    object resultado = cmd.ExecuteScalar();
-
-                    if (resultado != null)
-                        return resultado.ToString();
-
-                    return null;
+                    using (SqlDataReader dr = cmd.ExecuteReader())
+                    {
+                        if (dr.Read())
+                        {
+                            return new SesionUsuario
+                            {
+                                UsuarioID = Convert.ToInt32(dr["UsuarioID"]),
+                                Usuario = dr["Usuario"].ToString(),
+                                Correo = dr["Correo"].ToString(),
+                                Rol = dr["Rol"].ToString()
+                            };
+                        }
+                    }
                 }
             }
+
+            return null;
         }
+
         private bool mostrarPassword = false;
         private void Login_Load(object sender, EventArgs e)
         {
@@ -55,10 +65,10 @@ namespace GestionAcademicaV2.Pantallas
             //Login 
             txtContrasenia.UseSystemPasswordChar = true;
             txtContrasenia.PasswordChar = '●';
-           pbMostrarContrasenia.Image = Properties.Resources.ojo_cerrado;
-    pbMostrarContrasenia.HoverState.Image = null;
-    pbMostrarContrasenia.PressedState.Image = null;
-    pbMostrarContrasenia.CheckedState.Image = null;
+            pbMostrarContrasenia.Image = Properties.Resources.ojo_cerrado;
+            //pbMostrarContrasenia.HoverState.Image = null;
+            //pbMostrarContrasenia.PressedState.Image = null;
+            //pbMostrarContrasenia.CheckedState.Image = null;
 
 
             using (var cn = conexion.ObtenerConexion())
@@ -132,7 +142,7 @@ namespace GestionAcademicaV2.Pantallas
 
         private void label6_Click(object sender, EventArgs e)
         {
-           
+
         }
 
         private void passwordVisible_Click(object sender, EventArgs e)
@@ -142,15 +152,15 @@ namespace GestionAcademicaV2.Pantallas
             txtContrasenia.UseSystemPasswordChar = !mostrarPassword;
 
             if (mostrarPassword)
-                {
-                    txtContrasenia.PasswordChar = '\0';
-                    pbMostrarContrasenia.Image = Properties.Resources.ojo_abierto;
-                    pbMostrarContrasenia.PressedState.Image = Properties.Resources.ojo_abierto;
+            {
+                txtContrasenia.PasswordChar = '\0';
+                pbMostrarContrasenia.Image = Properties.Resources.ojo_abierto;
+                pbMostrarContrasenia.PressedState.Image = Properties.Resources.ojo_abierto;
             }
             else
-                {
-                    txtContrasenia.PasswordChar = '*'; 
-                    pbMostrarContrasenia.Image = Properties.Resources.ojo_cerrado1;
+            {
+                txtContrasenia.PasswordChar = '*';
+                pbMostrarContrasenia.Image = Properties.Resources.ojo_cerrado1;
             }
 
             pbMostrarContrasenia.Refresh();
@@ -161,48 +171,47 @@ namespace GestionAcademicaV2.Pantallas
 
         }
 
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            
+        }
+
         private void LoginBoton_Click(object sender, EventArgs e)
         {
-            string usuario = txtUsuario.Text.Trim();
+            string acceso = txtUsuario.Text.Trim();
             string clave = txtContrasenia.Text.Trim();
 
-            if (string.IsNullOrWhiteSpace(usuario) || string.IsNullOrWhiteSpace(clave))
+            if (string.IsNullOrWhiteSpace(acceso) || string.IsNullOrWhiteSpace(clave))
             {
-                MessageBox.Show("Ingrese usuario y contraseña.");
+                MessageBox.Show("Ingrese usuario o correo, y contraseña.");
                 return;
             }
 
             try
             {
-                string rol = ValidarLogin(usuario, clave);
+                SesionUsuario usuarioActual = ValidarLogin(acceso, clave);
 
-                if (rol == null)
+                if (usuarioActual == null)
                 {
-                    MessageBox.Show("Usuario o contraseña incorrectos, o usuario inactivo.");
+                    MessageBox.Show("Credenciales incorrectas o usuario inactivo.");
                     return;
                 }
 
-                MessageBox.Show("Bienvenido. Rol: " + rol);
-
-                if (rol == "Administrador")
+                if (usuarioActual.Rol == "Administrador")
                 {
-                    PantallaAdmin pantallaAdmin = new PantallaAdmin();
-                    pantallaAdmin.Show();
+                    PantallaAdmin admin = new PantallaAdmin(usuarioActual);
+                    admin.Show();
                     this.Hide();
                 }
-                else if (rol == "Docente")
+                else if (usuarioActual.Rol == "Docente")
                 {
-                    PantallaDocente pantallaDocente = new PantallaDocente();
-                    pantallaDocente.Show();
+                    PantallaDocente docente = new PantallaDocente(usuarioActual);
+                    docente.Show();
                     this.Hide();
-                }
-                else if (rol == "Tutor")
-                {
-                    MessageBox.Show("Login correcto, pero aún no existe una pantalla para Tutor.");
                 }
                 else
                 {
-                    MessageBox.Show("Rol no reconocido: " + rol);
+                    MessageBox.Show("Rol no reconocido: " + usuarioActual.Rol);
                 }
             }
             catch (Exception ex)

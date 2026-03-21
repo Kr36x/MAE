@@ -1,10 +1,6 @@
-﻿using GestionAcademicaV2.Pantallas.DocenteVentanas;
+﻿using GestionAcademicaV2.Modelos;
+using GestionAcademicaV2.Pantallas.DocenteVentanas;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 
 namespace GestionAcademicaV2.Pantallas
@@ -12,6 +8,14 @@ namespace GestionAcademicaV2.Pantallas
     public partial class PantallaDocente : Form
     {
         private Form formularioActivo = null;
+        private bool menuExpandido = true;
+        private SesionUsuario usuarioActual;
+
+        public PantallaDocente(SesionUsuario usuario)
+        {
+            InitializeComponent();
+            usuarioActual = usuario;
+        }
 
         private void AbrirFormularioEnPanel(Form formularioHijo)
         {
@@ -37,15 +41,11 @@ namespace GestionAcademicaV2.Pantallas
         {
             if (nivel == "PREBASICA")
                 AbrirFormularioEnPanel(new FrmBoletaPrebasica(estudianteID));
-           // else if (nivel == "PRIMARIA")
-             //   AbrirFormularioEnPanel(new FrmBoletaPrimaria(estudianteID));
-           // else if (nivel == "SECUNDARIA")
-               // AbrirFormularioEnPanel(new FrmBoletaSecundaria(estudianteID));
         }
-        private bool menuExpandido = true;
-        public PantallaDocente()
+
+        private void PantallaDocente_Load(object sender, EventArgs e)
         {
-            InitializeComponent();
+            
         }
 
         private void btnMenu_Click(object sender, EventArgs e)
@@ -65,6 +65,29 @@ namespace GestionAcademicaV2.Pantallas
         private void btnCalificaciones_Click(object sender, EventArgs e)
         {
             AbrirFormularioEnPanel(new FrmSeleccionBoleta(this));
+        }
+        private string FormatearNombre(string usuario)
+        {
+            if (string.IsNullOrEmpty(usuario))
+                return "";
+
+            string[] partes = usuario.Replace(".", " ").Split(' ');
+
+            for (int i = 0; i < partes.Length; i++)
+            {
+                if (partes[i].Length > 0)
+                {
+                    partes[i] = char.ToUpper(partes[i][0]) + partes[i].Substring(1).ToLower();
+                }
+            }
+
+            return string.Join(" ", partes);
+        }
+        private void PantallaDocente_Load_1(object sender, EventArgs e)
+        {
+            lblUsuario.Text = FormatearNombre(usuarioActual.Usuario);
+            lblRol.Text = usuarioActual.Rol;
+            lblId.Text = "ID: " + usuarioActual.UsuarioID.ToString();
         }
     }
 }
