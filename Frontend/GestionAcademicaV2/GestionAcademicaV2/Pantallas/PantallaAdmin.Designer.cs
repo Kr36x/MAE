@@ -56,10 +56,10 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             pnlMenu = new Guna.UI2.WinForms.Guna2Panel();
-            guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            lblRol = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            lblID = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            lblUsuario = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
             guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             btnCalificaciones = new Guna.UI2.WinForms.Guna2Button();
@@ -83,10 +83,10 @@
             // pnlMenu
             // 
             pnlMenu.BackColor = SystemColors.HotTrack;
-            pnlMenu.Controls.Add(guna2HtmlLabel4);
+            pnlMenu.Controls.Add(lblRol);
             pnlMenu.Controls.Add(guna2CirclePictureBox1);
-            pnlMenu.Controls.Add(guna2HtmlLabel3);
-            pnlMenu.Controls.Add(guna2HtmlLabel2);
+            pnlMenu.Controls.Add(lblID);
+            pnlMenu.Controls.Add(lblUsuario);
             pnlMenu.Controls.Add(guna2PictureBox3);
             pnlMenu.Controls.Add(guna2Button1);
             pnlMenu.Controls.Add(btnCalificaciones);
@@ -105,15 +105,15 @@
             pnlMenu.TabIndex = 1;
             pnlMenu.Paint += pnlMenu_Paint;
             // 
-            // guna2HtmlLabel4
+            // lblRol
             // 
-            guna2HtmlLabel4.BackColor = Color.Transparent;
-            guna2HtmlLabel4.ForeColor = Color.White;
-            guna2HtmlLabel4.Location = new Point(67, 625);
-            guna2HtmlLabel4.Name = "guna2HtmlLabel4";
-            guna2HtmlLabel4.Size = new Size(79, 17);
-            guna2HtmlLabel4.TabIndex = 16;
-            guna2HtmlLabel4.Text = "Administrador";
+            lblRol.BackColor = Color.Transparent;
+            lblRol.ForeColor = Color.White;
+            lblRol.Location = new Point(67, 625);
+            lblRol.Name = "lblRol";
+            lblRol.Size = new Size(79, 17);
+            lblRol.TabIndex = 16;
+            lblRol.Text = "Administrador";
             // 
             // guna2CirclePictureBox1
             // 
@@ -129,26 +129,26 @@
             guna2CirclePictureBox1.TabIndex = 15;
             guna2CirclePictureBox1.TabStop = false;
             // 
-            // guna2HtmlLabel3
+            // lblID
             // 
-            guna2HtmlLabel3.BackColor = Color.Transparent;
-            guna2HtmlLabel3.ForeColor = Color.White;
-            guna2HtmlLabel3.Location = new Point(67, 641);
-            guna2HtmlLabel3.Name = "guna2HtmlLabel3";
-            guna2HtmlLabel3.Size = new Size(27, 17);
-            guna2HtmlLabel3.TabIndex = 14;
-            guna2HtmlLabel3.Text = "7761";
-            guna2HtmlLabel3.Click += guna2HtmlLabel3_Click;
+            lblID.BackColor = Color.Transparent;
+            lblID.ForeColor = Color.White;
+            lblID.Location = new Point(67, 641);
+            lblID.Name = "lblID";
+            lblID.Size = new Size(27, 17);
+            lblID.TabIndex = 14;
+            lblID.Text = "7761";
+            lblID.Click += guna2HtmlLabel3_Click;
             // 
-            // guna2HtmlLabel2
+            // lblUsuario
             // 
-            guna2HtmlLabel2.BackColor = Color.Transparent;
-            guna2HtmlLabel2.ForeColor = Color.White;
-            guna2HtmlLabel2.Location = new Point(67, 610);
-            guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            guna2HtmlLabel2.Size = new Size(60, 17);
-            guna2HtmlLabel2.TabIndex = 13;
-            guna2HtmlLabel2.Text = "Kurko Vain";
+            lblUsuario.BackColor = Color.Transparent;
+            lblUsuario.ForeColor = Color.White;
+            lblUsuario.Location = new Point(67, 610);
+            lblUsuario.Name = "lblUsuario";
+            lblUsuario.Size = new Size(60, 17);
+            lblUsuario.TabIndex = 13;
+            lblUsuario.Text = "Kurko Vain";
             // 
             // guna2PictureBox3
             // 
@@ -405,6 +405,7 @@
             Name = "PantallaAdmin";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "PantallaAdmin";
+            Load += PantallaAdmin_Load;
             pnlMenu.ResumeLayout(false);
             pnlMenu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox1).EndInit();
@@ -429,9 +430,9 @@
         private Guna.UI2.WinForms.Guna2Button btnEstudiantes;
         private Guna.UI2.WinForms.Guna2Button btnDocentes;
         private Guna.UI2.WinForms.Guna2Button btnUsuarios;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblID;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblUsuario;
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel4;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblRol;
     }
 }

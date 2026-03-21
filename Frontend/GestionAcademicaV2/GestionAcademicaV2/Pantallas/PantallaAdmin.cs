@@ -1,12 +1,9 @@
-﻿using GestionAcademicaV2.Pantallas.AdminVentanas;
+﻿using GestionAcademicaV2.Modelos;
+using GestionAcademicaV2.Pantallas.AdminVentanas;
 using GestionAcademicaV2.Pantallas.DocenteVentanas;
 using Guna.UI2.WinForms;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 
 namespace GestionAcademicaV2.Pantallas
@@ -14,6 +11,14 @@ namespace GestionAcademicaV2.Pantallas
     public partial class PantallaAdmin : Form
     {
         private Form formularioActivo = null;
+        private bool menuExpandido = true;
+        private SesionUsuario usuarioActual;
+
+        public PantallaAdmin(SesionUsuario usuario)
+        {
+            InitializeComponent();
+            usuarioActual = usuario;
+        }
 
         private void AbrirFormularioEnPanel(Form formularioHijo)
         {
@@ -34,10 +39,30 @@ namespace GestionAcademicaV2.Pantallas
             formularioHijo.Show();
             formularioHijo.BringToFront();
         }
-        private bool menuExpandido = true;
-        public PantallaAdmin()
+
+        private string FormatearNombre(string usuario)
         {
-            InitializeComponent();
+            if (string.IsNullOrWhiteSpace(usuario))
+                return "";
+
+            string[] partes = usuario.Replace(".", " ").Split(' ');
+
+            for (int i = 0; i < partes.Length; i++)
+            {
+                if (!string.IsNullOrWhiteSpace(partes[i]))
+                {
+                    partes[i] = char.ToUpper(partes[i][0]) + partes[i].Substring(1).ToLower();
+                }
+            }
+
+            return string.Join(" ", partes);
+        }
+
+        private void PantallaAdmin_Load(object sender, EventArgs e)
+        {
+            lblUsuario.Text = FormatearNombre(usuarioActual.Usuario);
+            lblRol.Text = usuarioActual.Rol;
+            lblID.Text = "ID: " + usuarioActual.UsuarioID.ToString();
         }
 
         private void btnDashboard_Click(object sender, EventArgs e)
