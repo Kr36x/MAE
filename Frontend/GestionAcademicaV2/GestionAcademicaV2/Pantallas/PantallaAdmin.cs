@@ -47,17 +47,17 @@ namespace GestionAcademicaV2.Pantallas
 
         private void btnUsuarios_Click(object sender, EventArgs e)
         {
-            AbrirFormularioEnPanel(new FrmGestionUsuarios (this));
+            AbrirFormularioEnPanel(new FrmGestionUsuarios(this));
         }
 
         private void btnDocentes_Click(object sender, EventArgs e)
         {
-
+            AbrirFormularioEnPanel(new CargaDocente(this));
         }
 
         private void btnEstudiantes_Click(object sender, EventArgs e)
         {
-            AbrirFormularioEnPanel(new FrmFichaMatricula(this));
+            AbrirFormularioEnPanel(new FrmEstudiantes(this));
         }
 
         private void btnMatricula_Click(object sender, EventArgs e)
@@ -112,6 +112,11 @@ namespace GestionAcademicaV2.Pantallas
         private void guna2Panel3_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioEnPanel(new FrmReporteDesercionRetencion(this));
         }
     }
 }

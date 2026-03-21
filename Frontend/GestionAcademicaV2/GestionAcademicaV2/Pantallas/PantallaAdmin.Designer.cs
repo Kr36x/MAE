@@ -183,6 +183,7 @@
             guna2Button1.Size = new Size(220, 45);
             guna2Button1.TabIndex = 10;
             guna2Button1.Text = "Reportes";
+            guna2Button1.Click += guna2Button1_Click;
             // 
             // btnCalificaciones
             // 
