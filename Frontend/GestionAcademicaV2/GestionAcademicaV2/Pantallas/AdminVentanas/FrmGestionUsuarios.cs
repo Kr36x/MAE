@@ -199,6 +199,11 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
             txtDireccion.Clear();
             dtpFechaNacimiento.Value = DateTime.Now;
         }
+
+        private void lbTituloUsuario_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 
