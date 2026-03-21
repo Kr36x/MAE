@@ -153,6 +153,46 @@ namespace GestionAcademicaV2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ojo_abierto {
+            get {
+                object obj = ResourceManager.GetObject("ojo_abierto", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ojo_abierto1 {
+            get {
+                object obj = ResourceManager.GetObject("ojo_abierto1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ojo_cerrado {
+            get {
+                object obj = ResourceManager.GetObject("ojo_cerrado", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ojo_cerrado1 {
+            get {
+                object obj = ResourceManager.GetObject("ojo_cerrado1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap report_blanco {
             get {
                 object obj = ResourceManager.GetObject("report-blanco", resourceCulture);
