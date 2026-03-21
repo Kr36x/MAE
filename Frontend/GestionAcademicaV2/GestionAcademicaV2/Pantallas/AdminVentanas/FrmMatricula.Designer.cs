@@ -878,7 +878,7 @@
             Controls.Add(guna2HtmlLabel1);
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Name = "FrmMatricula";
-            Text = "FrmMatricula";
+            Text = "FORMULARIO DE MATRÍCULA";
             Load += FrmMatricula_Load;
             ((System.ComponentModel.ISupportInitialize)pbLogo).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbEstudiante).EndInit();

@@ -6,7 +6,7 @@
 --===================================
 
 
---1. FICHA DE MATRÃCULA INDIVIDUAL (HISTÃ“RICO Y VIGENTE)
+--1. FICHA DE MATRÍCULA INDIVIDUAL (HISTÓRICO Y VIGENTE)
 
 	--DATOS ESTUDIANTE
 CREATE OR ALTER PROCEDURE spMAE_RepFichaMatricula @estudianteID int, @matriculaID int
@@ -95,7 +95,116 @@ END;
 GO
 
 
-	--7. AsignaciÃ³n de Docentes y Cantidad de Alumnos por Docente
+
+
+	--5. Reportes Globales de Rendimiento Institucional
+
+CREATE OR ALTER PROCEDURE spMAE_RepGlobalesRend @nivel nvarchar(20)
+AS
+BEGIN
+    WITH Promedios AS (
+        SELECT E.EstudianteID, G.GradoID,G.NombreGrado,S.Letra,
+
+            -- promedio por estudiante
+            CAST(
+                SUM(CAl.Nota) * 100.0 /
+                NULLIF(SUM(AC.Valor), 0)
+            AS DECIMAL(5,2)) AS Promedio
+
+        FROM Estudiante E 
+        JOIN Matricula M ON M.EstudianteID = E.EstudianteID
+        JOIN CargaAcademica CA ON CA.SeccionID = M.SeccionID
+        JOIN Seccion S ON S.SeccionID = CA.SeccionID
+        JOIN Grado G ON G.GradoID = S.GradoID
+
+        LEFT JOIN Actividad AC ON AC.CargaID = CA.CargaID
+        LEFT JOIN Calificacion CAl ON CAl.ActividadID = AC.ActividadID AND CAl.EstudianteID = E.EstudianteID
+
+        WHERE G.Nivel = @nivel AND CA.Anio = YEAR(GETDATE()) AND M.Anio = YEAR(GETDATE())
+
+        GROUP BY E.EstudianteID,G.GradoID,G.NombreGrado,S.Letra
+    )
+
+    SELECT 
+        NombreGrado, Letra,
+        CAST(AVG(Promedio) AS DECIMAL(5,2)) AS PromedioGrado,
+        CONCAT(SUM(CASE WHEN Promedio > 85 THEN 1 ELSE 0 END), CONCAT( ' '  , 'EST.') )AS Excelencia
+    FROM Promedios
+    GROUP BY GradoID,NombreGrado,Letra
+    ORDER BY GradoID;
+END;
+
+--exec spMAE_RepGlobalesRend @nivel = 'BASICA'
+
+go
+
+
+    --6. Boleta de Calificaciones Finales por Parcial
+
+CREATE OR ALTER PROCEDURE spMAE_BoletaParcial @periodo int, @gradoID int, @letraSeccion varchar, @anio int
+AS
+BEGIN
+
+
+    WITH  
+    ConfigActiva AS (
+        SELECT TOP 1 Periodo
+        FROM Configuracion
+        WHERE Periodo = @periodo AND Anio = @anio
+        ORDER BY Anio DESC, Periodo DESC
+    ),
+    
+    Promedios AS (
+        SELECT 
+            A.Nombre AS Asignatura,  D.Nombre AS Docente,
+
+            -- promedio por estudiante en esa clase
+            CAST(
+                SUM(CAl.Nota) * 100.0 /
+                NULLIF(SUM(AC.Valor), 0)
+            AS DECIMAL(5,2)) AS Promedio
+
+        FROM Estudiante E 
+        JOIN Matricula M ON M.EstudianteID = E.EstudianteID
+        JOIN CargaAcademica CA ON CA.SeccionID = M.SeccionID
+        JOIN Seccion S ON S.SeccionID = CA.SeccionID
+        JOIN Grado G ON G.GradoID = S.GradoID
+        JOIN Asignatura A ON A.AsignaturaID = CA.AsignaturaID
+        JOIN Docente D ON D.DocenteID = CA.DocenteID
+
+        CROSS JOIN ConfigActiva C
+
+        LEFT JOIN Actividad AC ON AC.CargaID = CA.CargaID AND AC.Parcial = C.Periodo 
+        LEFT JOIN Calificacion CAl ON CAl.ActividadID = AC.ActividadID AND CAl.EstudianteID = E.EstudianteID
+
+        WHERE CA.Anio = @anio  AND M.Anio = @anio AND S.Letra = @letraSeccion AND G.GradoID = @gradoID
+        GROUP BY A.Nombre,D.Nombre,  E.EstudianteID 
+    )
+
+    SELECT 
+        Asignatura,Docente, CAST(AVG(Promedio) AS DECIMAL(5,2)) AS PromedioClase,
+        CASE  
+            WHEN CAST(AVG(Promedio) AS DECIMAL(5,2)) >= 85 THEN 'EXCELENTE'
+            WHEN CAST(AVG(Promedio) AS DECIMAL(5,2)) >= 70 AND CAST(AVG(Promedio) AS DECIMAL(5,2)) < 85  THEN 'MEDIO'
+            WHEN CAST(AVG(Promedio) AS DECIMAL(5,2)) < 70 THEN 'CRITICO'
+        END AS "Estado"
+
+    FROM Promedios
+    GROUP BY Asignatura,Docente
+    ORDER BY Asignatura;
+
+
+
+END;
+
+
+
+
+
+go
+
+
+	--7. Asignación de Docentes y Cantidad de Alumnos por Docente
 
 	--DOCENTES ASIGNADOS
 CREATE OR ALTER PROCEDURE spMAE_RepDistribCargaDoc @grado int, @seccion int, @anio int
@@ -137,7 +246,7 @@ go
 
 
 
-    --8.  PROYECCIÃ“N DE DESERCIÃ“N Y RETENCIÃ“N ESTUDIANTIL EN EL AÃ‘O
+    --8.  PROYECCIÓN DE DESERCIÓN Y RETENCIÓN ESTUDIANTIL EN EL AÑO
 
 go
 CREATE OR ALTER VIEW vMAE_RepProyDesercionGen 

@@ -307,9 +307,9 @@
             chartDesempenoEscolar = new System.Windows.Forms.DataVisualization.Charting.Chart();
             lbAnio = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            cbbAnio = new Guna.UI2.WinForms.Guna2ComboBox();
             guna2HtmlLabel19 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel26 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            dtpAnio = new Guna.UI2.WinForms.Guna2DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).BeginInit();
             cntPrincipal.SuspendLayout();
             ctnDecimoGrado.SuspendLayout();
@@ -366,6 +366,7 @@
             // cntPrincipal
             // 
             cntPrincipal.AutoScroll = true;
+            cntPrincipal.AutoScrollMargin = new Size(10, 10);
             cntPrincipal.BorderColor = Color.Silver;
             cntPrincipal.BorderRadius = 30;
             cntPrincipal.BorderThickness = 2;
@@ -2679,30 +2680,6 @@
             guna2HtmlLabel3.TabIndex = 0;
             guna2HtmlLabel3.Text = "EVOLUCIÓN DEL DESEMPEÑO ESCOLAR";
             // 
-            // cbbAnio
-            // 
-            cbbAnio.BackColor = Color.Transparent;
-            cbbAnio.BorderColor = Color.Black;
-            cbbAnio.BorderRadius = 15;
-            cbbAnio.CustomizableEdges = customizableEdges307;
-            cbbAnio.DrawMode = DrawMode.OwnerDrawFixed;
-            cbbAnio.DropDownStyle = ComboBoxStyle.DropDownList;
-            cbbAnio.FillColor = SystemColors.HotTrack;
-            cbbAnio.FocusedColor = Color.FromArgb(94, 148, 255);
-            cbbAnio.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            cbbAnio.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            cbbAnio.ForeColor = Color.White;
-            cbbAnio.ItemHeight = 25;
-            cbbAnio.Items.AddRange(new object[] { "2026", "2027", "2028", "2029", "2030" });
-            cbbAnio.Location = new Point(827, 50);
-            cbbAnio.Name = "cbbAnio";
-            cbbAnio.ShadowDecoration.CustomizableEdges = customizableEdges308;
-            cbbAnio.Size = new Size(140, 31);
-            cbbAnio.StartIndex = 0;
-            cbbAnio.TabIndex = 5;
-            cbbAnio.TextAlign = HorizontalAlignment.Center;
-            cbbAnio.SelectedIndexChanged += cbbAnio_SelectedIndexChanged;
-            // 
             // guna2HtmlLabel19
             // 
             guna2HtmlLabel19.BackColor = Color.Transparent;
@@ -2723,15 +2700,35 @@
             guna2HtmlLabel26.TabIndex = 7;
             guna2HtmlLabel26.Text = "SELECCIONE EL NIVEL A VISUALIZAR:";
             // 
+            // dtpAnio
+            // 
+            dtpAnio.BorderRadius = 10;
+            dtpAnio.BorderThickness = 1;
+            dtpAnio.Checked = true;
+            dtpAnio.CustomFormat = "yyyy";
+            dtpAnio.CustomizableEdges = customizableEdges307;
+            dtpAnio.FillColor = Color.Gainsboro;
+            dtpAnio.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dtpAnio.Format = DateTimePickerFormat.Custom;
+            dtpAnio.Location = new Point(825, 47);
+            dtpAnio.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
+            dtpAnio.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
+            dtpAnio.Name = "dtpAnio";
+            dtpAnio.ShadowDecoration.CustomizableEdges = customizableEdges308;
+            dtpAnio.Size = new Size(142, 36);
+            dtpAnio.TabIndex = 8;
+            dtpAnio.Value = new DateTime(2026, 3, 21, 1, 13, 35, 415);
+            dtpAnio.ValueChanged += guna2DateTimePicker1_ValueChanged;
+            // 
             // FrmDashboard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1028, 749);
+            ClientSize = new Size(1028, 674);
+            Controls.Add(dtpAnio);
             Controls.Add(guna2HtmlLabel26);
             Controls.Add(guna2HtmlLabel19);
             Controls.Add(cntPrincipal);
-            Controls.Add(cbbAnio);
             Controls.Add(ctnSecundario);
             Controls.Add(guna2HtmlLabel2);
             Controls.Add(guna2HtmlLabel1);
@@ -2792,7 +2789,6 @@
         private Guna.UI2.WinForms.Guna2ContainerControl ctnKinder;
         private Guna.UI2.WinForms.Guna2HtmlLabel lbAnio;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartDesempenoEscolar;
-        private Guna.UI2.WinForms.Guna2ComboBox cbbAnio;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel6;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel5;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel4;
@@ -2906,5 +2902,6 @@
         private Guna.UI2.WinForms.Guna2TextBox txtExcelenciaDecimo1;
         private Guna.UI2.WinForms.Guna2HtmlLabel lbSeccionDecimo;
         private Guna.UI2.WinForms.Guna2TextBox txtPromedioDecimo1;
+        private Guna.UI2.WinForms.Guna2DateTimePicker dtpAnio;
     }
 }

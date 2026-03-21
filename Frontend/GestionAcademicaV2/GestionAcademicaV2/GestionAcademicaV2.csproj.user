@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Compile Update="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Pantallas\AdminVentanas\CargaDocente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Pantallas\AdminVentanas\FrmDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Pantallas\AdminVentanas\FrmEstudiantes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Pantallas\AdminVentanas\FrmFichaMatricula.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Pantallas\AdminVentanas\FrmGestionUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Pantallas\AdminVentanas\FrmMatricula.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Pantallas\AdminVentanas\FrmReporteDesercionRetencion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Pantallas\DocenteVentanas\FrmBoletaPrebasica.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Pantallas\DocenteVentanas\FrmSeleccionBoleta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Pantallas\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Pantallas\PantallaAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Pantallas\PantallaDocente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+</Project>
