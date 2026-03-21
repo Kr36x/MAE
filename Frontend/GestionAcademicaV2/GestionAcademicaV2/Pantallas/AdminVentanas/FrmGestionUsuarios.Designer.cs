@@ -116,6 +116,7 @@
             guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2ContainerControl1 = new Guna.UI2.WinForms.Guna2ContainerControl();
             lbTituloUsuario = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             ((System.ComponentModel.ISupportInitialize)dgvUsuarios).BeginInit();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).BeginInit();
             guna2ContainerControl1.SuspendLayout();
@@ -125,7 +126,7 @@
             // 
             guna2HtmlLabel1.BackColor = Color.Transparent;
             guna2HtmlLabel1.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            guna2HtmlLabel1.Location = new Point(456, 58);
+            guna2HtmlLabel1.Location = new Point(218, 45);
             guna2HtmlLabel1.Name = "guna2HtmlLabel1";
             guna2HtmlLabel1.Size = new Size(260, 34);
             guna2HtmlLabel1.TabIndex = 0;
@@ -258,7 +259,7 @@
             dgvUsuarios.BorderStyle = BorderStyle.Fixed3D;
             dgvUsuarios.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Sunken;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle2.BackColor = Color.RoyalBlue;
+            dataGridViewCellStyle2.BackColor = SystemColors.HotTrack;
             dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
             dataGridViewCellStyle2.ForeColor = Color.White;
             dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
@@ -290,7 +291,7 @@
             dgvUsuarios.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = Color.Empty;
             dgvUsuarios.ThemeStyle.BackColor = Color.White;
             dgvUsuarios.ThemeStyle.GridColor = Color.FromArgb(194, 201, 231);
-            dgvUsuarios.ThemeStyle.HeaderStyle.BackColor = Color.RoyalBlue;
+            dgvUsuarios.ThemeStyle.HeaderStyle.BackColor = SystemColors.HotTrack;
             dgvUsuarios.ThemeStyle.HeaderStyle.BorderStyle = DataGridViewHeaderBorderStyle.Sunken;
             dgvUsuarios.ThemeStyle.HeaderStyle.Font = new Font("Segoe UI", 9F);
             dgvUsuarios.ThemeStyle.HeaderStyle.ForeColor = Color.White;
@@ -792,7 +793,7 @@
             guna2PictureBox1.CustomizableEdges = customizableEdges39;
             guna2PictureBox1.Image = Properties.Resources._2;
             guna2PictureBox1.ImageRotate = 0F;
-            guna2PictureBox1.Location = new Point(307, 16);
+            guna2PictureBox1.Location = new Point(69, 6);
             guna2PictureBox1.Name = "guna2PictureBox1";
             guna2PictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges40;
             guna2PictureBox1.Size = new Size(113, 101);
@@ -804,7 +805,7 @@
             // 
             guna2HtmlLabel2.BackColor = Color.Transparent;
             guna2HtmlLabel2.Font = new Font("Britannic Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            guna2HtmlLabel2.Location = new Point(443, 43);
+            guna2HtmlLabel2.Location = new Point(205, 30);
             guna2HtmlLabel2.Name = "guna2HtmlLabel2";
             guna2HtmlLabel2.Size = new Size(286, 19);
             guna2HtmlLabel2.TabIndex = 105;
@@ -857,7 +858,7 @@
             // lbTituloUsuario
             // 
             lbTituloUsuario.AutoSize = false;
-            lbTituloUsuario.BackColor = Color.RoyalBlue;
+            lbTituloUsuario.BackColor = SystemColors.HotTrack;
             lbTituloUsuario.BorderStyle = BorderStyle.Fixed3D;
             lbTituloUsuario.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lbTituloUsuario.ForeColor = Color.White;
@@ -867,12 +868,24 @@
             lbTituloUsuario.TabIndex = 101;
             lbTituloUsuario.Text = "ROL";
             lbTituloUsuario.TextAlignment = ContentAlignment.MiddleCenter;
+            lbTituloUsuario.Click += lbTituloUsuario_Click;
+            // 
+            // guna2HtmlLabel3
+            // 
+            guna2HtmlLabel3.BackColor = Color.Transparent;
+            guna2HtmlLabel3.Font = new Font("Britannic Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            guna2HtmlLabel3.Location = new Point(849, 30);
+            guna2HtmlLabel3.Name = "guna2HtmlLabel3";
+            guna2HtmlLabel3.Size = new Size(124, 19);
+            guna2HtmlLabel3.TabIndex = 107;
+            guna2HtmlLabel3.Text = "TELA, ATLÁNTIDA";
             // 
             // FrmGestionUsuarios
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1028, 674);
+            Controls.Add(guna2HtmlLabel3);
             Controls.Add(guna2ContainerControl1);
             Controls.Add(guna2HtmlLabel2);
             Controls.Add(guna2PictureBox1);
@@ -938,5 +951,6 @@
         private DataGridViewTextBoxColumn Rol;
         private Guna.UI2.WinForms.Guna2ContainerControl guna2ContainerControl1;
         private Guna.UI2.WinForms.Guna2HtmlLabel lbTituloUsuario;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
     }
 }
