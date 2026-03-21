@@ -21,5 +21,10 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
         {
 
         }
+
+        private void FrmFichaMatricula_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

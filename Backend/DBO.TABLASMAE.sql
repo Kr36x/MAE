@@ -268,11 +268,9 @@ CREATE TABLE Seccion
     Letra CHAR(1) NOT NULL,
     Turno VARCHAR(20) NOT NULL,
     Aula VARCHAR(20),
-    Anio INT NOT NULL,
 
     -- definicion de llaves y condiciones
     CONSTRAINT pkSeccion PRIMARY KEY (SeccionID),
-    CONSTRAINT fkSeccionGrado FOREIGN KEY (GradoID) REFERENCES Grado(GradoID),
 
     -- evita duplicar la misma seccion en el mismo anio
     CONSTRAINT uqSeccionGradoLetraAnio UNIQUE (GradoID, Letra, Anio),
@@ -293,6 +291,7 @@ CREATE TABLE CargaAcademica
     DocenteID INT NOT NULL,
     AsignaturaID INT NOT NULL,
     SeccionID INT NOT NULL,
+    Anio INT NOT NULL,
 
     -- control administrativo
     Estado BIT NOT NULL
@@ -305,8 +304,8 @@ CREATE TABLE CargaAcademica
     CONSTRAINT fkCargaAcademicaSeccion FOREIGN KEY (SeccionID) REFERENCES Seccion(SeccionID),
 
     -- evita que se repita la misma combinacion docente-asignatura-seccion
-    CONSTRAINT uqCargaAcademica UNIQUE (DocenteID, AsignaturaID, SeccionID)
-)
+    CONSTRAINT uqCargaAcademica UNIQUE (DocenteID, AsignaturaID, SeccionID, Anio)
+)    
 
 
 -- TABLA ACTIVIDAD
