@@ -6,7 +6,7 @@
 --===================================
 
 
---1. FICHA DE MATRÕCULA INDIVIDUAL (HIST”RICO Y VIGENTE)
+--1. FICHA DE MATR√çCULA INDIVIDUAL (HIST√ìRICO Y VIGENTE)
 
 	--DATOS ESTUDIANTE
 CREATE OR ALTER PROCEDURE spMAE_RepFichaMatricula @estudianteID int, @matriculaID int
@@ -95,14 +95,13 @@ END;
 GO
 
 
-	--7. AsignaciÛn de Docentes y Cantidad de Alumnos por Docente
+	--7. Asignaci√≥n de Docentes y Cantidad de Alumnos por Docente
 
 	--DOCENTES ASIGNADOS
-CREATE OR ALTER PROCEDURE spMAE_RepDistribCargaDoc @grado int, @seccion int
+CREATE OR ALTER PROCEDURE spMAE_RepDistribCargaDoc @grado int, @seccion int, @anio int
 AS
 BEGIN
 
---****PENDIENTE filtro dE AÒO PORQUE HABRIA QUE CREARLO EN LO DE CARGA 
 	SELECT 
 		D.DocenteID, D.Nombre, D.Identidad, D.Estado, COUNT(A.AsignaturaID) as Cantidad
 	FROM CargaAcademica CA
@@ -110,7 +109,7 @@ BEGIN
 	INNER JOIN Asignatura A ON CA.AsignaturaID = A.AsignaturaID
 	INNER JOIN Seccion S ON CA.SeccionID = S.SeccionID
 	INNER JOIN Grado G ON S.GradoID = G.GradoID  
-	WHERE G.GradoID = @grado AND S.SeccionID = @seccion
+	WHERE G.GradoID = @grado AND S.SeccionID = @seccion and CA.Anio = @anio
 	GROUP BY D.DocenteID, D.Nombre, D.Identidad, D.Estado
 
 END;
@@ -138,7 +137,7 @@ go
 
 
 
-    --8.  PROYECCI”N DE DESERCI”N Y RETENCI”N ESTUDIANTIL EN EL A—O
+    --8.  PROYECCI√ìN DE DESERCI√ìN Y RETENCI√ìN ESTUDIANTIL EN EL A√ëO
 
 go
 CREATE OR ALTER VIEW vMAE_RepProyDesercionGen 
