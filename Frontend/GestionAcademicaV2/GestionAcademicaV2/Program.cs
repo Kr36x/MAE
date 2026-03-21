@@ -1,4 +1,5 @@
 using GestionAcademicaV2.Pantallas;
+using GestionAcademicaV2.Pantallas.DocenteVentanas;
 
 namespace GestionAcademicaV2
 {
@@ -13,7 +14,7 @@ namespace GestionAcademicaV2
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new PantallaAdmin());
+            Application.Run(new FrmReporteAsistencia());
         }
     }
 }
