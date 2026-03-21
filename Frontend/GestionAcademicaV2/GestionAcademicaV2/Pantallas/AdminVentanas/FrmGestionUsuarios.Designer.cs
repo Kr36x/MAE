@@ -897,7 +897,7 @@
             Controls.Add(guna2HtmlLabel1);
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Name = "FrmGestionUsuarios";
-            Text = "FrmGestionUsuarios";
+            Text = "GESTIÓN DE USUARIOS";
             ((System.ComponentModel.ISupportInitialize)dgvUsuarios).EndInit();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).EndInit();
             guna2ContainerControl1.ResumeLayout(false);

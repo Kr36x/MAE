@@ -58,9 +58,9 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
             seriePromedio.MarkerStyle = MarkerStyle.Circle;
             seriePromedio.MarkerSize = 8;
 
-            string[] meses = {"FEBRERO","MARZO","ABRIL","MAYO","JUNIO","JULIO","AGOSTO", "SEPTIEMBRE", "OCTUBRE", "NOVIEMBRE"};
-            double[] meta = { 85, 85, 85, 85, 85 };
-            double[] promedio = { 90, 80, 78, 88, 92 };
+            string[] meses = { "FEBRERO", "MARZO", "ABRIL", "MAYO", "JUNIO", "JULIO", "AGOSTO", "SEPTIEMBRE", "OCTUBRE", "NOVIEMBRE" };
+            double[] meta = { 85, 85, 85, 85, 85, 85, 85, 85, 85, 85 };
+            double[] promedio = { 90, 80, 78, 88, 92, 67, 78, 90, 89, 69 };
 
             for (int i = 0; i < meses.Length; i++)
             {
@@ -140,7 +140,12 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
         private void cbbAnio_SelectedIndexChanged(object sender, EventArgs e)
         {
-            lbAnio.Text = cbbAnio.Text;
+            
+        }
+
+        private void guna2DateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            lbAnio.Text = dtpAnio.Text;
         }
     }
 }
