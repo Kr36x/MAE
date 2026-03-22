@@ -8,24 +8,19 @@
     "net10.0-windows7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\DELL\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\jdvar\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\DELL\\OneDrive\\Desktop\\SistemaGestionAcademicaMAE\\MAE\\Frontend\\SistemaGestionAcademica\\SistemaGestionAcademica\\SistemaGestionAcademica\\SistemaGestionAcademica.csproj",
+      "projectUniqueName": "C:\\Users\\jdvar\\OneDrive\\Desktop\\sistemas\\proyecto\\MAE\\Frontend\\SistemaGestionAcademica\\SistemaGestionAcademica\\SistemaGestionAcademica\\SistemaGestionAcademica.csproj",
       "projectName": "SistemaGestionAcademica",
-      "projectPath": "C:\\Users\\DELL\\OneDrive\\Desktop\\SistemaGestionAcademicaMAE\\MAE\\Frontend\\SistemaGestionAcademica\\SistemaGestionAcademica\\SistemaGestionAcademica\\SistemaGestionAcademica.csproj",
-      "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\DELL\\OneDrive\\Desktop\\SistemaGestionAcademicaMAE\\MAE\\Frontend\\SistemaGestionAcademica\\SistemaGestionAcademica\\SistemaGestionAcademica\\obj\\",
+      "projectPath": "C:\\Users\\jdvar\\OneDrive\\Desktop\\sistemas\\proyecto\\MAE\\Frontend\\SistemaGestionAcademica\\SistemaGestionAcademica\\SistemaGestionAcademica\\SistemaGestionAcademica.csproj",
+      "packagesPath": "C:\\Users\\jdvar\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\jdvar\\OneDrive\\Desktop\\sistemas\\proyecto\\MAE\\Frontend\\SistemaGestionAcademica\\SistemaGestionAcademica\\SistemaGestionAcademica\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\jdvar\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -51,7 +46,7 @@
         "auditLevel": "low",
         "auditMode": "all"
       },
-      "SdkAnalysisLevel": "10.0.100"
+      "SdkAnalysisLevel": "10.0.200"
     },
     "frameworks": {
       "net10.0-windows7.0": {
@@ -75,7 +70,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.103/PortableRuntimeIdentifierGraph.json",
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.201/PortableRuntimeIdentifierGraph.json",
         "packagesToPrune": {
           "Microsoft.CSharp": "(,4.7.32767]",
           "Microsoft.VisualBasic": "(,10.4.32767]",

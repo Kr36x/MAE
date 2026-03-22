@@ -1,13 +1,13 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\DELL\\OneDrive\\Desktop\\SistemaGestionAcademicaMAE\\MAE\\Frontend\\SistemaGestionAcademica\\SistemaGestionAcademica\\",
+  "WorkspaceRootPath": "C:\\Users\\jdvar\\OneDrive\\Desktop\\sistemas\\proyecto\\MAE\\Frontend\\SistemaGestionAcademica\\SistemaGestionAcademica\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D30E88A2-6F96-9081-31FC-AB885EF39F3D}|SistemaGestionAcademica\\SistemaGestionAcademica.csproj|c:\\users\\dell\\onedrive\\desktop\\sistemagestionacademicamae\\mae\\frontend\\sistemagestionacademica\\sistemagestionacademica\\sistemagestionacademica\\principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{D30E88A2-6F96-9081-31FC-AB885EF39F3D}|SistemaGestionAcademica\\SistemaGestionAcademica.csproj|c:\\users\\jdvar\\onedrive\\desktop\\sistemas\\proyecto\\mae\\frontend\\sistemagestionacademica\\sistemagestionacademica\\sistemagestionacademica\\principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{D30E88A2-6F96-9081-31FC-AB885EF39F3D}|SistemaGestionAcademica\\SistemaGestionAcademica.csproj|solutionrelative:sistemagestionacademica\\principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D30E88A2-6F96-9081-31FC-AB885EF39F3D}|SistemaGestionAcademica\\SistemaGestionAcademica.csproj|C:\\Users\\DELL\\OneDrive\\Desktop\\SistemaGestionAcademicaMAE\\MAE\\Frontend\\SistemaGestionAcademica\\SistemaGestionAcademica\\sistemagestionacademica\\formularios\\gestionusuarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{D30E88A2-6F96-9081-31FC-AB885EF39F3D}|SistemaGestionAcademica\\SistemaGestionAcademica.csproj|C:\\Users\\jdvar\\OneDrive\\Desktop\\sistemas\\proyecto\\MAE\\Frontend\\SistemaGestionAcademica\\SistemaGestionAcademica\\sistemagestionacademica\\formularios\\gestionusuarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{D30E88A2-6F96-9081-31FC-AB885EF39F3D}|SistemaGestionAcademica\\SistemaGestionAcademica.csproj|solutionrelative:sistemagestionacademica\\formularios\\gestionusuarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
@@ -28,9 +28,9 @@
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "GestionUsuarios.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\DELL\\OneDrive\\Desktop\\SistemaGestionAcademicaMAE\\MAE\\Frontend\\SistemaGestionAcademica\\SistemaGestionAcademica\\SistemaGestionAcademica\\Formularios\\GestionUsuarios.cs",
+              "DocumentMoniker": "C:\\Users\\jdvar\\OneDrive\\Desktop\\sistemas\\proyecto\\MAE\\Frontend\\SistemaGestionAcademica\\SistemaGestionAcademica\\SistemaGestionAcademica\\Formularios\\GestionUsuarios.cs",
               "RelativeDocumentMoniker": "SistemaGestionAcademica\\Formularios\\GestionUsuarios.cs",
-              "ToolTip": "C:\\Users\\DELL\\OneDrive\\Desktop\\SistemaGestionAcademicaMAE\\MAE\\Frontend\\SistemaGestionAcademica\\SistemaGestionAcademica\\SistemaGestionAcademica\\Formularios\\GestionUsuarios.cs [Dise\u00F1o]",
+              "ToolTip": "C:\\Users\\jdvar\\OneDrive\\Desktop\\sistemas\\proyecto\\MAE\\Frontend\\SistemaGestionAcademica\\SistemaGestionAcademica\\SistemaGestionAcademica\\Formularios\\GestionUsuarios.cs [Dise\u00F1o]",
               "RelativeToolTip": "SistemaGestionAcademica\\Formularios\\GestionUsuarios.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-18T20:50:38.857Z",
@@ -40,9 +40,9 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Principal.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\DELL\\OneDrive\\Desktop\\SistemaGestionAcademicaMAE\\MAE\\Frontend\\SistemaGestionAcademica\\SistemaGestionAcademica\\SistemaGestionAcademica\\Principal.cs",
+              "DocumentMoniker": "C:\\Users\\jdvar\\OneDrive\\Desktop\\sistemas\\proyecto\\MAE\\Frontend\\SistemaGestionAcademica\\SistemaGestionAcademica\\SistemaGestionAcademica\\Principal.cs",
               "RelativeDocumentMoniker": "SistemaGestionAcademica\\Principal.cs",
-              "ToolTip": "C:\\Users\\DELL\\OneDrive\\Desktop\\SistemaGestionAcademicaMAE\\MAE\\Frontend\\SistemaGestionAcademica\\SistemaGestionAcademica\\SistemaGestionAcademica\\Principal.cs [Dise\u00F1o]",
+              "ToolTip": "C:\\Users\\jdvar\\OneDrive\\Desktop\\sistemas\\proyecto\\MAE\\Frontend\\SistemaGestionAcademica\\SistemaGestionAcademica\\SistemaGestionAcademica\\Principal.cs [Dise\u00F1o]",
               "RelativeToolTip": "SistemaGestionAcademica\\Principal.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-12T22:47:00.88Z",

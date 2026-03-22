@@ -1,12 +1,13 @@
 use AgroLinkDB
 
 select * from CargaAcademica
-select * from Grado
+select * from Docente
 
 --2.- Asistencias diariasas
 
 go
-create or alter procedure spMAE_Asistencias_por_Grado @fecha_inicial DATE,@fecha_final DATE = NULL,@Docente varchar(100),@Estudiante varchar(100)=Null 
+create or alter procedure spMAE_Asistencias_por_Grado @fecha_inicial DATE,@fecha_final DATE = NULL,@Docente int,@Estudiante varchar(100)=Null ,@grado varchar(100),
+@Seccion varchar(10)
 as
 begin
 
@@ -23,15 +24,17 @@ where (
           OR 
           -- ranfo de fechas
           (@fecha_final IS NOT NULL AND A.Fecha BETWEEN @fecha_inicial AND @fecha_final)
-      ) and d.Nombre=@Docente 
+      ) and d.UsuarioID=@Docente 
       and (@Estudiante IS NULL OR E.Nombre LIKE '%' + @Estudiante + '%')
+      and  g.NombreGrado=@Grado and 
+        s.Letra=@Seccion 
 order by a.Fecha ASC,E.Nombre ASC
 end
 
 go
 
 --probando
-EXEC spMAE_Asistencias_por_Grado @fecha_inicial='2026-03-02',@fecha_final='2026-03-04',@Docente='JUAN PEREZ', @Estudiante='Alexis'
+EXEC spMAE_Asistencias_por_Grado @fecha_inicial='2026-03-02',@fecha_final='2026-03-04',@Docente=4,@Grado='Segundo',@Seccion='A',@Estudiante='ANGEL GABRIEL RIVERA'
 
 
 -- 3.- calificacioens semanales
@@ -72,4 +75,4 @@ and (@Estudiante IS NULL OR E.Nombre LIKE '%' + @Estudiante + '%')
 end
 
 go
-EXEC spMAE_Calificaciones_semanlaes @Grado='Primero',@parcial= 1,@Seccion='A',@Asignatura = 'Math',@anio =2026
+EXEC spMAE_Calificaciones_semanlaes @Grado='Primero',@parcial= 1,@Seccion='A',@Asignatura = 'Math',@anio =2026,@Estudiante='BRAYAN JOSUE ESPINAL'
