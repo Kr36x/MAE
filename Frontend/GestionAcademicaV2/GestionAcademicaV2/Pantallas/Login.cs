@@ -197,13 +197,13 @@ namespace GestionAcademicaV2.Pantallas
                     return;
                 }
 
-                if (usuarioActual.Rol == "Administrador")
+                if (usuarioActual.Rol == "Administrador" || usuarioActual.Rol == "ADMINISTRADOR")
                 {
                     PantallaAdmin admin = new PantallaAdmin(usuarioActual);
                     admin.Show();
                     this.Hide();
                 }
-                else if (usuarioActual.Rol == "Docente")
+                else if (usuarioActual.Rol == "Docente" || usuarioActual.Rol == "DOCENTE")
                 {
                     PantallaDocente docente = new PantallaDocente(usuarioActual);
                     docente.Show();

@@ -1,5 +1,15 @@
+# Visual Studio
 .vs/
 bin/
 obj/
 *.user
 *.suo
+*.cache
+*.pdb
+
+# Build
+Debug/
+Release/
+
+# Otros
+*.log
