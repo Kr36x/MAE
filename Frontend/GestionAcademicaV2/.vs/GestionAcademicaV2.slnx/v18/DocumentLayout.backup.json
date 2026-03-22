@@ -3,7 +3,6 @@
   "WorkspaceRootPath": "C:\\Users\\Xerxes\\source\\repos\\MAE\\Frontend\\GestionAcademicaV2\\",
   "Documents": [
     {
-<<<<<<< Updated upstream
       "AbsoluteMoniker": "D:0:0:{5B2C0A6F-34AB-D4B8-DAD9-EA61D1DBC962}|GestionAcademicaV2\\GestionAcademicaV2.csproj|c:\\users\\xerxes\\source\\repos\\mae\\frontend\\gestionacademicav2\\gestionacademicav2\\pantallas\\docenteventanas\\frmreportecalificaciones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5B2C0A6F-34AB-D4B8-DAD9-EA61D1DBC962}|GestionAcademicaV2\\GestionAcademicaV2.csproj|solutionrelative:gestionacademicav2\\pantallas\\docenteventanas\\frmreportecalificaciones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -46,18 +45,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{5B2C0A6F-34AB-D4B8-DAD9-EA61D1DBC962}|GestionAcademicaV2\\GestionAcademicaV2.csproj|C:\\Users\\Xerxes\\source\\repos\\MAE\\Frontend\\GestionAcademicaV2\\gestionacademicav2\\pantallas\\pantalladocente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{5B2C0A6F-34AB-D4B8-DAD9-EA61D1DBC962}|GestionAcademicaV2\\GestionAcademicaV2.csproj|solutionrelative:gestionacademicav2\\pantallas\\pantalladocente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-=======
-      "AbsoluteMoniker": "D:0:0:{5B2C0A6F-34AB-D4B8-DAD9-EA61D1DBC962}|GestionAcademicaV2\\GestionAcademicaV2.csproj|C:\\Users\\DELL\\OneDrive\\Desktop\\SistemaGestionAcademicaMAE\\MAE\\Frontend\\GestionAcademicaV2\\gestionacademicav2\\pantallas\\adminventanas\\cargadocente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{5B2C0A6F-34AB-D4B8-DAD9-EA61D1DBC962}|GestionAcademicaV2\\GestionAcademicaV2.csproj|solutionrelative:gestionacademicav2\\pantallas\\adminventanas\\cargadocente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5B2C0A6F-34AB-D4B8-DAD9-EA61D1DBC962}|GestionAcademicaV2\\GestionAcademicaV2.csproj|C:\\Users\\DELL\\OneDrive\\Desktop\\SistemaGestionAcademicaMAE\\MAE\\Frontend\\GestionAcademicaV2\\gestionacademicav2\\pantallas\\adminventanas\\frmestudiantes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{5B2C0A6F-34AB-D4B8-DAD9-EA61D1DBC962}|GestionAcademicaV2\\GestionAcademicaV2.csproj|solutionrelative:gestionacademicav2\\pantallas\\adminventanas\\frmestudiantes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5B2C0A6F-34AB-D4B8-DAD9-EA61D1DBC962}|GestionAcademicaV2\\GestionAcademicaV2.csproj|c:\\users\\dell\\onedrive\\desktop\\sistemagestionacademicamae\\mae\\frontend\\gestionacademicav2\\gestionacademicav2\\pantallas\\adminventanas\\frmreportedesercionretencion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{5B2C0A6F-34AB-D4B8-DAD9-EA61D1DBC962}|GestionAcademicaV2\\GestionAcademicaV2.csproj|solutionrelative:gestionacademicav2\\pantallas\\adminventanas\\frmreportedesercionretencion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
->>>>>>> Stashed changes
     }
   ],
   "DocumentGroupContainers": [
@@ -67,11 +54,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-<<<<<<< Updated upstream
           "SelectedChildIndex": 2,
-=======
-          "SelectedChildIndex": 3,
->>>>>>> Stashed changes
           "Children": [
             {
               "$type": "Bookmark",
@@ -83,22 +66,13 @@
             },
             {
               "$type": "Document",
-<<<<<<< Updated upstream
               "DocumentIndex": 0,
               "Title": "FrmReporteCalificaciones.cs",
               "DocumentMoniker": "C:\\Users\\Xerxes\\source\\repos\\MAE\\Frontend\\GestionAcademicaV2\\GestionAcademicaV2\\Pantallas\\DocenteVentanas\\FrmReporteCalificaciones.cs",
               "RelativeDocumentMoniker": "GestionAcademicaV2\\Pantallas\\DocenteVentanas\\FrmReporteCalificaciones.cs",
               "ToolTip": "C:\\Users\\Xerxes\\source\\repos\\MAE\\Frontend\\GestionAcademicaV2\\GestionAcademicaV2\\Pantallas\\DocenteVentanas\\FrmReporteCalificaciones.cs",
               "RelativeToolTip": "GestionAcademicaV2\\Pantallas\\DocenteVentanas\\FrmReporteCalificaciones.cs",
-              "ViewState": "AgIAAEUAAAAAAAAAAAAAwE8AAABBAAAAAAAAAA==",
-=======
-              "DocumentIndex": 2,
-              "Title": "FrmReporteDesercionRetencion.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\DELL\\OneDrive\\Desktop\\SistemaGestionAcademicaMAE\\MAE\\Frontend\\GestionAcademicaV2\\GestionAcademicaV2\\Pantallas\\AdminVentanas\\FrmReporteDesercionRetencion.cs",
-              "RelativeDocumentMoniker": "GestionAcademicaV2\\Pantallas\\AdminVentanas\\FrmReporteDesercionRetencion.cs",
-              "ToolTip": "C:\\Users\\DELL\\OneDrive\\Desktop\\SistemaGestionAcademicaMAE\\MAE\\Frontend\\GestionAcademicaV2\\GestionAcademicaV2\\Pantallas\\AdminVentanas\\FrmReporteDesercionRetencion.cs [Dise\u00F1o]",
-              "RelativeToolTip": "GestionAcademicaV2\\Pantallas\\AdminVentanas\\FrmReporteDesercionRetencion.cs [Dise\u00F1o]",
->>>>>>> Stashed changes
+              "ViewState": "AgIAAEUAAAAAAAAAAAAAwFcAAABDAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-22T02:50:39.7Z",
               "EditorCaption": ""
@@ -155,21 +129,12 @@
             },
             {
               "$type": "Document",
-<<<<<<< Updated upstream
               "DocumentIndex": 2,
               "Title": "FrmSeleccionReportes.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Xerxes\\source\\repos\\MAE\\Frontend\\GestionAcademicaV2\\GestionAcademicaV2\\Pantallas\\DocenteVentanas\\FrmSeleccionReportes.cs",
               "RelativeDocumentMoniker": "GestionAcademicaV2\\Pantallas\\DocenteVentanas\\FrmSeleccionReportes.cs",
               "ToolTip": "C:\\Users\\Xerxes\\source\\repos\\MAE\\Frontend\\GestionAcademicaV2\\GestionAcademicaV2\\Pantallas\\DocenteVentanas\\FrmSeleccionReportes.cs [Design]",
               "RelativeToolTip": "GestionAcademicaV2\\Pantallas\\DocenteVentanas\\FrmSeleccionReportes.cs [Design]",
-=======
-              "DocumentIndex": 0,
-              "Title": "CargaDocente.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\DELL\\OneDrive\\Desktop\\SistemaGestionAcademicaMAE\\MAE\\Frontend\\GestionAcademicaV2\\GestionAcademicaV2\\Pantallas\\AdminVentanas\\CargaDocente.cs",
-              "RelativeDocumentMoniker": "GestionAcademicaV2\\Pantallas\\AdminVentanas\\CargaDocente.cs",
-              "ToolTip": "C:\\Users\\DELL\\OneDrive\\Desktop\\SistemaGestionAcademicaMAE\\MAE\\Frontend\\GestionAcademicaV2\\GestionAcademicaV2\\Pantallas\\AdminVentanas\\CargaDocente.cs [Dise\u00F1o]",
-              "RelativeToolTip": "GestionAcademicaV2\\Pantallas\\AdminVentanas\\CargaDocente.cs [Dise\u00F1o]",
->>>>>>> Stashed changes
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-22T02:05:06.24Z",
               "EditorCaption": " [Design]"
