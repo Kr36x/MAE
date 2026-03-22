@@ -29,4 +29,19 @@
     </EmbeddedResource>
   </ItemGroup>
 
+	<ItemGroup>
+		<Compile Update="Pantallas\DocenteVentanas\FrmReporteAsistencia.cs">
+			<SubType>Form</SubType>
+		</Compile>
+
+		<Compile Update="Pantallas\DocenteVentanas\FrmReporteAsistencia.Designer.cs">
+			<DependentUpon>FrmReporteAsistencia.cs</DependentUpon>
+		</Compile>
+
+		<EmbeddedResource Update="Pantallas\DocenteVentanas\FrmReporteAsistencia.resx">
+			<DependentUpon>FrmReporteAsistencia.cs</DependentUpon>
+			<SubType>Designer</SubType>
+		</EmbeddedResource>
+	</ItemGroup>
+
 </Project>

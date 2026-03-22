@@ -10,6 +10,7 @@ namespace GestionAcademicaV2.Pantallas
         private Form formularioActivo = null;
         private bool menuExpandido = true;
         private SesionUsuario usuarioActual;
+        int idDocente;
 
         public PantallaDocente(SesionUsuario usuario)
         {
@@ -45,7 +46,7 @@ namespace GestionAcademicaV2.Pantallas
 
         private void PantallaDocente_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         private void btnMenu_Click(object sender, EventArgs e)
@@ -88,6 +89,23 @@ namespace GestionAcademicaV2.Pantallas
             lblUsuario.Text = FormatearNombre(usuarioActual.Usuario);
             lblRol.Text = usuarioActual.Rol;
             lblId.Text = "ID: " + usuarioActual.UsuarioID.ToString();
+        }
+        
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            //FrmReporteAsistencia frm = new FrmReporteAsistencia(usuarioActual.UsuarioID);
+            //frm.Show();
+            AbrirFormularioEnPanel(new FrmSeleccionReportes(this, usuarioActual.UsuarioID));
+        }
+
+        public void MostrarReporteAsistencia(int docenteId)
+        {
+            AbrirFormularioEnPanel(new FrmReporteAsistencia(docenteId));
+        }
+            public void MostrarReporteCalificacion(int docenteId)
+        {
+            AbrirFormularioEnPanel(new FrmReporteCalificaciones(docenteId));
         }
     }
 }
