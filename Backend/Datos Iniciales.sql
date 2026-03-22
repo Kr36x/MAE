@@ -83,14 +83,12 @@ INSERT INTO Usuario (Usuario, Correo, Password, Rol, Estado) VALUES
 ('sofia.herrera', 'sofia.herrera@gmail.com', 'Docente123*', 'Docente', 1),
 ('andres.morales', 'andres.morales@gmail.com', 'Docente123*', 'Docente', 1),
 ('elena.vargas', 'elena.vargas@gmail.com', 'Docente123*', 'Docente', 1),
-('daniel.reyes', 'daniel.reyes@gmail.   com', 'Docente123*', 'Docente', 1),
+('daniel.reyes', 'daniel.reyes@gmail.com', 'Docente123*', 'Docente', 1),
 ('patricia.castro', 'patricia.castro@gmail.com', 'Docente123*', 'Docente', 1),
 ('roberto.mejia', 'roberto.mejia@gmail.com', 'Docente123*', 'Docente', 1),
 ('gabriela.navarro', 'gabriela.navarro@gmail.com', 'Docente123*', 'Docente', 1),
 ('fernando.alvarado', 'fernando.alvarado@gmail.com', 'Docente123*', 'Docente', 1);
 
-select * from Usuario
-select * from 
 
     --TUTORES
 INSERT INTO Usuario (Usuario, Correo, Password, Rol, Estado) VALUES
@@ -1166,7 +1164,6 @@ JOIN Asignatura A
 ORDER BY 
     E.Nombre,
     A.Nombre;
-
 
 
 
