@@ -62,6 +62,7 @@ C:\Users\DELL\OneDrive\Desktop\SistemaGestionAcademicaMAE\MAE\Frontend\GestionAc
 C:\Users\DELL\OneDrive\Desktop\SistemaGestionAcademicaMAE\MAE\Frontend\GestionAcademicaV2\GestionAcademicaV2\obj\Debug\net10.0-windows\GestionAcademicaV2.Pantallas.AdminVentanas.FrmReporteDesercionRetencion.resources
 C:\Users\DELL\OneDrive\Desktop\SistemaGestionAcademicaMAE\MAE\Frontend\GestionAcademicaV2\GestionAcademicaV2\obj\Debug\net10.0-windows\GestionAcademicaV2.Pantallas.AdminVentanas.CargaDocente.resources
 C:\Users\DELL\OneDrive\Desktop\SistemaGestionAcademicaMAE\MAE\Frontend\GestionAcademicaV2\GestionAcademicaV2\obj\Debug\net10.0-windows\GestionAcademicaV2.Pantallas.AdminVentanas.FrmEstudiantes.resources
+<<<<<<< Updated upstream
 C:\Users\Xerxes\source\repos\MAE\Frontend\GestionAcademicaV2\GestionAcademicaV2\bin\Debug\net10.0-windows\GestionAcademicaV2.exe
 C:\Users\Xerxes\source\repos\MAE\Frontend\GestionAcademicaV2\GestionAcademicaV2\bin\Debug\net10.0-windows\GestionAcademicaV2.deps.json
 C:\Users\Xerxes\source\repos\MAE\Frontend\GestionAcademicaV2\GestionAcademicaV2\bin\Debug\net10.0-windows\GestionAcademicaV2.runtimeconfig.json
@@ -138,3 +139,8 @@ C:\Users\Xerxes\source\repos\MAE\Frontend\GestionAcademicaV2\GestionAcademicaV2\
 C:\Users\Xerxes\source\repos\MAE\Frontend\GestionAcademicaV2\GestionAcademicaV2\obj\Debug\net10.0-windows\GestionAcademicaV2.genruntimeconfig.cache
 C:\Users\Xerxes\source\repos\MAE\Frontend\GestionAcademicaV2\GestionAcademicaV2\obj\Debug\net10.0-windows\ref\GestionAcademicaV2.dll
 C:\Users\Xerxes\source\repos\MAE\Frontend\GestionAcademicaV2\GestionAcademicaV2\obj\Debug\net10.0-windows\GestionAcademicaV2.Pantallas.DocenteVentanas.FrmSeleccionReportes.resources
+=======
+C:\Users\DELL\OneDrive\Desktop\SistemaGestionAcademicaMAE\MAE\Frontend\GestionAcademicaV2\GestionAcademicaV2\obj\Debug\net10.0-windows\GestionAcademicaV2.Pantallas.DocenteVentanas.FrmReporteAsistencia.resources
+>>>>>>> Stashed changes
+C:\Users\DELL\OneDrive\Desktop\SistemaGestionAcademicaMAE\MAE\Frontend\GestionAcademicaV2\GestionAcademicaV2\obj\Debug\net10.0-windows\GestionAcademicaV2.Pantallas.DocenteVentanas.FrmReporteCalificaciones.resources
+C:\Users\DELL\OneDrive\Desktop\SistemaGestionAcademicaMAE\MAE\Frontend\GestionAcademicaV2\GestionAcademicaV2\obj\Debug\net10.0-windows\GestionAcademicaV2.Pantallas.DocenteVentanas.FrmSeleccionReportes.resources
