@@ -93,6 +93,16 @@ namespace GestionAcademicaV2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap black_lupa {
+            get {
+                object obj = ResourceManager.GetObject("black_lupa", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap contact_form_blanco {
             get {
                 object obj = ResourceManager.GetObject("contact-form-blanco", resourceCulture);
@@ -146,6 +156,16 @@ namespace GestionAcademicaV2.Properties {
         internal static System.Drawing.Bitmap Logo_expandido {
             get {
                 object obj = ResourceManager.GetObject("Logo expandido", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap magnifying_glass {
+            get {
+                object obj = ResourceManager.GetObject("magnifying-glass", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -1,4 +1,6 @@
-﻿using Guna.UI2.WinForms;
+﻿using GestionAcademicaV2.Modelos;
+using Guna.UI2.WinForms;
+using Microsoft.Data.SqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,19 +13,328 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
 {
     public partial class FrmReporteAsistencia : Form
     {
-        public FrmReporteAsistencia()
+        private readonly int docenteId;
+        private readonly Conexion conexion = new Conexion();
+        private int anioActual;
+        private int mesActual;
+        public FrmReporteAsistencia(int docenteId)
         {
-            InitializeComponent();          
+            InitializeComponent();
+            this.docenteId = docenteId;
+            
         }
 
         private void FrmReporteAsistencia_Load(object sender, EventArgs e)
         {
-            ConfigurarDataGridView(2026, 3);
-            CargarDatosEjemplo(2026, 3);
-        }
-        
+            DateTime hoy = DateTime.Today;
+            anioActual = hoy.Year;
+            mesActual = hoy.Month;
+            lblDocente.Text = ObtenerNombreDocente();
 
-  
+            CargarGrados();
+            ConfigurarDataGridView(anioActual, mesActual);
+
+            if (cbGrado.Items.Count > 0) {
+                CargarReporte();
+                cbGrado.SelectedIndex = 0; 
+            }
+        }
+
+        private void ActualizarLabelRegistros()
+        {
+            int total = dgvAsistencia.Rows.Count;
+
+            // Si tienes fila nueva habilitada
+            if (dgvAsistencia.AllowUserToAddRows)
+                total--;
+
+            if (total < 0) total = 0;
+
+            if (total == 0)
+            {
+                lblRegistros.Text = "Sin registros";
+            }
+            else
+            {
+                lblRegistros.Text = $"Registros del 1 al {total} total de {total} registros";
+            }
+        }
+        private void CargarGrados()
+        {
+            cbGrado.Items.Clear();
+            cbSeccion.Items.Clear();
+
+            using (SqlConnection cn = conexion.ObtenerConexion())
+            using (SqlCommand cmd = new SqlCommand(@"
+                    select distinct
+                    G.NombreGrado,
+                    case
+                        when G.NombreGrado = 'KINDER' then 1
+                        when G.NombreGrado = 'PREBASICA' then 2
+                        when G.NombreGrado = 'PRIMERO' then 3
+                        when G.NombreGrado = 'SEGUNDO' then 4
+                        when G.NombreGrado = 'TERCERO' then 5
+                        when G.NombreGrado = 'CUARTO' then 6
+                        when G.NombreGrado = 'QUINTO' then 7
+                        when G.NombreGrado = 'SEXTO' then 8
+                        when G.NombreGrado = 'SEPTIMO' then 9
+                        when G.NombreGrado = 'OCTAVO' then 10
+                        when G.NombreGrado = 'NOVENO' then 11
+                        when G.NombreGrado = 'DECIMO' then 12
+                        when G.NombreGrado = 'UNDECIMO' then 13
+                        else 99
+                    end as OrdenGrado
+                from CargaAcademica CA
+                inner join Seccion S on CA.SeccionID = S.SeccionID
+                inner join Grado G on S.GradoID = G.GradoID
+                inner join Docente D on CA.DocenteID = D.DocenteID
+                where D.UsuarioID = 4
+                order by OrdenGrado;", cn))
+            {
+                cmd.Parameters.AddWithValue("@Docente", docenteId);
+                cn.Open();
+
+                using (SqlDataReader dr = cmd.ExecuteReader())
+                {
+                    while (dr.Read())
+                    {
+                        cbGrado.Items.Add(dr["NombreGrado"].ToString());
+                    }
+                }
+            }
+
+            if (cbGrado.Items.Count > 0)
+                cbGrado.SelectedIndex = 0;
+        }
+
+        private void CargarSecciones()
+        {
+            cbSeccion.Items.Clear();
+
+            if (cbGrado.SelectedItem == null)
+                return;
+
+            using (SqlConnection cn = conexion.ObtenerConexion())
+            using (SqlCommand cmd = new SqlCommand(@"
+                select distinct S.Letra
+                from CargaAcademica CA
+                inner join Seccion S on CA.SeccionID = S.SeccionID
+                inner join Grado G on S.GradoID = G.GradoID
+                inner join Docente D on CA.DocenteID = D.DocenteID
+                where D.UsuarioID = @Docente
+                  and G.NombreGrado = @Grado
+                order by S.Letra", cn))
+            {
+                cmd.Parameters.AddWithValue("@Docente", docenteId);
+                cmd.Parameters.AddWithValue("@Grado", cbGrado.SelectedItem.ToString());
+
+                cn.Open();
+
+                using (SqlDataReader dr = cmd.ExecuteReader())
+                {
+                    while (dr.Read())
+                    {
+                        cbSeccion.Items.Add(dr["Letra"].ToString());
+                    }
+                }
+            }
+
+            if (cbSeccion.Items.Count > 0)
+            {
+                cbSeccion.SelectedIndex = 0;
+                CargarReporte();
+            }
+        }
+        public class MesItem
+        {
+            public int Anio { get; set; }
+            public int Mes { get; set; }
+
+            public override string ToString()
+            {
+                return new DateTime(Anio, Mes, 1)
+                    .ToString("MMMM yyyy")
+                    .ToUpper();
+            }
+        }
+        private void CargarMeses()
+        {
+            cbMes.Items.Clear();
+
+            if (cbGrado.SelectedItem == null || cbSeccion.SelectedItem == null)
+                return;
+
+            using (SqlConnection cn = conexion.ObtenerConexion())
+            using (SqlCommand cmd = new SqlCommand(@"
+                select distinct
+                    year(A.Fecha) as Anio,
+                    month(A.Fecha) as Mes
+                from Asistencia A
+                inner join CargaAcademica CA on A.CargaID = CA.CargaID
+                inner join Seccion S on CA.SeccionID = S.SeccionID
+                inner join Grado G on S.GradoID = G.GradoID
+                inner join Docente D on CA.DocenteID = D.DocenteID
+                where D.UsuarioID = @Docente
+                  and G.NombreGrado = @Grado
+                  and S.Letra = @Seccion
+            order by Anio, Mes", cn))
+            {
+                cmd.Parameters.AddWithValue("@Docente", docenteId);
+                cmd.Parameters.AddWithValue("@Grado", cbGrado.SelectedItem.ToString());
+                cmd.Parameters.AddWithValue("@Seccion", cbSeccion.SelectedItem.ToString());
+
+                cn.Open();
+
+                using (SqlDataReader dr = cmd.ExecuteReader())
+                {
+                    while (dr.Read())
+                    {
+                        cbMes.Items.Add(new MesItem
+                        {
+                            Anio = Convert.ToInt32(dr["Anio"]),
+                            Mes = Convert.ToInt32(dr["Mes"])
+                        });
+                    }
+                }
+            }
+
+            if (cbMes.Items.Count > 0)
+                cbMes.SelectedIndex = cbMes.Items.Count - 1; // último mes (más reciente)
+        }
+
+        private void cbMes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbMes.SelectedItem is MesItem mes)
+            {
+                anioActual = mes.Anio;
+                mesActual = mes.Mes;
+
+                CargarReporte();
+            }
+        }
+        private string ObtenerNombreDocente()
+        {
+            string nombre = "";
+
+            using (SqlConnection cn = conexion.ObtenerConexion())
+            using (SqlCommand cmd = new SqlCommand(@"
+                select Nombre
+                from Docente
+                where UsuarioID = @Docente", cn))
+            {
+                cmd.Parameters.AddWithValue("@Docente", docenteId);
+                cn.Open();
+
+                object resultado = cmd.ExecuteScalar();
+
+                if (resultado != null)
+                    nombre = resultado.ToString();
+            }
+
+            return nombre;
+        }
+
+        private void cbGrado_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CargarSecciones();
+
+            if (cbSeccion.Items.Count > 0)
+                cbSeccion.SelectedIndex = 0;
+        }
+
+        private void cbSeccion_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CargarReporte();
+            CargarMeses();
+        }
+        private void CargarReporte()
+        {
+            if (cbGrado.SelectedItem == null || cbSeccion.SelectedItem == null)
+                return;
+
+            DateTime fechaInicial = new DateTime(anioActual, mesActual, 1);
+            DateTime fechaFinal = fechaInicial.AddMonths(1).AddDays(-1);
+
+            string estudiante = txtBuscar.Text.Trim();
+            string grado = cbGrado.SelectedItem.ToString();
+            string seccion = cbSeccion.SelectedItem.ToString();
+
+            DataTable dt = ObtenerAsistencias(
+                fechaInicial,
+                fechaFinal,
+                docenteId,
+                estudiante,
+                grado,
+                seccion
+            );
+
+            ConfigurarDataGridView(anioActual, mesActual);
+            LlenarGridDesdeDataTable(dt, anioActual, mesActual);
+            ActualizarLabelRegistros();
+
+            ActualizarTituloMes();
+        }
+
+        private void ActualizarTituloMes()
+        {
+            DateTime fecha = new DateTime(anioActual, mesActual, 1);
+            lblMes.Text = fecha.ToString("MMMM yyyy").ToUpper();
+            //lblFecha.Text = fecha.ToString("dd/MM/yyyy");
+        }
+
+        private DataTable ObtenerAsistencias(
+             DateTime fechaInicial,
+             DateTime fechaFinal,
+             int docente,
+             string estudiante,
+             string grado,
+             string seccion)
+        {
+            DataTable dt = new DataTable();
+
+            using (SqlConnection cn = conexion.ObtenerConexion())
+            using (SqlCommand cmd = new SqlCommand("spMAE_Asistencias_por_Grado", cn))
+            {
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@fecha_inicial", fechaInicial);
+                cmd.Parameters.AddWithValue("@fecha_final", fechaFinal);
+                cmd.Parameters.AddWithValue("@Docente", docente);
+                cmd.Parameters.AddWithValue("@Grado", grado);
+                cmd.Parameters.AddWithValue("@Seccion", seccion);
+
+                if (string.IsNullOrWhiteSpace(estudiante))
+                    cmd.Parameters.AddWithValue("@Estudiante", DBNull.Value);
+                else
+                    cmd.Parameters.AddWithValue("@Estudiante", estudiante.Trim());
+
+                using (SqlDataAdapter da = new SqlDataAdapter(cmd))
+                {
+                    da.Fill(dt);
+                }
+            }
+
+            return dt;
+        }
+        //private void btnAnterior_Click(object sender, EventArgs e)
+        //{
+        //    DateTime fecha = new DateTime(anioActual, mesActual, 1).AddMonths(-1);
+        //    anioActual = fecha.Year;
+        //    mesActual = fecha.Month;
+        //    CargarReporte();
+        //}
+
+        //private void btnSiguiente_Click(object sender, EventArgs e)
+        //{
+        //    DateTime fecha = new DateTime(anioActual, mesActual, 1).AddMonths(1);
+        //    anioActual = fecha.Year;
+        //    mesActual = fecha.Month;
+        //    CargarReporte();
+        //}
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            CargarReporte();
+        }
         private void lblTitulo_Click(object sender, EventArgs e)
         {
             this.Text = "Reporte de Asistencia";
@@ -248,35 +559,92 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
             }
         }
 
-        private void CargarDatosEjemplo(int anio, int mes)
+        private void LlenarGridDesdeDataTable(DataTable dt, int anio, int mes)
         {
             dgvAsistencia.Rows.Clear();
 
+            if (dt == null || dt.Rows.Count == 0)
+                return;
+
             int totalDias = DateTime.DaysInMonth(anio, mes);
 
-            string[] fila = new string[5 + totalDias];
+            var grupos = dt.AsEnumerable()
+                .GroupBy(r => r["Estudiante"].ToString())
+                .OrderBy(g => g.Key)
+                .ToList();
 
-            fila[0] = "1";              // ID
-            fila[1] = "JORGE LOPEZ";    // Nombre
-            fila[2] = "0";              // TP
-            fila[3] = "0";              // TF
-            fila[4] = "0";              // TE
+            int correlativo = 1;
 
-            for (int i = 1; i <= totalDias; i++)
+            foreach (var grupo in grupos)
             {
-                fila[4 + i] = "●";
+                string[] fila = new string[5 + totalDias];
+
+                fila[0] = correlativo.ToString();
+                fila[1] = grupo.Key;
+                fila[2] = "0";
+                fila[3] = "0";
+                fila[4] = "0";
+
+                for (int i = 1; i <= totalDias; i++)
+                {
+                    fila[4 + i] = "";
+                }
+
+                foreach (var item in grupo
+                             .Where(x => x["Fecha"] != DBNull.Value && x["Estado"] != DBNull.Value)
+                             .GroupBy(x => Convert.ToDateTime(x["Fecha"]).Day)
+                             .Select(g => g.First()))
+                {
+                    DateTime fecha = Convert.ToDateTime(item["Fecha"]);
+
+                    if (fecha.Year != anio || fecha.Month != mes)
+                        continue;
+
+                    int dia = fecha.Day;
+                    string estado = item["Estado"].ToString().Trim().ToUpper();
+
+                    fila[4 + dia] = MapearEstadoASimbolo(estado);
+                }
+
+                dgvAsistencia.Rows.Add(fila);
+                correlativo++;
             }
-
-            fila[5] = "●"; // D1
-            fila[6] = "X"; // D2
-            fila[7] = "E"; // D3
-            fila[8] = "F"; // D4
-
-            dgvAsistencia.Rows.Add(fila);
 
             CalcularTotalesTodasLasFilas();
         }
+        private string MapearEstadoASimbolo(string estado)
+        {
+            switch (estado)
+            {
+                case "P":
+                case "PRESENTE":
+                case "ASISTIO":
+                case "ASISTIÓ":
+                    return "●";
 
+                case "E":
+                case "EXCUSA":
+                case "EXCUSADO":
+                    return "E";
+
+                case "F":
+                case "FALTA":
+                case "AUSENTE":
+                    return "X";
+
+                case "I":
+                    return "I";
+
+                case "N":
+                    return "N";
+
+                case "D":
+                    return "D";
+
+                default:
+                    return "";
+            }
+        }
         private void CalcularTotalesTodasLasFilas()
         {
             foreach (DataGridViewRow fila in dgvAsistencia.Rows)
@@ -311,5 +679,8 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
             fila.Cells["TF"].Value = tf;
             fila.Cells["TE"].Value = te;
         }
+
+
     }
+
 }
