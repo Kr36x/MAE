@@ -1,4 +1,6 @@
-﻿using System;
+﻿using GestionAcademicaV2.Modelos;
+using Microsoft.Data.SqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,6 +20,176 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
             pantallaPrincipal = principal;
         }
 
+        private void CargarPromediosPorGrado()
+        {
+            EjecutarUtilidades util = new EjecutarUtilidades();
+
+            SqlParameter[] p =
+            {
+        new SqlParameter("@Anio", Convert.ToInt32(dtpAnio.Value))
+    };
+
+            DataTable dt = util.EjecutarSP("spPromedioYExcelenciaPorNivel", p);
+
+            foreach (DataRow row in dt.Rows)
+            {
+                string grado = row["NombreGrado"].ToString();
+                string promedio = row["PromedioGrado"].ToString();
+                string excelencia = row["EstudiantesExcelencia"].ToString();
+
+                switch (grado.ToUpper())
+                {
+                    case "PRE-KINDER":
+                        txtPromedioPrekinder.Text = promedio;
+                        txtExcelenciaPrekinder.Text = excelencia;
+                        lbSeccionPrekinder.Text = "A";
+                        int p1 = Convert.ToInt32(promedio);
+
+                        if (p1 >= 90)
+                            txtPromedioPrekinder1.BackColor = Color.ForestGreen;
+                            txtPromedioPrekinder.BackColor = Color.ForestGreen;
+                        if (p1 < 90 && p1 >= 70)
+                            txtPromedioPrekinder1.BackColor = Color.Yellow;
+                            txtPromedioPrekinder.BackColor = Color.Yellow;
+                        if (p1 < 70)
+                            txtPromedioPrekinder1.BackColor = Color.Tomato;
+                            txtPromedioPrekinder.BackColor = Color.Tomato;
+                        break;
+
+                    case "KINDER":
+                        txtPromedioKinder.Text = promedio;
+                        txtExcelenciaKinder.Text = excelencia;
+                        lbSeccionKinder.Text = "A";
+                        int p2 = Convert.ToInt32(promedio);
+
+                        if (p2 >= 90)
+                            txtPromedioKinder1.BackColor = Color.ForestGreen;
+                        txtPromedioKinder.BackColor = Color.ForestGreen;
+                        if (p2 < 90 && p2 >= 70)
+                            txtPromedioKinder1.BackColor = Color.Yellow;
+                        txtPromedioKinder.BackColor = Color.Yellow;
+                        if (p2 < 70)
+                            txtPromedioKinder1.BackColor = Color.Tomato;
+                        txtPromedioKinder.BackColor = Color.Tomato;
+                        break;
+
+                    case "PREPARATORIA":
+                        txtPromedioPrepa.Text = promedio;
+                        txtExcelenciaPrepa.Text = excelencia;
+                        lbSeccionPrepa.Text = "A";
+                        int p3 = Convert.ToInt32(promedio);
+
+                        if (p3 >= 90)
+                            txtPromedioPrepa1.BackColor = Color.ForestGreen;
+                        txtPromedioPrepa.BackColor = Color.ForestGreen;
+                        if (p3 < 90 && p3 >= 70)
+                            txtPromedioPrepa1.BackColor = Color.Yellow;
+                            txtPromedioPrepa.BackColor = Color.Yellow;
+                        if (p3 < 70)
+                            txtPromedioPrepa1.BackColor = Color.Tomato;
+                            txtPromedioPrepa.BackColor = Color.Tomato;
+                        break;
+
+                    case "PRIMERO":
+                        txtPromedioPrimero.Text = promedio;
+                        txtExcelenciaPrimero.Text = excelencia;
+                        lbSeccionPrimero.Text = "A";
+                        int p4 = Convert.ToInt32(promedio);
+
+                        if (p4 >= 90)
+                            txtPromedioPrimero1.BackColor = Color.ForestGreen;
+                            txtPromedioPrimero.BackColor = Color.ForestGreen;
+                        if (p4 < 90 && p4 >= 70)
+                            txtPromedioPrimero1.BackColor = Color.Yellow;
+                            txtPromedioPrimero.BackColor = Color.Yellow;
+                        if (p4 < 70)
+                            txtPromedioPrimero1.BackColor = Color.Tomato;
+                            txtPromedioPrimero.BackColor = Color.Tomato;
+                        break;
+
+                    case "SEGUNDO":
+                        txtPromedioSegundo.Text = promedio;
+                        txtExcelenciaSegundo.Text = excelencia;
+                        lbSeccionSegundo.Text = "A";
+                        int p5 = Convert.ToInt32(promedio);
+
+                        if (p5 >= 90)
+                            txtPromedioSegundo1.BackColor = Color.ForestGreen;
+                            txtPromedioSegundo.BackColor = Color.ForestGreen;
+                        if (p5 < 90 && p5 >= 70)
+                            txtPromedioSegundo1.BackColor = Color.Yellow;
+                            txtPromedioSegundo.BackColor = Color.Yellow;
+                        if (p5 < 70)
+                            txtPromedioSegundo1.BackColor = Color.Tomato;
+                            txtPromedioSegundo.BackColor = Color.Tomato;
+                        break;
+
+                    case "TERCERO":
+                        txtPromedioTercero.Text = promedio;
+                        txtExcelenciaTercero.Text = excelencia;
+                        lbSeccionTercero.Text = "A";
+                        int p6 = Convert.ToInt32(promedio);
+
+                        if (p6 >= 90)
+                            txtPromedioTercero1.BackColor = Color.ForestGreen;
+                            txtPromedioTercero.BackColor = Color.ForestGreen;
+                        if (p6 < 90 && p6 >= 70)
+                            txtPromedioTercero1.BackColor = Color.Yellow;
+                            txtPromedioTercero.BackColor = Color.Yellow;
+                        if (p6 < 70)
+                            txtPromedioSegundo1.BackColor = Color.Tomato;
+                            txtPromedioSegundo.BackColor = Color.Tomato;
+                        break;
+
+                    case "CUARTO":
+                        txtPromedioCuarto.Text = promedio;
+                        txtExcelenciaCuarto.Text = excelencia;
+                        lbSeccionCuarto.Text = "A";
+                        break;
+
+                    case "QUINTO":
+                        txtPromedioQuinto.Text = promedio;
+                        txtExcelenciaQuinto.Text = excelencia;
+                        lbSeccionQuinto.Text = "A";
+                        break;
+
+                    case "SEXTO":
+                        txtPromedioSexto.Text = promedio;
+                        txtExcelenciaSexto.Text = excelencia;
+                        lbSeccionSexto.Text = "A";
+                        break;
+
+                    case "SÉPTIMO":
+                    case "SEPTIMO":
+                        txtPromedioSeptimo.Text = promedio;
+                        txtExcelenciaSeptimo.Text = excelencia;
+                        lbSeccionSeptimo.Text = "A";
+                        break;
+
+                    case "OCTAVO":
+                        txtPromedioOctavo.Text = promedio;
+                        txtExcelenciaOctavo.Text = excelencia;
+                        lbSeccionOctavo.Text = "A";
+                        break;
+
+                    case "NOVENO":
+                        txtPromedioNoveno.Text = promedio;
+                        txtExcelenciaNoveno.Text = excelencia;
+                        lbSeccionNoveno.Text = "A";
+                        break;
+
+                    case "DECIMO":
+                        txtPromedioDecimo.Text = promedio;
+                        lbSeccionDecimo.Text = "A";
+                        break;
+
+                    case "UNDECIMO":
+                        txtPromedioUndecimo.Text = promedio;
+                        lbSeccionUndecimo.Text = "A";
+                        break;
+                }
+            }
+        }
         private void FrmDashboard_Load(object sender, EventArgs e)
         {
             ctnPrimero.Visible = false;

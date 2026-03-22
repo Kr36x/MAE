@@ -147,6 +147,7 @@
             txtIdentidad.BackColor = Color.Transparent;
             txtIdentidad.BorderColor = Color.Black;
             txtIdentidad.BorderRadius = 10;
+            txtIdentidad.CharacterCasing = CharacterCasing.Upper;
             txtIdentidad.CustomizableEdges = customizableEdges1;
             txtIdentidad.DefaultText = "";
             txtIdentidad.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
@@ -203,6 +204,7 @@
             txtNombre.BackColor = Color.Transparent;
             txtNombre.BorderColor = Color.Black;
             txtNombre.BorderRadius = 10;
+            txtNombre.CharacterCasing = CharacterCasing.Upper;
             txtNombre.CustomizableEdges = customizableEdges5;
             txtNombre.DefaultText = "";
             txtNombre.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
@@ -280,6 +282,7 @@
             dgvUsuarios.GridColor = Color.FromArgb(194, 201, 231);
             dgvUsuarios.Location = new Point(62, 373);
             dgvUsuarios.Name = "dgvUsuarios";
+            dgvUsuarios.ReadOnly = true;
             dgvUsuarios.RowHeadersVisible = false;
             dgvUsuarios.Size = new Size(911, 225);
             dgvUsuarios.TabIndex = 16;
@@ -297,7 +300,7 @@
             dgvUsuarios.ThemeStyle.HeaderStyle.ForeColor = Color.White;
             dgvUsuarios.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dgvUsuarios.ThemeStyle.HeaderStyle.Height = 25;
-            dgvUsuarios.ThemeStyle.ReadOnly = false;
+            dgvUsuarios.ThemeStyle.ReadOnly = true;
             dgvUsuarios.ThemeStyle.RowsStyle.BackColor = Color.FromArgb(216, 220, 239);
             dgvUsuarios.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             dgvUsuarios.ThemeStyle.RowsStyle.Font = new Font("Segoe UI", 9F);
@@ -310,16 +313,19 @@
             // 
             Identidad.HeaderText = "IDENTIDAD";
             Identidad.Name = "Identidad";
+            Identidad.ReadOnly = true;
             // 
             // Nombre
             // 
             Nombre.HeaderText = "NOMBRE";
             Nombre.Name = "Nombre";
+            Nombre.ReadOnly = true;
             // 
             // Rol
             // 
             Rol.HeaderText = "ROL";
             Rol.Name = "Rol";
+            Rol.ReadOnly = true;
             // 
             // lbSexo
             // 
@@ -369,6 +375,7 @@
             txtDireccion.BackColor = Color.Transparent;
             txtDireccion.BorderColor = Color.Black;
             txtDireccion.BorderRadius = 10;
+            txtDireccion.CharacterCasing = CharacterCasing.Upper;
             txtDireccion.CustomizableEdges = customizableEdges11;
             txtDireccion.DefaultText = "";
             txtDireccion.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
@@ -403,6 +410,7 @@
             txtTelefono.BackColor = Color.Transparent;
             txtTelefono.BorderColor = Color.Black;
             txtTelefono.BorderRadius = 10;
+            txtTelefono.CharacterCasing = CharacterCasing.Upper;
             txtTelefono.CustomizableEdges = customizableEdges13;
             txtTelefono.DefaultText = "";
             txtTelefono.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
@@ -441,6 +449,7 @@
             txtEspecialidad.BackColor = Color.Transparent;
             txtEspecialidad.BorderColor = Color.Black;
             txtEspecialidad.BorderRadius = 10;
+            txtEspecialidad.CharacterCasing = CharacterCasing.Upper;
             txtEspecialidad.CustomizableEdges = customizableEdges15;
             txtEspecialidad.DefaultText = "";
             txtEspecialidad.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
@@ -476,6 +485,7 @@
             dtpFechaNacimiento.ShadowDecoration.CustomizableEdges = customizableEdges18;
             dtpFechaNacimiento.Size = new Size(182, 36);
             dtpFechaNacimiento.TabIndex = 10;
+            dtpFechaNacimiento.TextAlign = HorizontalAlignment.Center;
             dtpFechaNacimiento.Value = new DateTime(2026, 3, 9, 16, 34, 47, 117);
             dtpFechaNacimiento.Visible = false;
             // 
@@ -538,6 +548,7 @@
             txtPosicion.BackColor = Color.Transparent;
             txtPosicion.BorderColor = Color.Black;
             txtPosicion.BorderRadius = 10;
+            txtPosicion.CharacterCasing = CharacterCasing.Upper;
             txtPosicion.CustomizableEdges = customizableEdges21;
             txtPosicion.DefaultText = "";
             txtPosicion.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
@@ -572,6 +583,7 @@
             txtUsuario.BackColor = Color.Transparent;
             txtUsuario.BorderColor = Color.Black;
             txtUsuario.BorderRadius = 10;
+            txtUsuario.CharacterCasing = CharacterCasing.Upper;
             txtUsuario.CustomizableEdges = customizableEdges23;
             txtUsuario.DefaultText = "";
             txtUsuario.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
@@ -674,6 +686,7 @@
             txtLugarTrabajo.BackColor = Color.Transparent;
             txtLugarTrabajo.BorderColor = Color.Black;
             txtLugarTrabajo.BorderRadius = 10;
+            txtLugarTrabajo.CharacterCasing = CharacterCasing.Upper;
             txtLugarTrabajo.CustomizableEdges = customizableEdges29;
             txtLugarTrabajo.DefaultText = "";
             txtLugarTrabajo.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
@@ -709,6 +722,7 @@
             txtParentesco.BackColor = Color.Transparent;
             txtParentesco.BorderColor = Color.Black;
             txtParentesco.BorderRadius = 10;
+            txtParentesco.CharacterCasing = CharacterCasing.Upper;
             txtParentesco.CustomizableEdges = customizableEdges31;
             txtParentesco.DefaultText = "";
             txtParentesco.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);

@@ -30,8 +30,6 @@
         {
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges155 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges156 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges301 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges302 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges165 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges166 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges157 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -176,18 +174,19 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges296 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges297 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges298 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges301 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges302 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges303 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges304 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges305 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges306 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges305 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges306 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges307 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges308 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            cntPrincipal = new Guna.UI2.WinForms.Guna2ContainerControl();
             ctnDecimoGrado = new Guna.UI2.WinForms.Guna2ContainerControl();
             txtExcelenciaDecimo = new Guna.UI2.WinForms.Guna2TextBox();
             lbDecimo = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -219,7 +218,7 @@
             guna2HtmlLabel16 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             txtExcelenciaTercero1 = new Guna.UI2.WinForms.Guna2TextBox();
             lbSeccionTercero = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            txtPromedioTecero1 = new Guna.UI2.WinForms.Guna2TextBox();
+            txtPromedioTercero1 = new Guna.UI2.WinForms.Guna2TextBox();
             ctnOctavo = new Guna.UI2.WinForms.Guna2ContainerControl();
             txtPromedioOctavo = new Guna.UI2.WinForms.Guna2TextBox();
             txtExcelenciaOctavo = new Guna.UI2.WinForms.Guna2TextBox();
@@ -275,7 +274,7 @@
             txtPromedioPrepa = new Guna.UI2.WinForms.Guna2TextBox();
             txtExcelenciaPrepa1 = new Guna.UI2.WinForms.Guna2TextBox();
             txtPromedioPrepa1 = new Guna.UI2.WinForms.Guna2TextBox();
-            guna2HtmlLabel11 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            lbSeccionPrepa = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel10 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel6 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             ctnCuarto = new Guna.UI2.WinForms.Guna2ContainerControl();
@@ -310,8 +309,8 @@
             guna2HtmlLabel19 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel26 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             dtpAnio = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            pnlPrincipal = new Guna.UI2.WinForms.Guna2Panel();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).BeginInit();
-            cntPrincipal.SuspendLayout();
             ctnDecimoGrado.SuspendLayout();
             ctnUndecimo.SuspendLayout();
             ctnNoveno.SuspendLayout();
@@ -328,6 +327,7 @@
             CtnPrekinder.SuspendLayout();
             ctnSecundario.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)chartDesempenoEscolar).BeginInit();
+            pnlPrincipal.SuspendLayout();
             SuspendLayout();
             // 
             // guna2PictureBox1
@@ -363,35 +363,6 @@
             guna2HtmlLabel2.TabIndex = 2;
             guna2HtmlLabel2.Text = "REPORTE GLOBAL DE RENDIMIENTO INSTITUCIONAL";
             // 
-            // cntPrincipal
-            // 
-            cntPrincipal.AutoScroll = true;
-            cntPrincipal.AutoScrollMargin = new Size(10, 10);
-            cntPrincipal.BorderColor = Color.Silver;
-            cntPrincipal.BorderRadius = 30;
-            cntPrincipal.BorderThickness = 2;
-            cntPrincipal.Controls.Add(ctnDecimoGrado);
-            cntPrincipal.Controls.Add(ctnUndecimo);
-            cntPrincipal.Controls.Add(ctnNoveno);
-            cntPrincipal.Controls.Add(ctnTercero);
-            cntPrincipal.Controls.Add(ctnOctavo);
-            cntPrincipal.Controls.Add(ctnSegundo);
-            cntPrincipal.Controls.Add(ctnSeptimo);
-            cntPrincipal.Controls.Add(ctnPrimero);
-            cntPrincipal.Controls.Add(ctnSexto);
-            cntPrincipal.Controls.Add(ctnQuinto);
-            cntPrincipal.Controls.Add(ctnPreparatoria);
-            cntPrincipal.Controls.Add(ctnCuarto);
-            cntPrincipal.Controls.Add(ctnKinder);
-            cntPrincipal.Controls.Add(CtnPrekinder);
-            cntPrincipal.CustomizableEdges = customizableEdges301;
-            cntPrincipal.ForeColor = Color.White;
-            cntPrincipal.Location = new Point(69, 155);
-            cntPrincipal.Name = "cntPrincipal";
-            cntPrincipal.ShadowDecoration.CustomizableEdges = customizableEdges302;
-            cntPrincipal.Size = new Size(898, 224);
-            cntPrincipal.TabIndex = 3;
-            // 
             // ctnDecimoGrado
             // 
             ctnDecimoGrado.BackColor = Color.Transparent;
@@ -406,7 +377,7 @@
             ctnDecimoGrado.Controls.Add(lbSeccionDecimo);
             ctnDecimoGrado.Controls.Add(txtPromedioDecimo1);
             ctnDecimoGrado.CustomizableEdges = customizableEdges165;
-            ctnDecimoGrado.Location = new Point(33, 15);
+            ctnDecimoGrado.Location = new Point(31, 9);
             ctnDecimoGrado.Name = "ctnDecimoGrado";
             ctnDecimoGrado.ShadowDecoration.CustomizableEdges = customizableEdges166;
             ctnDecimoGrado.Size = new Size(271, 194);
@@ -560,7 +531,7 @@
             ctnUndecimo.Controls.Add(guna2HtmlLabel21);
             ctnUndecimo.Controls.Add(guna2HtmlLabel23);
             ctnUndecimo.CustomizableEdges = customizableEdges175;
-            ctnUndecimo.Location = new Point(310, 15);
+            ctnUndecimo.Location = new Point(308, 11);
             ctnUndecimo.Name = "ctnUndecimo";
             ctnUndecimo.ShadowDecoration.CustomizableEdges = customizableEdges176;
             ctnUndecimo.Size = new Size(271, 194);
@@ -713,7 +684,7 @@
             ctnNoveno.Controls.Add(lbSeccionNoveno);
             ctnNoveno.Controls.Add(txtPromedioNoveno1);
             ctnNoveno.CustomizableEdges = customizableEdges185;
-            ctnNoveno.Location = new Point(587, 448);
+            ctnNoveno.Location = new Point(585, 436);
             ctnNoveno.Name = "ctnNoveno";
             ctnNoveno.ShadowDecoration.CustomizableEdges = customizableEdges186;
             ctnNoveno.Size = new Size(271, 194);
@@ -855,6 +826,8 @@
             // 
             // ctnTercero
             // 
+            ctnTercero.AutoScroll = true;
+            ctnTercero.AutoScrollMargin = new Size(10, 10);
             ctnTercero.BackColor = Color.Transparent;
             ctnTercero.BorderColor = Color.Silver;
             ctnTercero.BorderRadius = 20;
@@ -865,9 +838,9 @@
             ctnTercero.Controls.Add(guna2HtmlLabel16);
             ctnTercero.Controls.Add(txtExcelenciaTercero1);
             ctnTercero.Controls.Add(lbSeccionTercero);
-            ctnTercero.Controls.Add(txtPromedioTecero1);
+            ctnTercero.Controls.Add(txtPromedioTercero1);
             ctnTercero.CustomizableEdges = customizableEdges195;
-            ctnTercero.Location = new Point(587, 15);
+            ctnTercero.Location = new Point(587, 9);
             ctnTercero.Name = "ctnTercero";
             ctnTercero.ShadowDecoration.CustomizableEdges = customizableEdges196;
             ctnTercero.Size = new Size(271, 194);
@@ -982,30 +955,30 @@
             lbSeccionTercero.TabIndex = 10;
             lbSeccionTercero.Text = "ÚNICA";
             // 
-            // txtPromedioTecero1
+            // txtPromedioTercero1
             // 
-            txtPromedioTecero1.BorderColor = Color.Black;
-            txtPromedioTecero1.BorderRadius = 10;
-            txtPromedioTecero1.CustomizableEdges = customizableEdges193;
-            txtPromedioTecero1.DefaultText = "PROMEDIO";
-            txtPromedioTecero1.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            txtPromedioTecero1.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            txtPromedioTecero1.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            txtPromedioTecero1.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            txtPromedioTecero1.FillColor = Color.Tomato;
-            txtPromedioTecero1.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtPromedioTecero1.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            txtPromedioTecero1.ForeColor = Color.Black;
-            txtPromedioTecero1.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtPromedioTecero1.Location = new Point(28, 72);
-            txtPromedioTecero1.Margin = new Padding(4);
-            txtPromedioTecero1.Name = "txtPromedioTecero1";
-            txtPromedioTecero1.PlaceholderText = "";
-            txtPromedioTecero1.ReadOnly = true;
-            txtPromedioTecero1.SelectedText = "";
-            txtPromedioTecero1.ShadowDecoration.CustomizableEdges = customizableEdges194;
-            txtPromedioTecero1.Size = new Size(213, 48);
-            txtPromedioTecero1.TabIndex = 11;
+            txtPromedioTercero1.BorderColor = Color.Black;
+            txtPromedioTercero1.BorderRadius = 10;
+            txtPromedioTercero1.CustomizableEdges = customizableEdges193;
+            txtPromedioTercero1.DefaultText = "PROMEDIO";
+            txtPromedioTercero1.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            txtPromedioTercero1.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            txtPromedioTercero1.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            txtPromedioTercero1.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            txtPromedioTercero1.FillColor = Color.Tomato;
+            txtPromedioTercero1.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtPromedioTercero1.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            txtPromedioTercero1.ForeColor = Color.Black;
+            txtPromedioTercero1.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtPromedioTercero1.Location = new Point(28, 72);
+            txtPromedioTercero1.Margin = new Padding(4);
+            txtPromedioTercero1.Name = "txtPromedioTercero1";
+            txtPromedioTercero1.PlaceholderText = "";
+            txtPromedioTercero1.ReadOnly = true;
+            txtPromedioTercero1.SelectedText = "";
+            txtPromedioTercero1.ShadowDecoration.CustomizableEdges = customizableEdges194;
+            txtPromedioTercero1.Size = new Size(213, 48);
+            txtPromedioTercero1.TabIndex = 11;
             // 
             // ctnOctavo
             // 
@@ -1022,7 +995,7 @@
             ctnOctavo.Controls.Add(txtExcelenciaOctavo1);
             ctnOctavo.Controls.Add(guna2HtmlLabel22);
             ctnOctavo.CustomizableEdges = customizableEdges207;
-            ctnOctavo.Location = new Point(310, 448);
+            ctnOctavo.Location = new Point(308, 436);
             ctnOctavo.Name = "ctnOctavo";
             ctnOctavo.ShadowDecoration.CustomizableEdges = customizableEdges208;
             ctnOctavo.Size = new Size(271, 194);
@@ -1201,7 +1174,7 @@
             ctnSegundo.Controls.Add(txtExcelenciaSegundo1);
             ctnSegundo.Controls.Add(guna2HtmlLabel14);
             ctnSegundo.CustomizableEdges = customizableEdges219;
-            ctnSegundo.Location = new Point(310, 15);
+            ctnSegundo.Location = new Point(308, 11);
             ctnSegundo.Name = "ctnSegundo";
             ctnSegundo.ShadowDecoration.CustomizableEdges = customizableEdges220;
             ctnSegundo.Size = new Size(271, 194);
@@ -1379,7 +1352,7 @@
             ctnSeptimo.Controls.Add(guna2HtmlLabel25);
             ctnSeptimo.Controls.Add(txtPromedioSeptimo1);
             ctnSeptimo.CustomizableEdges = customizableEdges229;
-            ctnSeptimo.Location = new Point(33, 448);
+            ctnSeptimo.Location = new Point(31, 436);
             ctnSeptimo.Name = "ctnSeptimo";
             ctnSeptimo.ShadowDecoration.CustomizableEdges = customizableEdges230;
             ctnSeptimo.Size = new Size(271, 194);
@@ -1532,7 +1505,7 @@
             ctnPrimero.Controls.Add(guna2HtmlLabel9);
             ctnPrimero.Controls.Add(txtPromedioPrimero1);
             ctnPrimero.CustomizableEdges = customizableEdges239;
-            ctnPrimero.Location = new Point(33, 15);
+            ctnPrimero.Location = new Point(31, 11);
             ctnPrimero.Name = "ctnPrimero";
             ctnPrimero.ShadowDecoration.CustomizableEdges = customizableEdges240;
             ctnPrimero.Size = new Size(271, 194);
@@ -1685,7 +1658,7 @@
             ctnSexto.Controls.Add(guna2HtmlLabel27);
             ctnSexto.Controls.Add(guna2HtmlLabel28);
             ctnSexto.CustomizableEdges = customizableEdges249;
-            ctnSexto.Location = new Point(587, 229);
+            ctnSexto.Location = new Point(585, 223);
             ctnSexto.Name = "ctnSexto";
             ctnSexto.ShadowDecoration.CustomizableEdges = customizableEdges250;
             ctnSexto.Size = new Size(271, 194);
@@ -1839,7 +1812,7 @@
             ctnQuinto.Controls.Add(guna2HtmlLabel30);
             ctnQuinto.Controls.Add(guna2HtmlLabel31);
             ctnQuinto.CustomizableEdges = customizableEdges259;
-            ctnQuinto.Location = new Point(310, 229);
+            ctnQuinto.Location = new Point(308, 223);
             ctnQuinto.Name = "ctnQuinto";
             ctnQuinto.ShadowDecoration.CustomizableEdges = customizableEdges260;
             ctnQuinto.Size = new Size(271, 194);
@@ -1988,11 +1961,11 @@
             ctnPreparatoria.Controls.Add(txtPromedioPrepa);
             ctnPreparatoria.Controls.Add(txtExcelenciaPrepa1);
             ctnPreparatoria.Controls.Add(txtPromedioPrepa1);
-            ctnPreparatoria.Controls.Add(guna2HtmlLabel11);
+            ctnPreparatoria.Controls.Add(lbSeccionPrepa);
             ctnPreparatoria.Controls.Add(guna2HtmlLabel10);
             ctnPreparatoria.Controls.Add(guna2HtmlLabel6);
             ctnPreparatoria.CustomizableEdges = customizableEdges269;
-            ctnPreparatoria.Location = new Point(587, 15);
+            ctnPreparatoria.Location = new Point(585, 11);
             ctnPreparatoria.Name = "ctnPreparatoria";
             ctnPreparatoria.ShadowDecoration.CustomizableEdges = customizableEdges270;
             ctnPreparatoria.Size = new Size(271, 194);
@@ -2099,16 +2072,16 @@
             txtPromedioPrepa1.Size = new Size(213, 48);
             txtPromedioPrepa1.TabIndex = 3;
             // 
-            // guna2HtmlLabel11
+            // lbSeccionPrepa
             // 
-            guna2HtmlLabel11.BackColor = Color.Transparent;
-            guna2HtmlLabel11.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            guna2HtmlLabel11.ForeColor = Color.Black;
-            guna2HtmlLabel11.Location = new Point(169, 43);
-            guna2HtmlLabel11.Name = "guna2HtmlLabel11";
-            guna2HtmlLabel11.Size = new Size(51, 22);
-            guna2HtmlLabel11.TabIndex = 2;
-            guna2HtmlLabel11.Text = "ÚNICA";
+            lbSeccionPrepa.BackColor = Color.Transparent;
+            lbSeccionPrepa.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbSeccionPrepa.ForeColor = Color.Black;
+            lbSeccionPrepa.Location = new Point(169, 43);
+            lbSeccionPrepa.Name = "lbSeccionPrepa";
+            lbSeccionPrepa.Size = new Size(51, 22);
+            lbSeccionPrepa.TabIndex = 2;
+            lbSeccionPrepa.Text = "ÚNICA";
             // 
             // guna2HtmlLabel10
             // 
@@ -2146,7 +2119,7 @@
             ctnCuarto.Controls.Add(guna2HtmlLabel33);
             ctnCuarto.Controls.Add(guna2HtmlLabel34);
             ctnCuarto.CustomizableEdges = customizableEdges279;
-            ctnCuarto.Location = new Point(33, 229);
+            ctnCuarto.Location = new Point(31, 223);
             ctnCuarto.Name = "ctnCuarto";
             ctnCuarto.ShadowDecoration.CustomizableEdges = customizableEdges280;
             ctnCuarto.Size = new Size(271, 194);
@@ -2302,7 +2275,7 @@
             ctnKinder.Controls.Add(guna2HtmlLabel8);
             ctnKinder.Controls.Add(guna2HtmlLabel5);
             ctnKinder.CustomizableEdges = customizableEdges289;
-            ctnKinder.Location = new Point(310, 15);
+            ctnKinder.Location = new Point(308, 11);
             ctnKinder.Name = "ctnKinder";
             ctnKinder.ShadowDecoration.CustomizableEdges = customizableEdges290;
             ctnKinder.Size = new Size(271, 194);
@@ -2455,7 +2428,7 @@
             CtnPrekinder.Controls.Add(guna2HtmlLabel7);
             CtnPrekinder.Controls.Add(guna2HtmlLabel4);
             CtnPrekinder.CustomizableEdges = customizableEdges299;
-            CtnPrekinder.Location = new Point(33, 15);
+            CtnPrekinder.Location = new Point(31, 8);
             CtnPrekinder.Name = "CtnPrekinder";
             CtnPrekinder.ShadowDecoration.CustomizableEdges = customizableEdges300;
             CtnPrekinder.Size = new Size(271, 194);
@@ -2602,7 +2575,7 @@
             cbbNivel.BackColor = Color.Transparent;
             cbbNivel.BorderColor = Color.Black;
             cbbNivel.BorderRadius = 10;
-            cbbNivel.CustomizableEdges = customizableEdges303;
+            cbbNivel.CustomizableEdges = customizableEdges301;
             cbbNivel.DrawMode = DrawMode.OwnerDrawFixed;
             cbbNivel.DropDownStyle = ComboBoxStyle.DropDownList;
             cbbNivel.FillColor = SystemColors.HotTrack;
@@ -2614,7 +2587,7 @@
             cbbNivel.Items.AddRange(new object[] { "PRE-BÁSICA", "BÁSICA", "MEDIA" });
             cbbNivel.Location = new Point(358, 113);
             cbbNivel.Name = "cbbNivel";
-            cbbNivel.ShadowDecoration.CustomizableEdges = customizableEdges304;
+            cbbNivel.ShadowDecoration.CustomizableEdges = customizableEdges302;
             cbbNivel.Size = new Size(609, 36);
             cbbNivel.TabIndex = 0;
             cbbNivel.TextAlign = HorizontalAlignment.Center;
@@ -2628,11 +2601,11 @@
             ctnSecundario.Controls.Add(chartDesempenoEscolar);
             ctnSecundario.Controls.Add(lbAnio);
             ctnSecundario.Controls.Add(guna2HtmlLabel3);
-            ctnSecundario.CustomizableEdges = customizableEdges305;
-            ctnSecundario.Location = new Point(69, 385);
+            ctnSecundario.CustomizableEdges = customizableEdges303;
+            ctnSecundario.Location = new Point(69, 381);
             ctnSecundario.Name = "ctnSecundario";
-            ctnSecundario.ShadowDecoration.CustomizableEdges = customizableEdges306;
-            ctnSecundario.Size = new Size(898, 277);
+            ctnSecundario.ShadowDecoration.CustomizableEdges = customizableEdges304;
+            ctnSecundario.Size = new Size(898, 281);
             ctnSecundario.TabIndex = 4;
             ctnSecundario.Text = "guna2ContainerControl2";
             // 
@@ -2706,29 +2679,60 @@
             dtpAnio.BorderThickness = 1;
             dtpAnio.Checked = true;
             dtpAnio.CustomFormat = "yyyy";
-            dtpAnio.CustomizableEdges = customizableEdges307;
+            dtpAnio.CustomizableEdges = customizableEdges305;
             dtpAnio.FillColor = Color.Gainsboro;
-            dtpAnio.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dtpAnio.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             dtpAnio.Format = DateTimePickerFormat.Custom;
             dtpAnio.Location = new Point(825, 47);
             dtpAnio.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
             dtpAnio.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
             dtpAnio.Name = "dtpAnio";
-            dtpAnio.ShadowDecoration.CustomizableEdges = customizableEdges308;
+            dtpAnio.ShadowDecoration.CustomizableEdges = customizableEdges306;
             dtpAnio.Size = new Size(142, 36);
             dtpAnio.TabIndex = 8;
+            dtpAnio.TextAlign = HorizontalAlignment.Center;
             dtpAnio.Value = new DateTime(2026, 3, 21, 1, 13, 35, 415);
             dtpAnio.ValueChanged += guna2DateTimePicker1_ValueChanged;
+            // 
+            // pnlPrincipal
+            // 
+            pnlPrincipal.AutoScroll = true;
+            pnlPrincipal.AutoScrollMargin = new Size(10, 10);
+            pnlPrincipal.BackColor = Color.Transparent;
+            pnlPrincipal.BorderColor = Color.Silver;
+            pnlPrincipal.BorderRadius = 25;
+            pnlPrincipal.BorderThickness = 2;
+            pnlPrincipal.Controls.Add(ctnNoveno);
+            pnlPrincipal.Controls.Add(ctnOctavo);
+            pnlPrincipal.Controls.Add(ctnSeptimo);
+            pnlPrincipal.Controls.Add(ctnDecimoGrado);
+            pnlPrincipal.Controls.Add(ctnTercero);
+            pnlPrincipal.Controls.Add(ctnUndecimo);
+            pnlPrincipal.Controls.Add(ctnSexto);
+            pnlPrincipal.Controls.Add(ctnPrimero);
+            pnlPrincipal.Controls.Add(ctnQuinto);
+            pnlPrincipal.Controls.Add(ctnSegundo);
+            pnlPrincipal.Controls.Add(ctnCuarto);
+            pnlPrincipal.Controls.Add(ctnPreparatoria);
+            pnlPrincipal.Controls.Add(CtnPrekinder);
+            pnlPrincipal.Controls.Add(ctnKinder);
+            pnlPrincipal.CustomizableEdges = customizableEdges307;
+            pnlPrincipal.FillColor = Color.White;
+            pnlPrincipal.Location = new Point(71, 158);
+            pnlPrincipal.Name = "pnlPrincipal";
+            pnlPrincipal.ShadowDecoration.CustomizableEdges = customizableEdges308;
+            pnlPrincipal.Size = new Size(896, 217);
+            pnlPrincipal.TabIndex = 9;
             // 
             // FrmDashboard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1028, 674);
+            Controls.Add(pnlPrincipal);
             Controls.Add(dtpAnio);
             Controls.Add(guna2HtmlLabel26);
             Controls.Add(guna2HtmlLabel19);
-            Controls.Add(cntPrincipal);
             Controls.Add(ctnSecundario);
             Controls.Add(guna2HtmlLabel2);
             Controls.Add(guna2HtmlLabel1);
@@ -2739,7 +2743,6 @@
             Text = "REPORTE DE RENDIMIENTO ACADÉMICO";
             Load += FrmDashboard_Load;
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).EndInit();
-            cntPrincipal.ResumeLayout(false);
             ctnDecimoGrado.ResumeLayout(false);
             ctnDecimoGrado.PerformLayout();
             ctnUndecimo.ResumeLayout(false);
@@ -2771,6 +2774,7 @@
             ctnSecundario.ResumeLayout(false);
             ctnSecundario.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)chartDesempenoEscolar).EndInit();
+            pnlPrincipal.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -2780,7 +2784,6 @@
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
-        private Guna.UI2.WinForms.Guna2ContainerControl cntPrincipal;
         private Guna.UI2.WinForms.Guna2ComboBox cbbNivel;
         private Guna.UI2.WinForms.Guna2ContainerControl ctnSecundario;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
@@ -2805,7 +2808,7 @@
         private Guna.UI2.WinForms.Guna2TextBox txtExcelenciaKinder;
         private Guna.UI2.WinForms.Guna2TextBox txtPromedioKinder;
         private Guna.UI2.WinForms.Guna2TextBox txtPromedioPrepa1;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel11;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lbSeccionPrepa;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel10;
         private Guna.UI2.WinForms.Guna2TextBox txtExcelenciaPrepa1;
         private Guna.UI2.WinForms.Guna2TextBox txtPromedioPrepa;
@@ -2834,7 +2837,7 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel16;
         private Guna.UI2.WinForms.Guna2TextBox txtExcelenciaTercero1;
         private Guna.UI2.WinForms.Guna2HtmlLabel lbSeccionTercero;
-        private Guna.UI2.WinForms.Guna2TextBox txtPromedioTecero1;
+        private Guna.UI2.WinForms.Guna2TextBox txtPromedioTercero1;
         private Guna.UI2.WinForms.Guna2ContainerControl ctnNoveno;
         private Guna.UI2.WinForms.Guna2TextBox txtExcelenciaNoveno;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel13;
@@ -2903,5 +2906,6 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel lbSeccionDecimo;
         private Guna.UI2.WinForms.Guna2TextBox txtPromedioDecimo1;
         private Guna.UI2.WinForms.Guna2DateTimePicker dtpAnio;
+        private Guna.UI2.WinForms.Guna2Panel pnlPrincipal;
     }
 }
