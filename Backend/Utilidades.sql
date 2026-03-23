@@ -361,11 +361,92 @@ GO
 
 exec spMAE_CargaAcademicaDocente 2026
 
+CREATE OR ALTER PROCEDURE spMAE_BuscarFichaMatriculaPorIdentidad
+@Identidad VARCHAR(20)
+AS
+BEGIN
+    SET NOCOUNT ON;
 
+    SELECT 
+        E.EstudianteID,
+        E.Nombre,
+        E.Sexo,
+        E.Identidad,
+        E.Direccion,
+        E.Telefono,
+        E.FechaNacimiento,
+        E.Mano,
+        E.Alergia,
+        E.Imagen,
 
+        M.MatriculaID,
+        M.Fecha AS FechaMatricula,
+        M.Anio AS MatriculaAnio,
 
+        S.SeccionID,
+        S.Letra AS SeccionLetra,
+        S.Turno,
+        S.Aula,
 
+        G.GradoID,
+        G.NombreGrado,
+        G.Nivel
+    FROM Estudiante E
+    LEFT JOIN Matricula M ON M.EstudianteID = E.EstudianteID
+    LEFT JOIN Seccion S ON S.SeccionID = M.SeccionID
+    LEFT JOIN Grado G ON G.GradoID = S.GradoID
+    WHERE E.Identidad = @Identidad;
 
+    SELECT 
+        T.TutorID,
+        T.Nombre,
+        T.Identidad,
+        T.Telefono,
+        T.LugarTrabajo,
+        T.Parentesco
+    FROM Estudiante E
+    INNER JOIN TutorEstudiante TE ON TE.EstudianteID = E.EstudianteID
+    INNER JOIN Tutor T ON T.TutorID = TE.TutorID
+    WHERE E.Identidad = @Identidad;
+END;
+
+-------------------------------------------------------------------------
+CREATE OR ALTER PROCEDURE spMAE_ObtenerSecciones
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    WITH CTE AS
+    (
+        SELECT 
+            SeccionID,
+            Letra,
+            ROW_NUMBER() OVER (PARTITION BY Letra ORDER BY SeccionID) AS rn
+        FROM Seccion
+    )
+    SELECT 
+        SeccionID,
+        Letra
+    FROM CTE
+    WHERE rn = 1
+    ORDER BY Letra;
+END;
+
+exec spMAE_ObtenerSecciones
+
+select * from estudiante
+-------------------------------------------------------
+CREATE OR ALTER PROCEDURE spMAE_ObtenerSexo
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    SELECT 'M' AS Codigo, 'MASCULINO' AS Descripcion
+    UNION ALL
+    SELECT 'F', 'FEMENINO';
+END;
+
+exec spMAE_ObtenerSexo
 
 
 

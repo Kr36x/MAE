@@ -391,7 +391,7 @@
             cbbMano.Font = new Font("Segoe UI", 10F);
             cbbMano.ForeColor = Color.Black;
             cbbMano.ItemHeight = 20;
-            cbbMano.Items.AddRange(new object[] { "DERECHA", "IZQUIERDA" });
+            cbbMano.Items.AddRange(new object[] { "DERECHA", "IZQUIERDA", "AMBIDIESTRO" });
             cbbMano.Location = new Point(216, 275);
             cbbMano.Name = "cbbMano";
             cbbMano.ShadowDecoration.CustomizableEdges = customizableEdges18;
@@ -539,6 +539,7 @@
             btBuscar.Size = new Size(108, 25);
             btBuscar.TabIndex = 26;
             btBuscar.Text = "Buscar";
+            btBuscar.Click += btBuscar_Click;
             // 
             // lbNombreMadre
             // 

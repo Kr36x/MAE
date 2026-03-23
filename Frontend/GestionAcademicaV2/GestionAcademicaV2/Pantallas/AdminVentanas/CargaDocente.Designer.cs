@@ -177,6 +177,7 @@
             dtpAnio.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
             dtpAnio.Name = "dtpAnio";
             dtpAnio.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            dtpAnio.ShowUpDown = true;
             dtpAnio.Size = new Size(176, 27);
             dtpAnio.TabIndex = 8;
             dtpAnio.TextAlign = HorizontalAlignment.Center;

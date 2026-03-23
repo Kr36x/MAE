@@ -80,6 +80,63 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
             }
         }
 
+        private void CargarGrados2()
+        {
+            try
+            {
+                EjecutarUtilidades util = new EjecutarUtilidades();
+                DataTable tabla = util.EjecutarConsulta("SELECT * FROM vMAE_TraeGrados ORDER BY GradoID");
+
+                DataRow filaTodos = tabla.NewRow();
+                filaTodos["GradoID"] = 0;              
+                filaTodos["NombreGrado"] = "TODOS";    
+
+                tabla.Rows.InsertAt(filaTodos, 0);
+
+                cbbGrado.DataSource = tabla;
+                cbbGrado.DisplayMember = "NombreGrado";
+                cbbGrado.ValueMember = "GradoID";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al llenar grados: " + ex.Message,
+                                "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void BuscarDocentes2()
+        {
+            try
+            {
+                bool todosLosGrados = cbbGrado.SelectedValue != null &&
+                                      cbbGrado.SelectedValue.ToString() == "0";
+
+                bool todasLasSecciones = cbbSeccion.SelectedValue != null &&
+                                         cbbSeccion.SelectedValue.ToString() == "0";
+
+                SqlParameter[] parametros =
+                {
+                    new SqlParameter("@Grado",
+                    todosLosGrados ? (object)DBNull.Value : cbbGrado.Text),
+
+                    new SqlParameter("@Seccion",
+                    todasLasSecciones ? (object)DBNull.Value : cbbSeccion.Text),
+
+                    new SqlParameter("@Anio",
+                    string.IsNullOrWhiteSpace(dtpAnio.Text) ? (object)DBNull.Value : Convert.ToInt32(dtpAnio.Text)),
+
+                    new SqlParameter("@Nombre",
+                    string.IsNullOrWhiteSpace(txtBuscarDocente.Text) ? (object)DBNull.Value : txtBuscarDocente.Text)
+            };
+
+                DataTable dt = util.EjecutarSP("spMAE_BuscarDocentesPorGradoSeccionAnio", parametros);
+                dgvDocentes.DataSource = dt;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al buscar docentes: " + ex.Message,
+                                "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
         private void CargarGrados()
         {
             try
@@ -93,6 +150,29 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
             catch (Exception ex)
             {
                 MessageBox.Show("Error al llenar grados: " + ex.Message,
+                                "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void CargarSecciones()
+        {
+            try
+            {
+                DataTable dt = util.EjecutarSP("spMAE_ObtenerSecciones");
+
+                DataRow filaTodas = dt.NewRow();
+                filaTodas["SeccionID"] = 0;
+                filaTodas["Letra"] = "TODAS";  
+
+                dt.Rows.InsertAt(filaTodas, 0);
+
+                cbbSeccion.DataSource = dt;
+                cbbSeccion.DisplayMember = "Letra";
+                cbbSeccion.ValueMember = "SeccionID";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar secciones: " + ex.Message,
                                 "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -163,29 +243,48 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
         }
         private void CargaDocente_Load(object sender, EventArgs e)
         {
-            CargarGrados();
+            CargarGrados2();
+            CargarSecciones();
             CargarDocentes();
             CargarGraficoCargaAcademica();
         }
 
         private void cbbGrado_SelectedIndexChanged(object sender, EventArgs e)
         {
-            BuscarDocentes();
+            BuscarDocentes2();
+            CargarGraficoCargaAcademica();
+            DataTable dt = (DataTable)dgvAsignatura.DataSource;
+            if (dt != null)
+            {
+                dt.Clear();
+            }
         }
 
         private void cbbSeccion_SelectedIndexChanged(object sender, EventArgs e)
         {
-            BuscarDocentes();
+            BuscarDocentes2();
+            CargarGraficoCargaAcademica();
+            DataTable dt = (DataTable)dgvAsignatura.DataSource;
+            if (dt != null)
+            {
+                dt.Clear();
+            }
         }
 
         private void dtpAnio_ValueChanged(object sender, EventArgs e)
         {
-            BuscarDocentes();
+            BuscarDocentes2();
+            CargarGraficoCargaAcademica();
+            DataTable dt = (DataTable)dgvAsignatura.DataSource;
+            if (dt != null)
+            {
+                dt.Clear();
+            }
         }
 
         private void btBuscarDocente_Click(object sender, EventArgs e)
         {
-            BuscarDocentes();
+            BuscarDocentes2();
         }
 
         private void btBuscarAnio_Click(object sender, EventArgs e)

@@ -65,6 +65,22 @@ namespace GestionAcademicaV2.Modelos
             }
         }
 
+        public DataSet EjecutarDataSet(string consulta)
+        {
+            using (SqlConnection conexion = new Conexion().ObtenerConexion())
+            {
+                using (SqlCommand cmd = new SqlCommand(consulta, conexion))
+                {
+                    cmd.CommandType = CommandType.Text;
+
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    DataSet ds = new DataSet();
+                    da.Fill(ds);
+
+                    return ds;
+                }
+            }
+        }
 
 
     }
