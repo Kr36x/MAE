@@ -13,6 +13,7 @@ using System.Collections.Generic;
 using System.Drawing.Drawing2D;
 using Guna.UI2.WinForms;
 
+
 namespace GestionAcademicaV2.Pantallas.DocenteVentanas
 {
 
@@ -277,6 +278,7 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
             paginaGrafico = 0;
 
             lblRegistros.Text = "Registros del 0 al 0 total de 0 registros";
+            lblRegistros.BackColor = this.BackColor;
             lblPaginaGrafico.Text = "Página 0 de 0";
 
             //btnAnteriorGrafico.Enabled = false;
@@ -468,7 +470,7 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
             dgvBoleta.EnableHeadersVisualStyles = false;
 
             dgvBoleta.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dgvBoleta.ColumnHeadersHeight = 44;
+            dgvBoleta.ColumnHeadersHeight = 35;
             dgvBoleta.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(24, 105, 255);
             dgvBoleta.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
             dgvBoleta.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
