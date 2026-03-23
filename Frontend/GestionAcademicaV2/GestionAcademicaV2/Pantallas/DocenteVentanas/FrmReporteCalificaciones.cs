@@ -568,6 +568,11 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
 
         }
 
+        private void lblRegistros_Click(object sender, EventArgs e)
+        {
+
+        }
+
         //private void CargarDatosNotasEjemplo()
         //{
         //    dgvNotas.Rows.Clear();
