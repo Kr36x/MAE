@@ -112,5 +112,10 @@ namespace GestionAcademicaV2.Pantallas
         {
             AbrirFormularioEnPanel(new FrmConsolidadoAsignaturas());
         }
+
+        public void MostrarControlReuniones(int docenteId)
+        {
+            AbrirFormularioEnPanel(new FrmControlReuniones());
+        }
     }
 }
