@@ -41,5 +41,10 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
         {
             pantallaPrincipal.MostrarConsolidadoAsignaturas(docenteId);
         }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            pantallaPrincipal.MostrarControlReuniones(docenteId);  
+        }
     }
 }

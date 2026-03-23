@@ -34,6 +34,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             btnAsistencia = new Guna.UI2.WinForms.Guna2Button();
             guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -41,6 +43,8 @@
             btnCalificaciones = new Guna.UI2.WinForms.Guna2Button();
             guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             btnConsolidadas = new Guna.UI2.WinForms.Guna2Button();
+            guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             SuspendLayout();
             // 
             // guna2HtmlLabel1
@@ -131,11 +135,39 @@
             btnConsolidadas.Text = "Calificaciones Consolidadas";
             btnConsolidadas.Click += btnConsolidadas_Click;
             // 
+            // guna2Button1
+            // 
+            guna2Button1.CustomizableEdges = customizableEdges7;
+            guna2Button1.DisabledState.BorderColor = Color.DarkGray;
+            guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray;
+            guna2Button1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            guna2Button1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            guna2Button1.Font = new Font("Segoe UI", 9F);
+            guna2Button1.ForeColor = Color.White;
+            guna2Button1.Location = new Point(119, 308);
+            guna2Button1.Name = "guna2Button1";
+            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            guna2Button1.Size = new Size(180, 45);
+            guna2Button1.TabIndex = 7;
+            guna2Button1.Text = "Reporte Reuniones";
+            guna2Button1.Click += guna2Button1_Click;
+            // 
+            // guna2HtmlLabel5
+            // 
+            guna2HtmlLabel5.BackColor = Color.Transparent;
+            guna2HtmlLabel5.Location = new Point(321, 324);
+            guna2HtmlLabel5.Name = "guna2HtmlLabel5";
+            guna2HtmlLabel5.Size = new Size(283, 17);
+            guna2HtmlLabel5.TabIndex = 8;
+            guna2HtmlLabel5.Text = "Visualizar detalle de reuniones con su respectiva acta.  ";
+            // 
             // FrmSeleccionReportes
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1012, 568);
+            Controls.Add(guna2HtmlLabel5);
+            Controls.Add(guna2Button1);
             Controls.Add(guna2HtmlLabel4);
             Controls.Add(btnConsolidadas);
             Controls.Add(guna2HtmlLabel3);
@@ -158,5 +190,7 @@
         private Guna.UI2.WinForms.Guna2Button btnCalificaciones;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel4;
         private Guna.UI2.WinForms.Guna2Button btnConsolidadas;
+        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel5;
     }
 }

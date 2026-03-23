@@ -205,32 +205,44 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
             dgvReuniones.RowHeadersVisible = false;
             dgvReuniones.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvReuniones.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
+
             dgvReuniones.BackgroundColor = DrawingColor.White;
             dgvReuniones.BorderStyle = BorderStyle.None;
-            dgvReuniones.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            dgvReuniones.GridColor = DrawingColor.FromArgb(230, 230, 230);
-            dgvReuniones.EnableHeadersVisualStyles = false;
 
-            dgvReuniones.ColumnHeadersHeight = 44;
+            // AQUÍ ESTÁ LA CLAVE
+            dgvReuniones.CellBorderStyle = DataGridViewCellBorderStyle.Single;
+            dgvReuniones.GridColor = DrawingColor.FromArgb(220, 220, 220);
+
+            dgvReuniones.EnableHeadersVisualStyles = false;
+            dgvReuniones.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            dgvReuniones.ColumnHeadersHeight = 56;
+
             dgvReuniones.ColumnHeadersDefaultCellStyle.BackColor = DrawingColor.FromArgb(24, 105, 255);
             dgvReuniones.ColumnHeadersDefaultCellStyle.ForeColor = DrawingColor.White;
             dgvReuniones.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             dgvReuniones.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dgvReuniones.ColumnHeadersDefaultCellStyle.SelectionBackColor = DrawingColor.FromArgb(24, 105, 255);
             dgvReuniones.ColumnHeadersDefaultCellStyle.SelectionForeColor = DrawingColor.White;
+            dgvReuniones.ColumnHeadersDefaultCellStyle.Padding = new Padding(6, 0, 0, 0);
 
             dgvReuniones.DefaultCellStyle.BackColor = DrawingColor.White;
-            dgvReuniones.DefaultCellStyle.ForeColor = DrawingColor.FromArgb(45, 45, 45);
+            dgvReuniones.DefaultCellStyle.ForeColor = DrawingColor.FromArgb(35, 35, 35);
             dgvReuniones.DefaultCellStyle.Font = new Font("Segoe UI", 9.5F, FontStyle.Regular);
-            dgvReuniones.DefaultCellStyle.SelectionBackColor = DrawingColor.White;
-            dgvReuniones.DefaultCellStyle.SelectionForeColor = DrawingColor.FromArgb(45, 45, 45);
+            dgvReuniones.DefaultCellStyle.SelectionBackColor = DrawingColor.FromArgb(245, 249, 255);
+            dgvReuniones.DefaultCellStyle.SelectionForeColor = DrawingColor.FromArgb(35, 35, 35);
+            dgvReuniones.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dgvReuniones.DefaultCellStyle.Padding = new Padding(6, 0, 6, 0);
 
-            dgvReuniones.RowTemplate.Height = 48;
+            // Alternancia de filas
+            dgvReuniones.RowsDefaultCellStyle.BackColor = DrawingColor.White;
+            dgvReuniones.AlternatingRowsDefaultCellStyle.BackColor = DrawingColor.FromArgb(248, 248, 248);
+
+            dgvReuniones.RowTemplate.Height = 58;
 
             dgvReuniones.Columns.Add("No", "N°");
-            dgvReuniones.Columns.Add("FechaHora", "FECHA Y HORA");
+            dgvReuniones.Columns.Add("FechaHora", "FECHA Y\nHORA");
             dgvReuniones.Columns.Add("Estudiante", "ESTUDIANTES");
-            dgvReuniones.Columns.Add("GradoSeccion", "GRADO Y SECCION");
+            dgvReuniones.Columns.Add("GradoSeccion", "GRADO Y\nSECCION");
             dgvReuniones.Columns.Add("Tema", "TEMA");
             dgvReuniones.Columns.Add("Medio", "MEDIO");
             dgvReuniones.Columns.Add("Estado", "ESTADO");
@@ -238,14 +250,16 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
 
             dgvReuniones.Columns["No"].Width = 50;
             dgvReuniones.Columns["FechaHora"].Width = 120;
-            dgvReuniones.Columns["Estudiante"].Width = 160;
-            dgvReuniones.Columns["GradoSeccion"].Width = 140;
+            dgvReuniones.Columns["Estudiante"].Width = 165;
+            dgvReuniones.Columns["GradoSeccion"].Width = 145;
             dgvReuniones.Columns["Tema"].Width = 120;
             dgvReuniones.Columns["Medio"].Width = 100;
             dgvReuniones.Columns["Estado"].Width = 110;
             dgvReuniones.Columns["Acciones"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-        }
 
+            dgvReuniones.Columns["No"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvReuniones.Columns["FechaHora"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+        }
         private void LlenarGrid(DataTable dt)
         {
             dgvReuniones.Rows.Clear();
@@ -452,7 +466,7 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
             }
             else if (accion == "EDITAR")
             {
-                MessageBox.Show($"Aquí abrirías edición de la reunión: {tema}.", "Editar");
+                MessageBox.Show($"No funco todavia :( : {tema}.", "Editar");
             }
         }
 
