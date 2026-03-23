@@ -2704,8 +2704,6 @@
             pnlPrincipal.AutoScrollMargin = new Size(10, 10);
             pnlPrincipal.BackColor = Color.Transparent;
             pnlPrincipal.BorderColor = Color.Silver;
-            pnlPrincipal.BorderRadius = 25;
-            pnlPrincipal.BorderThickness = 2;
             pnlPrincipal.Controls.Add(ctnNoveno);
             pnlPrincipal.Controls.Add(ctnOctavo);
             pnlPrincipal.Controls.Add(ctnSeptimo);

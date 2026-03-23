@@ -323,5 +323,18 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
                 MessageBox.Show("Error de base de datos: " + ex.Message);
             }
         }
+
+        private void txtIdentidadEstudiante_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Back)
+            {
+                return;
+            }
+
+            if (!char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

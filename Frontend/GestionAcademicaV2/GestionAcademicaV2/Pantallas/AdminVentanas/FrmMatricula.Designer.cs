@@ -249,12 +249,14 @@
             txtIdentidadEstudiante.ForeColor = Color.Black;
             txtIdentidadEstudiante.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             txtIdentidadEstudiante.Location = new Point(216, 149);
+            txtIdentidadEstudiante.MaxLength = 13;
             txtIdentidadEstudiante.Name = "txtIdentidadEstudiante";
             txtIdentidadEstudiante.PlaceholderText = "";
             txtIdentidadEstudiante.SelectedText = "";
             txtIdentidadEstudiante.ShadowDecoration.CustomizableEdges = customizableEdges8;
             txtIdentidadEstudiante.Size = new Size(235, 25);
             txtIdentidadEstudiante.TabIndex = 8;
+            txtIdentidadEstudiante.KeyPress += txtIdentidadEstudiante_KeyPress;
             // 
             // dtpFechaNacimiento
             // 

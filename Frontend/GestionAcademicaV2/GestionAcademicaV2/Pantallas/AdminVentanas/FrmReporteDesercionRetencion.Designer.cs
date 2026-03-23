@@ -274,8 +274,6 @@
             guna2ContainerControl1.AutoScrollMargin = new Size(10, 10);
             guna2ContainerControl1.BackColor = Color.Transparent;
             guna2ContainerControl1.BorderColor = Color.Silver;
-            guna2ContainerControl1.BorderRadius = 30;
-            guna2ContainerControl1.BorderThickness = 2;
             guna2ContainerControl1.Controls.Add(ctnTop9);
             guna2ContainerControl1.Controls.Add(ctnTop8);
             guna2ContainerControl1.Controls.Add(ctnTop7);
@@ -446,7 +444,7 @@
             // 
             lbNombreTop9.BackColor = Color.Transparent;
             lbNombreTop9.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbNombreTop9.Location = new Point(20, 9);
+            lbNombreTop9.Location = new Point(9, 9);
             lbNombreTop9.Name = "lbNombreTop9";
             lbNombreTop9.Size = new Size(174, 23);
             lbNombreTop9.TabIndex = 0;
@@ -603,7 +601,7 @@
             // 
             lbNombreTop8.BackColor = Color.Transparent;
             lbNombreTop8.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbNombreTop8.Location = new Point(20, 9);
+            lbNombreTop8.Location = new Point(9, 9);
             lbNombreTop8.Name = "lbNombreTop8";
             lbNombreTop8.Size = new Size(174, 23);
             lbNombreTop8.TabIndex = 0;
@@ -760,7 +758,7 @@
             // 
             lbNombreTop7.BackColor = Color.Transparent;
             lbNombreTop7.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbNombreTop7.Location = new Point(20, 9);
+            lbNombreTop7.Location = new Point(9, 9);
             lbNombreTop7.Name = "lbNombreTop7";
             lbNombreTop7.Size = new Size(174, 23);
             lbNombreTop7.TabIndex = 0;
@@ -917,7 +915,7 @@
             // 
             lbNombreTop6.BackColor = Color.Transparent;
             lbNombreTop6.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbNombreTop6.Location = new Point(20, 9);
+            lbNombreTop6.Location = new Point(9, 9);
             lbNombreTop6.Name = "lbNombreTop6";
             lbNombreTop6.Size = new Size(174, 23);
             lbNombreTop6.TabIndex = 0;
@@ -1074,7 +1072,7 @@
             // 
             lbNombreTop3.BackColor = Color.Transparent;
             lbNombreTop3.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbNombreTop3.Location = new Point(20, 9);
+            lbNombreTop3.Location = new Point(9, 9);
             lbNombreTop3.Name = "lbNombreTop3";
             lbNombreTop3.Size = new Size(174, 23);
             lbNombreTop3.TabIndex = 0;
@@ -1231,7 +1229,7 @@
             // 
             lbNombreTop10.BackColor = Color.Transparent;
             lbNombreTop10.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbNombreTop10.Location = new Point(23, 9);
+            lbNombreTop10.Location = new Point(12, 9);
             lbNombreTop10.Name = "lbNombreTop10";
             lbNombreTop10.Size = new Size(174, 23);
             lbNombreTop10.TabIndex = 0;
@@ -1388,7 +1386,7 @@
             // 
             lbNombreTop5.BackColor = Color.Transparent;
             lbNombreTop5.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbNombreTop5.Location = new Point(20, 9);
+            lbNombreTop5.Location = new Point(9, 9);
             lbNombreTop5.Name = "lbNombreTop5";
             lbNombreTop5.Size = new Size(174, 23);
             lbNombreTop5.TabIndex = 0;
@@ -1545,7 +1543,7 @@
             // 
             lbNombreTop2.BackColor = Color.Transparent;
             lbNombreTop2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbNombreTop2.Location = new Point(20, 9);
+            lbNombreTop2.Location = new Point(9, 9);
             lbNombreTop2.Name = "lbNombreTop2";
             lbNombreTop2.Size = new Size(174, 23);
             lbNombreTop2.TabIndex = 0;
@@ -1702,7 +1700,7 @@
             // 
             lbNombreTop4.BackColor = Color.Transparent;
             lbNombreTop4.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbNombreTop4.Location = new Point(20, 9);
+            lbNombreTop4.Location = new Point(9, 9);
             lbNombreTop4.Name = "lbNombreTop4";
             lbNombreTop4.Size = new Size(174, 23);
             lbNombreTop4.TabIndex = 0;
@@ -1859,7 +1857,7 @@
             // 
             lbNombreTop1.BackColor = Color.Transparent;
             lbNombreTop1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbNombreTop1.Location = new Point(20, 9);
+            lbNombreTop1.Location = new Point(9, 9);
             lbNombreTop1.Name = "lbNombreTop1";
             lbNombreTop1.Size = new Size(174, 23);
             lbNombreTop1.TabIndex = 0;
