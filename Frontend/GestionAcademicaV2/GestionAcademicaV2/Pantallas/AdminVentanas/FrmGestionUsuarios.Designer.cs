@@ -156,6 +156,7 @@
             txtIdentidad.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             txtIdentidad.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtIdentidad.Font = new Font("Segoe UI", 9F);
+            txtIdentidad.ForeColor = Color.Black;
             txtIdentidad.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             txtIdentidad.Location = new Point(164, 54);
             txtIdentidad.MaxLength = 13;
@@ -213,6 +214,7 @@
             txtNombre.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             txtNombre.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtNombre.Font = new Font("Segoe UI", 9F);
+            txtNombre.ForeColor = Color.Black;
             txtNombre.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             txtNombre.Location = new Point(357, 54);
             txtNombre.Name = "txtNombre";
@@ -244,7 +246,7 @@
             cbbRol.FocusedColor = Color.FromArgb(94, 148, 255);
             cbbRol.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             cbbRol.Font = new Font("Segoe UI", 10F);
-            cbbRol.ForeColor = Color.FromArgb(68, 88, 112);
+            cbbRol.ForeColor = Color.Black;
             cbbRol.ItemHeight = 30;
             cbbRol.Items.AddRange(new object[] { "ADMINISTRADOR", "DOCENTE", "TUTOR" });
             cbbRol.Location = new Point(721, 54);
@@ -262,7 +264,7 @@
             dgvUsuarios.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Sunken;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.TopCenter;
             dataGridViewCellStyle2.BackColor = SystemColors.HotTrack;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             dataGridViewCellStyle2.ForeColor = Color.White;
             dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
@@ -280,11 +282,11 @@
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             dgvUsuarios.DefaultCellStyle = dataGridViewCellStyle3;
             dgvUsuarios.GridColor = Color.FromArgb(194, 201, 231);
-            dgvUsuarios.Location = new Point(62, 373);
+            dgvUsuarios.Location = new Point(62, 347);
             dgvUsuarios.Name = "dgvUsuarios";
             dgvUsuarios.ReadOnly = true;
             dgvUsuarios.RowHeadersVisible = false;
-            dgvUsuarios.Size = new Size(911, 225);
+            dgvUsuarios.Size = new Size(911, 251);
             dgvUsuarios.TabIndex = 16;
             dgvUsuarios.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Indigo;
             dgvUsuarios.ThemeStyle.AlternatingRowsStyle.BackColor = Color.FromArgb(197, 203, 232);
@@ -296,7 +298,7 @@
             dgvUsuarios.ThemeStyle.GridColor = Color.FromArgb(194, 201, 231);
             dgvUsuarios.ThemeStyle.HeaderStyle.BackColor = SystemColors.HotTrack;
             dgvUsuarios.ThemeStyle.HeaderStyle.BorderStyle = DataGridViewHeaderBorderStyle.Sunken;
-            dgvUsuarios.ThemeStyle.HeaderStyle.Font = new Font("Segoe UI", 9F);
+            dgvUsuarios.ThemeStyle.HeaderStyle.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             dgvUsuarios.ThemeStyle.HeaderStyle.ForeColor = Color.White;
             dgvUsuarios.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dgvUsuarios.ThemeStyle.HeaderStyle.Height = 25;
@@ -349,7 +351,7 @@
             cbbSexo.FocusedColor = Color.FromArgb(94, 148, 255);
             cbbSexo.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             cbbSexo.Font = new Font("Segoe UI", 10F);
-            cbbSexo.ForeColor = Color.FromArgb(68, 88, 112);
+            cbbSexo.ForeColor = Color.Black;
             cbbSexo.ItemHeight = 30;
             cbbSexo.Items.AddRange(new object[] { "MASCULINO", "FEMENINO" });
             cbbSexo.Location = new Point(80, 138);
@@ -384,6 +386,7 @@
             txtDireccion.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             txtDireccion.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtDireccion.Font = new Font("Segoe UI", 9F);
+            txtDireccion.ForeColor = Color.Black;
             txtDireccion.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             txtDireccion.Location = new Point(272, 138);
             txtDireccion.Name = "txtDireccion";
@@ -419,6 +422,7 @@
             txtTelefono.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             txtTelefono.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtTelefono.Font = new Font("Segoe UI", 9F);
+            txtTelefono.ForeColor = Color.Black;
             txtTelefono.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             txtTelefono.Location = new Point(759, 138);
             txtTelefono.MaxLength = 9;
@@ -458,6 +462,7 @@
             txtEspecialidad.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             txtEspecialidad.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtEspecialidad.Font = new Font("Segoe UI", 9F);
+            txtEspecialidad.ForeColor = Color.Black;
             txtEspecialidad.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             txtEspecialidad.Location = new Point(430, 180);
             txtEspecialidad.Name = "txtEspecialidad";
@@ -522,7 +527,7 @@
             cbbEstado.FocusedColor = Color.FromArgb(94, 148, 255);
             cbbEstado.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             cbbEstado.Font = new Font("Segoe UI", 10F);
-            cbbEstado.ForeColor = Color.FromArgb(68, 88, 112);
+            cbbEstado.ForeColor = Color.Black;
             cbbEstado.ItemHeight = 30;
             cbbEstado.Items.AddRange(new object[] { "ACTIVO", "INACTIVO" });
             cbbEstado.Location = new Point(750, 180);
@@ -557,6 +562,7 @@
             txtPosicion.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             txtPosicion.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtPosicion.Font = new Font("Segoe UI", 9F);
+            txtPosicion.ForeColor = Color.Black;
             txtPosicion.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             txtPosicion.Location = new Point(410, 180);
             txtPosicion.Name = "txtPosicion";
@@ -592,6 +598,7 @@
             txtUsuario.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             txtUsuario.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtUsuario.Font = new Font("Segoe UI", 9F);
+            txtUsuario.ForeColor = Color.Black;
             txtUsuario.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             txtUsuario.Location = new Point(80, 96);
             txtUsuario.Name = "txtUsuario";
@@ -626,6 +633,7 @@
             txtContrasena.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             txtContrasena.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtContrasena.Font = new Font("Segoe UI", 9F);
+            txtContrasena.ForeColor = Color.Black;
             txtContrasena.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             txtContrasena.Location = new Point(345, 96);
             txtContrasena.Name = "txtContrasena";
@@ -649,6 +657,7 @@
             txtCorreo.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             txtCorreo.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtCorreo.Font = new Font("Segoe UI", 9F);
+            txtCorreo.ForeColor = Color.Black;
             txtCorreo.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             txtCorreo.Location = new Point(696, 96);
             txtCorreo.Name = "txtCorreo";
@@ -695,6 +704,7 @@
             txtLugarTrabajo.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             txtLugarTrabajo.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtLugarTrabajo.Font = new Font("Segoe UI", 9F);
+            txtLugarTrabajo.ForeColor = Color.Black;
             txtLugarTrabajo.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             txtLugarTrabajo.Location = new Point(382, 138);
             txtLugarTrabajo.Name = "txtLugarTrabajo";
@@ -731,6 +741,7 @@
             txtParentesco.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             txtParentesco.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtParentesco.Font = new Font("Segoe UI", 9F);
+            txtParentesco.ForeColor = Color.Black;
             txtParentesco.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             txtParentesco.Location = new Point(100, 138);
             txtParentesco.Name = "txtParentesco";
@@ -862,7 +873,7 @@
             guna2ContainerControl1.Controls.Add(cbbEstado);
             guna2ContainerControl1.Controls.Add(txtDireccion);
             guna2ContainerControl1.CustomizableEdges = customizableEdges41;
-            guna2ContainerControl1.Location = new Point(62, 117);
+            guna2ContainerControl1.Location = new Point(62, 102);
             guna2ContainerControl1.Name = "guna2ContainerControl1";
             guna2ContainerControl1.ShadowDecoration.CustomizableEdges = customizableEdges42;
             guna2ContainerControl1.Size = new Size(911, 239);
@@ -874,13 +885,13 @@
             lbTituloUsuario.AutoSize = false;
             lbTituloUsuario.BackColor = SystemColors.HotTrack;
             lbTituloUsuario.BorderStyle = BorderStyle.Fixed3D;
-            lbTituloUsuario.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbTituloUsuario.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lbTituloUsuario.ForeColor = Color.White;
             lbTituloUsuario.Location = new Point(0, 1);
             lbTituloUsuario.Name = "lbTituloUsuario";
             lbTituloUsuario.Size = new Size(911, 33);
             lbTituloUsuario.TabIndex = 101;
-            lbTituloUsuario.Text = "ROL";
+            lbTituloUsuario.Text = "ROL DEL USUARIO";
             lbTituloUsuario.TextAlignment = ContentAlignment.MiddleCenter;
             lbTituloUsuario.Click += lbTituloUsuario_Click;
             // 

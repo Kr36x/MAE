@@ -20,30 +20,50 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
         }
         private void CargarGrados()
         {
-            EjecutarUtilidades util = new EjecutarUtilidades();
-            DataTable tabla = util.EjecutarConsulta("SELECT * FROM vMAE_TraeGrados order by GradoID");
-            cbbGrado.DataSource = tabla;
-            cbbGrado.DisplayMember = "NombreGrado";
-            cbbGrado.ValueMember = "GradoID";
+            try
+            {
+                EjecutarUtilidades util = new EjecutarUtilidades();
+                DataTable tabla = util.EjecutarConsulta("SELECT * FROM vMAE_TraeGrados order by GradoID");
+                cbbGrado.DataSource = tabla;
+                cbbGrado.DisplayMember = "NombreGrado";
+                cbbGrado.ValueMember = "GradoID";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar los grados: " + ex.Message);
+            }
         }
 
         private void CargarEstudiantes()
         {
-            EjecutarUtilidades util = new EjecutarUtilidades();
-            string consulta = "SELECT * FROM vMAE_EstudianteGradoAnio";
-            DataTable dt = util.EjecutarConsulta(consulta);
-            dgvEstudiantes.DataSource = dt;
+            try
+            {
+                EjecutarUtilidades util = new EjecutarUtilidades();
+                string consulta = "SELECT * FROM vMAE_EstudianteGradoAnio";
+                DataTable dt = util.EjecutarConsulta(consulta);
+                dgvEstudiantes.DataSource = dt;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar los Estudiantes: " + ex.Message);
+            }
         }
         private void BuscarConSP()
         {
-            EjecutarUtilidades util = new EjecutarUtilidades();
-            SqlParameter[] p =
+            try
             {
-                new SqlParameter("@Nombre", string.IsNullOrWhiteSpace(txtBuscarEstudiante.Text) ? DBNull.Value : txtBuscarEstudiante.Text),
-                new SqlParameter("@Anio", string.IsNullOrWhiteSpace(dtpAnio.Text) ? DBNull.Value : dtpAnio.Text),
-                new SqlParameter("@Grado", string.IsNullOrWhiteSpace(cbbGrado.Text) ? DBNull.Value : cbbGrado.Text)
-            };
-            dgvEstudiantes.DataSource = util.EjecutarSP("spMAE_BuscarEstudiantes", p);
+                EjecutarUtilidades util = new EjecutarUtilidades();
+                SqlParameter[] p =
+                {
+                    new SqlParameter("@Nombre", string.IsNullOrWhiteSpace(txtBuscarEstudiante.Text) ? DBNull.Value : txtBuscarEstudiante.Text),
+                    new SqlParameter("@Anio", string.IsNullOrWhiteSpace(dtpAnio.Text) ? DBNull.Value : dtpAnio.Text),
+                    new SqlParameter("@Grado", string.IsNullOrWhiteSpace(cbbGrado.Text) ? DBNull.Value : cbbGrado.Text)
+                };
+                dgvEstudiantes.DataSource = util.EjecutarSP("spMAE_BuscarEstudiantes", p);
+            }catch (Exception ex)
+            {
+                MessageBox.Show("Error al buscar: " + ex.Message);
+            }
         }
 
         private void FrmEstudiantes_Load(object sender, EventArgs e)
@@ -76,12 +96,9 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
         {
             if (e.RowIndex >= 0)
             {
-                // Obtener el ID del estudiante desde la fila seleccionada
                 int estudianteID = Convert.ToInt32(
                     dgvEstudiantes.Rows[e.RowIndex].Cells["EstudianteID"].Value
                 );
-
-                // Abrir el formulario de Ficha enviando el ID
                 FrmFichaMatricula FrmMatriculaVigente = new FrmFichaMatricula(estudianteID);
                 FrmMatriculaVigente.Show();
             }

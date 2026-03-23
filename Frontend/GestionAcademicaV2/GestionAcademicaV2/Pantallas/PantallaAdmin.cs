@@ -141,6 +141,11 @@ namespace GestionAcademicaV2.Pantallas
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void btnAsistencia_Click_1(object sender, EventArgs e)
+        {
             AbrirFormularioEnPanel(new FrmReporteDesercionRetencion(this));
         }
     }

@@ -752,7 +752,7 @@
             txtAviso1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             txtAviso1.ForeColor = Color.Black;
             txtAviso1.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtAviso1.Location = new Point(69, 550);
+            txtAviso1.Location = new Point(71, 596);
             txtAviso1.Name = "txtAviso1";
             txtAviso1.PlaceholderText = "";
             txtAviso1.SelectedText = "";
@@ -775,7 +775,7 @@
             txtAviso2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             txtAviso2.ForeColor = Color.Black;
             txtAviso2.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtAviso2.Location = new Point(69, 582);
+            txtAviso2.Location = new Point(71, 637);
             txtAviso2.Name = "txtAviso2";
             txtAviso2.PlaceholderText = "";
             txtAviso2.SelectedText = "";
@@ -797,7 +797,7 @@
             txtAviso3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             txtAviso3.ForeColor = Color.Black;
             txtAviso3.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtAviso3.Location = new Point(69, 615);
+            txtAviso3.Location = new Point(71, 617);
             txtAviso3.Name = "txtAviso3";
             txtAviso3.PlaceholderText = "";
             txtAviso3.SelectedText = "";

@@ -93,8 +93,8 @@
             lbSeccionTop9 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             lbGradoTop9 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             dgvTop9 = new Guna.UI2.WinForms.Guna2DataGridView();
-            dataGridViewTextBoxColumn19 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn20 = new DataGridViewTextBoxColumn();
+            AsignaturaTop9 = new DataGridViewTextBoxColumn();
+            InasistenciasTop9 = new DataGridViewTextBoxColumn();
             guna2HtmlLabel77 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel78 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             lbPromedioTop9 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -104,8 +104,8 @@
             lbSeccionTop8 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             lbGradoTop8 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             dgvTop8 = new Guna.UI2.WinForms.Guna2DataGridView();
-            dataGridViewTextBoxColumn21 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn22 = new DataGridViewTextBoxColumn();
+            AsignaturaTop8 = new DataGridViewTextBoxColumn();
+            InasistenciasTop8 = new DataGridViewTextBoxColumn();
             guna2HtmlLabel84 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel85 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             lbPromedioTop8 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -115,8 +115,8 @@
             lbSeccionTop7 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             lbGradoTop7 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             dgvTop7 = new Guna.UI2.WinForms.Guna2DataGridView();
-            dataGridViewTextBoxColumn23 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn24 = new DataGridViewTextBoxColumn();
+            AsignaturaTop7 = new DataGridViewTextBoxColumn();
+            InasistenciasTop7 = new DataGridViewTextBoxColumn();
             guna2HtmlLabel91 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel92 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             lbPromedioTop7 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -126,8 +126,8 @@
             lbSeccionTop6 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             lbGradoTop6 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             dgvTop6 = new Guna.UI2.WinForms.Guna2DataGridView();
-            dataGridViewTextBoxColumn5 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn6 = new DataGridViewTextBoxColumn();
+            AsignaturasTop6 = new DataGridViewTextBoxColumn();
+            InasistenciasTop6 = new DataGridViewTextBoxColumn();
             guna2HtmlLabel28 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel29 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             lbPromedioTop6 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -137,8 +137,8 @@
             lbSeccionTop3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             lbGradoTop3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             dgvTop3 = new Guna.UI2.WinForms.Guna2DataGridView();
-            dataGridViewTextBoxColumn3 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn4 = new DataGridViewTextBoxColumn();
+            AsignaturaTop3 = new DataGridViewTextBoxColumn();
+            InasistenciasTop3 = new DataGridViewTextBoxColumn();
             guna2HtmlLabel21 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel22 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             lbPromedioTop3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -148,8 +148,8 @@
             lbSeccionTop10 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             lbGradoTop10 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             dgvTop10 = new Guna.UI2.WinForms.Guna2DataGridView();
-            dataGridViewTextBoxColumn15 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn16 = new DataGridViewTextBoxColumn();
+            AsignaturaTop10 = new DataGridViewTextBoxColumn();
+            InasistenciasTop10 = new DataGridViewTextBoxColumn();
             guna2HtmlLabel63 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel64 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             lbPromedioTop10 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -158,9 +158,9 @@
             ctnTop5 = new Guna.UI2.WinForms.Guna2ContainerControl();
             lbSeccionTop5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             lbGradoTop5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            guna2DataGridView5 = new Guna.UI2.WinForms.Guna2DataGridView();
-            dataGridViewTextBoxColumn7 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn8 = new DataGridViewTextBoxColumn();
+            dgvTop5 = new Guna.UI2.WinForms.Guna2DataGridView();
+            AsignaturaTop5 = new DataGridViewTextBoxColumn();
+            InasistenciasTop5 = new DataGridViewTextBoxColumn();
             guna2HtmlLabel35 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel36 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             lbPromedioTop5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -170,8 +170,8 @@
             lbSeccionTop2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             lbGradoTop2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             dgvTop2 = new Guna.UI2.WinForms.Guna2DataGridView();
-            dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
+            AsignaturaTop2 = new DataGridViewTextBoxColumn();
+            InasistenciasTop2 = new DataGridViewTextBoxColumn();
             guna2HtmlLabel14 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel15 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             lbPromedioTop2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -181,8 +181,8 @@
             lbSeccionTop4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             lbGradoTop4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             dgvTop4 = new Guna.UI2.WinForms.Guna2DataGridView();
-            dataGridViewTextBoxColumn9 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn10 = new DataGridViewTextBoxColumn();
+            AsignaturaTop4 = new DataGridViewTextBoxColumn();
+            InasistenciasTop4 = new DataGridViewTextBoxColumn();
             guna2HtmlLabel42 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel43 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             lbPromedioTop4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -192,15 +192,15 @@
             lbSeccionTop1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             lbGradoTop1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             dgvTop1 = new Guna.UI2.WinForms.Guna2DataGridView();
-            ASIGNATURA = new DataGridViewTextBoxColumn();
-            INASISTENCIAS = new DataGridViewTextBoxColumn();
+            AsignaturaTop1 = new DataGridViewTextBoxColumn();
+            InacistenciasTop1 = new DataGridViewTextBoxColumn();
             guna2HtmlLabel9 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel8 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             lbPromedioTop1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel6 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             lbNombreTop1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            dtpAnio = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            txtAnio = new Guna.UI2.WinForms.Guna2TextBox();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).BeginInit();
             guna2ContainerControl1.SuspendLayout();
             ctnTop9.SuspendLayout();
@@ -216,7 +216,7 @@
             ctnTop10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvTop10).BeginInit();
             ctnTop5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)guna2DataGridView5).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvTop5).BeginInit();
             ctnTop2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvTop2).BeginInit();
             ctnTop4.SuspendLayout();
@@ -350,7 +350,7 @@
             dgvTop9.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dgvTop9.ColumnHeadersHeight = 17;
             dgvTop9.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dgvTop9.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn19, dataGridViewTextBoxColumn20 });
+            dgvTop9.Columns.AddRange(new DataGridViewColumn[] { AsignaturaTop9, InasistenciasTop9 });
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = Color.White;
             dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
@@ -362,6 +362,7 @@
             dgvTop9.GridColor = Color.FromArgb(231, 229, 255);
             dgvTop9.Location = new Point(20, 124);
             dgvTop9.Name = "dgvTop9";
+            dgvTop9.ReadOnly = true;
             dgvTop9.RowHeadersVisible = false;
             dgvTop9.Size = new Size(244, 79);
             dgvTop9.TabIndex = 5;
@@ -378,7 +379,7 @@
             dgvTop9.ThemeStyle.HeaderStyle.ForeColor = Color.White;
             dgvTop9.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dgvTop9.ThemeStyle.HeaderStyle.Height = 17;
-            dgvTop9.ThemeStyle.ReadOnly = false;
+            dgvTop9.ThemeStyle.ReadOnly = true;
             dgvTop9.ThemeStyle.RowsStyle.BackColor = Color.White;
             dgvTop9.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             dgvTop9.ThemeStyle.RowsStyle.Font = new Font("Segoe UI", 9F);
@@ -387,15 +388,19 @@
             dgvTop9.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
             dgvTop9.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
             // 
-            // dataGridViewTextBoxColumn19
+            // AsignaturaTop9
             // 
-            dataGridViewTextBoxColumn19.HeaderText = "ASIGNATURA";
-            dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
+            AsignaturaTop9.DataPropertyName = "Asignatura";
+            AsignaturaTop9.HeaderText = "ASIGNATURAS";
+            AsignaturaTop9.Name = "AsignaturaTop9";
+            AsignaturaTop9.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn20
+            // InasistenciasTop9
             // 
-            dataGridViewTextBoxColumn20.HeaderText = "INASISTENCIAS";
-            dataGridViewTextBoxColumn20.Name = "dataGridViewTextBoxColumn20";
+            InasistenciasTop9.DataPropertyName = "Inasistencias";
+            InasistenciasTop9.HeaderText = "INASISTENCIAS";
+            InasistenciasTop9.Name = "InasistenciasTop9";
+            InasistenciasTop9.ReadOnly = true;
             // 
             // guna2HtmlLabel77
             // 
@@ -441,7 +446,7 @@
             // 
             lbNombreTop9.BackColor = Color.Transparent;
             lbNombreTop9.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbNombreTop9.Location = new Point(59, 9);
+            lbNombreTop9.Location = new Point(20, 9);
             lbNombreTop9.Name = "lbNombreTop9";
             lbNombreTop9.Size = new Size(174, 23);
             lbNombreTop9.TabIndex = 0;
@@ -502,7 +507,7 @@
             dgvTop8.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             dgvTop8.ColumnHeadersHeight = 17;
             dgvTop8.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dgvTop8.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn21, dataGridViewTextBoxColumn22 });
+            dgvTop8.Columns.AddRange(new DataGridViewColumn[] { AsignaturaTop8, InasistenciasTop8 });
             dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = Color.White;
             dataGridViewCellStyle6.Font = new Font("Segoe UI", 9F);
@@ -514,6 +519,7 @@
             dgvTop8.GridColor = Color.FromArgb(231, 229, 255);
             dgvTop8.Location = new Point(20, 124);
             dgvTop8.Name = "dgvTop8";
+            dgvTop8.ReadOnly = true;
             dgvTop8.RowHeadersVisible = false;
             dgvTop8.Size = new Size(244, 79);
             dgvTop8.TabIndex = 5;
@@ -530,7 +536,7 @@
             dgvTop8.ThemeStyle.HeaderStyle.ForeColor = Color.White;
             dgvTop8.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dgvTop8.ThemeStyle.HeaderStyle.Height = 17;
-            dgvTop8.ThemeStyle.ReadOnly = false;
+            dgvTop8.ThemeStyle.ReadOnly = true;
             dgvTop8.ThemeStyle.RowsStyle.BackColor = Color.White;
             dgvTop8.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             dgvTop8.ThemeStyle.RowsStyle.Font = new Font("Segoe UI", 9F);
@@ -539,15 +545,19 @@
             dgvTop8.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
             dgvTop8.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
             // 
-            // dataGridViewTextBoxColumn21
+            // AsignaturaTop8
             // 
-            dataGridViewTextBoxColumn21.HeaderText = "ASIGNATURA";
-            dataGridViewTextBoxColumn21.Name = "dataGridViewTextBoxColumn21";
+            AsignaturaTop8.DataPropertyName = "Asignatura";
+            AsignaturaTop8.HeaderText = "ASIGNATURAS";
+            AsignaturaTop8.Name = "AsignaturaTop8";
+            AsignaturaTop8.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn22
+            // InasistenciasTop8
             // 
-            dataGridViewTextBoxColumn22.HeaderText = "INASISTENCIAS";
-            dataGridViewTextBoxColumn22.Name = "dataGridViewTextBoxColumn22";
+            InasistenciasTop8.DataPropertyName = "Inasistencias";
+            InasistenciasTop8.HeaderText = "INASISTENCIAS";
+            InasistenciasTop8.Name = "InasistenciasTop8";
+            InasistenciasTop8.ReadOnly = true;
             // 
             // guna2HtmlLabel84
             // 
@@ -593,7 +603,7 @@
             // 
             lbNombreTop8.BackColor = Color.Transparent;
             lbNombreTop8.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbNombreTop8.Location = new Point(59, 9);
+            lbNombreTop8.Location = new Point(20, 9);
             lbNombreTop8.Name = "lbNombreTop8";
             lbNombreTop8.Size = new Size(174, 23);
             lbNombreTop8.TabIndex = 0;
@@ -654,7 +664,7 @@
             dgvTop7.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             dgvTop7.ColumnHeadersHeight = 17;
             dgvTop7.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dgvTop7.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn23, dataGridViewTextBoxColumn24 });
+            dgvTop7.Columns.AddRange(new DataGridViewColumn[] { AsignaturaTop7, InasistenciasTop7 });
             dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle9.BackColor = Color.White;
             dataGridViewCellStyle9.Font = new Font("Segoe UI", 9F);
@@ -666,6 +676,7 @@
             dgvTop7.GridColor = Color.FromArgb(231, 229, 255);
             dgvTop7.Location = new Point(20, 124);
             dgvTop7.Name = "dgvTop7";
+            dgvTop7.ReadOnly = true;
             dgvTop7.RowHeadersVisible = false;
             dgvTop7.Size = new Size(244, 79);
             dgvTop7.TabIndex = 5;
@@ -682,7 +693,7 @@
             dgvTop7.ThemeStyle.HeaderStyle.ForeColor = Color.White;
             dgvTop7.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dgvTop7.ThemeStyle.HeaderStyle.Height = 17;
-            dgvTop7.ThemeStyle.ReadOnly = false;
+            dgvTop7.ThemeStyle.ReadOnly = true;
             dgvTop7.ThemeStyle.RowsStyle.BackColor = Color.White;
             dgvTop7.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             dgvTop7.ThemeStyle.RowsStyle.Font = new Font("Segoe UI", 9F);
@@ -691,15 +702,19 @@
             dgvTop7.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
             dgvTop7.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
             // 
-            // dataGridViewTextBoxColumn23
+            // AsignaturaTop7
             // 
-            dataGridViewTextBoxColumn23.HeaderText = "ASIGNATURA";
-            dataGridViewTextBoxColumn23.Name = "dataGridViewTextBoxColumn23";
+            AsignaturaTop7.DataPropertyName = "Asignatura";
+            AsignaturaTop7.HeaderText = "ASIGNATURAS";
+            AsignaturaTop7.Name = "AsignaturaTop7";
+            AsignaturaTop7.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn24
+            // InasistenciasTop7
             // 
-            dataGridViewTextBoxColumn24.HeaderText = "INASISTENCIAS";
-            dataGridViewTextBoxColumn24.Name = "dataGridViewTextBoxColumn24";
+            InasistenciasTop7.DataPropertyName = "Inasistencias";
+            InasistenciasTop7.HeaderText = "INASISTENCIAS";
+            InasistenciasTop7.Name = "InasistenciasTop7";
+            InasistenciasTop7.ReadOnly = true;
             // 
             // guna2HtmlLabel91
             // 
@@ -745,7 +760,7 @@
             // 
             lbNombreTop7.BackColor = Color.Transparent;
             lbNombreTop7.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbNombreTop7.Location = new Point(59, 9);
+            lbNombreTop7.Location = new Point(20, 9);
             lbNombreTop7.Name = "lbNombreTop7";
             lbNombreTop7.Size = new Size(174, 23);
             lbNombreTop7.TabIndex = 0;
@@ -806,7 +821,7 @@
             dgvTop6.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             dgvTop6.ColumnHeadersHeight = 17;
             dgvTop6.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dgvTop6.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn5, dataGridViewTextBoxColumn6 });
+            dgvTop6.Columns.AddRange(new DataGridViewColumn[] { AsignaturasTop6, InasistenciasTop6 });
             dataGridViewCellStyle12.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle12.BackColor = Color.White;
             dataGridViewCellStyle12.Font = new Font("Segoe UI", 9F);
@@ -818,6 +833,7 @@
             dgvTop6.GridColor = Color.FromArgb(231, 229, 255);
             dgvTop6.Location = new Point(20, 124);
             dgvTop6.Name = "dgvTop6";
+            dgvTop6.ReadOnly = true;
             dgvTop6.RowHeadersVisible = false;
             dgvTop6.Size = new Size(244, 79);
             dgvTop6.TabIndex = 5;
@@ -834,7 +850,7 @@
             dgvTop6.ThemeStyle.HeaderStyle.ForeColor = Color.White;
             dgvTop6.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dgvTop6.ThemeStyle.HeaderStyle.Height = 17;
-            dgvTop6.ThemeStyle.ReadOnly = false;
+            dgvTop6.ThemeStyle.ReadOnly = true;
             dgvTop6.ThemeStyle.RowsStyle.BackColor = Color.White;
             dgvTop6.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             dgvTop6.ThemeStyle.RowsStyle.Font = new Font("Segoe UI", 9F);
@@ -843,15 +859,19 @@
             dgvTop6.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
             dgvTop6.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
             // 
-            // dataGridViewTextBoxColumn5
+            // AsignaturasTop6
             // 
-            dataGridViewTextBoxColumn5.HeaderText = "ASIGNATURA";
-            dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            AsignaturasTop6.DataPropertyName = "Asignatura";
+            AsignaturasTop6.HeaderText = "ASIGNATURAS";
+            AsignaturasTop6.Name = "AsignaturasTop6";
+            AsignaturasTop6.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn6
+            // InasistenciasTop6
             // 
-            dataGridViewTextBoxColumn6.HeaderText = "INASISTENCIAS";
-            dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            InasistenciasTop6.DataPropertyName = "Inasistencias";
+            InasistenciasTop6.HeaderText = "INASISTENCIAS";
+            InasistenciasTop6.Name = "InasistenciasTop6";
+            InasistenciasTop6.ReadOnly = true;
             // 
             // guna2HtmlLabel28
             // 
@@ -897,7 +917,7 @@
             // 
             lbNombreTop6.BackColor = Color.Transparent;
             lbNombreTop6.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbNombreTop6.Location = new Point(59, 9);
+            lbNombreTop6.Location = new Point(20, 9);
             lbNombreTop6.Name = "lbNombreTop6";
             lbNombreTop6.Size = new Size(174, 23);
             lbNombreTop6.TabIndex = 0;
@@ -958,7 +978,7 @@
             dgvTop3.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
             dgvTop3.ColumnHeadersHeight = 17;
             dgvTop3.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dgvTop3.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn3, dataGridViewTextBoxColumn4 });
+            dgvTop3.Columns.AddRange(new DataGridViewColumn[] { AsignaturaTop3, InasistenciasTop3 });
             dataGridViewCellStyle15.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle15.BackColor = Color.White;
             dataGridViewCellStyle15.Font = new Font("Segoe UI", 9F);
@@ -970,6 +990,7 @@
             dgvTop3.GridColor = Color.FromArgb(231, 229, 255);
             dgvTop3.Location = new Point(20, 124);
             dgvTop3.Name = "dgvTop3";
+            dgvTop3.ReadOnly = true;
             dgvTop3.RowHeadersVisible = false;
             dgvTop3.Size = new Size(244, 79);
             dgvTop3.TabIndex = 5;
@@ -986,7 +1007,7 @@
             dgvTop3.ThemeStyle.HeaderStyle.ForeColor = Color.White;
             dgvTop3.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dgvTop3.ThemeStyle.HeaderStyle.Height = 17;
-            dgvTop3.ThemeStyle.ReadOnly = false;
+            dgvTop3.ThemeStyle.ReadOnly = true;
             dgvTop3.ThemeStyle.RowsStyle.BackColor = Color.White;
             dgvTop3.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             dgvTop3.ThemeStyle.RowsStyle.Font = new Font("Segoe UI", 9F);
@@ -995,15 +1016,19 @@
             dgvTop3.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
             dgvTop3.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
             // 
-            // dataGridViewTextBoxColumn3
+            // AsignaturaTop3
             // 
-            dataGridViewTextBoxColumn3.HeaderText = "ASIGNATURA";
-            dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            AsignaturaTop3.DataPropertyName = "Asignatura";
+            AsignaturaTop3.HeaderText = "ASIGNATURAS";
+            AsignaturaTop3.Name = "AsignaturaTop3";
+            AsignaturaTop3.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn4
+            // InasistenciasTop3
             // 
-            dataGridViewTextBoxColumn4.HeaderText = "INASISTENCIAS";
-            dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            InasistenciasTop3.DataPropertyName = "Inasistencias";
+            InasistenciasTop3.HeaderText = "INASISTENCIAS";
+            InasistenciasTop3.Name = "InasistenciasTop3";
+            InasistenciasTop3.ReadOnly = true;
             // 
             // guna2HtmlLabel21
             // 
@@ -1049,7 +1074,7 @@
             // 
             lbNombreTop3.BackColor = Color.Transparent;
             lbNombreTop3.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbNombreTop3.Location = new Point(59, 9);
+            lbNombreTop3.Location = new Point(20, 9);
             lbNombreTop3.Name = "lbNombreTop3";
             lbNombreTop3.Size = new Size(174, 23);
             lbNombreTop3.TabIndex = 0;
@@ -1110,7 +1135,7 @@
             dgvTop10.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
             dgvTop10.ColumnHeadersHeight = 17;
             dgvTop10.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dgvTop10.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn15, dataGridViewTextBoxColumn16 });
+            dgvTop10.Columns.AddRange(new DataGridViewColumn[] { AsignaturaTop10, InasistenciasTop10 });
             dataGridViewCellStyle18.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle18.BackColor = Color.White;
             dataGridViewCellStyle18.Font = new Font("Segoe UI", 9F);
@@ -1122,6 +1147,7 @@
             dgvTop10.GridColor = Color.FromArgb(231, 229, 255);
             dgvTop10.Location = new Point(20, 124);
             dgvTop10.Name = "dgvTop10";
+            dgvTop10.ReadOnly = true;
             dgvTop10.RowHeadersVisible = false;
             dgvTop10.Size = new Size(244, 79);
             dgvTop10.TabIndex = 5;
@@ -1138,7 +1164,7 @@
             dgvTop10.ThemeStyle.HeaderStyle.ForeColor = Color.White;
             dgvTop10.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dgvTop10.ThemeStyle.HeaderStyle.Height = 17;
-            dgvTop10.ThemeStyle.ReadOnly = false;
+            dgvTop10.ThemeStyle.ReadOnly = true;
             dgvTop10.ThemeStyle.RowsStyle.BackColor = Color.White;
             dgvTop10.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             dgvTop10.ThemeStyle.RowsStyle.Font = new Font("Segoe UI", 9F);
@@ -1147,15 +1173,19 @@
             dgvTop10.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
             dgvTop10.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
             // 
-            // dataGridViewTextBoxColumn15
+            // AsignaturaTop10
             // 
-            dataGridViewTextBoxColumn15.HeaderText = "ASIGNATURA";
-            dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
+            AsignaturaTop10.DataPropertyName = "Asignatura";
+            AsignaturaTop10.HeaderText = "ASIGNATURAS";
+            AsignaturaTop10.Name = "AsignaturaTop10";
+            AsignaturaTop10.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn16
+            // InasistenciasTop10
             // 
-            dataGridViewTextBoxColumn16.HeaderText = "INASISTENCIAS";
-            dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
+            InasistenciasTop10.DataPropertyName = "Inasistencias";
+            InasistenciasTop10.HeaderText = "INASISTENCIAS";
+            InasistenciasTop10.Name = "InasistenciasTop10";
+            InasistenciasTop10.ReadOnly = true;
             // 
             // guna2HtmlLabel63
             // 
@@ -1201,7 +1231,7 @@
             // 
             lbNombreTop10.BackColor = Color.Transparent;
             lbNombreTop10.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbNombreTop10.Location = new Point(59, 9);
+            lbNombreTop10.Location = new Point(23, 9);
             lbNombreTop10.Name = "lbNombreTop10";
             lbNombreTop10.Size = new Size(174, 23);
             lbNombreTop10.TabIndex = 0;
@@ -1214,7 +1244,7 @@
             ctnTop5.BorderThickness = 2;
             ctnTop5.Controls.Add(lbSeccionTop5);
             ctnTop5.Controls.Add(lbGradoTop5);
-            ctnTop5.Controls.Add(guna2DataGridView5);
+            ctnTop5.Controls.Add(dgvTop5);
             ctnTop5.Controls.Add(guna2HtmlLabel35);
             ctnTop5.Controls.Add(guna2HtmlLabel36);
             ctnTop5.Controls.Add(lbPromedioTop5);
@@ -1248,10 +1278,10 @@
             lbGradoTop5.TabIndex = 6;
             lbGradoTop5.Text = "GRADO";
             // 
-            // guna2DataGridView5
+            // dgvTop5
             // 
             dataGridViewCellStyle19.BackColor = Color.White;
-            guna2DataGridView5.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle19;
+            dgvTop5.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle19;
             dataGridViewCellStyle20.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle20.BackColor = SystemColors.HotTrack;
             dataGridViewCellStyle20.Font = new Font("Segoe UI", 9F);
@@ -1259,10 +1289,10 @@
             dataGridViewCellStyle20.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle20.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle20.WrapMode = DataGridViewTriState.True;
-            guna2DataGridView5.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle20;
-            guna2DataGridView5.ColumnHeadersHeight = 17;
-            guna2DataGridView5.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            guna2DataGridView5.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn7, dataGridViewTextBoxColumn8 });
+            dgvTop5.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle20;
+            dgvTop5.ColumnHeadersHeight = 17;
+            dgvTop5.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dgvTop5.Columns.AddRange(new DataGridViewColumn[] { AsignaturaTop5, InasistenciasTop5 });
             dataGridViewCellStyle21.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle21.BackColor = Color.White;
             dataGridViewCellStyle21.Font = new Font("Segoe UI", 9F);
@@ -1270,44 +1300,49 @@
             dataGridViewCellStyle21.SelectionBackColor = Color.FromArgb(231, 229, 255);
             dataGridViewCellStyle21.SelectionForeColor = Color.FromArgb(71, 69, 94);
             dataGridViewCellStyle21.WrapMode = DataGridViewTriState.False;
-            guna2DataGridView5.DefaultCellStyle = dataGridViewCellStyle21;
-            guna2DataGridView5.GridColor = Color.FromArgb(231, 229, 255);
-            guna2DataGridView5.Location = new Point(20, 124);
-            guna2DataGridView5.Name = "guna2DataGridView5";
-            guna2DataGridView5.RowHeadersVisible = false;
-            guna2DataGridView5.Size = new Size(244, 79);
-            guna2DataGridView5.TabIndex = 5;
-            guna2DataGridView5.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
-            guna2DataGridView5.ThemeStyle.AlternatingRowsStyle.Font = null;
-            guna2DataGridView5.ThemeStyle.AlternatingRowsStyle.ForeColor = Color.Empty;
-            guna2DataGridView5.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = Color.Empty;
-            guna2DataGridView5.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = Color.Empty;
-            guna2DataGridView5.ThemeStyle.BackColor = Color.White;
-            guna2DataGridView5.ThemeStyle.GridColor = Color.FromArgb(231, 229, 255);
-            guna2DataGridView5.ThemeStyle.HeaderStyle.BackColor = SystemColors.HotTrack;
-            guna2DataGridView5.ThemeStyle.HeaderStyle.BorderStyle = DataGridViewHeaderBorderStyle.None;
-            guna2DataGridView5.ThemeStyle.HeaderStyle.Font = new Font("Segoe UI", 9F);
-            guna2DataGridView5.ThemeStyle.HeaderStyle.ForeColor = Color.White;
-            guna2DataGridView5.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            guna2DataGridView5.ThemeStyle.HeaderStyle.Height = 17;
-            guna2DataGridView5.ThemeStyle.ReadOnly = false;
-            guna2DataGridView5.ThemeStyle.RowsStyle.BackColor = Color.White;
-            guna2DataGridView5.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            guna2DataGridView5.ThemeStyle.RowsStyle.Font = new Font("Segoe UI", 9F);
-            guna2DataGridView5.ThemeStyle.RowsStyle.ForeColor = Color.FromArgb(71, 69, 94);
-            guna2DataGridView5.ThemeStyle.RowsStyle.Height = 25;
-            guna2DataGridView5.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
-            guna2DataGridView5.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            dgvTop5.DefaultCellStyle = dataGridViewCellStyle21;
+            dgvTop5.GridColor = Color.FromArgb(231, 229, 255);
+            dgvTop5.Location = new Point(20, 124);
+            dgvTop5.Name = "dgvTop5";
+            dgvTop5.ReadOnly = true;
+            dgvTop5.RowHeadersVisible = false;
+            dgvTop5.Size = new Size(244, 79);
+            dgvTop5.TabIndex = 5;
+            dgvTop5.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
+            dgvTop5.ThemeStyle.AlternatingRowsStyle.Font = null;
+            dgvTop5.ThemeStyle.AlternatingRowsStyle.ForeColor = Color.Empty;
+            dgvTop5.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = Color.Empty;
+            dgvTop5.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = Color.Empty;
+            dgvTop5.ThemeStyle.BackColor = Color.White;
+            dgvTop5.ThemeStyle.GridColor = Color.FromArgb(231, 229, 255);
+            dgvTop5.ThemeStyle.HeaderStyle.BackColor = SystemColors.HotTrack;
+            dgvTop5.ThemeStyle.HeaderStyle.BorderStyle = DataGridViewHeaderBorderStyle.None;
+            dgvTop5.ThemeStyle.HeaderStyle.Font = new Font("Segoe UI", 9F);
+            dgvTop5.ThemeStyle.HeaderStyle.ForeColor = Color.White;
+            dgvTop5.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dgvTop5.ThemeStyle.HeaderStyle.Height = 17;
+            dgvTop5.ThemeStyle.ReadOnly = true;
+            dgvTop5.ThemeStyle.RowsStyle.BackColor = Color.White;
+            dgvTop5.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dgvTop5.ThemeStyle.RowsStyle.Font = new Font("Segoe UI", 9F);
+            dgvTop5.ThemeStyle.RowsStyle.ForeColor = Color.FromArgb(71, 69, 94);
+            dgvTop5.ThemeStyle.RowsStyle.Height = 25;
+            dgvTop5.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
+            dgvTop5.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
             // 
-            // dataGridViewTextBoxColumn7
+            // AsignaturaTop5
             // 
-            dataGridViewTextBoxColumn7.HeaderText = "ASIGNATURA";
-            dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            AsignaturaTop5.DataPropertyName = "Asignatura";
+            AsignaturaTop5.HeaderText = "ASIGNATURAS";
+            AsignaturaTop5.Name = "AsignaturaTop5";
+            AsignaturaTop5.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn8
+            // InasistenciasTop5
             // 
-            dataGridViewTextBoxColumn8.HeaderText = "INASISTENCIAS";
-            dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            InasistenciasTop5.DataPropertyName = "Inasistencias";
+            InasistenciasTop5.HeaderText = "INASISTENCIAS";
+            InasistenciasTop5.Name = "InasistenciasTop5";
+            InasistenciasTop5.ReadOnly = true;
             // 
             // guna2HtmlLabel35
             // 
@@ -1353,7 +1388,7 @@
             // 
             lbNombreTop5.BackColor = Color.Transparent;
             lbNombreTop5.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbNombreTop5.Location = new Point(59, 9);
+            lbNombreTop5.Location = new Point(20, 9);
             lbNombreTop5.Name = "lbNombreTop5";
             lbNombreTop5.Size = new Size(174, 23);
             lbNombreTop5.TabIndex = 0;
@@ -1414,7 +1449,7 @@
             dgvTop2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle23;
             dgvTop2.ColumnHeadersHeight = 17;
             dgvTop2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dgvTop2.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, dataGridViewTextBoxColumn2 });
+            dgvTop2.Columns.AddRange(new DataGridViewColumn[] { AsignaturaTop2, InasistenciasTop2 });
             dataGridViewCellStyle24.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle24.BackColor = Color.White;
             dataGridViewCellStyle24.Font = new Font("Segoe UI", 9F);
@@ -1426,6 +1461,7 @@
             dgvTop2.GridColor = Color.FromArgb(231, 229, 255);
             dgvTop2.Location = new Point(20, 124);
             dgvTop2.Name = "dgvTop2";
+            dgvTop2.ReadOnly = true;
             dgvTop2.RowHeadersVisible = false;
             dgvTop2.Size = new Size(244, 79);
             dgvTop2.TabIndex = 5;
@@ -1442,7 +1478,7 @@
             dgvTop2.ThemeStyle.HeaderStyle.ForeColor = Color.White;
             dgvTop2.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dgvTop2.ThemeStyle.HeaderStyle.Height = 17;
-            dgvTop2.ThemeStyle.ReadOnly = false;
+            dgvTop2.ThemeStyle.ReadOnly = true;
             dgvTop2.ThemeStyle.RowsStyle.BackColor = Color.White;
             dgvTop2.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             dgvTop2.ThemeStyle.RowsStyle.Font = new Font("Segoe UI", 9F);
@@ -1451,15 +1487,19 @@
             dgvTop2.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
             dgvTop2.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
             // 
-            // dataGridViewTextBoxColumn1
+            // AsignaturaTop2
             // 
-            dataGridViewTextBoxColumn1.HeaderText = "ASIGNATURA";
-            dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            AsignaturaTop2.DataPropertyName = "Asignatura";
+            AsignaturaTop2.HeaderText = "ASIGNATURAS";
+            AsignaturaTop2.Name = "AsignaturaTop2";
+            AsignaturaTop2.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn2
+            // InasistenciasTop2
             // 
-            dataGridViewTextBoxColumn2.HeaderText = "INASISTENCIAS";
-            dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            InasistenciasTop2.DataPropertyName = "Inasistencias";
+            InasistenciasTop2.HeaderText = "INASISTENCIAS";
+            InasistenciasTop2.Name = "InasistenciasTop2";
+            InasistenciasTop2.ReadOnly = true;
             // 
             // guna2HtmlLabel14
             // 
@@ -1505,7 +1545,7 @@
             // 
             lbNombreTop2.BackColor = Color.Transparent;
             lbNombreTop2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbNombreTop2.Location = new Point(59, 9);
+            lbNombreTop2.Location = new Point(20, 9);
             lbNombreTop2.Name = "lbNombreTop2";
             lbNombreTop2.Size = new Size(174, 23);
             lbNombreTop2.TabIndex = 0;
@@ -1566,7 +1606,7 @@
             dgvTop4.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle26;
             dgvTop4.ColumnHeadersHeight = 17;
             dgvTop4.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dgvTop4.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn9, dataGridViewTextBoxColumn10 });
+            dgvTop4.Columns.AddRange(new DataGridViewColumn[] { AsignaturaTop4, InasistenciasTop4 });
             dataGridViewCellStyle27.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle27.BackColor = Color.White;
             dataGridViewCellStyle27.Font = new Font("Segoe UI", 9F);
@@ -1578,6 +1618,7 @@
             dgvTop4.GridColor = Color.FromArgb(231, 229, 255);
             dgvTop4.Location = new Point(20, 124);
             dgvTop4.Name = "dgvTop4";
+            dgvTop4.ReadOnly = true;
             dgvTop4.RowHeadersVisible = false;
             dgvTop4.Size = new Size(244, 79);
             dgvTop4.TabIndex = 5;
@@ -1594,7 +1635,7 @@
             dgvTop4.ThemeStyle.HeaderStyle.ForeColor = Color.White;
             dgvTop4.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dgvTop4.ThemeStyle.HeaderStyle.Height = 17;
-            dgvTop4.ThemeStyle.ReadOnly = false;
+            dgvTop4.ThemeStyle.ReadOnly = true;
             dgvTop4.ThemeStyle.RowsStyle.BackColor = Color.White;
             dgvTop4.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             dgvTop4.ThemeStyle.RowsStyle.Font = new Font("Segoe UI", 9F);
@@ -1603,15 +1644,19 @@
             dgvTop4.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
             dgvTop4.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
             // 
-            // dataGridViewTextBoxColumn9
+            // AsignaturaTop4
             // 
-            dataGridViewTextBoxColumn9.HeaderText = "ASIGNATURA";
-            dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            AsignaturaTop4.DataPropertyName = "Asignatura";
+            AsignaturaTop4.HeaderText = "ASIGNATURAS";
+            AsignaturaTop4.Name = "AsignaturaTop4";
+            AsignaturaTop4.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn10
+            // InasistenciasTop4
             // 
-            dataGridViewTextBoxColumn10.HeaderText = "INASISTENCIAS";
-            dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            InasistenciasTop4.DataPropertyName = "Inasistencias";
+            InasistenciasTop4.HeaderText = "INASISTENCIAS";
+            InasistenciasTop4.Name = "InasistenciasTop4";
+            InasistenciasTop4.ReadOnly = true;
             // 
             // guna2HtmlLabel42
             // 
@@ -1657,7 +1702,7 @@
             // 
             lbNombreTop4.BackColor = Color.Transparent;
             lbNombreTop4.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbNombreTop4.Location = new Point(59, 9);
+            lbNombreTop4.Location = new Point(20, 9);
             lbNombreTop4.Name = "lbNombreTop4";
             lbNombreTop4.Size = new Size(174, 23);
             lbNombreTop4.TabIndex = 0;
@@ -1718,7 +1763,7 @@
             dgvTop1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle29;
             dgvTop1.ColumnHeadersHeight = 17;
             dgvTop1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dgvTop1.Columns.AddRange(new DataGridViewColumn[] { ASIGNATURA, INASISTENCIAS });
+            dgvTop1.Columns.AddRange(new DataGridViewColumn[] { AsignaturaTop1, InacistenciasTop1 });
             dataGridViewCellStyle30.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle30.BackColor = Color.White;
             dataGridViewCellStyle30.Font = new Font("Segoe UI", 9F);
@@ -1730,6 +1775,7 @@
             dgvTop1.GridColor = Color.FromArgb(231, 229, 255);
             dgvTop1.Location = new Point(20, 124);
             dgvTop1.Name = "dgvTop1";
+            dgvTop1.ReadOnly = true;
             dgvTop1.RowHeadersVisible = false;
             dgvTop1.Size = new Size(244, 79);
             dgvTop1.TabIndex = 5;
@@ -1746,7 +1792,7 @@
             dgvTop1.ThemeStyle.HeaderStyle.ForeColor = Color.White;
             dgvTop1.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dgvTop1.ThemeStyle.HeaderStyle.Height = 17;
-            dgvTop1.ThemeStyle.ReadOnly = false;
+            dgvTop1.ThemeStyle.ReadOnly = true;
             dgvTop1.ThemeStyle.RowsStyle.BackColor = Color.White;
             dgvTop1.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             dgvTop1.ThemeStyle.RowsStyle.Font = new Font("Segoe UI", 9F);
@@ -1755,15 +1801,19 @@
             dgvTop1.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
             dgvTop1.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
             // 
-            // ASIGNATURA
+            // AsignaturaTop1
             // 
-            ASIGNATURA.HeaderText = "ASIGNATURA";
-            ASIGNATURA.Name = "ASIGNATURA";
+            AsignaturaTop1.DataPropertyName = "Asignatura";
+            AsignaturaTop1.HeaderText = "ASIGNATURA";
+            AsignaturaTop1.Name = "AsignaturaTop1";
+            AsignaturaTop1.ReadOnly = true;
             // 
-            // INASISTENCIAS
+            // InacistenciasTop1
             // 
-            INASISTENCIAS.HeaderText = "INASISTENCIAS";
-            INASISTENCIAS.Name = "INASISTENCIAS";
+            InacistenciasTop1.DataPropertyName = "Inasistencias";
+            InacistenciasTop1.HeaderText = "INASISTENCIAS";
+            InacistenciasTop1.Name = "InacistenciasTop1";
+            InacistenciasTop1.ReadOnly = true;
             // 
             // guna2HtmlLabel9
             // 
@@ -1809,7 +1859,7 @@
             // 
             lbNombreTop1.BackColor = Color.Transparent;
             lbNombreTop1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbNombreTop1.Location = new Point(59, 9);
+            lbNombreTop1.Location = new Point(20, 9);
             lbNombreTop1.Name = "lbNombreTop1";
             lbNombreTop1.Size = new Size(174, 23);
             lbNombreTop1.TabIndex = 0;
@@ -1828,25 +1878,31 @@
             guna2HtmlLabel4.TabIndex = 0;
             guna2HtmlLabel4.Text = "RANKING DE ESTUDIANTES CON MAYOR VULNERABILIDAD ACADÉMICA (TOP 10)";
             // 
-            // dtpAnio
+            // txtAnio
             // 
-            dtpAnio.BorderRadius = 10;
-            dtpAnio.BorderThickness = 1;
-            dtpAnio.Checked = true;
-            dtpAnio.CustomFormat = "yyyy";
-            dtpAnio.CustomizableEdges = customizableEdges25;
-            dtpAnio.FillColor = Color.Gainsboro;
-            dtpAnio.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dtpAnio.Format = DateTimePickerFormat.Custom;
-            dtpAnio.Location = new Point(864, 58);
-            dtpAnio.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
-            dtpAnio.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
-            dtpAnio.Name = "dtpAnio";
-            dtpAnio.ShadowDecoration.CustomizableEdges = customizableEdges26;
-            dtpAnio.Size = new Size(124, 36);
-            dtpAnio.TabIndex = 6;
-            dtpAnio.TextAlign = HorizontalAlignment.Center;
-            dtpAnio.Value = new DateTime(2026, 3, 21, 1, 20, 52, 515);
+            txtAnio.BorderColor = Color.Black;
+            txtAnio.BorderRadius = 10;
+            txtAnio.CustomizableEdges = customizableEdges25;
+            txtAnio.DefaultText = "";
+            txtAnio.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            txtAnio.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            txtAnio.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            txtAnio.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            txtAnio.FillColor = SystemColors.HotTrack;
+            txtAnio.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtAnio.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            txtAnio.ForeColor = Color.White;
+            txtAnio.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtAnio.Location = new Point(864, 61);
+            txtAnio.Margin = new Padding(4);
+            txtAnio.Name = "txtAnio";
+            txtAnio.PlaceholderText = "";
+            txtAnio.ReadOnly = true;
+            txtAnio.SelectedText = "";
+            txtAnio.ShadowDecoration.CustomizableEdges = customizableEdges26;
+            txtAnio.Size = new Size(124, 33);
+            txtAnio.TabIndex = 6;
+            txtAnio.TextAlign = HorizontalAlignment.Center;
             // 
             // FrmReporteDesercionRetencion
             // 
@@ -1854,7 +1910,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
             ClientSize = new Size(1028, 674);
-            Controls.Add(dtpAnio);
+            Controls.Add(txtAnio);
             Controls.Add(guna2ContainerControl1);
             Controls.Add(guna2HtmlLabel3);
             Controls.Add(guna2HtmlLabel2);
@@ -1886,7 +1942,7 @@
             ((System.ComponentModel.ISupportInitialize)dgvTop10).EndInit();
             ctnTop5.ResumeLayout(false);
             ctnTop5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)guna2DataGridView5).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvTop5).EndInit();
             ctnTop2.ResumeLayout(false);
             ctnTop2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvTop2).EndInit();
@@ -1947,7 +2003,7 @@
         private Guna.UI2.WinForms.Guna2ContainerControl ctnTop5;
         private Guna.UI2.WinForms.Guna2HtmlLabel lbSeccionTop5;
         private Guna.UI2.WinForms.Guna2HtmlLabel lbGradoTop5;
-        private Guna.UI2.WinForms.Guna2DataGridView guna2DataGridView5;
+        private Guna.UI2.WinForms.Guna2DataGridView dgvTop5;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel35;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel36;
         private Guna.UI2.WinForms.Guna2HtmlLabel lbPromedioTop5;
@@ -1998,26 +2054,26 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel lbPromedioTop7;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel94;
         private Guna.UI2.WinForms.Guna2HtmlLabel lbNombreTop7;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn19;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn20;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn21;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn22;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn23;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn24;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
-        private DataGridViewTextBoxColumn ASIGNATURA;
-        private DataGridViewTextBoxColumn INASISTENCIAS;
-        private Guna.UI2.WinForms.Guna2DateTimePicker dtpAnio;
+        private DataGridViewTextBoxColumn AsignaturaTop3;
+        private DataGridViewTextBoxColumn InasistenciasTop3;
+        private DataGridViewTextBoxColumn AsignaturaTop5;
+        private DataGridViewTextBoxColumn InasistenciasTop5;
+        private DataGridViewTextBoxColumn AsignaturaTop2;
+        private DataGridViewTextBoxColumn InasistenciasTop2;
+        private DataGridViewTextBoxColumn AsignaturaTop4;
+        private DataGridViewTextBoxColumn InasistenciasTop4;
+        private DataGridViewTextBoxColumn AsignaturaTop1;
+        private DataGridViewTextBoxColumn InacistenciasTop1;
+        private DataGridViewTextBoxColumn AsignaturaTop9;
+        private DataGridViewTextBoxColumn InasistenciasTop9;
+        private DataGridViewTextBoxColumn AsignaturaTop8;
+        private DataGridViewTextBoxColumn InasistenciasTop8;
+        private DataGridViewTextBoxColumn AsignaturaTop7;
+        private DataGridViewTextBoxColumn InasistenciasTop7;
+        private DataGridViewTextBoxColumn AsignaturasTop6;
+        private DataGridViewTextBoxColumn InasistenciasTop6;
+        private DataGridViewTextBoxColumn AsignaturaTop10;
+        private DataGridViewTextBoxColumn InasistenciasTop10;
+        private Guna.UI2.WinForms.Guna2TextBox txtAnio;
     }
 }
