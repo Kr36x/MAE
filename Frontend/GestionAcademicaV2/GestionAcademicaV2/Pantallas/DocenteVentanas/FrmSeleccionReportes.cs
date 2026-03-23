@@ -36,5 +36,10 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
         {
             pantallaPrincipal.MostrarReporteCalificacion(docenteId);
         }
+
+        private void btnConsolidadas_Click(object sender, EventArgs e)
+        {
+            pantallaPrincipal.MostrarConsolidadoAsignaturas(docenteId);
+        }
     }
 }
