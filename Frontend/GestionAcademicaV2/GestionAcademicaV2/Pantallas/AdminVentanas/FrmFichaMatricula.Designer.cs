@@ -200,6 +200,7 @@
             txtNombreEstudiante.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             txtNombreEstudiante.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtNombreEstudiante.Font = new Font("Segoe UI", 9F);
+            txtNombreEstudiante.ForeColor = Color.Black;
             txtNombreEstudiante.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             txtNombreEstudiante.Location = new Point(194, 63);
             txtNombreEstudiante.Name = "txtNombreEstudiante";
@@ -253,6 +254,7 @@
             txtIdentidadEstudiante.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             txtIdentidadEstudiante.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtIdentidadEstudiante.Font = new Font("Segoe UI", 9F);
+            txtIdentidadEstudiante.ForeColor = Color.Black;
             txtIdentidadEstudiante.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             txtIdentidadEstudiante.Location = new Point(193, 173);
             txtIdentidadEstudiante.Name = "txtIdentidadEstudiante";
@@ -286,6 +288,7 @@
             txtDireccion.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             txtDireccion.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtDireccion.Font = new Font("Segoe UI", 9F);
+            txtDireccion.ForeColor = Color.Black;
             txtDireccion.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             txtDireccion.Location = new Point(587, 63);
             txtDireccion.Multiline = true;
@@ -330,6 +333,7 @@
             txtAlergias.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             txtAlergias.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtAlergias.Font = new Font("Segoe UI", 9F);
+            txtAlergias.ForeColor = Color.Black;
             txtAlergias.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             txtAlergias.Location = new Point(269, 228);
             txtAlergias.Name = "txtAlergias";
@@ -440,6 +444,7 @@
             txtTrabajoMadre.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             txtTrabajoMadre.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtTrabajoMadre.Font = new Font("Segoe UI", 9F);
+            txtTrabajoMadre.ForeColor = Color.Black;
             txtTrabajoMadre.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             txtTrabajoMadre.Location = new Point(304, 240);
             txtTrabajoMadre.Name = "txtTrabajoMadre";
@@ -463,6 +468,7 @@
             txtTelefonoPadre.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             txtTelefonoPadre.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtTelefonoPadre.Font = new Font("Segoe UI", 9F);
+            txtTelefonoPadre.ForeColor = Color.Black;
             txtTelefonoPadre.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             txtTelefonoPadre.Location = new Point(37, 186);
             txtTelefonoPadre.Name = "txtTelefonoPadre";
@@ -486,6 +492,7 @@
             txtTelefonoMadre.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             txtTelefonoMadre.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtTelefonoMadre.Font = new Font("Segoe UI", 9F);
+            txtTelefonoMadre.ForeColor = Color.Black;
             txtTelefonoMadre.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             txtTelefonoMadre.Location = new Point(304, 186);
             txtTelefonoMadre.Name = "txtTelefonoMadre";
@@ -519,6 +526,7 @@
             txtIdentidadMadre.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             txtIdentidadMadre.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtIdentidadMadre.Font = new Font("Segoe UI", 9F);
+            txtIdentidadMadre.ForeColor = Color.Black;
             txtIdentidadMadre.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             txtIdentidadMadre.Location = new Point(303, 137);
             txtIdentidadMadre.Name = "txtIdentidadMadre";
@@ -542,6 +550,7 @@
             txtTrabajoPadre.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             txtTrabajoPadre.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtTrabajoPadre.Font = new Font("Segoe UI", 9F);
+            txtTrabajoPadre.ForeColor = Color.Black;
             txtTrabajoPadre.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             txtTrabajoPadre.Location = new Point(37, 240);
             txtTrabajoPadre.Name = "txtTrabajoPadre";
@@ -565,6 +574,7 @@
             txtNombreMadre.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             txtNombreMadre.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtNombreMadre.Font = new Font("Segoe UI", 9F);
+            txtNombreMadre.ForeColor = Color.Black;
             txtNombreMadre.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             txtNombreMadre.Location = new Point(303, 82);
             txtNombreMadre.Name = "txtNombreMadre";
@@ -618,6 +628,7 @@
             txtIdentidadPadre.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             txtIdentidadPadre.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtIdentidadPadre.Font = new Font("Segoe UI", 9F);
+            txtIdentidadPadre.ForeColor = Color.Black;
             txtIdentidadPadre.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             txtIdentidadPadre.Location = new Point(37, 137);
             txtIdentidadPadre.Name = "txtIdentidadPadre";
@@ -671,6 +682,7 @@
             txtNombrePadre.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             txtNombrePadre.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtNombrePadre.Font = new Font("Segoe UI", 9F);
+            txtNombrePadre.ForeColor = Color.Black;
             txtNombrePadre.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             txtNombrePadre.Location = new Point(37, 83);
             txtNombrePadre.Name = "txtNombrePadre";
@@ -750,6 +762,7 @@
             txtEstado.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             txtEstado.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtEstado.Font = new Font("Segoe UI", 9F);
+            txtEstado.ForeColor = Color.Black;
             txtEstado.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             txtEstado.Location = new Point(736, 228);
             txtEstado.Name = "txtEstado";
@@ -772,6 +785,7 @@
             txtGrado.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             txtGrado.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtGrado.Font = new Font("Segoe UI", 9F);
+            txtGrado.ForeColor = Color.Black;
             txtGrado.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             txtGrado.Location = new Point(37, 228);
             txtGrado.Name = "txtGrado";
@@ -795,6 +809,7 @@
             txtMano.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             txtMano.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtMano.Font = new Font("Segoe UI", 9F);
+            txtMano.ForeColor = Color.Black;
             txtMano.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             txtMano.Location = new Point(422, 173);
             txtMano.Name = "txtMano";
@@ -818,6 +833,7 @@
             txtGenero.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             txtGenero.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtGenero.Font = new Font("Segoe UI", 9F);
+            txtGenero.ForeColor = Color.Black;
             txtGenero.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             txtGenero.Location = new Point(422, 113);
             txtGenero.Name = "txtGenero";
@@ -841,6 +857,7 @@
             txtFechaNacimiento.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             txtFechaNacimiento.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtFechaNacimiento.Font = new Font("Segoe UI", 9F);
+            txtFechaNacimiento.ForeColor = Color.Black;
             txtFechaNacimiento.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             txtFechaNacimiento.Location = new Point(194, 113);
             txtFechaNacimiento.Name = "txtFechaNacimiento";
@@ -879,6 +896,7 @@
             txtTelefonoEstudiante.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             txtTelefonoEstudiante.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtTelefonoEstudiante.Font = new Font("Segoe UI", 9F);
+            txtTelefonoEstudiante.ForeColor = Color.Black;
             txtTelefonoEstudiante.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             txtTelefonoEstudiante.Location = new Point(586, 228);
             txtTelefonoEstudiante.Name = "txtTelefonoEstudiante";

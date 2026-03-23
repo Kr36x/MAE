@@ -21,11 +21,12 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
         private void CargarGrados()
         {
             EjecutarUtilidades util = new EjecutarUtilidades();
-            DataTable tabla = util.EjecutarConsulta("SELECT * FROM vMAE_TraeGrados order by GradoID GO");
+            DataTable tabla = util.EjecutarConsulta("SELECT * FROM vMAE_TraeGrados order by GradoID");
             cbbGrado.DataSource = tabla;
             cbbGrado.DisplayMember = "NombreGrado";
             cbbGrado.ValueMember = "GradoID";
         }
+
         private void CargarEstudiantes()
         {
             EjecutarUtilidades util = new EjecutarUtilidades();

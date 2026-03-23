@@ -134,7 +134,7 @@
             dgvEstudiantes.ThemeStyle.RowsStyle.BackColor = Color.White;
             dgvEstudiantes.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             dgvEstudiantes.ThemeStyle.RowsStyle.Font = new Font("Segoe UI", 9F);
-            dgvEstudiantes.ThemeStyle.RowsStyle.ForeColor = Color.FromArgb(71, 69, 94);
+            dgvEstudiantes.ThemeStyle.RowsStyle.ForeColor = Color.Black;
             dgvEstudiantes.ThemeStyle.RowsStyle.Height = 25;
             dgvEstudiantes.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
             dgvEstudiantes.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
@@ -143,30 +143,35 @@
             // 
             // EstudianteID
             // 
+            EstudianteID.DataPropertyName = "EstudianteID";
             EstudianteID.HeaderText = "ID ESTUDIANTE";
             EstudianteID.Name = "EstudianteID";
             EstudianteID.ReadOnly = true;
             // 
             // NombreEstudiante
             // 
+            NombreEstudiante.DataPropertyName = "NombreEstudiante";
             NombreEstudiante.HeaderText = "ESTUDIANTE";
             NombreEstudiante.Name = "NombreEstudiante";
             NombreEstudiante.ReadOnly = true;
             // 
             // NombreGrado
             // 
+            NombreGrado.DataPropertyName = "NombreGrado";
             NombreGrado.HeaderText = "GRADO";
             NombreGrado.Name = "NombreGrado";
             NombreGrado.ReadOnly = true;
             // 
             // Nivel
             // 
+            Nivel.DataPropertyName = "Nivel";
             Nivel.HeaderText = "NIVEL";
             Nivel.Name = "Nivel";
             Nivel.ReadOnly = true;
             // 
             // AnioAcademico
             // 
+            AnioAcademico.DataPropertyName = "AnioAcademico";
             AnioAcademico.HeaderText = "AÑO ACADÉMICO";
             AnioAcademico.Name = "AnioAcademico";
             AnioAcademico.ReadOnly = true;
