@@ -69,6 +69,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges36 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges37 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges38 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges39 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges40 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             lblTitulo = new Guna.UI2.WinForms.Guna2HtmlLabel();
             lblEscuela = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
@@ -98,31 +100,33 @@
             guna2Panel6 = new Guna.UI2.WinForms.Guna2Panel();
             guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
             guna2Panel7 = new Guna.UI2.WinForms.Guna2Panel();
+            guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             guna2Panel1.SuspendLayout();
             panelBarraGrafico.SuspendLayout();
             guna2Panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvBoleta).BeginInit();
             guna2Panel2.SuspendLayout();
             guna2Panel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).BeginInit();
             SuspendLayout();
             // 
             // lblTitulo
             // 
             lblTitulo.BackColor = Color.Transparent;
-            lblTitulo.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblTitulo.Location = new Point(12, 22);
+            lblTitulo.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTitulo.Location = new Point(187, 35);
             lblTitulo.Name = "lblTitulo";
-            lblTitulo.Size = new Size(645, 32);
+            lblTitulo.Size = new Size(708, 34);
             lblTitulo.TabIndex = 11;
             lblTitulo.Text = "CONSOLIDADO DE BOLETA DE CALIFICACIONES: I PARCIAL 2026";
             // 
             // lblEscuela
             // 
             lblEscuela.BackColor = Color.Transparent;
-            lblEscuela.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblEscuela.Location = new Point(12, 5);
+            lblEscuela.Font = new Font("Microsoft Sans Serif", 12F);
+            lblEscuela.Location = new Point(364, 12);
             lblEscuela.Name = "lblEscuela";
-            lblEscuela.Size = new Size(301, 22);
+            lblEscuela.Size = new Size(324, 22);
             lblEscuela.TabIndex = 10;
             lblEscuela.Text = "ATLANTIC ACADEMY BILINGUAL SCHOOL";
             // 
@@ -141,7 +145,7 @@
             guna2Panel1.Controls.Add(lblParcial);
             guna2Panel1.CustomBorderColor = Color.FromArgb(217, 217, 217);
             guna2Panel1.CustomizableEdges = customizableEdges9;
-            guna2Panel1.Location = new Point(12, 62);
+            guna2Panel1.Location = new Point(12, 92);
             guna2Panel1.Name = "guna2Panel1";
             guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges10;
             guna2Panel1.Size = new Size(988, 53);
@@ -267,7 +271,7 @@
             panelBarraSuperior.BorderThickness = 1;
             panelBarraSuperior.CustomizableEdges = customizableEdges11;
             panelBarraSuperior.FillColor = Color.FromArgb(14, 102, 248);
-            panelBarraSuperior.Location = new Point(12, 57);
+            panelBarraSuperior.Location = new Point(12, 87);
             panelBarraSuperior.Name = "panelBarraSuperior";
             panelBarraSuperior.ShadowDecoration.CustomizableEdges = customizableEdges12;
             panelBarraSuperior.Size = new Size(988, 10);
@@ -285,7 +289,7 @@
             panelBarraGrafico.Controls.Add(btnAnteriorGrafico);
             panelBarraGrafico.CustomizableEdges = customizableEdges17;
             panelBarraGrafico.FillColor = Color.FromArgb(14, 102, 248);
-            panelBarraGrafico.Location = new Point(12, 127);
+            panelBarraGrafico.Location = new Point(12, 157);
             panelBarraGrafico.Name = "panelBarraGrafico";
             panelBarraGrafico.ShadowDecoration.CustomizableEdges = customizableEdges18;
             panelBarraGrafico.Size = new Size(988, 25);
@@ -356,7 +360,7 @@
             panelGrafico.BorderColor = Color.Transparent;
             panelGrafico.CustomBorderColor = Color.Transparent;
             panelGrafico.CustomizableEdges = customizableEdges19;
-            panelGrafico.Location = new Point(27, 154);
+            panelGrafico.Location = new Point(27, 184);
             panelGrafico.Name = "panelGrafico";
             panelGrafico.ShadowDecoration.CustomizableEdges = customizableEdges20;
             panelGrafico.Size = new Size(960, 172);
@@ -370,7 +374,7 @@
             panelBarraGrid.BorderThickness = 2;
             panelBarraGrid.CustomizableEdges = customizableEdges21;
             panelBarraGrid.FillColor = Color.FromArgb(14, 102, 248);
-            panelBarraGrid.Location = new Point(27, 366);
+            panelBarraGrid.Location = new Point(27, 396);
             panelBarraGrid.Name = "panelBarraGrid";
             panelBarraGrid.ShadowDecoration.CustomizableEdges = customizableEdges22;
             panelBarraGrid.Size = new Size(960, 16);
@@ -380,7 +384,7 @@
             // 
             guna2Panel5.Controls.Add(dgvBoleta);
             guna2Panel5.CustomizableEdges = customizableEdges23;
-            guna2Panel5.Location = new Point(27, 383);
+            guna2Panel5.Location = new Point(27, 413);
             guna2Panel5.Name = "guna2Panel5";
             guna2Panel5.ShadowDecoration.CustomizableEdges = customizableEdges24;
             guna2Panel5.Size = new Size(960, 224);
@@ -460,7 +464,7 @@
             txtBuscar.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtBuscar.Font = new Font("Segoe UI", 9F);
             txtBuscar.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtBuscar.Location = new Point(806, 342);
+            txtBuscar.Location = new Point(806, 372);
             txtBuscar.Name = "txtBuscar";
             txtBuscar.PlaceholderText = "";
             txtBuscar.SelectedText = "";
@@ -479,7 +483,7 @@
             guna2Panel2.CustomBorderColor = Color.FromArgb(217, 217, 217);
             guna2Panel2.CustomizableEdges = customizableEdges29;
             guna2Panel2.FillColor = Color.Transparent;
-            guna2Panel2.Location = new Point(957, 342);
+            guna2Panel2.Location = new Point(957, 372);
             guna2Panel2.Name = "guna2Panel2";
             guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges30;
             guna2Panel2.Size = new Size(26, 20);
@@ -514,7 +518,7 @@
             guna2Panel3.CustomBorderColor = Color.Transparent;
             guna2Panel3.CustomizableEdges = customizableEdges31;
             guna2Panel3.FillColor = Color.FromArgb(14, 102, 248);
-            guna2Panel3.Location = new Point(12, 50);
+            guna2Panel3.Location = new Point(12, 80);
             guna2Panel3.Name = "guna2Panel3";
             guna2Panel3.ShadowDecoration.CustomizableEdges = customizableEdges32;
             guna2Panel3.Size = new Size(988, 10);
@@ -529,7 +533,7 @@
             guna2Panel6.CustomBorderColor = Color.FromArgb(217, 217, 217);
             guna2Panel6.CustomizableEdges = customizableEdges33;
             guna2Panel6.FillColor = Color.Transparent;
-            guna2Panel6.Location = new Point(12, 153);
+            guna2Panel6.Location = new Point(12, 183);
             guna2Panel6.Name = "guna2Panel6";
             guna2Panel6.ShadowDecoration.CustomizableEdges = customizableEdges34;
             guna2Panel6.Size = new Size(988, 176);
@@ -542,7 +546,7 @@
             guna2Panel4.BorderThickness = 1;
             guna2Panel4.CustomizableEdges = customizableEdges35;
             guna2Panel4.FillColor = Color.FromArgb(14, 102, 248);
-            guna2Panel4.Location = new Point(12, 150);
+            guna2Panel4.Location = new Point(12, 180);
             guna2Panel4.Name = "guna2Panel4";
             guna2Panel4.ShadowDecoration.CustomizableEdges = customizableEdges36;
             guna2Panel4.Size = new Size(988, 5);
@@ -558,17 +562,32 @@
             guna2Panel7.CustomBorderColor = Color.FromArgb(217, 217, 217);
             guna2Panel7.CustomizableEdges = customizableEdges37;
             guna2Panel7.FillColor = Color.Transparent;
-            guna2Panel7.Location = new Point(12, 335);
+            guna2Panel7.Location = new Point(12, 365);
             guna2Panel7.Name = "guna2Panel7";
             guna2Panel7.ShadowDecoration.CustomizableEdges = customizableEdges38;
             guna2Panel7.Size = new Size(988, 302);
             guna2Panel7.TabIndex = 21;
             // 
+            // guna2PictureBox1
+            // 
+            guna2PictureBox1.CustomizableEdges = customizableEdges39;
+            guna2PictureBox1.Image = Properties.Resources._2;
+            guna2PictureBox1.ImageRotate = 0F;
+            guna2PictureBox1.Location = new Point(58, 1);
+            guna2PictureBox1.Name = "guna2PictureBox1";
+            guna2PictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges40;
+            guna2PictureBox1.Size = new Size(75, 75);
+            guna2PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            guna2PictureBox1.TabIndex = 22;
+            guna2PictureBox1.TabStop = false;
+            // 
             // FrmConsolidadoAsignaturas
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1028, 642);
+            ClientSize = new Size(1028, 674);
+            Controls.Add(guna2PictureBox1);
+            Controls.Add(lblEscuela);
             Controls.Add(guna2Panel4);
             Controls.Add(panelBarraSuperior);
             Controls.Add(guna2Panel3);
@@ -580,7 +599,6 @@
             Controls.Add(panelBarraGrafico);
             Controls.Add(guna2Panel1);
             Controls.Add(lblTitulo);
-            Controls.Add(lblEscuela);
             Controls.Add(guna2Panel6);
             Controls.Add(guna2Panel7);
             Name = "FrmConsolidadoAsignaturas";
@@ -595,6 +613,7 @@
             guna2Panel2.ResumeLayout(false);
             guna2Panel7.ResumeLayout(false);
             guna2Panel7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -632,5 +651,6 @@
         private Guna.UI2.WinForms.Guna2Panel guna2Panel6;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel7;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel8;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
     }
 }
