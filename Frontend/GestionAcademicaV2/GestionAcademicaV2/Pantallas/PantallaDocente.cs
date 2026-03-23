@@ -107,5 +107,10 @@ namespace GestionAcademicaV2.Pantallas
         {
             AbrirFormularioEnPanel(new FrmReporteCalificaciones(docenteId));
         }
+
+        public void MostrarConsolidadoAsignaturas(int docenteId)
+        {
+            AbrirFormularioEnPanel(new FrmConsolidadoAsignaturas());
+        }
     }
 }

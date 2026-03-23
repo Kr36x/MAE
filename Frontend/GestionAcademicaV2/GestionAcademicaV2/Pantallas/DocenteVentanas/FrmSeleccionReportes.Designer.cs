@@ -32,11 +32,15 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             btnAsistencia = new Guna.UI2.WinForms.Guna2Button();
             guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             btnCalificaciones = new Guna.UI2.WinForms.Guna2Button();
+            guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            btnConsolidadas = new Guna.UI2.WinForms.Guna2Button();
             SuspendLayout();
             // 
             // guna2HtmlLabel1
@@ -101,11 +105,39 @@
             btnCalificaciones.Text = "Cuadro Calificaciones ";
             btnCalificaciones.Click += btnCalificaciones_Click;
             // 
+            // guna2HtmlLabel4
+            // 
+            guna2HtmlLabel4.BackColor = Color.Transparent;
+            guna2HtmlLabel4.Location = new Point(321, 251);
+            guna2HtmlLabel4.Name = "guna2HtmlLabel4";
+            guna2HtmlLabel4.Size = new Size(530, 17);
+            guna2HtmlLabel4.TabIndex = 6;
+            guna2HtmlLabel4.Text = "Exportar el resumen de promedios para la carga masiva en la plataforma oficial del gobierno (SACE).";
+            // 
+            // btnConsolidadas
+            // 
+            btnConsolidadas.CustomizableEdges = customizableEdges5;
+            btnConsolidadas.DisabledState.BorderColor = Color.DarkGray;
+            btnConsolidadas.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnConsolidadas.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnConsolidadas.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnConsolidadas.Font = new Font("Segoe UI", 9F);
+            btnConsolidadas.ForeColor = Color.White;
+            btnConsolidadas.Location = new Point(119, 238);
+            btnConsolidadas.Name = "btnConsolidadas";
+            btnConsolidadas.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            btnConsolidadas.Size = new Size(180, 45);
+            btnConsolidadas.TabIndex = 5;
+            btnConsolidadas.Text = "Calificaciones Consolidadas";
+            btnConsolidadas.Click += btnConsolidadas_Click;
+            // 
             // FrmSeleccionReportes
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1012, 568);
+            Controls.Add(guna2HtmlLabel4);
+            Controls.Add(btnConsolidadas);
             Controls.Add(guna2HtmlLabel3);
             Controls.Add(btnCalificaciones);
             Controls.Add(guna2HtmlLabel2);
@@ -124,5 +156,7 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
         private Guna.UI2.WinForms.Guna2Button btnCalificaciones;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel4;
+        private Guna.UI2.WinForms.Guna2Button btnConsolidadas;
     }
 }
