@@ -22,36 +22,42 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
         private void CargarInformacionEstudiante()
         {
-            EjecutarUtilidades util = new EjecutarUtilidades();
-            SqlParameter[] p =
+            try {
+                EjecutarUtilidades util = new EjecutarUtilidades();
+                SqlParameter[] p =
+                {
+                    new SqlParameter("@EstudianteID", estudianteID)
+                };
+                DataTable dt = util.EjecutarSP("spMAE_DetalleEstudianteCompleto", p);
+                if (dt.Rows.Count > 0)
+                {
+                    txtNombreEstudiante.Text = dt.Rows[0]["NombreEstudiante"].ToString();
+                    txtIdentidadEstudiante.Text = dt.Rows[0]["IdentidadEstudiante"].ToString();
+                    txtGenero.Text = dt.Rows[0]["Sexo"].ToString();
+                    txtDireccion.Text = dt.Rows[0]["Direccion"].ToString();
+                    txtTelefonoEstudiante.Text = dt.Rows[0]["TelefonoEstudiante"].ToString();
+                    txtFechaNacimiento.Text = dt.Rows[0]["FechaNacimiento"].ToString();
+                    txtMano.Text = dt.Rows[0]["Mano"].ToString();
+                    txtAlergias.Text = dt.Rows[0]["Alergia"].ToString();
+                    txtEstado.Text = dt.Rows[0]["Estado"].ToString();
+
+                    txtGrado.Text = dt.Rows[0]["NombreGrado"].ToString();
+                    txtAnio.Text = dt.Rows[0]["AnioAcademico"].ToString();
+
+                    txtNombrePadre.Text = dt.Rows[0]["NombrePadre"].ToString();
+                    txtIdentidadPadre.Text = dt.Rows[0]["IdentidadPadre"].ToString();
+                    txtTelefonoPadre.Text = dt.Rows[0]["TelefonoPadre"].ToString();
+                    txtTrabajoPadre.Text = dt.Rows[0]["LugarTrabajoPadre"].ToString();
+
+                    txtNombreMadre.Text = dt.Rows[0]["NombreMadre"].ToString();
+                    txtIdentidadMadre.Text = dt.Rows[0]["IdentidadMadre"].ToString();
+                    txtTelefonoMadre.Text = dt.Rows[0]["TelefonoMadre"].ToString();
+                    txtTrabajoMadre.Text = dt.Rows[0]["LugarTrabajoMadre"].ToString();
+                }
+            }
+            catch (Exception ex)
             {
-                new SqlParameter("@EstudianteID", estudianteID)
-            };
-            DataTable dt = util.EjecutarSP("spMAE_DetalleEstudianteCompleto", p);
-            if (dt.Rows.Count > 0)
-            {
-                txtNombreEstudiante.Text = dt.Rows[0]["NombreEstudiante"].ToString();
-                txtIdentidadEstudiante.Text = dt.Rows[0]["IdentidadEstudiante"].ToString();
-                txtGenero.Text = dt.Rows[0]["Sexo"].ToString();
-                txtDireccion.Text = dt.Rows[0]["Direccion"].ToString();
-                txtTelefonoEstudiante.Text = dt.Rows[0]["TelefonoEstudiante"].ToString();
-                txtFechaNacimiento.Text = dt.Rows[0]["FechaNacimiento"].ToString();
-                txtMano.Text = dt.Rows[0]["Mano"].ToString();
-                txtAlergias.Text = dt.Rows[0]["Alergia"].ToString();
-                txtEstado.Text = dt.Rows[0]["Estado"].ToString();
-
-                txtGrado.Text = dt.Rows[0]["NombreGrado"].ToString();
-                txtAnio.Text = dt.Rows[0]["AnioAcademico"].ToString();
-
-                txtNombrePadre.Text = dt.Rows[0]["NombrePadre"].ToString();
-                txtIdentidadPadre.Text = dt.Rows[0]["IdentidadPadre"].ToString();
-                txtTelefonoPadre.Text = dt.Rows[0]["TelefonoPadre"].ToString();
-                txtTrabajoPadre.Text = dt.Rows[0]["LugarTrabajoPadre"].ToString();
-
-                txtNombreMadre.Text = dt.Rows[0]["NombreMadre"].ToString();
-                txtIdentidadMadre.Text = dt.Rows[0]["IdentidadMadre"].ToString();
-                txtTelefonoMadre.Text = dt.Rows[0]["TelefonoMadre"].ToString();
-                txtTrabajoMadre.Text = dt.Rows[0]["LugarTrabajoMadre"].ToString();
+                MessageBox.Show("Error al llenar el formulario: " + ex.Message);
             }
         }
         private void guna2TextBox3_TextChanged(object sender, EventArgs e)

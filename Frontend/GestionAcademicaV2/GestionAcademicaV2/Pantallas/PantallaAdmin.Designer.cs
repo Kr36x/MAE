@@ -213,7 +213,6 @@
             btnAsistencia.DisabledState.CustomBorderColor = Color.DarkGray;
             btnAsistencia.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btnAsistencia.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnAsistencia.Enabled = false;
             btnAsistencia.FillColor = SystemColors.HotTrack;
             btnAsistencia.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             btnAsistencia.ForeColor = Color.White;
@@ -225,7 +224,8 @@
             btnAsistencia.ShadowDecoration.CustomizableEdges = customizableEdges9;
             btnAsistencia.Size = new Size(220, 45);
             btnAsistencia.TabIndex = 8;
-            btnAsistencia.Text = "Asistencia";
+            btnAsistencia.Text = "Deserción";
+            btnAsistencia.Click += btnAsistencia_Click_1;
             // 
             // btnMatricula
             // 

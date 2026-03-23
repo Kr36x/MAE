@@ -322,10 +322,10 @@
             guna2ContainerControl2.Controls.Add(txtBuscarDocente);
             guna2ContainerControl2.Controls.Add(dgvDocentes);
             guna2ContainerControl2.CustomizableEdges = customizableEdges17;
-            guna2ContainerControl2.Location = new Point(69, 465);
+            guna2ContainerControl2.Location = new Point(69, 448);
             guna2ContainerControl2.Name = "guna2ContainerControl2";
             guna2ContainerControl2.ShadowDecoration.CustomizableEdges = customizableEdges18;
-            guna2ContainerControl2.Size = new Size(560, 197);
+            guna2ContainerControl2.Size = new Size(560, 214);
             guna2ContainerControl2.TabIndex = 6;
             guna2ContainerControl2.Text = "guna2ContainerControl2";
             // 
@@ -367,6 +367,7 @@
             txtBuscarDocente.BackColor = Color.Transparent;
             txtBuscarDocente.BorderColor = Color.Black;
             txtBuscarDocente.BorderRadius = 10;
+            txtBuscarDocente.CharacterCasing = CharacterCasing.Upper;
             txtBuscarDocente.CustomizableEdges = customizableEdges15;
             txtBuscarDocente.DefaultText = "";
             txtBuscarDocente.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
@@ -379,7 +380,7 @@
             txtBuscarDocente.Location = new Point(20, 11);
             txtBuscarDocente.Name = "txtBuscarDocente";
             txtBuscarDocente.PlaceholderForeColor = Color.Gray;
-            txtBuscarDocente.PlaceholderText = "Ingrese nombre a buscar";
+            txtBuscarDocente.PlaceholderText = "INGRESE NOMBRE A BUSCAR";
             txtBuscarDocente.SelectedText = "";
             txtBuscarDocente.ShadowDecoration.CustomizableEdges = customizableEdges16;
             txtBuscarDocente.Size = new Size(295, 28);
@@ -412,8 +413,9 @@
             dgvDocentes.GridColor = Color.FromArgb(231, 229, 255);
             dgvDocentes.Location = new Point(20, 72);
             dgvDocentes.Name = "dgvDocentes";
+            dgvDocentes.ReadOnly = true;
             dgvDocentes.RowHeadersVisible = false;
-            dgvDocentes.Size = new Size(522, 106);
+            dgvDocentes.Size = new Size(522, 123);
             dgvDocentes.TabIndex = 0;
             dgvDocentes.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
             dgvDocentes.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -428,7 +430,7 @@
             dgvDocentes.ThemeStyle.HeaderStyle.ForeColor = Color.White;
             dgvDocentes.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dgvDocentes.ThemeStyle.HeaderStyle.Height = 17;
-            dgvDocentes.ThemeStyle.ReadOnly = false;
+            dgvDocentes.ThemeStyle.ReadOnly = true;
             dgvDocentes.ThemeStyle.RowsStyle.BackColor = Color.White;
             dgvDocentes.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             dgvDocentes.ThemeStyle.RowsStyle.Font = new Font("Segoe UI", 9F);
@@ -444,6 +446,7 @@
             DocenteID.FillWeight = 60.9137039F;
             DocenteID.HeaderText = "ID";
             DocenteID.Name = "DocenteID";
+            DocenteID.ReadOnly = true;
             // 
             // Nombre
             // 
@@ -451,6 +454,7 @@
             Nombre.FillWeight = 113.028763F;
             Nombre.HeaderText = "NOMBRE";
             Nombre.Name = "Nombre";
+            Nombre.ReadOnly = true;
             // 
             // Identidad
             // 
@@ -458,6 +462,7 @@
             Identidad.FillWeight = 113.028763F;
             Identidad.HeaderText = "IDENTIDAD";
             Identidad.Name = "Identidad";
+            Identidad.ReadOnly = true;
             // 
             // Especialidad
             // 
@@ -465,6 +470,7 @@
             Especialidad.FillWeight = 113.028763F;
             Especialidad.HeaderText = "ESPECIALIDAD";
             Especialidad.Name = "Especialidad";
+            Especialidad.ReadOnly = true;
             // 
             // guna2ContainerControl3
             // 
@@ -474,10 +480,10 @@
             guna2ContainerControl3.Controls.Add(guna2HtmlLabel10);
             guna2ContainerControl3.Controls.Add(dgvAsignatura);
             guna2ContainerControl3.CustomizableEdges = customizableEdges19;
-            guna2ContainerControl3.Location = new Point(635, 465);
+            guna2ContainerControl3.Location = new Point(635, 448);
             guna2ContainerControl3.Name = "guna2ContainerControl3";
             guna2ContainerControl3.ShadowDecoration.CustomizableEdges = customizableEdges20;
-            guna2ContainerControl3.Size = new Size(341, 197);
+            guna2ContainerControl3.Size = new Size(341, 214);
             guna2ContainerControl3.TabIndex = 7;
             guna2ContainerControl3.Text = "guna2ContainerControl3";
             // 
@@ -522,8 +528,9 @@
             dgvAsignatura.GridColor = Color.FromArgb(231, 229, 255);
             dgvAsignatura.Location = new Point(18, 45);
             dgvAsignatura.Name = "dgvAsignatura";
+            dgvAsignatura.ReadOnly = true;
             dgvAsignatura.RowHeadersVisible = false;
-            dgvAsignatura.Size = new Size(302, 133);
+            dgvAsignatura.Size = new Size(302, 150);
             dgvAsignatura.TabIndex = 0;
             dgvAsignatura.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
             dgvAsignatura.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -538,7 +545,7 @@
             dgvAsignatura.ThemeStyle.HeaderStyle.ForeColor = Color.White;
             dgvAsignatura.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dgvAsignatura.ThemeStyle.HeaderStyle.Height = 17;
-            dgvAsignatura.ThemeStyle.ReadOnly = false;
+            dgvAsignatura.ThemeStyle.ReadOnly = true;
             dgvAsignatura.ThemeStyle.RowsStyle.BackColor = Color.White;
             dgvAsignatura.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             dgvAsignatura.ThemeStyle.RowsStyle.Font = new Font("Segoe UI", 9F);
@@ -550,20 +557,26 @@
             // AsignaturaID
             // 
             AsignaturaID.DataPropertyName = "AsignaturaID";
+            AsignaturaID.FillWeight = 34.5285873F;
             AsignaturaID.HeaderText = "ID";
             AsignaturaID.Name = "AsignaturaID";
+            AsignaturaID.ReadOnly = true;
             // 
             // Asignatura
             // 
             Asignatura.DataPropertyName = "Asignatura";
+            Asignatura.FillWeight = 182.741119F;
             Asignatura.HeaderText = "ASIGNATURA";
             Asignatura.Name = "Asignatura";
+            Asignatura.ReadOnly = true;
             // 
             // NombreGrado
             // 
             NombreGrado.DataPropertyName = "NombreGrado";
+            NombreGrado.FillWeight = 82.73029F;
             NombreGrado.HeaderText = "GRADO";
             NombreGrado.Name = "NombreGrado";
+            NombreGrado.ReadOnly = true;
             // 
             // CargaDocente
             // 
@@ -620,12 +633,12 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel10;
         private Guna.UI2.WinForms.Guna2DataGridView dgvAsignatura;
         private Guna.UI2.WinForms.Guna2DateTimePicker dtpAnio;
-        private DataGridViewTextBoxColumn AsignaturaID;
-        private DataGridViewTextBoxColumn Asignatura;
-        private DataGridViewTextBoxColumn NombreGrado;
         private DataGridViewTextBoxColumn DocenteID;
         private DataGridViewTextBoxColumn Nombre;
         private DataGridViewTextBoxColumn Identidad;
         private DataGridViewTextBoxColumn Especialidad;
+        private DataGridViewTextBoxColumn AsignaturaID;
+        private DataGridViewTextBoxColumn Asignatura;
+        private DataGridViewTextBoxColumn NombreGrado;
     }
 }
