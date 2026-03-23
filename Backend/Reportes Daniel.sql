@@ -6,7 +6,7 @@
 --===================================
 
 
---1. FICHA DE MATRÍCULA INDIVIDUAL (HISTÓRICO Y VIGENTE)
+--1. FICHA DE MATRÃCULA INDIVIDUAL (HISTÃ“RICO Y VIGENTE)
 
 	--DATOS ESTUDIANTE
 CREATE OR ALTER PROCEDURE spMAE_RepFichaMatricula @estudianteID int, @matriculaID int
@@ -109,7 +109,7 @@ BEGIN
             CAST(
                 SUM(CAl.Nota) * 100.0 /
                 NULLIF(SUM(AC.Valor), 0)
-            AS DECIMAL(5,2)) AS Promedio
+            AS DECIMAL(5,2)) AS Promedio, AC.Parcial
 
         FROM Estudiante E 
         JOIN Matricula M ON M.EstudianteID = E.EstudianteID
@@ -117,22 +117,23 @@ BEGIN
         JOIN Seccion S ON S.SeccionID = CA.SeccionID
         JOIN Grado G ON G.GradoID = S.GradoID
 
-        LEFT JOIN Actividad AC ON AC.CargaID = CA.CargaID
-        LEFT JOIN Calificacion CAl ON CAl.ActividadID = AC.ActividadID AND CAl.EstudianteID = E.EstudianteID
+        INNER JOIN Actividad AC ON AC.CargaID = CA.CargaID
+        INNER JOIN Calificacion CAl ON CAl.ActividadID = AC.ActividadID AND CAl.EstudianteID = E.EstudianteID
 
         WHERE G.Nivel = @nivel AND CA.Anio = YEAR(GETDATE()) AND M.Anio = YEAR(GETDATE())
 
-        GROUP BY E.EstudianteID,G.GradoID,G.NombreGrado,S.Letra
+        GROUP BY E.EstudianteID,G.GradoID,G.NombreGrado,S.Letra , AC.Parcial
     )
 
     SELECT 
         NombreGrado, Letra,
         CAST(AVG(Promedio) AS DECIMAL(5,2)) AS PromedioGrado,
-        CONCAT(SUM(CASE WHEN Promedio > 85 THEN 1 ELSE 0 END), CONCAT( ' '  , 'EST.') )AS Excelencia
+        CONCAT(SUM(CASE WHEN Promedio > 85 THEN 1 ELSE 0 END), CONCAT( ' '  , 'EST.') )AS Excelencia , Parcial
     FROM Promedios
-    GROUP BY GradoID,NombreGrado,Letra
+    GROUP BY GradoID,NombreGrado,Letra,  Parcial
     ORDER BY GradoID;
 END;
+
 
 --exec spMAE_RepGlobalesRend @nivel = 'BASICA'
 
@@ -204,7 +205,7 @@ END;
 go
 
 
-	--7. Asignación de Docentes y Cantidad de Alumnos por Docente
+	--7. AsignaciÃ³n de Docentes y Cantidad de Alumnos por Docente
 
 	--DOCENTES ASIGNADOS
 CREATE OR ALTER PROCEDURE spMAE_RepDistribCargaDoc @grado int, @seccion int, @anio int
@@ -246,7 +247,7 @@ go
 
 
 
-    --8.  PROYECCIÓN DE DESERCIÓN Y RETENCIÓN ESTUDIANTIL EN EL AÑO
+    --8.  PROYECCIÃ“N DE DESERCIÃ“N Y RETENCIÃ“N ESTUDIANTIL EN EL AÃ‘O
 
 go
 CREATE OR ALTER VIEW vMAE_RepProyDesercionGen 
