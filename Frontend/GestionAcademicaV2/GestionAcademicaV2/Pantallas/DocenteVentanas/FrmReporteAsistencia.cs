@@ -21,7 +21,7 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
         {
             InitializeComponent();
             this.docenteId = docenteId;
-            
+
         }
 
         private void FrmReporteAsistencia_Load(object sender, EventArgs e)
@@ -34,9 +34,10 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
             CargarGrados();
             ConfigurarDataGridView(anioActual, mesActual);
 
-            if (cbGrado.Items.Count > 0) {
+            if (cbGrado.Items.Count > 0)
+            {
                 CargarReporte();
-                cbGrado.SelectedIndex = 0; 
+                cbGrado.SelectedIndex = 0;
             }
         }
 
@@ -379,6 +380,13 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
             dgvAsistencia.RowTemplate.Height = 40;
             dgvAsistencia.ScrollBars = ScrollBars.Both;
 
+            // 👇 esto agrega separación visible entre celdas
+            dgvAsistencia.CellBorderStyle = DataGridViewCellBorderStyle.Single;
+            dgvAsistencia.GridColor = Color.FromArgb(210, 210, 210);
+
+            dgvAsistencia.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            dgvAsistencia.AdvancedColumnHeadersBorderStyle.All = DataGridViewAdvancedCellBorderStyle.Single;
+
             dgvAsistencia.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(0, 100, 0);
             dgvAsistencia.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
             dgvAsistencia.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);
@@ -388,6 +396,14 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
             dgvAsistencia.DefaultCellStyle.Font = new Font("Segoe UI", 10);
             dgvAsistencia.DefaultCellStyle.SelectionBackColor = Color.White;
             dgvAsistencia.DefaultCellStyle.SelectionForeColor = Color.Black;
+
+            // 👇 diferencia visual entre filas
+            dgvAsistencia.DefaultCellStyle.BackColor = Color.White;
+            dgvAsistencia.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(248, 248, 248);
+
+            // opcional: quita ese fondo azul de selección si haces click
+            dgvAsistencia.RowsDefaultCellStyle.SelectionBackColor = Color.FromArgb(245, 245, 245);
+            dgvAsistencia.AlternatingRowsDefaultCellStyle.SelectionBackColor = Color.FromArgb(235, 235, 235);
 
             // FIJAS
             var colId = new DataGridViewTextBoxColumn();
@@ -432,7 +448,6 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
             colTE.HeaderCell.Style.ForeColor = Color.White;
             dgvAsistencia.Columns.Add(colTE);
 
-            // DIAS
             for (int dia = 1; dia <= totalDias; dia++)
             {
                 var colDia = new DataGridViewTextBoxColumn();
@@ -484,8 +499,9 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
             if (colorTexto == null) return;
 
             e.Handled = true;
-            e.PaintBackground(e.CellBounds, true);
-            //e.PaintBorder(e.ClipBounds, true);
+
+            // 👇 pinta fondo + borde
+            e.Paint(e.CellBounds, DataGridViewPaintParts.Background | DataGridViewPaintParts.Border);
 
             TextRenderer.DrawText(
                 e.Graphics,
@@ -680,7 +696,10 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
             fila.Cells["TE"].Value = te;
         }
 
+        private void guna2HtmlLabel7_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 
 }

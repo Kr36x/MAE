@@ -563,6 +563,11 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
             lblAsignatura.Size = plVerder.ClientSize;
         }
 
+        private void guna2HtmlLabel3_Click(object sender, EventArgs e)
+        {
+
+        }
+
         //private void CargarDatosNotasEjemplo()
         //{
         //    dgvNotas.Rows.Clear();
