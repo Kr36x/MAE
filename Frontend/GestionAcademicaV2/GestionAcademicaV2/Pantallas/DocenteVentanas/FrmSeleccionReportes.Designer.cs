@@ -133,9 +133,9 @@
             guna2HtmlLabel4.BackColor = Color.Transparent;
             guna2HtmlLabel4.Location = new Point(239, 426);
             guna2HtmlLabel4.Name = "guna2HtmlLabel4";
-            guna2HtmlLabel4.Size = new Size(530, 17);
+            guna2HtmlLabel4.Size = new Size(452, 17);
             guna2HtmlLabel4.TabIndex = 6;
-            guna2HtmlLabel4.Text = "Exportar el resumen de promedios para la carga masiva en la plataforma oficial del gobierno (SACE).";
+            guna2HtmlLabel4.Text = "Permite a la Administración auditar el desempeño de cada asignatura que se imparte.";
             // 
             // btnConsolidadas
             // 
