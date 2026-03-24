@@ -64,9 +64,10 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
                     // TÍTULO
                     doc.Add(new Paragraph("FORMULARIO DE MATRÍCULA")
                         .SetTextAlignment(TextAlignment.CENTER)
-                        .SetFontSize(20));
+                        .SetFontSize(17));
 
-                    doc.Add(new Paragraph("\n"));
+                    //doc.Add(new Paragraph("\n"));
+                    doc.Add(new Paragraph("").SetMarginBottom(5));
 
                     // INFORMACIÓN DEL ESTUDIANTE
                     doc.Add(new Paragraph("INFORMACIÓN DEL ESTUDIANTE")
@@ -142,12 +143,12 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
                     Table firmas = new Table(2).UseAllAvailableWidth();
 
                     firmas.AddCell(new Cell()
-                        .Add(new Paragraph("\n\n______________________________\nFirma del Tutor")
+                        .Add(new Paragraph("\n______________________________\nFirma del Tutor")
                         .SetTextAlignment(TextAlignment.CENTER))
                         .SetBorder(Border.NO_BORDER));
 
                     firmas.AddCell(new Cell()
-                        .Add(new Paragraph("\n\n______________________________\nLugar y Fecha")
+                        .Add(new Paragraph("\n______________________________\nLugar y Fecha")
                         .SetTextAlignment(TextAlignment.CENTER))
                         .SetBorder(Border.NO_BORDER));
 
@@ -192,30 +193,48 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            GenerarMatriculaPDF pdf = new GenerarMatriculaPDF();
+            using (SaveFileDialog saveFileDialog = new SaveFileDialog())
+            {
+                saveFileDialog.Title = "Guardar matrícula en PDF";
+                saveFileDialog.Filter = "Archivos PDF (*.pdf)|*.pdf";
+                saveFileDialog.FileName = $"Matricula_{txtNombreEstudiante.Text}_{DateTime.Now:yyyyMMdd}.pdf";
 
-            pdf.CrearPDF(
-                "C:\\Users\\DELL\\OneDrive\\Desktop\\SistemaGestionAcademicaMAE\\MAE\\Frontend\\GestionAcademicaV2\\Imagenes\\Matricula.pdf",
-                txtIdentidadEstudiante.Text,
-                cbbGenero.Text,
-                txtNombreEstudiante.Text,
-                txtTelefono.Text,
-                dtpFechaNacimiento.Text,
-                txtDireccion.Text,
-                cbbGrado.Text,
-                cbbMano.Text,
-                txtAlergias.Text,
-                txtNombrePadre.Text,
-                txtIdentidadPadre.Text,
-                txtTelefonoPadre.Text,
-                txtTrabajoPadre.Text,
-                txtNombreMadre.Text,
-                txtIdentidadMadre.Text,
-                txtTelefonoMadre.Text,
-                txtTrabajoMadre.Text
-            );
+                // abrir en Descargas por defecto
+                saveFileDialog.InitialDirectory = System.IO.Path.Combine(
+                    Environment.GetFolderPath(Environment.SpecialFolder.UserProfile),
+                    "Downloads"
+                );
 
-            MessageBox.Show("PDF generado correctamente");
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    string ruta = saveFileDialog.FileName;
+
+                    GenerarMatriculaPDF pdf = new GenerarMatriculaPDF();
+
+                    pdf.CrearPDF(
+                        ruta,
+                        txtIdentidadEstudiante.Text,
+                        cbbGenero.Text,
+                        txtNombreEstudiante.Text,
+                        txtTelefono.Text,
+                        dtpFechaNacimiento.Text,
+                        txtDireccion.Text,
+                        cbbGrado.Text,
+                        cbbMano.Text,
+                        txtAlergias.Text,
+                        txtNombrePadre.Text,
+                        txtIdentidadPadre.Text,
+                        txtTelefonoPadre.Text,
+                        txtTrabajoPadre.Text,
+                        txtNombreMadre.Text,
+                        txtIdentidadMadre.Text,
+                        txtTelefonoMadre.Text,
+                        txtTrabajoMadre.Text
+                    );
+
+                    MessageBox.Show("PDF generado correctamente", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
         }
 
         private void CargarGrados()

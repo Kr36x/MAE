@@ -134,10 +134,10 @@
             // guna2HtmlLabel1
             // 
             guna2HtmlLabel1.BackColor = Color.Transparent;
-            guna2HtmlLabel1.Font = new Font("Britannic Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            guna2HtmlLabel1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             guna2HtmlLabel1.Location = new Point(223, 31);
             guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            guna2HtmlLabel1.Size = new Size(286, 19);
+            guna2HtmlLabel1.Size = new Size(324, 22);
             guna2HtmlLabel1.TabIndex = 0;
             guna2HtmlLabel1.Text = "ATLANTIC ACADEMY BILINGUAL SCHOOL";
             // 
@@ -249,7 +249,7 @@
             txtIdentidadEstudiante.ForeColor = Color.Black;
             txtIdentidadEstudiante.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             txtIdentidadEstudiante.Location = new Point(216, 149);
-            txtIdentidadEstudiante.MaxLength = 13;
+            txtIdentidadEstudiante.MaxLength = 15;
             txtIdentidadEstudiante.Name = "txtIdentidadEstudiante";
             txtIdentidadEstudiante.PlaceholderText = "";
             txtIdentidadEstudiante.SelectedText = "";
