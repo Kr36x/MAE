@@ -534,6 +534,11 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
             }
             ConfigurarDataGridViewNotas(dt);
             LlenarGridNotas(dt);
+
+            foreach (DataGridViewColumn col in dgvNotas.Columns)
+            {
+                col.SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)

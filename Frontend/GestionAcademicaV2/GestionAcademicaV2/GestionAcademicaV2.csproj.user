@@ -40,6 +40,9 @@
     <Compile Update="Pantallas\DocenteVentanas\FrmReporteCalificaciones.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Pantallas\DocenteVentanas\FrmReporteSemanal.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Pantallas\DocenteVentanas\FrmSeleccionReportes.cs">
       <SubType>Form</SubType>
     </Compile>

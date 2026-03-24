@@ -1,4 +1,5 @@
 ﻿using GestionAcademicaV2.Modelos;
+using GestionAcademicaV2.Pantallas.AdminVentanas;
 using GestionAcademicaV2.Pantallas.DocenteVentanas;
 using System;
 using System.Windows.Forms;
@@ -17,7 +18,6 @@ namespace GestionAcademicaV2.Pantallas
             InitializeComponent();
             usuarioActual = usuario;
         }
-
         private void AbrirFormularioEnPanel(Form formularioHijo)
         {
             if (formularioActivo != null)
@@ -86,9 +86,9 @@ namespace GestionAcademicaV2.Pantallas
         }
         private void PantallaDocente_Load_1(object sender, EventArgs e)
         {
-            lblUsuario.Text = FormatearNombre(usuarioActual.Usuario);
-            lblRol.Text = usuarioActual.Rol;
-            lblId.Text = "ID: " + usuarioActual.UsuarioID.ToString();
+            lblUsuario.Text = FormatearNombre(usuarioActual?.Usuario ?? "Usuario prueba");
+            lblRol.Text = usuarioActual?.Rol ?? "Sin rol";
+            lblId.Text = "ID: " + (usuarioActual?.UsuarioID.ToString() ?? "N/A");
         }
         
 
@@ -105,7 +105,7 @@ namespace GestionAcademicaV2.Pantallas
         }
             public void MostrarReporteCalificacion(int docenteId)
         {
-            AbrirFormularioEnPanel(new FrmReporteCalificaciones(docenteId));
+            AbrirFormularioEnPanel(new FrmReporteSemanal(docenteId));
         }
 
         public void MostrarConsolidadoAsignaturas(int docenteId)
@@ -116,6 +116,11 @@ namespace GestionAcademicaV2.Pantallas
         public void MostrarControlReuniones(int docenteId)
         {
             AbrirFormularioEnPanel(new FrmControlReuniones());
+        }
+
+        public void MoverPantallaAdmin(int docenteid)
+        {
+            AbrirFormularioEnPanel(new PantallaAdmin(usuarioActual));
         }
     }
 }

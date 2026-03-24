@@ -39,6 +39,8 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
                 CargarReporte();
                 cbGrado.SelectedIndex = 0;
             }
+
+            
         }
 
         private void ActualizarLabelRegistros()
@@ -274,6 +276,11 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
             ActualizarLabelRegistros();
 
             ActualizarTituloMes();
+
+            foreach (DataGridViewColumn col in dgvAsistencia.Columns)
+            {
+                col.SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
         }
 
         private void ActualizarTituloMes()

@@ -1,6 +1,6 @@
 ﻿namespace GestionAcademicaV2.Pantallas.DocenteVentanas
 {
-    partial class FrmReporteCalificaciones
+    partial class FrmReporteSemanal
     {
         /// <summary>
         /// Required designer variable.
@@ -68,11 +68,10 @@
             plVerder = new Guna.UI2.WinForms.Guna2Panel();
             lblAsignatura = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            dtpSemana = new Guna.UI2.WinForms.Guna2DateTimePicker();
             cbParcial = new Guna.UI2.WinForms.Guna2ComboBox();
-            cbAnio = new Guna.UI2.WinForms.Guna2ComboBox();
             cbAsignatura = new Guna.UI2.WinForms.Guna2ComboBox();
             cbGrado = new Guna.UI2.WinForms.Guna2ComboBox();
-            guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel7 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             cbSeccion = new Guna.UI2.WinForms.Guna2ComboBox();
             guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -115,7 +114,6 @@
             lblRegistros.Size = new Size(51, 17);
             lblRegistros.TabIndex = 13;
             lblRegistros.Text = "Registros";
-            lblRegistros.Click += lblRegistros_Click;
             // 
             // guna2Panel6
             // 
@@ -144,7 +142,6 @@
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
             dgvNotas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dgvNotas.ColumnHeadersHeight = 4;
-            dgvNotas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = Color.White;
             dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
@@ -159,6 +156,7 @@
             dgvNotas.MultiSelect = false;
             dgvNotas.Name = "dgvNotas";
             dgvNotas.RowHeadersVisible = false;
+            dgvNotas.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dgvNotas.Size = new Size(899, 326);
             dgvNotas.TabIndex = 0;
             dgvNotas.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
@@ -172,7 +170,7 @@
             dgvNotas.ThemeStyle.HeaderStyle.BorderStyle = DataGridViewHeaderBorderStyle.None;
             dgvNotas.ThemeStyle.HeaderStyle.Font = new Font("Segoe UI", 9F);
             dgvNotas.ThemeStyle.HeaderStyle.ForeColor = Color.White;
-            dgvNotas.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dgvNotas.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dgvNotas.ThemeStyle.HeaderStyle.Height = 4;
             dgvNotas.ThemeStyle.ReadOnly = false;
             dgvNotas.ThemeStyle.RowsStyle.BackColor = Color.White;
@@ -220,11 +218,10 @@
             guna2Panel1.BorderColor = Color.FromArgb(217, 217, 217);
             guna2Panel1.BorderRadius = 7;
             guna2Panel1.BorderThickness = 2;
+            guna2Panel1.Controls.Add(dtpSemana);
             guna2Panel1.Controls.Add(cbParcial);
-            guna2Panel1.Controls.Add(cbAnio);
             guna2Panel1.Controls.Add(cbAsignatura);
             guna2Panel1.Controls.Add(cbGrado);
-            guna2Panel1.Controls.Add(guna2HtmlLabel2);
             guna2Panel1.Controls.Add(guna2HtmlLabel7);
             guna2Panel1.Controls.Add(cbSeccion);
             guna2Panel1.Controls.Add(guna2HtmlLabel1);
@@ -238,10 +235,29 @@
             guna2Panel1.Size = new Size(931, 127);
             guna2Panel1.TabIndex = 10;
             // 
+            // dtpSemana
+            // 
+            dtpSemana.BorderRadius = 5;
+            dtpSemana.Checked = true;
+            dtpSemana.CustomizableEdges = customizableEdges5;
+            dtpSemana.FillColor = Color.FromArgb(0, 64, 0);
+            dtpSemana.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dtpSemana.ForeColor = Color.White;
+            dtpSemana.Format = DateTimePickerFormat.Long;
+            dtpSemana.Location = new Point(736, 24);
+            dtpSemana.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
+            dtpSemana.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
+            dtpSemana.Name = "dtpSemana";
+            dtpSemana.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            dtpSemana.Size = new Size(165, 36);
+            dtpSemana.TabIndex = 11;
+            dtpSemana.Value = new DateTime(2026, 3, 24, 8, 51, 56, 582);
+            dtpSemana.Click += dtpSemana_ValueChanged;
+            // 
             // cbParcial
             // 
             cbParcial.BackColor = Color.Transparent;
-            cbParcial.CustomizableEdges = customizableEdges5;
+            cbParcial.CustomizableEdges = customizableEdges7;
             cbParcial.DrawMode = DrawMode.OwnerDrawFixed;
             cbParcial.DropDownStyle = ComboBoxStyle.DropDownList;
             cbParcial.FocusedColor = Color.FromArgb(94, 148, 255);
@@ -251,28 +267,11 @@
             cbParcial.ItemHeight = 15;
             cbParcial.Location = new Point(25, 92);
             cbParcial.Name = "cbParcial";
-            cbParcial.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            cbParcial.ShadowDecoration.CustomizableEdges = customizableEdges8;
             cbParcial.Size = new Size(140, 21);
             cbParcial.TabIndex = 3;
             cbParcial.SelectedIndexChanged += cbParcial_SelectedIndexChanged;
-            // 
-            // cbAnio
-            // 
-            cbAnio.BackColor = Color.Transparent;
-            cbAnio.CustomizableEdges = customizableEdges7;
-            cbAnio.DrawMode = DrawMode.OwnerDrawFixed;
-            cbAnio.DropDownStyle = ComboBoxStyle.DropDownList;
-            cbAnio.FocusedColor = Color.FromArgb(94, 148, 255);
-            cbAnio.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            cbAnio.Font = new Font("Segoe UI", 10F);
-            cbAnio.ForeColor = Color.FromArgb(68, 88, 112);
-            cbAnio.ItemHeight = 15;
-            cbAnio.Location = new Point(674, 39);
-            cbAnio.Name = "cbAnio";
-            cbAnio.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            cbAnio.Size = new Size(140, 21);
-            cbAnio.TabIndex = 6;
-            cbAnio.SelectedIndexChanged += cbAnio_SelectedIndexChanged;
+            cbParcial.Click += cbParcial_SelectedIndexChanged;
             // 
             // cbAsignatura
             // 
@@ -291,6 +290,7 @@
             cbAsignatura.Size = new Size(140, 21);
             cbAsignatura.TabIndex = 5;
             cbAsignatura.SelectedIndexChanged += cbAsignatura_SelectedIndexChanged;
+            cbAsignatura.Click += cbAsignatura_SelectedIndexChanged;
             // 
             // cbGrado
             // 
@@ -309,16 +309,6 @@
             cbGrado.Size = new Size(140, 21);
             cbGrado.TabIndex = 2;
             cbGrado.SelectedIndexChanged += cbGrado_SelectedIndexChanged;
-            // 
-            // guna2HtmlLabel2
-            // 
-            guna2HtmlLabel2.BackColor = Color.Transparent;
-            guna2HtmlLabel2.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            guna2HtmlLabel2.Location = new Point(674, 15);
-            guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            guna2HtmlLabel2.Size = new Size(113, 19);
-            guna2HtmlLabel2.TabIndex = 8;
-            guna2HtmlLabel2.Text = "AÑO ACADEMICO";
             // 
             // guna2HtmlLabel7
             // 
@@ -377,13 +367,12 @@
             guna2HtmlLabel3.Size = new Size(57, 19);
             guna2HtmlLabel3.TabIndex = 2;
             guna2HtmlLabel3.Text = "SECCIÓN";
-            guna2HtmlLabel3.Click += guna2HtmlLabel3_Click;
             // 
             // lblTitulo
             // 
             lblTitulo.BackColor = Color.Transparent;
             lblTitulo.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold);
-            lblTitulo.Location = new Point(259, 47);
+            lblTitulo.Location = new Point(192, 52);
             lblTitulo.Name = "lblTitulo";
             lblTitulo.Size = new Size(457, 34);
             lblTitulo.TabIndex = 9;
@@ -407,6 +396,7 @@
             txtBuscar.ShadowDecoration.CustomizableEdges = customizableEdges18;
             txtBuscar.Size = new Size(211, 20);
             txtBuscar.TabIndex = 17;
+            txtBuscar.Click += txtBuscar_TextChanged;
             // 
             // guna2Panel7
             // 
@@ -423,7 +413,6 @@
             guna2Panel7.ShadowDecoration.CustomizableEdges = customizableEdges22;
             guna2Panel7.Size = new Size(20, 20);
             guna2Panel7.TabIndex = 19;
-            guna2Panel7.Paint += guna2Panel7_Paint;
             // 
             // btnBuscar2
             // 
@@ -444,7 +433,6 @@
             btnBuscar2.ShadowDecoration.CustomizableEdges = customizableEdges20;
             btnBuscar2.Size = new Size(12, 12);
             btnBuscar2.TabIndex = 20;
-            btnBuscar2.Click += btnBuscar_Click;
             // 
             // guna2HtmlLabel6
             // 
@@ -521,7 +509,7 @@
             guna2PictureBox1.TabIndex = 25;
             guna2PictureBox1.TabStop = false;
             // 
-            // FrmReporteCalificaciones
+            // FrmReporteSemanal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -537,9 +525,9 @@
             Controls.Add(lblTitulo);
             Controls.Add(lblEscuela);
             Controls.Add(guna2Panel4);
-            Name = "FrmReporteCalificaciones";
+            Name = "FrmReporteSemanal";
             Text = "FrmReporteAsistenciaDiaria";
-            Load += FrmReporteAsistenciaDiaria_Load;
+            Load += FrmReporteSemanal_Load;
             guna2Panel6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvNotas).EndInit();
             plVerder.ResumeLayout(false);
@@ -561,7 +549,6 @@
         private Guna.UI2.WinForms.Guna2DataGridView dgvNotas;
         private Guna.UI2.WinForms.Guna2Panel plVerder;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblTitulo;
@@ -572,7 +559,6 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel7;
         private Guna.UI2.WinForms.Guna2TextBox txtBuscar;
         private Guna.UI2.WinForms.Guna2Button btnBuscar;
-        private Guna.UI2.WinForms.Guna2ComboBox cbAnio;
         private Guna.UI2.WinForms.Guna2ComboBox cbAsignatura;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel7;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel6;
@@ -584,5 +570,6 @@
         private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel4;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
+        private Guna.UI2.WinForms.Guna2DateTimePicker dtpSemana;
     }
 }

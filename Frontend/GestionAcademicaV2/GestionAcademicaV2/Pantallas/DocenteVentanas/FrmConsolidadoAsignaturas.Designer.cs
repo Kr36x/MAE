@@ -392,6 +392,10 @@
             // 
             // dgvBoleta
             // 
+            dgvBoleta.AllowUserToAddRows = false;
+            dgvBoleta.AllowUserToDeleteRows = false;
+            dgvBoleta.AllowUserToResizeColumns = false;
+            dgvBoleta.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = Color.White;
             dgvBoleta.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
@@ -403,7 +407,6 @@
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
             dgvBoleta.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dgvBoleta.ColumnHeadersHeight = 4;
-            dgvBoleta.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = Color.White;
             dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
@@ -415,8 +418,10 @@
             dgvBoleta.Dock = DockStyle.Fill;
             dgvBoleta.GridColor = Color.FromArgb(231, 229, 255);
             dgvBoleta.Location = new Point(0, 0);
+            dgvBoleta.MultiSelect = false;
             dgvBoleta.Name = "dgvBoleta";
             dgvBoleta.RowHeadersVisible = false;
+            dgvBoleta.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dgvBoleta.Size = new Size(960, 224);
             dgvBoleta.TabIndex = 0;
             dgvBoleta.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
@@ -430,7 +435,7 @@
             dgvBoleta.ThemeStyle.HeaderStyle.BorderStyle = DataGridViewHeaderBorderStyle.None;
             dgvBoleta.ThemeStyle.HeaderStyle.Font = new Font("Segoe UI", 9F);
             dgvBoleta.ThemeStyle.HeaderStyle.ForeColor = Color.White;
-            dgvBoleta.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dgvBoleta.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dgvBoleta.ThemeStyle.HeaderStyle.Height = 4;
             dgvBoleta.ThemeStyle.ReadOnly = false;
             dgvBoleta.ThemeStyle.RowsStyle.BackColor = Color.White;

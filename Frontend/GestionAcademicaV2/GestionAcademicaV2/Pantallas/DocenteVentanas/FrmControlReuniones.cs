@@ -179,6 +179,11 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
             dtOriginal = dt.Copy();
 
             LlenarGrid(dt);
+
+            foreach (DataGridViewColumn col in dgvReuniones.Columns)
+            {
+                col.SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
         }
 
         private void LimpiarVista()
