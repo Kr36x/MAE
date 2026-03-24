@@ -16,6 +16,15 @@ using iText.Layout.Properties;
 using iText.Kernel.Colors;
 using iText.Layout.Borders;
 
+using iText.IO.Image;
+using iText.Kernel.Pdf.Canvas.Draw;
+using iText.Layout.Element;
+using iText.Layout.Properties;
+using System.IO;
+using iText.IO.Font.Constants;
+using iText.Kernel.Font;
+using System.Drawing.Imaging;
+
 using DrawingColor = System.Drawing.Color;
 using PdfColor = iText.Kernel.Colors.Color;
 
@@ -475,19 +484,34 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
             }
         }
 
+        private ImageData ObtenerLogoDesdeResources()
+        {
+            using MemoryStream ms = new MemoryStream();
+
+           
+            GestionAcademicaV2.Properties.Resources.Logo_expandido.Save(ms, ImageFormat.Png);
+
+            return ImageDataFactory.Create(ms.ToArray());
+        }
+
         private void GenerarPdfActa(
-            string docente,
-            string estudiante,
-            string fechaHora,
-            string gradoSeccion,
-            string tema,
-            string medio,
-            string estado,
-            string anio)
+     string docente,
+     string estudiante,
+     string fechaHora,
+     string gradoSeccion,
+     string tema,
+     string medio,
+     string estado,
+     string anio)
         {
             using SaveFileDialog sfd = new SaveFileDialog();
+            sfd.Title = "Guardar acta en PDF";
             sfd.Filter = "Archivo PDF (*.pdf)|*.pdf";
-            sfd.FileName = $"Acta_{estudiante.Replace(" ", "_")}.pdf";
+            sfd.FileName = $"Acta_{estudiante.Replace(" ", "_")}_{DateTime.Now:yyyyMMdd}.pdf";
+            sfd.InitialDirectory = System.IO.Path.Combine(
+                Environment.GetFolderPath(Environment.SpecialFolder.UserProfile),
+                "Downloads"
+            );
 
             if (sfd.ShowDialog() != DialogResult.OK)
                 return;
@@ -498,46 +522,134 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
                 using PdfDocument pdf = new PdfDocument(writer);
                 using Document doc = new Document(pdf);
 
-                PdfColor azul = new DeviceRgb(24, 105, 255);
-                PdfColor grisClaro = new DeviceRgb(245, 245, 245);
+                doc.SetMargins(30, 35, 30, 35);
+
+                PdfFont regularFont = PdfFontFactory.CreateFont(StandardFonts.HELVETICA);
+                PdfFont boldFont = PdfFontFactory.CreateFont(StandardFonts.HELVETICA_BOLD);
+
+                PdfColor azulTitulo = new DeviceRgb(35, 92, 255);
+                PdfColor azulOscuro = new DeviceRgb(30, 50, 100);
+                PdfColor grisTexto = new DeviceRgb(60, 60, 60);
                 PdfColor grisBorde = new DeviceRgb(210, 210, 210);
+                PdfColor grisEtiqueta = new DeviceRgb(245, 247, 250);
+                PdfColor verde = new DeviceRgb(34, 139, 34);
+                PdfColor amarillo = new DeviceRgb(180, 125, 0);
+                PdfColor rojo = new DeviceRgb(200, 60, 60);
 
-                // Encabezado
-                Paragraph escuela = new Paragraph("ATLANTIC ACADEMY BILINGUAL SCHOOL")
+                // =========================
+                // ENCABEZADO
+                // =========================
+                Table encabezado = new Table(UnitValue.CreatePercentArray(new float[] { 1.25f, 4.75f }))
+                    .UseAllAvailableWidth();
+                encabezado.SetBorder(Border.NO_BORDER);
+                encabezado.SetMarginBottom(8);
 
-                    .SetFontSize(14)
-                    .SetMarginBottom(5);
+                Cell celdaLogo = new Cell().SetBorder(Border.NO_BORDER);
+                try
+                {
+                    iText.Layout.Element.Image logo = new iText.Layout.Element.Image(ObtenerLogoDesdeResources())
+                        .ScaleToFit(85, 85)
+                        .SetHorizontalAlignment(iText.Layout.Properties.HorizontalAlignment.LEFT);
 
-                Paragraph titulo = new Paragraph("ACTA DE REUNIÓN CON PADRE/MADRE DE FAMILIA")
+                    celdaLogo.Add(logo);
+                }
+                catch
+                {
+                    celdaLogo.Add(new Paragraph("").SetFont(regularFont));
+                }
 
-                    .SetFontSize(18)
-                    .SetFontColor(azul)
-                    .SetMarginBottom(15);
+                Cell celdaTexto = new Cell().SetBorder(Border.NO_BORDER);
+                celdaTexto.Add(
+                    new Paragraph("ATLANTIC ACADEMY BILINGUAL SCHOOL")
+                        .SetFont(boldFont)
+                        .SetFontSize(14)
+                        .SetFontColor(azulOscuro)
+                        .SetTextAlignment(TextAlignment.CENTER)
+                        .SetMarginBottom(4)
+                );
 
-                Paragraph subtitulo = new Paragraph($"Control mensual de reuniones - Año académico {anio}")
-                    .SetFontSize(10)
-                    .SetMarginBottom(20);
+                celdaTexto.Add(
+                    new Paragraph("ACTA DE REUNIÓN CON PADRE/MADRE DE FAMILIA")
+                        .SetFont(boldFont)
+                        .SetFontSize(17)
+                        .SetFontColor(azulTitulo)
+                        .SetTextAlignment(TextAlignment.CENTER)
+                        .SetMarginBottom(6)
+                        .SetMarginTop(2)
+                );
+                celdaTexto.Add(
+                    new Paragraph($"Fecha de emisión: {DateTime.Now:dd/MM/yyyy}")
+                        .SetFont(regularFont)
+                        .SetFontSize(9)
+                        .SetFontColor(new DeviceRgb(100, 100, 100))
+                        .SetTextAlignment(TextAlignment.CENTER)
+                        .SetMarginTop(2)
+                );
+                celdaTexto.Add(
+                    new Paragraph($"Control mensual de reuniones - Año académico {anio}")
+                        .SetFont(regularFont)
+                        .SetFontSize(10)
+                        .SetFontColor(grisTexto)
+                        .SetTextAlignment(TextAlignment.CENTER)
+                );
 
-                doc.Add(escuela);
-                doc.Add(titulo);
-                doc.Add(subtitulo);
+                encabezado.AddCell(celdaLogo);
+                encabezado.AddCell(celdaTexto);
 
-                // Tabla de datos
-                Table tabla = new Table(2).UseAllAvailableWidth();
-                tabla.SetMarginBottom(20);
+                doc.Add(encabezado);
+                doc.Add(new LineSeparator(new SolidLine(1f)).SetMarginBottom(14));
 
-                void AddRow(string etiqueta, string valor)
+                // =========================
+                // TABLA DE INFORMACIÓN
+                // =========================
+                Table tabla = new Table(UnitValue.CreatePercentArray(new float[] { 2f, 4f }))
+                    .UseAllAvailableWidth();
+                tabla.SetMarginBottom(18);
+
+                void AddRow(string etiqueta, string valor, bool resaltar = false)
                 {
                     tabla.AddCell(
                         new Cell()
-                            .Add(new Paragraph(etiqueta).SetFontSize(10))
-                            .SetBackgroundColor(grisClaro)
+                            .Add(
+                                new Paragraph(etiqueta)
+                                    .SetFont(boldFont)
+                                    .SetFontSize(10)
+                                    .SetFontColor(grisTexto)
+                            )
+                            .SetBackgroundColor(new DeviceRgb(240, 240, 240))
+                            .SetPaddingTop(7)
+                            .SetPaddingBottom(7)
+                            .SetPaddingLeft(8)
+                            .SetPaddingRight(8)
                             .SetBorder(new SolidBorder(grisBorde, 1))
                     );
 
+                    Paragraph pValor = new Paragraph(valor)
+                        .SetFont(regularFont)
+                        .SetFontSize(10)
+                        .SetFontColor(grisTexto);
+
+                    if (resaltar)
+                    {
+                        PdfColor colorEstado = estado.ToUpper() switch
+                        {
+                            "REALIZADA" => verde,
+                            "PROGRAMADA" => amarillo,
+                            "CANCELADA" => rojo,
+                            _ => grisTexto
+                        };
+
+                        pValor.SetFont(boldFont);
+                        pValor.SetFontColor(colorEstado);
+                    }
+
                     tabla.AddCell(
                         new Cell()
-                            .Add(new Paragraph(valor).SetFontSize(10))
+                            .Add(pValor)
+                            .SetPaddingTop(7)
+                            .SetPaddingBottom(7)
+                            .SetPaddingLeft(8)
+                            .SetPaddingRight(8)
                             .SetBorder(new SolidBorder(grisBorde, 1))
                     );
                 }
@@ -548,51 +660,92 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
                 AddRow("Grado y sección", gradoSeccion);
                 AddRow("Tema", tema);
                 AddRow("Medio", medio);
-                AddRow("Estado", estado);
+                AddRow("Estado", estado, true);
 
                 doc.Add(tabla);
 
-                // Cuerpo del acta
-                Paragraph cuerpoTitulo = new Paragraph("Detalle del acta")
-                    .SetFontSize(12)
-                    .SetMarginBottom(10);
+                // =========================
+                // DETALLE DEL ACTA
+                // =========================
+                doc.Add(
+                    new Paragraph("Detalle del acta")
+                        .SetFont(boldFont)
+                        .SetFontSize(12)
+                        .SetFontColor(azulOscuro)
+                        .SetMarginBottom(8)
+                );
 
-                Paragraph cuerpo = new Paragraph(
-                    $"En la fecha {fechaHora}, el docente {docente} sostuvo una reunión con el responsable del estudiante {estudiante}, perteneciente a {gradoSeccion}. " +
-                    $"El tema tratado fue \"{tema}\" y el medio de comunicación utilizado fue {medio.ToLower()}. " +
-                    $"El estado de la reunión se registra como {estado.ToLower()}."
-                )
-                .SetFontSize(11)
-                .SetTextAlignment(TextAlignment.JUSTIFIED)
-                .SetMarginBottom(30);
+                string detalle =
+                    $"En la fecha {fechaHora}, el docente {docente} sostuvo una reunión con el responsable del estudiante {estudiante}, " +
+                    $"perteneciente a {gradoSeccion}. El tema tratado fue \"{tema}\" y el medio de comunicación utilizado fue {medio.ToLower()}. " +
+                    $"El estado de la reunión se registra como {estado.ToLower()}.";
 
-                doc.Add(cuerpoTitulo);
-                doc.Add(cuerpo);
+                doc.Add(
+                    new Paragraph(detalle)
+                        .SetFont(regularFont)
+                        .SetFontSize(11)
+                        .SetFontColor(grisTexto)
+                        .SetTextAlignment(TextAlignment.JUSTIFIED)
+                        .SetMultipliedLeading(1.35f)
+                        .SetMarginBottom(34)
+                );
 
-                // Firmas
-                Table firmas = new Table(2).UseAllAvailableWidth();
-                firmas.SetMarginTop(30);
+                // =========================
+                // FIRMAS
+                // =========================
+                Table firmas = new Table(UnitValue.CreatePercentArray(new float[] { 1, 1 }))
+                    .UseAllAvailableWidth();
+
+                firmas.SetMarginTop(12);
 
                 firmas.AddCell(
                     new Cell()
-                        .Add(new Paragraph("\n\n____________________________\nDocente").SetTextAlignment(TextAlignment.CENTER))
+                        .Add(
+                            new Paragraph("____________________________\nDocente")
+                                .SetFont(regularFont)
+                                .SetFontSize(10)
+                                .SetTextAlignment(TextAlignment.CENTER)
+                        )
                         .SetBorder(Border.NO_BORDER)
+                        .SetPaddingTop(20)
                 );
 
                 firmas.AddCell(
                     new Cell()
-                        .Add(new Paragraph("\n\n____________________________\nPadre / Madre / Encargado").SetTextAlignment(TextAlignment.CENTER))
+                        .Add(
+                            new Paragraph("____________________________\nPadre / Madre / Encargado")
+                                .SetFont(regularFont)
+                                .SetFontSize(10)
+                                .SetTextAlignment(TextAlignment.CENTER)
+                        )
                         .SetBorder(Border.NO_BORDER)
+                        .SetPaddingTop(20)
                 );
 
                 doc.Add(firmas);
 
-                MessageBox.Show("PDF generado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(
+                    "PDF generado correctamente.",
+                    "Éxito",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information
+                );
+                doc.ShowTextAligned(
+                    new Paragraph(
+                        "Sistema de Gestión Académica MAE\n" +
+                        $"Generado: {DateTime.Now:dd/MM/yyyy}\n" +
+                        "Página 1 de 1")
+                        .SetFont(regularFont)
+                        .SetFontSize(8)
+                        .SetFontColor(new DeviceRgb(110, 110, 110)),
+                    35, 25,
+                    TextAlignment.LEFT
+                );
             }
             catch (Exception ex)
             {
                 MessageBox.Show(
-                    $"Error al generar el PDF:\n{ex.Message}\n\nDetalle:\n{ex.InnerException?.Message}",
+                    "Error al generar el PDF:\n" + ex.Message,
                     "Error",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error
