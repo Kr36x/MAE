@@ -105,7 +105,6 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
                     doc.Add(tablaEst);
                     doc.Add(new Paragraph("\n"));
 
-                    // INFORMACIÓN DE LOS PADRES
                     doc.Add(new Paragraph("INFORMACIÓN DE LOS PADRES")
                         .SetFontSize(14)
                         .SetMarginBottom(10));
@@ -166,6 +165,10 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
                     doc.Add(new Paragraph(
                         "• La institución no se hace responsable por contagios de COVID u otras enfermedades adquiridas dentro o fuera de la misma."
+                    ).SetFontSize(11));
+
+                    doc.Add(new Paragraph(
+                        "•  Al momento de realizar exámenes o puebas, el alumno/a debe estar al día con las mensualidades. "
                     ).SetFontSize(11));
 
                     doc.Close();
@@ -240,8 +243,8 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
                 DataTable dt = util.EjecutarSP("spMAE_ObtenerSexo");
 
                 cbbGenero.DataSource = dt;
-                cbbGenero.DisplayMember = "Descripcion"; // Lo que ve el usuario
-                cbbGenero.ValueMember = "Codigo";        // Lo que se guarda en BD
+                cbbGenero.DisplayMember = "Descripcion";
+                cbbGenero.ValueMember = "Codigo"; 
             }
             catch (Exception ex)
             {
@@ -336,5 +339,6 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
                 e.Handled = true;
             }
         }
+
     }
 }

@@ -186,6 +186,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges152 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges153 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges154 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges155 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges156 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -312,6 +314,7 @@
             guna2HtmlLabel26 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             dtpAnio = new Guna.UI2.WinForms.Guna2DateTimePicker();
             pnlPrincipal = new Guna.UI2.WinForms.Guna2Panel();
+            cbbParcial = new Guna.UI2.WinForms.Guna2ComboBox();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).BeginInit();
             ctnDecimoGrado.SuspendLayout();
             ctnUndecimo.SuspendLayout();
@@ -2590,7 +2593,7 @@
             cbbNivel.Location = new Point(358, 113);
             cbbNivel.Name = "cbbNivel";
             cbbNivel.ShadowDecoration.CustomizableEdges = customizableEdges148;
-            cbbNivel.Size = new Size(609, 36);
+            cbbNivel.Size = new Size(460, 36);
             cbbNivel.TabIndex = 0;
             cbbNivel.TextAlign = HorizontalAlignment.Center;
             cbbNivel.SelectedIndexChanged += cbbNivel_SelectedIndexChanged;
@@ -2726,11 +2729,32 @@
             pnlPrincipal.Size = new Size(896, 217);
             pnlPrincipal.TabIndex = 9;
             // 
+            // cbbParcial
+            // 
+            cbbParcial.BackColor = Color.Transparent;
+            cbbParcial.BorderColor = Color.Black;
+            cbbParcial.BorderRadius = 10;
+            cbbParcial.CustomizableEdges = customizableEdges155;
+            cbbParcial.DrawMode = DrawMode.OwnerDrawFixed;
+            cbbParcial.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbbParcial.FocusedColor = Color.FromArgb(94, 148, 255);
+            cbbParcial.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            cbbParcial.Font = new Font("Segoe UI", 10F);
+            cbbParcial.ForeColor = Color.FromArgb(68, 88, 112);
+            cbbParcial.ItemHeight = 30;
+            cbbParcial.Location = new Point(827, 113);
+            cbbParcial.Name = "cbbParcial";
+            cbbParcial.ShadowDecoration.CustomizableEdges = customizableEdges156;
+            cbbParcial.Size = new Size(140, 36);
+            cbbParcial.TabIndex = 10;
+            cbbParcial.SelectedIndexChanged += cbbParcial_SelectedIndexChanged;
+            // 
             // FrmDashboard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1028, 674);
+            Controls.Add(cbbParcial);
             Controls.Add(pnlPrincipal);
             Controls.Add(dtpAnio);
             Controls.Add(guna2HtmlLabel26);
@@ -2909,5 +2933,6 @@
         private Guna.UI2.WinForms.Guna2DateTimePicker dtpAnio;
         private Guna.UI2.WinForms.Guna2Panel pnlPrincipal;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartGrados;
+        private Guna.UI2.WinForms.Guna2ComboBox cbbParcial;
     }
 }

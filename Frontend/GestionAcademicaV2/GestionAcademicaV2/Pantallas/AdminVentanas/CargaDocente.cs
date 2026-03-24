@@ -64,13 +64,18 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
         {
             try
             {
+                string grado = cbbGrado.Text == "TODOS" ? null : cbbGrado.Text;
+                string seccion = cbbSeccion.Text == "TODAS" ? null : cbbSeccion.Text;
+
                 SqlParameter[] p =
                 {
                     new SqlParameter("@DocenteID", docenteID),
-                    new SqlParameter("@Anio", Convert.ToInt32(dtpAnio.Text))
+                    new SqlParameter("@Anio", Convert.ToInt32(dtpAnio.Text)),
+                    new SqlParameter("@Grado", (object)grado ?? DBNull.Value),
+                    new SqlParameter("@Seccion", (object)seccion ?? DBNull.Value)
                 };
 
-                DataTable dt = util.EjecutarSP("spMAE_TraeAsignaturasPorDocente", p);
+                DataTable dt = util.EjecutarSP("spMAE_TraeAsignaturasPorDocenteSeccion", p);
 
                 dgvAsignatura.DataSource = dt;
             }
@@ -78,6 +83,23 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
             {
                 MessageBox.Show("Error al cargar asignaturas: " + ex.Message);
             }
+
+            //try
+            //{
+            //    SqlParameter[] p =
+            //    {
+            //        new SqlParameter("@DocenteID", docenteID),
+            //        new SqlParameter("@Anio", Convert.ToInt32(dtpAnio.Text))
+            //    };
+
+            //    DataTable dt = util.EjecutarSP("spMAE_TraeAsignaturasPorDocente", p);
+
+            //    dgvAsignatura.DataSource = dt;
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show("Error al cargar asignaturas: " + ex.Message);
+            //}
         }
 
         private void CargarGrados2()
@@ -176,7 +198,6 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
                                 "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private void CargarGraficoCargaAcademica()
         {
             try
@@ -184,6 +205,10 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
                 chartDocentes.Series.Clear();
                 chartDocentes.ChartAreas.Clear();
                 chartDocentes.Titles.Clear();
+
+                chartDocentes.Titles.Add(
+                    $"CARGA ACADÉMICA - {cbbGrado.Text} {cbbSeccion.Text} ({dtpAnio.Text})"
+                );
 
                 ChartArea area = new ChartArea("MainArea");
                 chartDocentes.ChartAreas.Add(area);
@@ -210,11 +235,20 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
                     Font = new Font("Arial", 8f, FontStyle.Bold),
                     Color = Color.CornflowerBlue
                 };
-                    sBarras["PointWidth"] = "0.7";
-                    chartDocentes.Series.Add(sBarras);
+                sBarras["PointWidth"] = "0.7";
+                chartDocentes.Series.Add(sBarras);
 
-                SqlParameter[] p = { new SqlParameter("@Anio", dtpAnio.Text) };
-                DataTable dt = util.EjecutarSP("spMAE_CargaAcademicaDocente", p);
+                string grado = cbbGrado.Text == "TODOS" ? null : cbbGrado.Text;
+                string seccion = cbbSeccion.Text == "TODAS" ? null : cbbSeccion.Text;
+
+                SqlParameter[] p =
+                {
+            new SqlParameter("@Anio", dtpAnio.Text),
+            new SqlParameter("@Grado", (object)grado ?? DBNull.Value),
+            new SqlParameter("@Seccion", (object)seccion ?? DBNull.Value)
+        };
+
+                DataTable dt = util.EjecutarSP("spMAE_CargaAcademicaDocenteSeccion", p);
 
                 if (dt != null && dt.Rows.Count > 0)
                 {
@@ -225,8 +259,6 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
                         int idx = sBarras.Points.AddXY(i, totalClases);
                         sBarras.Points[idx].AxisLabel = docente;
-
-                            sBarras.Points[idx].Color = Color.CornflowerBlue;
                     }
 
                     if (dt.Rows.Count > 10)
@@ -241,6 +273,71 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
                                 "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        //private void CargarGraficoCargaAcademica()
+        //{
+        //    try
+        //    {
+        //        chartDocentes.Series.Clear();
+        //        chartDocentes.ChartAreas.Clear();
+        //        chartDocentes.Titles.Clear();
+
+        //        ChartArea area = new ChartArea("MainArea");
+        //        chartDocentes.ChartAreas.Add(area);
+
+        //        area.AxisX.ScrollBar.Size = 12;
+        //        area.AxisX.ScrollBar.ButtonStyle = ScrollBarButtonStyles.SmallScroll;
+        //        area.AxisX.ScrollBar.IsPositionedInside = false;
+        //        area.AxisX.ScaleView.Zoomable = true;
+
+        //        area.AxisX.LabelStyle.Font = new Font("Arial", 6f, FontStyle.Bold);
+        //        area.AxisX.LabelStyle.Angle = -30;
+        //        area.AxisX.Interval = 1;
+        //        area.AxisX.MajorGrid.Enabled = false;
+
+        //        area.AxisY.Title = "CLASES";
+        //        area.AxisY.TitleFont = new Font("Arial", 8f, FontStyle.Bold);
+        //        area.AxisY.LabelStyle.Font = new Font("Arial", 7f, FontStyle.Bold);
+        //        area.AxisY.MajorGrid.LineColor = Color.FromArgb(235, 235, 235);
+
+        //        Series sBarras = new Series("CLASES")
+        //        {
+        //            ChartType = SeriesChartType.Column,
+        //            IsValueShownAsLabel = true,
+        //            Font = new Font("Arial", 8f, FontStyle.Bold),
+        //            Color = Color.CornflowerBlue
+        //        };
+        //            sBarras["PointWidth"] = "0.7";
+        //            chartDocentes.Series.Add(sBarras);
+
+        //        SqlParameter[] p = { new SqlParameter("@Anio", dtpAnio.Text) };
+        //        DataTable dt = util.EjecutarSP("spMAE_CargaAcademicaDocente", p);
+
+        //        if (dt != null && dt.Rows.Count > 0)
+        //        {
+        //            for (int i = 0; i < dt.Rows.Count; i++)
+        //            {
+        //                string docente = dt.Rows[i]["Nombre"].ToString().Trim();
+        //                int totalClases = Convert.ToInt32(dt.Rows[i]["TotalClases"]);
+
+        //                int idx = sBarras.Points.AddXY(i, totalClases);
+        //                sBarras.Points[idx].AxisLabel = docente;
+
+        //                    sBarras.Points[idx].Color = Color.CornflowerBlue;
+        //            }
+
+        //            if (dt.Rows.Count > 10)
+        //            {
+        //                area.AxisX.ScaleView.Zoom(0, 10);
+        //            }
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show("Error al ejecutar el gráfico: " + ex.Message,
+        //                        "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //    }
+        //}
         private void CargaDocente_Load(object sender, EventArgs e)
         {
             CargarGrados2();
