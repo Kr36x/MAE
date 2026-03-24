@@ -23,15 +23,36 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
             try
             {
                 EjecutarUtilidades util = new EjecutarUtilidades();
-                DataTable tabla = util.EjecutarConsulta("SELECT * FROM vMAE_TraeGrados order by GradoID");
+                DataTable tabla = util.EjecutarConsulta("SELECT * FROM vMAE_TraeGrados ORDER BY GradoID");
+
+                DataRow filaTodos = tabla.NewRow();
+                filaTodos["GradoID"] = 0;
+                filaTodos["NombreGrado"] = "TODOS";
+
+                tabla.Rows.InsertAt(filaTodos, 0);
+
                 cbbGrado.DataSource = tabla;
                 cbbGrado.DisplayMember = "NombreGrado";
                 cbbGrado.ValueMember = "GradoID";
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al cargar los grados: " + ex.Message);
+                MessageBox.Show("Error al llenar grados: " + ex.Message,
+                                "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+            //try
+            //{
+            //    EjecutarUtilidades util = new EjecutarUtilidades();
+            //    DataTable tabla = util.EjecutarConsulta("SELECT * FROM vMAE_TraeGrados order by GradoID");
+            //    cbbGrado.DataSource = tabla;
+            //    cbbGrado.DisplayMember = "NombreGrado";
+            //    cbbGrado.ValueMember = "GradoID";
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show("Error al cargar los grados: " + ex.Message);
+            //}
         }
 
         private void CargarEstudiantes()
@@ -53,17 +74,46 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
             try
             {
                 EjecutarUtilidades util = new EjecutarUtilidades();
+
+                string grado = cbbGrado.Text == "TODOS" ? null : cbbGrado.Text;
+
                 SqlParameter[] p =
                 {
-                    new SqlParameter("@Nombre", string.IsNullOrWhiteSpace(txtBuscarEstudiante.Text) ? DBNull.Value : txtBuscarEstudiante.Text),
-                    new SqlParameter("@Anio", string.IsNullOrWhiteSpace(dtpAnio.Text) ? DBNull.Value : dtpAnio.Text),
-                    new SqlParameter("@Grado", string.IsNullOrWhiteSpace(cbbGrado.Text) ? DBNull.Value : cbbGrado.Text)
-                };
+            new SqlParameter("@Nombre",
+                string.IsNullOrWhiteSpace(txtBuscarEstudiante.Text)
+                ? DBNull.Value
+                : txtBuscarEstudiante.Text),
+
+            new SqlParameter("@Anio",
+                string.IsNullOrWhiteSpace(dtpAnio.Text)
+                ? DBNull.Value
+                : dtpAnio.Text),
+
+            new SqlParameter("@Grado",
+                (object)grado ?? DBNull.Value)
+        };
+
                 dgvEstudiantes.DataSource = util.EjecutarSP("spMAE_BuscarEstudiantes", p);
-            }catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show("Error al buscar: " + ex.Message);
             }
+
+            //try
+            //{
+            //    EjecutarUtilidades util = new EjecutarUtilidades();
+            //    SqlParameter[] p =
+            //    {
+            //        new SqlParameter("@Nombre", string.IsNullOrWhiteSpace(txtBuscarEstudiante.Text) ? DBNull.Value : txtBuscarEstudiante.Text),
+            //        new SqlParameter("@Anio", string.IsNullOrWhiteSpace(dtpAnio.Text) ? DBNull.Value : dtpAnio.Text),
+            //        new SqlParameter("@Grado", string.IsNullOrWhiteSpace(cbbGrado.Text) ? DBNull.Value : cbbGrado.Text)
+            //    };
+            //    dgvEstudiantes.DataSource = util.EjecutarSP("spMAE_BuscarEstudiantes", p);
+            //}catch (Exception ex)
+            //{
+            //    MessageBox.Show("Error al buscar: " + ex.Message);
+            //}
         }
 
         private void FrmEstudiantes_Load(object sender, EventArgs e)

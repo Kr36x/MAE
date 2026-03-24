@@ -237,7 +237,65 @@ BEGIN
 END
 GO
 execute spMAE_PromedioYExcelenciaPorNivel 2026
+----------------------------------------------------------------------------------------
+use AgroLinkDB
+CREATE OR ALTER PROCEDURE spMAE_PromedioYExcelenciaPorParcial
+    @Anio INT,
+    @Parcial INT   -- 1, 2, 3 o 4
+AS
+BEGIN
+    ;WITH Promedios AS
+    (
+        SELECT 
+            g.NombreGrado,
+            b.Anio,
+            b.EstudianteID,
 
+            CASE @Parcial
+                WHEN 1 THEN ISNULL(d.NotaP1,0)
+                WHEN 2 THEN ISNULL(d.NotaP2,0)
+                WHEN 3 THEN ISNULL(d.NotaP3,0)
+                WHEN 4 THEN ISNULL(d.NotaP4,0)
+            END AS NotaParcial
+        FROM BoletaDetalle d
+        INNER JOIN Boleta b ON d.BoletaID = b.BoletaID
+        INNER JOIN Matricula m ON b.EstudianteID = m.EstudianteID AND b.Anio = m.Anio
+        INNER JOIN Seccion s ON m.SeccionID = s.SeccionID
+        INNER JOIN Grado g ON s.GradoID = g.GradoID
+        WHERE b.Anio = @Anio
+    )
+
+    SELECT 
+        NombreGrado,
+        Anio AS AnioAcademico,
+        CAST(AVG(NotaParcial) AS INT) AS PromedioGrado,
+        SUM(CASE WHEN NotaParcial > 90 THEN 1 ELSE 0 END) AS EstudiantesExcelencia
+    FROM Promedios
+    GROUP BY NombreGrado, Anio
+
+    ORDER BY 
+        CASE  
+            WHEN NombreGrado LIKE 'Pre-kinder%' THEN 1
+            WHEN NombreGrado LIKE 'Kinder%' THEN 2
+            WHEN NombreGrado LIKE 'Preparatoria%' THEN 3
+            WHEN NombreGrado LIKE 'Primero%' THEN 4
+            WHEN NombreGrado LIKE 'Segundo%' THEN 5
+            WHEN NombreGrado LIKE 'Tercero%' THEN 6
+            WHEN NombreGrado LIKE 'Cuarto%' THEN 7
+            WHEN NombreGrado LIKE 'Quinto%' THEN 8
+            WHEN NombreGrado LIKE 'Sexto%' THEN 9
+            WHEN NombreGrado LIKE 'Séptimo%' OR NombreGrado LIKE 'Septimo%' THEN 10
+            WHEN NombreGrado LIKE 'Octavo%' THEN 11
+            WHEN NombreGrado LIKE 'Noveno%' THEN 12
+            WHEN NombreGrado LIKE 'Decimo%' THEN 13
+            WHEN NombreGrado LIKE 'Undecimo%' THEN 14
+            ELSE 99
+        END;
+END
+GO
+
+exec spMAE_PromedioYExcelenciaPorParcial 2026,4
+----------------------------------------------------------------------------------------
 select * from vMAE_EstudianteGradoAnio
 -----------------------------------------------------------
 CREATE OR ALTER PROCEDURE spMAE_DesempenoPorGradoAnual
@@ -448,9 +506,52 @@ END;
 
 exec spMAE_ObtenerSexo
 
-
-
-
+CREATE OR ALTER PROCEDURE spMAE_CargaAcademicaDocenteSeccion
+    @Anio INT,
+    @Grado VARCHAR(50) = NULL,
+    @Seccion VARCHAR(10) = NULL
+AS
+BEGIN
+    SELECT 
+        d.DocenteID,
+        d.Nombre,
+        COUNT(*) AS TotalClases
+    FROM CargaAcademica ca
+    INNER JOIN Docente d ON ca.DocenteID = d.DocenteID
+    INNER JOIN Seccion s ON ca.SeccionID = s.SeccionID
+    INNER JOIN Grado g ON s.GradoID = g.GradoID
+    WHERE ca.Anio = @Anio
+      AND (@Grado IS NULL OR g.NombreGrado = @Grado)
+      AND (@Seccion IS NULL OR s.Letra = @Seccion)
+    GROUP BY d.DocenteID, d.Nombre
+    ORDER BY d.Nombre;
+END;
+GO
+exec spMAE_CargaAcademicaDocenteSeccion 2026,'DECIMO',A
+----------------------------------------------------------------------------
+CREATE OR ALTER PROCEDURE spMAE_TraeAsignaturasPorDocenteSeccion
+    @DocenteID INT,
+    @Anio INT,
+    @Grado VARCHAR(50) = NULL,
+    @Seccion VARCHAR(10) = NULL
+AS
+BEGIN
+    SELECT 
+        A.AsignaturaID,
+        A.Nombre AS Asignatura,
+        G.NombreGrado,
+        S.Letra AS Seccion
+    FROM CargaAcademica CA
+    INNER JOIN Asignatura A ON CA.AsignaturaID = A.AsignaturaID
+    INNER JOIN Seccion S ON CA.SeccionID = S.SeccionID
+    INNER JOIN Grado G ON S.GradoID = G.GradoID
+    WHERE CA.DocenteID = @DocenteID
+      AND CA.Anio = @Anio
+      AND (@Grado IS NULL OR G.NombreGrado = @Grado)
+      AND (@Seccion IS NULL OR S.Letra = @Seccion)
+    ORDER BY A.Nombre;
+END;
+GO
 
 
 
