@@ -46,5 +46,11 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
         {
             pantallaPrincipal.MostrarControlReuniones(docenteId);  
         }
+        private void abrirAdmin(object sender, EventArgs e)
+        {
+            PantallaAdmin admin = new PantallaAdmin();
+            admin.Show();
+        }
+
     }
 }

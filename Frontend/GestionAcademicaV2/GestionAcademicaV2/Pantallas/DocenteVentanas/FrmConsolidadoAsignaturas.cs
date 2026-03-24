@@ -419,6 +419,12 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
             paginaGrafico = 0;
             ActualizarBotonesGrafico();
             panelGrafico.Invalidate();
+
+            foreach (DataGridViewColumn col in dgvBoleta.Columns)
+            {
+                col.SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
+
         }
 
         private int ObtenerGradoId(string nombreGrado)
@@ -493,20 +499,22 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
             dgvBoleta.Columns.Add("Docente", "DOCENTE");
             dgvBoleta.Columns.Add("Promedio", "PROMEDIO");
             dgvBoleta.Columns.Add("Estado", "ESTADO");
-            dgvBoleta.Columns.Add("Acciones", "ACCIONES");
+            //dgvBoleta.Columns.Add("Acciones", "ACCIONES");
 
-            dgvBoleta.Columns["No"].Width = 50;
-            dgvBoleta.Columns["Asignatura"].Width = 240;
-            dgvBoleta.Columns["Docente"].Width = 210;
-            dgvBoleta.Columns["Promedio"].Width = 110;
-            dgvBoleta.Columns["Estado"].Width = 140;
-            dgvBoleta.Columns["Acciones"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgvBoleta.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+            dgvBoleta.Columns["No"].FillWeight = 10;
+            dgvBoleta.Columns["Asignatura"].FillWeight = 30;
+            dgvBoleta.Columns["Docente"].FillWeight = 25;
+            dgvBoleta.Columns["Promedio"].FillWeight = 15;
+            dgvBoleta.Columns["Estado"].FillWeight = 20;
+            //dgvBoleta.Columns["Acciones"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 
             dgvBoleta.Columns["Promedio"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvBoleta.Columns["No"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             dgvBoleta.Columns["Estado"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgvBoleta.Columns["Acciones"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            //dgvBoleta.Columns["Acciones"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
         }
 
         private void LlenarGridBoleta(DataTable dt)

@@ -2,6 +2,7 @@
 using GestionAcademicaV2.Pantallas.AdminVentanas;
 using GestionAcademicaV2.Pantallas.DocenteVentanas;
 using Guna.UI2.WinForms;
+using Org.BouncyCastle.Asn1.Ocsp;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -18,6 +19,11 @@ namespace GestionAcademicaV2.Pantallas
         {
             InitializeComponent();
             usuarioActual = usuario;
+        }
+
+        public PantallaAdmin()
+        {
+            InitializeComponent();
         }
 
         private void AbrirFormularioEnPanel(Form formularioHijo)
@@ -60,9 +66,9 @@ namespace GestionAcademicaV2.Pantallas
 
         private void PantallaAdmin_Load(object sender, EventArgs e)
         {
-            lblUsuario.Text = FormatearNombre(usuarioActual.Usuario);
-            lblRol.Text = usuarioActual.Rol;
-            lblID.Text = "ID: " + usuarioActual.UsuarioID.ToString();
+            lblUsuario.Text = FormatearNombre(usuarioActual?.Usuario ?? "Usuario prueba");
+            lblRol.Text = usuarioActual?.Rol ?? "Sin rol";
+            lblID.Text = "ID: " + (usuarioActual?.UsuarioID.ToString() ?? "N/A");
         }
 
         private void btnDashboard_Click(object sender, EventArgs e)

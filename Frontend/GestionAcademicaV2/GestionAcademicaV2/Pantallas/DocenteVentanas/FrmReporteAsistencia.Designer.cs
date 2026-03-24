@@ -30,6 +30,8 @@
         {
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
@@ -51,9 +53,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             pnlMain = new Guna.UI2.WinForms.Guna2Panel();
+            guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             lblRegistros = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2Panel6 = new Guna.UI2.WinForms.Guna2Panel();
             dgvAsistencia = new Guna.UI2.WinForms.Guna2DataGridView();
@@ -77,14 +78,13 @@
             lblEscuela = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel7 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             pnlMain.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).BeginInit();
             guna2Panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvAsistencia).BeginInit();
             guna2Panel5.SuspendLayout();
             guna2Panel1.SuspendLayout();
             guna2Panel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).BeginInit();
             SuspendLayout();
             // 
             // pnlMain
@@ -104,6 +104,19 @@
             pnlMain.Size = new Size(1028, 674);
             pnlMain.TabIndex = 0;
             pnlMain.Paint += pnlMain_Paint;
+            // 
+            // guna2PictureBox1
+            // 
+            guna2PictureBox1.CustomizableEdges = customizableEdges1;
+            guna2PictureBox1.Image = Properties.Resources._2;
+            guna2PictureBox1.ImageRotate = 0F;
+            guna2PictureBox1.Location = new Point(54, 3);
+            guna2PictureBox1.Name = "guna2PictureBox1";
+            guna2PictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            guna2PictureBox1.Size = new Size(100, 100);
+            guna2PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            guna2PictureBox1.TabIndex = 24;
+            guna2PictureBox1.TabStop = false;
             // 
             // lblRegistros
             // 
@@ -128,6 +141,8 @@
             // 
             dgvAsistencia.AllowUserToAddRows = false;
             dgvAsistencia.AllowUserToDeleteRows = false;
+            dgvAsistencia.AllowUserToResizeColumns = false;
+            dgvAsistencia.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = Color.White;
             dgvAsistencia.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
@@ -150,6 +165,7 @@
             dgvAsistencia.DefaultCellStyle = dataGridViewCellStyle3;
             dgvAsistencia.GridColor = Color.FromArgb(231, 229, 255);
             dgvAsistencia.Location = new Point(0, 0);
+            dgvAsistencia.MultiSelect = false;
             dgvAsistencia.Name = "dgvAsistencia";
             dgvAsistencia.ReadOnly = true;
             dgvAsistencia.RowHeadersVisible = false;
@@ -396,7 +412,7 @@
             cbMes.Location = new Point(477, 31);
             cbMes.Name = "cbMes";
             cbMes.ShadowDecoration.CustomizableEdges = customizableEdges18;
-            cbMes.Size = new Size(128, 21);
+            cbMes.Size = new Size(164, 21);
             cbMes.TabIndex = 6;
             cbMes.SelectedIndexChanged += cbMes_SelectedIndexChanged;
             // 
@@ -452,19 +468,6 @@
             guna2HtmlLabel7.Text = "FILTRAR BUSQUEDA";
             guna2HtmlLabel7.Click += guna2HtmlLabel7_Click;
             // 
-            // guna2PictureBox1
-            // 
-            guna2PictureBox1.CustomizableEdges = customizableEdges1;
-            guna2PictureBox1.Image = Properties.Resources._2;
-            guna2PictureBox1.ImageRotate = 0F;
-            guna2PictureBox1.Location = new Point(54, 3);
-            guna2PictureBox1.Name = "guna2PictureBox1";
-            guna2PictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            guna2PictureBox1.Size = new Size(100, 100);
-            guna2PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            guna2PictureBox1.TabIndex = 24;
-            guna2PictureBox1.TabStop = false;
-            // 
             // FrmReporteAsistencia
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -476,6 +479,7 @@
             Load += FrmReporteAsistencia_Load;
             pnlMain.ResumeLayout(false);
             pnlMain.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).EndInit();
             guna2Panel6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvAsistencia).EndInit();
             guna2Panel5.ResumeLayout(false);
@@ -484,7 +488,6 @@
             guna2Panel1.PerformLayout();
             guna2Panel7.ResumeLayout(false);
             guna2Panel7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).EndInit();
             ResumeLayout(false);
         }
 

@@ -50,11 +50,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             pnlMenu = new Guna.UI2.WinForms.Guna2Panel();
             lblRol = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
@@ -70,14 +67,10 @@
             btnUsuarios = new Guna.UI2.WinForms.Guna2Button();
             btnDashboard = new Guna.UI2.WinForms.Guna2Button();
             PnlContenedorAdmin = new Guna.UI2.WinForms.Guna2Panel();
-            guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            btnMenu = new Guna.UI2.WinForms.Guna2ImageButton();
             guna2ContextMenuStrip1 = new Guna.UI2.WinForms.Guna2ContextMenuStrip();
             pnlMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox3).BeginInit();
-            PnlContenedorAdmin.SuspendLayout();
-            guna2Panel1.SuspendLayout();
             SuspendLayout();
             // 
             // pnlMenu
@@ -337,48 +330,14 @@
             // 
             PnlContenedorAdmin.BackgroundImage = (Image)resources.GetObject("PnlContenedorAdmin.BackgroundImage");
             PnlContenedorAdmin.BackgroundImageLayout = ImageLayout.Stretch;
-            PnlContenedorAdmin.Controls.Add(guna2Panel1);
-            PnlContenedorAdmin.CustomizableEdges = customizableEdges25;
+            PnlContenedorAdmin.CustomizableEdges = customizableEdges22;
             PnlContenedorAdmin.Dock = DockStyle.Fill;
             PnlContenedorAdmin.Location = new Point(220, 0);
             PnlContenedorAdmin.Name = "PnlContenedorAdmin";
-            PnlContenedorAdmin.ShadowDecoration.CustomizableEdges = customizableEdges26;
+            PnlContenedorAdmin.ShadowDecoration.CustomizableEdges = customizableEdges23;
             PnlContenedorAdmin.Size = new Size(1044, 681);
             PnlContenedorAdmin.TabIndex = 2;
             PnlContenedorAdmin.Paint += guna2Panel3_Paint;
-            // 
-            // guna2Panel1
-            // 
-            guna2Panel1.Controls.Add(btnMenu);
-            guna2Panel1.CustomizableEdges = customizableEdges23;
-            guna2Panel1.Dock = DockStyle.Top;
-            guna2Panel1.Location = new Point(0, 0);
-            guna2Panel1.Name = "guna2Panel1";
-            guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges24;
-            guna2Panel1.Size = new Size(1044, 35);
-            guna2Panel1.TabIndex = 0;
-            // 
-            // btnMenu
-            // 
-            btnMenu.BackgroundImage = Properties.Resources.list;
-            btnMenu.BackgroundImageLayout = ImageLayout.Zoom;
-            btnMenu.CausesValidation = false;
-            btnMenu.CheckedState.ImageSize = new Size(64, 64);
-            btnMenu.Dock = DockStyle.Left;
-            btnMenu.HoverState.Image = Properties.Resources.list;
-            btnMenu.HoverState.ImageSize = new Size(0, 0);
-            btnMenu.Image = (Image)resources.GetObject("btnMenu.Image");
-            btnMenu.ImageOffset = new Point(0, 0);
-            btnMenu.ImageRotate = 0F;
-            btnMenu.ImageSize = new Size(0, 0);
-            btnMenu.IndicateFocus = true;
-            btnMenu.Location = new Point(0, 0);
-            btnMenu.Name = "btnMenu";
-            btnMenu.PressedState.ImageSize = new Size(0, 0);
-            btnMenu.ShadowDecoration.CustomizableEdges = customizableEdges22;
-            btnMenu.Size = new Size(45, 35);
-            btnMenu.TabIndex = 0;
-            btnMenu.Click += btnMenu_Click_1;
             // 
             // guna2ContextMenuStrip1
             // 
@@ -410,8 +369,6 @@
             pnlMenu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox3).EndInit();
-            PnlContenedorAdmin.ResumeLayout(false);
-            guna2Panel1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -423,9 +380,7 @@
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private Guna.UI2.WinForms.Guna2Button btnCalificaciones;
         private Guna.UI2.WinForms.Guna2ContextMenuStrip guna2ContextMenuStrip1;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox3;
-        private Guna.UI2.WinForms.Guna2ImageButton btnMenu;
         private Guna.UI2.WinForms.Guna2Button btnMatricula;
         private Guna.UI2.WinForms.Guna2Button btnEstudiantes;
         private Guna.UI2.WinForms.Guna2Button btnDocentes;
