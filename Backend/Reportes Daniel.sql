@@ -84,7 +84,8 @@ BEGIN
 	WHERE 
 		R.DocenteID = @docenteID 
 		AND MONTH(R.FechaHora) = @mes 
-		AND YEAR(R.FechaHora) = @anio;
+		AND YEAR(R.FechaHora) = @anio
+    ORDER BY R.FechaHora, E.Nombre;
 END;
 
 --EXEC spMAE_RepReunionesMensuales 1, 3, 2026
@@ -98,6 +99,7 @@ GO
 
 
 	--5. Reportes Globales de Rendimiento Institucional
+
 
 CREATE OR ALTER PROCEDURE spMAE_RepGlobalesRend @nivel nvarchar(20)
 AS
@@ -135,13 +137,14 @@ BEGIN
 END;
 
 
---exec spMAE_RepGlobalesRend @nivel = 'BASICA'
+
+exec spMAE_RepGlobalesRend @nivel = 'PRE-BASICA'
 
 go
 
 
     --6. Boleta de Calificaciones Finales por Parcial
-
+ --   exec spMAE_BoletaParcial 1, 22, 'A', 2026
 CREATE OR ALTER PROCEDURE spMAE_BoletaParcial @periodo int, @gradoID int, @letraSeccion varchar, @anio int
 AS
 BEGIN
@@ -221,9 +224,10 @@ BEGIN
 	INNER JOIN Grado G ON S.GradoID = G.GradoID  
 	WHERE G.GradoID = @grado AND S.SeccionID = @seccion and CA.Anio = @anio
 	GROUP BY D.DocenteID, D.Nombre, D.Identidad, D.Estado
+    ORDER BY D.Nombre
 
 END;
---exec spMAE_RepDistribCargaDoc 13,7
+exec spMAE_RepDistribCargaDoc 13,7,2026
 
 GO
 
@@ -234,12 +238,13 @@ BEGIN
 	SELECT A.AsignaturaID, A.Nombre
 	FROM Asignatura A
 	INNER JOIN CargaAcademica CA ON A.AsignaturaID = CA.AsignaturaID
-	WHERE CA.DocenteID = @docente AND CA.SeccionID = @seccion;
+	WHERE CA.DocenteID = @docente AND CA.SeccionID = @seccion
+    ORDER BY A.Nombre
 
 END;
 
 go
---exec spMAE_TraeAsignaturaxDocxSecc 8,7
+exec spMAE_TraeAsignaturaxDocxSecc 8,7
 
 go
 
