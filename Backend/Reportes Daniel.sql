@@ -48,15 +48,15 @@ go
 CREATE OR ALTER PROCEDURE spMAE_TraeTutoresxEstudiante @estudianteID int
 AS
 BEGIN
-	SELECT T.TutorID, T.Nombre, T.Identidad, T.Telefono, T.Lugartrabajo, T.Parentesco 
+	SELECT T.TutorID, T.Nombre, T.Identidad, T.Telefono, T.Lugartrabajo, T.Parentesco , U.Correo
 	FROM Tutor T
 	INNER JOIN TutorEstudiante TE ON T.TutorID = TE.TutorID
+    INNER JOIN Usuario U on T.UsuarioID = U.UsuarioID
 	WHERE TE.EstudianteID = @estudianteID
 END;
 
 GO
-
-	--EXEC spMAE_TraeTutoresxEstudiante 9
+EXEC spMAE_TraeTutoresxEstudiante 9
 
 go
 
@@ -78,25 +78,23 @@ BEGIN
 		Reunion R
 		--INNER JOIN Acta A ON R.ReunionID = A.ReunionID
 		INNER JOIN Estudiante E ON R.EstudianteID = E.EstudianteID
-		INNER JOIN Matricula M ON M.EstudianteID = E.EstudianteID
+		INNER JOIN Matricula M ON M.EstudianteID = E.EstudianteID AND M.Anio = (SELECT SUBSTRING(CicloEscolar,1,4) FROM Configuracion WHERE Activa = 1)
 		INNER JOIN Seccion S ON M.SeccionID = S.SeccionID
 		INNER JOIN Grado G ON S.GradoID = G.GradoID
 	WHERE 
 		R.DocenteID = @docenteID 
 		AND MONTH(R.FechaHora) = @mes 
 		AND YEAR(R.FechaHora) = @anio
+
     ORDER BY R.FechaHora, E.Nombre;
 END;
 
---EXEC spMAE_RepReunionesMensuales 1, 3, 2026
+EXEC spMAE_RepReunionesMensuales 1, 3, 2026
 --EXEC spMAE_RepReunionesMensuales 13, 3, 2026
 
 
 
 GO
-
-
-
 
 	--5. Reportes Globales de Rendimiento Institucional
 
@@ -114,7 +112,7 @@ BEGIN
             AS DECIMAL(5,2)) AS Promedio, AC.Parcial
 
         FROM Estudiante E 
-        JOIN Matricula M ON M.EstudianteID = E.EstudianteID
+        JOIN Matricula M ON M.EstudianteID = E.EstudianteID AND M.Anio = (SELECT SUBSTRING(CicloEscolar,1,4) FROM Configuracion WHERE Activa = 1)
         JOIN CargaAcademica CA ON CA.SeccionID = M.SeccionID
         JOIN Seccion S ON S.SeccionID = CA.SeccionID
         JOIN Grado G ON G.GradoID = S.GradoID
@@ -122,7 +120,7 @@ BEGIN
         INNER JOIN Actividad AC ON AC.CargaID = CA.CargaID
         INNER JOIN Calificacion CAl ON CAl.ActividadID = AC.ActividadID AND CAl.EstudianteID = E.EstudianteID
 
-        WHERE G.Nivel = @nivel AND CA.Anio = YEAR(GETDATE()) AND M.Anio = YEAR(GETDATE())
+        WHERE G.Nivel = @nivel AND CA.Anio = YEAR(GETDATE()) 
 
         GROUP BY E.EstudianteID,G.GradoID,G.NombreGrado,S.Letra , AC.Parcial
     )
@@ -144,7 +142,7 @@ go
 
 
     --6. Boleta de Calificaciones Finales por Parcial
- --   exec spMAE_BoletaParcial 1, 22, 'A', 2026
+ 
 CREATE OR ALTER PROCEDURE spMAE_BoletaParcial @periodo int, @gradoID int, @letraSeccion varchar, @anio int
 AS
 BEGIN
@@ -169,7 +167,7 @@ BEGIN
             AS DECIMAL(5,2)) AS Promedio
 
         FROM Estudiante E 
-        JOIN Matricula M ON M.EstudianteID = E.EstudianteID
+        JOIN Matricula M ON M.EstudianteID = E.EstudianteID AND M.Anio = (SELECT SUBSTRING(CicloEscolar,1,4) FROM Configuracion WHERE Activa = 1)
         JOIN CargaAcademica CA ON CA.SeccionID = M.SeccionID
         JOIN Seccion S ON S.SeccionID = CA.SeccionID
         JOIN Grado G ON G.GradoID = S.GradoID
@@ -181,7 +179,7 @@ BEGIN
         LEFT JOIN Actividad AC ON AC.CargaID = CA.CargaID AND AC.Parcial = C.Periodo 
         LEFT JOIN Calificacion CAl ON CAl.ActividadID = AC.ActividadID AND CAl.EstudianteID = E.EstudianteID
 
-        WHERE CA.Anio = @anio  AND M.Anio = @anio AND S.Letra = @letraSeccion AND G.GradoID = @gradoID
+        WHERE CA.Anio = @anio  AND S.Letra = @letraSeccion AND G.GradoID = @gradoID
         GROUP BY A.Nombre,D.Nombre,  E.EstudianteID 
     )
 
@@ -200,8 +198,9 @@ BEGIN
 
 
 END;
+go
 
-
+  exec spMAE_BoletaParcial 3, 22, 'A', 2026
 
 
 
@@ -279,7 +278,7 @@ AS
 
     FROM Ausencias AU
     JOIN Estudiante E ON E.EstudianteID = AU.EstudianteID
-    JOIN Matricula M ON M.EstudianteID = AU.EstudianteID
+    JOIN Matricula M ON M.EstudianteID = AU.EstudianteID AND M.Anio = (SELECT SUBSTRING(CicloEscolar,1,4) FROM Configuracion WHERE Activa = 1)
     JOIN CargaAcademica CA ON CA.SeccionID = M.SeccionID
     JOIN Seccion S ON S.SeccionID = CA.SeccionID
     JOIN Grado G ON G.GradoID = S.GradoID
@@ -294,6 +293,7 @@ AS
 
 go
 SELECT * FROM vMAE_RepProyDesercionGen 
+
 
 
 go
@@ -318,15 +318,6 @@ SELECT * FROM vMAE_RepProyDesercionDet ORDER BY EstudianteID
 
 SELECT * FROM vMAE_RepProyDesercionGen a
 inner join vMAE_RepProyDesercionDet b on a.EstudianteID = b.EstudianteID 
-
-
-
-
-
-
-
-
-
 
 
 
