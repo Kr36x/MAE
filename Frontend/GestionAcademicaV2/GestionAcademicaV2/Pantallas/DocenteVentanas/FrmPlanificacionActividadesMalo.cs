@@ -10,13 +10,13 @@ using System.Windows.Forms;
 
 namespace GestionAcademicaV2.Pantallas.DocenteVentanas
 {
-    public partial class FrmReporteCalificaciones : Form
+    public partial class FrmPlanificacionActividades : Form
     {
         private readonly int docenteId;
         private readonly string nombreDocente;
         private readonly Conexion conexion = new Conexion();
 
-        public FrmReporteCalificaciones(int docenteId)
+        public FrmPlanificacionActividades(int docenteId)
         {
             InitializeComponent();
             this.docenteId = docenteId;
@@ -45,19 +45,12 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
             //lblAsignatura.Width = plVerder.Width;
             //lblAsignatura.Height = plVerder.Height;
             //lblAsignatura.TextAlignment = ContentAlignment.MiddleCenter;
-            lblAsignatura.AutoSize = false;
-            lblAsignatura.Location = new Point(0, 0);
-            lblAsignatura.Size = plVerder.ClientSize;
-            lblAsignatura.TextAlignment = ContentAlignment.MiddleCenter;
-            lblAsignatura.Margin = new Padding(0);
-            lblAsignatura.Padding = new Padding(0);
+          
 
         }
         private void CentrarLabelMateria()
         {
-            lblAsignatura.Text = cbAsignatura.SelectedItem.ToString().ToUpper();
-            lblAsignatura.Size = plVerder.ClientSize;
-            lblAsignatura.Location = new Point(0, 0);
+           
         }
         private void CargarGrados()
         {
@@ -236,7 +229,7 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
         private void cbAsignatura_SelectedIndexChanged(object sender, EventArgs e)
         {
             CargarReporte();
-            lblAsignatura.Text = cbAsignatura.SelectedItem.ToString().ToUpper();
+  
             CentrarLabelMateria();
         }
 

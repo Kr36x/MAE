@@ -9,6 +9,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Pantallas\DocenteVentanas\FrmPlanificacionActividadesMalo.cs" />
+    <Compile Remove="Pantallas\DocenteVentanas\FrmPlanificacionActividadesMalo.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Remove="Pantallas\DocenteVentanas\FrmPlanificacionActividadesMalo.resx" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Guna.UI2.WinForms" Version="2.0.4.7" />
     <PackageReference Include="itext.bouncy-castle-adapter" Version="9.5.0" />
     <PackageReference Include="itext7" Version="9.5.0" />
