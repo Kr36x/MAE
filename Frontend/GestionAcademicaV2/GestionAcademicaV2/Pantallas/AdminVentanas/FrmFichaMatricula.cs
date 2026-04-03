@@ -36,7 +36,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
                     txtGenero.Text = dt.Rows[0]["Sexo"].ToString();
                     txtDireccion.Text = dt.Rows[0]["Direccion"].ToString();
                     txtTelefonoEstudiante.Text = dt.Rows[0]["TelefonoEstudiante"].ToString();
-                    txtFechaNacimiento.Text = dt.Rows[0]["FechaNacimiento"].ToString();
+                    txtFechaNacimiento.Text = Convert.ToDateTime(dt.Rows[0]["FechaNacimiento"]).ToString("dd/MM/yyyy");
                     txtMano.Text = dt.Rows[0]["Mano"].ToString();
                     txtAlergias.Text = dt.Rows[0]["Alergia"].ToString();
                     txtEstado.Text = dt.Rows[0]["Estado"].ToString();

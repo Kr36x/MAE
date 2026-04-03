@@ -25,6 +25,9 @@
     <Compile Update="Pantallas\AdminVentanas\FrmReporteDesercionRetencion.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Pantallas\AdminVentanas\FrmUsuariosPersonal.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Pantallas\DocenteVentanas\FrmBoletaPrebasica.cs">
       <SubType>Form</SubType>
     </Compile>
