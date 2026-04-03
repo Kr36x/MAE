@@ -468,7 +468,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
                 cbbGenero.DataSource = dt;
                 cbbGenero.DisplayMember = "Descripcion";
-                cbbGenero.ValueMember = "Codigo"; 
+                cbbGenero.ValueMember = "Codigo";
             }
             catch (Exception ex)
             {
@@ -564,5 +564,14 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
             }
         }
 
+        private void txtAviso2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2HtmlLabel1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

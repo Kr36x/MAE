@@ -860,6 +860,7 @@
             txtFechaNacimiento.ForeColor = Color.Black;
             txtFechaNacimiento.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             txtFechaNacimiento.Location = new Point(194, 113);
+            txtFechaNacimiento.MaxLength = 10;
             txtFechaNacimiento.Name = "txtFechaNacimiento";
             txtFechaNacimiento.PlaceholderText = "";
             txtFechaNacimiento.ReadOnly = true;
@@ -1033,7 +1034,7 @@
             txtAnio.FillColor = SystemColors.HotTrack;
             txtAnio.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtAnio.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            txtAnio.ForeColor = Color.Black;
+            txtAnio.ForeColor = Color.White;
             txtAnio.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             txtAnio.Location = new Point(838, 50);
             txtAnio.Margin = new Padding(4);

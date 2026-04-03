@@ -28,88 +28,113 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
         private void cbbRol_SelectedIndexChanged(object sender, EventArgs e)
         {
+            ctnDatosUsuario.Visible = true;
             if (cbbRol.SelectedIndex == 0)
             {
-                lbTituloUsuario.Text = "ADMINISTRADOR";
-                lbEspecialidad.Visible = false;
-                txtEspecialidad.Visible = false;
-                lbPosicion.Visible = true;
-                txtPosicion.Visible = true;
                 lbUsuario.Visible = true;
+                lbAvisoUsuario.Visible = true;
                 txtUsuario.Visible = true;
                 lbContrasena.Visible = true;
+                lbAvisoContrasena.Visible = true;
                 txtContrasena.Visible = true;
                 lbCorreo.Visible = true;
+                lbAvisoCorreo.Visible = true;
                 txtCorreo.Visible = true;
+                lbParentesco.Visible = false;
+                lbAvisoParentesco.Visible = false;
+                cbbParentesco.Visible = false;
+                lbLugarTrabajo.Visible = false;
+                lbAvisoTrabajo.Visible = false;
+                txtLugarTrabajo.Visible = false;
+                lbTelefono.Visible = true;
+                lbAvisoTelefono.Visible = true;
+                txtTelefono.Visible = true;
+                lbEspecialidad.Visible = false;
+                lbAvisoEspecialidad .Visible = false;
+                txtEspecialidad.Visible = false;
+                lbPosicion.Visible = true;
+                lbAvisoPosicion .Visible = true;
+                txtPosicion.Visible = true;
                 lbSexo.Visible = true;
+                lbAvisoGenero.Visible = true;
                 cbbSexo.Visible = true;
                 lbDireccion.Visible = true;
+                lbAvisoDireccion .Visible = true;
                 txtDireccion.Visible = true;
-                lbTelefono.Visible = true;
-                txtTelefono.Visible = true;
-                lbEstado.Visible = true;
-                cbbEstado.Visible = true;
-                lbFechaNacimiento.Visible = true;
-                dtpFechaNacimiento.Visible = true;
-                lbParentesco.Visible = false;
-                txtParentesco.Visible = false;
-                lbLugarTrabajo.Visible = false;
-                txtLugarTrabajo.Visible = false;
+                lbFechaNacimiento.Visible = false;
+                lbAvisoFecha.Visible = false;
+                dtpFechaNacimiento.Visible = false;
             }
             else if (cbbRol.SelectedIndex == 1)
             {
-                lbTituloUsuario.Text = "DOCENTE";
-                lbEspecialidad.Visible = true;
-                txtEspecialidad.Visible = true;
-                lbPosicion.Visible = false;
-                txtPosicion.Visible = false;
                 lbUsuario.Visible = true;
+                lbAvisoUsuario.Visible = true;
                 txtUsuario.Visible = true;
                 lbContrasena.Visible = true;
+                lbAvisoContrasena.Visible = true;
                 txtContrasena.Visible = true;
                 lbCorreo.Visible = true;
+                lbAvisoCorreo.Visible = true;
                 txtCorreo.Visible = true;
+                lbParentesco.Visible = false;
+                lbAvisoParentesco.Visible = false;
+                cbbParentesco.Visible = false;
+                lbLugarTrabajo.Visible = false;
+                lbAvisoTrabajo.Visible = false;
+                txtLugarTrabajo.Visible = false;
+                lbTelefono.Visible = true;
+                lbAvisoTelefono.Visible = true;
+                txtTelefono.Visible = true;
+                lbEspecialidad.Visible = true;
+                lbAvisoEspecialidad.Visible = true;
+                txtEspecialidad.Visible = true;
+                lbPosicion.Visible = false;
+                lbAvisoPosicion.Visible = false;
+                txtPosicion.Visible = false;
                 lbSexo.Visible = true;
+                lbAvisoGenero.Visible = true;
                 cbbSexo.Visible = true;
                 lbDireccion.Visible = true;
+                lbAvisoDireccion.Visible = true;
                 txtDireccion.Visible = true;
-                lbTelefono.Visible = true;
-                txtTelefono.Visible = true;
-                lbEstado.Visible = true;
-                cbbEstado.Visible = true;
                 lbFechaNacimiento.Visible = true;
+                lbAvisoFecha.Visible = true;
                 dtpFechaNacimiento.Visible = true;
-                lbParentesco.Visible = false;
-                txtParentesco.Visible = false;
-                lbLugarTrabajo.Visible = false;
-                txtLugarTrabajo.Visible = false;
             }
             else if (cbbRol.SelectedIndex == 2)
             {
-                lbTituloUsuario.Text = "TUTOR";
                 lbUsuario.Visible = true;
+                lbAvisoUsuario.Visible = true;
                 txtUsuario.Visible = true;
                 lbContrasena.Visible = true;
+                lbAvisoContrasena.Visible = true;
                 txtContrasena.Visible = true;
                 lbCorreo.Visible = true;
+                lbAvisoCorreo.Visible = true;
                 txtCorreo.Visible = true;
                 lbParentesco.Visible = true;
-                txtParentesco.Visible = true;
+                lbAvisoParentesco.Visible = true;
+                cbbParentesco.Visible = true;
                 lbLugarTrabajo.Visible = true;
+                lbAvisoTrabajo.Visible = true;
                 txtLugarTrabajo.Visible = true;
                 lbTelefono.Visible = true;
+                lbAvisoTelefono.Visible = true;
                 txtTelefono.Visible = true;
-                lbEstado.Visible = true;
-                cbbEstado.Visible = true;
                 lbEspecialidad.Visible = false;
+                lbAvisoEspecialidad.Visible = false;
                 txtEspecialidad.Visible = false;
                 lbPosicion.Visible = false;
+                lbAvisoPosicion.Visible = false;
                 txtPosicion.Visible = false;
                 lbSexo.Visible = false;
+                lbAvisoGenero.Visible = false;
                 cbbSexo.Visible = false;
                 lbDireccion.Visible = false;
+                lbAvisoDireccion.Visible = false;
                 txtDireccion.Visible = false;
                 lbFechaNacimiento.Visible = false;
+                lbAvisoFecha.Visible = false;
                 dtpFechaNacimiento.Visible = false;
             }
         }
@@ -183,26 +208,17 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
         private void btLimpiar_Click(object sender, EventArgs e)
         {
-            txtNombre.Clear();
-            txtIdentidad.Clear();
-            txtUsuario.Clear();
-            cbbRol.Text = "";
-            txtContrasena.Clear();
-            txtCorreo.Clear();
-            txtParentesco.Clear();
-            txtLugarTrabajo.Clear();
-            txtTelefono.Clear();
-            cbbEstado.Text = "";
-            txtEspecialidad.Clear();
-            txtPosicion.Clear();
-            cbbSexo.Text = "";
-            txtDireccion.Clear();
-            dtpFechaNacimiento.Value = DateTime.Now;
+
         }
 
         private void lbTituloUsuario_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void FrmGestionUsuarios_Load(object sender, EventArgs e)
+        {
+            ctnDatosUsuario.Visible = false;
         }
     }
 }
