@@ -260,7 +260,7 @@ BEGIN
 
 			IF @rol = 'Tutor'
 			BEGIN
-				UPDATE Tutor SET  Telefono = @telefono, Parentesco = @parentescoT, Lugartrabajo = @lugartrabajoT
+				UPDATE Tutor SET  Telefono = @telefono, Lugartrabajo = @lugartrabajoT
 				WHERE UsuarioID = @usuarioID
 			END;
 		END;
@@ -514,7 +514,7 @@ rollback
 
 
 
-
+EXEC spMAE_RepFichaMatricula 13,1
 
 
 --=================================
@@ -567,7 +567,7 @@ END;
 
 go
 
---********************** CREAR MATRICULA --********************** 
+--********************** CREAR Y EDITAR MATRICULA --********************** 
 
 CREATE OR ALTER PROCEDURE spMAE_Matricular 
 --DATOS ESTUDIANTE
@@ -581,122 +581,180 @@ CREATE OR ALTER PROCEDURE spMAE_Matricular
 @nombreTut2 VARCHAR(100) = NULL , @dniTut2 VARCHAR(20) = NULL, @telTut2 VARCHAR(20) = NULL, @lugTrabTut2 VARCHAR(150)= NULL , 
 @correoTut2 VARCHAR(150) = NULL,  @parentescoTut2 VARCHAR(50) = NULL
 
+--PARA EDITAR
+, @matriculaID int = null
 AS
 BEGIN
 	BEGIN TRY
 		begin transaction
 			declare @err int = 0,  @duplicado int = 0; 
-			declare @usuario varchar(100) ;
+			declare @usuario varchar(100), @usuarioID int,  @estudianteID int , @tutorID int,  @gradoIdActual int ;
 
-			--===============
-				--TUTORES
-			--===============  
-			--VALIDAR USUARIO DUPLICADO
-			SELECT  @duplicado = COUNT(*)
-			FROM Usuario WHERE Correo = @correoTut1;
 
-			IF @duplicado > 0
+
+			IF @matriculaID IS NULL
 			BEGIN
-				ROLLBACK;
-				THROW 50006, 'ERROR: Ya existe un usuario con el correo del tutor 1.', 1;
-			END;
-
-			--CREAR USUARIO TUTOR 1
-			set @usuario =  dbo.fMAE_CrearNombreDeUsuario(@nombreTut1);
-		
-			INSERT INTO USUARIO (Usuario, Correo, Password, Rol)
-			VALUES(@usuario, @correoTut1, 'Tuto123*', 'TUTOR');
-		
-			--VALIDAR TUTOR DUPLICADO
-			SELECT @duplicado = COUNT(*)
-			FROM Tutor WHERE Identidad = @dniTut1
-		
-			IF @duplicado > 0
-			BEGIN
-				ROLLBACK;
-				THROW 50007, 'ERROR: Ya existe un tutor con el DNI del tutor 1.', 1;
-			END;
-
-			--CREAR TUTOR 1
-			INSERT INTO Tutor (UsuarioID, Nombre, Identidad, Telefono, Parentesco, Lugartrabajo)
-			SELECT TOP 1  UsuarioID, UPPER(@nombreTut1), @dniTut1, @telTut1, UPPER(@parentescoTut1), UPPER(@lugTrabTut1)
-			FROM Usuario WHERE Usuario = @usuario
-
-
-			IF @nombreTut2 IS NOT NULL
-			BEGIN
-					--VALIDAR USUARIO DUPLICADO
+				--===============
+					--TUTORES
+				--===============  
+				--VALIDAR USUARIO DUPLICADO
 				SELECT  @duplicado = COUNT(*)
-				FROM Usuario WHERE Correo = @correoTut2;
+				FROM Usuario WHERE Correo = @correoTut1;
 
 				IF @duplicado > 0
 				BEGIN
 					ROLLBACK;
-					THROW 50008, 'ERROR: Ya existe un usuario con el correo del tutor 2.', 1;
+					THROW 50006, 'ERROR: Ya existe un usuario con el correo del tutor 1.', 1;
 				END;
 
-				--CREAR USUARIO TUTOR 2
-				set @usuario =  dbo.fMAE_CrearNombreDeUsuario(@nombreTut2);
+				--CREAR USUARIO TUTOR 1
+				set @usuario =  dbo.fMAE_CrearNombreDeUsuario(@nombreTut1);
 		
 				INSERT INTO USUARIO (Usuario, Correo, Password, Rol)
-				VALUES(@usuario, @correoTut2, 'Tuto123*', 'TUTOR');
+				VALUES(@usuario, @correoTut1, 'Tuto123*', 'TUTOR');
 		
 				--VALIDAR TUTOR DUPLICADO
 				SELECT @duplicado = COUNT(*)
-				FROM Tutor WHERE Identidad = @dniTut2
+				FROM Tutor WHERE Identidad = @dniTut1
 		
 				IF @duplicado > 0
 				BEGIN
 					ROLLBACK;
-					THROW 50009, 'ERROR: Ya existe un tutor con el DNI del tutor 2.', 1;
+					THROW 50007, 'ERROR: Ya existe un tutor con el DNI del tutor 1.', 1;
 				END;
 
 				--CREAR TUTOR 1
 				INSERT INTO Tutor (UsuarioID, Nombre, Identidad, Telefono, Parentesco, Lugartrabajo)
-				SELECT TOP 1  UsuarioID, UPPER(@nombreTut2), @dniTut2, @telTut2, UPPER(@parentescoTut2), UPPER(@lugTrabTut2)
+				SELECT TOP 1  UsuarioID, UPPER(@nombreTut1), @dniTut1, @telTut1, UPPER(@parentescoTut1), UPPER(@lugTrabTut1)
 				FROM Usuario WHERE Usuario = @usuario
-			END;
 
-			--=================  
-				--ESTUDIANTES
-			--=================
 
-			--VALIDAR ESTUDIANTE DUPLICADO
-			SELECT @duplicado = COUNT(*)
-			FROM Estudiante WHERE Identidad = @dniEst
+				IF @dniTut2 IS NOT NULL
+				BEGIN
+						--VALIDAR USUARIO DUPLICADO
+					SELECT  @duplicado = COUNT(*)
+					FROM Usuario WHERE Correo = @correoTut2;
+
+					IF @duplicado > 0
+					BEGIN
+						ROLLBACK;
+						THROW 50008, 'ERROR: Ya existe un usuario con el correo del tutor 2.', 1;
+					END;
+
+					--CREAR USUARIO TUTOR 2
+					set @usuario =  dbo.fMAE_CrearNombreDeUsuario(@nombreTut2);
 		
-			IF @duplicado > 0
+					INSERT INTO USUARIO (Usuario, Correo, Password, Rol)
+					VALUES(@usuario, @correoTut2, 'Tuto123*', 'TUTOR');
+		
+					--VALIDAR TUTOR DUPLICADO
+					SELECT @duplicado = COUNT(*)
+					FROM Tutor WHERE Identidad = @dniTut2
+		
+					IF @duplicado > 0
+					BEGIN
+						ROLLBACK;
+						THROW 50009, 'ERROR: Ya existe un tutor con el DNI del tutor 2.', 1;
+					END;
+
+					--CREAR TUTOR 1
+					INSERT INTO Tutor (UsuarioID, Nombre, Identidad, Telefono, Parentesco, Lugartrabajo)
+					SELECT TOP 1  UsuarioID, UPPER(@nombreTut2), @dniTut2, @telTut2, UPPER(@parentescoTut2), UPPER(@lugTrabTut2)
+					FROM Usuario WHERE Usuario = @usuario
+				END;
+
+				--=================  
+					--ESTUDIANTES
+				--=================
+
+				--VALIDAR ESTUDIANTE DUPLICADO
+				SELECT @duplicado = COUNT(*)
+				FROM Estudiante WHERE Identidad = @dniEst
+		
+				IF @duplicado > 0
+				BEGIN
+					ROLLBACK;
+					THROW 50010, 'ERROR: Ya existe un estudiante con el DNI ingresado.', 1;
+				END;
+
+				--CREAR ESTUDIANTE
+				INSERT INTO Estudiante (Nombre, Sexo, Identidad, Direccion, Telefono, FechaNacimiento, Mano, Alergia, Imagen)
+				VALUES (UPPER(@nombreEst), UPPER(@sexo), @dniEst, UPPER(@direccionEst), @telEst, @fechaNacimiento, UPPER(@mano), UPPER(@alergia), @imagen)
+
+				--RELACIONAR TUTOR CON ESTUDIANTE
+				INSERT INTO TutorEstudiante (TutorID, EstudianteID)
+				SELECT T0.TutorID, T1.EstudianteID
+				FROM Tutor T0 , Estudiante T1
+				WHERE T0.Identidad IN (@dniTut1, @dniTut2)
+				AND T1.Identidad = @dniEst
+
+
+				--=================  
+					--MATRICULA
+				--=================
+				INSERT INTO Matricula (EstudianteID, SeccionID, Fecha, Anio)
+				SELECT EstudianteID, S.SeccionID ,GETDATE(), year(GETDATE()) -- DATEADD(YEAR, -1, GETDATE()), '2025' 
+				FROM Estudiante E, Seccion S
+				WHERE E.Identidad = @dniEst
+				AND S.GradoID = @gradoID  AND S.Letra = @seccionID
+				
+				SET @matriculaID = SCOPE_IDENTITY();
+
+			END
+			ELSE
 			BEGIN
-				ROLLBACK;
-				THROW 50010, 'ERROR: Ya existe un estudiante con el DNI ingresado.', 1;
-			END;
+				
+				--EDITAR TUTOR
+				SELECT @tutorID = T.TutorID, @usuarioID = T.UsuarioID
+				FROM Tutor T
+				WHERE Identidad = @dniTut1 
+				
+				UPDATE Tutor SET Telefono = @telTut1, Lugartrabajo = UPPER(@lugTrabTut1)
+				WHERE TutorID = @tutorID
+				UPDATE Usuario SET Correo = @correoTut1
+				WHERE UsuarioID = @usuarioID
 
-			--CREAR ESTUDIANTE
-			INSERT INTO Estudiante (Nombre, Sexo, Identidad, Direccion, Telefono, FechaNacimiento, Mano, Alergia, Imagen)
-			VALUES (UPPER(@nombreEst), UPPER(@sexo), @dniEst, UPPER(@direccionEst), @telEst, @fechaNacimiento, UPPER(@mano), UPPER(@alergia), @imagen)
+				--VALIDA SI EXISTE TUTOR 2 PARA EDITARLO
+				IF @dniTut2 IS NOT NULL
+				BEGIN
+					SELECT @tutorID = T.TutorID, @usuarioID = T.UsuarioID
+					FROM Tutor T
+					WHERE Identidad = @dniTut2 
+				
+					UPDATE Tutor SET Telefono = @telTut2, Lugartrabajo = UPPER(@lugTrabTut2)
+					WHERE TutorID = @tutorID
+					UPDATE Usuario SET Correo = @correoTut2
+					WHERE UsuarioID = @usuarioID
+				END
 
-			--RELACIONAR TUTOR CON ESTUDIANTE
-			INSERT INTO TutorEstudiante (TutorID, EstudianteID)
-			SELECT T0.TutorID, T1.EstudianteID
-			FROM Tutor T0 , Estudiante T1
-			WHERE T0.Identidad IN (@dniTut1, @dniTut2)
-			AND T1.Identidad = @dniEst
+
+				--EDITAR ESTUDIANTE
+				SELECT @estudianteID = M.EstudianteID,  @gradoIdActual = S.GradoID
+				FROM Matricula M 
+				INNER JOIN Seccion S ON M.SeccionID = S.SeccionID
+				WHERE M.MatriculaID = @matriculaID
+
+				UPDATE Estudiante SET Mano = UPPER(@mano), Alergia = UPPER(@alergia), Telefono = @telEst, Direccion = UPPER(@direccionEst), Imagen = @imagen
+				WHERE EstudianteID = @estudianteID
 
 
-			--=================  
-				--MATRICULA
-			--=================
-			-- !!!***** el anio se deja asi por temas del proyecto pero lo ideal seria que tirara la fecha del anio actual
-			INSERT INTO Matricula (EstudianteID, SeccionID, Fecha, Anio)
-			SELECT EstudianteID, S.SeccionID , GETDATE(), '2025' 
-			FROM Estudiante E, Seccion S
-			WHERE E.Identidad = @dniEst
-			AND S.GradoID = @gradoID  AND S.Letra = @seccionID
+				-- VALIDAR SI EL ESTUDIANTE CURSARA OTRO GRADO PARA CREAR NUEVA MATRICULA
+				IF @gradoID > @gradoIdActual
+				BEGIN 
+					
+					INSERT INTO Matricula (EstudianteID, SeccionID, Fecha, Anio)
+					SELECT EstudianteID, S.SeccionID ,  GETDATE(), year(GETDATE())
+					FROM Estudiante E, Seccion S
+					WHERE E.EstudianteID = @estudianteID
+					AND S.GradoID = @gradoID  AND S.Letra = @seccionID
+
+					SET @matriculaID = SCOPE_IDENTITY();
+				END
+			END
+
 
 			COMMIT TRANSACTION;
-
-
-			SELECT SCOPE_IDENTITY();
+			SELECT @matriculaID ;
 	END TRY
 	BEGIN CATCH
 		IF @@TRANCOUNT > 0
@@ -717,18 +775,18 @@ EXEC spMAE_Matricular
 @nombreEst = 'Juan Carlos Perez Lopez',
 @fechaNacimiento = '2010-05-15',
 @sexo = 'M',
-@dniEst = '0101-2016-00011', ----0101-2016-00069
+@dniEst = '0101-2016-00011', ----existente: 00011 nuevo: 00069
 @direccionEst = 'Colonia Centro, San Pedro Sula',
 @telEst = '9999-9999',
 @mano = 'Derecha',
 @alergia = 'Ninguna',
 @imagen = 'juan.jpg',
-@gradoID = 13,
+@gradoID = 17,
 @seccionID = 'A',
 
 -- DATOS TUTOR 1
 @nombreTut1 = 'Maria Martinez Lopez ',
-@dniTut1 = '0801199012345',
+@dniTut1 = '0107-1982-10002', --dni existente 0107-1980-10002
 @telTut1 = '8888-8888',
 @lugTrabTut1 = 'Banco Atlántida',
 @correoTut1 = 'maria.lopez@gmail.com',
@@ -736,17 +794,21 @@ EXEC spMAE_Matricular
 
 -- DATOS TUTOR 2 (opcional)
 @nombreTut2 = 'Carlos Francisco Perez Lopez',
-@dniTut2 = '0107-1980-10201',
+@dniTut2 = '0107-1980-10001', --dni existente 0107-1980-10001
 @telTut2 = '7777-7777',
 @lugTrabTut2 = 'Empresa XYZ',
 @correoTut2 = 'carlos.perez1@gmail.com',
-@parentescoTut2 = 'Padre';
+@parentescoTut2 = 'Padre'
+,
+
+@matriculaID = 2
+
 
 
 rollback
 
 --VERIFICAR
-select M.Fecha, M.Anio, E.Nombre, E.Identidad, G.NombreGrado, S.Letra, T.Nombre, T.Identidad , U.Usuario, U.Correo
+select M.MatriculaID,  M.Fecha, M.Anio, E.Nombre, E.Identidad,  e.Direccion, G.NombreGrado, S.Letra, T.Nombre, T.Identidad , U.Usuario, U.Correo, t.Telefono 
 from Matricula M
 INNER JOIN Estudiante E ON M.EstudianteID = E.EstudianteID
 INNER JOIN TutorEstudiante TE ON E.EstudianteID = TE.EstudianteID
@@ -754,15 +816,18 @@ INNER JOIN Tutor T ON T.TutorID = TE.TutorID
 INNER JOIN Usuario U ON T.UsuarioID = U.UsuarioID
 INNER JOIN Seccion S ON M.SeccionID = S.SeccionID
 INNER JOIN Grado G ON S.GradoID = G.GradoID
-WHERE M.MatriculaID = 84
+WHERE 
+e.EstudianteID = 1
+
+M.MatriculaID = 89
 order by matriculaid desc
 
+select *from Estudiante where identidad = '0101-2016-00011'
 
-
-
+select * from tutor where Identidad = '0107-1982-10001'
 
 --********************** EDITAR MATRICULA --********************** 
-
+select * from grado
 
 
 
