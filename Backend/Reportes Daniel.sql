@@ -1,6 +1,4 @@
 
-
-
 --===================================
 			--REPORTES
 --===================================
@@ -8,7 +6,10 @@
 
 --1. FICHA DE MATRÍCULA INDIVIDUAL (HISTÓRICO Y VIGENTE)
 
+
 	--DATOS ESTUDIANTE
+            --CAMBIOS:   cambiar NombreGrado por GradoID y agregar letra de seccion
+
 CREATE OR ALTER PROCEDURE spMAE_RepFichaMatricula @estudianteID int, @matriculaID int
 AS
 BEGIN
@@ -21,12 +22,13 @@ BEGIN
 		E.Sexo, 
 		E.Identidad, 
 		E.Mano, 
-		G.NombreGrado,
+		G.GradoId,
 		E.Alergia,
 		E.Telefono,
 		E.Direccion,
 		E.Imagen, 
-		M.Fecha
+		M.Fecha,
+        S.LETRA
 	FROM 
 		Matricula M 
 		INNER JOIN Estudiante E ON M.EstudianteID = E.EstudianteID
@@ -44,7 +46,13 @@ END;
 
 go
 
+
+
+
+
 	--DATOS TUTOR
+
+        --CAMBIOS : agregar parentesco y correo
 CREATE OR ALTER PROCEDURE spMAE_TraeTutoresxEstudiante @estudianteID int
 AS
 BEGIN
@@ -59,6 +67,10 @@ GO
 EXEC spMAE_TraeTutoresxEstudiante 9
 
 go
+
+
+
+
 
 
 --4. DETALLE DE REUNIONES DE PADRES POR DOCENTE MENSUAL
@@ -113,14 +125,14 @@ BEGIN
 
         FROM Estudiante E 
         JOIN Matricula M ON M.EstudianteID = E.EstudianteID AND M.Anio = (SELECT SUBSTRING(CicloEscolar,1,4) FROM Configuracion WHERE Activa = 1)
-        JOIN CargaAcademica CA ON CA.SeccionID = M.SeccionID
+        JOIN CargaAcademica CA ON CA.SeccionID = M.SeccionID AND CA.Anio = (SELECT SUBSTRING(CicloEscolar,1,4) FROM Configuracion WHERE Activa = 1)
         JOIN Seccion S ON S.SeccionID = CA.SeccionID
         JOIN Grado G ON G.GradoID = S.GradoID
 
         INNER JOIN Actividad AC ON AC.CargaID = CA.CargaID
         INNER JOIN Calificacion CAl ON CAl.ActividadID = AC.ActividadID AND CAl.EstudianteID = E.EstudianteID
 
-        WHERE G.Nivel = @nivel AND CA.Anio = YEAR(GETDATE()) 
+        WHERE G.Nivel = @nivel 
 
         GROUP BY E.EstudianteID,G.GradoID,G.NombreGrado,S.Letra , AC.Parcial
     )
@@ -136,7 +148,7 @@ END;
 
 
 
-exec spMAE_RepGlobalesRend @nivel = 'PRE-BASICA'
+exec spMAE_RepGlobalesRend @nivel = 'BASICA'
 
 go
 
@@ -167,8 +179,8 @@ BEGIN
             AS DECIMAL(5,2)) AS Promedio
 
         FROM Estudiante E 
-        JOIN Matricula M ON M.EstudianteID = E.EstudianteID AND M.Anio = (SELECT SUBSTRING(CicloEscolar,1,4) FROM Configuracion WHERE Activa = 1)
-        JOIN CargaAcademica CA ON CA.SeccionID = M.SeccionID
+        JOIN Matricula M ON M.EstudianteID = E.EstudianteID 
+        JOIN CargaAcademica CA ON CA.SeccionID = M.SeccionID 
         JOIN Seccion S ON S.SeccionID = CA.SeccionID
         JOIN Grado G ON G.GradoID = S.GradoID
         JOIN Asignatura A ON A.AsignaturaID = CA.AsignaturaID
@@ -200,8 +212,8 @@ BEGIN
 END;
 go
 
-  exec spMAE_BoletaParcial 3, 22, 'A', 2026
-
+  exec spMAE_BoletaParcial @periodo= 3, @gradoID =  17, @letraSeccion = 'A', @anio =2025
+  select * from BoletaDetalle
 
 
 go
@@ -226,7 +238,7 @@ BEGIN
     ORDER BY D.Nombre
 
 END;
-exec spMAE_RepDistribCargaDoc 13,7,2026
+exec spMAE_RepDistribCargaDoc 13,7,2025
 
 GO
 
@@ -257,33 +269,37 @@ go
 CREATE OR ALTER VIEW vMAE_RepProyDesercionGen 
 AS
 
-    --Subqueries
+    
+    -- SUBQUERIES
     WITH ConfigActiva AS (
-        SELECT TOP 1 Anio,Periodo FROM Configuracion WHERE Activa = 1
+        SELECT CAST(SUBSTRING(CicloEscolar,1,4) AS INT) AS Anio 
+        FROM Configuracion 
+        WHERE Activa = 1
     ),
     Ausencias AS (
-        SELECT A.EstudianteID,COUNT(*) AS Inasistencias 
+        SELECT A.EstudianteID, COUNT(*) AS Inasistencias 
         FROM Asistencia A 
         CROSS JOIN ConfigActiva C
-        WHERE A.Estado = 'AUSENTE' AND YEAR(A.Fecha) = C.Anio GROUP BY A.EstudianteID
+        WHERE A.Estado = 'AUSENTE' 
+          AND YEAR(A.Fecha) IN (C.Anio, C.Anio + 1)
+        GROUP BY A.EstudianteID
     )
 
-    --Query principal
-    SELECT TOP 10 AU.EstudianteID,E.Nombre,G.NombreGrado as Grado,S.Letra as Seccion,AU.Inasistencias,
-        --Formula para promedio
+
+    --QUERY PRINCIPAL
+    SELECT TOP 10 AU.EstudianteID,E.Nombre,G.NombreGrado AS Grado,S.Letra AS Seccion,AU.Inasistencias,
         CAST(
-            SUM(CASE WHEN AC.Parcial = C.Periodo THEN CAl.Nota ELSE 0 END) * 100.0 /
-            NULLIF(SUM(CASE WHEN AC.Parcial = C.Periodo THEN AC.Valor ELSE 0 END), 0)
-        AS DECIMAL(5,2)) AS PromedioParcial
+            SUM(CAl.Nota) * 100.0 /
+            NULLIF(SUM(AC.Valor), 0)
+        AS DECIMAL(5,2)) AS PromedioAnual
 
     FROM Ausencias AU
     JOIN Estudiante E ON E.EstudianteID = AU.EstudianteID
-    JOIN Matricula M ON M.EstudianteID = AU.EstudianteID AND M.Anio = (SELECT SUBSTRING(CicloEscolar,1,4) FROM Configuracion WHERE Activa = 1)
-    JOIN CargaAcademica CA ON CA.SeccionID = M.SeccionID
+    JOIN Matricula M ON M.EstudianteID = AU.EstudianteID AND M.Anio = (SELECT Anio FROM ConfigActiva)
+
+    JOIN CargaAcademica CA ON CA.SeccionID = M.SeccionID 
     JOIN Seccion S ON S.SeccionID = CA.SeccionID
     JOIN Grado G ON G.GradoID = S.GradoID
-
-    CROSS JOIN ConfigActiva C
 
     LEFT JOIN Actividad AC ON AC.CargaID = CA.CargaID
     LEFT JOIN Calificacion CAl ON CAl.ActividadID = AC.ActividadID AND CAl.EstudianteID = AU.EstudianteID
@@ -292,32 +308,56 @@ AS
     ORDER BY AU.Inasistencias DESC;
 
 go
+
+
+
 SELECT * FROM vMAE_RepProyDesercionGen 
 
-
+SELECT COUNT(*) FROM Asistencia  WHERE Estado = 'AUSENTE' and Estudianteid = 44
+ 
 
 go
+
+
 CREATE OR ALTER VIEW vMAE_RepProyDesercionDet 
 AS
+    WITH TopEstudiantes AS (
+        SELECT TOP 10 EstudianteID
+        FROM vMAE_RepProyDesercionGen
+        ORDER BY Inasistencias DESC
+    ),
+    ConfigActiva AS (
+        SELECT CAST(SUBSTRING(CicloEscolar,1,4) AS INT) AS Anio 
+        FROM Configuracion 
+        WHERE Activa = 1
+    )
 
-	SELECT A.EstudianteID, AA.Nombre AS Asignatura,COUNT(*) AS Inasistencias 
-	FROM Asistencia A
-	JOIN CargaAcademica CA ON A.CargaID = CA.CargaID
-	JOIN Asignatura AA ON CA.AsignaturaID = AA.AsignaturaID
-	--JOIN Estudiante E ON E.EstudianteID = A.EstudianteID
-	WHERE A.Estado = 'AUSENTE' AND YEAR(A.Fecha) = YEAR(GETDATE()) 
-	AND A.EstudianteID IN ( 
-		( SELECT TOP 10 EstudianteID FROM Asistencia WHERE Estado = 'AUSENTE' AND YEAR(Fecha) = YEAR(GETDATE())  
-		GROUP BY EstudianteID ORDER BY COUNT(*) DESC) )
-	GROUP BY A.EstudianteID,AA.Nombre
+    SELECT 
+        A.EstudianteID,
+        AA.Nombre AS Asignatura,
+        COUNT(*) AS Inasistencias
+    FROM Asistencia A
+    JOIN TopEstudiantes T ON T.EstudianteID = A.EstudianteID
+    JOIN CargaAcademica CA ON A.CargaID = CA.CargaID
+    JOIN Asignatura AA ON CA.AsignaturaID = AA.AsignaturaID
+    CROSS JOIN ConfigActiva C
 
-go	
+    WHERE 
+        A.Estado = 'AUSENTE'
+        AND YEAR(A.Fecha) IN (C.Anio, C.Anio + 1)
 
-SELECT * FROM vMAE_RepProyDesercionDet ORDER BY EstudianteID
+    GROUP BY 
+        A.EstudianteID,
+        AA.Nombre
 
 
-SELECT * FROM vMAE_RepProyDesercionGen a
-inner join vMAE_RepProyDesercionDet b on a.EstudianteID = b.EstudianteID 
+        go
 
+
+
+
+select * from vMAE_RepProyDesercionGen a 
+inner join vMAE_RepProyDesercionDet b on a.EstudianteID = b.EstudianteID
+order by a.EstudianteID 
 
 
