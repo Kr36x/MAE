@@ -207,7 +207,7 @@
             btnCalificaciones.ShadowDecoration.CustomizableEdges = customizableEdges9;
             btnCalificaciones.Size = new Size(220, 45);
             btnCalificaciones.TabIndex = 9;
-            btnCalificaciones.Text = "Calificaciones";
+            btnCalificaciones.Text = "Actividades";
             btnCalificaciones.Click += btnCalificaciones_Click;
             // 
             // btnAsistencia
@@ -273,10 +273,11 @@
             // 
             // PantallaDocente
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
+            AutoScaleMode = AutoScaleMode.None;
             ClientSize = new Size(1264, 681);
             Controls.Add(pnlPrincipal);
+            MaximizeBox = false;
+            MinimizeBox = false;
             MinimumSize = new Size(1280, 720);
             Name = "PantallaDocente";
             StartPosition = FormStartPosition.CenterScreen;

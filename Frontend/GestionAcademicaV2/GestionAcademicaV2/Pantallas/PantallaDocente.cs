@@ -1,22 +1,26 @@
 ﻿using GestionAcademicaV2.Modelos;
 using GestionAcademicaV2.Pantallas.AdminVentanas;
 using GestionAcademicaV2.Pantallas.DocenteVentanas;
+using Microsoft.Data.SqlClient;
 using System;
 using System.Windows.Forms;
 
 namespace GestionAcademicaV2.Pantallas
 {
+
     public partial class PantallaDocente : Form
     {
         private Form formularioActivo = null;
         private bool menuExpandido = true;
         private SesionUsuario usuarioActual;
         int idDocente;
+        private readonly Conexion conexion = new Conexion();
 
         public PantallaDocente(SesionUsuario usuario)
         {
             InitializeComponent();
             usuarioActual = usuario;
+            idDocente = ObtenerDocenteIdPorUsuarioId(usuarioActual.UsuarioID);
         }
         private void AbrirFormularioEnPanel(Form formularioHijo)
         {
@@ -65,7 +69,7 @@ namespace GestionAcademicaV2.Pantallas
 
         private void btnCalificaciones_Click(object sender, EventArgs e)
         {
-            AbrirFormularioEnPanel(new FrmSeleccionBoleta(this));
+            AbrirFormularioEnPanel(new FrmPlanifacacionActividades(idDocente));
         }
         private string FormatearNombre(string usuario)
         {
@@ -121,6 +125,28 @@ namespace GestionAcademicaV2.Pantallas
         public void MoverPantallaAdmin(int docenteid)
         {
             AbrirFormularioEnPanel(new PantallaAdmin(usuarioActual));
+        }
+
+        public  int ObtenerDocenteIdPorUsuarioId(int usuarioId)
+        {
+            int docenteId = 0;
+
+            using SqlConnection cn = conexion.ObtenerConexion();
+            using (SqlCommand cmd = new SqlCommand(@"
+        SELECT DocenteID
+        FROM Docente
+        WHERE UsuarioID = @UsuarioID", cn))
+            {
+                cmd.Parameters.AddWithValue("@UsuarioID", usuarioId);
+
+                cn.Open();
+                object result = cmd.ExecuteScalar();
+
+                if (result != null && result != DBNull.Value)
+                    docenteId = Convert.ToInt32(result);
+            }
+
+            return docenteId;
         }
     }
 }
