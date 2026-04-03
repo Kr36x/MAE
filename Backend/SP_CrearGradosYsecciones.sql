@@ -69,7 +69,7 @@ select @gradoID=g.GradoID from seccion s inner join Grado g on s.GradoID=g.Grado
 if @duplicado > 0
 		BEGIN
 			ROLLBACK;
-			THROW 50006, 'ERROR: Ya existe Este Grado', 1;
+			THROW 50006, 'ERROR: Ya existe Esta seccion', 1;
 		END;
 --si no hay duplicados
 insert into Seccion(GradoID,Letra,Turno,Aula)
