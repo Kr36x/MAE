@@ -106,6 +106,7 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
 
             if (cbDocente.Items.Count > 0)
                 cbDocente.SelectedIndex = 0;
+
         }
 
         private void CargarMeses()

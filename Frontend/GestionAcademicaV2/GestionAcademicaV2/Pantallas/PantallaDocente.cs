@@ -153,5 +153,15 @@ namespace GestionAcademicaV2.Pantallas
         {
             AbrirFormularioEnPanel(new FrmRegistroCalificaciones(idDocente));
         }
+
+        private void btnAsistencia_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioEnPanel(new FrmRegistroAsistencia(idDocente));
+        }
+
+        private void guna2Button1_Click_1(object sender, EventArgs e)
+        {
+            AbrirFormularioEnPanel(new FrmVerReunionesDocente(idDocente));
+        }
     }
 }
