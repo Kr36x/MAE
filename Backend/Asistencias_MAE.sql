@@ -29,12 +29,30 @@ select @CargaID=ca.CargaID from CargaAcademica CA inner join Asignatura A on CA.
 
 select @EstudianteID=E.EstudianteID from Estudiante E where Nombre=@Estudiante
 
+select @duplicado=count(*) from Asistencia where EstudianteID=@EstudianteID and Fecha=@fecha
+
+IF @duplicado > 0
+		BEGIN
+			ROLLBACK;
+			THROW 500010, 'ERROR: Ya se tomo asistencia de este usuario.', 1;
+		END; 
+
 
 insert into Asistencia (EstudianteID,CargaID,Fecha,Estado,Observacion)
 values (@EstudianteID,@CargaID,@fecha,@Estado,@observacion)
-		
-COMMIT TRANSACTION;
+IF @@ERROR <> 0 AND @err  = 0 SELECT @err = 1 ;
 
- end;
+
+		
+IF @err = 0 
+	COMMIT;
+	ELSE 
+		BEGIN
+			ROLLBACK;
+			THROW 50005, 'ERROR: Ocurrió un error al guardar la asistencia.', 1;
+		END;
+END;
+
+ 
 
 go
