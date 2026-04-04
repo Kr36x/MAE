@@ -254,6 +254,7 @@
             btnAsistencia.Size = new Size(220, 45);
             btnAsistencia.TabIndex = 8;
             btnAsistencia.Text = "Asistencia";
+            btnAsistencia.Click += btnAsistencia_Click;
             // 
             // btnEstudiantes
             // 
