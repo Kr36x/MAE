@@ -94,7 +94,7 @@ namespace GestionAcademicaV2.Pantallas
             lblRol.Text = usuarioActual?.Rol ?? "Sin rol";
             lblId.Text = "ID: " + (usuarioActual?.UsuarioID.ToString() ?? "N/A");
         }
-        
+
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
@@ -107,7 +107,7 @@ namespace GestionAcademicaV2.Pantallas
         {
             AbrirFormularioEnPanel(new FrmReporteAsistencia(docenteId));
         }
-            public void MostrarReporteCalificacion(int docenteId)
+        public void MostrarReporteCalificacion(int docenteId)
         {
             AbrirFormularioEnPanel(new FrmReporteSemanal(docenteId));
         }
@@ -127,7 +127,7 @@ namespace GestionAcademicaV2.Pantallas
             AbrirFormularioEnPanel(new PantallaAdmin(usuarioActual));
         }
 
-        public  int ObtenerDocenteIdPorUsuarioId(int usuarioId)
+        public int ObtenerDocenteIdPorUsuarioId(int usuarioId)
         {
             int docenteId = 0;
 
@@ -147,6 +147,11 @@ namespace GestionAcademicaV2.Pantallas
             }
 
             return docenteId;
+        }
+
+        private void btnActividades2_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioEnPanel(new FrmRegistroCalificaciones(idDocente));
         }
     }
 }
