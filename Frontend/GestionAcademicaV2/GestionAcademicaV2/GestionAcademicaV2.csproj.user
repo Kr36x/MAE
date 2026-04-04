@@ -22,10 +22,31 @@
     <Compile Update="Pantallas\AdminVentanas\FrmMatricula.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Pantallas\AdminVentanas\FrmNuevaAsignatura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Pantallas\AdminVentanas\FrmNuevoGradoSeccion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Pantallas\AdminVentanas\FrmOfertaAcademica.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Pantallas\AdminVentanas\FrmReporteAsignaturas.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Pantallas\AdminVentanas\FrmReporteDesercionRetencion.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Pantallas\AdminVentanas\FrmUsuariosPersonal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Pantallas\AdminVentanas\FrmVincularEstudiante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Pantallas\AdminVentanas\ReporteDocentes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Pantallas\AdminVentanas\ReporteTutores.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Pantallas\DocenteVentanas\FrmBoletaPrebasica.cs">
