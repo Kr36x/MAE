@@ -315,6 +315,8 @@
             dtpAnio = new Guna.UI2.WinForms.Guna2DateTimePicker();
             pnlPrincipal = new Guna.UI2.WinForms.Guna2Panel();
             cbbParcial = new Guna.UI2.WinForms.Guna2ComboBox();
+            guna2HtmlLabel11 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            guna2HtmlLabel29 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).BeginInit();
             ctnDecimoGrado.SuspendLayout();
             ctnUndecimo.SuspendLayout();
@@ -351,20 +353,20 @@
             // guna2HtmlLabel1
             // 
             guna2HtmlLabel1.BackColor = Color.Transparent;
-            guna2HtmlLabel1.Font = new Font("Britannic Bold", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            guna2HtmlLabel1.Location = new Point(295, 24);
+            guna2HtmlLabel1.Font = new Font("Britannic Bold", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            guna2HtmlLabel1.Location = new Point(214, 21);
             guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            guna2HtmlLabel1.Size = new Size(333, 23);
+            guna2HtmlLabel1.Size = new Size(417, 29);
             guna2HtmlLabel1.TabIndex = 1;
             guna2HtmlLabel1.Text = "ATLANTIC ACADEMY BILINGUAL SCHOOL";
             // 
             // guna2HtmlLabel2
             // 
             guna2HtmlLabel2.BackColor = Color.Transparent;
-            guna2HtmlLabel2.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            guna2HtmlLabel2.Location = new Point(196, 47);
+            guna2HtmlLabel2.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            guna2HtmlLabel2.Location = new Point(188, 56);
             guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            guna2HtmlLabel2.Size = new Size(582, 34);
+            guna2HtmlLabel2.Size = new Size(464, 27);
             guna2HtmlLabel2.TabIndex = 2;
             guna2HtmlLabel2.Text = "REPORTE GLOBAL DE RENDIMIENTO INSTITUCIONAL";
             // 
@@ -2593,7 +2595,7 @@
             cbbNivel.Location = new Point(358, 113);
             cbbNivel.Name = "cbbNivel";
             cbbNivel.ShadowDecoration.CustomizableEdges = customizableEdges148;
-            cbbNivel.Size = new Size(460, 36);
+            cbbNivel.Size = new Size(389, 36);
             cbbNivel.TabIndex = 0;
             cbbNivel.TextAlign = HorizontalAlignment.Center;
             cbbNivel.SelectedIndexChanged += cbbNivel_SelectedIndexChanged;
@@ -2658,14 +2660,15 @@
             guna2HtmlLabel3.Size = new Size(898, 36);
             guna2HtmlLabel3.TabIndex = 0;
             guna2HtmlLabel3.Text = "EVOLUCIÓN DEL DESEMPEÑO ESCOLAR";
+            guna2HtmlLabel3.TextAlignment = ContentAlignment.MiddleLeft;
             // 
             // guna2HtmlLabel19
             // 
             guna2HtmlLabel19.BackColor = Color.Transparent;
-            guna2HtmlLabel19.Font = new Font("Britannic Bold", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            guna2HtmlLabel19.Location = new Point(824, 24);
+            guna2HtmlLabel19.Font = new Font("Britannic Bold", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            guna2HtmlLabel19.Location = new Point(788, 21);
             guna2HtmlLabel19.Name = "guna2HtmlLabel19";
-            guna2HtmlLabel19.Size = new Size(143, 23);
+            guna2HtmlLabel19.Size = new Size(179, 29);
             guna2HtmlLabel19.TabIndex = 6;
             guna2HtmlLabel19.Text = "TELA, ATLÁNTIDA";
             // 
@@ -2689,7 +2692,7 @@
             dtpAnio.FillColor = Color.Gainsboro;
             dtpAnio.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             dtpAnio.Format = DateTimePickerFormat.Custom;
-            dtpAnio.Location = new Point(825, 47);
+            dtpAnio.Location = new Point(825, 56);
             dtpAnio.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
             dtpAnio.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
             dtpAnio.Name = "dtpAnio";
@@ -2749,11 +2752,34 @@
             cbbParcial.TabIndex = 10;
             cbbParcial.SelectedIndexChanged += cbbParcial_SelectedIndexChanged;
             // 
+            // guna2HtmlLabel11
+            // 
+            guna2HtmlLabel11.BackColor = Color.Transparent;
+            guna2HtmlLabel11.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            guna2HtmlLabel11.Location = new Point(753, 119);
+            guna2HtmlLabel11.Name = "guna2HtmlLabel11";
+            guna2HtmlLabel11.Size = new Size(68, 23);
+            guna2HtmlLabel11.TabIndex = 11;
+            guna2HtmlLabel11.Text = "PARCIAL";
+            // 
+            // guna2HtmlLabel29
+            // 
+            guna2HtmlLabel29.BackColor = Color.Transparent;
+            guna2HtmlLabel29.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            guna2HtmlLabel29.ForeColor = Color.Gray;
+            guna2HtmlLabel29.Location = new Point(188, 89);
+            guna2HtmlLabel29.Name = "guna2HtmlLabel29";
+            guna2HtmlLabel29.Size = new Size(464, 17);
+            guna2HtmlLabel29.TabIndex = 12;
+            guna2HtmlLabel29.Text = "EN ESTA SECCIÓN PUEDE VERIFICAR EL RENDIMIENTO ACADÉMICO DE CADA NIVEL";
+            // 
             // FrmDashboard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1028, 674);
+            Controls.Add(guna2HtmlLabel29);
+            Controls.Add(guna2HtmlLabel11);
             Controls.Add(cbbParcial);
             Controls.Add(pnlPrincipal);
             Controls.Add(dtpAnio);
@@ -2934,5 +2960,7 @@
         private Guna.UI2.WinForms.Guna2Panel pnlPrincipal;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartGrados;
         private Guna.UI2.WinForms.Guna2ComboBox cbbParcial;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel11;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel29;
     }
 }

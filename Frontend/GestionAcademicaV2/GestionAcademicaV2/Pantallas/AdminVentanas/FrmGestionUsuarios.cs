@@ -50,16 +50,16 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
                 lbAvisoTelefono.Visible = true;
                 txtTelefono.Visible = true;
                 lbEspecialidad.Visible = false;
-                lbAvisoEspecialidad .Visible = false;
+                lbAvisoEspecialidad.Visible = false;
                 txtEspecialidad.Visible = false;
                 lbPosicion.Visible = true;
-                lbAvisoPosicion .Visible = true;
+                lbAvisoPosicion.Visible = true;
                 txtPosicion.Visible = true;
                 lbSexo.Visible = true;
                 lbAvisoGenero.Visible = true;
                 cbbSexo.Visible = true;
                 lbDireccion.Visible = true;
-                lbAvisoDireccion .Visible = true;
+                lbAvisoDireccion.Visible = true;
                 txtDireccion.Visible = true;
                 lbFechaNacimiento.Visible = false;
                 lbAvisoFecha.Visible = false;
@@ -219,6 +219,11 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
         private void FrmGestionUsuarios_Load(object sender, EventArgs e)
         {
             ctnDatosUsuario.Visible = false;
+        }
+
+        private void lbAvisoTrabajo_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

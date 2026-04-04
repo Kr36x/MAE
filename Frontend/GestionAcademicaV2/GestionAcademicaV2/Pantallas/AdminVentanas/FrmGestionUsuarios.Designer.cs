@@ -61,20 +61,22 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges30 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges31 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges32 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges41 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges42 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges35 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges36 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges43 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges44 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges33 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges34 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges39 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges40 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges37 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges38 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges35 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges36 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges41 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges42 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges39 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges40 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             LbIdentidad = new Guna.UI2.WinForms.Guna2HtmlLabel();
             txtIdentidad = new Guna.UI2.WinForms.Guna2TextBox();
-            btGuardar = new Guna.UI2.WinForms.Guna2Button();
+            btCrear = new Guna.UI2.WinForms.Guna2Button();
             lbNombre = new Guna.UI2.WinForms.Guna2HtmlLabel();
             txtNombre = new Guna.UI2.WinForms.Guna2TextBox();
             lbRol = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -100,11 +102,12 @@
             lbLugarTrabajo = new Guna.UI2.WinForms.Guna2HtmlLabel();
             txtLugarTrabajo = new Guna.UI2.WinForms.Guna2TextBox();
             lbParentesco = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            btLimpiar = new Guna.UI2.WinForms.Guna2Button();
+            btCancelar = new Guna.UI2.WinForms.Guna2Button();
             guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2ContainerControl2 = new Guna.UI2.WinForms.Guna2ContainerControl();
+            btInformacion = new Guna.UI2.WinForms.Guna2PictureBox();
             ctnDatosUsuario = new Guna.UI2.WinForms.Guna2ContainerControl();
             lbAvisoTrabajo = new Guna.UI2.WinForms.Guna2HtmlLabel();
             lbAvisoParentesco = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -120,7 +123,7 @@
             guna2HtmlLabel11 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             lbAvisoNombre = new Guna.UI2.WinForms.Guna2HtmlLabel();
             ctnCredenciales = new Guna.UI2.WinForms.Guna2ContainerControl();
-            guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            btVer = new Guna.UI2.WinForms.Guna2Button();
             lbAvisoContrasena = new Guna.UI2.WinForms.Guna2HtmlLabel();
             lbAvisoRol = new Guna.UI2.WinForms.Guna2HtmlLabel();
             lbAvisoCorreo = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -129,6 +132,7 @@
             guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).BeginInit();
             guna2ContainerControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)btInformacion).BeginInit();
             ctnDatosUsuario.SuspendLayout();
             ctnCredenciales.SuspendLayout();
             SuspendLayout();
@@ -147,7 +151,7 @@
             // 
             LbIdentidad.BackColor = Color.Transparent;
             LbIdentidad.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            LbIdentidad.Location = new Point(59, 107);
+            LbIdentidad.Location = new Point(59, 100);
             LbIdentidad.Name = "LbIdentidad";
             LbIdentidad.Size = new Size(141, 17);
             LbIdentidad.TabIndex = 100;
@@ -169,39 +173,39 @@
             txtIdentidad.Font = new Font("Segoe UI", 9F);
             txtIdentidad.ForeColor = Color.Black;
             txtIdentidad.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtIdentidad.Location = new Point(59, 127);
+            txtIdentidad.Location = new Point(59, 120);
             txtIdentidad.MaxLength = 13;
             txtIdentidad.Name = "txtIdentidad";
             txtIdentidad.PlaceholderText = "";
             txtIdentidad.SelectedText = "";
             txtIdentidad.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            txtIdentidad.Size = new Size(225, 36);
+            txtIdentidad.Size = new Size(225, 31);
             txtIdentidad.TabIndex = 1;
             txtIdentidad.TextAlign = HorizontalAlignment.Center;
             txtIdentidad.TextChanged += txtIdentidad_TextChanged;
             txtIdentidad.KeyPress += txtIdentidad_KeyPress;
             // 
-            // btGuardar
+            // btCrear
             // 
-            btGuardar.BackColor = Color.White;
-            btGuardar.BorderRadius = 10;
-            btGuardar.BorderThickness = 1;
-            btGuardar.CustomizableEdges = customizableEdges3;
-            btGuardar.DisabledState.BorderColor = Color.DarkGray;
-            btGuardar.DisabledState.CustomBorderColor = Color.DarkGray;
-            btGuardar.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btGuardar.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btGuardar.FillColor = SystemColors.HotTrack;
-            btGuardar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btGuardar.ForeColor = Color.White;
-            btGuardar.Image = (Image)resources.GetObject("btGuardar.Image");
-            btGuardar.Location = new Point(772, 565);
-            btGuardar.Name = "btGuardar";
-            btGuardar.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            btGuardar.Size = new Size(131, 35);
-            btGuardar.TabIndex = 3;
-            btGuardar.Text = "CREAR";
-            btGuardar.Click += guna2Button1_Click;
+            btCrear.BackColor = Color.White;
+            btCrear.BorderRadius = 10;
+            btCrear.BorderThickness = 1;
+            btCrear.CustomizableEdges = customizableEdges3;
+            btCrear.DisabledState.BorderColor = Color.DarkGray;
+            btCrear.DisabledState.CustomBorderColor = Color.DarkGray;
+            btCrear.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btCrear.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btCrear.FillColor = SystemColors.HotTrack;
+            btCrear.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btCrear.ForeColor = Color.White;
+            btCrear.Image = (Image)resources.GetObject("btCrear.Image");
+            btCrear.Location = new Point(772, 532);
+            btCrear.Name = "btCrear";
+            btCrear.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            btCrear.Size = new Size(131, 35);
+            btCrear.TabIndex = 3;
+            btCrear.Text = "CREAR";
+            btCrear.Click += guna2Button1_Click;
             // 
             // lbNombre
             // 
@@ -229,12 +233,12 @@
             txtNombre.Font = new Font("Segoe UI", 9F);
             txtNombre.ForeColor = Color.Black;
             txtNombre.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtNombre.Location = new Point(59, 52);
+            txtNombre.Location = new Point(59, 50);
             txtNombre.Name = "txtNombre";
             txtNombre.PlaceholderText = "";
             txtNombre.SelectedText = "";
             txtNombre.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            txtNombre.Size = new Size(335, 36);
+            txtNombre.Size = new Size(335, 31);
             txtNombre.TabIndex = 2;
             txtNombre.KeyPress += txtNombre_KeyPress;
             // 
@@ -242,7 +246,7 @@
             // 
             lbRol.BackColor = Color.Transparent;
             lbRol.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            lbRol.Location = new Point(439, 107);
+            lbRol.Location = new Point(439, 102);
             lbRol.Name = "lbRol";
             lbRol.Size = new Size(26, 17);
             lbRol.TabIndex = 98;
@@ -260,12 +264,12 @@
             cbbRol.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             cbbRol.Font = new Font("Segoe UI", 10F);
             cbbRol.ForeColor = Color.Black;
-            cbbRol.ItemHeight = 30;
+            cbbRol.ItemHeight = 25;
             cbbRol.Items.AddRange(new object[] { "ADMINISTRADOR", "DOCENTE", "TUTOR" });
-            cbbRol.Location = new Point(439, 126);
+            cbbRol.Location = new Point(439, 121);
             cbbRol.Name = "cbbRol";
             cbbRol.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            cbbRol.Size = new Size(225, 36);
+            cbbRol.Size = new Size(225, 31);
             cbbRol.TabIndex = 3;
             cbbRol.SelectedIndexChanged += cbbRol_SelectedIndexChanged;
             // 
@@ -273,7 +277,7 @@
             // 
             lbSexo.BackColor = Color.Transparent;
             lbSexo.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbSexo.Location = new Point(59, 181);
+            lbSexo.Location = new Point(59, 169);
             lbSexo.Name = "lbSexo";
             lbSexo.Size = new Size(33, 17);
             lbSexo.TabIndex = 94;
@@ -292,12 +296,12 @@
             cbbSexo.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             cbbSexo.Font = new Font("Segoe UI", 10F);
             cbbSexo.ForeColor = Color.Black;
-            cbbSexo.ItemHeight = 30;
+            cbbSexo.ItemHeight = 25;
             cbbSexo.Items.AddRange(new object[] { "MASCULINO", "FEMENINO" });
-            cbbSexo.Location = new Point(59, 201);
+            cbbSexo.Location = new Point(59, 189);
             cbbSexo.Name = "cbbSexo";
             cbbSexo.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            cbbSexo.Size = new Size(225, 36);
+            cbbSexo.Size = new Size(225, 31);
             cbbSexo.TabIndex = 7;
             cbbSexo.Visible = false;
             // 
@@ -328,13 +332,13 @@
             txtDireccion.Font = new Font("Segoe UI", 9F);
             txtDireccion.ForeColor = Color.Black;
             txtDireccion.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtDireccion.Location = new Point(447, 53);
+            txtDireccion.Location = new Point(447, 51);
             txtDireccion.Multiline = true;
             txtDireccion.Name = "txtDireccion";
             txtDireccion.PlaceholderText = "";
             txtDireccion.SelectedText = "";
             txtDireccion.ShadowDecoration.CustomizableEdges = customizableEdges12;
-            txtDireccion.Size = new Size(307, 108);
+            txtDireccion.Size = new Size(307, 100);
             txtDireccion.TabIndex = 8;
             txtDireccion.Visible = false;
             // 
@@ -342,7 +346,7 @@
             // 
             lbTelefono.BackColor = Color.Transparent;
             lbTelefono.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            lbTelefono.Location = new Point(447, 179);
+            lbTelefono.Location = new Point(447, 169);
             lbTelefono.Name = "lbTelefono";
             lbTelefono.Size = new Size(61, 17);
             lbTelefono.TabIndex = 91;
@@ -365,13 +369,13 @@
             txtTelefono.Font = new Font("Segoe UI", 9F);
             txtTelefono.ForeColor = Color.Black;
             txtTelefono.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtTelefono.Location = new Point(447, 199);
+            txtTelefono.Location = new Point(447, 189);
             txtTelefono.MaxLength = 9;
             txtTelefono.Name = "txtTelefono";
             txtTelefono.PlaceholderText = "";
             txtTelefono.SelectedText = "";
             txtTelefono.ShadowDecoration.CustomizableEdges = customizableEdges14;
-            txtTelefono.Size = new Size(217, 36);
+            txtTelefono.Size = new Size(217, 31);
             txtTelefono.TabIndex = 9;
             txtTelefono.TextAlign = HorizontalAlignment.Center;
             txtTelefono.Visible = false;
@@ -382,7 +386,7 @@
             // 
             lbFechaNacimiento.BackColor = Color.Transparent;
             lbFechaNacimiento.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            lbFechaNacimiento.Location = new Point(59, 259);
+            lbFechaNacimiento.Location = new Point(59, 242);
             lbFechaNacimiento.Name = "lbFechaNacimiento";
             lbFechaNacimiento.Size = new Size(134, 17);
             lbFechaNacimiento.TabIndex = 90;
@@ -405,12 +409,12 @@
             txtEspecialidad.Font = new Font("Segoe UI", 9F);
             txtEspecialidad.ForeColor = Color.Black;
             txtEspecialidad.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtEspecialidad.Location = new Point(447, 276);
+            txtEspecialidad.Location = new Point(447, 261);
             txtEspecialidad.Name = "txtEspecialidad";
             txtEspecialidad.PlaceholderText = "";
             txtEspecialidad.SelectedText = "";
             txtEspecialidad.ShadowDecoration.CustomizableEdges = customizableEdges16;
-            txtEspecialidad.Size = new Size(217, 36);
+            txtEspecialidad.Size = new Size(217, 31);
             txtEspecialidad.TabIndex = 13;
             txtEspecialidad.Visible = false;
             // 
@@ -424,12 +428,12 @@
             dtpFechaNacimiento.FillColor = Color.Silver;
             dtpFechaNacimiento.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             dtpFechaNacimiento.Format = DateTimePickerFormat.Short;
-            dtpFechaNacimiento.Location = new Point(59, 278);
+            dtpFechaNacimiento.Location = new Point(59, 261);
             dtpFechaNacimiento.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
             dtpFechaNacimiento.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
             dtpFechaNacimiento.Name = "dtpFechaNacimiento";
             dtpFechaNacimiento.ShadowDecoration.CustomizableEdges = customizableEdges18;
-            dtpFechaNacimiento.Size = new Size(225, 36);
+            dtpFechaNacimiento.Size = new Size(225, 31);
             dtpFechaNacimiento.TabIndex = 10;
             dtpFechaNacimiento.TextAlign = HorizontalAlignment.Center;
             dtpFechaNacimiento.Value = new DateTime(2026, 3, 9, 16, 34, 47, 117);
@@ -439,7 +443,7 @@
             // 
             lbEspecialidad.BackColor = Color.Transparent;
             lbEspecialidad.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            lbEspecialidad.Location = new Point(447, 257);
+            lbEspecialidad.Location = new Point(447, 242);
             lbEspecialidad.Name = "lbEspecialidad";
             lbEspecialidad.Size = new Size(84, 17);
             lbEspecialidad.TabIndex = 88;
@@ -450,7 +454,7 @@
             // 
             lbPosicion.BackColor = Color.Transparent;
             lbPosicion.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            lbPosicion.Location = new Point(59, 259);
+            lbPosicion.Location = new Point(59, 242);
             lbPosicion.Name = "lbPosicion";
             lbPosicion.Size = new Size(59, 17);
             lbPosicion.TabIndex = 89;
@@ -473,12 +477,12 @@
             txtPosicion.Font = new Font("Segoe UI", 9F);
             txtPosicion.ForeColor = Color.Black;
             txtPosicion.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtPosicion.Location = new Point(59, 278);
+            txtPosicion.Location = new Point(59, 261);
             txtPosicion.Name = "txtPosicion";
             txtPosicion.PlaceholderText = "";
             txtPosicion.SelectedText = "";
             txtPosicion.ShadowDecoration.CustomizableEdges = customizableEdges20;
-            txtPosicion.Size = new Size(225, 36);
+            txtPosicion.Size = new Size(225, 31);
             txtPosicion.TabIndex = 11;
             txtPosicion.Visible = false;
             // 
@@ -514,7 +518,7 @@
             txtUsuario.PlaceholderText = "";
             txtUsuario.SelectedText = "";
             txtUsuario.ShadowDecoration.CustomizableEdges = customizableEdges22;
-            txtUsuario.Size = new Size(335, 36);
+            txtUsuario.Size = new Size(335, 31);
             txtUsuario.TabIndex = 4;
             // 
             // lbContrasena
@@ -533,6 +537,7 @@
             txtContrasena.BackColor = Color.Transparent;
             txtContrasena.BorderColor = Color.Black;
             txtContrasena.BorderRadius = 10;
+            txtContrasena.CharacterCasing = CharacterCasing.Upper;
             txtContrasena.CustomizableEdges = customizableEdges23;
             txtContrasena.DefaultText = "";
             txtContrasena.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
@@ -549,7 +554,7 @@
             txtContrasena.PlaceholderText = "";
             txtContrasena.SelectedText = "";
             txtContrasena.ShadowDecoration.CustomizableEdges = customizableEdges24;
-            txtContrasena.Size = new Size(315, 36);
+            txtContrasena.Size = new Size(315, 31);
             txtContrasena.TabIndex = 5;
             // 
             // txtCorreo
@@ -557,6 +562,7 @@
             txtCorreo.BackColor = Color.Transparent;
             txtCorreo.BorderColor = Color.Black;
             txtCorreo.BorderRadius = 10;
+            txtCorreo.CharacterCasing = CharacterCasing.Upper;
             txtCorreo.CustomizableEdges = customizableEdges25;
             txtCorreo.DefaultText = "";
             txtCorreo.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
@@ -567,19 +573,19 @@
             txtCorreo.Font = new Font("Segoe UI", 9F);
             txtCorreo.ForeColor = Color.Black;
             txtCorreo.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtCorreo.Location = new Point(59, 126);
+            txtCorreo.Location = new Point(59, 121);
             txtCorreo.Name = "txtCorreo";
             txtCorreo.PlaceholderText = "";
             txtCorreo.SelectedText = "";
             txtCorreo.ShadowDecoration.CustomizableEdges = customizableEdges26;
-            txtCorreo.Size = new Size(225, 36);
+            txtCorreo.Size = new Size(225, 31);
             txtCorreo.TabIndex = 6;
             // 
             // lbCorreo
             // 
             lbCorreo.BackColor = Color.Transparent;
             lbCorreo.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            lbCorreo.Location = new Point(59, 107);
+            lbCorreo.Location = new Point(59, 102);
             lbCorreo.Name = "lbCorreo";
             lbCorreo.Size = new Size(131, 17);
             lbCorreo.TabIndex = 95;
@@ -613,13 +619,13 @@
             txtLugarTrabajo.Font = new Font("Segoe UI", 9F);
             txtLugarTrabajo.ForeColor = Color.Black;
             txtLugarTrabajo.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtLugarTrabajo.Location = new Point(447, 53);
+            txtLugarTrabajo.Location = new Point(447, 51);
             txtLugarTrabajo.Multiline = true;
             txtLugarTrabajo.Name = "txtLugarTrabajo";
             txtLugarTrabajo.PlaceholderText = "";
             txtLugarTrabajo.SelectedText = "";
             txtLugarTrabajo.ShadowDecoration.CustomizableEdges = customizableEdges28;
-            txtLugarTrabajo.Size = new Size(307, 108);
+            txtLugarTrabajo.Size = new Size(307, 100);
             txtLugarTrabajo.TabIndex = 15;
             txtLugarTrabajo.Visible = false;
             // 
@@ -627,7 +633,7 @@
             // 
             lbParentesco.BackColor = Color.Transparent;
             lbParentesco.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            lbParentesco.Location = new Point(60, 181);
+            lbParentesco.Location = new Point(60, 169);
             lbParentesco.Name = "lbParentesco";
             lbParentesco.Size = new Size(77, 17);
             lbParentesco.TabIndex = 93;
@@ -635,27 +641,27 @@
             lbParentesco.Visible = false;
             lbParentesco.Click += lbParentesco_Click;
             // 
-            // btLimpiar
+            // btCancelar
             // 
-            btLimpiar.BackColor = Color.White;
-            btLimpiar.BorderRadius = 10;
-            btLimpiar.BorderThickness = 1;
-            btLimpiar.CustomizableEdges = customizableEdges29;
-            btLimpiar.DisabledState.BorderColor = Color.DarkGray;
-            btLimpiar.DisabledState.CustomBorderColor = Color.DarkGray;
-            btLimpiar.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btLimpiar.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btLimpiar.FillColor = Color.Gray;
-            btLimpiar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btLimpiar.ForeColor = Color.White;
-            btLimpiar.Image = (Image)resources.GetObject("btLimpiar.Image");
-            btLimpiar.Location = new Point(643, 565);
-            btLimpiar.Name = "btLimpiar";
-            btLimpiar.ShadowDecoration.CustomizableEdges = customizableEdges30;
-            btLimpiar.Size = new Size(112, 35);
-            btLimpiar.TabIndex = 103;
-            btLimpiar.Text = "CANCELAR";
-            btLimpiar.Click += btLimpiar_Click;
+            btCancelar.BackColor = Color.White;
+            btCancelar.BorderRadius = 10;
+            btCancelar.BorderThickness = 1;
+            btCancelar.CustomizableEdges = customizableEdges29;
+            btCancelar.DisabledState.BorderColor = Color.DarkGray;
+            btCancelar.DisabledState.CustomBorderColor = Color.DarkGray;
+            btCancelar.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btCancelar.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btCancelar.FillColor = Color.Gray;
+            btCancelar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btCancelar.ForeColor = Color.White;
+            btCancelar.Image = (Image)resources.GetObject("btCancelar.Image");
+            btCancelar.Location = new Point(643, 532);
+            btCancelar.Name = "btCancelar";
+            btCancelar.ShadowDecoration.CustomizableEdges = customizableEdges30;
+            btCancelar.Size = new Size(112, 35);
+            btCancelar.TabIndex = 103;
+            btCancelar.Text = "CANCELAR";
+            btCancelar.Click += btLimpiar_Click;
             // 
             // guna2PictureBox1
             // 
@@ -695,18 +701,33 @@
             guna2ContainerControl2.BorderColor = Color.Silver;
             guna2ContainerControl2.BorderRadius = 30;
             guna2ContainerControl2.BorderThickness = 2;
+            guna2ContainerControl2.Controls.Add(btInformacion);
             guna2ContainerControl2.Controls.Add(ctnDatosUsuario);
             guna2ContainerControl2.Controls.Add(ctnCredenciales);
-            guna2ContainerControl2.Controls.Add(btLimpiar);
+            guna2ContainerControl2.Controls.Add(btCancelar);
             guna2ContainerControl2.Controls.Add(guna2HtmlLabel4);
-            guna2ContainerControl2.Controls.Add(btGuardar);
-            guna2ContainerControl2.CustomizableEdges = customizableEdges41;
+            guna2ContainerControl2.Controls.Add(btCrear);
+            guna2ContainerControl2.CustomizableEdges = customizableEdges43;
             guna2ContainerControl2.Location = new Point(20, 101);
             guna2ContainerControl2.Name = "guna2ContainerControl2";
-            guna2ContainerControl2.ShadowDecoration.CustomizableEdges = customizableEdges42;
-            guna2ContainerControl2.Size = new Size(983, 621);
+            guna2ContainerControl2.ShadowDecoration.CustomizableEdges = customizableEdges44;
+            guna2ContainerControl2.Size = new Size(983, 583);
             guna2ContainerControl2.TabIndex = 108;
             guna2ContainerControl2.Text = "guna2ContainerControl2";
+            // 
+            // btInformacion
+            // 
+            btInformacion.BackColor = SystemColors.HotTrack;
+            btInformacion.CustomizableEdges = customizableEdges33;
+            btInformacion.Image = (Image)resources.GetObject("btInformacion.Image");
+            btInformacion.ImageRotate = 0F;
+            btInformacion.Location = new Point(574, 5);
+            btInformacion.Name = "btInformacion";
+            btInformacion.ShadowDecoration.CustomizableEdges = customizableEdges34;
+            btInformacion.Size = new Size(25, 18);
+            btInformacion.SizeMode = PictureBoxSizeMode.StretchImage;
+            btInformacion.TabIndex = 110;
+            btInformacion.TabStop = false;
             // 
             // ctnDatosUsuario
             // 
@@ -743,11 +764,11 @@
             ctnDatosUsuario.Controls.Add(lbSexo);
             ctnDatosUsuario.Controls.Add(cbbSexo);
             ctnDatosUsuario.Controls.Add(txtDireccion);
-            ctnDatosUsuario.CustomizableEdges = customizableEdges35;
-            ctnDatosUsuario.Location = new Point(91, 231);
+            ctnDatosUsuario.CustomizableEdges = customizableEdges37;
+            ctnDatosUsuario.Location = new Point(91, 216);
             ctnDatosUsuario.Name = "ctnDatosUsuario";
-            ctnDatosUsuario.ShadowDecoration.CustomizableEdges = customizableEdges36;
-            ctnDatosUsuario.Size = new Size(812, 328);
+            ctnDatosUsuario.ShadowDecoration.CustomizableEdges = customizableEdges38;
+            ctnDatosUsuario.Size = new Size(812, 315);
             ctnDatosUsuario.TabIndex = 109;
             ctnDatosUsuario.Text = "guna2ContainerControl4";
             // 
@@ -756,18 +777,19 @@
             lbAvisoTrabajo.BackColor = Color.Transparent;
             lbAvisoTrabajo.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lbAvisoTrabajo.ForeColor = Color.Silver;
-            lbAvisoTrabajo.Location = new Point(447, 163);
+            lbAvisoTrabajo.Location = new Point(447, 153);
             lbAvisoTrabajo.Name = "lbAvisoTrabajo";
             lbAvisoTrabajo.Size = new Size(246, 15);
             lbAvisoTrabajo.TabIndex = 117;
             lbAvisoTrabajo.Text = "INGRESE EL NOMBRE DEL LUGAR DE TRABAJO";
+            lbAvisoTrabajo.Click += lbAvisoTrabajo_Click;
             // 
             // lbAvisoParentesco
             // 
             lbAvisoParentesco.BackColor = Color.Transparent;
             lbAvisoParentesco.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lbAvisoParentesco.ForeColor = Color.Silver;
-            lbAvisoParentesco.Location = new Point(58, 239);
+            lbAvisoParentesco.Location = new Point(58, 222);
             lbAvisoParentesco.Name = "lbAvisoParentesco";
             lbAvisoParentesco.Size = new Size(347, 15);
             lbAvisoParentesco.TabIndex = 116;
@@ -778,7 +800,7 @@
             lbAvisoGenero.BackColor = Color.Transparent;
             lbAvisoGenero.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lbAvisoGenero.ForeColor = Color.Silver;
-            lbAvisoGenero.Location = new Point(59, 239);
+            lbAvisoGenero.Location = new Point(59, 222);
             lbAvisoGenero.Name = "lbAvisoGenero";
             lbAvisoGenero.Size = new Size(305, 15);
             lbAvisoGenero.TabIndex = 115;
@@ -789,18 +811,18 @@
             cbbParentesco.BackColor = Color.Transparent;
             cbbParentesco.BorderColor = Color.Black;
             cbbParentesco.BorderRadius = 10;
-            cbbParentesco.CustomizableEdges = customizableEdges33;
+            cbbParentesco.CustomizableEdges = customizableEdges35;
             cbbParentesco.DrawMode = DrawMode.OwnerDrawFixed;
             cbbParentesco.DropDownStyle = ComboBoxStyle.DropDownList;
             cbbParentesco.FocusedColor = Color.FromArgb(94, 148, 255);
             cbbParentesco.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             cbbParentesco.Font = new Font("Segoe UI", 10F);
             cbbParentesco.ForeColor = Color.FromArgb(68, 88, 112);
-            cbbParentesco.ItemHeight = 30;
-            cbbParentesco.Location = new Point(58, 201);
+            cbbParentesco.ItemHeight = 25;
+            cbbParentesco.Location = new Point(58, 189);
             cbbParentesco.Name = "cbbParentesco";
-            cbbParentesco.ShadowDecoration.CustomizableEdges = customizableEdges34;
-            cbbParentesco.Size = new Size(226, 36);
+            cbbParentesco.ShadowDecoration.CustomizableEdges = customizableEdges36;
+            cbbParentesco.Size = new Size(226, 31);
             cbbParentesco.TabIndex = 114;
             // 
             // lbAvisoEspecialidad
@@ -808,7 +830,7 @@
             lbAvisoEspecialidad.BackColor = Color.Transparent;
             lbAvisoEspecialidad.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lbAvisoEspecialidad.ForeColor = Color.Silver;
-            lbAvisoEspecialidad.Location = new Point(447, 313);
+            lbAvisoEspecialidad.Location = new Point(447, 294);
             lbAvisoEspecialidad.Name = "lbAvisoEspecialidad";
             lbAvisoEspecialidad.Size = new Size(274, 15);
             lbAvisoEspecialidad.TabIndex = 113;
@@ -819,7 +841,7 @@
             lbAvisoFecha.BackColor = Color.Transparent;
             lbAvisoFecha.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lbAvisoFecha.ForeColor = Color.Silver;
-            lbAvisoFecha.Location = new Point(58, 315);
+            lbAvisoFecha.Location = new Point(58, 294);
             lbAvisoFecha.Name = "lbAvisoFecha";
             lbAvisoFecha.Size = new Size(308, 15);
             lbAvisoFecha.TabIndex = 112;
@@ -830,7 +852,7 @@
             lbAvisoTelefono.BackColor = Color.Transparent;
             lbAvisoTelefono.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lbAvisoTelefono.ForeColor = Color.Silver;
-            lbAvisoTelefono.Location = new Point(447, 237);
+            lbAvisoTelefono.Location = new Point(447, 222);
             lbAvisoTelefono.Name = "lbAvisoTelefono";
             lbAvisoTelefono.Size = new Size(251, 15);
             lbAvisoTelefono.TabIndex = 111;
@@ -841,7 +863,7 @@
             lbAvisoDireccion.BackColor = Color.Transparent;
             lbAvisoDireccion.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lbAvisoDireccion.ForeColor = Color.Silver;
-            lbAvisoDireccion.Location = new Point(447, 163);
+            lbAvisoDireccion.Location = new Point(447, 153);
             lbAvisoDireccion.Name = "lbAvisoDireccion";
             lbAvisoDireccion.Size = new Size(171, 15);
             lbAvisoDireccion.TabIndex = 110;
@@ -852,7 +874,7 @@
             lbAvisoPosicion.BackColor = Color.Transparent;
             lbAvisoPosicion.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lbAvisoPosicion.ForeColor = Color.Silver;
-            lbAvisoPosicion.Location = new Point(59, 315);
+            lbAvisoPosicion.Location = new Point(59, 294);
             lbAvisoPosicion.Name = "lbAvisoPosicion";
             lbAvisoPosicion.Size = new Size(278, 15);
             lbAvisoPosicion.TabIndex = 109;
@@ -863,7 +885,7 @@
             guna2HtmlLabel14.BackColor = Color.Transparent;
             guna2HtmlLabel14.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             guna2HtmlLabel14.ForeColor = Color.Silver;
-            guna2HtmlLabel14.Location = new Point(59, 239);
+            guna2HtmlLabel14.Location = new Point(59, 222);
             guna2HtmlLabel14.Name = "guna2HtmlLabel14";
             guna2HtmlLabel14.Size = new Size(305, 15);
             guna2HtmlLabel14.TabIndex = 108;
@@ -874,7 +896,7 @@
             lbAvisoIdentidad.BackColor = Color.Transparent;
             lbAvisoIdentidad.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lbAvisoIdentidad.ForeColor = Color.Silver;
-            lbAvisoIdentidad.Location = new Point(59, 165);
+            lbAvisoIdentidad.Location = new Point(59, 153);
             lbAvisoIdentidad.Name = "lbAvisoIdentidad";
             lbAvisoIdentidad.Size = new Size(196, 15);
             lbAvisoIdentidad.TabIndex = 107;
@@ -899,7 +921,7 @@
             lbAvisoNombre.BackColor = Color.Transparent;
             lbAvisoNombre.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lbAvisoNombre.ForeColor = Color.Silver;
-            lbAvisoNombre.Location = new Point(58, 90);
+            lbAvisoNombre.Location = new Point(58, 83);
             lbAvisoNombre.Name = "lbAvisoNombre";
             lbAvisoNombre.Size = new Size(326, 15);
             lbAvisoNombre.TabIndex = 106;
@@ -907,7 +929,7 @@
             // 
             // ctnCredenciales
             // 
-            ctnCredenciales.Controls.Add(guna2Button1);
+            ctnCredenciales.Controls.Add(btVer);
             ctnCredenciales.Controls.Add(lbAvisoContrasena);
             ctnCredenciales.Controls.Add(lbAvisoRol);
             ctnCredenciales.Controls.Add(lbAvisoCorreo);
@@ -921,40 +943,40 @@
             ctnCredenciales.Controls.Add(txtCorreo);
             ctnCredenciales.Controls.Add(cbbRol);
             ctnCredenciales.Controls.Add(lbRol);
-            ctnCredenciales.CustomizableEdges = customizableEdges39;
+            ctnCredenciales.CustomizableEdges = customizableEdges41;
             ctnCredenciales.Location = new Point(91, 36);
             ctnCredenciales.Name = "ctnCredenciales";
-            ctnCredenciales.ShadowDecoration.CustomizableEdges = customizableEdges40;
-            ctnCredenciales.Size = new Size(812, 189);
+            ctnCredenciales.ShadowDecoration.CustomizableEdges = customizableEdges42;
+            ctnCredenciales.Size = new Size(812, 174);
             ctnCredenciales.TabIndex = 108;
             ctnCredenciales.Text = "guna2ContainerControl3";
             // 
-            // guna2Button1
+            // btVer
             // 
-            guna2Button1.BackColor = Color.Transparent;
-            guna2Button1.BorderRadius = 10;
-            guna2Button1.BorderThickness = 1;
-            guna2Button1.CustomizableEdges = customizableEdges37;
-            guna2Button1.DisabledState.BorderColor = Color.DarkGray;
-            guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray;
-            guna2Button1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            guna2Button1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2Button1.FillColor = SystemColors.HotTrack;
-            guna2Button1.Font = new Font("Segoe UI", 9F);
-            guna2Button1.ForeColor = Color.White;
-            guna2Button1.Image = Properties.Resources.ojo_abierto1;
-            guna2Button1.Location = new Point(760, 52);
-            guna2Button1.Name = "guna2Button1";
-            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges38;
-            guna2Button1.Size = new Size(52, 36);
-            guna2Button1.TabIndex = 105;
+            btVer.BackColor = Color.Transparent;
+            btVer.BorderRadius = 10;
+            btVer.BorderThickness = 1;
+            btVer.CustomizableEdges = customizableEdges39;
+            btVer.DisabledState.BorderColor = Color.DarkGray;
+            btVer.DisabledState.CustomBorderColor = Color.DarkGray;
+            btVer.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btVer.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btVer.FillColor = SystemColors.HotTrack;
+            btVer.Font = new Font("Segoe UI", 9F);
+            btVer.ForeColor = Color.White;
+            btVer.Image = Properties.Resources.ojo_abierto1;
+            btVer.Location = new Point(760, 52);
+            btVer.Name = "btVer";
+            btVer.ShadowDecoration.CustomizableEdges = customizableEdges40;
+            btVer.Size = new Size(52, 31);
+            btVer.TabIndex = 105;
             // 
             // lbAvisoContrasena
             // 
             lbAvisoContrasena.BackColor = Color.Transparent;
             lbAvisoContrasena.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lbAvisoContrasena.ForeColor = Color.Silver;
-            lbAvisoContrasena.Location = new Point(439, 90);
+            lbAvisoContrasena.Location = new Point(439, 85);
             lbAvisoContrasena.Name = "lbAvisoContrasena";
             lbAvisoContrasena.Size = new Size(289, 15);
             lbAvisoContrasena.TabIndex = 104;
@@ -965,7 +987,7 @@
             lbAvisoRol.BackColor = Color.Transparent;
             lbAvisoRol.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lbAvisoRol.ForeColor = Color.Silver;
-            lbAvisoRol.Location = new Point(439, 164);
+            lbAvisoRol.Location = new Point(439, 154);
             lbAvisoRol.Name = "lbAvisoRol";
             lbAvisoRol.Size = new Size(365, 15);
             lbAvisoRol.TabIndex = 103;
@@ -976,7 +998,7 @@
             lbAvisoCorreo.BackColor = Color.Transparent;
             lbAvisoCorreo.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lbAvisoCorreo.ForeColor = Color.Silver;
-            lbAvisoCorreo.Location = new Point(59, 164);
+            lbAvisoCorreo.Location = new Point(59, 154);
             lbAvisoCorreo.Name = "lbAvisoCorreo";
             lbAvisoCorreo.Size = new Size(233, 15);
             lbAvisoCorreo.TabIndex = 102;
@@ -987,7 +1009,7 @@
             lbAvisoUsuario.BackColor = Color.Transparent;
             lbAvisoUsuario.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lbAvisoUsuario.ForeColor = Color.Silver;
-            lbAvisoUsuario.Location = new Point(59, 90);
+            lbAvisoUsuario.Location = new Point(59, 85);
             lbAvisoUsuario.Name = "lbAvisoUsuario";
             lbAvisoUsuario.Size = new Size(237, 15);
             lbAvisoUsuario.TabIndex = 101;
@@ -1012,11 +1034,11 @@
             guna2HtmlLabel4.AutoSize = false;
             guna2HtmlLabel4.BackColor = SystemColors.HotTrack;
             guna2HtmlLabel4.BorderStyle = BorderStyle.Fixed3D;
-            guna2HtmlLabel4.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            guna2HtmlLabel4.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             guna2HtmlLabel4.ForeColor = Color.White;
             guna2HtmlLabel4.Location = new Point(0, 0);
             guna2HtmlLabel4.Name = "guna2HtmlLabel4";
-            guna2HtmlLabel4.Size = new Size(983, 27);
+            guna2HtmlLabel4.Size = new Size(983, 30);
             guna2HtmlLabel4.TabIndex = 107;
             guna2HtmlLabel4.Text = "NUEVO USUARIO";
             guna2HtmlLabel4.TextAlignment = ContentAlignment.TopCenter;
@@ -1025,7 +1047,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1028, 734);
+            ClientSize = new Size(1028, 697);
             Controls.Add(guna2ContainerControl2);
             Controls.Add(guna2HtmlLabel3);
             Controls.Add(guna2HtmlLabel2);
@@ -1037,6 +1059,7 @@
             Load += FrmGestionUsuarios_Load;
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).EndInit();
             guna2ContainerControl2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)btInformacion).EndInit();
             ctnDatosUsuario.ResumeLayout(false);
             ctnDatosUsuario.PerformLayout();
             ctnCredenciales.ResumeLayout(false);
@@ -1050,7 +1073,7 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private Guna.UI2.WinForms.Guna2HtmlLabel LbIdentidad;
         private Guna.UI2.WinForms.Guna2TextBox txtIdentidad;
-        private Guna.UI2.WinForms.Guna2Button btGuardar;
+        private Guna.UI2.WinForms.Guna2Button btCrear;
         private Guna.UI2.WinForms.Guna2HtmlLabel lbNombre;
         private Guna.UI2.WinForms.Guna2TextBox txtNombre;
         private Guna.UI2.WinForms.Guna2HtmlLabel lbRol;
@@ -1076,7 +1099,7 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel lbLugarTrabajo;
         private Guna.UI2.WinForms.Guna2TextBox txtLugarTrabajo;
         private Guna.UI2.WinForms.Guna2HtmlLabel lbParentesco;
-        private Guna.UI2.WinForms.Guna2Button btLimpiar;
+        private Guna.UI2.WinForms.Guna2Button btCancelar;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
@@ -1102,6 +1125,7 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel lbAvisoEspecialidad;
         private Guna.UI2.WinForms.Guna2HtmlLabel lbAvisoParentesco;
         private Guna.UI2.WinForms.Guna2HtmlLabel lbAvisoTrabajo;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2Button btVer;
+        private Guna.UI2.WinForms.Guna2PictureBox btInformacion;
     }
 }

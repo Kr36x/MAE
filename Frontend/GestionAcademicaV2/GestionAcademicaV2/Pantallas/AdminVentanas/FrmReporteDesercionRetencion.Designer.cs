@@ -201,6 +201,7 @@
             lbNombreTop1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             txtAnio = new Guna.UI2.WinForms.Guna2TextBox();
+            guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).BeginInit();
             guna2ContainerControl1.SuspendLayout();
             ctnTop9.SuspendLayout();
@@ -241,30 +242,30 @@
             // guna2HtmlLabel1
             // 
             guna2HtmlLabel1.BackColor = Color.Transparent;
-            guna2HtmlLabel1.Font = new Font("Britannic Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            guna2HtmlLabel1.Location = new Point(363, 35);
+            guna2HtmlLabel1.Font = new Font("Britannic Bold", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            guna2HtmlLabel1.Location = new Point(216, 20);
             guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            guna2HtmlLabel1.Size = new Size(286, 19);
+            guna2HtmlLabel1.Size = new Size(417, 29);
             guna2HtmlLabel1.TabIndex = 1;
             guna2HtmlLabel1.Text = "ATLANTIC ACADEMY BILINGUAL SCHOOL";
             // 
             // guna2HtmlLabel2
             // 
             guna2HtmlLabel2.BackColor = Color.Transparent;
-            guna2HtmlLabel2.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            guna2HtmlLabel2.Location = new Point(198, 60);
+            guna2HtmlLabel2.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            guna2HtmlLabel2.Location = new Point(183, 51);
             guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            guna2HtmlLabel2.Size = new Size(627, 34);
+            guna2HtmlLabel2.Size = new Size(503, 27);
             guna2HtmlLabel2.TabIndex = 2;
             guna2HtmlLabel2.Text = "PROYECCIÓN DE DESERCIÓN Y RETENCIÓN ESTUDIANTIL";
             // 
             // guna2HtmlLabel3
             // 
             guna2HtmlLabel3.BackColor = Color.Transparent;
-            guna2HtmlLabel3.Font = new Font("Britannic Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            guna2HtmlLabel3.Location = new Point(864, 35);
+            guna2HtmlLabel3.Font = new Font("Britannic Bold", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            guna2HtmlLabel3.Location = new Point(809, 20);
             guna2HtmlLabel3.Name = "guna2HtmlLabel3";
-            guna2HtmlLabel3.Size = new Size(124, 19);
+            guna2HtmlLabel3.Size = new Size(179, 29);
             guna2HtmlLabel3.TabIndex = 3;
             guna2HtmlLabel3.Text = "TELA, ATLÁNTIDA";
             // 
@@ -443,10 +444,10 @@
             // lbNombreTop9
             // 
             lbNombreTop9.BackColor = Color.Transparent;
-            lbNombreTop9.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
-            lbNombreTop9.Location = new Point(14, 10);
+            lbNombreTop9.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
+            lbNombreTop9.Location = new Point(20, 10);
             lbNombreTop9.Name = "lbNombreTop9";
-            lbNombreTop9.Size = new Size(164, 22);
+            lbNombreTop9.Size = new Size(141, 19);
             lbNombreTop9.TabIndex = 0;
             lbNombreTop9.Text = "NOMBRE ESTUDIANTE";
             // 
@@ -600,10 +601,10 @@
             // lbNombreTop8
             // 
             lbNombreTop8.BackColor = Color.Transparent;
-            lbNombreTop8.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
-            lbNombreTop8.Location = new Point(14, 10);
+            lbNombreTop8.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
+            lbNombreTop8.Location = new Point(20, 10);
             lbNombreTop8.Name = "lbNombreTop8";
-            lbNombreTop8.Size = new Size(164, 22);
+            lbNombreTop8.Size = new Size(141, 19);
             lbNombreTop8.TabIndex = 0;
             lbNombreTop8.Text = "NOMBRE ESTUDIANTE";
             // 
@@ -757,10 +758,10 @@
             // lbNombreTop7
             // 
             lbNombreTop7.BackColor = Color.Transparent;
-            lbNombreTop7.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
-            lbNombreTop7.Location = new Point(12, 10);
+            lbNombreTop7.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
+            lbNombreTop7.Location = new Point(20, 10);
             lbNombreTop7.Name = "lbNombreTop7";
-            lbNombreTop7.Size = new Size(164, 22);
+            lbNombreTop7.Size = new Size(141, 19);
             lbNombreTop7.TabIndex = 0;
             lbNombreTop7.Text = "NOMBRE ESTUDIANTE";
             // 
@@ -914,10 +915,10 @@
             // lbNombreTop6
             // 
             lbNombreTop6.BackColor = Color.Transparent;
-            lbNombreTop6.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
-            lbNombreTop6.Location = new Point(14, 10);
+            lbNombreTop6.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
+            lbNombreTop6.Location = new Point(20, 10);
             lbNombreTop6.Name = "lbNombreTop6";
-            lbNombreTop6.Size = new Size(164, 22);
+            lbNombreTop6.Size = new Size(141, 19);
             lbNombreTop6.TabIndex = 0;
             lbNombreTop6.Text = "NOMBRE ESTUDIANTE";
             // 
@@ -1071,10 +1072,10 @@
             // lbNombreTop3
             // 
             lbNombreTop3.BackColor = Color.Transparent;
-            lbNombreTop3.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
-            lbNombreTop3.Location = new Point(14, 10);
+            lbNombreTop3.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
+            lbNombreTop3.Location = new Point(20, 10);
             lbNombreTop3.Name = "lbNombreTop3";
-            lbNombreTop3.Size = new Size(164, 22);
+            lbNombreTop3.Size = new Size(141, 19);
             lbNombreTop3.TabIndex = 0;
             lbNombreTop3.Text = "NOMBRE ESTUDIANTE";
             // 
@@ -1228,10 +1229,10 @@
             // lbNombreTop10
             // 
             lbNombreTop10.BackColor = Color.Transparent;
-            lbNombreTop10.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbNombreTop10.Location = new Point(15, 10);
+            lbNombreTop10.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
+            lbNombreTop10.Location = new Point(23, 13);
             lbNombreTop10.Name = "lbNombreTop10";
-            lbNombreTop10.Size = new Size(164, 22);
+            lbNombreTop10.Size = new Size(141, 19);
             lbNombreTop10.TabIndex = 0;
             lbNombreTop10.Text = "NOMBRE ESTUDIANTE";
             // 
@@ -1385,10 +1386,10 @@
             // lbNombreTop5
             // 
             lbNombreTop5.BackColor = Color.Transparent;
-            lbNombreTop5.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
-            lbNombreTop5.Location = new Point(14, 10);
+            lbNombreTop5.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
+            lbNombreTop5.Location = new Point(20, 10);
             lbNombreTop5.Name = "lbNombreTop5";
-            lbNombreTop5.Size = new Size(164, 22);
+            lbNombreTop5.Size = new Size(141, 19);
             lbNombreTop5.TabIndex = 0;
             lbNombreTop5.Text = "NOMBRE ESTUDIANTE";
             // 
@@ -1542,10 +1543,10 @@
             // lbNombreTop2
             // 
             lbNombreTop2.BackColor = Color.Transparent;
-            lbNombreTop2.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
-            lbNombreTop2.Location = new Point(14, 10);
+            lbNombreTop2.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
+            lbNombreTop2.Location = new Point(20, 10);
             lbNombreTop2.Name = "lbNombreTop2";
-            lbNombreTop2.Size = new Size(164, 22);
+            lbNombreTop2.Size = new Size(141, 19);
             lbNombreTop2.TabIndex = 0;
             lbNombreTop2.Text = "NOMBRE ESTUDIANTE";
             // 
@@ -1699,10 +1700,10 @@
             // lbNombreTop4
             // 
             lbNombreTop4.BackColor = Color.Transparent;
-            lbNombreTop4.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
-            lbNombreTop4.Location = new Point(12, 10);
+            lbNombreTop4.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
+            lbNombreTop4.Location = new Point(20, 10);
             lbNombreTop4.Name = "lbNombreTop4";
-            lbNombreTop4.Size = new Size(164, 22);
+            lbNombreTop4.Size = new Size(141, 19);
             lbNombreTop4.TabIndex = 0;
             lbNombreTop4.Text = "NOMBRE ESTUDIANTE";
             // 
@@ -1856,10 +1857,10 @@
             // lbNombreTop1
             // 
             lbNombreTop1.BackColor = Color.Transparent;
-            lbNombreTop1.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
-            lbNombreTop1.Location = new Point(12, 9);
+            lbNombreTop1.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
+            lbNombreTop1.Location = new Point(20, 10);
             lbNombreTop1.Name = "lbNombreTop1";
-            lbNombreTop1.Size = new Size(164, 22);
+            lbNombreTop1.Size = new Size(141, 19);
             lbNombreTop1.TabIndex = 0;
             lbNombreTop1.Text = "NOMBRE ESTUDIANTE";
             // 
@@ -1891,16 +1892,27 @@
             txtAnio.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             txtAnio.ForeColor = Color.White;
             txtAnio.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtAnio.Location = new Point(864, 61);
+            txtAnio.Location = new Point(809, 68);
             txtAnio.Margin = new Padding(4);
             txtAnio.Name = "txtAnio";
             txtAnio.PlaceholderText = "";
             txtAnio.ReadOnly = true;
             txtAnio.SelectedText = "";
             txtAnio.ShadowDecoration.CustomizableEdges = customizableEdges26;
-            txtAnio.Size = new Size(124, 33);
+            txtAnio.Size = new Size(179, 33);
             txtAnio.TabIndex = 6;
             txtAnio.TextAlign = HorizontalAlignment.Center;
+            // 
+            // guna2HtmlLabel5
+            // 
+            guna2HtmlLabel5.BackColor = Color.Transparent;
+            guna2HtmlLabel5.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            guna2HtmlLabel5.ForeColor = Color.Gray;
+            guna2HtmlLabel5.Location = new Point(183, 84);
+            guna2HtmlLabel5.Name = "guna2HtmlLabel5";
+            guna2HtmlLabel5.Size = new Size(588, 17);
+            guna2HtmlLabel5.TabIndex = 7;
+            guna2HtmlLabel5.Text = "EN ESTA SECCIÓN SE PUEDEN VISUALIZAR EL TOP 10 DE ESTUDIANTES CON MAYOR RIESGO ACADÉMICO";
             // 
             // FrmReporteDesercionRetencion
             // 
@@ -1908,6 +1920,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
             ClientSize = new Size(1028, 674);
+            Controls.Add(guna2HtmlLabel5);
             Controls.Add(txtAnio);
             Controls.Add(guna2ContainerControl1);
             Controls.Add(guna2HtmlLabel3);
@@ -2073,5 +2086,6 @@
         private DataGridViewTextBoxColumn AsignaturaTop10;
         private DataGridViewTextBoxColumn InasistenciasTop10;
         private Guna.UI2.WinForms.Guna2TextBox txtAnio;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel5;
     }
 }
