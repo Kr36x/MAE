@@ -134,6 +134,7 @@
             txtAviso3 = new Guna.UI2.WinForms.Guna2TextBox();
             guna2TextBox2 = new Guna.UI2.WinForms.Guna2TextBox();
             txtAnio = new Guna.UI2.WinForms.Guna2TextBox();
+            guna2HtmlLabel8 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             ((System.ComponentModel.ISupportInitialize)pbxLogoMatricula).BeginInit();
             ctnInformacionPadres.SuspendLayout();
             ctnInformacionEstudiante.SuspendLayout();
@@ -143,10 +144,10 @@
             // lbTituloMatricula
             // 
             lbTituloMatricula.BackColor = Color.Transparent;
-            lbTituloMatricula.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbTituloMatricula.Location = new Point(197, 50);
+            lbTituloMatricula.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbTituloMatricula.Location = new Point(245, 49);
             lbTituloMatricula.Name = "lbTituloMatricula";
-            lbTituloMatricula.Size = new Size(348, 34);
+            lbTituloMatricula.Size = new Size(279, 27);
             lbTituloMatricula.TabIndex = 0;
             lbTituloMatricula.Text = "FICHA DE MATRÍCULA VIGENTE";
             // 
@@ -168,14 +169,13 @@
             lbInformacionAlumno.AutoSize = false;
             lbInformacionAlumno.BackColor = SystemColors.HotTrack;
             lbInformacionAlumno.BorderStyle = BorderStyle.Fixed3D;
-            lbInformacionAlumno.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbInformacionAlumno.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lbInformacionAlumno.ForeColor = Color.White;
             lbInformacionAlumno.Location = new Point(0, 0);
             lbInformacionAlumno.Name = "lbInformacionAlumno";
             lbInformacionAlumno.Size = new Size(893, 33);
             lbInformacionAlumno.TabIndex = 2;
             lbInformacionAlumno.Text = "INFORMACIÓN DEL ALUMNO";
-            lbInformacionAlumno.TextAlignment = ContentAlignment.MiddleLeft;
             // 
             // lbNombreEstudiante
             // 
@@ -370,14 +370,13 @@
             lbInformacionPadres.AutoSize = false;
             lbInformacionPadres.BackColor = SystemColors.HotTrack;
             lbInformacionPadres.BorderStyle = BorderStyle.Fixed3D;
-            lbInformacionPadres.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbInformacionPadres.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lbInformacionPadres.ForeColor = Color.White;
             lbInformacionPadres.Location = new Point(0, 0);
             lbInformacionPadres.Name = "lbInformacionPadres";
             lbInformacionPadres.Size = new Size(580, 33);
             lbInformacionPadres.TabIndex = 22;
-            lbInformacionPadres.Text = "INFORMACIÓN DE LOS PADRES";
-            lbInformacionPadres.TextAlignment = ContentAlignment.MiddleLeft;
+            lbInformacionPadres.Text = "INFORMACIÓN DE LOS TUTORES";
             // 
             // ctnInformacionPadres
             // 
@@ -706,10 +705,10 @@
             // guna2HtmlLabel16
             // 
             guna2HtmlLabel16.BackColor = Color.Transparent;
-            guna2HtmlLabel16.Font = new Font("Britannic Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            guna2HtmlLabel16.Location = new Point(214, 31);
+            guna2HtmlLabel16.Font = new Font("Britannic Bold", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            guna2HtmlLabel16.Location = new Point(188, 21);
             guna2HtmlLabel16.Name = "guna2HtmlLabel16";
-            guna2HtmlLabel16.Size = new Size(286, 19);
+            guna2HtmlLabel16.Size = new Size(417, 29);
             guna2HtmlLabel16.TabIndex = 33;
             guna2HtmlLabel16.Text = "ATLANTIC ACADEMY BILINGUAL SCHOOL";
             // 
@@ -921,10 +920,10 @@
             // guna2HtmlLabel18
             // 
             guna2HtmlLabel18.BackColor = Color.Transparent;
-            guna2HtmlLabel18.Font = new Font("Britannic Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            guna2HtmlLabel18.Location = new Point(838, 31);
+            guna2HtmlLabel18.Font = new Font("Britannic Bold", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            guna2HtmlLabel18.Location = new Point(783, 21);
             guna2HtmlLabel18.Name = "guna2HtmlLabel18";
-            guna2HtmlLabel18.Size = new Size(124, 19);
+            guna2HtmlLabel18.Size = new Size(179, 29);
             guna2HtmlLabel18.TabIndex = 35;
             guna2HtmlLabel18.Text = "TELA, ATLÁNTIDA";
             // 
@@ -1031,27 +1030,39 @@
             txtAnio.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
             txtAnio.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
             txtAnio.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            txtAnio.FillColor = SystemColors.HotTrack;
+            txtAnio.FillColor = Color.Silver;
             txtAnio.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtAnio.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            txtAnio.ForeColor = Color.White;
+            txtAnio.ForeColor = Color.Black;
             txtAnio.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtAnio.Location = new Point(838, 50);
+            txtAnio.Location = new Point(783, 57);
             txtAnio.Margin = new Padding(4);
             txtAnio.Name = "txtAnio";
             txtAnio.PlaceholderText = "";
             txtAnio.ReadOnly = true;
             txtAnio.SelectedText = "";
             txtAnio.ShadowDecoration.CustomizableEdges = customizableEdges54;
-            txtAnio.Size = new Size(124, 34);
+            txtAnio.Size = new Size(179, 34);
             txtAnio.TabIndex = 41;
             txtAnio.TextAlign = HorizontalAlignment.Center;
+            // 
+            // guna2HtmlLabel8
+            // 
+            guna2HtmlLabel8.BackColor = Color.Transparent;
+            guna2HtmlLabel8.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            guna2HtmlLabel8.ForeColor = Color.Gray;
+            guna2HtmlLabel8.Location = new Point(188, 79);
+            guna2HtmlLabel8.Name = "guna2HtmlLabel8";
+            guna2HtmlLabel8.Size = new Size(471, 17);
+            guna2HtmlLabel8.TabIndex = 42;
+            guna2HtmlLabel8.Text = "EN ESTA SECCIÓN PUEDE VERIFICAR LA MATRICULA VIGENTE DE CADA ESTUDIANTE";
             // 
             // FrmFichaMatricula
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1028, 674);
+            Controls.Add(guna2HtmlLabel8);
             Controls.Add(txtAnio);
             Controls.Add(guna2TextBox2);
             Controls.Add(txtAviso3);
@@ -1133,5 +1144,6 @@
         private Guna.UI2.WinForms.Guna2TextBox txtGenero;
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBox2;
         private Guna.UI2.WinForms.Guna2TextBox txtAnio;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel8;
     }
 }
