@@ -515,7 +515,6 @@
             lblSiguiente.Size = new Size(52, 17);
             lblSiguiente.TabIndex = 15;
             lblSiguiente.Text = "Siguiente";
-            lblSiguiente.Click += lblSiguiente_Click;
             // 
             // lblAnterior
             // 
