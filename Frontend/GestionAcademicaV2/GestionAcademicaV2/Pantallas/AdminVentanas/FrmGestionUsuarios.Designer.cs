@@ -157,7 +157,7 @@
             txtIdentidad.ForeColor = Color.Black;
             txtIdentidad.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             txtIdentidad.Location = new Point(16, 120);
-            txtIdentidad.MaxLength = 13;
+            txtIdentidad.MaxLength = 15;
             txtIdentidad.Name = "txtIdentidad";
             txtIdentidad.PlaceholderText = "";
             txtIdentidad.SelectedText = "";
@@ -400,6 +400,7 @@
             txtEspecialidad.Size = new Size(237, 31);
             txtEspecialidad.TabIndex = 13;
             txtEspecialidad.Visible = false;
+            txtEspecialidad.KeyPress += txtEspecialidad_KeyPress;
             // 
             // dtpFechaNacimiento
             // 
@@ -421,6 +422,7 @@
             dtpFechaNacimiento.TextAlign = HorizontalAlignment.Center;
             dtpFechaNacimiento.Value = new DateTime(2026, 3, 9, 16, 34, 47, 117);
             dtpFechaNacimiento.Visible = false;
+            dtpFechaNacimiento.ValueChanged += dtpFechaNacimiento_ValueChanged;
             // 
             // lbEspecialidad
             // 
@@ -674,6 +676,7 @@
             btInformacion.SizeMode = PictureBoxSizeMode.StretchImage;
             btInformacion.TabIndex = 110;
             btInformacion.TabStop = false;
+            btInformacion.Click += btInformacion_Click;
             // 
             // ctnDatosUsuario
             // 

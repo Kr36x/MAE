@@ -31,10 +31,16 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
     public partial class FrmMatricula : Form
     {
         private PantallaAdmin pantallaPrincipal;
+        private int estudianteID = 0;
+        private int matriculaID = 0;
         public FrmMatricula(PantallaAdmin principal)
         {
             InitializeComponent();
             pantallaPrincipal = principal;
+        }
+        public FrmMatricula(PantallaAdmin principal, int id) : this(principal)
+        {
+            estudianteID = id;
         }
 
         public class GenerarMatriculaPDF
@@ -274,7 +280,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
                     // =========================
                     // INFORMACIÓN DE LOS PADRES
                     // =========================
-                    doc.Add(CrearBarraTitulo("INFORMACIÓN LOS PADRES", boldFont));
+                    doc.Add(CrearBarraTitulo("INFORMACIÓN DE LOS TUTORES", boldFont));
 
                     Table titulosPadres = new Table(UnitValue.CreatePercentArray(new float[] { 1f, 1f }))
                         .UseAllAvailableWidth();
@@ -390,10 +396,90 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
         }
 
+        private void CargarDatosParaEditar(int id)
+        {
+            try
+            {
+                EjecutarUtilidades util = new EjecutarUtilidades();
+
+                SqlParameter[] p =
+                {
+                        new SqlParameter("@EstudianteID", id)
+                    };
+
+                DataTable dt = util.EjecutarSPParametros("spMAE_TraeMatriculaPorEstudiante", p);
+
+                if (dt.Rows.Count == 0) return;
+
+                DataRow row = dt.Rows[0];
+
+                // ============================
+                // ESTUDIANTE
+                // ============================
+                txtIdentidadEstudiante.Text = row["DniEst"].ToString();
+                txtNombreEstudiante.Text = row["NombreEst"].ToString();
+                txtTelefono.Text = row["TelEst"].ToString();
+                txtDireccion.Text = row["Direccion"].ToString();
+                dtpFechaNacimiento.Value = Convert.ToDateTime(row["FechaNacimiento"]);
+                string sexo = row["Sexo"].ToString();
+                if (sexo == "M")
+                    cbbGenero.Text = "MASCULINO";
+                else if (sexo == "F")
+                    cbbGenero.Text = "FEMENINO";
+                else
+                    cbbGenero.Text = "";
+                cbbMano.Text = row["Mano"].ToString();
+                txtAlergias.Text = row["Alergia"].ToString();
+                cbbGrado.SelectedValue = Convert.ToInt32(row["GradoID"]);
+                // ============================
+                // TUTOR 1
+                // ============================
+                txtNombrePadre.Text = row["NombreTut1"].ToString();
+                txtIdentidadPadre.Text = row["DniTut1"].ToString();
+                txtTelefonoPadre.Text = row["TelTut1"].ToString();
+                txtCorreoPadre.Text = row["CorreoTut1"].ToString();
+                txtTrabajoPadre.Text = row["LugarTrabTut1"].ToString();
+                cbbParentescoPadre.Text = row["ParentescoTut1"].ToString();
+                // ============================
+                // TUTOR 2
+                // ============================
+                txtNombreMadre.Text = row["NombreTut2"].ToString();
+                txtIdentidadMadre.Text = row["DniTut2"].ToString();
+                txtTelefonoMadre.Text = row["TelTut2"].ToString();
+                txtCorreoMadre.Text = row["CorreoTut2"].ToString();
+                txtTrabajoMadre.Text = row["LugarTrabTut2"].ToString();
+                cbbParentescoMadre.Text = row["ParentescoTut2"].ToString();
+                // ============================
+                // MATRÍCULA
+                // ============================
+                matriculaID = Convert.ToInt32(row["MatriculaID"]);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar datos: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         private void FrmMatricula_Load(object sender, EventArgs e)
         {
             CargarGrados();
             CargarSexo();
+            if (estudianteID > 0)
+            {
+                CargarDatosParaEditar(estudianteID);
+                txtNombreMadre.Enabled = false;
+                txtNombrePadre.Enabled = false;
+                txtIdentidadPadre.Enabled = false;
+                txtIdentidadMadre.Enabled = false;
+                txtCorreoPadre.Enabled = false;
+                txtCorreoMadre.Enabled = false;
+                txtTelefonoPadre.Enabled = false;
+                txtTelefonoMadre.Enabled = false;
+                cbbParentescoPadre.Enabled = false;
+                cbbParentescoMadre.Enabled = false;
+                txtTrabajoMadre.Enabled = false;
+                txtTrabajoPadre.Enabled = false;
+            }
         }
 
         private void guna2Button1_Click(object sender, EventArgs e)
@@ -570,6 +656,377 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
         }
 
         private void guna2HtmlLabel1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btMatricular_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                EjecutarUtilidades util = new EjecutarUtilidades();
+
+                string correo = txtCorreoPadre.Text.Trim();
+
+                if (!correo.Contains("@") || !correo.Contains("."))
+                {
+                    MessageBox.Show("Ingrese un correo válido. Ejemplo: usuario@dominio.com",
+                                    "Validación",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Warning);
+
+                    txtCorreoPadre.Focus();
+                }
+
+                if (string.IsNullOrWhiteSpace(txtNombreEstudiante.Text))
+                {
+                    MessageBox.Show("Debe ingresar el nombre del estudiante.");
+                    return;
+                }
+
+                if (string.IsNullOrWhiteSpace(txtIdentidadEstudiante.Text))
+                {
+                    MessageBox.Show("Debe ingresar la identidad del estudiante.");
+                    return;
+                }
+
+                if (cbbGrado.SelectedIndex == -1)
+                {
+                    MessageBox.Show("Debe seleccionar un grado.");
+                    return;
+                }
+
+                DataTable dtSeccion = util.EjecutarConsulta(
+                    "SELECT TOP 1 Letra FROM Seccion WHERE GradoID = " + cbbGrado.SelectedValue);
+
+                if (dtSeccion.Rows.Count == 0)
+                {
+                    MessageBox.Show("No existe sección para este grado.");
+                    return;
+                }
+
+                string seccionLetra = dtSeccion.Rows[0]["Letra"].ToString();
+
+                SqlParameter[] p =
+                {
+                    new SqlParameter("@nombreEst", txtNombreEstudiante.Text),
+                    new SqlParameter("@fechaNacimiento", dtpFechaNacimiento.Value),
+                    new SqlParameter("@sexo", cbbGenero.SelectedValue),
+                    new SqlParameter("@dniEst", txtIdentidadEstudiante.Text),
+                    new SqlParameter("@direccionEst", txtDireccion.Text),
+                    new SqlParameter("@telEst", txtTelefono.Text),
+                    new SqlParameter("@mano", cbbMano.Text),
+                    new SqlParameter("@alergia", txtAlergias.Text),
+
+                    new SqlParameter("@imagen", DBNull.Value),
+
+                    new SqlParameter("@gradoID", Convert.ToInt32(cbbGrado.SelectedValue)),
+                    new SqlParameter("@seccionID", seccionLetra),
+
+                    new SqlParameter("@nombreTut1", txtNombrePadre.Text),
+                    new SqlParameter("@dniTut1", txtIdentidadPadre.Text),
+                    new SqlParameter("@telTut1", txtTelefonoPadre.Text),
+                    new SqlParameter("@lugTrabTut1", txtTrabajoPadre.Text),
+                    new SqlParameter("@correoTut1", txtCorreoPadre.Text),
+                    new SqlParameter("@parentescoTut1", cbbParentescoPadre.Text),
+
+                    new SqlParameter("@nombreTut2", string.IsNullOrWhiteSpace(txtNombreMadre.Text) ? (object)DBNull.Value : txtNombreMadre.Text),
+                    new SqlParameter("@dniTut2", string.IsNullOrWhiteSpace(txtIdentidadMadre.Text) ? (object)DBNull.Value : txtIdentidadMadre.Text),
+                    new SqlParameter("@telTut2", string.IsNullOrWhiteSpace(txtTelefonoMadre.Text) ? (object)DBNull.Value : txtTelefonoMadre.Text),
+                    new SqlParameter("@lugTrabTut2", string.IsNullOrWhiteSpace(txtTrabajoMadre.Text) ? (object)DBNull.Value : txtTrabajoMadre.Text),
+                    new SqlParameter("@correoTut2", string.IsNullOrWhiteSpace(txtCorreoMadre.Text) ? (object)DBNull.Value : txtCorreoMadre.Text),
+                    new SqlParameter("@parentescoTut2", string.IsNullOrWhiteSpace(cbbParentescoMadre.Text) ? (object)DBNull.Value : cbbParentescoMadre.Text),
+
+                    new SqlParameter("@matriculaID", matriculaID == 0 ? (object)DBNull.Value : matriculaID)
+                };
+
+                DataTable dt = util.EjecutarSPParametros("spMAE_Matricular", p);
+
+                if (dt.Rows.Count > 0)
+                {
+                    matriculaID = Convert.ToInt32(dt.Rows[0][0]);
+                }
+
+                MessageBox.Show("Matrícula guardada correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al guardar matrícula: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+
+        private void txtIdentidadEstudiante_TextChanged(object sender, EventArgs e)
+        {
+            int cursor = txtIdentidadEstudiante.SelectionStart;
+
+            string limpio = new string(txtIdentidadEstudiante.Text.Where(char.IsDigit).ToArray());
+
+            if (limpio.Length > 13)
+                limpio = limpio.Substring(0, 13);
+
+            string formateado = limpio;
+
+            if (limpio.Length > 4)
+                formateado = limpio.Insert(4, "-");
+
+
+            if (limpio.Length > 8)
+                formateado = formateado.Insert(9, "-");
+
+            int diff = formateado.Length - txtIdentidadEstudiante.Text.Length;
+
+            txtIdentidadEstudiante.TextChanged -= txtIdentidadEstudiante_TextChanged;
+            txtIdentidadEstudiante.Text = formateado;
+            txtIdentidadEstudiante.TextChanged += txtIdentidadEstudiante_TextChanged;
+
+            txtIdentidadEstudiante.SelectionStart = Math.Max(0, cursor + diff);
+
+
+        }
+
+        private void txtNombreEstudiante_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Back)
+                return;
+
+            if (!char.IsLetter(e.KeyChar) && e.KeyChar != ' ')
+            {
+                e.Handled = true;
+
+                MessageBox.Show("Solo se aceptan letras.",
+                                "Validación",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Warning);
+            }
+
+        }
+
+        private void txtAlergias_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Back)
+            {
+                return;
+            }
+
+            if (!char.IsLetter(e.KeyChar) && e.KeyChar != ' ')
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtNombrePadre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Back)
+                return;
+
+            if (!char.IsLetter(e.KeyChar) && e.KeyChar != ' ')
+            {
+                e.Handled = true;
+
+                MessageBox.Show("Solo se aceptan letras.",
+                                "Validación",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Warning);
+            }
+        }
+
+        private void txtNombreMadre_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtNombreMadre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Back)
+                return;
+
+            if (!char.IsLetter(e.KeyChar) && e.KeyChar != ' ')
+            {
+                e.Handled = true;
+
+                MessageBox.Show("Solo se aceptan letras.",
+                                "Validación",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Warning);
+            }
+        }
+
+        private void txtTrabajoPadre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Back)
+                return;
+
+            if (!char.IsLetter(e.KeyChar) && e.KeyChar != ' ')
+            {
+                e.Handled = true;
+
+                MessageBox.Show("Solo se aceptan letras.",
+                                "Validación",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Warning);
+            }
+        }
+
+        private void txtTrabajoMadre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Back)
+                return;
+
+            if (!char.IsLetter(e.KeyChar) && e.KeyChar != ' ')
+            {
+                e.Handled = true;
+
+                MessageBox.Show("Solo se aceptan letras.",
+                                "Validación",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Warning);
+            }
+        }
+
+        private void txtTelefono_TextChanged(object sender, EventArgs e)
+        {
+            if (txtTelefono.Text.Length == 4 && !txtTelefono.Text.Contains("-"))
+            {
+                txtTelefono.Text += "-";
+                txtTelefono.SelectionStart = txtTelefono.Text.Length;
+            }
+        }
+
+        private void txtTelefonoPadre_TextChanged(object sender, EventArgs e)
+        {
+            if (txtTelefonoPadre.Text.Length == 4 && !txtTelefono.Text.Contains("-"))
+            {
+                txtTelefonoPadre.Text += "-";
+                txtTelefonoPadre.SelectionStart = txtTelefono.Text.Length;
+            }
+        }
+
+        private void txtTelefonoMadre_TextChanged(object sender, EventArgs e)
+        {
+            if (txtTelefonoMadre.Text.Length == 4 && !txtTelefono.Text.Contains("-"))
+            {
+                txtTelefonoMadre.Text += "-";
+                txtTelefonoMadre.SelectionStart = txtTelefono.Text.Length;
+            }
+        }
+
+        private void txtIdentidadPadre_TextChanged(object sender, EventArgs e)
+        {
+            int cursor = txtIdentidadPadre.SelectionStart;
+
+            string limpio = new string(txtIdentidadPadre.Text.Where(char.IsDigit).ToArray());
+
+            if (limpio.Length > 13)
+                limpio = limpio.Substring(0, 13);
+
+            string formateado = limpio;
+
+            if (limpio.Length > 4)
+                formateado = limpio.Insert(4, "-");
+
+
+            if (limpio.Length > 8)
+                formateado = formateado.Insert(9, "-");
+
+            int diff = formateado.Length - txtIdentidadPadre.Text.Length;
+
+            txtIdentidadPadre.TextChanged -= txtIdentidadPadre_TextChanged;
+            txtIdentidadPadre.Text = formateado;
+            txtIdentidadPadre.TextChanged += txtIdentidadPadre_TextChanged;
+
+            txtIdentidadPadre.SelectionStart = Math.Max(0, cursor + diff);
+        }
+
+        private void txtIdentidadMadre_TextChanged(object sender, EventArgs e)
+        {
+            int cursor = txtIdentidadMadre.SelectionStart;
+
+            string limpio = new string(txtIdentidadMadre.Text.Where(char.IsDigit).ToArray());
+
+            if (limpio.Length > 13)
+                limpio = limpio.Substring(0, 13);
+
+            string formateado = limpio;
+
+            if (limpio.Length > 4)
+                formateado = limpio.Insert(4, "-");
+
+
+            if (limpio.Length > 8)
+                formateado = formateado.Insert(9, "-");
+
+            int diff = formateado.Length - txtIdentidadMadre.Text.Length;
+
+            txtIdentidadMadre.TextChanged -= txtIdentidadMadre_TextChanged;
+            txtIdentidadMadre.Text = formateado;
+            txtIdentidadMadre.TextChanged += txtIdentidadMadre_TextChanged;
+
+            txtIdentidadMadre.SelectionStart = Math.Max(0, cursor + diff);
+        }
+
+        private void txtTelefono_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Back)
+                return;
+
+            if (!char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+                MessageBox.Show("Solo se permiten números.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+        }
+
+        private void txtTelefonoPadre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Back)
+                return;
+
+            if (!char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+                MessageBox.Show("Solo se permiten números.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+        }
+
+        private void txtTelefonoMadre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Back)
+                return;
+
+            if (!char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+                MessageBox.Show("Solo se permiten números.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+        }
+
+        private void dtpFechaNacimiento_ValueChanged(object sender, EventArgs e)
+        {
+            DateTime fechaNac = dtpFechaNacimiento.Value;
+            int edad = DateTime.Now.Year - fechaNac.Year;
+
+            if (fechaNac.Date > DateTime.Now.AddYears(-edad))
+                edad--;
+
+            if (edad < 5)
+            {
+                MessageBox.Show("El estudiante debe tener al menos 5 años.",
+                                "Validación",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Warning);
+
+                dtpFechaNacimiento.Value = DateTime.Now.AddYears(-5);
+            }
+
+        }
+
+        private void txtCorreoMadre_TextChanged(object sender, EventArgs e)
         {
 
         }

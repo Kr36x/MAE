@@ -147,6 +147,7 @@
             txtBuscar.BackColor = Color.Transparent;
             txtBuscar.BorderColor = Color.Black;
             txtBuscar.BorderRadius = 10;
+            txtBuscar.CharacterCasing = CharacterCasing.Upper;
             txtBuscar.CustomizableEdges = customizableEdges3;
             txtBuscar.DefaultText = "";
             txtBuscar.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);

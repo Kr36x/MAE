@@ -20,9 +20,103 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
             estudianteID = id;
         }
 
+        private void CargarFichaMatricula()
+        {
+            try
+            {
+                EjecutarUtilidades util = new EjecutarUtilidades();
+
+                // Obtener la matrícula más reciente
+                int matriculaID = ObtenerMatriculaID();
+
+                SqlParameter[] p =
+                {
+                    new SqlParameter("@estudianteID", estudianteID),
+                    new SqlParameter("@matriculaID", matriculaID)
+                };
+
+                DataTable dt = util.EjecutarSPParametros("spMAE_RepFichaMatricula", p);
+
+                if (dt.Rows.Count == 0)
+                    return;
+
+                DataRow row = dt.Rows[0];
+
+                txtNombreEstudiante.Text = row["Nombre"].ToString();
+                txtIdentidadEstudiante.Text = row["Identidad"].ToString();
+                txtGenero.Text = row["Sexo"].ToString();
+                txtDireccion.Text = row["Direccion"].ToString();
+                txtTelefonoEstudiante.Text = row["Telefono"].ToString();
+                txtFechaNacimiento.Text = Convert.ToDateTime(row["FechaNacimiento"]).ToString("dd/MM/yyyy");
+                txtMano.Text = row["Mano"].ToString();
+                txtAlergias.Text = row["Alergia"].ToString();
+
+                txtGrado.Text = row["GradoID"].ToString();
+                txtSeccion.Text = row["Letra"].ToString();
+                txtAnio.Text = Convert.ToDateTime(row["Fecha"]).Year.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar ficha: " + ex.Message);
+            }
+        }
+
+        private int ObtenerMatriculaID()
+        {
+            EjecutarUtilidades util = new EjecutarUtilidades();
+
+            DataTable dt = util.EjecutarConsulta(
+                $"SELECT TOP 1 MatriculaID FROM Matricula WHERE EstudianteID = {estudianteID} ORDER BY Anio DESC"
+            );
+
+            if (dt.Rows.Count > 0)
+                return Convert.ToInt32(dt.Rows[0]["MatriculaID"]);
+
+            return 0;
+        }
+
+        private void CargarTutores()
+        {
+            try
+            {
+                EjecutarUtilidades util = new EjecutarUtilidades();
+
+                SqlParameter[] p =
+                {
+                    new SqlParameter("@estudianteID", estudianteID)
+                };
+
+                DataTable dt = util.EjecutarSPParametros("spMAE_TraeTutoresxEstudiante", p);
+
+                if (dt.Rows.Count > 0)
+                {
+                    DataRow t1 = dt.Rows[0];
+                    txtNombrePadre.Text = t1["Nombre"].ToString();
+                    txtIdentidadPadre.Text = t1["Identidad"].ToString();
+                    txtTelefonoPadre.Text = t1["Telefono"].ToString();
+                    txtTrabajoPadre.Text = t1["LugarTrabajo"].ToString();
+                }
+
+                if (dt.Rows.Count > 1)
+                {
+                    DataRow t2 = dt.Rows[1];
+                    txtNombreMadre.Text = t2["Nombre"].ToString();
+                    txtIdentidadMadre.Text = t2["Identidad"].ToString();
+                    txtTelefonoMadre.Text = t2["Telefono"].ToString();
+                    txtTrabajoMadre.Text = t2["LugarTrabajo"].ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar tutores: " + ex.Message);
+            }
+        }
+
+
         private void CargarInformacionEstudiante()
         {
-            try {
+            try
+            {
                 EjecutarUtilidades util = new EjecutarUtilidades();
                 SqlParameter[] p =
                 {
@@ -68,7 +162,9 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
         private void FrmFichaMatricula_Load(object sender, EventArgs e)
         {
             CargarInformacionEstudiante();
-            
+            //CargarFichaMatricula();
+            //CargarTutores();
+
         }
 
         private void FrmFichaMatricula_KeyDown(object sender, KeyEventArgs e)

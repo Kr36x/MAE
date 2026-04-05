@@ -32,7 +32,8 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
             {
                 MessageBox.Show("El correo debe contener el símbolo @");
                 return;
-            }else
+            }
+            else
             {
                 EjecutarUtilidades util = new EjecutarUtilidades();
 
@@ -63,7 +64,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
                     // CREAR o EDITAR según el constructor
                     new SqlParameter("@usuarioID", usuarioID == 0 ? (object)DBNull.Value : usuarioID)
-                };  
+                };
 
                 DataTable dt = util.EjecutarSPParametros("spMAE_Crear_EditarUsuario", p);
 
@@ -141,11 +142,22 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
                 txtPosicion.Text = row["Posicion"].ToString();
                 string sexo = row["Sexo"].ToString();
                 if (sexo == "M")
+                {
                     cbbSexo.Text = "MASCULINO";
+                }
                 else if (sexo == "F")
+                {
                     cbbSexo.Text = "FEMENINO";
+                }
                 else
+                {
                     cbbSexo.Text = "";
+                }
+                txtUsuario.Enabled = false;
+                cbbRol.Enabled = false;
+                txtNombre.Enabled = false;
+                txtIdentidad.Enabled = false;
+                cbbSexo.Enabled = false;
             }
             else if (rol == "DOCENTE")
             {
@@ -192,11 +204,23 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
                 txtEspecialidad.Text = row["Especialidad"].ToString();
                 string sexo = row["Sexo"].ToString();
                 if (sexo == "M")
+                {
                     cbbSexo.Text = "MASCULINO";
+                }
                 else if (sexo == "F")
+                {
                     cbbSexo.Text = "FEMENINO";
+                }
                 else
+                {
                     cbbSexo.Text = "";
+                }
+                txtUsuario.Enabled = false;
+                cbbRol.Enabled = false;
+                txtNombre.Enabled = false;
+                txtIdentidad.Enabled = false;
+                cbbSexo.Enabled = false;
+                dtpFechaNacimiento.Enabled = false;
             }
             else if (rol == "TUTOR")
             {
@@ -239,6 +263,12 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
                 txtTelefono.Text = row["Telefono"].ToString();
                 cbbParentesco.Text = row["Parentesco"].ToString();
                 txtLugarTrabajo.Text = row["LugarTrabajo"].ToString();
+
+                txtUsuario.Enabled = false;
+                cbbRol.Enabled = false;
+                txtNombre.Enabled = false;
+                txtIdentidad.Enabled = false;
+                cbbParentesco.Enabled = false;
             }
         }
 
@@ -362,7 +392,29 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
         private void txtIdentidad_TextChanged(object sender, EventArgs e)
         {
+            int cursor = txtIdentidad.SelectionStart;
 
+            string limpio = new string(txtIdentidad.Text.Where(char.IsDigit).ToArray());
+
+            if (limpio.Length > 13)
+                limpio = limpio.Substring(0, 13);
+
+            string formateado = limpio;
+
+            if (limpio.Length > 4)
+                formateado = limpio.Insert(4, "-");
+
+
+            if (limpio.Length > 8)
+                formateado = formateado.Insert(9, "-");
+
+            int diff = formateado.Length - txtIdentidad.Text.Length;
+
+            txtIdentidad.TextChanged -= txtIdentidad_TextChanged;
+            txtIdentidad.Text = formateado;
+            txtIdentidad.TextChanged += txtIdentidad_TextChanged;
+
+            txtIdentidad.SelectionStart = Math.Max(0, cursor + diff);
         }
 
         private void txtTelefono_TextChanged(object sender, EventArgs e)
@@ -377,49 +429,46 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
         private void txtIdentidad_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)Keys.Back)
-            {
                 return;
-            }
 
             if (!char.IsDigit(e.KeyChar))
             {
                 e.Handled = true;
+                MessageBox.Show("Solo se permiten números.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
         private void txtTelefono_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)Keys.Back)
-            {
                 return;
-            }
 
             if (!char.IsDigit(e.KeyChar))
             {
                 e.Handled = true;
+                MessageBox.Show("Solo se permiten números.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
         private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)Keys.Back)
-            {
                 return;
-            }
 
             if (!char.IsLetter(e.KeyChar) && e.KeyChar != ' ')
             {
                 e.Handled = true;
+
+                MessageBox.Show("Solo se aceptan letras.",
+                                "Validación",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Warning);
             }
         }
 
         private void btActualizar_Click(object sender, EventArgs e)
         {
-            if (!txtCorreo.Text.Contains("@"))
-            {
-                MessageBox.Show("El correo debe contener el símbolo @");
-                return;
-            }
+
         }
 
         private void btLimpiar_Click(object sender, EventArgs e)
@@ -443,6 +492,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
                 ctnDatosUsuario.Visible = true;
             }
 
+
         }
 
         private void lbAvisoTrabajo_Click(object sender, EventArgs e)
@@ -459,6 +509,52 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
             else
             {
                 txtContrasena.PasswordChar = '\0';
+            }
+
+        }
+
+        private void txtEspecialidad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Back)
+                return;
+
+            if (!char.IsLetter(e.KeyChar) && e.KeyChar != ' ')
+            {
+                e.Handled = true;
+
+                MessageBox.Show("Solo se aceptan letras.",
+                                "Validación",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Warning);
+            }
+        }
+
+        private void btInformacion_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Este formulario sirve para poder crear, actualizar y gestionar los usuarios del sistema.",
+                                "Información",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Information);
+        }
+
+        private void dtpFechaNacimiento_ValueChanged(object sender, EventArgs e)
+        {
+            DateTime fecha = dtpFechaNacimiento.Value;
+            DateTime hoy = DateTime.Now;
+
+            int edad = hoy.Year - fecha.Year;
+
+            if (fecha.Date > hoy.AddYears(-edad))
+                edad--;
+
+            if (edad < 18)
+            {
+                MessageBox.Show("Debe ser mayor de 18 años.",
+                                "Validación",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Warning);
+
+                dtpFechaNacimiento.Value = hoy.AddYears(-18);
             }
 
         }
