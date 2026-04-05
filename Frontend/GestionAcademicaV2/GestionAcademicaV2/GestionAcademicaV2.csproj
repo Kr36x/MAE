@@ -47,11 +47,6 @@
 			<DependentUpon>FrmNuevaReunion.cs</DependentUpon>
 			<SubType>Designer</SubType>
 		</EmbeddedResource>
-
-		<EmbeddedResource Update="Properties\Resources.resx">
-			<Generator>ResXFileCodeGenerator</Generator>
-			<LastGenOutput>Resources.Designer.cs</LastGenOutput>
-		</EmbeddedResource>
 	</ItemGroup>
 
 	<ItemGroup>
@@ -66,6 +61,11 @@
 		<EmbeddedResource Update="Pantallas\DocenteVentanas\FrmReporteAsistencia.resx">
 			<DependentUpon>FrmReporteAsistencia.cs</DependentUpon>
 			<SubType>Designer</SubType>
+		</EmbeddedResource>
+
+		<EmbeddedResource Update="Properties\Resources.resx">
+		  <Generator>ResXFileCodeGenerator</Generator>
+		  <LastGenOutput>Resources.Designer.cs</LastGenOutput>
 		</EmbeddedResource>
 	</ItemGroup>
 

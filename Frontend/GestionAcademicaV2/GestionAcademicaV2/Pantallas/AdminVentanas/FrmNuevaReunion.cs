@@ -37,7 +37,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
             SeleccionarPrimerHorarioValido();
             //cbDocente.DrawItem += Combo_DrawItem;
-           // cbEstudiante.DrawItem += Combo_DrawItem;
+            // cbEstudiante.DrawItem += Combo_DrawItem;
             dtpFechaHora.ValueChanged += dtpFechaHora_ValueChanged;
             cbHora.SelectedIndexChanged += cbHora_SelectedIndexChanged;
             cbDocente.SelectedIndexChanged += cbDocente_SelectedIndexChanged;
@@ -613,5 +613,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
         }
 
         #endregion
+
+
     }
 }
