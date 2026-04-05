@@ -93,7 +93,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
                 (object)grado ?? DBNull.Value)
         };
 
-                dgvEstudiantes.DataSource = util.EjecutarSP("spMAE_BuscarEstudiantes", p);
+                dgvEstudiantes.DataSource = util.EjecutarSPParametros("spMAE_BuscarEstudiantes", p);
             }
             catch (Exception ex)
             {
@@ -124,7 +124,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
             {
                 DataGridViewButtonColumn btnVer = new DataGridViewButtonColumn();
                 btnVer.Name = "btnVer";
-                btnVer.HeaderText = "Ver";
+                btnVer.HeaderText = "VER";
                 btnVer.Text = "";
                 btnVer.UseColumnTextForButtonValue = false;
                 dgvEstudiantes.Columns.Add(btnVer);
@@ -134,7 +134,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
             {
                 DataGridViewButtonColumn btnEditar = new DataGridViewButtonColumn();
                 btnEditar.Name = "btnEditar";
-                btnEditar.HeaderText = "Editar";
+                btnEditar.HeaderText = "EDITAR";
                 btnEditar.Text = "";
                 btnEditar.UseColumnTextForButtonValue = false;
                 dgvEstudiantes.Columns.Add(btnEditar);

@@ -45,7 +45,7 @@ namespace GestionAcademicaV2.Modelos
         }
 
         // Ejecutar sp´s con parametros
-        public DataTable EjecutarSP(string nombreSP, SqlParameter[] parametros)
+        public DataTable EjecutarSPParametros(string nombreSP, SqlParameter[] parametros)
         {
             using (SqlConnection conexion = new Conexion().ObtenerConexion())
             {

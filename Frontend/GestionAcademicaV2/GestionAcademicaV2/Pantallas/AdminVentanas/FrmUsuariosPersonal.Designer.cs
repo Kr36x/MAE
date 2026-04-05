@@ -30,19 +30,17 @@
         {
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmUsuariosPersonal));
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmUsuariosPersonal));
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
@@ -52,27 +50,24 @@
             guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             ctnFiltros = new Guna.UI2.WinForms.Guna2ContainerControl();
-            btBuscar = new Guna.UI2.WinForms.Guna2Button();
             txtBuscar = new Guna.UI2.WinForms.Guna2TextBox();
             lbBuscar = new Guna.UI2.WinForms.Guna2HtmlLabel();
             cbbRol = new Guna.UI2.WinForms.Guna2ComboBox();
             lbRol = new Guna.UI2.WinForms.Guna2HtmlLabel();
             btNuevoUsuario = new Guna.UI2.WinForms.Guna2Button();
             guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            guna2ContainerControl1 = new Guna.UI2.WinForms.Guna2ContainerControl();
+            ctnUsuarios = new Guna.UI2.WinForms.Guna2ContainerControl();
             guna2HtmlLabel6 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
+            dgvUsuarios = new Guna.UI2.WinForms.Guna2DataGridView();
             UsuarioID = new DataGridViewTextBoxColumn();
             Usuario = new DataGridViewTextBoxColumn();
             Correo = new DataGridViewTextBoxColumn();
             Rol = new DataGridViewTextBoxColumn();
             Vinculacion = new DataGridViewTextBoxColumn();
-            Estado = new DataGridViewTextBoxColumn();
-            Acciones = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).BeginInit();
             ctnFiltros.SuspendLayout();
-            guna2ContainerControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)guna2DataGridView1).BeginInit();
+            ctnUsuarios.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvUsuarios).BeginInit();
             SuspendLayout();
             // 
             // guna2HtmlLabel3
@@ -133,47 +128,26 @@
             ctnFiltros.BorderColor = Color.Gray;
             ctnFiltros.BorderRadius = 30;
             ctnFiltros.BorderThickness = 2;
-            ctnFiltros.Controls.Add(btBuscar);
             ctnFiltros.Controls.Add(txtBuscar);
             ctnFiltros.Controls.Add(lbBuscar);
             ctnFiltros.Controls.Add(cbbRol);
             ctnFiltros.Controls.Add(lbRol);
             ctnFiltros.Controls.Add(btNuevoUsuario);
             ctnFiltros.Controls.Add(guna2HtmlLabel5);
-            ctnFiltros.CustomizableEdges = customizableEdges11;
+            ctnFiltros.CustomizableEdges = customizableEdges9;
             ctnFiltros.Location = new Point(69, 113);
             ctnFiltros.Name = "ctnFiltros";
-            ctnFiltros.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            ctnFiltros.ShadowDecoration.CustomizableEdges = customizableEdges10;
             ctnFiltros.Size = new Size(913, 147);
             ctnFiltros.TabIndex = 113;
             ctnFiltros.Text = "guna2ContainerControl1";
-            // 
-            // btBuscar
-            // 
-            btBuscar.BackColor = Color.Transparent;
-            btBuscar.BorderRadius = 10;
-            btBuscar.BorderThickness = 1;
-            btBuscar.CustomizableEdges = customizableEdges3;
-            btBuscar.DisabledState.BorderColor = Color.DarkGray;
-            btBuscar.DisabledState.CustomBorderColor = Color.DarkGray;
-            btBuscar.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btBuscar.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btBuscar.FillColor = SystemColors.HotTrack;
-            btBuscar.Font = new Font("Segoe UI", 9F);
-            btBuscar.ForeColor = Color.White;
-            btBuscar.Image = (Image)resources.GetObject("btBuscar.Image");
-            btBuscar.Location = new Point(831, 96);
-            btBuscar.Name = "btBuscar";
-            btBuscar.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            btBuscar.Size = new Size(44, 36);
-            btBuscar.TabIndex = 6;
             // 
             // txtBuscar
             // 
             txtBuscar.BackColor = Color.Transparent;
             txtBuscar.BorderColor = Color.Black;
             txtBuscar.BorderRadius = 10;
-            txtBuscar.CustomizableEdges = customizableEdges5;
+            txtBuscar.CustomizableEdges = customizableEdges3;
             txtBuscar.DefaultText = "";
             txtBuscar.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txtBuscar.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -186,9 +160,10 @@
             txtBuscar.Name = "txtBuscar";
             txtBuscar.PlaceholderText = "ESCRIBA EL NOMBRE O CORREO A BUSCAR";
             txtBuscar.SelectedText = "";
-            txtBuscar.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            txtBuscar.Size = new Size(385, 36);
+            txtBuscar.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            txtBuscar.Size = new Size(451, 36);
             txtBuscar.TabIndex = 5;
+            txtBuscar.TextChanged += txtBuscar_TextChanged;
             // 
             // lbBuscar
             // 
@@ -205,7 +180,7 @@
             cbbRol.BackColor = Color.Transparent;
             cbbRol.BorderColor = Color.Black;
             cbbRol.BorderRadius = 10;
-            cbbRol.CustomizableEdges = customizableEdges7;
+            cbbRol.CustomizableEdges = customizableEdges5;
             cbbRol.DrawMode = DrawMode.OwnerDrawFixed;
             cbbRol.DropDownStyle = ComboBoxStyle.DropDownList;
             cbbRol.FocusedColor = Color.FromArgb(94, 148, 255);
@@ -213,12 +188,13 @@
             cbbRol.Font = new Font("Segoe UI", 10F);
             cbbRol.ForeColor = Color.FromArgb(68, 88, 112);
             cbbRol.ItemHeight = 30;
-            cbbRol.Items.AddRange(new object[] { "ADMINISTRADOR", "DOCENTE", "TUTOR" });
+            cbbRol.Items.AddRange(new object[] { "TODOS", "ADMINISTRADOR", "DOCENTE", "TUTOR" });
             cbbRol.Location = new Point(28, 96);
             cbbRol.Name = "cbbRol";
-            cbbRol.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            cbbRol.ShadowDecoration.CustomizableEdges = customizableEdges6;
             cbbRol.Size = new Size(369, 36);
             cbbRol.TabIndex = 3;
+            cbbRol.SelectedIndexChanged += cbbRol_SelectedIndexChanged;
             // 
             // lbRol
             // 
@@ -235,7 +211,7 @@
             btNuevoUsuario.BackColor = Color.Transparent;
             btNuevoUsuario.BorderRadius = 10;
             btNuevoUsuario.BorderThickness = 1;
-            btNuevoUsuario.CustomizableEdges = customizableEdges9;
+            btNuevoUsuario.CustomizableEdges = customizableEdges7;
             btNuevoUsuario.DisabledState.BorderColor = Color.DarkGray;
             btNuevoUsuario.DisabledState.CustomBorderColor = Color.DarkGray;
             btNuevoUsuario.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -246,10 +222,11 @@
             btNuevoUsuario.Image = (Image)resources.GetObject("btNuevoUsuario.Image");
             btNuevoUsuario.Location = new Point(28, 31);
             btNuevoUsuario.Name = "btNuevoUsuario";
-            btNuevoUsuario.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            btNuevoUsuario.ShadowDecoration.CustomizableEdges = customizableEdges8;
             btNuevoUsuario.Size = new Size(187, 36);
             btNuevoUsuario.TabIndex = 1;
             btNuevoUsuario.Text = "NUEVO USUARIO";
+            btNuevoUsuario.Click += btNuevoUsuario_Click;
             // 
             // guna2HtmlLabel5
             // 
@@ -262,21 +239,21 @@
             guna2HtmlLabel5.TabIndex = 0;
             guna2HtmlLabel5.Text = null;
             // 
-            // guna2ContainerControl1
+            // ctnUsuarios
             // 
-            guna2ContainerControl1.BackColor = Color.Transparent;
-            guna2ContainerControl1.BorderColor = Color.Gray;
-            guna2ContainerControl1.BorderRadius = 30;
-            guna2ContainerControl1.BorderThickness = 2;
-            guna2ContainerControl1.Controls.Add(guna2HtmlLabel6);
-            guna2ContainerControl1.Controls.Add(guna2DataGridView1);
-            guna2ContainerControl1.CustomizableEdges = customizableEdges13;
-            guna2ContainerControl1.Location = new Point(69, 266);
-            guna2ContainerControl1.Name = "guna2ContainerControl1";
-            guna2ContainerControl1.ShadowDecoration.CustomizableEdges = customizableEdges14;
-            guna2ContainerControl1.Size = new Size(913, 386);
-            guna2ContainerControl1.TabIndex = 114;
-            guna2ContainerControl1.Text = "guna2ContainerControl1";
+            ctnUsuarios.BackColor = Color.Transparent;
+            ctnUsuarios.BorderColor = Color.Gray;
+            ctnUsuarios.BorderRadius = 30;
+            ctnUsuarios.BorderThickness = 2;
+            ctnUsuarios.Controls.Add(guna2HtmlLabel6);
+            ctnUsuarios.Controls.Add(dgvUsuarios);
+            ctnUsuarios.CustomizableEdges = customizableEdges11;
+            ctnUsuarios.Location = new Point(69, 266);
+            ctnUsuarios.Name = "ctnUsuarios";
+            ctnUsuarios.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            ctnUsuarios.Size = new Size(913, 386);
+            ctnUsuarios.TabIndex = 114;
+            ctnUsuarios.Text = "guna2ContainerControl1";
             // 
             // guna2HtmlLabel6
             // 
@@ -289,10 +266,10 @@
             guna2HtmlLabel6.TabIndex = 1;
             guna2HtmlLabel6.Text = null;
             // 
-            // guna2DataGridView1
+            // dgvUsuarios
             // 
             dataGridViewCellStyle1.BackColor = Color.White;
-            guna2DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dgvUsuarios.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = SystemColors.HotTrack;
             dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -300,10 +277,10 @@
             dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            guna2DataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            guna2DataGridView1.ColumnHeadersHeight = 30;
-            guna2DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            guna2DataGridView1.Columns.AddRange(new DataGridViewColumn[] { UsuarioID, Usuario, Correo, Rol, Vinculacion, Estado, Acciones });
+            dgvUsuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dgvUsuarios.ColumnHeadersHeight = 30;
+            dgvUsuarios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dgvUsuarios.Columns.AddRange(new DataGridViewColumn[] { UsuarioID, Usuario, Correo, Rol, Vinculacion });
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = Color.White;
             dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
@@ -311,77 +288,91 @@
             dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(231, 229, 255);
             dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(71, 69, 94);
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
-            guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
-            guna2DataGridView1.GridColor = Color.FromArgb(231, 229, 255);
-            guna2DataGridView1.Location = new Point(28, 42);
-            guna2DataGridView1.Name = "guna2DataGridView1";
-            guna2DataGridView1.RowHeadersVisible = false;
-            guna2DataGridView1.RowTemplate.Height = 30;
-            guna2DataGridView1.Size = new Size(863, 319);
-            guna2DataGridView1.TabIndex = 0;
-            guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
-            guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.Font = null;
-            guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.ForeColor = Color.Empty;
-            guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = Color.Empty;
-            guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = Color.Empty;
-            guna2DataGridView1.ThemeStyle.BackColor = Color.White;
-            guna2DataGridView1.ThemeStyle.GridColor = Color.FromArgb(231, 229, 255);
-            guna2DataGridView1.ThemeStyle.HeaderStyle.BackColor = SystemColors.HotTrack;
-            guna2DataGridView1.ThemeStyle.HeaderStyle.BorderStyle = DataGridViewHeaderBorderStyle.None;
-            guna2DataGridView1.ThemeStyle.HeaderStyle.Font = new Font("Segoe UI", 9F);
-            guna2DataGridView1.ThemeStyle.HeaderStyle.ForeColor = Color.White;
-            guna2DataGridView1.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            guna2DataGridView1.ThemeStyle.HeaderStyle.Height = 30;
-            guna2DataGridView1.ThemeStyle.ReadOnly = false;
-            guna2DataGridView1.ThemeStyle.RowsStyle.BackColor = Color.White;
-            guna2DataGridView1.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            guna2DataGridView1.ThemeStyle.RowsStyle.Font = new Font("Segoe UI", 9F);
-            guna2DataGridView1.ThemeStyle.RowsStyle.ForeColor = Color.FromArgb(71, 69, 94);
-            guna2DataGridView1.ThemeStyle.RowsStyle.Height = 30;
-            guna2DataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
-            guna2DataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            dgvUsuarios.DefaultCellStyle = dataGridViewCellStyle3;
+            dgvUsuarios.GridColor = Color.FromArgb(231, 229, 255);
+            dgvUsuarios.Location = new Point(28, 42);
+            dgvUsuarios.Name = "dgvUsuarios";
+            dgvUsuarios.RowHeadersVisible = false;
+            dgvUsuarios.RowTemplate.Height = 30;
+            dgvUsuarios.Size = new Size(863, 319);
+            dgvUsuarios.TabIndex = 0;
+            dgvUsuarios.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
+            dgvUsuarios.ThemeStyle.AlternatingRowsStyle.Font = null;
+            dgvUsuarios.ThemeStyle.AlternatingRowsStyle.ForeColor = Color.Empty;
+            dgvUsuarios.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = Color.Empty;
+            dgvUsuarios.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = Color.Empty;
+            dgvUsuarios.ThemeStyle.BackColor = Color.White;
+            dgvUsuarios.ThemeStyle.GridColor = Color.FromArgb(231, 229, 255);
+            dgvUsuarios.ThemeStyle.HeaderStyle.BackColor = SystemColors.HotTrack;
+            dgvUsuarios.ThemeStyle.HeaderStyle.BorderStyle = DataGridViewHeaderBorderStyle.None;
+            dgvUsuarios.ThemeStyle.HeaderStyle.Font = new Font("Segoe UI", 9F);
+            dgvUsuarios.ThemeStyle.HeaderStyle.ForeColor = Color.White;
+            dgvUsuarios.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dgvUsuarios.ThemeStyle.HeaderStyle.Height = 30;
+            dgvUsuarios.ThemeStyle.ReadOnly = false;
+            dgvUsuarios.ThemeStyle.RowsStyle.BackColor = Color.White;
+            dgvUsuarios.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dgvUsuarios.ThemeStyle.RowsStyle.Font = new Font("Segoe UI", 9F);
+            dgvUsuarios.ThemeStyle.RowsStyle.ForeColor = Color.FromArgb(71, 69, 94);
+            dgvUsuarios.ThemeStyle.RowsStyle.Height = 30;
+            dgvUsuarios.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
+            dgvUsuarios.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            dgvUsuarios.CellClick += dgvUsuarios_CellClick;
+            dgvUsuarios.CellFormatting += dgvUsuarios_CellFormatting;
+            dgvUsuarios.CellPainting += dgvUsuarios_CellPainting;
+            dgvUsuarios.CellValueChanged += dgvUsuarios_CellValueChanged;
+            dgvUsuarios.CurrentCellDirtyStateChanged += dgvUsuarios_CurrentCellDirtyStateChanged;
             // 
             // UsuarioID
             // 
+            UsuarioID.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            UsuarioID.DataPropertyName = "UsuarioID";
             UsuarioID.HeaderText = "ID";
             UsuarioID.Name = "UsuarioID";
+            UsuarioID.ReadOnly = true;
+            UsuarioID.Width = 50;
             // 
             // Usuario
             // 
+            Usuario.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            Usuario.DataPropertyName = "Usuario";
             Usuario.HeaderText = "USUARIO";
             Usuario.Name = "Usuario";
+            Usuario.ReadOnly = true;
+            Usuario.Width = 130;
             // 
             // Correo
             // 
+            Correo.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            Correo.DataPropertyName = "Correo";
             Correo.HeaderText = "CORREO";
             Correo.Name = "Correo";
+            Correo.ReadOnly = true;
+            Correo.Width = 170;
             // 
             // Rol
             // 
+            Rol.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            Rol.DataPropertyName = "Rol";
             Rol.HeaderText = "ROL";
             Rol.Name = "Rol";
+            Rol.ReadOnly = true;
+            Rol.Width = 130;
             // 
             // Vinculacion
             // 
+            Vinculacion.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Vinculacion.DataPropertyName = "Vinculacion";
             Vinculacion.HeaderText = "VINCULACIÓN";
             Vinculacion.Name = "Vinculacion";
-            // 
-            // Estado
-            // 
-            Estado.HeaderText = "ESTADO";
-            Estado.Name = "Estado";
-            // 
-            // Acciones
-            // 
-            Acciones.HeaderText = "ACCIONES";
-            Acciones.Name = "Acciones";
+            Vinculacion.ReadOnly = true;
             // 
             // FrmUsuariosPersonal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1028, 674);
-            Controls.Add(guna2ContainerControl1);
+            Controls.Add(ctnUsuarios);
             Controls.Add(ctnFiltros);
             Controls.Add(guna2HtmlLabel4);
             Controls.Add(guna2HtmlLabel3);
@@ -392,11 +383,12 @@
             Name = "FrmUsuariosPersonal";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Reporte de Usuarios y Personal";
+            Load += FrmUsuariosPersonal_Load;
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).EndInit();
             ctnFiltros.ResumeLayout(false);
             ctnFiltros.PerformLayout();
-            guna2ContainerControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)guna2DataGridView1).EndInit();
+            ctnUsuarios.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dgvUsuarios).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -415,16 +407,13 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel lbRol;
         private Guna.UI2.WinForms.Guna2TextBox txtBuscar;
         private Guna.UI2.WinForms.Guna2HtmlLabel lbBuscar;
-        private Guna.UI2.WinForms.Guna2Button btBuscar;
-        private Guna.UI2.WinForms.Guna2ContainerControl guna2ContainerControl1;
+        private Guna.UI2.WinForms.Guna2ContainerControl ctnUsuarios;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel6;
-        private Guna.UI2.WinForms.Guna2DataGridView guna2DataGridView1;
+        private Guna.UI2.WinForms.Guna2DataGridView dgvUsuarios;
         private DataGridViewTextBoxColumn UsuarioID;
         private DataGridViewTextBoxColumn Usuario;
         private DataGridViewTextBoxColumn Correo;
         private DataGridViewTextBoxColumn Rol;
         private DataGridViewTextBoxColumn Vinculacion;
-        private DataGridViewTextBoxColumn Estado;
-        private DataGridViewTextBoxColumn Acciones;
     }
 }

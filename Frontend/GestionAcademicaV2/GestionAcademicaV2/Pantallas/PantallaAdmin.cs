@@ -78,7 +78,7 @@ namespace GestionAcademicaV2.Pantallas
 
         private void btnUsuarios_Click(object sender, EventArgs e)
         {
-            AbrirFormularioEnPanel(new FrmGestionUsuarios(this));
+            AbrirFormularioEnPanel(new FrmUsuariosPersonal(this));
         }
 
         private void btnDocentes_Click(object sender, EventArgs e)

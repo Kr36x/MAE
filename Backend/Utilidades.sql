@@ -293,7 +293,7 @@ BEGIN
         END;
 END
 GO
-
+use AgroLinkDB
 exec spMAE_PromedioYExcelenciaPorParcial 2026,4
 ----------------------------------------------------------------------------------------
 select * from vMAE_EstudianteGradoAnio
@@ -553,6 +553,30 @@ BEGIN
 END;
 GO
 
+exec spMAE_PromedioYExcelenciaPorParcial 2026, 1
+
+--------------------Reportes Entradas Bryan---------------------------
+CREATE OR ALTER PROCEDURE spMAE_ActualizarEstadoUsuario
+    @usuarioID INT,
+    @estado BIT
+AS
+BEGIN
+    BEGIN TRY
+        BEGIN TRANSACTION
+
+        UPDATE Usuario
+        SET Estado = @estado
+        WHERE UsuarioID = @usuarioID;
+
+        COMMIT TRANSACTION;
+    END TRY
+    BEGIN CATCH
+        IF @@TRANCOUNT > 0
+            ROLLBACK TRANSACTION;
+
+        THROW;
+    END CATCH;
+END;
 
 
 

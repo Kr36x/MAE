@@ -50,7 +50,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
                     new SqlParameter("@Nombre",
                     string.IsNullOrWhiteSpace(txtBuscarDocente.Text) ? (object)DBNull.Value : txtBuscarDocente.Text)
                 };
-                DataTable dt = util.EjecutarSP("spMAE_BuscarDocentesPorGradoSeccionAnio", parametros);
+                DataTable dt = util.EjecutarSPParametros("spMAE_BuscarDocentesPorGradoSeccionAnio", parametros);
                 dgvDocentes.DataSource = dt;
             }
             catch (Exception ex)
@@ -75,7 +75,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
                     new SqlParameter("@Seccion", (object)seccion ?? DBNull.Value)
                 };
 
-                DataTable dt = util.EjecutarSP("spMAE_TraeAsignaturasPorDocenteSeccion", p);
+                DataTable dt = util.EjecutarSPParametros("spMAE_TraeAsignaturasPorDocenteSeccion", p);
 
                 dgvAsignatura.DataSource = dt;
             }
@@ -150,7 +150,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
                     string.IsNullOrWhiteSpace(txtBuscarDocente.Text) ? (object)DBNull.Value : txtBuscarDocente.Text)
             };
 
-                DataTable dt = util.EjecutarSP("spMAE_BuscarDocentesPorGradoSeccionAnio", parametros);
+                DataTable dt = util.EjecutarSPParametros("spMAE_BuscarDocentesPorGradoSeccionAnio", parametros);
                 dgvDocentes.DataSource = dt;
             }
             catch (Exception ex)
@@ -248,7 +248,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
             new SqlParameter("@Seccion", (object)seccion ?? DBNull.Value)
         };
 
-                DataTable dt = util.EjecutarSP("spMAE_CargaAcademicaDocenteSeccion", p);
+                DataTable dt = util.EjecutarSPParametros("spMAE_CargaAcademicaDocenteSeccion", p);
 
                 if (dt != null && dt.Rows.Count > 0)
                 {

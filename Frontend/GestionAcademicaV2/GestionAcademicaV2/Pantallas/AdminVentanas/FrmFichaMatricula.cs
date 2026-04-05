@@ -28,7 +28,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
                 {
                     new SqlParameter("@EstudianteID", estudianteID)
                 };
-                DataTable dt = util.EjecutarSP("spMAE_DetalleEstudianteCompleto", p);
+                DataTable dt = util.EjecutarSPParametros("spMAE_DetalleEstudianteCompleto", p);
                 if (dt.Rows.Count > 0)
                 {
                     txtNombreEstudiante.Text = dt.Rows[0]["NombreEstudiante"].ToString();
