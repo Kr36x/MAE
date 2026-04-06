@@ -91,7 +91,7 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
                 inner join Seccion S on CA.SeccionID = S.SeccionID
                 inner join Grado G on S.GradoID = G.GradoID
                 inner join Docente D on CA.DocenteID = D.DocenteID
-                where D.UsuarioID = 4
+                where D.UsuarioID = @Docente
                 order by OrdenGrado;", cn))
             {
                 cmd.Parameters.AddWithValue("@Docente", docenteId);
