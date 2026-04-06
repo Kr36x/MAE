@@ -157,7 +157,7 @@ namespace GestionAcademicaV2.Pantallas
 
         private void btnReunion_Click(object sender, EventArgs e)
         {
-            AbrirFormularioEnPanel(new FrmGestionReuniones());
+            AbrirFormularioEnPanel(new FrmGestionVinculacionTutores());
         }
     }
 }

@@ -28,230 +28,329 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges27 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges28 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmVincularEstudiante));
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            ctnVinculo = new Guna.UI2.WinForms.Guna2ContainerControl();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges37 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges38 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges27 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges28 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges29 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges30 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges31 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges32 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges35 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges36 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges33 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges34 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
+            guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            btnInfo = new Guna.UI2.WinForms.Guna2CircleButton();
             guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            btInformacionVinculacion = new Guna.UI2.WinForms.Guna2PictureBox();
-            lbBuscarVinculo = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            cbbBuscarVinculo = new Guna.UI2.WinForms.Guna2ComboBox();
-            btBuscarVinculo = new Guna.UI2.WinForms.Guna2Button();
-            lbParentescoVinculo = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            cbbParentescoVinculo = new Guna.UI2.WinForms.Guna2ComboBox();
-            btVincularVinculo = new Guna.UI2.WinForms.Guna2Button();
-            btCancelarVinculo = new Guna.UI2.WinForms.Guna2Button();
-            ctnVinculo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)btInformacionVinculacion).BeginInit();
+            guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            cbParentesco = new Guna.UI2.WinForms.Guna2ComboBox();
+            btnVincular = new Guna.UI2.WinForms.Guna2Button();
+            txtAsignatura = new Guna.UI2.WinForms.Guna2TextBox();
+            btnCancelar = new Guna.UI2.WinForms.Guna2Button();
+            guna2Panel7 = new Guna.UI2.WinForms.Guna2Panel();
+            btnBuscar2 = new Guna.UI2.WinForms.Guna2Button();
+            guna2HtmlLabel6 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            guna2HtmlLabel7 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            guna2Panel2.SuspendLayout();
+            guna2Panel1.SuspendLayout();
+            guna2Panel7.SuspendLayout();
             SuspendLayout();
             // 
-            // ctnVinculo
+            // guna2Panel3
             // 
-            ctnVinculo.BorderColor = Color.Gray;
-            ctnVinculo.BorderRadius = 30;
-            ctnVinculo.BorderThickness = 2;
-            ctnVinculo.Controls.Add(btCancelarVinculo);
-            ctnVinculo.Controls.Add(btVincularVinculo);
-            ctnVinculo.Controls.Add(cbbParentescoVinculo);
-            ctnVinculo.Controls.Add(lbParentescoVinculo);
-            ctnVinculo.Controls.Add(btBuscarVinculo);
-            ctnVinculo.Controls.Add(cbbBuscarVinculo);
-            ctnVinculo.Controls.Add(lbBuscarVinculo);
-            ctnVinculo.Controls.Add(btInformacionVinculacion);
-            ctnVinculo.Controls.Add(guna2HtmlLabel1);
-            ctnVinculo.CustomizableEdges = customizableEdges27;
-            ctnVinculo.Location = new Point(28, 28);
-            ctnVinculo.Name = "ctnVinculo";
-            ctnVinculo.ShadowDecoration.CustomizableEdges = customizableEdges28;
-            ctnVinculo.Size = new Size(534, 244);
-            ctnVinculo.TabIndex = 0;
-            ctnVinculo.Text = "guna2ContainerControl1";
+            guna2Panel3.BackColor = Color.Transparent;
+            guna2Panel3.BorderColor = Color.FromArgb(16, 57, 129);
+            guna2Panel3.BorderThickness = 2;
+            guna2Panel3.CustomizableEdges = customizableEdges20;
+            guna2Panel3.FillColor = Color.FromArgb(16, 57, 129);
+            guna2Panel3.Location = new Point(12, 52);
+            guna2Panel3.Name = "guna2Panel3";
+            guna2Panel3.ShadowDecoration.CustomizableEdges = customizableEdges21;
+            guna2Panel3.Size = new Size(577, 16);
+            guna2Panel3.TabIndex = 31;
+            // 
+            // guna2Panel2
+            // 
+            guna2Panel2.BackColor = Color.Transparent;
+            guna2Panel2.BorderColor = Color.FromArgb(16, 57, 129);
+            guna2Panel2.BorderRadius = 7;
+            guna2Panel2.BorderThickness = 1;
+            guna2Panel2.Controls.Add(btnInfo);
+            guna2Panel2.Controls.Add(guna2HtmlLabel1);
+            guna2Panel2.CustomizableEdges = customizableEdges23;
+            guna2Panel2.FillColor = Color.FromArgb(16, 57, 129);
+            guna2Panel2.Location = new Point(12, 22);
+            guna2Panel2.Name = "guna2Panel2";
+            guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges24;
+            guna2Panel2.Size = new Size(577, 43);
+            guna2Panel2.TabIndex = 30;
+            // 
+            // btnInfo
+            // 
+            btnInfo.BackgroundImage = Properties.Resources.info_white;
+            btnInfo.BackgroundImageLayout = ImageLayout.Zoom;
+            btnInfo.DisabledState.BorderColor = Color.DarkGray;
+            btnInfo.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnInfo.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnInfo.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnInfo.FillColor = Color.Transparent;
+            btnInfo.Font = new Font("Segoe UI", 9F);
+            btnInfo.ForeColor = Color.White;
+            btnInfo.Location = new Point(448, 13);
+            btnInfo.Name = "btnInfo";
+            btnInfo.ShadowDecoration.CustomizableEdges = customizableEdges22;
+            btnInfo.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            btnInfo.Size = new Size(15, 15);
+            btnInfo.TabIndex = 25;
+            btnInfo.Text = "guna2CircleButton1";
             // 
             // guna2HtmlLabel1
             // 
-            guna2HtmlLabel1.AutoSize = false;
-            guna2HtmlLabel1.BackColor = SystemColors.HotTrack;
-            guna2HtmlLabel1.BorderStyle = BorderStyle.Fixed3D;
-            guna2HtmlLabel1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            guna2HtmlLabel1.BackColor = Color.Transparent;
+            guna2HtmlLabel1.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             guna2HtmlLabel1.ForeColor = Color.White;
-            guna2HtmlLabel1.Location = new Point(0, 0);
+            guna2HtmlLabel1.Location = new Point(143, 6);
             guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            guna2HtmlLabel1.Size = new Size(534, 31);
+            guna2HtmlLabel1.Size = new Size(303, 27);
             guna2HtmlLabel1.TabIndex = 0;
             guna2HtmlLabel1.Text = "VINCULAR ESTUDIANTE A TUTOR";
-            guna2HtmlLabel1.TextAlignment = ContentAlignment.TopCenter;
             // 
-            // btInformacionVinculacion
+            // guna2Panel1
             // 
-            btInformacionVinculacion.BackColor = SystemColors.HotTrack;
-            btInformacionVinculacion.CustomizableEdges = customizableEdges25;
-            btInformacionVinculacion.Image = (Image)resources.GetObject("btInformacionVinculacion.Image");
-            btInformacionVinculacion.ImageRotate = 0F;
-            btInformacionVinculacion.Location = new Point(400, 5);
-            btInformacionVinculacion.Name = "btInformacionVinculacion";
-            btInformacionVinculacion.ShadowDecoration.CustomizableEdges = customizableEdges26;
-            btInformacionVinculacion.Size = new Size(25, 18);
-            btInformacionVinculacion.SizeMode = PictureBoxSizeMode.StretchImage;
-            btInformacionVinculacion.TabIndex = 111;
-            btInformacionVinculacion.TabStop = false;
+            guna2Panel1.BorderColor = Color.FromArgb(217, 217, 217);
+            guna2Panel1.BorderRadius = 7;
+            guna2Panel1.BorderThickness = 2;
+            guna2Panel1.Controls.Add(guna2HtmlLabel4);
+            guna2Panel1.Controls.Add(guna2HtmlLabel5);
+            guna2Panel1.Controls.Add(guna2HtmlLabel3);
+            guna2Panel1.Controls.Add(cbParentesco);
+            guna2Panel1.Controls.Add(btnVincular);
+            guna2Panel1.Controls.Add(txtAsignatura);
+            guna2Panel1.Controls.Add(btnCancelar);
+            guna2Panel1.Controls.Add(guna2Panel7);
+            guna2Panel1.Controls.Add(guna2HtmlLabel7);
+            guna2Panel1.CustomBorderColor = Color.FromArgb(217, 217, 217);
+            guna2Panel1.CustomizableEdges = customizableEdges37;
+            guna2Panel1.Location = new Point(12, 60);
+            guna2Panel1.Name = "guna2Panel1";
+            guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges38;
+            guna2Panel1.Size = new Size(577, 259);
+            guna2Panel1.TabIndex = 29;
             // 
-            // lbBuscarVinculo
+            // guna2HtmlLabel4
             // 
-            lbBuscarVinculo.BackColor = Color.Transparent;
-            lbBuscarVinculo.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbBuscarVinculo.Location = new Point(30, 51);
-            lbBuscarVinculo.Name = "lbBuscarVinculo";
-            lbBuscarVinculo.Size = new Size(242, 17);
-            lbBuscarVinculo.TabIndex = 112;
-            lbBuscarVinculo.Text = "BÚSQUEDA POR NOMBRE DE ESTUDIANTE";
+            guna2HtmlLabel4.BackColor = Color.Transparent;
+            guna2HtmlLabel4.Font = new Font("Segoe UI", 7F);
+            guna2HtmlLabel4.ForeColor = Color.FromArgb(166, 163, 163);
+            guna2HtmlLabel4.Location = new Point(14, 163);
+            guna2HtmlLabel4.Name = "guna2HtmlLabel4";
+            guna2HtmlLabel4.Size = new Size(237, 14);
+            guna2HtmlLabel4.TabIndex = 29;
+            guna2HtmlLabel4.Text = "SELECCIONE EL ÁREA PEDAGÓGICA A LA QUE PERTENECE";
             // 
-            // cbbBuscarVinculo
+            // guna2HtmlLabel5
             // 
-            cbbBuscarVinculo.BackColor = Color.Transparent;
-            cbbBuscarVinculo.BorderColor = Color.Black;
-            cbbBuscarVinculo.BorderRadius = 10;
-            cbbBuscarVinculo.CustomizableEdges = customizableEdges23;
-            cbbBuscarVinculo.DrawMode = DrawMode.OwnerDrawFixed;
-            cbbBuscarVinculo.DropDownStyle = ComboBoxStyle.DropDownList;
-            cbbBuscarVinculo.FocusedColor = Color.FromArgb(94, 148, 255);
-            cbbBuscarVinculo.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            cbbBuscarVinculo.Font = new Font("Segoe UI", 10F);
-            cbbBuscarVinculo.ForeColor = Color.FromArgb(68, 88, 112);
-            cbbBuscarVinculo.ItemHeight = 30;
-            cbbBuscarVinculo.Location = new Point(30, 74);
-            cbbBuscarVinculo.Name = "cbbBuscarVinculo";
-            cbbBuscarVinculo.ShadowDecoration.CustomizableEdges = customizableEdges24;
-            cbbBuscarVinculo.Size = new Size(418, 36);
-            cbbBuscarVinculo.TabIndex = 113;
+            guna2HtmlLabel5.BackColor = Color.Transparent;
+            guna2HtmlLabel5.Font = new Font("Segoe UI", 7F);
+            guna2HtmlLabel5.ForeColor = Color.FromArgb(166, 163, 163);
+            guna2HtmlLabel5.Location = new Point(14, 76);
+            guna2HtmlLabel5.Name = "guna2HtmlLabel5";
+            guna2HtmlLabel5.Size = new Size(145, 14);
+            guna2HtmlLabel5.TabIndex = 28;
+            guna2HtmlLabel5.Text = "INGRESE EL NOMBRE DEL ALUMNO";
             // 
-            // btBuscarVinculo
+            // guna2HtmlLabel3
             // 
-            btBuscarVinculo.BorderRadius = 10;
-            btBuscarVinculo.BorderThickness = 1;
-            btBuscarVinculo.CustomizableEdges = customizableEdges21;
-            btBuscarVinculo.DisabledState.BorderColor = Color.DarkGray;
-            btBuscarVinculo.DisabledState.CustomBorderColor = Color.DarkGray;
-            btBuscarVinculo.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btBuscarVinculo.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btBuscarVinculo.FillColor = SystemColors.HotTrack;
-            btBuscarVinculo.Font = new Font("Segoe UI", 9F);
-            btBuscarVinculo.ForeColor = Color.White;
-            btBuscarVinculo.Image = (Image)resources.GetObject("btBuscarVinculo.Image");
-            btBuscarVinculo.Location = new Point(454, 74);
-            btBuscarVinculo.Name = "btBuscarVinculo";
-            btBuscarVinculo.ShadowDecoration.CustomizableEdges = customizableEdges22;
-            btBuscarVinculo.Size = new Size(50, 36);
-            btBuscarVinculo.TabIndex = 114;
+            guna2HtmlLabel3.BackColor = Color.Transparent;
+            guna2HtmlLabel3.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            guna2HtmlLabel3.Location = new Point(14, 99);
+            guna2HtmlLabel3.Name = "guna2HtmlLabel3";
+            guna2HtmlLabel3.Size = new Size(85, 19);
+            guna2HtmlLabel3.TabIndex = 24;
+            guna2HtmlLabel3.Text = "PARENTESCO";
             // 
-            // lbParentescoVinculo
+            // cbParentesco
             // 
-            lbParentescoVinculo.BackColor = Color.Transparent;
-            lbParentescoVinculo.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbParentescoVinculo.Location = new Point(30, 116);
-            lbParentescoVinculo.Name = "lbParentescoVinculo";
-            lbParentescoVinculo.Size = new Size(77, 17);
-            lbParentescoVinculo.TabIndex = 115;
-            lbParentescoVinculo.Text = "PARENTESCO";
+            cbParentesco.BackColor = Color.Transparent;
+            cbParentesco.CustomizableEdges = customizableEdges25;
+            cbParentesco.DrawMode = DrawMode.OwnerDrawFixed;
+            cbParentesco.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbParentesco.FocusedColor = Color.FromArgb(94, 148, 255);
+            cbParentesco.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            cbParentesco.Font = new Font("Segoe UI", 10F);
+            cbParentesco.ForeColor = Color.FromArgb(68, 88, 112);
+            cbParentesco.ItemHeight = 27;
+            cbParentesco.Location = new Point(14, 124);
+            cbParentesco.Name = "cbParentesco";
+            cbParentesco.ShadowDecoration.CustomizableEdges = customizableEdges26;
+            cbParentesco.Size = new Size(236, 33);
+            cbParentesco.TabIndex = 23;
             // 
-            // cbbParentescoVinculo
+            // btnVincular
             // 
-            cbbParentescoVinculo.BackColor = Color.Transparent;
-            cbbParentescoVinculo.BorderColor = Color.Black;
-            cbbParentescoVinculo.BorderRadius = 10;
-            cbbParentescoVinculo.CustomizableEdges = customizableEdges19;
-            cbbParentescoVinculo.DrawMode = DrawMode.OwnerDrawFixed;
-            cbbParentescoVinculo.DropDownStyle = ComboBoxStyle.DropDownList;
-            cbbParentescoVinculo.FocusedColor = Color.FromArgb(94, 148, 255);
-            cbbParentescoVinculo.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            cbbParentescoVinculo.Font = new Font("Segoe UI", 10F);
-            cbbParentescoVinculo.ForeColor = Color.FromArgb(68, 88, 112);
-            cbbParentescoVinculo.ItemHeight = 30;
-            cbbParentescoVinculo.Location = new Point(30, 139);
-            cbbParentescoVinculo.Name = "cbbParentescoVinculo";
-            cbbParentescoVinculo.ShadowDecoration.CustomizableEdges = customizableEdges20;
-            cbbParentescoVinculo.Size = new Size(418, 36);
-            cbbParentescoVinculo.TabIndex = 116;
+            btnVincular.BorderRadius = 3;
+            btnVincular.CustomizableEdges = customizableEdges27;
+            btnVincular.DisabledState.BorderColor = Color.DarkGray;
+            btnVincular.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnVincular.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnVincular.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnVincular.FillColor = Color.FromArgb(16, 57, 129);
+            btnVincular.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnVincular.ForeColor = Color.White;
+            btnVincular.Location = new Point(461, 210);
+            btnVincular.Name = "btnVincular";
+            btnVincular.ShadowDecoration.CustomizableEdges = customizableEdges28;
+            btnVincular.Size = new Size(96, 26);
+            btnVincular.TabIndex = 22;
+            btnVincular.Text = "VINCULAR";
             // 
-            // btVincularVinculo
+            // txtAsignatura
             // 
-            btVincularVinculo.BorderRadius = 10;
-            btVincularVinculo.BorderThickness = 1;
-            btVincularVinculo.CustomizableEdges = customizableEdges17;
-            btVincularVinculo.DisabledState.BorderColor = Color.DarkGray;
-            btVincularVinculo.DisabledState.CustomBorderColor = Color.DarkGray;
-            btVincularVinculo.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btVincularVinculo.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btVincularVinculo.FillColor = SystemColors.HotTrack;
-            btVincularVinculo.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btVincularVinculo.ForeColor = Color.White;
-            btVincularVinculo.Image = (Image)resources.GetObject("btVincularVinculo.Image");
-            btVincularVinculo.Location = new Point(380, 186);
-            btVincularVinculo.Name = "btVincularVinculo";
-            btVincularVinculo.ShadowDecoration.CustomizableEdges = customizableEdges18;
-            btVincularVinculo.Size = new Size(124, 36);
-            btVincularVinculo.TabIndex = 117;
-            btVincularVinculo.Text = "VINCULAR";
+            txtAsignatura.BorderRadius = 3;
+            txtAsignatura.CustomizableEdges = customizableEdges29;
+            txtAsignatura.DefaultText = "";
+            txtAsignatura.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            txtAsignatura.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            txtAsignatura.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            txtAsignatura.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            txtAsignatura.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtAsignatura.Font = new Font("Segoe UI", 9F);
+            txtAsignatura.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtAsignatura.Location = new Point(14, 39);
+            txtAsignatura.MaxLength = 255;
+            txtAsignatura.Name = "txtAsignatura";
+            txtAsignatura.PlaceholderText = "EJ: CIENCIAS NATURALES / SCIENCE";
+            txtAsignatura.SelectedText = "";
+            txtAsignatura.ShadowDecoration.CustomizableEdges = customizableEdges30;
+            txtAsignatura.Size = new Size(543, 34);
+            txtAsignatura.TabIndex = 21;
             // 
-            // btCancelarVinculo
+            // btnCancelar
             // 
-            btCancelarVinculo.BorderRadius = 10;
-            btCancelarVinculo.BorderThickness = 1;
-            btCancelarVinculo.CustomizableEdges = customizableEdges15;
-            btCancelarVinculo.DisabledState.BorderColor = Color.DarkGray;
-            btCancelarVinculo.DisabledState.CustomBorderColor = Color.DarkGray;
-            btCancelarVinculo.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btCancelarVinculo.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btCancelarVinculo.FillColor = Color.Gray;
-            btCancelarVinculo.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btCancelarVinculo.ForeColor = Color.White;
-            btCancelarVinculo.Image = (Image)resources.GetObject("btCancelarVinculo.Image");
-            btCancelarVinculo.Location = new Point(250, 186);
-            btCancelarVinculo.Name = "btCancelarVinculo";
-            btCancelarVinculo.ShadowDecoration.CustomizableEdges = customizableEdges16;
-            btCancelarVinculo.Size = new Size(124, 36);
-            btCancelarVinculo.TabIndex = 118;
-            btCancelarVinculo.Text = "CANCELAR";
+            btnCancelar.BorderRadius = 3;
+            btnCancelar.CustomizableEdges = customizableEdges31;
+            btnCancelar.DisabledState.BorderColor = Color.DarkGray;
+            btnCancelar.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnCancelar.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnCancelar.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnCancelar.FillColor = Color.FromArgb(130, 124, 124);
+            btnCancelar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnCancelar.ForeColor = Color.White;
+            btnCancelar.Location = new Point(355, 210);
+            btnCancelar.Name = "btnCancelar";
+            btnCancelar.ShadowDecoration.CustomizableEdges = customizableEdges32;
+            btnCancelar.Size = new Size(91, 26);
+            btnCancelar.TabIndex = 20;
+            btnCancelar.Text = "CANCELAR";
+            // 
+            // guna2Panel7
+            // 
+            guna2Panel7.BackColor = Color.Transparent;
+            guna2Panel7.BorderColor = Color.DarkGray;
+            guna2Panel7.BorderRadius = 3;
+            guna2Panel7.BorderThickness = 1;
+            guna2Panel7.Controls.Add(btnBuscar2);
+            guna2Panel7.Controls.Add(guna2HtmlLabel6);
+            guna2Panel7.CustomizableEdges = customizableEdges35;
+            guna2Panel7.FillColor = Color.FromArgb(1, 102, 1);
+            guna2Panel7.Location = new Point(904, 91);
+            guna2Panel7.Name = "guna2Panel7";
+            guna2Panel7.ShadowDecoration.CustomizableEdges = customizableEdges36;
+            guna2Panel7.Size = new Size(20, 20);
+            guna2Panel7.TabIndex = 19;
+            // 
+            // btnBuscar2
+            // 
+            btnBuscar2.BackColor = Color.Transparent;
+            btnBuscar2.BackgroundImage = Properties.Resources.black_lupa;
+            btnBuscar2.BackgroundImageLayout = ImageLayout.Zoom;
+            btnBuscar2.BorderColor = Color.Transparent;
+            btnBuscar2.CustomizableEdges = customizableEdges33;
+            btnBuscar2.DisabledState.BorderColor = Color.DarkGray;
+            btnBuscar2.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnBuscar2.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnBuscar2.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnBuscar2.FillColor = Color.Transparent;
+            btnBuscar2.Font = new Font("Segoe UI", 9F);
+            btnBuscar2.ForeColor = Color.Transparent;
+            btnBuscar2.Location = new Point(4, 4);
+            btnBuscar2.Name = "btnBuscar2";
+            btnBuscar2.ShadowDecoration.CustomizableEdges = customizableEdges34;
+            btnBuscar2.Size = new Size(12, 12);
+            btnBuscar2.TabIndex = 20;
+            // 
+            // guna2HtmlLabel6
+            // 
+            guna2HtmlLabel6.BackColor = Color.Transparent;
+            guna2HtmlLabel6.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            guna2HtmlLabel6.ForeColor = Color.White;
+            guna2HtmlLabel6.Location = new Point(415, 8);
+            guna2HtmlLabel6.Name = "guna2HtmlLabel6";
+            guna2HtmlLabel6.Size = new Size(71, 19);
+            guna2HtmlLabel6.TabIndex = 0;
+            guna2HtmlLabel6.Text = "DICIEMBRE";
+            // 
+            // guna2HtmlLabel7
+            // 
+            guna2HtmlLabel7.BackColor = Color.Transparent;
+            guna2HtmlLabel7.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            guna2HtmlLabel7.Location = new Point(14, 14);
+            guna2HtmlLabel7.Name = "guna2HtmlLabel7";
+            guna2HtmlLabel7.Size = new Size(85, 19);
+            guna2HtmlLabel7.TabIndex = 1;
+            guna2HtmlLabel7.Text = "ASIGNATURA";
             // 
             // FrmVincularEstudiante
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(588, 298);
-            Controls.Add(ctnVinculo);
+            ClientSize = new Size(600, 341);
+            Controls.Add(guna2Panel3);
+            Controls.Add(guna2Panel2);
+            Controls.Add(guna2Panel1);
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Name = "FrmVincularEstudiante";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Vinculación de Estudiante";
-            ctnVinculo.ResumeLayout(false);
-            ctnVinculo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)btInformacionVinculacion).EndInit();
+            guna2Panel2.ResumeLayout(false);
+            guna2Panel2.PerformLayout();
+            guna2Panel1.ResumeLayout(false);
+            guna2Panel1.PerformLayout();
+            guna2Panel7.ResumeLayout(false);
+            guna2Panel7.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private Guna.UI2.WinForms.Guna2ContainerControl ctnVinculo;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
+        private Guna.UI2.WinForms.Guna2CircleButton btnInfo;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
-        private Guna.UI2.WinForms.Guna2PictureBox btInformacionVinculacion;
-        private Guna.UI2.WinForms.Guna2Button btBuscarVinculo;
-        private Guna.UI2.WinForms.Guna2ComboBox cbbBuscarVinculo;
-        private Guna.UI2.WinForms.Guna2HtmlLabel lbBuscarVinculo;
-        private Guna.UI2.WinForms.Guna2Button btVincularVinculo;
-        private Guna.UI2.WinForms.Guna2ComboBox cbbParentescoVinculo;
-        private Guna.UI2.WinForms.Guna2HtmlLabel lbParentescoVinculo;
-        private Guna.UI2.WinForms.Guna2Button btCancelarVinculo;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel4;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel5;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
+        private Guna.UI2.WinForms.Guna2ComboBox cbParentesco;
+        private Guna.UI2.WinForms.Guna2Button btnVincular;
+        private Guna.UI2.WinForms.Guna2TextBox txtAsignatura;
+        private Guna.UI2.WinForms.Guna2Button btnCancelar;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel7;
+        private Guna.UI2.WinForms.Guna2Button btnBuscar2;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel6;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel7;
     }
 }
