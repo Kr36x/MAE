@@ -13,6 +13,9 @@
     <Compile Update="Pantallas\AdminVentanas\FrmEditarTutor.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Pantallas\AdminVentanas\FrmGestionGrado.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Pantallas\AdminVentanas\FrmGestionReuniones.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -32,6 +35,12 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Pantallas\AdminVentanas\FrmNuevaAsignatura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Pantallas\AdminVentanas\FrmNuevaSeccion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Pantallas\AdminVentanas\FrmNuevoGrado.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Pantallas\AdminVentanas\FrmNuevoGradoSeccion.cs">
