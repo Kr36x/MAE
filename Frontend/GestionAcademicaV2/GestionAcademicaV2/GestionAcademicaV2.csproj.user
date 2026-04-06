@@ -10,6 +10,9 @@
     <Compile Update="Pantallas\AdminVentanas\FrmActaReunion.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Pantallas\AdminVentanas\FrmEditarTutor.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Pantallas\AdminVentanas\FrmGestionReuniones.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -52,7 +55,7 @@
     <Compile Update="Pantallas\AdminVentanas\ReporteDocentes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Pantallas\AdminVentanas\ReporteTutores.cs">
+    <Compile Update="Pantallas\AdminVentanas\FrmGestionVinculacionTutores.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Pantallas\DocenteVentanas\FrmBoletaPrebasica.cs">
