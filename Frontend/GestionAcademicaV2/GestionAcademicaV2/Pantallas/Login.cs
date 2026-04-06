@@ -219,5 +219,11 @@ namespace GestionAcademicaV2.Pantallas
                 MessageBox.Show("Error al iniciar sesión: " + ex.Message);
             }
         }
+
+        public void LimpiarCampos()
+        {
+            txtUsuario.Text = "";
+            txtContrasenia.Text = "";
+        }
     }
 }
