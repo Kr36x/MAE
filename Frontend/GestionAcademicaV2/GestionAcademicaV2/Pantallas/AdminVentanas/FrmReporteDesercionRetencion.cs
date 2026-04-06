@@ -65,7 +65,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
                         .FirstOrDefault() as Guna.UI2.WinForms.Guna2HtmlLabel;
 
                     if (lblNombre != null) lblNombre.Text = row["Nombre"].ToString();
-                    if (lblPromedio != null) lblPromedio.Text = row["PromedioParcial"].ToString() + "%";
+                    if (lblPromedio != null) lblPromedio.Text = row["PromedioAnual"].ToString() + "%";
                     if (lblGrado != null) lblGrado.Text = row["Grado"].ToString();
                     if (lblSeccion != null) lblSeccion.Text = row["Seccion"].ToString();
                 }

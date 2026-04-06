@@ -28,30 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle11 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle17 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle18 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle12 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle13 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle14 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle15 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle16 = new DataGridViewCellStyle();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmEstudiantes));
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges27 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges28 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2ContainerControl1 = new Guna.UI2.WinForms.Guna2ContainerControl();
             dgvEstudiantes = new Guna.UI2.WinForms.Guna2DataGridView();
             EstudianteID = new DataGridViewTextBoxColumn();
@@ -65,7 +62,6 @@
             guna2HtmlLabel6 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             cbbGrado = new Guna.UI2.WinForms.Guna2ComboBox();
             guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            btBuscarEstudiante = new Guna.UI2.WinForms.Guna2Button();
             txtBuscarEstudiante = new Guna.UI2.WinForms.Guna2TextBox();
             guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
@@ -85,50 +81,50 @@
             guna2ContainerControl1.BorderRadius = 20;
             guna2ContainerControl1.BorderThickness = 2;
             guna2ContainerControl1.Controls.Add(dgvEstudiantes);
-            guna2ContainerControl1.CustomizableEdges = customizableEdges15;
+            guna2ContainerControl1.CustomizableEdges = customizableEdges1;
             guna2ContainerControl1.Location = new Point(46, 216);
             guna2ContainerControl1.Name = "guna2ContainerControl1";
-            guna2ContainerControl1.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            guna2ContainerControl1.ShadowDecoration.CustomizableEdges = customizableEdges2;
             guna2ContainerControl1.Size = new Size(943, 434);
             guna2ContainerControl1.TabIndex = 0;
             guna2ContainerControl1.Text = "guna2ContainerControl1";
             // 
             // dgvEstudiantes
             // 
-            dataGridViewCellStyle10.BackColor = Color.White;
-            dgvEstudiantes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle1.BackColor = Color.White;
+            dgvEstudiantes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dgvEstudiantes.BorderStyle = BorderStyle.Fixed3D;
-            dataGridViewCellStyle11.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle11.BackColor = SystemColors.HotTrack;
-            dataGridViewCellStyle11.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle11.ForeColor = Color.White;
-            dataGridViewCellStyle11.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = DataGridViewTriState.True;
-            dgvEstudiantes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = SystemColors.HotTrack;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dgvEstudiantes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dgvEstudiantes.ColumnHeadersHeight = 30;
             dgvEstudiantes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dgvEstudiantes.Columns.AddRange(new DataGridViewColumn[] { EstudianteID, NombreEstudiante, NombreGrado, Nivel, AnioAcademico });
-            dataGridViewCellStyle17.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle17.BackColor = Color.White;
-            dataGridViewCellStyle17.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle17.ForeColor = Color.FromArgb(71, 69, 94);
-            dataGridViewCellStyle17.SelectionBackColor = Color.FromArgb(231, 229, 255);
-            dataGridViewCellStyle17.SelectionForeColor = Color.FromArgb(71, 69, 94);
-            dataGridViewCellStyle17.WrapMode = DataGridViewTriState.False;
-            dgvEstudiantes.DefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = Color.White;
+            dataGridViewCellStyle8.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle8.ForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle8.SelectionBackColor = Color.FromArgb(231, 229, 255);
+            dataGridViewCellStyle8.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.False;
+            dgvEstudiantes.DefaultCellStyle = dataGridViewCellStyle8;
             dgvEstudiantes.GridColor = Color.FromArgb(231, 229, 255);
             dgvEstudiantes.Location = new Point(28, 22);
             dgvEstudiantes.Name = "dgvEstudiantes";
             dgvEstudiantes.ReadOnly = true;
-            dataGridViewCellStyle18.Alignment = DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle18.BackColor = SystemColors.Control;
-            dataGridViewCellStyle18.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle18.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle18.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle18.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle18.WrapMode = DataGridViewTriState.True;
-            dgvEstudiantes.RowHeadersDefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle9.BackColor = SystemColors.Control;
+            dataGridViewCellStyle9.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle9.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = DataGridViewTriState.True;
+            dgvEstudiantes.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             dgvEstudiantes.RowHeadersVisible = false;
             dgvEstudiantes.RowTemplate.Height = 30;
             dgvEstudiantes.Size = new Size(891, 387);
@@ -154,6 +150,7 @@
             dgvEstudiantes.ThemeStyle.RowsStyle.Height = 30;
             dgvEstudiantes.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
             dgvEstudiantes.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            dgvEstudiantes.CellClick += dgvEstudiantes_CellClick;
             dgvEstudiantes.CellDoubleClick += dgvEstudiantes_CellDoubleClick;
             dgvEstudiantes.CellPainting += dgvEstudiantes_CellPainting;
             dgvEstudiantes.DoubleClick += dgvEstudiantes_DoubleClick;
@@ -162,8 +159,8 @@
             // 
             EstudianteID.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
             EstudianteID.DataPropertyName = "EstudianteID";
-            dataGridViewCellStyle12.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            EstudianteID.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            EstudianteID.DefaultCellStyle = dataGridViewCellStyle3;
             EstudianteID.FillWeight = 7.347893F;
             EstudianteID.HeaderText = "ID";
             EstudianteID.Name = "EstudianteID";
@@ -174,8 +171,8 @@
             // 
             NombreEstudiante.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             NombreEstudiante.DataPropertyName = "NombreEstudiante";
-            dataGridViewCellStyle13.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            NombreEstudiante.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            NombreEstudiante.DefaultCellStyle = dataGridViewCellStyle4;
             NombreEstudiante.FillWeight = 523.857849F;
             NombreEstudiante.HeaderText = "ESTUDIANTE";
             NombreEstudiante.Name = "NombreEstudiante";
@@ -185,8 +182,8 @@
             // 
             NombreGrado.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
             NombreGrado.DataPropertyName = "NombreGrado";
-            dataGridViewCellStyle14.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            NombreGrado.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            NombreGrado.DefaultCellStyle = dataGridViewCellStyle5;
             NombreGrado.FillWeight = 20.2669716F;
             NombreGrado.HeaderText = "GRADO";
             NombreGrado.Name = "NombreGrado";
@@ -197,8 +194,8 @@
             // 
             Nivel.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
             Nivel.DataPropertyName = "Nivel";
-            dataGridViewCellStyle15.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            Nivel.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            Nivel.DefaultCellStyle = dataGridViewCellStyle6;
             Nivel.FillWeight = 32.12924F;
             Nivel.HeaderText = "NIVEL";
             Nivel.Name = "Nivel";
@@ -209,8 +206,8 @@
             // 
             AnioAcademico.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
             AnioAcademico.DataPropertyName = "AnioAcademico";
-            dataGridViewCellStyle16.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            AnioAcademico.DefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            AnioAcademico.DefaultCellStyle = dataGridViewCellStyle7;
             AnioAcademico.FillWeight = 8.851541F;
             AnioAcademico.HeaderText = "AÑO ACADÉMICO";
             AnioAcademico.Name = "AnioAcademico";
@@ -227,13 +224,12 @@
             guna2ContainerControl2.Controls.Add(guna2HtmlLabel6);
             guna2ContainerControl2.Controls.Add(cbbGrado);
             guna2ContainerControl2.Controls.Add(guna2HtmlLabel5);
-            guna2ContainerControl2.Controls.Add(btBuscarEstudiante);
             guna2ContainerControl2.Controls.Add(txtBuscarEstudiante);
             guna2ContainerControl2.Controls.Add(guna2HtmlLabel4);
-            guna2ContainerControl2.CustomizableEdges = customizableEdges25;
+            guna2ContainerControl2.CustomizableEdges = customizableEdges9;
             guna2ContainerControl2.Location = new Point(46, 106);
             guna2ContainerControl2.Name = "guna2ContainerControl2";
-            guna2ContainerControl2.ShadowDecoration.CustomizableEdges = customizableEdges26;
+            guna2ContainerControl2.ShadowDecoration.CustomizableEdges = customizableEdges10;
             guna2ContainerControl2.Size = new Size(943, 104);
             guna2ContainerControl2.TabIndex = 1;
             guna2ContainerControl2.Text = "guna2ContainerControl2";
@@ -245,7 +241,7 @@
             dtpAnio.BorderThickness = 1;
             dtpAnio.Checked = true;
             dtpAnio.CustomFormat = "yyyy";
-            dtpAnio.CustomizableEdges = customizableEdges17;
+            dtpAnio.CustomizableEdges = customizableEdges3;
             dtpAnio.FillColor = Color.Silver;
             dtpAnio.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             dtpAnio.Format = DateTimePickerFormat.Custom;
@@ -253,12 +249,12 @@
             dtpAnio.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
             dtpAnio.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
             dtpAnio.Name = "dtpAnio";
-            dtpAnio.ShadowDecoration.CustomizableEdges = customizableEdges18;
+            dtpAnio.ShadowDecoration.CustomizableEdges = customizableEdges4;
             dtpAnio.ShowUpDown = true;
             dtpAnio.Size = new Size(217, 36);
             dtpAnio.TabIndex = 7;
             dtpAnio.TextAlign = HorizontalAlignment.Center;
-            dtpAnio.Value = new DateTime(2026, 3, 21, 0, 54, 48, 384);
+            dtpAnio.Value = new DateTime(2025, 3, 21, 0, 54, 0, 0);
             dtpAnio.ValueChanged += dtpAnio_ValueChanged;
             // 
             // guna2HtmlLabel7
@@ -287,7 +283,7 @@
             cbbGrado.BackColor = Color.Transparent;
             cbbGrado.BorderColor = Color.Black;
             cbbGrado.BorderRadius = 10;
-            cbbGrado.CustomizableEdges = customizableEdges19;
+            cbbGrado.CustomizableEdges = customizableEdges5;
             cbbGrado.DrawMode = DrawMode.OwnerDrawFixed;
             cbbGrado.DropDownStyle = ComboBoxStyle.DropDownList;
             cbbGrado.FocusedColor = Color.FromArgb(94, 148, 255);
@@ -297,7 +293,7 @@
             cbbGrado.ItemHeight = 30;
             cbbGrado.Location = new Point(28, 56);
             cbbGrado.Name = "cbbGrado";
-            cbbGrado.ShadowDecoration.CustomizableEdges = customizableEdges20;
+            cbbGrado.ShadowDecoration.CustomizableEdges = customizableEdges6;
             cbbGrado.Size = new Size(207, 36);
             cbbGrado.TabIndex = 4;
             cbbGrado.SelectedIndexChanged += cbbGrado_SelectedIndexChanged;
@@ -312,33 +308,13 @@
             guna2HtmlLabel5.TabIndex = 3;
             guna2HtmlLabel5.Text = "GRADO";
             // 
-            // btBuscarEstudiante
-            // 
-            btBuscarEstudiante.BackColor = Color.White;
-            btBuscarEstudiante.BorderRadius = 5;
-            btBuscarEstudiante.BorderThickness = 1;
-            btBuscarEstudiante.CustomizableEdges = customizableEdges21;
-            btBuscarEstudiante.DisabledState.BorderColor = Color.DarkGray;
-            btBuscarEstudiante.DisabledState.CustomBorderColor = Color.DarkGray;
-            btBuscarEstudiante.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btBuscarEstudiante.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btBuscarEstudiante.Font = new Font("Segoe UI", 9F);
-            btBuscarEstudiante.ForeColor = Color.White;
-            btBuscarEstudiante.Image = (Image)resources.GetObject("btBuscarEstudiante.Image");
-            btBuscarEstudiante.Location = new Point(874, 56);
-            btBuscarEstudiante.Name = "btBuscarEstudiante";
-            btBuscarEstudiante.ShadowDecoration.CustomizableEdges = customizableEdges22;
-            btBuscarEstudiante.Size = new Size(48, 36);
-            btBuscarEstudiante.TabIndex = 2;
-            btBuscarEstudiante.Click += btBuscarEstudiante_Click;
-            // 
             // txtBuscarEstudiante
             // 
             txtBuscarEstudiante.BackColor = Color.Transparent;
             txtBuscarEstudiante.BorderColor = Color.Black;
             txtBuscarEstudiante.BorderRadius = 10;
             txtBuscarEstudiante.CharacterCasing = CharacterCasing.Upper;
-            txtBuscarEstudiante.CustomizableEdges = customizableEdges23;
+            txtBuscarEstudiante.CustomizableEdges = customizableEdges7;
             txtBuscarEstudiante.DefaultText = "";
             txtBuscarEstudiante.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txtBuscarEstudiante.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -349,11 +325,12 @@
             txtBuscarEstudiante.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             txtBuscarEstudiante.Location = new Point(514, 56);
             txtBuscarEstudiante.Name = "txtBuscarEstudiante";
-            txtBuscarEstudiante.PlaceholderText = "";
+            txtBuscarEstudiante.PlaceholderText = "INGRESE NOMBRE A BUSCAR";
             txtBuscarEstudiante.SelectedText = "";
-            txtBuscarEstudiante.ShadowDecoration.CustomizableEdges = customizableEdges24;
-            txtBuscarEstudiante.Size = new Size(354, 36);
+            txtBuscarEstudiante.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            txtBuscarEstudiante.Size = new Size(405, 36);
             txtBuscarEstudiante.TabIndex = 1;
+            txtBuscarEstudiante.TextChanged += txtBuscarEstudiante_TextChanged;
             // 
             // guna2HtmlLabel4
             // 
@@ -367,12 +344,12 @@
             // 
             // guna2PictureBox1
             // 
-            guna2PictureBox1.CustomizableEdges = customizableEdges27;
+            guna2PictureBox1.CustomizableEdges = customizableEdges11;
             guna2PictureBox1.Image = Properties.Resources._2;
             guna2PictureBox1.ImageRotate = 0F;
             guna2PictureBox1.Location = new Point(46, 9);
             guna2PictureBox1.Name = "guna2PictureBox1";
-            guna2PictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges28;
+            guna2PictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges12;
             guna2PictureBox1.Size = new Size(113, 101);
             guna2PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             guna2PictureBox1.TabIndex = 2;
@@ -452,7 +429,6 @@
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
-        private Guna.UI2.WinForms.Guna2Button btBuscarEstudiante;
         private Guna.UI2.WinForms.Guna2TextBox txtBuscarEstudiante;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel4;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
@@ -461,11 +437,11 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel5;
         private Guna.UI2.WinForms.Guna2DateTimePicker dtpAnio;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel7;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel8;
         private DataGridViewTextBoxColumn EstudianteID;
         private DataGridViewTextBoxColumn NombreEstudiante;
         private DataGridViewTextBoxColumn NombreGrado;
         private DataGridViewTextBoxColumn Nivel;
         private DataGridViewTextBoxColumn AnioAcademico;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel8;
     }
 }

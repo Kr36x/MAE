@@ -68,7 +68,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
                 chartGrados.Series.Add(sBarras);
                 chartGrados.Series.Add(sMeta);
 
-                DataTable dt = util.EjecutarSP(
+                DataTable dt = util.EjecutarSPParametros(
                     "spMAE_PromedioYExcelenciaPorParcial",
                     new SqlParameter[]
                     {
@@ -83,21 +83,12 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
                     int promedio = Convert.ToInt32(dt.Rows[i]["PromedioGrado"]);
 
                     int idx = sBarras.Points.AddXY(i, promedio);
-                    sMeta.Points.AddXY(i, 85); // Línea meta
+                    sMeta.Points.AddXY(i, 85);
 
                     sBarras.Points[idx].AxisLabel = grado;
                     sBarras.Points[idx].Label = promedio + "%";
                     sBarras.Points[idx].Color = Color.CornflowerBlue;
 
-                    // COLORES DINÁMICOS OPCIONALES
-                    /*
-                    if (promedio < 70)
-                        sBarras.Points[idx].Color = Color.Tomato;
-                    else if (promedio < 90)
-                        sBarras.Points[idx].Color = Color.Goldenrod;
-                    else
-                        sBarras.Points[idx].Color = Color.ForestGreen;
-                    */
                 }
             }
             catch (Exception ex)
@@ -181,8 +172,8 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
         //    }
         //}
 
-        private void CargarPromediosPorGrado()
-        {
+        //private void CargarPromediosPorGrado()
+        //{
             //try
             //{
             //    EjecutarUtilidades util = new EjecutarUtilidades();
@@ -447,7 +438,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
             //{
             //    MessageBox.Show("Error al cargar los promedios: " + ex.Message);
             //}
-        }
+        //}
         private void FrmDashboard_Load(object sender, EventArgs e)
         {
             pnlPrincipal.Visible = false;
@@ -547,7 +538,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
                 new SqlParameter("@Anio", dtpAnio.Text)
                 };
 
-            DataTable dt = util.EjecutarSP("spMAE_PromedioYExcelenciaPorNivel", p);
+            DataTable dt = util.EjecutarSPParametros("spMAE_PromedioYExcelenciaPorNivel", p);
 
             return dt.Rows.Count > 0;
         }
@@ -562,7 +553,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
                 new SqlParameter("@Parcial", cbbParcial.SelectedItem)
             };
 
-            DataTable dt = util.EjecutarSP("spMAE_PromedioYExcelenciaPorParcial", p);
+            DataTable dt = util.EjecutarSPParametros("spMAE_PromedioYExcelenciaPorParcial", p);
 
             return dt.Rows.Count > 0;
         }
@@ -932,11 +923,11 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
                 SqlParameter[] p =
                 {
-            new SqlParameter("@Anio", dtpAnio.Text),
-            new SqlParameter("@Parcial", cbbParcial.SelectedItem)
-        };
+                    new SqlParameter("@Anio", dtpAnio.Text),
+                    new SqlParameter("@Parcial", cbbParcial.SelectedItem)
+                };
 
-                DataTable dt = util.EjecutarSP("spMAE_PromedioYExcelenciaPorParcial", p);
+                DataTable dt = util.EjecutarSPParametros("spMAE_PromedioYExcelenciaPorParcial", p);
 
                 if (dt.Rows.Count == 0)
                 {

@@ -79,21 +79,21 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
                 SqlParameter[] p =
                 {
-            new SqlParameter("@Nombre",
-                string.IsNullOrWhiteSpace(txtBuscarEstudiante.Text)
-                ? DBNull.Value
-                : txtBuscarEstudiante.Text),
+                    new SqlParameter("@Nombre",
+                    string.IsNullOrWhiteSpace(txtBuscarEstudiante.Text)
+                    ? DBNull.Value
+                    : txtBuscarEstudiante.Text),
 
-            new SqlParameter("@Anio",
-                string.IsNullOrWhiteSpace(dtpAnio.Text)
-                ? DBNull.Value
-                : dtpAnio.Text),
+                    new SqlParameter("@Anio",
+                    string.IsNullOrWhiteSpace(dtpAnio.Text)
+                    ? DBNull.Value
+                    : dtpAnio.Text),
 
-            new SqlParameter("@Grado",
-                (object)grado ?? DBNull.Value)
-        };
+                    new SqlParameter("@Grado",
+                    (object)grado ?? DBNull.Value)
+                };
 
-                dgvEstudiantes.DataSource = util.EjecutarSP("spMAE_BuscarEstudiantes", p);
+                dgvEstudiantes.DataSource = util.EjecutarSPParametros("spMAE_BuscarEstudiantes", p);
             }
             catch (Exception ex)
             {
@@ -124,7 +124,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
             {
                 DataGridViewButtonColumn btnVer = new DataGridViewButtonColumn();
                 btnVer.Name = "btnVer";
-                btnVer.HeaderText = "Ver";
+                btnVer.HeaderText = "VER";
                 btnVer.Text = "";
                 btnVer.UseColumnTextForButtonValue = false;
                 dgvEstudiantes.Columns.Add(btnVer);
@@ -134,16 +134,18 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
             {
                 DataGridViewButtonColumn btnEditar = new DataGridViewButtonColumn();
                 btnEditar.Name = "btnEditar";
-                btnEditar.HeaderText = "Editar";
+                btnEditar.HeaderText = "EDITAR";
                 btnEditar.Text = "";
                 btnEditar.UseColumnTextForButtonValue = false;
                 dgvEstudiantes.Columns.Add(btnEditar);
             }
+
+            //dgvEstudiantes.CellClick += dgvEstudiantes_CellClick;
         }
 
         private void btBuscarEstudiante_Click(object sender, EventArgs e)
         {
-            BuscarConSP();
+
         }
 
         private void cbbGrado_SelectedIndexChanged(object sender, EventArgs e)
@@ -163,14 +165,14 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
         private void dgvEstudiantes_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0)
-            {
-                int estudianteID = Convert.ToInt32(
-                    dgvEstudiantes.Rows[e.RowIndex].Cells["EstudianteID"].Value
-                );
-                FrmFichaMatricula FrmMatriculaVigente = new FrmFichaMatricula(estudianteID);
-                FrmMatriculaVigente.Show();
-            }
+            //if (e.RowIndex >= 0)
+            //{
+            //    int estudianteID = Convert.ToInt32(
+            //        dgvEstudiantes.Rows[e.RowIndex].Cells["EstudianteID"].Value
+            //    );
+            //    FrmFichaMatricula FrmMatriculaVigente = new FrmFichaMatricula(estudianteID);
+            //    FrmMatriculaVigente.Show();
+            //}
 
         }
 
@@ -208,6 +210,37 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
             }
 
 
+        }
+
+        private void dgvEstudiantes_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0) return;
+
+            string col = dgvEstudiantes.Columns[e.ColumnIndex].Name;
+
+            int estudianteID = Convert.ToInt32(
+                dgvEstudiantes.Rows[e.RowIndex].Cells["EstudianteID"].Value
+            );
+
+            if (col == "btnVer")
+            {
+                FrmFichaMatricula frm = new FrmFichaMatricula(estudianteID);
+                frm.Show();
+                return;
+            }
+
+            if (col == "btnEditar")
+            {
+                FrmMatricula frm = new FrmMatricula(pantallaPrincipal, estudianteID);
+                frm.Show();
+                return;
+            }
+
+        }
+
+        private void txtBuscarEstudiante_TextChanged(object sender, EventArgs e)
+        {
+            BuscarConSP();
         }
     }
 }
