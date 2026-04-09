@@ -32,12 +32,19 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CargaDocente));
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
@@ -45,10 +52,6 @@
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
@@ -57,28 +60,27 @@
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CargaDocente));
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             ctnFiltros = new Guna.UI2.WinForms.Guna2ContainerControl();
-            dtpAnio = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            guna2HtmlLabel7 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            btNuevaCarga = new Guna.UI2.WinForms.Guna2Button();
+            guna2HtmlLabel11 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            btBuscarDocente = new Guna.UI2.WinForms.Guna2Button();
+            txtBuscarDocente = new Guna.UI2.WinForms.Guna2TextBox();
             cbbSeccion = new Guna.UI2.WinForms.Guna2ComboBox();
             guna2HtmlLabel6 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             cbbGrado = new Guna.UI2.WinForms.Guna2ComboBox();
             guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            dtpAnio = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            guna2HtmlLabel7 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2ContainerControl1 = new Guna.UI2.WinForms.Guna2ContainerControl();
             chartDocentes = new System.Windows.Forms.DataVisualization.Charting.Chart();
             guna2HtmlLabel8 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2ContainerControl2 = new Guna.UI2.WinForms.Guna2ContainerControl();
             guna2HtmlLabel9 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            btBuscarDocente = new Guna.UI2.WinForms.Guna2Button();
-            txtBuscarDocente = new Guna.UI2.WinForms.Guna2TextBox();
             dgvDocentes = new Guna.UI2.WinForms.Guna2DataGridView();
             DocenteID = new DataGridViewTextBoxColumn();
             Nombre = new DataGridViewTextBoxColumn();
@@ -90,8 +92,6 @@
             AsignaturaID = new DataGridViewTextBoxColumn();
             Asignatura = new DataGridViewTextBoxColumn();
             NombreGrado = new DataGridViewTextBoxColumn();
-            guna2HtmlLabel11 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            btNuevaCarga = new Guna.UI2.WinForms.Guna2Button();
             guna2HtmlLabel12 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).BeginInit();
             ctnFiltros.SuspendLayout();
@@ -168,38 +168,82 @@
             ctnFiltros.TabIndex = 4;
             ctnFiltros.Text = "guna2ContainerControl1";
             // 
-            // dtpAnio
+            // btNuevaCarga
             // 
-            dtpAnio.BackColor = Color.Transparent;
-            dtpAnio.BorderRadius = 10;
-            dtpAnio.BorderThickness = 1;
-            dtpAnio.Checked = true;
-            dtpAnio.CustomFormat = "yyyy";
-            dtpAnio.CustomizableEdges = customizableEdges15;
-            dtpAnio.FillColor = Color.Gainsboro;
-            dtpAnio.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dtpAnio.Format = DateTimePickerFormat.Custom;
-            dtpAnio.Location = new Point(797, 70);
-            dtpAnio.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
-            dtpAnio.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
-            dtpAnio.Name = "dtpAnio";
-            dtpAnio.ShadowDecoration.CustomizableEdges = customizableEdges16;
-            dtpAnio.ShowUpDown = true;
-            dtpAnio.Size = new Size(179, 31);
-            dtpAnio.TabIndex = 8;
-            dtpAnio.TextAlign = HorizontalAlignment.Center;
-            dtpAnio.Value = new DateTime(2026, 3, 21, 1, 11, 26, 854);
-            dtpAnio.ValueChanged += dtpAnio_ValueChanged;
+            btNuevaCarga.BackColor = Color.Transparent;
+            btNuevaCarga.BorderRadius = 10;
+            btNuevaCarga.BorderThickness = 1;
+            btNuevaCarga.CustomizableEdges = customizableEdges3;
+            btNuevaCarga.DisabledState.BorderColor = Color.DarkGray;
+            btNuevaCarga.DisabledState.CustomBorderColor = Color.DarkGray;
+            btNuevaCarga.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btNuevaCarga.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btNuevaCarga.FillColor = SystemColors.HotTrack;
+            btNuevaCarga.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btNuevaCarga.ForeColor = Color.White;
+            btNuevaCarga.Image = (Image)resources.GetObject("btNuevaCarga.Image");
+            btNuevaCarga.ImageAlign = HorizontalAlignment.Left;
+            btNuevaCarga.Location = new Point(28, 34);
+            btNuevaCarga.Name = "btNuevaCarga";
+            btNuevaCarga.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            btNuevaCarga.Size = new Size(167, 46);
+            btNuevaCarga.TabIndex = 10;
+            btNuevaCarga.Text = "NUEVA CARGA ACADÉMICA";
             // 
-            // guna2HtmlLabel7
+            // guna2HtmlLabel11
             // 
-            guna2HtmlLabel7.BackColor = Color.Transparent;
-            guna2HtmlLabel7.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            guna2HtmlLabel7.Location = new Point(674, 76);
-            guna2HtmlLabel7.Name = "guna2HtmlLabel7";
-            guna2HtmlLabel7.Size = new Size(113, 19);
-            guna2HtmlLabel7.TabIndex = 5;
-            guna2HtmlLabel7.Text = "AÑO ACADÉMICO";
+            guna2HtmlLabel11.BackColor = Color.Transparent;
+            guna2HtmlLabel11.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            guna2HtmlLabel11.Location = new Point(539, 29);
+            guna2HtmlLabel11.Name = "guna2HtmlLabel11";
+            guna2HtmlLabel11.Size = new Size(161, 19);
+            guna2HtmlLabel11.TabIndex = 9;
+            guna2HtmlLabel11.Text = "BÚSQUEDA POR NOMBRE";
+            // 
+            // btBuscarDocente
+            // 
+            btBuscarDocente.BackColor = Color.Transparent;
+            btBuscarDocente.BorderRadius = 5;
+            btBuscarDocente.BorderThickness = 1;
+            btBuscarDocente.CustomizableEdges = customizableEdges5;
+            btBuscarDocente.DisabledState.BorderColor = Color.DarkGray;
+            btBuscarDocente.DisabledState.CustomBorderColor = Color.DarkGray;
+            btBuscarDocente.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btBuscarDocente.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btBuscarDocente.FillColor = SystemColors.HotTrack;
+            btBuscarDocente.Font = new Font("Segoe UI", 9F);
+            btBuscarDocente.ForeColor = Color.White;
+            btBuscarDocente.Image = (Image)resources.GetObject("btBuscarDocente.Image");
+            btBuscarDocente.Location = new Point(840, 49);
+            btBuscarDocente.Name = "btBuscarDocente";
+            btBuscarDocente.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            btBuscarDocente.Size = new Size(33, 31);
+            btBuscarDocente.TabIndex = 8;
+            btBuscarDocente.Click += btBuscarDocente_Click;
+            // 
+            // txtBuscarDocente
+            // 
+            txtBuscarDocente.BackColor = Color.Transparent;
+            txtBuscarDocente.BorderColor = Color.Black;
+            txtBuscarDocente.BorderRadius = 10;
+            txtBuscarDocente.CharacterCasing = CharacterCasing.Upper;
+            txtBuscarDocente.CustomizableEdges = customizableEdges7;
+            txtBuscarDocente.DefaultText = "";
+            txtBuscarDocente.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            txtBuscarDocente.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            txtBuscarDocente.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            txtBuscarDocente.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            txtBuscarDocente.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtBuscarDocente.Font = new Font("Segoe UI", 9F);
+            txtBuscarDocente.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtBuscarDocente.Location = new Point(539, 49);
+            txtBuscarDocente.Name = "txtBuscarDocente";
+            txtBuscarDocente.PlaceholderForeColor = Color.Gray;
+            txtBuscarDocente.PlaceholderText = "INGRESE NOMBRE A BUSCAR";
+            txtBuscarDocente.SelectedText = "";
+            txtBuscarDocente.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            txtBuscarDocente.Size = new Size(295, 31);
+            txtBuscarDocente.TabIndex = 1;
             // 
             // cbbSeccion
             // 
@@ -273,6 +317,39 @@
             guna2HtmlLabel4.TabIndex = 0;
             guna2HtmlLabel4.Text = null;
             // 
+            // dtpAnio
+            // 
+            dtpAnio.BackColor = Color.Transparent;
+            dtpAnio.BorderRadius = 10;
+            dtpAnio.BorderThickness = 1;
+            dtpAnio.Checked = true;
+            dtpAnio.CustomFormat = "yyyy";
+            dtpAnio.CustomizableEdges = customizableEdges15;
+            dtpAnio.FillColor = Color.Gainsboro;
+            dtpAnio.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dtpAnio.Format = DateTimePickerFormat.Custom;
+            dtpAnio.Location = new Point(797, 70);
+            dtpAnio.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
+            dtpAnio.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
+            dtpAnio.Name = "dtpAnio";
+            dtpAnio.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            dtpAnio.ShowUpDown = true;
+            dtpAnio.Size = new Size(179, 31);
+            dtpAnio.TabIndex = 8;
+            dtpAnio.TextAlign = HorizontalAlignment.Center;
+            dtpAnio.Value = new DateTime(2025, 3, 21, 1, 11, 0, 0);
+            dtpAnio.ValueChanged += dtpAnio_ValueChanged;
+            // 
+            // guna2HtmlLabel7
+            // 
+            guna2HtmlLabel7.BackColor = Color.Transparent;
+            guna2HtmlLabel7.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            guna2HtmlLabel7.Location = new Point(674, 76);
+            guna2HtmlLabel7.Name = "guna2HtmlLabel7";
+            guna2HtmlLabel7.Size = new Size(113, 19);
+            guna2HtmlLabel7.TabIndex = 5;
+            guna2HtmlLabel7.Text = "AÑO ACADÉMICO";
+            // 
             // guna2ContainerControl1
             // 
             guna2ContainerControl1.BorderColor = Color.Silver;
@@ -345,51 +422,6 @@
             guna2HtmlLabel9.Size = new Size(560, 30);
             guna2HtmlLabel9.TabIndex = 9;
             guna2HtmlLabel9.Text = "DOCENTES ASIGNADOS";
-            // 
-            // btBuscarDocente
-            // 
-            btBuscarDocente.BackColor = Color.Transparent;
-            btBuscarDocente.BorderRadius = 5;
-            btBuscarDocente.BorderThickness = 1;
-            btBuscarDocente.CustomizableEdges = customizableEdges5;
-            btBuscarDocente.DisabledState.BorderColor = Color.DarkGray;
-            btBuscarDocente.DisabledState.CustomBorderColor = Color.DarkGray;
-            btBuscarDocente.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btBuscarDocente.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btBuscarDocente.FillColor = SystemColors.HotTrack;
-            btBuscarDocente.Font = new Font("Segoe UI", 9F);
-            btBuscarDocente.ForeColor = Color.White;
-            btBuscarDocente.Image = (Image)resources.GetObject("btBuscarDocente.Image");
-            btBuscarDocente.Location = new Point(840, 49);
-            btBuscarDocente.Name = "btBuscarDocente";
-            btBuscarDocente.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            btBuscarDocente.Size = new Size(33, 31);
-            btBuscarDocente.TabIndex = 8;
-            btBuscarDocente.Click += btBuscarDocente_Click;
-            // 
-            // txtBuscarDocente
-            // 
-            txtBuscarDocente.BackColor = Color.Transparent;
-            txtBuscarDocente.BorderColor = Color.Black;
-            txtBuscarDocente.BorderRadius = 10;
-            txtBuscarDocente.CharacterCasing = CharacterCasing.Upper;
-            txtBuscarDocente.CustomizableEdges = customizableEdges7;
-            txtBuscarDocente.DefaultText = "";
-            txtBuscarDocente.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            txtBuscarDocente.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            txtBuscarDocente.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            txtBuscarDocente.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            txtBuscarDocente.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtBuscarDocente.Font = new Font("Segoe UI", 9F);
-            txtBuscarDocente.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtBuscarDocente.Location = new Point(539, 49);
-            txtBuscarDocente.Name = "txtBuscarDocente";
-            txtBuscarDocente.PlaceholderForeColor = Color.Gray;
-            txtBuscarDocente.PlaceholderText = "INGRESE NOMBRE A BUSCAR";
-            txtBuscarDocente.SelectedText = "";
-            txtBuscarDocente.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            txtBuscarDocente.Size = new Size(295, 31);
-            txtBuscarDocente.TabIndex = 1;
             // 
             // dgvDocentes
             // 
@@ -583,38 +615,6 @@
             NombreGrado.HeaderText = "GRADO";
             NombreGrado.Name = "NombreGrado";
             NombreGrado.ReadOnly = true;
-            // 
-            // guna2HtmlLabel11
-            // 
-            guna2HtmlLabel11.BackColor = Color.Transparent;
-            guna2HtmlLabel11.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            guna2HtmlLabel11.Location = new Point(539, 29);
-            guna2HtmlLabel11.Name = "guna2HtmlLabel11";
-            guna2HtmlLabel11.Size = new Size(161, 19);
-            guna2HtmlLabel11.TabIndex = 9;
-            guna2HtmlLabel11.Text = "BÚSQUEDA POR NOMBRE";
-            // 
-            // btNuevaCarga
-            // 
-            btNuevaCarga.BackColor = Color.Transparent;
-            btNuevaCarga.BorderRadius = 10;
-            btNuevaCarga.BorderThickness = 1;
-            btNuevaCarga.CustomizableEdges = customizableEdges3;
-            btNuevaCarga.DisabledState.BorderColor = Color.DarkGray;
-            btNuevaCarga.DisabledState.CustomBorderColor = Color.DarkGray;
-            btNuevaCarga.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btNuevaCarga.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btNuevaCarga.FillColor = SystemColors.HotTrack;
-            btNuevaCarga.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btNuevaCarga.ForeColor = Color.White;
-            btNuevaCarga.Image = (Image)resources.GetObject("btNuevaCarga.Image");
-            btNuevaCarga.ImageAlign = HorizontalAlignment.Left;
-            btNuevaCarga.Location = new Point(28, 34);
-            btNuevaCarga.Name = "btNuevaCarga";
-            btNuevaCarga.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            btNuevaCarga.Size = new Size(167, 46);
-            btNuevaCarga.TabIndex = 10;
-            btNuevaCarga.Text = "NUEVA CARGA ACADÉMICA";
             // 
             // guna2HtmlLabel12
             // 

@@ -369,7 +369,7 @@
             // 
             lbFechaNacimiento.BackColor = Color.Transparent;
             lbFechaNacimiento.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            lbFechaNacimiento.Location = new Point(16, 242);
+            lbFechaNacimiento.Location = new Point(17, 243);
             lbFechaNacimiento.Name = "lbFechaNacimiento";
             lbFechaNacimiento.Size = new Size(134, 17);
             lbFechaNacimiento.TabIndex = 90;
@@ -467,9 +467,10 @@
             txtPosicion.PlaceholderText = "";
             txtPosicion.SelectedText = "";
             txtPosicion.ShadowDecoration.CustomizableEdges = customizableEdges20;
-            txtPosicion.Size = new Size(225, 31);
+            txtPosicion.Size = new Size(237, 31);
             txtPosicion.TabIndex = 11;
             txtPosicion.Visible = false;
+            txtPosicion.KeyPress += txtPosicion_KeyPress;
             // 
             // lbUsuario
             // 

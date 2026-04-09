@@ -558,6 +558,22 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
             }
 
         }
+
+        private void txtPosicion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Back)
+                return;
+
+            if (!char.IsLetter(e.KeyChar) && e.KeyChar != ' ')
+            {
+                e.Handled = true;
+
+                MessageBox.Show("Solo se aceptan letras.",
+                                "Validación",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Warning);
+            }
+        }
     }
 }
 

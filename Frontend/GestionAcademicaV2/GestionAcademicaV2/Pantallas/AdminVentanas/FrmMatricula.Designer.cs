@@ -636,6 +636,7 @@
             txtIdentidadPadre.Size = new Size(179, 25);
             txtIdentidadPadre.TabIndex = 32;
             txtIdentidadPadre.TextChanged += txtIdentidadPadre_TextChanged;
+            txtIdentidadPadre.KeyPress += txtIdentidadPadre_KeyPress;
             // 
             // lbIdentidadMadre
             // 
@@ -671,6 +672,7 @@
             txtIdentidadMadre.Size = new Size(179, 25);
             txtIdentidadMadre.TabIndex = 34;
             txtIdentidadMadre.TextChanged += txtIdentidadMadre_TextChanged;
+            txtIdentidadMadre.KeyPress += txtIdentidadMadre_KeyPress;
             // 
             // lbTelefonoPadre
             // 

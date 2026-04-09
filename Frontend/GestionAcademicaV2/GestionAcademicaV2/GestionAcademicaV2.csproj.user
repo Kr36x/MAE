@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
   <ItemGroup>
     <Compile Update="Form1.cs">
       <SubType>Form</SubType>
@@ -10,16 +11,10 @@
     <Compile Update="Pantallas\AdminVentanas\FrmActaReunion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Pantallas\AdminVentanas\FrmEditarTutor.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="Pantallas\AdminVentanas\FrmGestionGrado.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="Pantallas\AdminVentanas\FrmGestionReuniones.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="Pantallas\AdminVentanas\FrmDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Pantallas\AdminVentanas\FrmEditarTutor.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Pantallas\AdminVentanas\FrmEstudiantes.cs">
@@ -28,7 +23,19 @@
     <Compile Update="Pantallas\AdminVentanas\FrmFichaMatricula.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Pantallas\AdminVentanas\FrmGestionAsignaturas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Pantallas\AdminVentanas\FrmGestionGrado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Pantallas\AdminVentanas\FrmGestionReuniones.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Pantallas\AdminVentanas\FrmGestionUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Pantallas\AdminVentanas\FrmGestionVinculacionTutores.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Pantallas\AdminVentanas\FrmMatricula.cs">
@@ -49,9 +56,6 @@
     <Compile Update="Pantallas\AdminVentanas\FrmOfertaAcademica.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Pantallas\AdminVentanas\FrmGestionAsignaturas.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="Pantallas\AdminVentanas\FrmReporteDesercionRetencion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -62,9 +66,6 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Pantallas\AdminVentanas\ReporteDocentes.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="Pantallas\AdminVentanas\FrmGestionVinculacionTutores.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Pantallas\DocenteVentanas\FrmBoletaPrebasica.cs">
@@ -91,16 +92,13 @@
     <Compile Update="Pantallas\DocenteVentanas\FrmRegistroCalificaciones.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Pantallas\DocenteVentanas\FrmReporteAsistencia.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="Pantallas\DocenteVentanas\FrmReporteSemanal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Pantallas\DocenteVentanas\FrmSeleccionReportes.cs">
+    <Compile Update="Pantallas\DocenteVentanas\FrmSeleccionBoleta.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Pantallas\DocenteVentanas\FrmSeleccionBoleta.cs">
+    <Compile Update="Pantallas\DocenteVentanas\FrmSeleccionReportes.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Pantallas\DocenteVentanas\FrmVerReunionesDocente.cs">

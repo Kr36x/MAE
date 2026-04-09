@@ -647,6 +647,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
             if (!char.IsDigit(e.KeyChar))
             {
                 e.Handled = true;
+                MessageBox.Show("Solo se permiten números.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -807,13 +808,16 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
         private void txtAlergias_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)Keys.Back)
-            {
                 return;
-            }
 
             if (!char.IsLetter(e.KeyChar) && e.KeyChar != ' ')
             {
                 e.Handled = true;
+
+                MessageBox.Show("Solo se aceptan letras.",
+                                "Validación",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Warning);
             }
         }
 
@@ -995,6 +999,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
         private void txtTelefonoMadre_KeyPress(object sender, KeyPressEventArgs e)
         {
+            // Validación para que en el textbox TeléfonoMadre solo puedan ingresarse números.
             if (e.KeyChar == (char)Keys.Back)
                 return;
 
@@ -1008,13 +1013,14 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
         private void dtpFechaNacimiento_ValueChanged(object sender, EventArgs e)
         {
+            // Validación para verificar que el estudiante no tenga menos de 4 años al ingresar a la institución.
             DateTime fechaNac = dtpFechaNacimiento.Value;
             int edad = DateTime.Now.Year - fechaNac.Year;
 
             if (fechaNac.Date > DateTime.Now.AddYears(-edad))
                 edad--;
 
-            if (edad < 5)
+            if (edad < 4)
             {
                 MessageBox.Show("El estudiante debe tener al menos 5 años.",
                                 "Validación",
@@ -1029,6 +1035,30 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
         private void txtCorreoMadre_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtIdentidadPadre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Back)
+                return;
+
+            if (!char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+                MessageBox.Show("Solo se permiten números.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void txtIdentidadMadre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Back)
+                return;
+
+            if (!char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+                MessageBox.Show("Solo se permiten números.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
     }
 }
