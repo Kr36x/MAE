@@ -163,6 +163,7 @@
             guna2Panel16.Controls.Add(guna2Panel17);
             guna2Panel16.CustomBorderColor = Color.FromArgb(217, 217, 217);
             guna2Panel16.CustomizableEdges = customizableEdges21;
+            guna2Panel16.FillColor = Color.White;
             guna2Panel16.Location = new Point(1, 41);
             guna2Panel16.Name = "guna2Panel16";
             guna2Panel16.ShadowDecoration.CustomizableEdges = customizableEdges22;
@@ -234,6 +235,7 @@
             // cbSeccion
             // 
             cbSeccion.BackColor = Color.Transparent;
+            cbSeccion.BorderRadius = 3;
             cbSeccion.CustomizableEdges = customizableEdges9;
             cbSeccion.DrawMode = DrawMode.OwnerDrawFixed;
             cbSeccion.DropDownStyle = ComboBoxStyle.DropDownList;
@@ -272,6 +274,7 @@
             // cbTurno
             // 
             cbTurno.BackColor = Color.Transparent;
+            cbTurno.BorderRadius = 3;
             cbTurno.CustomizableEdges = customizableEdges11;
             cbTurno.DrawMode = DrawMode.OwnerDrawFixed;
             cbTurno.DropDownStyle = ComboBoxStyle.DropDownList;
@@ -299,6 +302,7 @@
             // 
             // txtGrado
             // 
+            txtGrado.BorderRadius = 3;
             txtGrado.CustomizableEdges = customizableEdges13;
             txtGrado.DefaultText = "";
             txtGrado.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
@@ -331,6 +335,7 @@
             // cbNivelGrado
             // 
             cbNivelGrado.BackColor = Color.Transparent;
+            cbNivelGrado.BorderRadius = 3;
             cbNivelGrado.CustomizableEdges = customizableEdges15;
             cbNivelGrado.DrawMode = DrawMode.OwnerDrawFixed;
             cbNivelGrado.DropDownStyle = ComboBoxStyle.DropDownList;

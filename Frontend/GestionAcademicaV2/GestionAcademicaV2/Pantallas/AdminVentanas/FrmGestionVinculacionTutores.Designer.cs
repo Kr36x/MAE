@@ -134,7 +134,7 @@
             // 
             guna2HtmlLabel2.BackColor = Color.Transparent;
             guna2HtmlLabel2.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            guna2HtmlLabel2.Location = new Point(244, 17);
+            guna2HtmlLabel2.Location = new Point(248, 16);
             guna2HtmlLabel2.Name = "guna2HtmlLabel2";
             guna2HtmlLabel2.Size = new Size(476, 31);
             guna2HtmlLabel2.TabIndex = 120;
@@ -157,11 +157,11 @@
             // 
             guna2HtmlLabel1.BackColor = Color.Transparent;
             guna2HtmlLabel1.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            guna2HtmlLabel1.Location = new Point(405, 54);
+            guna2HtmlLabel1.Location = new Point(365, 48);
             guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            guna2HtmlLabel1.Size = new Size(195, 27);
+            guna2HtmlLabel1.Size = new Size(243, 27);
             guna2HtmlLabel1.TabIndex = 118;
-            guna2HtmlLabel1.Text = "REPORTE DE TUTORES";
+            guna2HtmlLabel1.Text = "VINCULACIÓN DE TUTORES";
             // 
             // ctnTutores
             // 

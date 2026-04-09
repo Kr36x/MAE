@@ -117,7 +117,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
         private void PrepararModoSoloSeccion()
         {
-            guna2HtmlLabel5.Text = "NUEVA SECCIÓN";
+            guna2HtmlLabel5.Text = "    NUEVA SECCIÓN    ";
             btnCrear.Text = "REGISTRAR";
 
             txtGrado.Text = _nombreGrado;

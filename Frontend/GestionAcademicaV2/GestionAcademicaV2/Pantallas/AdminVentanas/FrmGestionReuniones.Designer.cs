@@ -150,6 +150,7 @@
             guna2Panel6.Controls.Add(guna2Panel8);
             guna2Panel6.CustomBorderColor = Color.FromArgb(217, 217, 217);
             guna2Panel6.CustomizableEdges = customizableEdges21;
+            guna2Panel6.FillColor = Color.White;
             guna2Panel6.Location = new Point(12, 229);
             guna2Panel6.Name = "guna2Panel6";
             guna2Panel6.ShadowDecoration.CustomizableEdges = customizableEdges22;
@@ -362,7 +363,7 @@
             guna2Panel2.Controls.Add(guna2HtmlLabel1);
             guna2Panel2.CustomBorderColor = Color.FromArgb(217, 217, 217);
             guna2Panel2.CustomizableEdges = customizableEdges33;
-            guna2Panel2.FillColor = Color.Transparent;
+            guna2Panel2.FillColor = Color.White;
             guna2Panel2.Location = new Point(12, 117);
             guna2Panel2.Name = "guna2Panel2";
             guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges34;
@@ -371,6 +372,7 @@
             // 
             // btnNuevaActividad
             // 
+            btnNuevaActividad.BorderRadius = 3;
             btnNuevaActividad.CustomizableEdges = customizableEdges23;
             btnNuevaActividad.DisabledState.BorderColor = Color.DarkGray;
             btnNuevaActividad.DisabledState.CustomBorderColor = Color.DarkGray;
@@ -393,6 +395,7 @@
             // cbEstado
             // 
             cbEstado.BackColor = Color.Transparent;
+            cbEstado.BorderRadius = 3;
             cbEstado.CustomizableEdges = customizableEdges25;
             cbEstado.DrawMode = DrawMode.OwnerDrawFixed;
             cbEstado.DropDownStyle = ComboBoxStyle.DropDownList;
@@ -420,6 +423,7 @@
             // cbCicloAcademico
             // 
             cbCicloAcademico.BackColor = Color.Transparent;
+            cbCicloAcademico.BorderRadius = 3;
             cbCicloAcademico.CustomizableEdges = customizableEdges27;
             cbCicloAcademico.DrawMode = DrawMode.OwnerDrawFixed;
             cbCicloAcademico.DropDownStyle = ComboBoxStyle.DropDownList;
@@ -447,6 +451,7 @@
             // cbMes
             // 
             cbMes.BackColor = Color.Transparent;
+            cbMes.BorderRadius = 3;
             cbMes.CustomizableEdges = customizableEdges29;
             cbMes.DrawMode = DrawMode.OwnerDrawFixed;
             cbMes.DropDownStyle = ComboBoxStyle.DropDownList;
@@ -474,6 +479,7 @@
             // cbDocente
             // 
             cbDocente.BackColor = Color.Transparent;
+            cbDocente.BorderRadius = 3;
             cbDocente.CustomizableEdges = customizableEdges31;
             cbDocente.DrawMode = DrawMode.OwnerDrawFixed;
             cbDocente.DropDownStyle = ComboBoxStyle.DropDownList;
