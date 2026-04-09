@@ -387,6 +387,12 @@ namespace GestionAcademicaV2.Pantallas
             AbrirFormularioEnPanel(new FrmReporteSemanal(usuarioActual.UsuarioID));
         }
 
+        private void btnReportesSeleccion_Click(object sender, EventArgs e)
+        {
+            MarcarActivo(btnReporteSemanal);
+            AbrirFormularioEnPanel(new FrmSeleccionReportes(this,idDocente));
+        }
+
         private void btnReuniones_Click(object sender, EventArgs e)
         {
             OcultarTodosLosSubmenus();

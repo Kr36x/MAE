@@ -376,6 +376,7 @@
             btnBoletas.Size = new Size(217, 45);
             btnBoletas.TabIndex = 24;
             btnBoletas.Text = "BOLETAS";
+            btnBoletas.Click += btnReportesSeleccion_Click;
             // 
             // btnReporteSemanal
             // 
