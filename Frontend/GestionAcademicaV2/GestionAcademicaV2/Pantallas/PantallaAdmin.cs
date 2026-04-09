@@ -74,13 +74,11 @@ namespace GestionAcademicaV2.Pantallas
             EstiloBotonPrincipal(btnReportes);
 
             // Submenú Gestión Académica
-            EstiloBotonSubmenu(btnDashboard);
             EstiloBotonSubmenu(btnEstudiantes);
             EstiloBotonSubmenu(btnMatricula);
             EstiloBotonSubmenu(btnDocentes);
             EstiloBotonSubmenu(btnGestionAsignaturas);
             EstiloBotonSubmenu(btnGestionGrado);
-            EstiloBotonSubmenu(btnOfertaAcademica);
 
             // Submenú Gestión Institucional
             EstiloBotonSubmenu(btnGestionUsuarios);
@@ -92,6 +90,7 @@ namespace GestionAcademicaV2.Pantallas
             // Submenú Reportes
             EstiloBotonSubmenu(btnReporteDocentes);
             EstiloBotonSubmenu(btnReporteDesercion);
+            EstiloBotonSubmenu(btnRetencionEstudiantil);
 
             pnlSubGestionAcademica.BackColor = colorSubmenu;
             pnlSubGestionInstitucional.BackColor = colorSubmenu;
@@ -108,13 +107,12 @@ namespace GestionAcademicaV2.Pantallas
             btnReportes.Click += btnReportes_Click;
 
             // EVENTOS SUBMENÚ GESTIÓN ACADÉMICA
-            btnDashboard.Click += btnDashboard_Click;
+
             btnEstudiantes.Click += btnEstudiantes_Click;
             btnMatricula.Click += btnMatricula_Click;
             btnDocentes.Click += btnDocentes_Click;
             btnGestionAsignaturas.Click += btnGestionAsignaturas_Click;
             btnGestionGrado.Click += btnGestionGrado_Click;
-            btnOfertaAcademica.Click += btnOfertaAcademica_Click;
 
             // EVENTOS SUBMENÚ GESTIÓN INSTITUCIONAL
             btnGestionUsuarios.Click += btnGestionUsuarios_Click;
@@ -126,6 +124,7 @@ namespace GestionAcademicaV2.Pantallas
             // EVENTOS SUBMENÚ REPORTES
             btnReporteDocentes.Click += btnReporteDocentes_Click;
             btnReporteDesercion.Click += btnReporteDesercion_Click;
+            btnRetencionEstudiantil.Click += btnRetencionEstudiantil_Click;
 
             // OPCIONALES
             btnSalir.Click += btnSalir_Click;
@@ -333,10 +332,13 @@ namespace GestionAcademicaV2.Pantallas
 
         private void btnDashboard_Click(object sender, EventArgs e)
         {
-            MarcarActivo(btnDashboard);
+            //MarcarActivo(btnDashboard);
+        }
+        private void btnRetencionEstudiantil_Click(object sender, EventArgs e)
+        {
+            MarcarActivo(btnRetencionEstudiantil);
             AbrirFormularioEnPanel(new FrmDashboard(this));
         }
-
         private void btnEstudiantes_Click(object sender, EventArgs e)
         {
             MarcarActivo(btnEstudiantes);
@@ -367,12 +369,6 @@ namespace GestionAcademicaV2.Pantallas
         {
             MarcarActivo(btnGestionGrado);
             AbrirFormularioEnPanel(new FrmGestionGrado());
-        }
-
-        private void btnOfertaAcademica_Click(object sender, EventArgs e)
-        {
-            MarcarActivo(btnOfertaAcademica);
-            AbrirFormularioEnPanel(new FrmOfertaAcademica());
         }
 
         #endregion

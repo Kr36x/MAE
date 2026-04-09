@@ -174,270 +174,270 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
         //private void CargarPromediosPorGrado()
         //{
-            //try
-            //{
-            //    EjecutarUtilidades util = new EjecutarUtilidades();
+        //try
+        //{
+        //    EjecutarUtilidades util = new EjecutarUtilidades();
 
-            //    SqlParameter[] p =
-            //    {
-            //        new SqlParameter("@Anio",(dtpAnio.Text))
-            //    };
+        //    SqlParameter[] p =
+        //    {
+        //        new SqlParameter("@Anio",(dtpAnio.Text))
+        //    };
 
-            //    DataTable dt = util.EjecutarSP("spMAE_PromedioYExcelenciaPorNivel", p);
+        //    DataTable dt = util.EjecutarSP("spMAE_PromedioYExcelenciaPorNivel", p);
 
-            //    foreach (DataRow row in dt.Rows)
-            //    {
-            //        string grado = row["NombreGrado"].ToString();
-            //        string promedio = row["PromedioGrado"].ToString();
-            //        string excelencia = row["EstudiantesExcelencia"].ToString();
+        //    foreach (DataRow row in dt.Rows)
+        //    {
+        //        string grado = row["NombreGrado"].ToString();
+        //        string promedio = row["PromedioGrado"].ToString();
+        //        string excelencia = row["EstudiantesExcelencia"].ToString();
 
-            //        switch (grado.ToUpper())
-            //        {
-            //            case "PRE-KINDER":
-            //                txtPromedioPrekinder.Text = promedio + "%";
-            //                txtExcelenciaPrekinder.Text = excelencia + " EST.";
-            //                lbSeccionPrekinder.Text = "A";
-            //                int p1 = Convert.ToInt32(promedio);
+        //        switch (grado.ToUpper())
+        //        {
+        //            case "PRE-KINDER":
+        //                txtPromedioPrekinder.Text = promedio + "%";
+        //                txtExcelenciaPrekinder.Text = excelencia + " EST.";
+        //                lbSeccionPrekinder.Text = "A";
+        //                int p1 = Convert.ToInt32(promedio);
 
-            //                if (p1 >= 90)
-            //                    txtPromedioPrekinder1.FillColor = Color.ForestGreen;
-            //                txtPromedioPrekinder.FillColor = Color.ForestGreen;
-            //                if (p1 < 90 && p1 >= 70)
-            //                    txtPromedioPrekinder1.FillColor = Color.LightYellow;
-            //                txtPromedioPrekinder.FillColor = Color.LightYellow;
-            //                if (p1 < 70)
-            //                    txtPromedioPrekinder1.FillColor = Color.Tomato;
-            //                txtPromedioPrekinder.FillColor = Color.Tomato;
-            //                break;
+        //                if (p1 >= 90)
+        //                    txtPromedioPrekinder1.FillColor = Color.ForestGreen;
+        //                txtPromedioPrekinder.FillColor = Color.ForestGreen;
+        //                if (p1 < 90 && p1 >= 70)
+        //                    txtPromedioPrekinder1.FillColor = Color.LightYellow;
+        //                txtPromedioPrekinder.FillColor = Color.LightYellow;
+        //                if (p1 < 70)
+        //                    txtPromedioPrekinder1.FillColor = Color.Tomato;
+        //                txtPromedioPrekinder.FillColor = Color.Tomato;
+        //                break;
 
-            //            case "KINDER":
-            //                txtPromedioKinder.Text = promedio + "%";
-            //                txtExcelenciaKinder.Text = excelencia + " EST.";
-            //                lbSeccionKinder.Text = "A";
-            //                int p2 = Convert.ToInt32(promedio);
+        //            case "KINDER":
+        //                txtPromedioKinder.Text = promedio + "%";
+        //                txtExcelenciaKinder.Text = excelencia + " EST.";
+        //                lbSeccionKinder.Text = "A";
+        //                int p2 = Convert.ToInt32(promedio);
 
-            //                if (p2 >= 90)
-            //                    txtPromedioKinder1.FillColor = Color.ForestGreen;
-            //                txtPromedioKinder.FillColor = Color.ForestGreen;
-            //                if (p2 < 90 && p2 >= 70)
-            //                    txtPromedioKinder1.FillColor = Color.LightYellow;
-            //                txtPromedioKinder.FillColor = Color.LightYellow;
-            //                if (p2 < 70)
-            //                    txtPromedioKinder1.FillColor = Color.Tomato;
-            //                txtPromedioKinder.FillColor = Color.Tomato;
-            //                break;
+        //                if (p2 >= 90)
+        //                    txtPromedioKinder1.FillColor = Color.ForestGreen;
+        //                txtPromedioKinder.FillColor = Color.ForestGreen;
+        //                if (p2 < 90 && p2 >= 70)
+        //                    txtPromedioKinder1.FillColor = Color.LightYellow;
+        //                txtPromedioKinder.FillColor = Color.LightYellow;
+        //                if (p2 < 70)
+        //                    txtPromedioKinder1.FillColor = Color.Tomato;
+        //                txtPromedioKinder.FillColor = Color.Tomato;
+        //                break;
 
-            //            case "PREPARATORIA":
-            //                txtPromedioPrepa.Text = promedio + "%";
-            //                txtExcelenciaPrepa.Text = excelencia + " EST.";
-            //                lbSeccionPrepa.Text = "A";
-            //                int p3 = Convert.ToInt32(promedio);
+        //            case "PREPARATORIA":
+        //                txtPromedioPrepa.Text = promedio + "%";
+        //                txtExcelenciaPrepa.Text = excelencia + " EST.";
+        //                lbSeccionPrepa.Text = "A";
+        //                int p3 = Convert.ToInt32(promedio);
 
-            //                if (p3 >= 90)
-            //                    txtPromedioPrepa1.FillColor = Color.ForestGreen;
-            //                txtPromedioPrepa.FillColor = Color.ForestGreen;
-            //                if (p3 < 90 && p3 >= 70)
-            //                    txtPromedioPrepa1.FillColor = Color.LightYellow;
-            //                txtPromedioPrepa.FillColor = Color.LightYellow;
-            //                if (p3 < 70)
-            //                    txtPromedioPrepa1.FillColor = Color.Tomato;
-            //                txtPromedioPrepa.FillColor = Color.Tomato;
-            //                break;
+        //                if (p3 >= 90)
+        //                    txtPromedioPrepa1.FillColor = Color.ForestGreen;
+        //                txtPromedioPrepa.FillColor = Color.ForestGreen;
+        //                if (p3 < 90 && p3 >= 70)
+        //                    txtPromedioPrepa1.FillColor = Color.LightYellow;
+        //                txtPromedioPrepa.FillColor = Color.LightYellow;
+        //                if (p3 < 70)
+        //                    txtPromedioPrepa1.FillColor = Color.Tomato;
+        //                txtPromedioPrepa.FillColor = Color.Tomato;
+        //                break;
 
-            //            case "PRIMERO":
-            //                txtPromedioPrimero.Text = promedio + "%";
-            //                txtExcelenciaPrimero.Text = excelencia + " EST.";
-            //                lbSeccionPrimero.Text = "A";
-            //                int p4 = Convert.ToInt32(promedio);
+        //            case "PRIMERO":
+        //                txtPromedioPrimero.Text = promedio + "%";
+        //                txtExcelenciaPrimero.Text = excelencia + " EST.";
+        //                lbSeccionPrimero.Text = "A";
+        //                int p4 = Convert.ToInt32(promedio);
 
-            //                if (p4 >= 90)
-            //                    txtPromedioPrimero1.FillColor = Color.ForestGreen;
-            //                txtPromedioPrimero.FillColor = Color.ForestGreen;
-            //                if (p4 < 90 && p4 >= 70)
-            //                    txtPromedioPrimero1.FillColor = Color.LightYellow;
-            //                txtPromedioPrimero.FillColor = Color.LightYellow;
-            //                if (p4 < 70)
-            //                    txtPromedioPrimero1.FillColor = Color.Tomato;
-            //                txtPromedioPrimero.FillColor = Color.Tomato;
-            //                break;
+        //                if (p4 >= 90)
+        //                    txtPromedioPrimero1.FillColor = Color.ForestGreen;
+        //                txtPromedioPrimero.FillColor = Color.ForestGreen;
+        //                if (p4 < 90 && p4 >= 70)
+        //                    txtPromedioPrimero1.FillColor = Color.LightYellow;
+        //                txtPromedioPrimero.FillColor = Color.LightYellow;
+        //                if (p4 < 70)
+        //                    txtPromedioPrimero1.FillColor = Color.Tomato;
+        //                txtPromedioPrimero.FillColor = Color.Tomato;
+        //                break;
 
-            //            case "SEGUNDO":
-            //                txtPromedioSegundo.Text = promedio + "%";
-            //                txtExcelenciaSegundo.Text = excelencia + " EST.";
-            //                lbSeccionSegundo.Text = "A";
-            //                int p5 = Convert.ToInt32(promedio);
+        //            case "SEGUNDO":
+        //                txtPromedioSegundo.Text = promedio + "%";
+        //                txtExcelenciaSegundo.Text = excelencia + " EST.";
+        //                lbSeccionSegundo.Text = "A";
+        //                int p5 = Convert.ToInt32(promedio);
 
-            //                if (p5 >= 90)
-            //                    txtPromedioSegundo1.FillColor = Color.ForestGreen;
-            //                txtPromedioSegundo.FillColor = Color.ForestGreen;
-            //                if (p5 < 90 && p5 >= 70)
-            //                    txtPromedioSegundo1.FillColor = Color.LightYellow;
-            //                txtPromedioSegundo.FillColor = Color.LightYellow;
-            //                if (p5 < 70)
-            //                    txtPromedioSegundo1.FillColor = Color.Tomato;
-            //                txtPromedioSegundo.FillColor = Color.Tomato;
-            //                break;
+        //                if (p5 >= 90)
+        //                    txtPromedioSegundo1.FillColor = Color.ForestGreen;
+        //                txtPromedioSegundo.FillColor = Color.ForestGreen;
+        //                if (p5 < 90 && p5 >= 70)
+        //                    txtPromedioSegundo1.FillColor = Color.LightYellow;
+        //                txtPromedioSegundo.FillColor = Color.LightYellow;
+        //                if (p5 < 70)
+        //                    txtPromedioSegundo1.FillColor = Color.Tomato;
+        //                txtPromedioSegundo.FillColor = Color.Tomato;
+        //                break;
 
-            //            case "TERCERO":
-            //                txtPromedioTercero.Text = promedio + "%";
-            //                txtExcelenciaTercero.Text = excelencia + " EST.";
-            //                lbSeccionTercero.Text = "A";
-            //                int p6 = Convert.ToInt32(promedio);
+        //            case "TERCERO":
+        //                txtPromedioTercero.Text = promedio + "%";
+        //                txtExcelenciaTercero.Text = excelencia + " EST.";
+        //                lbSeccionTercero.Text = "A";
+        //                int p6 = Convert.ToInt32(promedio);
 
-            //                if (p6 >= 90)
-            //                    txtPromedioTercero1.FillColor = Color.ForestGreen;
-            //                txtPromedioTercero.FillColor = Color.ForestGreen;
-            //                if (p6 < 90 && p6 >= 70)
-            //                    txtPromedioTercero1.FillColor = Color.LightYellow;
-            //                txtPromedioTercero.FillColor = Color.LightYellow;
-            //                if (p6 < 70)
-            //                    txtPromedioTercero1.FillColor = Color.Tomato;
-            //                txtPromedioTercero.FillColor = Color.Tomato;
-            //                break;
+        //                if (p6 >= 90)
+        //                    txtPromedioTercero1.FillColor = Color.ForestGreen;
+        //                txtPromedioTercero.FillColor = Color.ForestGreen;
+        //                if (p6 < 90 && p6 >= 70)
+        //                    txtPromedioTercero1.FillColor = Color.LightYellow;
+        //                txtPromedioTercero.FillColor = Color.LightYellow;
+        //                if (p6 < 70)
+        //                    txtPromedioTercero1.FillColor = Color.Tomato;
+        //                txtPromedioTercero.FillColor = Color.Tomato;
+        //                break;
 
-            //            case "CUARTO":
-            //                txtPromedioCuarto.Text = promedio + "%";
-            //                txtExcelenciaCuarto.Text = excelencia + " EST.";
-            //                lbSeccionCuarto.Text = "A";
-            //                int p7 = Convert.ToInt32(promedio);
+        //            case "CUARTO":
+        //                txtPromedioCuarto.Text = promedio + "%";
+        //                txtExcelenciaCuarto.Text = excelencia + " EST.";
+        //                lbSeccionCuarto.Text = "A";
+        //                int p7 = Convert.ToInt32(promedio);
 
-            //                if (p7 >= 90)
-            //                    txtPromedioCuarto1.FillColor = Color.ForestGreen;
-            //                txtPromedioCuarto.FillColor = Color.ForestGreen;
-            //                if (p7 < 90 && p7 >= 70)
-            //                    txtPromedioCuarto1.FillColor = Color.LightYellow;
-            //                txtPromedioCuarto.FillColor = Color.LightYellow;
-            //                if (p7 < 70)
-            //                    txtPromedioCuarto1.FillColor = Color.Tomato;
-            //                txtPromedioCuarto.FillColor = Color.Tomato;
-            //                break;
+        //                if (p7 >= 90)
+        //                    txtPromedioCuarto1.FillColor = Color.ForestGreen;
+        //                txtPromedioCuarto.FillColor = Color.ForestGreen;
+        //                if (p7 < 90 && p7 >= 70)
+        //                    txtPromedioCuarto1.FillColor = Color.LightYellow;
+        //                txtPromedioCuarto.FillColor = Color.LightYellow;
+        //                if (p7 < 70)
+        //                    txtPromedioCuarto1.FillColor = Color.Tomato;
+        //                txtPromedioCuarto.FillColor = Color.Tomato;
+        //                break;
 
-            //            case "QUINTO":
-            //                txtPromedioQuinto.Text = promedio + "%";
-            //                txtExcelenciaQuinto.Text = excelencia + " EST.";
-            //                lbSeccionQuinto.Text = "A";
-            //                int p8 = Convert.ToInt32(promedio);
+        //            case "QUINTO":
+        //                txtPromedioQuinto.Text = promedio + "%";
+        //                txtExcelenciaQuinto.Text = excelencia + " EST.";
+        //                lbSeccionQuinto.Text = "A";
+        //                int p8 = Convert.ToInt32(promedio);
 
-            //                if (p8 >= 90)
-            //                    txtPromedioQuinto1.FillColor = Color.ForestGreen;
-            //                txtPromedioQuinto.FillColor = Color.ForestGreen;
-            //                if (p8 < 90 && p8 >= 70)
-            //                    txtPromedioQuinto1.FillColor = Color.LightYellow;
-            //                txtPromedioQuinto.FillColor = Color.LightYellow;
-            //                if (p8 < 70)
-            //                    txtPromedioQuinto1.FillColor = Color.Tomato;
-            //                txtPromedioQuinto.FillColor = Color.Tomato;
-            //                break;
+        //                if (p8 >= 90)
+        //                    txtPromedioQuinto1.FillColor = Color.ForestGreen;
+        //                txtPromedioQuinto.FillColor = Color.ForestGreen;
+        //                if (p8 < 90 && p8 >= 70)
+        //                    txtPromedioQuinto1.FillColor = Color.LightYellow;
+        //                txtPromedioQuinto.FillColor = Color.LightYellow;
+        //                if (p8 < 70)
+        //                    txtPromedioQuinto1.FillColor = Color.Tomato;
+        //                txtPromedioQuinto.FillColor = Color.Tomato;
+        //                break;
 
-            //            case "SEXTO":
-            //                txtPromedioSexto.Text = promedio + "%";
-            //                txtExcelenciaSexto.Text = excelencia + " EST.";
-            //                lbSeccionSexto.Text = "A";
-            //                int p9 = Convert.ToInt32(promedio);
+        //            case "SEXTO":
+        //                txtPromedioSexto.Text = promedio + "%";
+        //                txtExcelenciaSexto.Text = excelencia + " EST.";
+        //                lbSeccionSexto.Text = "A";
+        //                int p9 = Convert.ToInt32(promedio);
 
-            //                if (p9 >= 90)
-            //                    txtPromedioSexto1.FillColor = Color.ForestGreen;
-            //                txtPromedioSexto.FillColor = Color.ForestGreen;
-            //                if (p9 < 90 && p9 >= 70)
-            //                    txtPromedioSexto1.FillColor = Color.LightYellow;
-            //                txtPromedioSexto.FillColor = Color.LightYellow;
-            //                if (p9 < 70)
-            //                    txtPromedioSexto1.FillColor = Color.Tomato;
-            //                txtPromedioSexto.FillColor = Color.Tomato;
-            //                break;
+        //                if (p9 >= 90)
+        //                    txtPromedioSexto1.FillColor = Color.ForestGreen;
+        //                txtPromedioSexto.FillColor = Color.ForestGreen;
+        //                if (p9 < 90 && p9 >= 70)
+        //                    txtPromedioSexto1.FillColor = Color.LightYellow;
+        //                txtPromedioSexto.FillColor = Color.LightYellow;
+        //                if (p9 < 70)
+        //                    txtPromedioSexto1.FillColor = Color.Tomato;
+        //                txtPromedioSexto.FillColor = Color.Tomato;
+        //                break;
 
-            //            case "SÉPTIMO":
-            //            case "SEPTIMO":
-            //                txtPromedioSeptimo.Text = promedio + "%";
-            //                txtExcelenciaSeptimo.Text = excelencia + " EST.";
-            //                lbSeccionSeptimo.Text = "A";
-            //                int p10 = Convert.ToInt32(promedio);
+        //            case "SÉPTIMO":
+        //            case "SEPTIMO":
+        //                txtPromedioSeptimo.Text = promedio + "%";
+        //                txtExcelenciaSeptimo.Text = excelencia + " EST.";
+        //                lbSeccionSeptimo.Text = "A";
+        //                int p10 = Convert.ToInt32(promedio);
 
-            //                if (p10 >= 90)
-            //                    txtPromedioSeptimo1.FillColor = Color.ForestGreen;
-            //                txtPromedioSeptimo.FillColor = Color.ForestGreen;
-            //                if (p10 < 90 && p10 >= 70)
-            //                    txtPromedioSeptimo1.FillColor = Color.LightYellow;
-            //                txtPromedioSeptimo.FillColor = Color.LightYellow;
-            //                if (p10 < 70)
-            //                    txtPromedioSeptimo1.FillColor = Color.Tomato;
-            //                txtPromedioSeptimo.FillColor = Color.Tomato;
-            //                break;
+        //                if (p10 >= 90)
+        //                    txtPromedioSeptimo1.FillColor = Color.ForestGreen;
+        //                txtPromedioSeptimo.FillColor = Color.ForestGreen;
+        //                if (p10 < 90 && p10 >= 70)
+        //                    txtPromedioSeptimo1.FillColor = Color.LightYellow;
+        //                txtPromedioSeptimo.FillColor = Color.LightYellow;
+        //                if (p10 < 70)
+        //                    txtPromedioSeptimo1.FillColor = Color.Tomato;
+        //                txtPromedioSeptimo.FillColor = Color.Tomato;
+        //                break;
 
-            //            case "OCTAVO":
-            //                txtPromedioOctavo.Text = promedio + "%";
-            //                txtExcelenciaOctavo.Text = excelencia + " EST.";
-            //                lbSeccionOctavo.Text = "A";
-            //                int p11 = Convert.ToInt32(promedio);
+        //            case "OCTAVO":
+        //                txtPromedioOctavo.Text = promedio + "%";
+        //                txtExcelenciaOctavo.Text = excelencia + " EST.";
+        //                lbSeccionOctavo.Text = "A";
+        //                int p11 = Convert.ToInt32(promedio);
 
-            //                if (p11 >= 90)
-            //                    txtPromedioOctavo1.FillColor = Color.ForestGreen;
-            //                txtPromedioOctavo.FillColor = Color.ForestGreen;
-            //                if (p11 < 90 && p11 >= 70)
-            //                    txtPromedioOctavo1.FillColor = Color.LightYellow;
-            //                txtPromedioOctavo.FillColor = Color.LightYellow;
-            //                if (p11 < 70)
-            //                    txtPromedioOctavo1.FillColor = Color.Tomato;
-            //                txtPromedioOctavo.FillColor = Color.Tomato;
-            //                break;
+        //                if (p11 >= 90)
+        //                    txtPromedioOctavo1.FillColor = Color.ForestGreen;
+        //                txtPromedioOctavo.FillColor = Color.ForestGreen;
+        //                if (p11 < 90 && p11 >= 70)
+        //                    txtPromedioOctavo1.FillColor = Color.LightYellow;
+        //                txtPromedioOctavo.FillColor = Color.LightYellow;
+        //                if (p11 < 70)
+        //                    txtPromedioOctavo1.FillColor = Color.Tomato;
+        //                txtPromedioOctavo.FillColor = Color.Tomato;
+        //                break;
 
-            //            case "NOVENO":
-            //                txtPromedioNoveno.Text = promedio + "%";
-            //                txtExcelenciaNoveno.Text = excelencia + " EST.";
-            //                lbSeccionNoveno.Text = "A";
-            //                int p12 = Convert.ToInt32(promedio);
+        //            case "NOVENO":
+        //                txtPromedioNoveno.Text = promedio + "%";
+        //                txtExcelenciaNoveno.Text = excelencia + " EST.";
+        //                lbSeccionNoveno.Text = "A";
+        //                int p12 = Convert.ToInt32(promedio);
 
-            //                if (p12 >= 90)
-            //                    txtPromedioNoveno1.FillColor = Color.ForestGreen;
-            //                txtPromedioNoveno.FillColor = Color.ForestGreen;
-            //                if (p12 < 90 && p12 >= 70)
-            //                    txtPromedioNoveno1.FillColor = Color.LightYellow;
-            //                txtPromedioNoveno.FillColor = Color.LightYellow;
-            //                if (p12 < 70)
-            //                    txtPromedioNoveno1.FillColor = Color.Tomato;
-            //                txtPromedioNoveno.FillColor = Color.Tomato;
-            //                break;
+        //                if (p12 >= 90)
+        //                    txtPromedioNoveno1.FillColor = Color.ForestGreen;
+        //                txtPromedioNoveno.FillColor = Color.ForestGreen;
+        //                if (p12 < 90 && p12 >= 70)
+        //                    txtPromedioNoveno1.FillColor = Color.LightYellow;
+        //                txtPromedioNoveno.FillColor = Color.LightYellow;
+        //                if (p12 < 70)
+        //                    txtPromedioNoveno1.FillColor = Color.Tomato;
+        //                txtPromedioNoveno.FillColor = Color.Tomato;
+        //                break;
 
-            //            case "DECIMO":
-            //                txtPromedioDecimo.Text = promedio + "%";
-            //                txtExcelenciaDecimo.Text = excelencia + " EST.";
-            //                lbSeccionDecimo.Text = "A";
-            //                int p13 = Convert.ToInt32(promedio);
+        //            case "DECIMO":
+        //                txtPromedioDecimo.Text = promedio + "%";
+        //                txtExcelenciaDecimo.Text = excelencia + " EST.";
+        //                lbSeccionDecimo.Text = "A";
+        //                int p13 = Convert.ToInt32(promedio);
 
-            //                if (p13 >= 90)
-            //                    txtPromedioDecimo1.FillColor = Color.ForestGreen;
-            //                txtPromedioDecimo.FillColor = Color.ForestGreen;
-            //                if (p13 < 90 && p13 >= 70)
-            //                    txtPromedioDecimo1.FillColor = Color.LightYellow;
-            //                txtPromedioDecimo.FillColor = Color.LightYellow;
-            //                if (p13 < 70)
-            //                    txtPromedioDecimo1.FillColor = Color.Tomato;
-            //                txtPromedioDecimo.FillColor = Color.Tomato;
-            //                break;
+        //                if (p13 >= 90)
+        //                    txtPromedioDecimo1.FillColor = Color.ForestGreen;
+        //                txtPromedioDecimo.FillColor = Color.ForestGreen;
+        //                if (p13 < 90 && p13 >= 70)
+        //                    txtPromedioDecimo1.FillColor = Color.LightYellow;
+        //                txtPromedioDecimo.FillColor = Color.LightYellow;
+        //                if (p13 < 70)
+        //                    txtPromedioDecimo1.FillColor = Color.Tomato;
+        //                txtPromedioDecimo.FillColor = Color.Tomato;
+        //                break;
 
-            //            case "UNDECIMO":
-            //                txtPromedioUndecimo.Text = promedio;
-            //                txtExcelenciaUndecimo.Text = excelencia + " EST.";
-            //                lbSeccionUndecimo.Text = "A";
-            //                int p14 = Convert.ToInt32(promedio);
+        //            case "UNDECIMO":
+        //                txtPromedioUndecimo.Text = promedio;
+        //                txtExcelenciaUndecimo.Text = excelencia + " EST.";
+        //                lbSeccionUndecimo.Text = "A";
+        //                int p14 = Convert.ToInt32(promedio);
 
-            //                if (p14 >= 90)
-            //                    txtPromedioUndecimo1.FillColor = Color.ForestGreen;
-            //                txtPromedioUndecimo.FillColor = Color.ForestGreen;
-            //                if (p14 < 90 && p14 >= 70)
-            //                    txtPromedioUndecimo1.FillColor = Color.LightYellow;
-            //                txtPromedioUndecimo.FillColor = Color.LightYellow;
-            //                if (p14 < 70)
-            //                    txtPromedioUndecimo1.FillColor = Color.Tomato;
-            //                txtPromedioUndecimo.FillColor = Color.Tomato;
-            //                break;
-            //        }
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show("Error al cargar los promedios: " + ex.Message);
-            //}
+        //                if (p14 >= 90)
+        //                    txtPromedioUndecimo1.FillColor = Color.ForestGreen;
+        //                txtPromedioUndecimo.FillColor = Color.ForestGreen;
+        //                if (p14 < 90 && p14 >= 70)
+        //                    txtPromedioUndecimo1.FillColor = Color.LightYellow;
+        //                txtPromedioUndecimo.FillColor = Color.LightYellow;
+        //                if (p14 < 70)
+        //                    txtPromedioUndecimo1.FillColor = Color.Tomato;
+        //                txtPromedioUndecimo.FillColor = Color.Tomato;
+        //                break;
+        //        }
+        //    }
+        //}
+        //catch (Exception ex)
+        //{
+        //    MessageBox.Show("Error al cargar los promedios: " + ex.Message);
+        //}
         //}
         private void FrmDashboard_Load(object sender, EventArgs e)
         {
@@ -1111,10 +1111,15 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
         private void cbbParcial_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
             CargarPromediosPorGrado2();
             MostrarContenedoresPorNivel();
             CargarGraficoPorGrado();
+
+        }
+
+        private void guna2HtmlLabel2_Click(object sender, EventArgs e)
+        {
 
         }
     }
