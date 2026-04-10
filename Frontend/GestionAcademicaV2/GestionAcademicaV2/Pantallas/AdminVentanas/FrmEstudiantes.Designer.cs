@@ -88,6 +88,7 @@
             guna2ContainerControl1.Size = new Size(943, 434);
             guna2ContainerControl1.TabIndex = 0;
             guna2ContainerControl1.Text = "guna2ContainerControl1";
+            guna2ContainerControl1.Click += guna2ContainerControl1_Click;
             // 
             // dgvEstudiantes
             // 

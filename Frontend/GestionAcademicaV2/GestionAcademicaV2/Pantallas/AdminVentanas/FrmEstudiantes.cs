@@ -242,5 +242,10 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
         {
             BuscarConSP();
         }
+
+        private void guna2ContainerControl1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -238,4 +238,31 @@
   <data name="gestion_white1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\gestion_white1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Activo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Activo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BotonEditar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BotonEditar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Inactivo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Inactivo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Activo1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Activo1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BotonEditar1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BotonEditar1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Inactivo1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Inactivo1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btActivo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btActivo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btInactivo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btInactivo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btActivo1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btActivo1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>
