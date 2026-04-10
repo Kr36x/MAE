@@ -28,13 +28,101 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            if (!txtCorreo.Text.Contains("@"))
+            // Validaciones
+            if(usuarioID == 0 && txtUsuario.Text=="")
+            {
+                txtUsuario.Focus();
+                MessageBox.Show("Debe colocar un usuario");
+                return;
+            }else if (usuarioID == 0 && txtContrasena.Text == "")
+            {
+                txtContrasena.Focus();
+                MessageBox.Show("Debe colocar una contraseña.");
+                return;
+            }else if(usuarioID==0 && txtContrasena.TextLength<8)
+            {
+                txtContrasena.Focus();
+                MessageBox.Show("La contraseña debe tener al menos 8 caracteres.");
+                return;
+            } else if (usuarioID == 0 && txtCorreo.Text == "")
+            {
+                txtCorreo.Focus();
+                MessageBox.Show("Debe colocar un correo electronico.");
+                return;
+            }
+            else if (!txtCorreo.Text.Contains("@"))
             {
                 MessageBox.Show("El correo debe contener el símbolo @");
                 return;
             }
+            else if (usuarioID == 0 && cbbRol.Text == "")
+            {
+                cbbRol.Focus();
+                MessageBox.Show("Debe seleccionar un Rol para el usuario.");
+                return;
+            } else if(usuarioID == 0 && txtNombre.Text=="")
+            {
+                txtNombre.Focus();
+                MessageBox.Show("Debe colocar un nombre al usuario.");
+                return;
+            }
+            else if (usuarioID == 0 && txtIdentidad.Text=="")
+            {
+                txtIdentidad.Focus();
+                MessageBox.Show("Coloque un número de identidad al usuario.");
+                return;
+            }
+            else if (usuarioID == 0 && cbbRol.SelectedIndex == 0 && cbbSexo.Text == "")
+            {
+                cbbSexo.Focus();
+                MessageBox.Show("Debe colocar el genero del usuario.");
+                return;
+            }
+            else if (usuarioID == 0 && cbbRol.SelectedIndex == 1 && cbbSexo.Text == "")
+            {
+                cbbSexo.Focus();
+                MessageBox.Show("Debe colocar el genero del usuario.");
+                return;
+            }
+            else if (usuarioID == 0 && cbbRol.SelectedIndex==2 && cbbParentesco.Text=="")
+            {
+                cbbParentesco.Focus();
+                MessageBox.Show("Debe colocar un parentesco al tutor.");
+                return;
+            }
+            else if (usuarioID == 0 && cbbRol.SelectedIndex == 1 && dtpFechaNacimiento.Value == DateTime.Now)
+            {
+                dtpFechaNacimiento.Focus();
+                MessageBox.Show("Debe seleccionar una fecha de nacimiento.");
+                return;
+            }
+            else if (usuarioID == 0 && cbbRol.SelectedIndex == 0 && txtPosicion.Text == "")
+            {
+                txtPosicion.Focus();
+                MessageBox.Show("Debe colocar la posición del usuario Administrador.");
+                return;
+            }
+            else if (usuarioID == 0 && cbbRol.SelectedIndex == 0 && txtDireccion.Text == "")
+            {
+                txtDireccion.Focus();
+                MessageBox.Show("Debe colocar la dirección del Docente.");
+                return;
+            }
+            else if (usuarioID == 0 && txtTelefono.Text == "")
+            {
+                txtTelefono.Focus();
+                MessageBox.Show("Debe colocar un número de teléfono al usuario.");
+                return;
+            }
+            else if (usuarioID == 0 && cbbRol.SelectedIndex == 1 && txtEspecialidad.Text == "")
+            {
+                cbbParentesco.Focus();
+                MessageBox.Show("Debe colocar la especialidad del Docente.");
+                return;
+            }
             else
             {
+                // Cargar los datos a la base de datos
                 EjecutarUtilidades util = new EjecutarUtilidades();
 
                 SqlParameter[] p =
@@ -74,6 +162,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
         private void CargarDatosUsuario()
         {
+            // Metodo utilizado para cargar los datos del usuario al formulario según el usuarioId
             EjecutarUtilidades util = new EjecutarUtilidades();
 
             SqlParameter[] p =
@@ -274,6 +363,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
         private void cbbRol_SelectedIndexChanged(object sender, EventArgs e)
         {
+            // Dinamica del cbbRol, muestra los campos según la selección del Rol.
             ctnDatosUsuario.Visible = true;
             if (cbbRol.SelectedIndex == 0)
             {
@@ -392,6 +482,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
         private void txtIdentidad_TextChanged(object sender, EventArgs e)
         {
+            // Formateo del textIdentidad
             int cursor = txtIdentidad.SelectionStart;
 
             string limpio = new string(txtIdentidad.Text.Where(char.IsDigit).ToArray());
@@ -419,6 +510,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
         private void txtTelefono_TextChanged(object sender, EventArgs e)
         {
+            // Formateo del txtTelefono
             if (txtTelefono.Text.Length == 4 && !txtTelefono.Text.Contains("-"))
             {
                 txtTelefono.Text += "-";
@@ -428,6 +520,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
         private void txtIdentidad_KeyPress(object sender, KeyPressEventArgs e)
         {
+            // Validación de solo números
             if (e.KeyChar == (char)Keys.Back)
                 return;
 
@@ -440,6 +533,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
         private void txtTelefono_KeyPress(object sender, KeyPressEventArgs e)
         {
+            // Validación de solo números.
             if (e.KeyChar == (char)Keys.Back)
                 return;
 
@@ -452,6 +546,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
         private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
         {
+            // Validación de solo letras.
             if (e.KeyChar == (char)Keys.Back)
                 return;
 
@@ -502,6 +597,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
         private void btVer_Click(object sender, EventArgs e)
         {
+            // Ver o ocultar contraseña
             if (txtContrasena.PasswordChar == '\0')
             {
                 txtContrasena.PasswordChar = '*';
@@ -515,6 +611,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
         private void txtEspecialidad_KeyPress(object sender, KeyPressEventArgs e)
         {
+            // Validación de solo letras.
             if (e.KeyChar == (char)Keys.Back)
                 return;
 
@@ -539,6 +636,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
         private void dtpFechaNacimiento_ValueChanged(object sender, EventArgs e)
         {
+            // Validación de que se seleccione una fecha de nacimiento mayor a 18 años.
             DateTime fecha = dtpFechaNacimiento.Value;
             DateTime hoy = DateTime.Now;
 
@@ -549,18 +647,18 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
             if (edad < 18)
             {
+                dtpFechaNacimiento.Focus();
                 MessageBox.Show("Debe ser mayor de 18 años.",
                                 "Validación",
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Warning);
-
-                dtpFechaNacimiento.Value = hoy.AddYears(-18);
             }
 
         }
 
         private void txtPosicion_KeyPress(object sender, KeyPressEventArgs e)
         {
+            // Validación de solo letras.
             if (e.KeyChar == (char)Keys.Back)
                 return;
 

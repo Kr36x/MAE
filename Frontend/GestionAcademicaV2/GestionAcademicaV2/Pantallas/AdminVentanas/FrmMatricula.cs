@@ -666,7 +666,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
             try
             {
                 EjecutarUtilidades util = new EjecutarUtilidades();
-
+                // Validaciones
                 string correo = txtCorreoPadre.Text.Trim();
 
                 if (!correo.Contains("@") || !correo.Contains("."))
@@ -1022,12 +1022,11 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
             if (edad < 4)
             {
+                dtpFechaNacimiento.Focus();
                 MessageBox.Show("El estudiante debe tener al menos 5 años.",
                                 "Validación",
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Warning);
-
-                dtpFechaNacimiento.Value = DateTime.Now.AddYears(-5);
             }
 
         }

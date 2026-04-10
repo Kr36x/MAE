@@ -116,10 +116,11 @@
             // guna2HtmlLabel4
             // 
             guna2HtmlLabel4.BackColor = Color.Transparent;
-            guna2HtmlLabel4.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            guna2HtmlLabel4.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            guna2HtmlLabel4.ForeColor = Color.Gray;
             guna2HtmlLabel4.Location = new Point(188, 88);
             guna2HtmlLabel4.Name = "guna2HtmlLabel4";
-            guna2HtmlLabel4.Size = new Size(519, 19);
+            guna2HtmlLabel4.Size = new Size(537, 19);
             guna2HtmlLabel4.TabIndex = 112;
             guna2HtmlLabel4.Text = "Administre las credenciales de acceso y perfiles profesionales o familiares del sistema.";
             // 
@@ -163,7 +164,7 @@
             txtBuscar.SelectedText = "";
             txtBuscar.ShadowDecoration.CustomizableEdges = customizableEdges4;
             txtBuscar.Size = new Size(451, 36);
-            txtBuscar.TabIndex = 5;
+            txtBuscar.TabIndex = 2;
             txtBuscar.TextChanged += txtBuscar_TextChanged;
             // 
             // lbBuscar
@@ -194,7 +195,7 @@
             cbbRol.Name = "cbbRol";
             cbbRol.ShadowDecoration.CustomizableEdges = customizableEdges6;
             cbbRol.Size = new Size(369, 36);
-            cbbRol.TabIndex = 3;
+            cbbRol.TabIndex = 1;
             cbbRol.SelectedIndexChanged += cbbRol_SelectedIndexChanged;
             // 
             // lbRol
@@ -225,7 +226,7 @@
             btNuevoUsuario.Name = "btNuevoUsuario";
             btNuevoUsuario.ShadowDecoration.CustomizableEdges = customizableEdges8;
             btNuevoUsuario.Size = new Size(187, 36);
-            btNuevoUsuario.TabIndex = 1;
+            btNuevoUsuario.TabIndex = 3;
             btNuevoUsuario.Text = "NUEVO USUARIO";
             btNuevoUsuario.Click += btNuevoUsuario_Click;
             // 

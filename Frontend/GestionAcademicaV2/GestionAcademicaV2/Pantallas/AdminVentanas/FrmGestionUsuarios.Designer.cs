@@ -163,7 +163,7 @@
             txtIdentidad.SelectedText = "";
             txtIdentidad.ShadowDecoration.CustomizableEdges = customizableEdges2;
             txtIdentidad.Size = new Size(237, 31);
-            txtIdentidad.TabIndex = 1;
+            txtIdentidad.TabIndex = 6;
             txtIdentidad.TextAlign = HorizontalAlignment.Center;
             txtIdentidad.TextChanged += txtIdentidad_TextChanged;
             txtIdentidad.KeyPress += txtIdentidad_KeyPress;
@@ -222,7 +222,7 @@
             txtNombre.SelectedText = "";
             txtNombre.ShadowDecoration.CustomizableEdges = customizableEdges6;
             txtNombre.Size = new Size(237, 31);
-            txtNombre.TabIndex = 2;
+            txtNombre.TabIndex = 5;
             txtNombre.KeyPress += txtNombre_KeyPress;
             // 
             // lbRol
@@ -253,7 +253,7 @@
             cbbRol.Name = "cbbRol";
             cbbRol.ShadowDecoration.CustomizableEdges = customizableEdges8;
             cbbRol.Size = new Size(237, 31);
-            cbbRol.TabIndex = 3;
+            cbbRol.TabIndex = 4;
             cbbRol.SelectedIndexChanged += cbbRol_SelectedIndexChanged;
             // 
             // lbSexo
@@ -359,7 +359,7 @@
             txtTelefono.SelectedText = "";
             txtTelefono.ShadowDecoration.CustomizableEdges = customizableEdges14;
             txtTelefono.Size = new Size(237, 31);
-            txtTelefono.TabIndex = 9;
+            txtTelefono.TabIndex = 10;
             txtTelefono.TextAlign = HorizontalAlignment.Center;
             txtTelefono.Visible = false;
             txtTelefono.TextChanged += txtTelefono_TextChanged;
@@ -369,7 +369,7 @@
             // 
             lbFechaNacimiento.BackColor = Color.Transparent;
             lbFechaNacimiento.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            lbFechaNacimiento.Location = new Point(17, 243);
+            lbFechaNacimiento.Location = new Point(17, 242);
             lbFechaNacimiento.Name = "lbFechaNacimiento";
             lbFechaNacimiento.Size = new Size(134, 17);
             lbFechaNacimiento.TabIndex = 90;
@@ -398,7 +398,7 @@
             txtEspecialidad.SelectedText = "";
             txtEspecialidad.ShadowDecoration.CustomizableEdges = customizableEdges16;
             txtEspecialidad.Size = new Size(237, 31);
-            txtEspecialidad.TabIndex = 13;
+            txtEspecialidad.TabIndex = 11;
             txtEspecialidad.Visible = false;
             txtEspecialidad.KeyPress += txtEspecialidad_KeyPress;
             // 
@@ -418,7 +418,7 @@
             dtpFechaNacimiento.Name = "dtpFechaNacimiento";
             dtpFechaNacimiento.ShadowDecoration.CustomizableEdges = customizableEdges18;
             dtpFechaNacimiento.Size = new Size(237, 31);
-            dtpFechaNacimiento.TabIndex = 10;
+            dtpFechaNacimiento.TabIndex = 8;
             dtpFechaNacimiento.TextAlign = HorizontalAlignment.Center;
             dtpFechaNacimiento.Value = new DateTime(2026, 3, 9, 16, 34, 47, 117);
             dtpFechaNacimiento.Visible = false;
@@ -468,7 +468,7 @@
             txtPosicion.SelectedText = "";
             txtPosicion.ShadowDecoration.CustomizableEdges = customizableEdges20;
             txtPosicion.Size = new Size(237, 31);
-            txtPosicion.TabIndex = 11;
+            txtPosicion.TabIndex = 8;
             txtPosicion.Visible = false;
             txtPosicion.KeyPress += txtPosicion_KeyPress;
             // 
@@ -504,7 +504,7 @@
             txtUsuario.SelectedText = "";
             txtUsuario.ShadowDecoration.CustomizableEdges = customizableEdges22;
             txtUsuario.Size = new Size(237, 31);
-            txtUsuario.TabIndex = 4;
+            txtUsuario.TabIndex = 1;
             // 
             // lbContrasena
             // 
@@ -538,7 +538,7 @@
             txtContrasena.SelectedText = "";
             txtContrasena.ShadowDecoration.CustomizableEdges = customizableEdges24;
             txtContrasena.Size = new Size(192, 31);
-            txtContrasena.TabIndex = 5;
+            txtContrasena.TabIndex = 2;
             // 
             // txtCorreo
             // 
@@ -562,7 +562,7 @@
             txtCorreo.SelectedText = "";
             txtCorreo.ShadowDecoration.CustomizableEdges = customizableEdges26;
             txtCorreo.Size = new Size(237, 31);
-            txtCorreo.TabIndex = 6;
+            txtCorreo.TabIndex = 3;
             // 
             // lbCorreo
             // 
@@ -608,7 +608,7 @@
             txtLugarTrabajo.SelectedText = "";
             txtLugarTrabajo.ShadowDecoration.CustomizableEdges = customizableEdges28;
             txtLugarTrabajo.Size = new Size(237, 100);
-            txtLugarTrabajo.TabIndex = 15;
+            txtLugarTrabajo.TabIndex = 9;
             txtLugarTrabajo.Visible = false;
             // 
             // lbParentesco
@@ -774,8 +774,8 @@
             cbbParentesco.Location = new Point(15, 189);
             cbbParentesco.Name = "cbbParentesco";
             cbbParentesco.ShadowDecoration.CustomizableEdges = customizableEdges34;
-            cbbParentesco.Size = new Size(238, 31);
-            cbbParentesco.TabIndex = 114;
+            cbbParentesco.Size = new Size(226, 31);
+            cbbParentesco.TabIndex = 7;
             // 
             // lbAvisoEspecialidad
             // 
@@ -967,9 +967,9 @@
             lbAvisoUsuario.ForeColor = Color.Silver;
             lbAvisoUsuario.Location = new Point(16, 85);
             lbAvisoUsuario.Name = "lbAvisoUsuario";
-            lbAvisoUsuario.Size = new Size(237, 15);
+            lbAvisoUsuario.Size = new Size(114, 15);
             lbAvisoUsuario.TabIndex = 101;
-            lbAvisoUsuario.Text = "USE MAYÚSCULAS Y PUNTO PARA SEPARAR";
+            lbAvisoUsuario.Text = "INGRESE EL USUARIO";
             // 
             // guna2HtmlLabel5
             // 

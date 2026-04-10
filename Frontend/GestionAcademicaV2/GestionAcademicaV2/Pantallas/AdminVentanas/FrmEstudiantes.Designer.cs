@@ -253,7 +253,7 @@
             dtpAnio.ShadowDecoration.CustomizableEdges = customizableEdges4;
             dtpAnio.ShowUpDown = true;
             dtpAnio.Size = new Size(217, 36);
-            dtpAnio.TabIndex = 7;
+            dtpAnio.TabIndex = 2;
             dtpAnio.TextAlign = HorizontalAlignment.Center;
             dtpAnio.Value = new DateTime(2025, 3, 21, 0, 54, 0, 0);
             dtpAnio.ValueChanged += dtpAnio_ValueChanged;
@@ -296,7 +296,7 @@
             cbbGrado.Name = "cbbGrado";
             cbbGrado.ShadowDecoration.CustomizableEdges = customizableEdges6;
             cbbGrado.Size = new Size(207, 36);
-            cbbGrado.TabIndex = 4;
+            cbbGrado.TabIndex = 1;
             cbbGrado.SelectedIndexChanged += cbbGrado_SelectedIndexChanged;
             // 
             // guna2HtmlLabel5
@@ -330,7 +330,7 @@
             txtBuscarEstudiante.SelectedText = "";
             txtBuscarEstudiante.ShadowDecoration.CustomizableEdges = customizableEdges8;
             txtBuscarEstudiante.Size = new Size(405, 36);
-            txtBuscarEstudiante.TabIndex = 1;
+            txtBuscarEstudiante.TabIndex = 3;
             txtBuscarEstudiante.TextChanged += txtBuscarEstudiante_TextChanged;
             // 
             // guna2HtmlLabel4

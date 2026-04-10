@@ -2618,11 +2618,12 @@
             // 
             // chartGrados
             // 
+            chartGrados.BackColor = Color.Transparent;
             chartArea1.Name = "ChartArea1";
             chartGrados.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             chartGrados.Legends.Add(legend1);
-            chartGrados.Location = new Point(35, 44);
+            chartGrados.Location = new Point(-19, 44);
             chartGrados.Name = "chartGrados";
             series1.ChartArea = "ChartArea1";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
@@ -2633,7 +2634,7 @@
             series2.Name = "PROMEDIO ALCANZADO";
             chartGrados.Series.Add(series1);
             chartGrados.Series.Add(series2);
-            chartGrados.Size = new Size(825, 224);
+            chartGrados.Size = new Size(886, 224);
             chartGrados.TabIndex = 2;
             chartGrados.Text = "chart1";
             // 
@@ -2701,7 +2702,7 @@
             dtpAnio.Size = new Size(142, 36);
             dtpAnio.TabIndex = 8;
             dtpAnio.TextAlign = HorizontalAlignment.Center;
-            dtpAnio.Value = new DateTime(2026, 3, 21, 1, 13, 35, 415);
+            dtpAnio.Value = new DateTime(2025, 3, 21, 1, 13, 0, 0);
             dtpAnio.ValueChanged += guna2DateTimePicker1_ValueChanged;
             // 
             // pnlPrincipal
