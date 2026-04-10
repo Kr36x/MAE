@@ -17,36 +17,6 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
         {
             InitializeComponent();
             pantallaPrincipal = principal;
-            dgvUsuarios.CellValueChanged += dgvUsuarios_CellValueChanged;
-            dgvUsuarios.CurrentCellDirtyStateChanged += dgvUsuarios_CurrentCellDirtyStateChanged;
-        }
-        private void ConfigurarColumnaEstado()
-        {
-            try
-            {
-                if (dgvUsuarios.Columns.Contains("EstadoTexto"))
-                {
-                    int index = dgvUsuarios.Columns["EstadoTexto"].Index;
-                    dgvUsuarios.Columns.Remove("EstadoTexto");
-
-                    DataGridViewComboBoxColumn combo = new DataGridViewComboBoxColumn();
-                    combo.HeaderText = "ESTADO";
-                    combo.Name = "EstadoTexto";
-                    combo.DataPropertyName = "EstadoTexto";
-                    combo.Items.Add("ACTIVO");
-                    combo.Items.Add("INACTIVO");
-                    combo.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-                    combo.Width = 80;
-
-                    dgvUsuarios.Columns.Insert(index, combo);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al configurar el estado del usuario: " + ex.Message,
-                                "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
         }
 
         private void CargarUsuarios(string rol = "", string busqueda = "")
@@ -64,6 +34,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
                 DataTable dt = util.EjecutarSPParametros("spMAE_TraeUsuarios", p);
 
+                // Crear columna de texto para mostrar ACTIVO / INACTIVO
                 if (!dt.Columns.Contains("EstadoTexto"))
                     dt.Columns.Add("EstadoTexto", typeof(string));
 
@@ -75,14 +46,16 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
                 dgvUsuarios.DataSource = dt;
 
+                // Ocultar columna Estado real
                 if (dgvUsuarios.Columns.Contains("Estado"))
-                {
                     dgvUsuarios.Columns["Estado"].Visible = false;
-                }
 
-                ConfigurarColumnaEstado();
-                AgregarColumna();
+                // Ocultar columna EstadoTexto
+                if (dgvUsuarios.Columns.Contains("EstadoTexto"))
+                    dgvUsuarios.Columns["EstadoTexto"].Visible = false;
 
+                // Configurar columnas de imagen
+                ConfigurarColumnas();
             }
             catch (Exception ex)
             {
@@ -92,22 +65,26 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
         }
 
-        private void AgregarColumna()
+        private void ConfigurarColumnas()
         {
-            if (!dgvUsuarios.Columns.Contains("btnEditar"))
+            if (!dgvUsuarios.Columns.Contains("colEstado"))
             {
-                DataGridViewButtonColumn btnEditar = new DataGridViewButtonColumn();
-                btnEditar.Name = "btnEditar";
-                btnEditar.HeaderText = "EDITAR";
-                btnEditar.HeaderCell.Style.BackColor = Color.FromArgb(0, 102, 204);
-                btnEditar.Text = "";
-                btnEditar.UseColumnTextForButtonValue = false;
-                btnEditar.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-                btnEditar.Width = 50;
-
-                dgvUsuarios.Columns.Add(btnEditar);
-
+                DataGridViewImageColumn colEstado = new DataGridViewImageColumn();
+                colEstado.Name = "colEstado";
+                colEstado.HeaderText = "ESTADO";
+                colEstado.ImageLayout = DataGridViewImageCellLayout.Zoom;
+                dgvUsuarios.Columns.Add(colEstado);
             }
+
+            if (!dgvUsuarios.Columns.Contains("colEditar"))
+            {
+                DataGridViewImageColumn colEditar = new DataGridViewImageColumn();
+                colEditar.Name = "colEditar";
+                colEditar.HeaderText = "EDITAR";
+                colEditar.ImageLayout = DataGridViewImageCellLayout.Zoom;
+                dgvUsuarios.Columns.Add(colEditar);
+            }
+
         }
 
         private void AplicarFiltros()
@@ -141,15 +118,42 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
         private void dgvUsuarios_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
+            if (e.RowIndex < 0) return;
 
+            // Imagen Editar
+            if (dgvUsuarios.Columns[e.ColumnIndex].Name == "colEditar")
+            {
+                e.Value = Properties.Resources.BotonEditar1;
+            }
+
+            // Imagen Estado
+            if (dgvUsuarios.Columns[e.ColumnIndex].Name == "colEstado")
+            {
+                int estado = Convert.ToInt32(dgvUsuarios.Rows[e.RowIndex].Cells["Estado"].Value);
+
+                e.Value = estado == 1
+                    ? Properties.Resources.btActivo1
+                    : Properties.Resources.btInactivo;
+            }
         }
 
         private void dgvUsuarios_CurrentCellDirtyStateChanged(object sender, EventArgs e)
         {
-            if (dgvUsuarios.IsCurrentCellDirty)
-                dgvUsuarios.CommitEdit(DataGridViewDataErrorContexts.Commit);
+
         }
 
+        private void ActualizarEstadoUsuario(int usuarioID, int nuevoEstado)
+        {
+            EjecutarUtilidades util = new EjecutarUtilidades();
+
+            SqlParameter[] parametros = new SqlParameter[]
+            {
+                new SqlParameter("@usuarioID", usuarioID),
+                new SqlParameter("@estado", nuevoEstado)
+            };
+
+            util.EjecutarSPParametros("spMAE_ActualizarEstadoUsuario", parametros);
+        }
         private void dgvUsuarios_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
 
@@ -186,60 +190,46 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
                                 MessageBoxIcon.Error);
             }
 
-            //try
-            //{
-            //    if (dgvUsuarios.Columns[e.ColumnIndex].Name == "EstadoTexto")
-            //    {
-            //        int usuarioID = Convert.ToInt32(dgvUsuarios.Rows[e.RowIndex].Cells["UsuarioID"].Value);
-            //        string estadoTexto = dgvUsuarios.Rows[e.RowIndex].Cells["EstadoTexto"].Value.ToString();
-
-            //        int estadoBit = estadoTexto == "ACTIVO" ? 1 : 0;
-
-            //        EjecutarUtilidades util = new EjecutarUtilidades();
-
-            //        SqlParameter[] p =
-            //        {
-            //            new SqlParameter("@usuarioID", usuarioID),
-            //            new SqlParameter("@estado", estadoBit)
-            //        };
-
-            //        util.EjecutarSPParametros("spMAE_ActualizarEstadoUsuario", p);
-
-            //        dgvUsuarios.InvalidateRow(e.RowIndex);
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show("Error al actualizar el estado en la base de datos: " + ex.Message,
-            //                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //}
-
         }
 
         private void dgvUsuarios_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
-            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
-            {
-                int iconSize = 20;
 
-                if (dgvUsuarios.Columns[e.ColumnIndex].Name == "btnEditar")
-                {
-                    e.Paint(e.CellBounds, DataGridViewPaintParts.All);
-
-                    Image img = Properties.Resources.report_blanco;
-
-                    int x = e.CellBounds.Left + (e.CellBounds.Width - iconSize) / 2;
-                    int y = e.CellBounds.Top + (e.CellBounds.Height - iconSize) / 2;
-
-                    e.Graphics.DrawImage(img, new Rectangle(x, y, iconSize, iconSize));
-                    e.Handled = true;
-                }
-            }
         }
 
         private void dgvUsuarios_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0 && dgvUsuarios.Columns[e.ColumnIndex].Name == "btnEditar")
+            if (e.RowIndex < 0) return;
+
+            if (dgvUsuarios.Columns[e.ColumnIndex].Name == "colEstado")
+            {
+                int usuarioID = Convert.ToInt32(dgvUsuarios.Rows[e.RowIndex].Cells["UsuarioID"].Value);
+                int estadoActual = Convert.ToInt32(dgvUsuarios.Rows[e.RowIndex].Cells["Estado"].Value);
+                string nombre = dgvUsuarios.Rows[e.RowIndex].Cells["Usuario"].Value.ToString();
+
+                DialogResult r = MessageBox.Show(
+                    $"¿Está seguro que desea cambiar el estado del usuario {nombre}?",
+                    "Confirmación",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question
+                );
+
+                if (r == DialogResult.Yes)
+                {
+                    int nuevoEstado = estadoActual == 1 ? 0 : 1;
+
+                    // Actualizar en BD
+                    ActualizarEstadoUsuario(usuarioID, nuevoEstado);
+
+                    // Actualizar en DataGridView
+                    dgvUsuarios.Rows[e.RowIndex].Cells["Estado"].Value = nuevoEstado;
+
+                    // Refrescar imagen
+                    dgvUsuarios.InvalidateCell(e.ColumnIndex, e.RowIndex);
+                }
+            }
+
+            if (e.RowIndex >= 0 && dgvUsuarios.Columns[e.ColumnIndex].Name == "colEditar")
             {
                 int usuarioID = Convert.ToInt32(dgvUsuarios.Rows[e.RowIndex].Cells["UsuarioID"].Value);
 

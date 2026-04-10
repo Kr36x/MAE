@@ -15,8 +15,6 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
         public ReporteDocentes()
         {
             InitializeComponent();
-            //dgvDocentes.CellFormatting += dgvDocentes_CellFormatting;
-            //dgvDocentes.CellClick += dgvDocentes_CellClick;
 
         }
 
@@ -33,8 +31,8 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
             SqlParameter[] parametros = new SqlParameter[]
             {
-        new SqlParameter("@usuarioID", usuarioID),
-        new SqlParameter("@estado", nuevoEstado)
+                new SqlParameter("@usuarioID", usuarioID),
+                new SqlParameter("@estado", nuevoEstado)
             };
 
             util.EjecutarSPParametros("spMAE_ActualizarEstadoUsuario", parametros);
