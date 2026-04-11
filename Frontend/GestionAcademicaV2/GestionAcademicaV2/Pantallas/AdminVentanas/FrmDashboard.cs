@@ -65,7 +65,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
                 Series sMeta = new Series("META")
                 {
                     ChartType = SeriesChartType.Line,
-                    Color = Color.LimeGreen,
+                    Color = Color.ForestGreen,
                     BorderWidth = 3,
                     MarkerStyle = MarkerStyle.Circle,
                     MarkerSize = 10
@@ -75,11 +75,12 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
                 chartGrados.Series.Add(sMeta);
 
                 DataTable dt = util.EjecutarSPParametros(
-                    "spMAE_RepGlobalRend",
+                    "spMAE_RepGlobalRendNivel",
                     new SqlParameter[]
                     {
                         new SqlParameter("@Anio", dtpAnio.Value.Year),
-                        new SqlParameter("@Parcial", Convert.ToInt32(cbbParcial.SelectedItem))
+                        new SqlParameter("@Parcial", Convert.ToInt32(cbbParcial.SelectedItem)),
+                        new SqlParameter("@Nivel", cbbNivel.Text)
                     }
                 );
 
@@ -93,8 +94,13 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
                     sBarras.Points[idx].AxisLabel = grado;
                     sBarras.Points[idx].Label = promedio + "%";
-                    sBarras.Points[idx].Color = Color.CornflowerBlue;
-
+                    //sBarras.Points[idx].Color = Color.CornflowerBlue;
+                    if (promedio < 70)
+                        sBarras.Points[idx].Color = Color.Tomato;
+                    else if (promedio < 90)
+                        sBarras.Points[idx].Color = Color.FromArgb(255, 230, 128);   // Amarillo
+                    else
+                        sBarras.Points[idx].Color = Color.CornflowerBlue;
                 }
             }
             catch (Exception ex)
@@ -104,6 +110,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
         }
         private void FrmDashboard_Load(object sender, EventArgs e)
         {
+            lbAnio.Text=dtpAnio.Text;
             pnlPrincipal.Visible = false;
 
             CargarParciales();
@@ -125,6 +132,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
         {
             pnlPrincipal.Visible = true;
             MostrarContenedoresPorNivel();
+            CargarGraficoPorGrado();
 
         }
 
@@ -273,8 +281,8 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
                         {
                             if (valor >= 90)
                             {
-                                box1.FillColor = Color.ForestGreen;
-                                box2.FillColor = Color.ForestGreen;
+                                box1.FillColor = Color.CornflowerBlue;
+                                box2.FillColor = Color.CornflowerBlue;
                             }
                             else if (valor >= 70)
                             {

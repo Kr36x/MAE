@@ -2591,7 +2591,7 @@
             cbbNivel.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             cbbNivel.ForeColor = Color.White;
             cbbNivel.ItemHeight = 30;
-            cbbNivel.Items.AddRange(new object[] { "PRE-BÁSICA", "BÁSICA", "MEDIA" });
+            cbbNivel.Items.AddRange(new object[] { "PRE-BASICA", "BASICA", "SECUNDARIA" });
             cbbNivel.Location = new Point(358, 113);
             cbbNivel.Name = "cbbNivel";
             cbbNivel.ShadowDecoration.CustomizableEdges = customizableEdges148;
