@@ -655,7 +655,21 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
         {
 
         }
+        private void CargarSeccionesPorGrado(int gradoID)
+        {
+            EjecutarUtilidades util = new EjecutarUtilidades();
 
+            SqlParameter[] p =
+            {
+                new SqlParameter("@GradoID", gradoID)
+            };
+
+            DataTable dt = util.EjecutarSPParametros("spMAE_SeccionesPorGrado", p);
+
+            cbbSeccion.DataSource = dt;
+            cbbSeccion.DisplayMember = "Letra";
+            cbbSeccion.ValueMember = "SeccionID";
+        }
         private void guna2HtmlLabel1_Click(object sender, EventArgs e)
         {
 
@@ -722,8 +736,9 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
                     new SqlParameter("@imagen", DBNull.Value),
 
                     new SqlParameter("@gradoID", Convert.ToInt32(cbbGrado.SelectedValue)),
-                    new SqlParameter("@seccionID", seccionLetra),
-
+                    // Cambio --------------------------------------
+                    new SqlParameter("@seccionID", cbbSeccion.Text),
+                    // ----------------------------------------------
                     new SqlParameter("@nombreTut1", txtNombrePadre.Text),
                     new SqlParameter("@dniTut1", txtIdentidadPadre.Text),
                     new SqlParameter("@telTut1", txtTelefonoPadre.Text),
@@ -1058,6 +1073,16 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
                 e.Handled = true;
                 MessageBox.Show("Solo se permiten números.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+
+        private void cbbGrado_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbbGrado.SelectedValue == null) return;
+
+            if (cbbGrado.SelectedValue is DataRowView) return;
+
+            int gradoID = Convert.ToInt32(cbbGrado.SelectedValue);
+            CargarSeccionesPorGrado(gradoID);
         }
     }
 }

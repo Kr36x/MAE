@@ -654,10 +654,84 @@ END;
 GO
 GO
 GO
-
+USE AgroLinkDB
 EXEC spMAE_RepGlobalRend 2025,2
+exec spMAE_RepGlobalRendNivel 2025,2,'MEDIA'
+SELECT * FROM Grado
+CREATE OR ALTER PROCEDURE spMAE_RepGlobalRendNivel
+    @Anio INT,
+    @Parcial INT,
+    @Nivel VARCHAR(50) = NULL   -- ← NUEVO PARÁMETRO
+AS
+BEGIN
+    WITH Promedios AS (
+        SELECT 
+            E.EstudianteID,
+            G.GradoID,
+            G.NombreGrado,
+            S.Letra,
+            CAST(
+                SUM(CAl.Nota) * 100.0 /
+                NULLIF(SUM(AC.Valor), 0)
+            AS DECIMAL(5,2)) AS Promedio,
+            AC.Parcial
+        FROM Estudiante E
+        JOIN Matricula M 
+            ON M.EstudianteID = E.EstudianteID
+           AND M.Anio = @Anio
+        JOIN CargaAcademica CA 
+            ON CA.SeccionID = M.SeccionID
+           AND CA.Anio = @Anio
+        JOIN Seccion S 
+            ON S.SeccionID = CA.SeccionID
+        JOIN Grado G 
+            ON G.GradoID = S.GradoID
+        JOIN Actividad AC 
+            ON AC.CargaID = CA.CargaID
+        JOIN Calificacion CAl 
+            ON CAl.ActividadID = AC.ActividadID
+           AND CAl.EstudianteID = E.EstudianteID
+        WHERE 
+            AC.Parcial = @Parcial
+            AND (@Nivel IS NULL OR G.Nivel = @Nivel)   -- ← FILTRO POR NIVEL
+        GROUP BY 
+            E.EstudianteID,
+            G.GradoID,
+            G.NombreGrado,
+            S.Letra,
+            AC.Parcial
+    )
 
+    SELECT  
+        NombreGrado,
+        Letra,
+        CAST(ROUND(AVG(Promedio), 0) AS INT) AS PromedioGrado,
+        CONCAT(
+            SUM(CASE WHEN Promedio > 85 THEN 1 ELSE 0 END),
+            ' EST.'
+        ) AS Excelencia,
+        Parcial
+    FROM Promedios
+    GROUP BY 
+        GradoID,
+        NombreGrado,
+        Letra,
+        Parcial
+    ORDER BY 
+        GradoID;
+END;
 
+CREATE OR ALTER PROCEDURE spMAE_SeccionesPorGrado
+    @GradoID INT
+AS
+BEGIN
+    SELECT 
+        SeccionID,
+        Letra
+    FROM Seccion
+    WHERE GradoID = @GradoID
+    ORDER BY Letra;
+END;
 
 
 

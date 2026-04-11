@@ -87,6 +87,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges56 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges57 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges58 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges59 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges60 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             pbLogo = new Guna.UI2.WinForms.Guna2PictureBox();
             guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -142,6 +144,8 @@
             cbbParentescoPadre = new Guna.UI2.WinForms.Guna2ComboBox();
             cbbParentescoMadre = new Guna.UI2.WinForms.Guna2ComboBox();
             guna2HtmlLabel8 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            lbSeccion = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            cbbSeccion = new Guna.UI2.WinForms.Guna2ComboBox();
             ((System.ComponentModel.ISupportInitialize)pbLogo).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbEstudiante).BeginInit();
             SuspendLayout();
@@ -387,8 +391,9 @@
             cbbGrado.Location = new Point(216, 243);
             cbbGrado.Name = "cbbGrado";
             cbbGrado.ShadowDecoration.CustomizableEdges = customizableEdges16;
-            cbbGrado.Size = new Size(349, 26);
+            cbbGrado.Size = new Size(174, 26);
             cbbGrado.TabIndex = 5;
+            cbbGrado.SelectedIndexChanged += cbbGrado_SelectedIndexChanged;
             // 
             // lbMano
             // 
@@ -1058,11 +1063,43 @@
             guna2HtmlLabel8.TabIndex = 64;
             guna2HtmlLabel8.Text = "ESTA SECCIÓN PERMITE EL INGRESO DE DATOS PARA LA MATRICULA DEL ESTUDIANTE";
             // 
+            // lbSeccion
+            // 
+            lbSeccion.BackColor = Color.Transparent;
+            lbSeccion.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbSeccion.Location = new Point(396, 248);
+            lbSeccion.Name = "lbSeccion";
+            lbSeccion.Size = new Size(55, 17);
+            lbSeccion.TabIndex = 65;
+            lbSeccion.Text = "SECCIÓN:";
+            // 
+            // cbbSeccion
+            // 
+            cbbSeccion.BackColor = Color.Transparent;
+            cbbSeccion.BorderColor = Color.Black;
+            cbbSeccion.BorderRadius = 5;
+            cbbSeccion.CustomizableEdges = customizableEdges59;
+            cbbSeccion.DrawMode = DrawMode.OwnerDrawFixed;
+            cbbSeccion.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbbSeccion.FocusedColor = Color.FromArgb(94, 148, 255);
+            cbbSeccion.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            cbbSeccion.Font = new Font("Segoe UI", 10F);
+            cbbSeccion.ForeColor = Color.Black;
+            cbbSeccion.ItemHeight = 20;
+            cbbSeccion.Items.AddRange(new object[] { "PRE-KINDER", "KINDER", "PREPARATORIA", "PRIMERO", "SEGUNDO", "TERCERO", "CUARTO", "QUINTO", "SEXTO", "SÉPTIMO", "OCTAVO", "NOVENO", "DÉCIMO", "UNDÉCIMO" });
+            cbbSeccion.Location = new Point(457, 243);
+            cbbSeccion.Name = "cbbSeccion";
+            cbbSeccion.ShadowDecoration.CustomizableEdges = customizableEdges60;
+            cbbSeccion.Size = new Size(108, 26);
+            cbbSeccion.TabIndex = 66;
+            // 
             // FrmMatricula
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1028, 642);
+            Controls.Add(cbbSeccion);
+            Controls.Add(lbSeccion);
             Controls.Add(guna2HtmlLabel8);
             Controls.Add(cbbParentescoMadre);
             Controls.Add(cbbParentescoPadre);
@@ -1186,5 +1223,7 @@
         private Guna.UI2.WinForms.Guna2ComboBox cbbParentescoPadre;
         private Guna.UI2.WinForms.Guna2ComboBox cbbParentescoMadre;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel8;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lbSeccion;
+        private Guna.UI2.WinForms.Guna2ComboBox cbbSeccion;
     }
 }

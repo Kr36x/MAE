@@ -61,7 +61,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
                 cbbMano.Text = row["Mano"].ToString();
                 txtAlergias.Text = row["Alergia"].ToString();
                 cbbGrado.SelectedValue = Convert.ToInt32(row["GradoID"]);
-                txtSeccion.Text = row["Letra"].ToString();
+                cbbSeccion.Text = row["Letra"].ToString();
                 txtAnio.Text = Convert.ToDateTime(row["Fecha"]).Year.ToString();
 
                 cbbGrado.Enabled = true;
@@ -115,7 +115,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
                 cbbMano.Text = row["Mano"].ToString();
                 txtAlergias.Text = row["Alergia"].ToString();
                 cbbGrado.SelectedValue = Convert.ToInt32(row["GradoID"]);
-                txtSeccion.Text = row["Letra"].ToString();
+                cbbSeccion.Text = row["Letra"].ToString();
                 txtAnio.Text = Convert.ToDateTime(row["Fecha"]).Year.ToString();
             }
             catch (Exception ex)
@@ -194,7 +194,8 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
             try
             {
                 EjecutarUtilidades util = new EjecutarUtilidades();
-                DataTable tabla = util.EjecutarConsulta("SELECT * FROM vMAE_TraeGrados order by GradoID");
+                DataTable tabla = util.EjecutarConsulta("SELECT * FROM vMAE_TraeGrados ORDER BY GradoID");
+
                 cbbGrado.DataSource = tabla;
                 cbbGrado.DisplayMember = "NombreGrado";
                 cbbGrado.ValueMember = "GradoID";
@@ -223,7 +224,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
             {
                 CargarFichaMatricula();
             }
-
+            cbbSeccion.Enabled = false;
             CargarTutores();
         }
 
@@ -240,6 +241,21 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
         }
 
+        private void CargarSeccionesPorGrado(int gradoID)
+        {
+            EjecutarUtilidades util = new EjecutarUtilidades();
+
+            SqlParameter[] p =
+            {
+                new SqlParameter("@GradoID", gradoID)
+            };
+
+            DataTable dt = util.EjecutarSPParametros("spMAE_SeccionesPorGrado", p);
+
+            cbbSeccion.DataSource = dt;
+            cbbSeccion.DisplayMember = "Letra";
+            cbbSeccion.ValueMember = "SeccionID";
+        }
         private void btEditarMatricula_Click(object sender, EventArgs e)
         {
             try
@@ -273,7 +289,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
                     new SqlParameter("@imagen", DBNull.Value),
 
                     new SqlParameter("@gradoID", Convert.ToInt32(cbbGrado.SelectedValue)),
-                    new SqlParameter("@seccionID", seccionLetra),
+                    new SqlParameter("@seccionID", cbbSeccion.Text),
 
                     new SqlParameter("@nombreTut1", txtNombrePadre.Text),
                     new SqlParameter("@dniTut1", txtIdentidadPadre.Text),
@@ -327,6 +343,17 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
                 e.Handled = true;
                 MessageBox.Show("Solo se permiten números.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+
+        private void cbbGrado_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbbGrado.SelectedValue == null) return;
+
+            if (cbbGrado.SelectedValue is DataRowView) return;
+
+            int gradoID = Convert.ToInt32(cbbGrado.SelectedValue);
+            CargarSeccionesPorGrado(gradoID);
+            cbbSeccion.Enabled = true;
         }
     }
 }
