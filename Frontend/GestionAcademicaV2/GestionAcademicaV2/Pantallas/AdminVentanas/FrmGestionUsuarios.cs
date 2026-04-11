@@ -584,6 +584,8 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
             }
             else
             {
+                lbTitulo.Text = "EDITAR USUARIO";
+                btCrear.Text = "EDITAR"; 
                 ctnDatosUsuario.Visible = true;
             }
 

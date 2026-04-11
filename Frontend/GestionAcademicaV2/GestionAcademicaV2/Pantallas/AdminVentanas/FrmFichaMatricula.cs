@@ -13,13 +13,69 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
     public partial class FrmFichaMatricula : Form
     {
         private int estudianteID;
+        private int veroeditar;
+        private int matriculaID;
 
-        public FrmFichaMatricula(int id)
+        public FrmFichaMatricula(int id, int ver)
         {
             InitializeComponent();
             estudianteID = id;
+            matriculaID = 0;
+            veroeditar = ver;
         }
 
+        private void CargarFichaMatriculaEditar()
+        {
+            try
+            {
+                EjecutarUtilidades util = new EjecutarUtilidades();
+
+                matriculaID = ObtenerMatriculaID();
+                SqlParameter[] p =
+                {
+                    new SqlParameter("@estudianteID", estudianteID),
+                    new SqlParameter("@matriculaID", matriculaID)
+                };
+
+                DataTable dt = util.EjecutarSPParametros("spMAE_RepFichaMatricula", p);
+
+                if (dt.Rows.Count == 0)
+                    return;
+
+                DataRow row = dt.Rows[0];
+
+                txtNombreEstudiante.Text = row["Nombre"].ToString();
+                txtIdentidadEstudiante.Text = row["Identidad"].ToString();
+                string sexo = row["Sexo"].ToString();
+                if (sexo == "M")
+                {
+                    txtGenero.Text = "MASCULINO";
+                }
+                else
+                {
+                    txtGenero.Text = "FEMENINO";
+                }
+                txtDireccion.Text = row["Direccion"].ToString();
+                txtTelefonoEstudiante.Text = row["Telefono"].ToString();
+                dtpFechaNacimiento.Value = Convert.ToDateTime(row["FechaNacimiento"]);
+                cbbMano.Text = row["Mano"].ToString();
+                txtAlergias.Text = row["Alergia"].ToString();
+                cbbGrado.SelectedValue = Convert.ToInt32(row["GradoID"]);
+                txtSeccion.Text = row["Letra"].ToString();
+                txtAnio.Text = Convert.ToDateTime(row["Fecha"]).Year.ToString();
+
+                cbbGrado.Enabled = true;
+                txtDireccion.Enabled = true;
+                cbbMano.Enabled = true;
+                txtAlergias.Enabled = true;
+                txtTelefonoEstudiante.Enabled = true;
+                btEditarMatricula.Visible = true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar ficha: " + ex.Message);
+            }
+        }
         private void CargarFichaMatricula()
         {
             try
@@ -44,14 +100,21 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
                 txtNombreEstudiante.Text = row["Nombre"].ToString();
                 txtIdentidadEstudiante.Text = row["Identidad"].ToString();
-                txtGenero.Text = row["Sexo"].ToString();
+                string sexo = row["Sexo"].ToString();
+                if (sexo == "M")
+                {
+                    txtGenero.Text = "MASCULINO";
+                }
+                else
+                {
+                    txtGenero.Text = "FEMENINO";
+                }
                 txtDireccion.Text = row["Direccion"].ToString();
                 txtTelefonoEstudiante.Text = row["Telefono"].ToString();
-                txtFechaNacimiento.Text = Convert.ToDateTime(row["FechaNacimiento"]).ToString("dd/MM/yyyy");
-                txtMano.Text = row["Mano"].ToString();
+                dtpFechaNacimiento.Value = Convert.ToDateTime(row["FechaNacimiento"]);
+                cbbMano.Text = row["Mano"].ToString();
                 txtAlergias.Text = row["Alergia"].ToString();
-
-                txtGrado.Text = row["GradoID"].ToString();
+                cbbGrado.SelectedValue = Convert.ToInt32(row["GradoID"]);
                 txtSeccion.Text = row["Letra"].ToString();
                 txtAnio.Text = Convert.ToDateTime(row["Fecha"]).Year.ToString();
             }
@@ -94,7 +157,14 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
                     txtNombrePadre.Text = t1["Nombre"].ToString();
                     txtIdentidadPadre.Text = t1["Identidad"].ToString();
                     txtTelefonoPadre.Text = t1["Telefono"].ToString();
+                    string Tutor1 = t1["Parentesco"].ToString();
+                    lbPadre.Text = Tutor1;
                     txtTrabajoPadre.Text = t1["LugarTrabajo"].ToString();
+                    txtCorreoPadre.Text = t1["Correo"].ToString();
+                    if (txtCorreoPadre.Text == "")
+                    {
+                        txtCorreoPadre.Text = " ";
+                    }
                 }
 
                 if (dt.Rows.Count > 1)
@@ -103,7 +173,14 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
                     txtNombreMadre.Text = t2["Nombre"].ToString();
                     txtIdentidadMadre.Text = t2["Identidad"].ToString();
                     txtTelefonoMadre.Text = t2["Telefono"].ToString();
+                    string Tutor2 = t2["Parentesco"].ToString();
+                    lbMadre.Text = Tutor2;
                     txtTrabajoMadre.Text = t2["LugarTrabajo"].ToString();
+                    txtCorreoMadre.Text = t2["Correo"].ToString();
+                    if (txtCorreoMadre.Text == "")
+                    {
+                        txtCorreoMadre.Text = " ";
+                    }
                 }
             }
             catch (Exception ex)
@@ -112,48 +189,23 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
             }
         }
 
-
-        private void CargarInformacionEstudiante()
+        private void CargarGrados()
         {
             try
             {
                 EjecutarUtilidades util = new EjecutarUtilidades();
-                SqlParameter[] p =
-                {
-                    new SqlParameter("@EstudianteID", estudianteID)
-                };
-                DataTable dt = util.EjecutarSPParametros("spMAE_DetalleEstudianteCompleto", p);
-                if (dt.Rows.Count > 0)
-                {
-                    txtNombreEstudiante.Text = dt.Rows[0]["NombreEstudiante"].ToString();
-                    txtIdentidadEstudiante.Text = dt.Rows[0]["IdentidadEstudiante"].ToString();
-                    txtGenero.Text = dt.Rows[0]["Sexo"].ToString();
-                    txtDireccion.Text = dt.Rows[0]["Direccion"].ToString();
-                    txtTelefonoEstudiante.Text = dt.Rows[0]["TelefonoEstudiante"].ToString();
-                    txtFechaNacimiento.Text = Convert.ToDateTime(dt.Rows[0]["FechaNacimiento"]).ToString("dd/MM/yyyy");
-                    txtMano.Text = dt.Rows[0]["Mano"].ToString();
-                    txtAlergias.Text = dt.Rows[0]["Alergia"].ToString();
-                    txtEstado.Text = dt.Rows[0]["Estado"].ToString();
-
-                    txtGrado.Text = dt.Rows[0]["NombreGrado"].ToString();
-                    txtAnio.Text = dt.Rows[0]["AnioAcademico"].ToString();
-
-                    txtNombrePadre.Text = dt.Rows[0]["NombrePadre"].ToString();
-                    txtIdentidadPadre.Text = dt.Rows[0]["IdentidadPadre"].ToString();
-                    txtTelefonoPadre.Text = dt.Rows[0]["TelefonoPadre"].ToString();
-                    txtTrabajoPadre.Text = dt.Rows[0]["LugarTrabajoPadre"].ToString();
-
-                    txtNombreMadre.Text = dt.Rows[0]["NombreMadre"].ToString();
-                    txtIdentidadMadre.Text = dt.Rows[0]["IdentidadMadre"].ToString();
-                    txtTelefonoMadre.Text = dt.Rows[0]["TelefonoMadre"].ToString();
-                    txtTrabajoMadre.Text = dt.Rows[0]["LugarTrabajoMadre"].ToString();
-                }
+                DataTable tabla = util.EjecutarConsulta("SELECT * FROM vMAE_TraeGrados order by GradoID");
+                cbbGrado.DataSource = tabla;
+                cbbGrado.DisplayMember = "NombreGrado";
+                cbbGrado.ValueMember = "GradoID";
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al llenar el formulario: " + ex.Message);
+                MessageBox.Show("Error al llenar grados: " + ex.Message,
+                                "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
         private void guna2TextBox3_TextChanged(object sender, EventArgs e)
         {
 
@@ -161,10 +213,18 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
         private void FrmFichaMatricula_Load(object sender, EventArgs e)
         {
-            CargarInformacionEstudiante();
-            //CargarFichaMatricula();
-            //CargarTutores();
+            CargarGrados();
+            if (veroeditar == 2)
+            {
+                lbTituloMatricula.Text = "EDITAR MATRICULA DE ESTUDIANTE";
+                CargarFichaMatriculaEditar();
+            }
+            else
+            {
+                CargarFichaMatricula();
+            }
 
+            CargarTutores();
         }
 
         private void FrmFichaMatricula_KeyDown(object sender, KeyEventArgs e)
@@ -172,6 +232,100 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
             if (e.KeyCode == Keys.Escape)
             {
                 this.Close();
+            }
+        }
+
+        private void cbbSexo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btEditarMatricula_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                EjecutarUtilidades util = new EjecutarUtilidades();
+                // Validaciones
+
+                DataTable dtSeccion = util.EjecutarConsulta(
+                    "SELECT TOP 1 Letra FROM Seccion WHERE GradoID = " + cbbGrado.SelectedValue);
+
+                if (dtSeccion.Rows.Count == 0)
+                {
+                    MessageBox.Show("No existe sección para este grado.");
+                    return;
+                }
+
+                string seccionLetra = dtSeccion.Rows[0]["Letra"].ToString();
+
+                SqlParameter[] p =
+                {
+                    new SqlParameter("@nombreEst", txtNombreEstudiante.Text),
+                    new SqlParameter("@fechaNacimiento", dtpFechaNacimiento.Value),
+
+                    new SqlParameter("@sexo", txtGenero.Text.Substring(0, 1)),
+                    new SqlParameter("@dniEst", txtIdentidadEstudiante.Text),
+                    new SqlParameter("@direccionEst", txtDireccion.Text),
+                    new SqlParameter("@telEst", txtTelefonoEstudiante.Text),
+                    new SqlParameter("@mano", cbbMano.Text),
+                    new SqlParameter("@alergia", txtAlergias.Text),
+
+                    new SqlParameter("@imagen", DBNull.Value),
+
+                    new SqlParameter("@gradoID", Convert.ToInt32(cbbGrado.SelectedValue)),
+                    new SqlParameter("@seccionID", seccionLetra),
+
+                    new SqlParameter("@nombreTut1", txtNombrePadre.Text),
+                    new SqlParameter("@dniTut1", txtIdentidadPadre.Text),
+                    new SqlParameter("@telTut1", txtTelefonoPadre.Text),
+                    new SqlParameter("@lugTrabTut1", txtTrabajoPadre.Text),
+                    new SqlParameter("@correoTut1", txtCorreoPadre.Text),
+                    new SqlParameter("@parentescoTut1",string.IsNullOrWhiteSpace(lbPadre.Text)? (object)DBNull.Value: lbPadre.Text),
+                    new SqlParameter("@nombreTut2", string.IsNullOrWhiteSpace(txtNombreMadre.Text) ? (object)DBNull.Value : txtNombreMadre.Text),
+                    new SqlParameter("@dniTut2", string.IsNullOrWhiteSpace(txtIdentidadMadre.Text) ? (object)DBNull.Value : txtIdentidadMadre.Text),
+                    new SqlParameter("@telTut2", string.IsNullOrWhiteSpace(txtTelefonoMadre.Text) ? (object)DBNull.Value : txtTelefonoMadre.Text),
+                    new SqlParameter("@lugTrabTut2", string.IsNullOrWhiteSpace(txtTrabajoMadre.Text) ? (object)DBNull.Value : txtTrabajoMadre.Text),
+                    new SqlParameter("@correoTut2",txtCorreoMadre.Text),
+                    new SqlParameter("@parentescoTut2", string.IsNullOrWhiteSpace(lbMadre.Text) ? (object)DBNull.Value : lbMadre.Text),
+                    new SqlParameter("@matriculaID", matriculaID == 0 ? (object)DBNull.Value : matriculaID)
+                };
+
+                DataTable dt = util.EjecutarSPParametros("spMAE_Matricular", p);
+
+                if (dt.Rows.Count > 0)
+                {
+                    matriculaID = Convert.ToInt32(dt.Rows[0][0]);
+                }
+
+                MessageBox.Show("La matrícula se edito correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al editar matrícula: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+
+        private void txtTelefonoEstudiante_TextChanged(object sender, EventArgs e)
+        {
+            if (txtTelefonoEstudiante.Text.Length == 4 && !txtTelefonoEstudiante.Text.Contains("-"))
+            {
+                txtTelefonoEstudiante.Text += "-";
+                txtTelefonoEstudiante.SelectionStart = txtTelefonoEstudiante.Text.Length;
+            }
+        }
+
+        private void txtTelefonoEstudiante_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Back)
+                return;
+
+            if (!char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+                MessageBox.Show("Solo se permiten números.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
     }

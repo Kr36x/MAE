@@ -79,7 +79,8 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
         {
             CargarContenedoresDesercion();
             CargarGridsDetalle();
-            txtAnio.Text = DateTime.Now.Year.ToString();
+            txtAnio.Text = (DateTime.Now.Year - 1).ToString();
+            //txtAnio.Text = DateTime.Now.Year.ToString();
         }
     }
 }

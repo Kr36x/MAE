@@ -153,6 +153,7 @@
             dgvEstudiantes.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
             dgvEstudiantes.CellClick += dgvEstudiantes_CellClick;
             dgvEstudiantes.CellDoubleClick += dgvEstudiantes_CellDoubleClick;
+            dgvEstudiantes.CellFormatting += dgvEstudiantes_CellFormatting;
             dgvEstudiantes.CellPainting += dgvEstudiantes_CellPainting;
             dgvEstudiantes.DoubleClick += dgvEstudiantes_DoubleClick;
             // 

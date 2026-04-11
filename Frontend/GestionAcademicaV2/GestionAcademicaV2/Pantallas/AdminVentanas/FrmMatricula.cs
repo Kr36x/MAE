@@ -396,90 +396,90 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
         }
 
-        private void CargarDatosParaEditar(int id)
-        {
-            try
-            {
-                EjecutarUtilidades util = new EjecutarUtilidades();
+        //private void CargarDatosParaEditar(int id)
+        //{
+        //    try
+        //    {
+        //        EjecutarUtilidades util = new EjecutarUtilidades();
 
-                SqlParameter[] p =
-                {
-                        new SqlParameter("@EstudianteID", id)
-                    };
+        //        SqlParameter[] p =
+        //        {
+        //                new SqlParameter("@EstudianteID", id)
+        //            };
 
-                DataTable dt = util.EjecutarSPParametros("spMAE_TraeMatriculaPorEstudiante", p);
+        //        DataTable dt = util.EjecutarSPParametros("spMAE_TraeMatriculaPorEstudiante", p);
 
-                if (dt.Rows.Count == 0) return;
+        //        if (dt.Rows.Count == 0) return;
 
-                DataRow row = dt.Rows[0];
+        //        DataRow row = dt.Rows[0];
 
-                // ============================
-                // ESTUDIANTE
-                // ============================
-                txtIdentidadEstudiante.Text = row["DniEst"].ToString();
-                txtNombreEstudiante.Text = row["NombreEst"].ToString();
-                txtTelefono.Text = row["TelEst"].ToString();
-                txtDireccion.Text = row["Direccion"].ToString();
-                dtpFechaNacimiento.Value = Convert.ToDateTime(row["FechaNacimiento"]);
-                string sexo = row["Sexo"].ToString();
-                if (sexo == "M")
-                    cbbGenero.Text = "MASCULINO";
-                else if (sexo == "F")
-                    cbbGenero.Text = "FEMENINO";
-                else
-                    cbbGenero.Text = "";
-                cbbMano.Text = row["Mano"].ToString();
-                txtAlergias.Text = row["Alergia"].ToString();
-                cbbGrado.SelectedValue = Convert.ToInt32(row["GradoID"]);
-                // ============================
-                // TUTOR 1
-                // ============================
-                txtNombrePadre.Text = row["NombreTut1"].ToString();
-                txtIdentidadPadre.Text = row["DniTut1"].ToString();
-                txtTelefonoPadre.Text = row["TelTut1"].ToString();
-                txtCorreoPadre.Text = row["CorreoTut1"].ToString();
-                txtTrabajoPadre.Text = row["LugarTrabTut1"].ToString();
-                cbbParentescoPadre.Text = row["ParentescoTut1"].ToString();
-                // ============================
-                // TUTOR 2
-                // ============================
-                txtNombreMadre.Text = row["NombreTut2"].ToString();
-                txtIdentidadMadre.Text = row["DniTut2"].ToString();
-                txtTelefonoMadre.Text = row["TelTut2"].ToString();
-                txtCorreoMadre.Text = row["CorreoTut2"].ToString();
-                txtTrabajoMadre.Text = row["LugarTrabTut2"].ToString();
-                cbbParentescoMadre.Text = row["ParentescoTut2"].ToString();
-                // ============================
-                // MATRÍCULA
-                // ============================
-                matriculaID = Convert.ToInt32(row["MatriculaID"]);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al cargar datos: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
+        //        // ============================
+        //        // ESTUDIANTE
+        //        // ============================
+        //        txtIdentidadEstudiante.Text = row["DniEst"].ToString();
+        //        txtNombreEstudiante.Text = row["NombreEst"].ToString();
+        //        txtTelefono.Text = row["TelEst"].ToString();
+        //        txtDireccion.Text = row["Direccion"].ToString();
+        //        dtpFechaNacimiento.Value = Convert.ToDateTime(row["FechaNacimiento"]);
+        //        string sexo = row["Sexo"].ToString();
+        //        if (sexo == "M")
+        //            cbbGenero.Text = "MASCULINO";
+        //        else if (sexo == "F")
+        //            cbbGenero.Text = "FEMENINO";
+        //        else
+        //            cbbGenero.Text = "";
+        //        cbbMano.Text = row["Mano"].ToString();
+        //        txtAlergias.Text = row["Alergia"].ToString();
+        //        cbbGrado.SelectedValue = Convert.ToInt32(row["GradoID"]);
+        //        // ============================
+        //        // TUTOR 1
+        //        // ============================
+        //        txtNombrePadre.Text = row["NombreTut1"].ToString();
+        //        txtIdentidadPadre.Text = row["DniTut1"].ToString();
+        //        txtTelefonoPadre.Text = row["TelTut1"].ToString();
+        //        txtCorreoPadre.Text = row["CorreoTut1"].ToString();
+        //        txtTrabajoPadre.Text = row["LugarTrabTut1"].ToString();
+        //        cbbParentescoPadre.Text = row["ParentescoTut1"].ToString();
+        //        // ============================
+        //        // TUTOR 2
+        //        // ============================
+        //        txtNombreMadre.Text = row["NombreTut2"].ToString();
+        //        txtIdentidadMadre.Text = row["DniTut2"].ToString();
+        //        txtTelefonoMadre.Text = row["TelTut2"].ToString();
+        //        txtCorreoMadre.Text = row["CorreoTut2"].ToString();
+        //        txtTrabajoMadre.Text = row["LugarTrabTut2"].ToString();
+        //        cbbParentescoMadre.Text = row["ParentescoTut2"].ToString();
+        //        // ============================
+        //        // MATRÍCULA
+        //        // ============================
+        //        matriculaID = Convert.ToInt32(row["MatriculaID"]);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show("Error al cargar datos: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //    }
+        //}
 
         private void FrmMatricula_Load(object sender, EventArgs e)
         {
             CargarGrados();
             CargarSexo();
-            if (estudianteID > 0)
-            {
-                CargarDatosParaEditar(estudianteID);
-                txtNombreMadre.Enabled = false;
-                txtNombrePadre.Enabled = false;
-                txtIdentidadPadre.Enabled = false;
-                txtIdentidadMadre.Enabled = false;
-                txtCorreoPadre.Enabled = false;
-                txtCorreoMadre.Enabled = false;
-                txtTelefonoPadre.Enabled = false;
-                txtTelefonoMadre.Enabled = false;
-                cbbParentescoPadre.Enabled = false;
-                cbbParentescoMadre.Enabled = false;
-                txtTrabajoMadre.Enabled = false;
-                txtTrabajoPadre.Enabled = false;
-            }
+            //if (estudianteID > 0)
+            //{
+            //    CargarDatosParaEditar(estudianteID);
+            //    txtNombreMadre.Enabled = false;
+            //    txtNombrePadre.Enabled = false;
+            //    txtIdentidadPadre.Enabled = false;
+            //    txtIdentidadMadre.Enabled = false;
+            //    txtCorreoPadre.Enabled = false;
+            //    txtCorreoMadre.Enabled = false;
+            //    txtTelefonoPadre.Enabled = false;
+            //    txtTelefonoMadre.Enabled = false;
+            //    cbbParentescoPadre.Enabled = false;
+            //    cbbParentescoMadre.Enabled = false;
+            //    txtTrabajoMadre.Enabled = false;
+            //    txtTrabajoPadre.Enabled = false;
+            //}
         }
 
         private void guna2Button1_Click(object sender, EventArgs e)

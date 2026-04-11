@@ -1,4 +1,4 @@
---==============================
+ï»¿--==============================
 	--UTILIDADES
 --==============================
 
@@ -17,7 +17,7 @@ BEGIN
 
 END;
 
---EXEC spTraeEstudiantesConGrado 'D',   22 , 2026
+--EXEC spTraeEstudiantesConGrado 'D',   11 , 2024
 
 go
 -- Llenar el datagrip Estudiante
@@ -53,7 +53,7 @@ BEGIN
 	ORDER BY A.Nombre
 END;
 
-exec spMAE_TraeAsignaturas 14, 2026
+exec spMAE_TraeAsignaturas 14, 2025
 
 
 GO
@@ -117,9 +117,16 @@ BEGIN
     FROM vMAE_EstudianteGradoAnio
     WHERE (@Nombre IS NULL OR NombreEstudiante LIKE '%' + @Nombre + '%')
       AND (@Anio IS NULL OR AnioAcademico = @Anio)
-      AND (@Grado IS NULL OR NombreGrado LIKE '%' + @Grado + '%');
-END
+      AND (@Grado IS NULL OR NombreGrado LIKE '%' + @Grado + '%')
+    ORDER BY NombreEstudiante ASC;
+END;
 GO
+
+exec spMAE_BuscarEstudiantes
+exec spMAE_TraeMatriculaPorEstudiante 1
+exec spMAE_TraeTutoresxEstudiante 25
+exec spMAE_RepFichaMatricula 1, 13
+
 -----------------------------------------------------------------------
 CREATE OR ALTER PROCEDURE spMAE_DetalleEstudianteCompleto
     @EstudianteID INT
@@ -227,7 +234,7 @@ BEGIN
             WHEN NombreGrado LIKE 'Cuarto%' THEN 7
             WHEN NombreGrado LIKE 'Quinto%' THEN 8
             WHEN NombreGrado LIKE 'Sexto%' THEN 9
-            WHEN NombreGrado LIKE 'Séptimo%' OR NombreGrado LIKE 'Septimo%' THEN 10
+            WHEN NombreGrado LIKE 'SÃ©ptimo%' OR NombreGrado LIKE 'Septimo%' THEN 10
             WHEN NombreGrado LIKE 'Octavo%' THEN 11
             WHEN NombreGrado LIKE 'Noveno%' THEN 12
 			WHEN NombreGrado LIKE 'Decimo%' THEN 13
@@ -284,7 +291,7 @@ BEGIN
             WHEN NombreGrado LIKE 'Cuarto%' THEN 7
             WHEN NombreGrado LIKE 'Quinto%' THEN 8
             WHEN NombreGrado LIKE 'Sexto%' THEN 9
-            WHEN NombreGrado LIKE 'Séptimo%' OR NombreGrado LIKE 'Septimo%' THEN 10
+            WHEN NombreGrado LIKE 'SÃ©ptimo%' OR NombreGrado LIKE 'Septimo%' THEN 10
             WHEN NombreGrado LIKE 'Octavo%' THEN 11
             WHEN NombreGrado LIKE 'Noveno%' THEN 12
             WHEN NombreGrado LIKE 'Decimo%' THEN 13
@@ -328,7 +335,7 @@ BEGIN
             WHEN g.NombreGrado LIKE 'Cuarto%' THEN 7
             WHEN g.NombreGrado LIKE 'Quinto%' THEN 8
             WHEN g.NombreGrado LIKE 'Sexto%' THEN 9
-            WHEN g.NombreGrado LIKE 'Séptimo%' OR g.NombreGrado LIKE 'Septimo%' THEN 10
+            WHEN g.NombreGrado LIKE 'SÃ©ptimo%' OR g.NombreGrado LIKE 'Septimo%' THEN 10
             WHEN g.NombreGrado LIKE 'Octavo%' THEN 11
             WHEN g.NombreGrado LIKE 'Noveno%' THEN 12
 			WHEN g.NombreGrado LIKE 'Decimo%' THEN 13
@@ -417,7 +424,7 @@ BEGIN
 END;
 GO
 
-exec spMAE_CargaAcademicaDocente 2026
+exec spMAE_CargaAcademicaDocente 2025
 
 CREATE OR ALTER PROCEDURE spMAE_BuscarFichaMatriculaPorIdentidad
 @Identidad VARCHAR(20)
@@ -578,6 +585,77 @@ BEGIN
     END CATCH;
 END;
 
+CREATE OR ALTER PROCEDURE spMAE_RepGlobalRend
+    @Anio INT,
+    @Parcial INT
+AS
+BEGIN
+    WITH Promedios AS (
+        SELECT 
+            E.EstudianteID,
+            G.GradoID,
+            G.NombreGrado,
+            S.Letra,
+
+            CAST(
+                SUM(CAl.Nota) * 100.0 /
+                NULLIF(SUM(AC.Valor), 0)
+            AS DECIMAL(5,2)) AS Promedio,
+
+            AC.Parcial
+        FROM Estudiante E
+        JOIN Matricula M 
+            ON M.EstudianteID = E.EstudianteID
+           AND M.Anio = @Anio
+        JOIN CargaAcademica CA 
+            ON CA.SeccionID = M.SeccionID
+           AND CA.Anio = @Anio
+        JOIN Seccion S 
+            ON S.SeccionID = CA.SeccionID
+        JOIN Grado G 
+            ON G.GradoID = S.GradoID
+        JOIN Actividad AC 
+            ON AC.CargaID = CA.CargaID
+        JOIN Calificacion CAl 
+            ON CAl.ActividadID = AC.ActividadID
+           AND CAl.EstudianteID = E.EstudianteID
+
+        WHERE AC.Parcial = @Parcial
+
+        GROUP BY 
+            E.EstudianteID,
+            G.GradoID,
+            G.NombreGrado,
+            S.Letra,
+            AC.Parcial
+    )
+
+    SELECT  
+        NombreGrado,
+        Letra,
+
+        CAST(ROUND(AVG(Promedio), 0) AS INT) AS PromedioGrado,   -- â† YA REDONDEADO
+
+        CONCAT(
+            SUM(CASE WHEN Promedio > 85 THEN 1 ELSE 0 END),
+            ' EST.'
+        ) AS Excelencia,
+
+        Parcial
+    FROM Promedios
+    GROUP BY 
+        GradoID,
+        NombreGrado,
+        Letra,
+        Parcial
+    ORDER BY 
+        GradoID;
+END;
+GO
+GO
+GO
+
+EXEC spMAE_RepGlobalRend 2025,2
 
 
 

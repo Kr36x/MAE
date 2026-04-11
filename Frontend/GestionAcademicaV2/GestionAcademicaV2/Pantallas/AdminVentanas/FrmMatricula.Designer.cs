@@ -190,7 +190,7 @@
             lbInformacionEstudiante.Location = new Point(69, 104);
             lbInformacionEstudiante.Name = "lbInformacionEstudiante";
             lbInformacionEstudiante.Size = new Size(893, 35);
-            lbInformacionEstudiante.TabIndex = 3;
+            lbInformacionEstudiante.TabIndex = 26;
             lbInformacionEstudiante.Text = "INFORMACIÓN DEL ESTUDIANTE";
             // 
             // lbNombreEstudiante
@@ -224,7 +224,7 @@
             txtNombreEstudiante.SelectedText = "";
             txtNombreEstudiante.ShadowDecoration.CustomizableEdges = customizableEdges4;
             txtNombreEstudiante.Size = new Size(436, 25);
-            txtNombreEstudiante.TabIndex = 5;
+            txtNombreEstudiante.TabIndex = 3;
             txtNombreEstudiante.KeyPress += txtNombreEstudiante_KeyPress;
             // 
             // pbEstudiante
@@ -272,7 +272,7 @@
             txtIdentidadEstudiante.SelectedText = "";
             txtIdentidadEstudiante.ShadowDecoration.CustomizableEdges = customizableEdges8;
             txtIdentidadEstudiante.Size = new Size(235, 25);
-            txtIdentidadEstudiante.TabIndex = 8;
+            txtIdentidadEstudiante.TabIndex = 1;
             txtIdentidadEstudiante.TextChanged += txtIdentidadEstudiante_TextChanged;
             txtIdentidadEstudiante.KeyPress += txtIdentidadEstudiante_KeyPress;
             // 
@@ -291,7 +291,7 @@
             dtpFechaNacimiento.Name = "dtpFechaNacimiento";
             dtpFechaNacimiento.ShadowDecoration.CustomizableEdges = customizableEdges10;
             dtpFechaNacimiento.Size = new Size(350, 25);
-            dtpFechaNacimiento.TabIndex = 9;
+            dtpFechaNacimiento.TabIndex = 4;
             dtpFechaNacimiento.TextAlign = HorizontalAlignment.Center;
             dtpFechaNacimiento.Value = new DateTime(2026, 3, 13, 19, 58, 48, 694);
             dtpFechaNacimiento.ValueChanged += dtpFechaNacimiento_ValueChanged;
@@ -334,7 +334,7 @@
             cbbGenero.Name = "cbbGenero";
             cbbGenero.ShadowDecoration.CustomizableEdges = customizableEdges12;
             cbbGenero.Size = new Size(155, 26);
-            cbbGenero.TabIndex = 12;
+            cbbGenero.TabIndex = 8;
             // 
             // lbGrado
             // 
@@ -367,7 +367,7 @@
             txtAlergias.SelectedText = "";
             txtAlergias.ShadowDecoration.CustomizableEdges = customizableEdges14;
             txtAlergias.Size = new Size(430, 25);
-            txtAlergias.TabIndex = 14;
+            txtAlergias.TabIndex = 7;
             txtAlergias.KeyPress += txtAlergias_KeyPress;
             // 
             // cbbGrado
@@ -387,8 +387,8 @@
             cbbGrado.Location = new Point(216, 243);
             cbbGrado.Name = "cbbGrado";
             cbbGrado.ShadowDecoration.CustomizableEdges = customizableEdges16;
-            cbbGrado.Size = new Size(350, 26);
-            cbbGrado.TabIndex = 15;
+            cbbGrado.Size = new Size(349, 26);
+            cbbGrado.TabIndex = 5;
             // 
             // lbMano
             // 
@@ -418,7 +418,7 @@
             cbbMano.Name = "cbbMano";
             cbbMano.ShadowDecoration.CustomizableEdges = customizableEdges18;
             cbbMano.Size = new Size(350, 26);
-            cbbMano.TabIndex = 17;
+            cbbMano.TabIndex = 6;
             // 
             // lbAlergias
             // 
@@ -462,7 +462,7 @@
             txtTelefono.SelectedText = "";
             txtTelefono.ShadowDecoration.CustomizableEdges = customizableEdges20;
             txtTelefono.Size = new Size(127, 25);
-            txtTelefono.TabIndex = 20;
+            txtTelefono.TabIndex = 9;
             txtTelefono.TextChanged += txtTelefono_TextChanged;
             txtTelefono.KeyPress += txtTelefono_KeyPress;
             // 
@@ -498,7 +498,7 @@
             txtDireccion.SelectedText = "";
             txtDireccion.ShadowDecoration.CustomizableEdges = customizableEdges22;
             txtDireccion.Size = new Size(323, 115);
-            txtDireccion.TabIndex = 22;
+            txtDireccion.TabIndex = 10;
             // 
             // lbInformacionPadres
             // 
@@ -510,7 +510,7 @@
             lbInformacionPadres.Location = new Point(69, 344);
             lbInformacionPadres.Name = "lbInformacionPadres";
             lbInformacionPadres.Size = new Size(893, 35);
-            lbInformacionPadres.TabIndex = 23;
+            lbInformacionPadres.TabIndex = 25;
             lbInformacionPadres.Text = "INFORMACIÓN LOS TUTORES";
             // 
             // lbNombrePadre
@@ -544,7 +544,7 @@
             txtNombrePadre.SelectedText = "";
             txtNombrePadre.ShadowDecoration.CustomizableEdges = customizableEdges24;
             txtNombrePadre.Size = new Size(363, 25);
-            txtNombrePadre.TabIndex = 25;
+            txtNombrePadre.TabIndex = 12;
             txtNombrePadre.KeyPress += txtNombrePadre_KeyPress;
             // 
             // btBuscar
@@ -563,7 +563,7 @@
             btBuscar.Name = "btBuscar";
             btBuscar.ShadowDecoration.CustomizableEdges = customizableEdges26;
             btBuscar.Size = new Size(108, 25);
-            btBuscar.TabIndex = 26;
+            btBuscar.TabIndex = 2;
             btBuscar.Text = "Buscar";
             btBuscar.Click += btBuscar_Click;
             // 
@@ -598,7 +598,7 @@
             txtNombreMadre.SelectedText = "";
             txtNombreMadre.ShadowDecoration.CustomizableEdges = customizableEdges28;
             txtNombreMadre.Size = new Size(356, 25);
-            txtNombreMadre.TabIndex = 29;
+            txtNombreMadre.TabIndex = 18;
             txtNombreMadre.TextChanged += txtNombreMadre_TextChanged;
             txtNombreMadre.KeyPress += txtNombreMadre_KeyPress;
             // 
@@ -634,7 +634,7 @@
             txtIdentidadPadre.SelectedText = "";
             txtIdentidadPadre.ShadowDecoration.CustomizableEdges = customizableEdges30;
             txtIdentidadPadre.Size = new Size(179, 25);
-            txtIdentidadPadre.TabIndex = 32;
+            txtIdentidadPadre.TabIndex = 13;
             txtIdentidadPadre.TextChanged += txtIdentidadPadre_TextChanged;
             txtIdentidadPadre.KeyPress += txtIdentidadPadre_KeyPress;
             // 
@@ -670,7 +670,7 @@
             txtIdentidadMadre.SelectedText = "";
             txtIdentidadMadre.ShadowDecoration.CustomizableEdges = customizableEdges32;
             txtIdentidadMadre.Size = new Size(179, 25);
-            txtIdentidadMadre.TabIndex = 34;
+            txtIdentidadMadre.TabIndex = 19;
             txtIdentidadMadre.TextChanged += txtIdentidadMadre_TextChanged;
             txtIdentidadMadre.KeyPress += txtIdentidadMadre_KeyPress;
             // 
@@ -706,7 +706,7 @@
             txtTelefonoPadre.SelectedText = "";
             txtTelefonoPadre.ShadowDecoration.CustomizableEdges = customizableEdges34;
             txtTelefonoPadre.Size = new Size(101, 25);
-            txtTelefonoPadre.TabIndex = 36;
+            txtTelefonoPadre.TabIndex = 14;
             txtTelefonoPadre.TextChanged += txtTelefonoPadre_TextChanged;
             txtTelefonoPadre.KeyPress += txtTelefonoPadre_KeyPress;
             // 
@@ -742,7 +742,7 @@
             txtTelefonoMadre.SelectedText = "";
             txtTelefonoMadre.ShadowDecoration.CustomizableEdges = customizableEdges36;
             txtTelefonoMadre.Size = new Size(101, 25);
-            txtTelefonoMadre.TabIndex = 38;
+            txtTelefonoMadre.TabIndex = 20;
             txtTelefonoMadre.TextChanged += txtTelefonoMadre_TextChanged;
             txtTelefonoMadre.KeyPress += txtTelefonoMadre_KeyPress;
             // 
@@ -777,7 +777,7 @@
             txtTrabajoPadre.SelectedText = "";
             txtTrabajoPadre.ShadowDecoration.CustomizableEdges = customizableEdges38;
             txtTrabajoPadre.Size = new Size(300, 25);
-            txtTrabajoPadre.TabIndex = 40;
+            txtTrabajoPadre.TabIndex = 16;
             txtTrabajoPadre.KeyPress += txtTrabajoPadre_KeyPress;
             // 
             // lbTrabajoMadre
@@ -811,7 +811,7 @@
             txtTrabajoMadre.SelectedText = "";
             txtTrabajoMadre.ShadowDecoration.CustomizableEdges = customizableEdges40;
             txtTrabajoMadre.Size = new Size(300, 25);
-            txtTrabajoMadre.TabIndex = 42;
+            txtTrabajoMadre.TabIndex = 22;
             txtTrabajoMadre.KeyPress += txtTrabajoMadre_KeyPress;
             // 
             // txtAviso1
@@ -919,7 +919,7 @@
             btExportar.Name = "btExportar";
             btExportar.ShadowDecoration.CustomizableEdges = customizableEdges48;
             btExportar.Size = new Size(130, 34);
-            btExportar.TabIndex = 53;
+            btExportar.TabIndex = 24;
             btExportar.Text = "Exportar PDF";
             btExportar.Click += guna2Button1_Click;
             // 
@@ -940,7 +940,7 @@
             btMatricular.Name = "btMatricular";
             btMatricular.ShadowDecoration.CustomizableEdges = customizableEdges50;
             btMatricular.Size = new Size(130, 35);
-            btMatricular.TabIndex = 54;
+            btMatricular.TabIndex = 23;
             btMatricular.Text = "Matricular";
             btMatricular.Click += btMatricular_Click;
             // 
@@ -983,7 +983,7 @@
             txtCorreoPadre.SelectedText = "";
             txtCorreoPadre.ShadowDecoration.CustomizableEdges = customizableEdges52;
             txtCorreoPadre.Size = new Size(193, 25);
-            txtCorreoPadre.TabIndex = 60;
+            txtCorreoPadre.TabIndex = 15;
             // 
             // txtCorreoMadre
             // 
@@ -1004,7 +1004,7 @@
             txtCorreoMadre.SelectedText = "";
             txtCorreoMadre.ShadowDecoration.CustomizableEdges = customizableEdges54;
             txtCorreoMadre.Size = new Size(193, 25);
-            txtCorreoMadre.TabIndex = 61;
+            txtCorreoMadre.TabIndex = 21;
             txtCorreoMadre.TextChanged += txtCorreoMadre_TextChanged;
             // 
             // cbbParentescoPadre
@@ -1025,7 +1025,7 @@
             cbbParentescoPadre.Name = "cbbParentescoPadre";
             cbbParentescoPadre.ShadowDecoration.CustomizableEdges = customizableEdges56;
             cbbParentescoPadre.Size = new Size(243, 26);
-            cbbParentescoPadre.TabIndex = 62;
+            cbbParentescoPadre.TabIndex = 11;
             // 
             // cbbParentescoMadre
             // 
@@ -1045,7 +1045,7 @@
             cbbParentescoMadre.Name = "cbbParentescoMadre";
             cbbParentescoMadre.ShadowDecoration.CustomizableEdges = customizableEdges58;
             cbbParentescoMadre.Size = new Size(243, 26);
-            cbbParentescoMadre.TabIndex = 63;
+            cbbParentescoMadre.TabIndex = 17;
             // 
             // guna2HtmlLabel8
             // 
