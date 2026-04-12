@@ -275,7 +275,7 @@
             txtIdentidadEstudiante.PlaceholderText = "";
             txtIdentidadEstudiante.SelectedText = "";
             txtIdentidadEstudiante.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            txtIdentidadEstudiante.Size = new Size(235, 25);
+            txtIdentidadEstudiante.Size = new Size(349, 25);
             txtIdentidadEstudiante.TabIndex = 1;
             txtIdentidadEstudiante.TextChanged += txtIdentidadEstudiante_TextChanged;
             txtIdentidadEstudiante.KeyPress += txtIdentidadEstudiante_KeyPress;
@@ -570,6 +570,7 @@
             btBuscar.Size = new Size(108, 25);
             btBuscar.TabIndex = 2;
             btBuscar.Text = "Buscar";
+            btBuscar.Visible = false;
             btBuscar.Click += btBuscar_Click;
             // 
             // lbNombreMadre
@@ -1091,13 +1092,14 @@
             cbbSeccion.Name = "cbbSeccion";
             cbbSeccion.ShadowDecoration.CustomizableEdges = customizableEdges60;
             cbbSeccion.Size = new Size(108, 26);
-            cbbSeccion.TabIndex = 66;
+            cbbSeccion.TabIndex = 6;
             // 
             // FrmMatricula
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1028, 642);
+            Controls.Add(txtIdentidadEstudiante);
             Controls.Add(cbbSeccion);
             Controls.Add(lbSeccion);
             Controls.Add(guna2HtmlLabel8);
@@ -1146,7 +1148,6 @@
             Controls.Add(lbGenero);
             Controls.Add(lbIdentidadEstudiante);
             Controls.Add(dtpFechaNacimiento);
-            Controls.Add(txtIdentidadEstudiante);
             Controls.Add(lbFechaNacimiento);
             Controls.Add(pbEstudiante);
             Controls.Add(txtNombreEstudiante);

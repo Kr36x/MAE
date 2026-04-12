@@ -20,6 +20,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
         }
         private void CargarGridsDetalle()
         {
+            // Metodo para cargar un grip que contiene los datos para llenar los contenedores
             try
             {
                 DataTable dtTop = util.EjecutarConsulta("SELECT EstudianteID FROM vMAE_RepProyDesercionGen");
@@ -45,6 +46,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
         private void CargarContenedoresDesercion()
         {
+            // Este metodo carga la informacion en los contenedores
             try
             {
                 DataTable dt = util.EjecutarConsulta("SELECT * FROM vMAE_RepProyDesercionGen");
@@ -77,6 +79,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
         }
         private void FrmReporteDesercionRetencion_Load(object sender, EventArgs e)
         {
+            // Codigo del load
             CargarContenedoresDesercion();
             CargarGridsDetalle();
             txtAnio.Text = (DateTime.Now.Year - 1).ToString();

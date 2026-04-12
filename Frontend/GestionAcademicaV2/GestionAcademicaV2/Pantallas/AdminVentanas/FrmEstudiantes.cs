@@ -20,6 +20,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
         }
         private void CargarGrados()
         {
+            // Metodo para cargar grados al ejecutar el form
             try
             {
                 EjecutarUtilidades util = new EjecutarUtilidades();
@@ -43,6 +44,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
         }
         private void BuscarConSP()
         {
+            // Metodo para buscar y aplicar filtos en el form
             try
             {
                 EjecutarUtilidades util = new EjecutarUtilidades();
@@ -76,6 +78,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
         private void FrmEstudiantes_Load(object sender, EventArgs e)
         {
+            // Codificación del Load
             CargarGrados();
             BuscarConSP();
             ConfigurarColumnas();
@@ -88,11 +91,13 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
         private void cbbGrado_SelectedIndexChanged(object sender, EventArgs e)
         {
+            // Aplicar filtro al seleccionar grados
             BuscarConSP();
         }
 
         private void dtpAnio_ValueChanged(object sender, EventArgs e)
         {
+            // Aplicar filtro al cambiar año
             BuscarConSP();
         }
 
@@ -113,6 +118,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
         private void dgvEstudiantes_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            // Codificacion para abrir el form Ficha Matricula al dar click en los botones del grip
             if (e.RowIndex < 0) return;
 
             string col = dgvEstudiantes.Columns[e.ColumnIndex].Name;
@@ -139,6 +145,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
         private void ConfigurarColumnas()
         {
+            // Metodo para configurar columnas
             if (!dgvEstudiantes.Columns.Contains("btnVer"))
             {
                 DataGridViewImageColumn colEstado = new DataGridViewImageColumn();
@@ -171,6 +178,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
         private void dgvEstudiantes_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
+            // Establecer formato para las columnas del datagrip Estudiante
             if (e.RowIndex < 0) return;
 
             // Imagen Editar

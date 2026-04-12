@@ -65,6 +65,23 @@ namespace GestionAcademicaV2.Modelos
             }
         }
 
+        public object EjecutarSPScalar(string nombreSP, SqlParameter[] parametros)
+        {
+            using (SqlConnection conexion = new Conexion().ObtenerConexion())
+            {
+                using (SqlCommand cmd = new SqlCommand(nombreSP, conexion))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    if (parametros != null)
+                        cmd.Parameters.AddRange(parametros);
+
+                    conexion.Open();
+                    return cmd.ExecuteScalar();
+                }
+            }
+        }
+
         public DataSet EjecutarDataSet(string consulta)
         {
             using (SqlConnection conexion = new Conexion().ObtenerConexion())

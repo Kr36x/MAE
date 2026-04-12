@@ -26,6 +26,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
         private void CargarFichaMatriculaEditar()
         {
+            // Metodo para cargar los datos del form al abrir, cuando se da click al editar del form Estudiantes
             try
             {
                 EjecutarUtilidades util = new EjecutarUtilidades();
@@ -78,6 +79,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
         }
         private void CargarFichaMatricula()
         {
+            // Metodo para cargar los datos del form al abrir, cuando se da click al ver del form Estudiantes
             try
             {
                 EjecutarUtilidades util = new EjecutarUtilidades();
@@ -126,6 +128,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
         private int ObtenerMatriculaID()
         {
+            // Metodo para obtener la matriculaId Para poder llenar algunos datos del form, que necesitan este parametro
             EjecutarUtilidades util = new EjecutarUtilidades();
 
             DataTable dt = util.EjecutarConsulta(
@@ -140,6 +143,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
         private void CargarTutores()
         {
+            // Este metodo carga la informacion de los tutores
             try
             {
                 EjecutarUtilidades util = new EjecutarUtilidades();
@@ -191,6 +195,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
         private void CargarGrados()
         {
+            // Carga todos los grados al ejecutar el form
             try
             {
                 EjecutarUtilidades util = new EjecutarUtilidades();
@@ -214,6 +219,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
         private void FrmFichaMatricula_Load(object sender, EventArgs e)
         {
+            // Codificacion del load
             CargarGrados();
             if (veroeditar == 2)
             {
@@ -230,6 +236,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
         private void FrmFichaMatricula_KeyDown(object sender, KeyEventArgs e)
         {
+
             if (e.KeyCode == Keys.Escape)
             {
                 this.Close();
@@ -243,6 +250,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
         private void CargarSeccionesPorGrado(int gradoID)
         {
+            //  Metodo para cargar secciones segun el grado seleccionado
             EjecutarUtilidades util = new EjecutarUtilidades();
 
             SqlParameter[] p =
@@ -258,10 +266,19 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
         }
         private void btEditarMatricula_Click(object sender, EventArgs e)
         {
+            // Codificacion para el boton editar Matricula
             try
             {
-                EjecutarUtilidades util = new EjecutarUtilidades();
                 // Validaciones
+                if(txtTelefonoEstudiante.TextLength<9)
+                {
+                    txtTelefonoEstudiante.Focus();
+                    MessageBox.Show("El número de teléfono debe tener 8 dígitos.");
+                    return;
+                }
+
+                EjecutarUtilidades util = new EjecutarUtilidades();
+                
 
                 DataTable dtSeccion = util.EjecutarConsulta(
                     "SELECT TOP 1 Letra FROM Seccion WHERE GradoID = " + cbbGrado.SelectedValue);
@@ -326,6 +343,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
         private void txtTelefonoEstudiante_TextChanged(object sender, EventArgs e)
         {
+            // Validacion de formato del text Telefono
             if (txtTelefonoEstudiante.Text.Length == 4 && !txtTelefonoEstudiante.Text.Contains("-"))
             {
                 txtTelefonoEstudiante.Text += "-";
@@ -335,6 +353,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
         private void txtTelefonoEstudiante_KeyPress(object sender, KeyPressEventArgs e)
         {
+            // Validacion de formato del text Telefono estudiante
             if (e.KeyChar == (char)Keys.Back)
                 return;
 
@@ -347,6 +366,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
         private void cbbGrado_SelectedIndexChanged(object sender, EventArgs e)
         {
+            // BUsqueda de secciones al seleccionar grado
             if (cbbGrado.SelectedValue == null) return;
 
             if (cbbGrado.SelectedValue is DataRowView) return;
