@@ -12,6 +12,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 {
     public partial class AsignacionCarga : Form
     {
+        bool bloqueado = false;
         public AsignacionCarga()
         {
             InitializeComponent();
@@ -22,6 +23,8 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
         {
             try
             {
+                bloqueado = true;
+
                 EjecutarUtilidades util = new EjecutarUtilidades();
                 DataTable dt = util.EjecutarConsulta("spMAE_TraeDocentes");
 
@@ -35,6 +38,10 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
             {
                 MessageBox.Show("Error al cargar docentes." + ex.Message,
                                 "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                bloqueado = false;
             }
         }
 
@@ -50,37 +57,46 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
         private void cbbDocentes_TextChanged(object sender, EventArgs e)
         {
-            try { 
-            string filtro = cbbDocentes.Text.Trim();
+            if (bloqueado) return;
 
-            if (filtro.Length < 1)
+            try
             {
-                cbbDocentes.DroppedDown = false;
-                return;
-            }
+                string filtro = cbbDocentes.Text.Trim();
 
-            EjecutarUtilidades util = new EjecutarUtilidades();
+                if (filtro.Length < 1)
+                {
+                    cbbDocentes.DroppedDown = false;
+                    return;
+                }
 
-            SqlParameter[] p =
-            {
-                new SqlParameter("@Filtro", filtro)
-            };
+                bloqueado = true;
 
-            DataTable dt = util.EjecutarSPParametros("spMAE_BuscarDocentes", p);
+                EjecutarUtilidades util = new EjecutarUtilidades();
 
-            cbbDocentes.DataSource = dt;
-            cbbDocentes.DisplayMember = "Nombre";
-            cbbDocentes.ValueMember = "DocenteID";
+                SqlParameter[] p =
+                {
+            new SqlParameter("@Filtro", filtro)
+        };
 
-            cbbDocentes.DroppedDown = true;
+                DataTable dt = util.EjecutarSPParametros("spMAE_BuscarDocentes", p);
 
-            cbbDocentes.Text = filtro;
-            cbbDocentes.SelectionStart = filtro.Length;
+                cbbDocentes.DataSource = dt;
+                cbbDocentes.DisplayMember = "Nombre";
+                cbbDocentes.ValueMember = "DocenteID";
+
+                cbbDocentes.DroppedDown = true;
+
+                cbbDocentes.Text = filtro;
+                cbbDocentes.SelectionStart = filtro.Length;
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error al buscar docentes." + ex.Message,
                                 "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                bloqueado = false;
             }
         }
     }
