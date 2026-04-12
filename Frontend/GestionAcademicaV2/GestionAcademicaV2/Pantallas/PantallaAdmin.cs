@@ -42,7 +42,7 @@ namespace GestionAcademicaV2.Pantallas
 
         }
 
-  
+
         private void PantallaAdmin_Load(object sender, EventArgs e)
         {
             lblUsuario.Text = FormatearNombre(usuarioActual?.Usuario ?? "Usuario prueba");
@@ -85,6 +85,7 @@ namespace GestionAcademicaV2.Pantallas
 
             EstiloBotonSubmenu(btnVinculacionTutores);
             EstiloBotonSubmenu(btnGestionReuniones);
+            EstiloBotonSubmenu(btnConfigCicloEscolar);
 
 
             // Submenú Reportes
@@ -351,7 +352,7 @@ namespace GestionAcademicaV2.Pantallas
             AbrirFormularioEnPanel(new FrmMatricula(this));
         }
 
-    
+
 
         private void btnDocentes_Click(object sender, EventArgs e)
         {
@@ -388,7 +389,7 @@ namespace GestionAcademicaV2.Pantallas
             AbrirFormularioEnPanel(new FrmGestionVinculacionTutores());
         }
 
-       
+
 
         private void btnGestionReuniones_Click(object sender, EventArgs e)
         {
@@ -396,7 +397,13 @@ namespace GestionAcademicaV2.Pantallas
             AbrirFormularioEnPanel(new FrmGestionReuniones());
         }
 
- 
+
+        private void btnConfigCicloEscolar_Click(object sender, EventArgs e)
+        {
+            MarcarActivo(btnConfigCicloEscolar);
+            AbrirFormularioEnPanel(new FrmConfigCicloEscolar());
+        }
+
 
         #endregion
 
@@ -434,8 +441,9 @@ namespace GestionAcademicaV2.Pantallas
             return string.Join(" ", partes);
         }
 
-        
+
 
         #endregion
+
     }
 }
