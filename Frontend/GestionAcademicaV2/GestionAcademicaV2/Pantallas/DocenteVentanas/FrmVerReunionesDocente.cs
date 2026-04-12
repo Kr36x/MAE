@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Globalization;
 using System.Linq;
 using System.Windows.Forms;
+using GestionAcademicaV2.Pantallas.AdminVentanas;
 
 namespace GestionAcademicaV2.Pantallas.DocenteVentanas
 {
@@ -43,6 +44,10 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
             lblSiguiente.Click += lblSiguiente_Click;
 
             dgvReuniones.CellPainting += dgvReuniones_CellPainting;
+
+            dgvReuniones.CellClick += dgvReuniones_CellClick;
+            dgvReuniones.CellMouseEnter += dgvReuniones_CellMouseEnter;
+            dgvReuniones.CellMouseLeave += dgvReuniones_CellMouseLeave;
         }
 
         private void FrmVerReunionesDocente_Load(object sender, EventArgs e)
@@ -640,7 +645,48 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
             CargarMesesDisponibles();
             CargarReuniones();
         }
+        private void dgvReuniones_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0 || e.ColumnIndex < 0)
+                return;
 
+            string fechaHora = dgvReuniones.Rows[e.RowIndex].Cells["FechaHora"].Value?.ToString() ?? "";
+            string estudiante = dgvReuniones.Rows[e.RowIndex].Cells["Estudiante"].Value?.ToString() ?? "";
+            string gradoSeccion = dgvReuniones.Rows[e.RowIndex].Cells["GradoSeccion"].Value?.ToString() ?? "";
+            string tema = dgvReuniones.Rows[e.RowIndex].Cells["Tema"].Value?.ToString() ?? "";
+            string medio = dgvReuniones.Rows[e.RowIndex].Cells["Medio"].Value?.ToString() ?? "";
+            string estado = dgvReuniones.Rows[e.RowIndex].Cells["Estado"].Value?.ToString() ?? "";
+            string docente = cbDocente.Text.Trim();
+
+            using FrmDetalleReunion frm = new FrmDetalleReunion(
+                fechaHora,
+                docente,
+                estudiante,
+                gradoSeccion,
+                tema,
+                medio,
+                estado,
+                TipoVistaDetalleReunion.Docente
+            );
+
+            frm.ShowDialog();
+        }
+
+        private void dgvReuniones_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0 || e.ColumnIndex < 0)
+            {
+                dgvReuniones.Cursor = Cursors.Default;
+                return;
+            }
+
+            dgvReuniones.Cursor = Cursors.Hand;
+        }
+
+        private void dgvReuniones_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
+        {
+            dgvReuniones.Cursor = Cursors.Default;
+        }
         private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
             _textoBusquedaActual = txtBuscar.Text.Trim();

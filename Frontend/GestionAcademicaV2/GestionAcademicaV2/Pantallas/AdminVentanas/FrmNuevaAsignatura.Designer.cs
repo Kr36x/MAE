@@ -54,6 +54,9 @@
             guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             guna2CircleButton1 = new Guna.UI2.WinForms.Guna2CircleButton();
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            guna2HtmlLabel8 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             cbActividad = new Guna.UI2.WinForms.Guna2ComboBox();
             btnCrear = new Guna.UI2.WinForms.Guna2Button();
@@ -65,9 +68,6 @@
             guna2HtmlLabel6 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel7 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            guna2HtmlLabel8 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2Panel2.SuspendLayout();
             guna2Panel1.SuspendLayout();
             guna2Panel7.SuspendLayout();
@@ -156,6 +156,39 @@
             guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges21;
             guna2Panel1.Size = new Size(577, 259);
             guna2Panel1.TabIndex = 26;
+            // 
+            // guna2HtmlLabel8
+            // 
+            guna2HtmlLabel8.BackColor = Color.Transparent;
+            guna2HtmlLabel8.Font = new Font("Segoe UI", 7F);
+            guna2HtmlLabel8.ForeColor = Color.FromArgb(166, 163, 163);
+            guna2HtmlLabel8.Location = new Point(295, 190);
+            guna2HtmlLabel8.Name = "guna2HtmlLabel8";
+            guna2HtmlLabel8.Size = new Size(276, 14);
+            guna2HtmlLabel8.TabIndex = 30;
+            guna2HtmlLabel8.Text = "RESUMA BREVEMENTE EL OBJETIVO O CONTENIDO DE LA MATERIA";
+            // 
+            // guna2HtmlLabel4
+            // 
+            guna2HtmlLabel4.BackColor = Color.Transparent;
+            guna2HtmlLabel4.Font = new Font("Segoe UI", 7F);
+            guna2HtmlLabel4.ForeColor = Color.FromArgb(166, 163, 163);
+            guna2HtmlLabel4.Location = new Point(14, 163);
+            guna2HtmlLabel4.Name = "guna2HtmlLabel4";
+            guna2HtmlLabel4.Size = new Size(237, 14);
+            guna2HtmlLabel4.TabIndex = 29;
+            guna2HtmlLabel4.Text = "SELECCIONE EL ÁREA PEDAGÓGICA A LA QUE PERTENECE";
+            // 
+            // guna2HtmlLabel5
+            // 
+            guna2HtmlLabel5.BackColor = Color.Transparent;
+            guna2HtmlLabel5.Font = new Font("Segoe UI", 7F);
+            guna2HtmlLabel5.ForeColor = Color.FromArgb(166, 163, 163);
+            guna2HtmlLabel5.Location = new Point(14, 76);
+            guna2HtmlLabel5.Name = "guna2HtmlLabel5";
+            guna2HtmlLabel5.Size = new Size(202, 14);
+            guna2HtmlLabel5.TabIndex = 28;
+            guna2HtmlLabel5.Text = "INGRESE EL NOMBRE OFICIAL DE LA ASIGNATURA";
             // 
             // guna2HtmlLabel3
             // 
@@ -329,39 +362,6 @@
             guna2HtmlLabel7.Size = new Size(85, 19);
             guna2HtmlLabel7.TabIndex = 1;
             guna2HtmlLabel7.Text = "ASIGNATURA";
-            // 
-            // guna2HtmlLabel5
-            // 
-            guna2HtmlLabel5.BackColor = Color.Transparent;
-            guna2HtmlLabel5.Font = new Font("Segoe UI", 7F);
-            guna2HtmlLabel5.ForeColor = Color.FromArgb(166, 163, 163);
-            guna2HtmlLabel5.Location = new Point(14, 76);
-            guna2HtmlLabel5.Name = "guna2HtmlLabel5";
-            guna2HtmlLabel5.Size = new Size(202, 14);
-            guna2HtmlLabel5.TabIndex = 28;
-            guna2HtmlLabel5.Text = "INGRESE EL NOMBRE OFICIAL DE LA ASIGNATURA";
-            // 
-            // guna2HtmlLabel4
-            // 
-            guna2HtmlLabel4.BackColor = Color.Transparent;
-            guna2HtmlLabel4.Font = new Font("Segoe UI", 7F);
-            guna2HtmlLabel4.ForeColor = Color.FromArgb(166, 163, 163);
-            guna2HtmlLabel4.Location = new Point(14, 163);
-            guna2HtmlLabel4.Name = "guna2HtmlLabel4";
-            guna2HtmlLabel4.Size = new Size(237, 14);
-            guna2HtmlLabel4.TabIndex = 29;
-            guna2HtmlLabel4.Text = "SELECCIONE EL ÁREA PEDAGÓGICA A LA QUE PERTENECE";
-            // 
-            // guna2HtmlLabel8
-            // 
-            guna2HtmlLabel8.BackColor = Color.Transparent;
-            guna2HtmlLabel8.Font = new Font("Segoe UI", 7F);
-            guna2HtmlLabel8.ForeColor = Color.FromArgb(166, 163, 163);
-            guna2HtmlLabel8.Location = new Point(295, 190);
-            guna2HtmlLabel8.Name = "guna2HtmlLabel8";
-            guna2HtmlLabel8.Size = new Size(276, 14);
-            guna2HtmlLabel8.TabIndex = 30;
-            guna2HtmlLabel8.Text = "RESUMA BREVEMENTE EL OBJETIVO O CONTENIDO DE LA MATERIA";
             // 
             // FrmNuevaAsignatura
             // 

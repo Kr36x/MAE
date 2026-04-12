@@ -64,6 +64,9 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
             dgvReuniones.CellClick += dgvReuniones_CellClick;
 
             btnNuevaActividad.Click += btnNuevaActividad_Click;
+
+            dgvReuniones.CellMouseEnter += dgvReuniones_CellMouseEnter;
+            dgvReuniones.CellMouseLeave += dgvReuniones_CellMouseLeave;
         }
 
         private void FrmControlReuniones_Load(object sender, EventArgs e)
@@ -177,7 +180,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
                 Name = "GradoSeccion",
                 HeaderText = "GRADO Y SECCION",
                 DataPropertyName = "GradoSeccion",
-                Width = 160
+                Width = 130
             });
 
             dgvReuniones.Columns.Add(new DataGridViewTextBoxColumn
@@ -185,7 +188,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
                 Name = "Tema",
                 HeaderText = "TEMA",
                 DataPropertyName = "Tema",
-                Width = 125
+                Width = 145
             });
 
             dgvReuniones.Columns.Add(new DataGridViewTextBoxColumn
@@ -193,7 +196,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
                 Name = "Medio",
                 HeaderText = "MEDIO",
                 DataPropertyName = "Medio",
-                Width = 100
+                Width = 110
             });
 
             dgvReuniones.Columns.Add(new DataGridViewTextBoxColumn
@@ -216,6 +219,9 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
             foreach (DataGridViewColumn col in dgvReuniones.Columns)
                 col.SortMode = DataGridViewColumnSortMode.NotSortable;
+
+            dgvReuniones.Columns["Tema"].DefaultCellStyle.ForeColor = System.Drawing.Color.DarkSlateGray;
+            dgvReuniones.Columns["Tema"].DefaultCellStyle.Font = new Font("Segoe UI", 9.5F, FontStyle.Regular);
         }
 
         private DataTable CrearEstructuraReuniones()
@@ -690,7 +696,31 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
         #endregion
 
         #region EVENTOS
+        private void dgvReuniones_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0 || e.ColumnIndex < 0)
+            {
+                dgvReuniones.Cursor = Cursors.Default;
+                return;
+            }
 
+            string nombreColumna = dgvReuniones.Columns[e.ColumnIndex].Name;
+
+            if (nombreColumna == "Acciones")
+            {
+                string accion = dgvReuniones.Rows[e.RowIndex].Cells["Acciones"].Value?.ToString() ?? "";
+                dgvReuniones.Cursor = accion != "--" ? Cursors.Hand : Cursors.Default;
+            }
+            else
+            {
+                dgvReuniones.Cursor = Cursors.Hand;
+            }
+        }
+
+        private void dgvReuniones_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
+        {
+            dgvReuniones.Cursor = Cursors.Default;
+        }
         private void cbDocente_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (_cargandoCombos) return;
@@ -888,48 +918,129 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
             if (e.RowIndex < 0 || e.ColumnIndex < 0)
                 return;
 
-            if (dgvReuniones.Columns[e.ColumnIndex].Name != "Acciones")
-                return;
-
-            string accion = dgvReuniones.Rows[e.RowIndex].Cells["Acciones"].Value?.ToString() ?? "";
+            string nombreColumna = dgvReuniones.Columns[e.ColumnIndex].Name;
             int reunionId = Convert.ToInt32(dgvReuniones.Rows[e.RowIndex].Cells["ReunionID"].Value ?? 0);
 
-            if (accion == "CREAR ACTA")
+            if (nombreColumna == "Acciones")
             {
-                using FrmActaReunion frm = new FrmActaReunion(reunionId);
-                if (frm.ShowDialog() == DialogResult.OK)
-                    CargarReuniones();
-            }
-            else if (accion == "PDF")
-            {
-                string fechaHora = dgvReuniones.Rows[e.RowIndex].Cells["FechaHora"].Value?.ToString() ?? "";
-                string estudiante = dgvReuniones.Rows[e.RowIndex].Cells["Estudiante"].Value?.ToString() ?? "";
-                string gradoSeccion = dgvReuniones.Rows[e.RowIndex].Cells["GradoSeccion"].Value?.ToString() ?? "";
-                string tema = dgvReuniones.Rows[e.RowIndex].Cells["Tema"].Value?.ToString() ?? "";
-                string medio = dgvReuniones.Rows[e.RowIndex].Cells["Medio"].Value?.ToString() ?? "";
-                string estado = dgvReuniones.Rows[e.RowIndex].Cells["Estado"].Value?.ToString() ?? "";
+                string accion = dgvReuniones.Rows[e.RowIndex].Cells["Acciones"].Value?.ToString() ?? "";
 
-                string docente = ObtenerDocentePorReunionId(reunionId);
-                string anio = cbCicloAcademico.Text.Trim();
-
-                if (string.IsNullOrWhiteSpace(docente))
+                if (accion == "CREAR ACTA")
                 {
-                    MessageBox.Show("No se pudo obtener el docente de la reunión.",
-                        "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    using FrmActaReunion frm = new FrmActaReunion(reunionId);
+                    if (frm.ShowDialog() == DialogResult.OK)
+                        CargarReuniones();
+                }
+                else if (accion == "PDF")
+                {
+                    string fechaHora = dgvReuniones.Rows[e.RowIndex].Cells["FechaHora"].Value?.ToString() ?? "";
+                    string estudiante = dgvReuniones.Rows[e.RowIndex].Cells["Estudiante"].Value?.ToString() ?? "";
+                    string gradoSeccion = dgvReuniones.Rows[e.RowIndex].Cells["GradoSeccion"].Value?.ToString() ?? "";
+                    string tema = dgvReuniones.Rows[e.RowIndex].Cells["Tema"].Value?.ToString() ?? "";
+                    string medio = dgvReuniones.Rows[e.RowIndex].Cells["Medio"].Value?.ToString() ?? "";
+                    string estado = dgvReuniones.Rows[e.RowIndex].Cells["Estado"].Value?.ToString() ?? "";
+
+                    string docente = ObtenerDocentePorReunionId(reunionId);
+                    string anio = cbCicloAcademico.Text.Trim();
+
+                    if (string.IsNullOrWhiteSpace(docente))
+                    {
+                        MessageBox.Show("No se pudo obtener el docente de la reunión.",
+                            "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+
+                    GenerarPdfActa(
+                        docente,
+                        estudiante,
+                        fechaHora,
+                        gradoSeccion,
+                        tema,
+                        medio,
+                        estado,
+                        anio
+                    );
+                }
+
+                return;
+            }
+
+            MostrarDetalleReunion(reunionId);
+        }
+
+        private void MostrarDetalleReunion(int reunionId)
+        {
+            try
+            {
+                DataTable dt = ObtenerDetalleReunion(reunionId);
+
+                if (dt.Rows.Count == 0)
+                {
+                    MessageBox.Show("No se encontró información de la reunión.",
+                        "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
                 }
 
-                GenerarPdfActa(
-                    docente,
-                    estudiante,
-                    fechaHora,
-                    gradoSeccion,
-                    tema,
-                    medio,
-                    estado,
-                    anio
+                DataRow row = dt.Rows[0];
+
+                using FrmDetalleReunion frm = new FrmDetalleReunion(
+                    row["FechaHoraTexto"]?.ToString() ?? "",
+                    row["Docente"]?.ToString() ?? "",
+                    row["Estudiante"]?.ToString() ?? "",
+                    row["GradoSeccion"]?.ToString() ?? "",
+                    row["Tema"]?.ToString() ?? "",
+                    row["Medio"]?.ToString() ?? "",
+                    row["Estado"]?.ToString() ?? "",
+                    TipoVistaDetalleReunion.Admin
                 );
+
+                frm.ShowDialog();
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al mostrar detalle de la reunión: " + ex.Message,
+                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private DataTable ObtenerDetalleReunion(int reunionId)
+        {
+            DataTable dt = new DataTable();
+
+            using SqlConnection cn = conexion.ObtenerConexion();
+            using SqlCommand cmd = new SqlCommand(@"
+            SELECT
+                R.ReunionID,
+                FORMAT(R.FechaHora, 'dd/MM/yyyy hh:mm tt', 'es-HN') AS FechaHoraTexto,
+                D.Nombre AS Docente,
+                E.Nombre AS Estudiante,
+                CONCAT(G.NombreGrado, ' ', S.Letra) AS GradoSeccion,
+                R.Tema,
+                R.MedioDifusion AS Medio,
+                R.Estado
+            FROM Reunion R
+            INNER JOIN Docente D
+                ON R.DocenteID = D.DocenteID
+            INNER JOIN Estudiante E
+                ON R.EstudianteID = E.EstudianteID
+            INNER JOIN Matricula M
+                ON M.EstudianteID = E.EstudianteID
+               AND M.Anio = CASE 
+                                WHEN MONTH(R.FechaHora) >= 8 THEN YEAR(R.FechaHora)
+                                ELSE YEAR(R.FechaHora) - 1
+                            END
+            INNER JOIN Seccion S
+                ON M.SeccionID = S.SeccionID
+            INNER JOIN Grado G
+                ON S.GradoID = G.GradoID
+            WHERE R.ReunionID = @ReunionID;", cn);
+
+            cmd.Parameters.AddWithValue("@ReunionID", reunionId);
+
+            using SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+
+            return dt;
         }
 
         #endregion
@@ -978,7 +1089,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
                 string medio,
                 string estado,
                 string anio)
-                    {
+        {
             using SaveFileDialog sfd = new SaveFileDialog();
             sfd.Title = "Guardar acta en PDF";
             sfd.Filter = "Archivo PDF (*.pdf)|*.pdf";

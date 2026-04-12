@@ -177,33 +177,33 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
                 Name = "Nivel",
                 HeaderText = "NIVEL",
                 DataPropertyName = "Nivel",
-                Width = 110,
+                AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill,
+                FillWeight = 100,
+                MinimumWidth = 110,
                 SortMode = DataGridViewColumnSortMode.NotSortable
             });
 
-            DataGridViewImageColumn colAgregar = new DataGridViewImageColumn
-            {
-                Name = "Agregar",
-                HeaderText = "ACCIONES",
-                Image = Properties.Resources.add_white,
-                ImageLayout = DataGridViewImageCellLayout.Zoom,
-                Width = 65
-            };
+            //DataGridViewImageColumn colAgregar = new DataGridViewImageColumn
+            //{
+            //    Name = "Agregar",
+            //    HeaderText = "ACCIONES",
+            //    Image = Properties.Resources.add_white,
+            //    ImageLayout = DataGridViewImageCellLayout.Zoom,
+            //    Width = 65
+            //};
 
             DataGridViewImageColumn colVista = new DataGridViewImageColumn
             {
                 Name = "Vista",
-                HeaderText = "",
+                HeaderText = "ACCIÓN",
                 Image = Properties.Resources.eye,
                 ImageLayout = DataGridViewImageCellLayout.Zoom,
-                Width = 55
+                Width = 90
             };
 
-            dgvNotas.Columns.Add(colAgregar);
             dgvNotas.Columns.Add(colVista);
 
             dgvNotas.Columns["No"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgvNotas.Columns["Agregar"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvNotas.Columns["Vista"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
         }
 
@@ -598,7 +598,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
             }
 
             string nombreColumna = dgvNotas.Columns[e.ColumnIndex].Name;
-            dgvNotas.Cursor = (nombreColumna == "Agregar" || nombreColumna == "Vista")
+            dgvNotas.Cursor = (nombreColumna == "Vista")
                 ? Cursors.Hand
                 : Cursors.Default;
         }
@@ -610,30 +610,30 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
             string nombreColumna = dgvNotas.Columns[e.ColumnIndex].Name;
 
-            if (nombreColumna == "Agregar")
-            {
-                e.Handled = true;
-                e.PaintBackground(e.CellBounds, true);
+            //if (nombreColumna == "Agregar")
+            //{
+            //    e.Handled = true;
+            //    e.PaintBackground(e.CellBounds, true);
 
-                Graphics g = e.Graphics;
-                g.SmoothingMode = SmoothingMode.AntiAlias;
+            //    Graphics g = e.Graphics;
+            //    g.SmoothingMode = SmoothingMode.AntiAlias;
 
-                int btnSize = 28;
-                int startX = e.CellBounds.X + (e.CellBounds.Width - btnSize) / 2;
-                int startY = e.CellBounds.Y + (e.CellBounds.Height - btnSize) / 2;
+            //    int btnSize = 28;
+            //    int startX = e.CellBounds.X + (e.CellBounds.Width - btnSize) / 2;
+            //    int startY = e.CellBounds.Y + (e.CellBounds.Height - btnSize) / 2;
 
-                Rectangle rect = new Rectangle(startX, startY, btnSize, btnSize);
+            //    Rectangle rect = new Rectangle(startX, startY, btnSize, btnSize);
 
-                using (SolidBrush brush = new SolidBrush(Color.FromArgb(86, 196, 255)))
-                    g.FillRectangle(brush, rect);
+            //    using (SolidBrush brush = new SolidBrush(Color.FromArgb(86, 196, 255)))
+            //        g.FillRectangle(brush, rect);
 
-                DibujarIconoCentrado(g, Properties.Resources.add_white, rect, 6);
+            //    DibujarIconoCentrado(g, Properties.Resources.add_white, rect, 6);
 
-                using Pen pen = new Pen(dgvNotas.GridColor);
-                g.DrawLine(pen, e.CellBounds.Left, e.CellBounds.Bottom - 1, e.CellBounds.Right, e.CellBounds.Bottom - 1);
+            //    using Pen pen = new Pen(dgvNotas.GridColor);
+            //    g.DrawLine(pen, e.CellBounds.Left, e.CellBounds.Bottom - 1, e.CellBounds.Right, e.CellBounds.Bottom - 1);
 
-                return;
-            }
+            //    return;
+            //}
 
             if (nombreColumna == "Vista")
             {
@@ -649,8 +649,11 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
                 Rectangle rect = new Rectangle(startX, startY, btnSize, btnSize);
 
+                using (GraphicsPath path = CrearRectanguloRedondeado(rect, 8))
                 using (SolidBrush brush = new SolidBrush(Color.FromArgb(101, 191, 104)))
-                    g.FillRectangle(brush, rect);
+                {
+                    g.FillPath(brush, path);
+                }
 
                 DibujarIconoCentrado(g, Properties.Resources.eye, rect, 6);
 
@@ -659,6 +662,22 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
                 return;
             }
+        }
+
+        private GraphicsPath CrearRectanguloRedondeado(Rectangle rect, int radio)
+        {
+            GraphicsPath path = new GraphicsPath();
+
+            int diametro = radio * 2;
+
+            path.StartFigure();
+            path.AddArc(rect.X, rect.Y, diametro, diametro, 180, 90);
+            path.AddArc(rect.Right - diametro, rect.Y, diametro, diametro, 270, 90);
+            path.AddArc(rect.Right - diametro, rect.Bottom - diametro, diametro, diametro, 0, 90);
+            path.AddArc(rect.X, rect.Bottom - diametro, diametro, diametro, 90, 90);
+            path.CloseFigure();
+
+            return path;
         }
 
         private void DibujarIconoCentrado(Graphics g, Image icono, Rectangle rect, int padding = 6)
