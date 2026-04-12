@@ -47,6 +47,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
         {
             private ImageData ObtenerLogoDesdeResources()
             {
+                // Metodo para agregar le logo al reporte
                 using MemoryStream ms = new MemoryStream();
 
                 // Verifica que el nombre coincida con tu Resources.Designer.cs
@@ -57,6 +58,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
             private Cell CrearCeldaEtiqueta(string texto, PdfFont boldFont)
             {
+                // Metodo para crear las celdas de etiqueta
                 return new Cell()
                     .Add(new Paragraph(texto)
                         .SetFont(boldFont)
@@ -68,6 +70,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
             }
             private Cell CrearCeldaFirma(string texto, PdfFont regularFont)
             {
+                // Metodo para crear la celdas de firma del reporte
                 return new Cell()
                     .Add(
                         new Paragraph("____________________________\n" + texto)
@@ -81,6 +84,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
             private Cell CrearCeldaValor(string texto, PdfFont regularFont)
             {
+                // Metodo para crear la celda valor del reporte
                 return new Cell()
                     .Add(new Paragraph(string.IsNullOrWhiteSpace(texto) ? " " : texto)
                         .SetFont(regularFont)
@@ -124,7 +128,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
                     .SetMarginTop(8)
                     .SetMarginBottom(10);
             }
-
+            // Metodo para crear el PDF del reporte
             public void CrearPDF(
                     string rutaSalida,
                     string identidad,
@@ -462,6 +466,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
         private void FrmMatricula_Load(object sender, EventArgs e)
         {
+            // Codificacion del load
             CargarGrados();
             CargarSexo();
             //if (estudianteID > 0)
@@ -484,6 +489,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
+            // Codificacion del boton crear pdf
             using (SaveFileDialog saveFileDialog = new SaveFileDialog())
             {
                 saveFileDialog.Title = "Guardar matrícula en PDF";
@@ -530,6 +536,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
         private void CargarGrados()
         {
+            // Metodo para cargar grados en el form
             try
             {
                 EjecutarUtilidades util = new EjecutarUtilidades();
@@ -549,6 +556,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
         private void CargarSexo()
         {
+            // Metodo para cargar el genero al ejecutar el form
             try
             {
                 EjecutarUtilidades util = new EjecutarUtilidades();
@@ -641,6 +649,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
         private void txtIdentidadEstudiante_KeyPress(object sender, KeyPressEventArgs e)
         {
+            // Validacion
             if (e.KeyChar == (char)Keys.Back)
             {
                 return;
@@ -659,6 +668,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
         }
         private void CargarSeccionesPorGrado(int gradoID)
         {
+            // Metodo para agregar secciones segun el grado seleccionado
             try
             {
                 EjecutarUtilidades util = new EjecutarUtilidades();
@@ -687,10 +697,130 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
         private void btMatricular_Click(object sender, EventArgs e)
         {
+            // Codificacion del boton matricular
             try
             {
                 EjecutarUtilidades util = new EjecutarUtilidades();
                 // Validaciones
+                if (string.IsNullOrWhiteSpace(txtIdentidadEstudiante.Text))
+                {
+                    txtIdentidadEstudiante.Focus();
+                    MessageBox.Show("Debe ingresar la identidad del estudiante.");
+                    return;
+                }
+
+                if (txtIdentidadEstudiante.TextLength<15)
+                {
+                    txtIdentidadEstudiante.Focus();
+                    MessageBox.Show("La identidad debe tener 13 dígitos.");
+                    return;
+                }
+
+                if (string.IsNullOrWhiteSpace(txtNombreEstudiante.Text))
+                {
+                    txtNombreEstudiante.Focus();
+                    MessageBox.Show("Debe ingresar el nombre del estudiante.");
+                    return;
+                }
+
+                if (dtpFechaNacimiento.Value==DateTime.Now)
+                {
+                    dtpFechaNacimiento.Focus();
+                    MessageBox.Show("Debe seleccionar una fecha de nacimiento.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                if (cbbGrado.SelectedIndex == -1)
+                {
+                    cbbGrado.Focus();
+                    MessageBox.Show("Debe seleccionar un grado.");
+                    return;
+                }
+
+                if (cbbSeccion.SelectedIndex == -1)
+                {
+                    cbbSeccion.Focus();
+                    MessageBox.Show("Debe seleccionar una sección.");
+                    return;
+                }
+
+                if (cbbMano.SelectedIndex == -1)
+                {
+                    cbbMano.Focus();
+                    MessageBox.Show("Debe seleccionar la mano que utiliza el estudiante.");
+                    return;
+                }
+
+                if (cbbGenero.SelectedIndex == -1)
+                {
+                    cbbGenero.Focus();
+                    MessageBox.Show("Debe seleccionar el genero del estudiante.");
+                    return;
+                }
+
+                if (string.IsNullOrWhiteSpace(txtTelefono.Text))
+                {
+                    txtTelefono.Focus();
+                    MessageBox.Show("Debe ingresar el telefono del estudiante.");
+                    return;
+                }
+
+                if (txtTelefono.TextLength < 9)
+                {
+                    txtTelefono.Focus();
+                    MessageBox.Show("El teléfono debe tener 8 dígitos.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                if (cbbParentescoPadre.SelectedIndex == -1)
+                {
+                    cbbParentescoPadre.Focus();
+                    MessageBox.Show("Debe seleccionar un parentesco.");
+                    return;
+                }
+
+                if (string.IsNullOrWhiteSpace(txtNombrePadre.Text))
+                {
+                    txtNombrePadre.Focus();
+                    MessageBox.Show("Debe ingresar el nombre del tutor.");
+                    return;
+                }
+
+                if (string.IsNullOrWhiteSpace(txtIdentidadPadre.Text))
+                {
+                    txtIdentidadPadre.Focus();
+                    MessageBox.Show("Debe ingresar la identidad del tutor.");
+                    return;
+                }
+
+                if (txtIdentidadPadre.TextLength < 15)
+                {
+                    txtIdentidadPadre.Focus();
+                    MessageBox.Show("La identidad debe tener 13 dígitos.");
+                    return;
+                }
+
+                if (string.IsNullOrWhiteSpace(txtTelefonoPadre.Text))
+                {
+                    txtTelefonoPadre.Focus();
+                    MessageBox.Show("Debe ingresar el telefono del tutor.");
+                    return;
+                }
+
+                if (txtTelefonoPadre.TextLength < 9)
+                {
+                    txtTelefonoPadre.Focus();
+                    MessageBox.Show("El teléfono debe tener 8 dígitos.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                if (string.IsNullOrWhiteSpace(txtCorreoPadre.Text))
+                {
+                    txtCorreoPadre.Focus();
+                    MessageBox.Show("Debe ingresar el correo del tutor.");
+                    return;
+                }
+
                 string correo = txtCorreoPadre.Text.Trim();
 
                 if (!correo.Contains("@") || !correo.Contains("."))
@@ -703,21 +833,10 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
                     txtCorreoPadre.Focus();
                 }
 
-                if (string.IsNullOrWhiteSpace(txtNombreEstudiante.Text))
+                if (string.IsNullOrWhiteSpace(txtTrabajoPadre.Text))
                 {
-                    MessageBox.Show("Debe ingresar el nombre del estudiante.");
-                    return;
-                }
-
-                if (string.IsNullOrWhiteSpace(txtIdentidadEstudiante.Text))
-                {
-                    MessageBox.Show("Debe ingresar la identidad del estudiante.");
-                    return;
-                }
-
-                if (cbbGrado.SelectedIndex == -1)
-                {
-                    MessageBox.Show("Debe seleccionar un grado.");
+                    txtTrabajoPadre.Focus();
+                    MessageBox.Show("Debe ingresar el lugar de trabajo del tutor.");
                     return;
                 }
 
@@ -786,6 +905,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
         private void txtIdentidadEstudiante_TextChanged(object sender, EventArgs e)
         {
+            // Aplicacion del formato al textEstudiante
             int cursor = txtIdentidadEstudiante.SelectionStart;
 
             string limpio = new string(txtIdentidadEstudiante.Text.Where(char.IsDigit).ToArray());
@@ -815,6 +935,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
         private void txtNombreEstudiante_KeyPress(object sender, KeyPressEventArgs e)
         {
+            // Validacion
             if (e.KeyChar == (char)Keys.Back)
                 return;
 
@@ -832,6 +953,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
         private void txtAlergias_KeyPress(object sender, KeyPressEventArgs e)
         {
+            // Validacion
             if (e.KeyChar == (char)Keys.Back)
                 return;
 
@@ -848,6 +970,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
         private void txtNombrePadre_KeyPress(object sender, KeyPressEventArgs e)
         {
+            //Validacion
             if (e.KeyChar == (char)Keys.Back)
                 return;
 
@@ -869,6 +992,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
         private void txtNombreMadre_KeyPress(object sender, KeyPressEventArgs e)
         {
+            // Validacion
             if (e.KeyChar == (char)Keys.Back)
                 return;
 
@@ -885,6 +1009,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
         private void txtTrabajoPadre_KeyPress(object sender, KeyPressEventArgs e)
         {
+            // Validacion
             if (e.KeyChar == (char)Keys.Back)
                 return;
 
@@ -901,6 +1026,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
         private void txtTrabajoMadre_KeyPress(object sender, KeyPressEventArgs e)
         {
+            // Validacion
             if (e.KeyChar == (char)Keys.Back)
                 return;
 
@@ -917,15 +1043,18 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
         private void txtTelefono_TextChanged(object sender, EventArgs e)
         {
+            // Formateo del telefono
             if (txtTelefono.Text.Length == 4 && !txtTelefono.Text.Contains("-"))
             {
                 txtTelefono.Text += "-";
                 txtTelefono.SelectionStart = txtTelefono.Text.Length;
             }
+
         }
 
         private void txtTelefonoPadre_TextChanged(object sender, EventArgs e)
         {
+            // Formateo del telefono
             if (txtTelefonoPadre.Text.Length == 4 && !txtTelefono.Text.Contains("-"))
             {
                 txtTelefonoPadre.Text += "-";
@@ -935,6 +1064,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
         private void txtTelefonoMadre_TextChanged(object sender, EventArgs e)
         {
+            // Formateo del telefono
             if (txtTelefonoMadre.Text.Length == 4 && !txtTelefono.Text.Contains("-"))
             {
                 txtTelefonoMadre.Text += "-";
@@ -944,6 +1074,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
         private void txtIdentidadPadre_TextChanged(object sender, EventArgs e)
         {
+            // Formateo del text Identidad
             int cursor = txtIdentidadPadre.SelectionStart;
 
             string limpio = new string(txtIdentidadPadre.Text.Where(char.IsDigit).ToArray());
@@ -971,6 +1102,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
         private void txtIdentidadMadre_TextChanged(object sender, EventArgs e)
         {
+            // Formateo del text Identidad
             int cursor = txtIdentidadMadre.SelectionStart;
 
             string limpio = new string(txtIdentidadMadre.Text.Where(char.IsDigit).ToArray());
@@ -998,6 +1130,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
         private void txtTelefono_KeyPress(object sender, KeyPressEventArgs e)
         {
+            // Validacion
             if (e.KeyChar == (char)Keys.Back)
                 return;
 
@@ -1011,6 +1144,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
         private void txtTelefonoPadre_KeyPress(object sender, KeyPressEventArgs e)
         {
+            // Validacion
             if (e.KeyChar == (char)Keys.Back)
                 return;
 
@@ -1063,6 +1197,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
         private void txtIdentidadPadre_KeyPress(object sender, KeyPressEventArgs e)
         {
+            // Validacion
             if (e.KeyChar == (char)Keys.Back)
                 return;
 
@@ -1075,6 +1210,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
         private void txtIdentidadMadre_KeyPress(object sender, KeyPressEventArgs e)
         {
+            // Validacion
             if (e.KeyChar == (char)Keys.Back)
                 return;
 
@@ -1087,6 +1223,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
         private void cbbGrado_SelectedIndexChanged(object sender, EventArgs e)
         {
+            // Cargar secciones segun grado seleccionado
             if (cbbGrado.SelectedValue == null) return;
 
             if (cbbGrado.SelectedValue is DataRowView) return;

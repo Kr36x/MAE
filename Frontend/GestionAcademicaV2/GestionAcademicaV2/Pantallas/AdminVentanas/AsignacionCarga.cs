@@ -36,6 +36,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
         
         private void CargarDocentes()
         {
+            // Aquí se cargan los docentes para poder buscar
             try
             {
                 EjecutarUtilidades ejecutar = new EjecutarUtilidades();
@@ -55,6 +56,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
         private void CargarSeccionesPorGrado(int gradoID)
         {
+            // Aquí se cargan las secciones en el form
             try
             {
                 EjecutarUtilidades util = new EjecutarUtilidades();
@@ -79,7 +81,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
         private void AsignacionCarga_Load(object sender, EventArgs e)
         {
-
+            // Códificación del load
             if(carga==0)
             {
                 CargarDocentes();
@@ -111,6 +113,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
         private void txtBuscarDocente_TextChanged(object sender, EventArgs e)
         {
+            // Codificación del textbox de búsqueda
             try
             {
                 string filtro = txtBuscarDocente.Text.Trim();
@@ -143,6 +146,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
         private void CargarGrados()
         {
+            // Aquí se cargan los grados en el form
             try
             {
                 EjecutarUtilidades util = new EjecutarUtilidades();
@@ -170,11 +174,13 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
         private void btCancelar_Click(object sender, EventArgs e)
         {
+            // Codificación del boton cancelar
             this.Close();
         }
 
         private void cbbGrado_SelectedIndexChanged(object sender, EventArgs e)
         {
+            // Mécanica para encontrar las secciones habilitadas para el grado seleccionado
             if (cbbGrado.SelectedValue == null) return;
 
             if (cbbGrado.SelectedValue is DataRowView) return;
@@ -185,6 +191,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
         private void CargarAsignaturas()
         {
+            // Cargar los datos para el combobox de asignaturas
             try
             {
                 EjecutarUtilidades util = new EjecutarUtilidades();
@@ -205,6 +212,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
         private void txtBuscarAsignatura_TextChanged(object sender, EventArgs e)
         {
+            // Mécanica para buscar asignaturas en el combobox desde el txtBuscarAsignatura
             try
             {
                 string filtro = txtBuscarAsignatura.Text.Trim();
@@ -237,6 +245,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
         private void txtBuscarDocente_KeyPress(object sender, KeyPressEventArgs e)
         {
+            // Validación que solo deje ingresar letras.
             if (e.KeyChar == (char)Keys.Back)
                 return;
 
@@ -253,6 +262,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
         private void txtBuscarAsignatura_KeyPress(object sender, KeyPressEventArgs e)
         {
+            // Validación para que solo deje ingresar letras.
             if (e.KeyChar == (char)Keys.Back)
                 return;
 
@@ -269,6 +279,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
         private void btAsignar_Click(object sender, EventArgs e)
         {
+            // Codificación para poder asignar los datos y almacenarlos en la base de datos
             try
             {
                 if (cbbDocentes.SelectedValue == null ||

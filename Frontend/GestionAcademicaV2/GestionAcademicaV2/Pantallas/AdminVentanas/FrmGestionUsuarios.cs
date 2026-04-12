@@ -72,6 +72,12 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
                 MessageBox.Show("Coloque un número de identidad al usuario.");
                 return;
             }
+            else if(usuarioID == 0 && txtIdentidad.TextLength<15)
+            {
+                txtIdentidad.Focus();
+                MessageBox.Show("El número de identidad debe tener 13 dígitos.");
+                return;
+            }
             else if (usuarioID == 0 && cbbRol.SelectedIndex == 0 && cbbSexo.Text == "")
             {
                 cbbSexo.Focus();
@@ -112,6 +118,18 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
             {
                 txtTelefono.Focus();
                 MessageBox.Show("Debe colocar un número de teléfono al usuario.");
+                return;
+            }
+            else if (usuarioID == 0 && txtTelefono.TextLength<9)
+            {
+                txtTelefono.Focus();
+                MessageBox.Show("El telefono debe tener 8 dígitos.");
+                return;
+            }
+            else if (usuarioID != 0 && txtTelefono.TextLength < 9)
+            {
+                txtTelefono.Focus();
+                MessageBox.Show("El telefono debe tener 8 dígitos.");
                 return;
             }
             else if (usuarioID == 0 && cbbRol.SelectedIndex == 1 && txtEspecialidad.Text == "")

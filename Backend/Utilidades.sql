@@ -347,6 +347,33 @@ GO
 
 exec spMAE_DesempenoPorGradoAnual 2026
 ----------------------------------------------------------------------
+--CREATE OR ALTER PROCEDURE spMAE_BuscarDocentesPorGradoSeccionAnio
+--    @Grado      VARCHAR(50) = NULL,
+--    @Seccion    VARCHAR(50) = NULL,
+--    @Anio       INT = NULL,
+--    @Nombre     VARCHAR(100) = NULL
+--AS
+--BEGIN
+--    SELECT distinct
+--        d.DocenteID,
+--        d.Nombre,
+--        d.Identidad,
+--        d.Especialidad
+--    FROM vMAE_CargarDocentes d
+--    LEFT JOIN CargaAcademica ad 
+--        ON d.DocenteID = ad.DocenteID
+--    LEFT JOIN Seccion s 
+--        ON ad.SeccionID = s.SeccionID
+--    LEFT JOIN Grado g 
+--        ON s.GradoID = g.GradoID
+--    WHERE 
+--        (@Grado IS NULL OR g.NombreGrado = @Grado)
+--        AND (@Seccion IS NULL OR s.Letra = @Seccion)
+--        AND (@Anio IS NULL OR ad.Anio = @Anio)
+--        AND (@Nombre IS NULL OR d.Nombre LIKE '%' + @Nombre + '%')
+--    ORDER BY d.Nombre;
+--END
+--GO
 CREATE OR ALTER PROCEDURE spMAE_BuscarDocentesPorGradoSeccionAnio
     @Grado      VARCHAR(50) = NULL,
     @Seccion    VARCHAR(50) = NULL,
@@ -354,26 +381,34 @@ CREATE OR ALTER PROCEDURE spMAE_BuscarDocentesPorGradoSeccionAnio
     @Nombre     VARCHAR(100) = NULL
 AS
 BEGIN
-    SELECT distinct
+    SELECT 
         d.DocenteID,
         d.Nombre,
-        d.Identidad,
-        d.Especialidad
-    FROM vMAE_CargarDocentes d
-    LEFT JOIN CargaAcademica ad 
-        ON d.DocenteID = ad.DocenteID
-    LEFT JOIN Seccion s 
-        ON ad.SeccionID = s.SeccionID
-    LEFT JOIN Grado g 
+		a.Nombre AS Asignatura,
+		g.NombreGrado AS Grado,
+		s.Letra AS Seccion,
+        d.Estado,   
+        ca.CargaID,
+        a.AsignaturaID,   
+        s.SeccionID         
+        
+    FROM Docente d
+    LEFT JOIN CargaAcademica ca 
+        ON d.DocenteID = ca.DocenteID
+    LEFT JOIN Asignatura a
+        ON ca.AsignaturaID = a.AsignaturaID
+    LEFT JOIN Seccion s
+        ON ca.SeccionID = s.SeccionID
+    LEFT JOIN Grado g
         ON s.GradoID = g.GradoID
     WHERE 
-        (@Grado IS NULL OR g.NombreGrado = @Grado)
+        d.Estado = 1
+        AND (@Grado IS NULL OR g.NombreGrado = @Grado)
         AND (@Seccion IS NULL OR s.Letra = @Seccion)
-        AND (@Anio IS NULL OR ad.Anio = @Anio)
+        AND (@Anio IS NULL OR ca.Anio = @Anio)
         AND (@Nombre IS NULL OR d.Nombre LIKE '%' + @Nombre + '%')
     ORDER BY d.Nombre;
 END
-GO
 exec spMAE_BuscarDocentesPorGradoSeccionAnio
 -------------------------------------
 CREATE OR ALTER VIEW vMAE_CargarDocentes 
@@ -513,10 +548,32 @@ END;
 
 exec spMAE_ObtenerSexo
 
+--CREATE OR ALTER PROCEDURE spMAE_CargaAcademicaDocenteSeccion
+--    @Anio INT,
+--    @Grado VARCHAR(50) = NULL,
+--    @Seccion VARCHAR(10) = NULL
+--AS
+--BEGIN
+--    SELECT 
+--        d.DocenteID,
+--        d.Nombre,
+--        COUNT(*) AS TotalClases
+--    FROM CargaAcademica ca
+--    INNER JOIN Docente d ON ca.DocenteID = d.DocenteID
+--    INNER JOIN Seccion s ON ca.SeccionID = s.SeccionID
+--    INNER JOIN Grado g ON s.GradoID = g.GradoID
+--    WHERE ca.Anio = @Anio
+--      AND (@Grado IS NULL OR g.NombreGrado = @Grado)
+--      AND (@Seccion IS NULL OR s.Letra = @Seccion)
+--    GROUP BY d.DocenteID, d.Nombre
+--    ORDER BY d.Nombre;
+--END;
+
 CREATE OR ALTER PROCEDURE spMAE_CargaAcademicaDocenteSeccion
     @Anio INT,
     @Grado VARCHAR(50) = NULL,
-    @Seccion VARCHAR(10) = NULL
+    @Seccion VARCHAR(10) = NULL,
+    @Docente VARCHAR(100) = NULL
 AS
 BEGIN
     SELECT 
@@ -530,6 +587,7 @@ BEGIN
     WHERE ca.Anio = @Anio
       AND (@Grado IS NULL OR g.NombreGrado = @Grado)
       AND (@Seccion IS NULL OR s.Letra = @Seccion)
+      AND (@Docente IS NULL OR d.Nombre LIKE '%' + @Docente + '%')
     GROUP BY d.DocenteID, d.Nombre
     ORDER BY d.Nombre;
 END;
@@ -733,8 +791,76 @@ BEGIN
     ORDER BY Letra;
 END;
 
+CREATE OR ALTER PROCEDURE spMAE_BuscarDocentes
+    @Filtro VARCHAR(100)
+AS
+BEGIN
+    SELECT 
+        DocenteID,
+        Nombre
+    FROM Docente
+    WHERE Nombre LIKE '%' + @Filtro + '%'
+    ORDER BY Nombre;
+END;
 
+CREATE OR ALTER PROCEDURE spMAE_TraeDocentes
+AS
+BEGIN
+    SELECT 
+        DocenteID,
+        Nombre
+    FROM Docente
+    ORDER BY Nombre;
+END;
+use AgroLinkDB
+CREATE OR ALTER PROCEDURE spMAE_TraeAsignaturas
+AS
+BEGIN
+    SELECT 
+        AsignaturaID,
+        Nombre
+    FROM Asignatura
+    ORDER BY Nombre;
+END;
 
+exec spMAE_TraeAsignaturas
+
+CREATE OR ALTER PROCEDURE spMAE_BuscarAsignaturas
+    @Filtro VARCHAR(100)
+AS
+BEGIN
+    SELECT 
+        AsignaturaID,
+        Nombre
+    FROM Asignatura
+    WHERE Nombre LIKE '%' + @Filtro + '%'
+    ORDER BY Nombre;
+END;
+
+-----------------PRUEBAS
+
+SELECT * FROM vMAE_CargarDocentes
+
+CREATE OR ALTER VIEW vMAE_CargarDocentess
+AS
+SELECT 
+    d.DocenteID,
+    d.Nombre,
+	a.Nombre AS Asignatura,
+	g.NombreGrado AS Grado,
+	s.Letra AS Seccion,
+    d.Estado,          -- bit (solo activos)
+    ca.CargaID
+FROM Docente d
+LEFT JOIN CargaAcademica ca 
+    ON d.DocenteID = ca.DocenteID
+LEFT JOIN Asignatura a
+    ON ca.AsignaturaID = a.AsignaturaID
+LEFT JOIN Seccion s
+    ON ca.SeccionID = s.SeccionID
+LEFT JOIN Grado g
+    ON s.GradoID = g.GradoID
+WHERE d.Estado = 1; 
 
 
 

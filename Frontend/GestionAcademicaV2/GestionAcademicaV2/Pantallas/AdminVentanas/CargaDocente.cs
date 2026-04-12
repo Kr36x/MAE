@@ -76,6 +76,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
         private void CargarAsignaturasDocente(int? docenteID, int? seccionID)
         {
+            // Metodo para llenar el dvgAsignatura al tocar el boton ver
             try
             {
                 if (docenteID == null || seccionID == null)
@@ -104,6 +105,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
         private void CargarGrados2()
         {
+            // Este metodo carga los datos en el form
             try
             {
                 EjecutarUtilidades util = new EjecutarUtilidades();
@@ -127,6 +129,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
         }
         private void BuscarDocentes2()
         {
+            // Metodo para poder buscar y aplicar los filtros en el form
             try
             {
                 bool todosLosGrados = cbbGrado.SelectedValue != null &&
@@ -168,6 +171,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
         private void CargarSecciones()
         {
+            // Metodo para cargar secciones en el form
             try
             {
                 DataTable dt = util.EjecutarSP("spMAE_ObtenerSecciones");
@@ -190,6 +194,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
         }
         private void CargarGraficoCargaAcademica()
         {
+            // Metodo para la elaboración del gráfico
             try
             {
                 chartDocentes.Series.Clear();
@@ -274,6 +279,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
         private void CargaDocente_Load(object sender, EventArgs e)
         {
+            // Codificacion del Load
             CargarGrados2();
             CargarSecciones();
             //LlenarDocentes();
@@ -284,6 +290,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
         private void cbbGrado_SelectedIndexChanged(object sender, EventArgs e)
         {
+            // Codificacion del evento selectedindex para cuando se seleccione el grado
             BuscarDocentes2();
             CargarGraficoCargaAcademica();
             DataTable dt = (DataTable)dgvAsignatura.DataSource;
@@ -295,6 +302,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
         private void cbbSeccion_SelectedIndexChanged(object sender, EventArgs e)
         {
+            // Codificacion del evento selectedindex para cuando se seleccione seccion
             BuscarDocentes2();
             CargarGraficoCargaAcademica();
             DataTable dt = (DataTable)dgvAsignatura.DataSource;
@@ -306,6 +314,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
         private void dtpAnio_ValueChanged(object sender, EventArgs e)
         {
+            // Codificacion para el evento cuando se cambie de año
             BuscarDocentes2();
             CargarGraficoCargaAcademica();
             DataTable dt = (DataTable)dgvAsignatura.DataSource;
@@ -317,6 +326,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
         private void btBuscarDocente_Click(object sender, EventArgs e)
         {
+            // Codificacion para evento al predionar buscar 
             BuscarDocentes2();
             /*            LlenarDocentes()*/
             ;
@@ -330,22 +340,25 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
         private void dgvDocentes_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dgvDocentes.CurrentRow != null)
-            {
-                int docenteID = Convert.ToInt32(dgvDocentes.CurrentRow.Cells["DocenteID"].Value);
+            
+            //if (dgvDocentes.CurrentRow != null)
+            //{
+            //    int docenteID = Convert.ToInt32(dgvDocentes.CurrentRow.Cells["DocenteID"].Value);
 
-                //CargarAsignaturasDocente(docenteID);
-            }
+            //    //CargarAsignaturasDocente(docenteID);
+            //}
         }
 
         private void btNuevaCarga_Click(object sender, EventArgs e)
         {
+            // Codificacion para abrir el form de Asignacion al presionar nueva carga
             Pantallas.AdminVentanas.AsignacionCarga forma = new Pantallas.AdminVentanas.AsignacionCarga();
             forma.Show();
         }
 
         private void txtBuscarDocente_KeyPress(object sender, KeyPressEventArgs e)
         {
+            // Validacion de solo letras
             if (e.KeyChar == (char)Keys.Back)
                 return;
 
@@ -362,6 +375,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
         private void ConfigurarColumnas()
         {
+            // Metodo para configurar las columnas
             if (!dgvDocentes.Columns.Contains("colEstado"))
             {
                 DataGridViewImageColumn colEstado = new DataGridViewImageColumn();
@@ -393,6 +407,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
         private void dgvDocentes_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
+            // Codificacion para dar formato a las filas del datagrip Docentes
             if (e.RowIndex < 0) return;
 
             // Imagen Editar
@@ -424,34 +439,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
         private void dgvDocentes_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            //if (e.RowIndex < 0) return;
-
-            //if (dgvDocentes.Columns[e.ColumnIndex].Name == "colEstado")
-            //{
-            //    int usuarioID = Convert.ToInt32(dgvDocentes.Rows[e.RowIndex].Cells["UsuarioID"].Value);
-            //    int estadoActual = Convert.ToInt32(dgvDocentes.Rows[e.RowIndex].Cells["Estado"].Value);
-            //    string nombre = dgvDocentes.Rows[e.RowIndex].Cells["Usuario"].Value.ToString();
-
-            //    DialogResult r = MessageBox.Show(
-            //        $"¿Está seguro que desea cambiar el estado del usuario {nombre}?",
-            //        "Confirmación",
-            //        MessageBoxButtons.YesNo,
-            //        MessageBoxIcon.Question
-            //    );
-
-            //    if (r == DialogResult.Yes)
-            //    {
-            //        int nuevoEstado = estadoActual == 1 ? 0 : 1;
-
-            //        // Actualizar en BD
-            //        ActualizarEstadoUsuario(usuarioID, nuevoEstado);
-
-            //        // Actualizar en DataGridView
-            //        dgvDocentes.Rows[e.RowIndex].Cells["Estado"].Value = nuevoEstado;
-
-            //        // Refrescar imagen
-            //        dgvDocentes.InvalidateCell(e.ColumnIndex, e.RowIndex);
-            //    }
+            // Codificacion para cargar los datos al form Asignacion cuando se de click en el boton editar
             if (e.RowIndex < 0) return;
             if (dgvDocentes.Columns[e.ColumnIndex].Name == "colVer")
             {
@@ -484,6 +472,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
         private void dgvAsignatura_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
+            // Codificacion para dar formato a las columnas del datagrip Asignatura
             if (e.RowIndex < 0) return;
 
             if (dgvAsignatura.Columns[e.ColumnIndex].Name == "colBorrar")
@@ -494,6 +483,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
         private void ConfigurarColumnas2()
         {
+            // Configurar columnas en el datagrip Asignaturas
             if (!dgvAsignatura.Columns.Contains("colBorrar"))
             {
                 DataGridViewImageColumn colBorrar = new DataGridViewImageColumn();

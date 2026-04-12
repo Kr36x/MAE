@@ -1092,7 +1092,7 @@
             cbbSeccion.Name = "cbbSeccion";
             cbbSeccion.ShadowDecoration.CustomizableEdges = customizableEdges60;
             cbbSeccion.Size = new Size(108, 26);
-            cbbSeccion.TabIndex = 66;
+            cbbSeccion.TabIndex = 6;
             // 
             // FrmMatricula
             // 
