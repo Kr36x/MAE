@@ -243,6 +243,7 @@
             txtContrasenia.ShadowDecoration.CustomizableEdges = customizableEdges10;
             txtContrasenia.Size = new Size(332, 35);
             txtContrasenia.TabIndex = 5;
+            txtContrasenia.KeyUp += txtContrasenia_KeyUp;
             // 
             // label3
             // 

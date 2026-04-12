@@ -4,7 +4,7 @@ using Org.BouncyCastle.Asn1.Ocsp;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
-
+using GestionAcademicaV2.Pantallas.DocenteVentanas;
 namespace GestionAcademicaV2.Pantallas
 {
     public partial class PantallaAdmin : Form
@@ -92,6 +92,7 @@ namespace GestionAcademicaV2.Pantallas
             EstiloBotonSubmenu(btnReporteDocentes);
             EstiloBotonSubmenu(btnReporteDesercion);
             EstiloBotonSubmenu(btnRetencionEstudiantil);
+            EstiloBotonSubmenu(btnConsolidadoAsignatura);
 
             pnlSubGestionAcademica.BackColor = colorSubmenu;
             pnlSubGestionInstitucional.BackColor = colorSubmenu;
@@ -126,6 +127,7 @@ namespace GestionAcademicaV2.Pantallas
             btnReporteDocentes.Click += btnReporteDocentes_Click;
             btnReporteDesercion.Click += btnReporteDesercion_Click;
             btnRetencionEstudiantil.Click += btnRetencionEstudiantil_Click;
+            btnConsolidadoAsignatura.Click += btnConsolidadoAsignatura_Click;
 
             // OPCIONALES
             btnSalir.Click += btnSalir_Click;
@@ -197,7 +199,7 @@ namespace GestionAcademicaV2.Pantallas
             btn.Font = new Font("Segoe UI", 8.5f, FontStyle.Regular);
             btn.TextAlign = HorizontalAlignment.Left;
             btn.ImageAlign = HorizontalAlignment.Left;
-            btn.Padding = new Padding(38, 0, 0, 0);
+            btn.Padding = new Padding(20, 0, 0, 0);
             btn.Margin = new Padding(0);
             btn.BorderRadius = 0;
             btn.HoverState.FillColor = colorHoverSubmenu;
@@ -419,6 +421,12 @@ namespace GestionAcademicaV2.Pantallas
         {
             MarcarActivo(btnReporteDesercion);
             AbrirFormularioEnPanel(new FrmReporteDesercionRetencion(this));
+        }
+
+        private void btnConsolidadoAsignatura_Click(object sender, EventArgs e)
+        {
+            MarcarActivo(btnConsolidadoAsignatura);
+            AbrirFormularioEnPanel(new FrmConsolidadoAsignaturas());
         }
 
         #endregion

@@ -61,7 +61,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges28 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges29 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges30 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            lblEscuela = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges31 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges32 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             lblRegistros = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2Panel6 = new Guna.UI2.WinForms.Guna2Panel();
             dgvNotas = new Guna.UI2.WinForms.Guna2DataGridView();
@@ -87,6 +88,9 @@
             guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
             guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            guna2HtmlLabel9 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            guna2HtmlLabel10 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
             guna2Panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvNotas).BeginInit();
             plVerder.SuspendLayout();
@@ -94,17 +98,8 @@
             guna2Panel7.SuspendLayout();
             guna2Panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).BeginInit();
+            guna2Panel5.SuspendLayout();
             SuspendLayout();
-            // 
-            // lblEscuela
-            // 
-            lblEscuela.BackColor = Color.Transparent;
-            lblEscuela.Font = new Font("Microsoft Sans Serif", 12F);
-            lblEscuela.Location = new Point(325, 24);
-            lblEscuela.Name = "lblEscuela";
-            lblEscuela.Size = new Size(324, 22);
-            lblEscuela.TabIndex = 2;
-            lblEscuela.Text = "ATLANTIC ACADEMY BILINGUAL SCHOOL";
             // 
             // lblRegistros
             // 
@@ -370,13 +365,16 @@
             // 
             // lblTitulo
             // 
+            lblTitulo.AutoSize = false;
             lblTitulo.BackColor = Color.Transparent;
-            lblTitulo.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold);
-            lblTitulo.Location = new Point(192, 52);
+            lblTitulo.Dock = DockStyle.Fill;
+            lblTitulo.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
+            lblTitulo.Location = new Point(0, 0);
             lblTitulo.Name = "lblTitulo";
-            lblTitulo.Size = new Size(457, 34);
+            lblTitulo.Size = new Size(692, 36);
             lblTitulo.TabIndex = 9;
             lblTitulo.Text = "CUADRO DE CALIFICACIONES: SEMANA 2";
+            lblTitulo.TextAlignment = ContentAlignment.MiddleCenter;
             // 
             // txtBuscar
             // 
@@ -463,10 +461,10 @@
             guna2Panel2.BorderThickness = 1;
             guna2Panel2.CustomizableEdges = customizableEdges23;
             guna2Panel2.FillColor = Color.DarkGreen;
-            guna2Panel2.Location = new Point(41, 105);
+            guna2Panel2.Location = new Point(41, 104);
             guna2Panel2.Name = "guna2Panel2";
             guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges24;
-            guna2Panel2.Size = new Size(931, 10);
+            guna2Panel2.Size = new Size(931, 53);
             guna2Panel2.TabIndex = 21;
             // 
             // guna2Panel3
@@ -476,7 +474,7 @@
             guna2Panel3.BorderThickness = 2;
             guna2Panel3.CustomizableEdges = customizableEdges25;
             guna2Panel3.FillColor = Color.DarkGreen;
-            guna2Panel3.Location = new Point(41, 112);
+            guna2Panel3.Location = new Point(41, 114);
             guna2Panel3.Name = "guna2Panel3";
             guna2Panel3.ShadowDecoration.CustomizableEdges = customizableEdges26;
             guna2Panel3.Size = new Size(931, 10);
@@ -501,7 +499,7 @@
             guna2PictureBox1.CustomizableEdges = customizableEdges29;
             guna2PictureBox1.Image = Properties.Resources._2;
             guna2PictureBox1.ImageRotate = 0F;
-            guna2PictureBox1.Location = new Point(54, 3);
+            guna2PictureBox1.Location = new Point(55, 3);
             guna2PictureBox1.Name = "guna2PictureBox1";
             guna2PictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges30;
             guna2PictureBox1.Size = new Size(100, 100);
@@ -509,22 +507,54 @@
             guna2PictureBox1.TabIndex = 25;
             guna2PictureBox1.TabStop = false;
             // 
+            // guna2HtmlLabel9
+            // 
+            guna2HtmlLabel9.BackColor = Color.Transparent;
+            guna2HtmlLabel9.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            guna2HtmlLabel9.ForeColor = Color.Gray;
+            guna2HtmlLabel9.Location = new Point(251, 77);
+            guna2HtmlLabel9.Name = "guna2HtmlLabel9";
+            guna2HtmlLabel9.Size = new Size(540, 19);
+            guna2HtmlLabel9.TabIndex = 127;
+            guna2HtmlLabel9.Text = "EN ESTA SECCIÓN PODRA VISUALIZAR LAS ACTIVIDADES SEMANALES POR ASIGNATURA";
+            // 
+            // guna2HtmlLabel10
+            // 
+            guna2HtmlLabel10.BackColor = Color.Transparent;
+            guna2HtmlLabel10.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            guna2HtmlLabel10.Location = new Point(285, 12);
+            guna2HtmlLabel10.Name = "guna2HtmlLabel10";
+            guna2HtmlLabel10.Size = new Size(476, 31);
+            guna2HtmlLabel10.TabIndex = 126;
+            guna2HtmlLabel10.Text = "ATLANTIC ACADEMY BILINGUAL SCHOOL";
+            // 
+            // guna2Panel5
+            // 
+            guna2Panel5.Controls.Add(lblTitulo);
+            guna2Panel5.CustomizableEdges = customizableEdges31;
+            guna2Panel5.Location = new Point(176, 43);
+            guna2Panel5.Name = "guna2Panel5";
+            guna2Panel5.ShadowDecoration.CustomizableEdges = customizableEdges32;
+            guna2Panel5.Size = new Size(692, 36);
+            guna2Panel5.TabIndex = 128;
+            // 
             // FrmReporteSemanal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1028, 674);
+            Controls.Add(guna2Panel5);
+            Controls.Add(guna2HtmlLabel9);
+            Controls.Add(guna2HtmlLabel10);
             Controls.Add(guna2PictureBox1);
             Controls.Add(guna2Panel3);
-            Controls.Add(guna2Panel2);
             Controls.Add(guna2Panel7);
             Controls.Add(txtBuscar);
             Controls.Add(guna2Panel6);
             Controls.Add(plVerder);
             Controls.Add(guna2Panel1);
-            Controls.Add(lblTitulo);
-            Controls.Add(lblEscuela);
             Controls.Add(guna2Panel4);
+            Controls.Add(guna2Panel2);
             Name = "FrmReporteSemanal";
             Text = "FrmReporteAsistenciaDiaria";
             Load += FrmReporteSemanal_Load;
@@ -538,12 +568,12 @@
             guna2Panel4.ResumeLayout(false);
             guna2Panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).EndInit();
+            guna2Panel5.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-        private Guna.UI2.WinForms.Guna2HtmlLabel lblEscuela;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblRegistros;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel6;
         private Guna.UI2.WinForms.Guna2DataGridView dgvNotas;
@@ -571,5 +601,8 @@
         private Guna.UI2.WinForms.Guna2Panel guna2Panel4;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private Guna.UI2.WinForms.Guna2DateTimePicker dtpSemana;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel9;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel10;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel5;
     }
 }

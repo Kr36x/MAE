@@ -73,7 +73,7 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
             int margenIzq = 260;
             int margenDer = 80;
             int margenSup = 70;
-            int margenInf = 50;
+            int margenInf = 55;
 
             Rectangle areaGrafico = new Rectangle(
                 areaTotal.X + margenIzq,
@@ -82,12 +82,12 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
                 areaTotal.Height - margenSup - margenInf
             );
 
-            using Pen penGrid = new Pen(Color.FromArgb(220, 220, 220), 1);
+            using Pen penGrid = new Pen(Color.FromArgb(225, 225, 225), 1);
             using Font fontEje = new Font("Segoe UI", 9);
             using Font fontAsignatura = new Font("Segoe UI", 9, FontStyle.Bold);
             using Font fontValor = new Font("Segoe UI", 9, FontStyle.Bold);
 
-            // Líneas verticales del eje X
+            // Eje X y líneas de referencia
             for (int v = 0; v <= 100; v += 10)
             {
                 int x = areaGrafico.Left + (int)(areaGrafico.Width * (v / 100f));
@@ -105,9 +105,18 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
             }
 
             int cantidad = filas.Count;
-            int espacio = 10;
-            int altoDisponible = areaGrafico.Height - ((cantidad - 1) * espacio);
-            int altoBarra = Math.Max(24, altoDisponible / cantidad);
+
+            // Altura y separación controladas para que no se estire demasiado
+            int espacio = cantidad <= 3 ? 18 : 12;
+            int altoBarraMax = 42;
+            int altoBarraMin = 24;
+
+            int altoBarraCalculado = (areaGrafico.Height - ((cantidad - 1) * espacio)) / cantidad;
+            int altoBarra = Math.Max(altoBarraMin, Math.Min(altoBarraCalculado, altoBarraMax));
+
+            // Centrar el bloque de barras verticalmente
+            int altoTotalContenido = (cantidad * altoBarra) + ((cantidad - 1) * espacio);
+            int offsetY = areaGrafico.Top + Math.Max(0, (areaGrafico.Height - altoTotalContenido) / 2);
 
             for (int i = 0; i < cantidad; i++)
             {
@@ -129,7 +138,7 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
                     colorBarra = Color.Goldenrod;
 
                 int anchoBarra = (int)(areaGrafico.Width * ((float)promedio / 100f));
-                int y = areaGrafico.Top + i * (altoBarra + espacio);
+                int y = offsetY + i * (altoBarra + espacio);
 
                 Rectangle rectTexto = new Rectangle(
                     20,
@@ -154,8 +163,7 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
                     altoBarra
                 );
 
-                using (SolidBrush brush = new SolidBrush(colorBarra))
-                    g.FillRectangle(brush, rectBarra);
+                DibujarBarraRedondeadaHorizontal(g, rectBarra, colorBarra, 10);
 
                 Rectangle rectValor = new Rectangle(
                     rectBarra.Right + 8,
@@ -193,6 +201,26 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
                 Color.Black,
                 TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter
             );
+        }
+
+        private void DibujarBarraRedondeadaHorizontal(Graphics g, Rectangle rect, Color color, int radio)
+        {
+            if (rect.Width <= 0 || rect.Height <= 0)
+                return;
+
+            using GraphicsPath path = new GraphicsPath();
+
+            int diametro = radio * 2;
+            if (diametro > rect.Height) diametro = rect.Height;
+            if (diametro > rect.Width) diametro = rect.Width;
+
+            path.StartFigure();
+            path.AddArc(rect.X, rect.Y, diametro, diametro, 90, 180);
+            path.AddArc(rect.Right - diametro, rect.Y, diametro, diametro, 270, 180);
+            path.CloseFigure();
+
+            using SolidBrush brush = new SolidBrush(color);
+            g.FillPath(brush, path);
         }
     }
 }

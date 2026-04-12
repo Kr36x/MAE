@@ -12,7 +12,7 @@ using System.Windows.Forms.DataVisualization.Charting;
 using System.Collections.Generic;
 using System.Drawing.Drawing2D;
 using Guna.UI2.WinForms;
-
+using System.Linq;
 
 namespace GestionAcademicaV2.Pantallas.DocenteVentanas
 {
@@ -23,21 +23,23 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
         private readonly Conexion conexion = new Conexion();
         private DataTable dtGraficoCompleto = new DataTable();
         private int paginaGrafico = 0;
-        private const int itemsPorPaginaGrafico = 5;
+        private const int itemsPorPaginaGrafico = 10;
         private readonly Color azulPrincipal = Color.FromArgb(24, 105, 255);
+        private DataTable dtReporteCompleto = new DataTable();
         private void AplicarColoresUI()
         {
-            panelBarraSuperior.BorderColor = azulPrincipal;
+            //panelBarraSuperior.BorderColor = azulPrincipal;
             panelBarraGrafico.BorderColor = azulPrincipal;
-            panelBarraGrid.BorderColor = azulPrincipal;
-            panelBarraSuperior.FillColor = azulPrincipal;
+            // panelBarraGrid.BorderColor = azulPrincipal;
+            //panelBarraSuperior.FillColor = azulPrincipal
             panelBarraGrafico.FillColor = azulPrincipal;
-            panelBarraGrid.FillColor = azulPrincipal;
+            //panelBarraGrid.FillColor = azulPrincipal;
         }
         public FrmConsolidadoAsignaturas()
         {
             InitializeComponent();
             AplicarColoresUI();
+            panelGrafico.DoubleClick += panelGrafico_DoubleClick;
             panelGrafico.Paint += panelGrafico_Paint;
             dgvBoleta.CellPainting += dgvBoleta_CellPainting;
             dgvBoleta.CellClick += dgvBoleta_CellClick;
@@ -79,9 +81,29 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
             public string Estado { get; set; } = "";
         }
 
+        private void btnAmpliarGrafico_Click(object sender, EventArgs e)
+        {
+            if (dtGraficoCompleto == null || dtGraficoCompleto.Rows.Count == 0)
+            {
+                MessageBox.Show("No hay datos para ampliar.");
+                return;
+            }
+
+            frmGraficoBoletaAmpliado frm = new frmGraficoBoletaAmpliado(
+                dtGraficoCompleto
+            );
+
+            frm.ShowDialog();
+        }
+
+        private void panelGrafico_DoubleClick(object sender, EventArgs e)
+        {
+            btnAmpliarGrafico_Click(sender, e);
+        }
+
         private void DibujarGraficoManual(Graphics g, Rectangle areaTotal)
         {
-            g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+            g.SmoothingMode = SmoothingMode.AntiAlias;
             g.Clear(Color.White);
 
             var filas = ObtenerFilasPaginaGrafico();
@@ -100,10 +122,10 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
                 return;
             }
 
-            int margenIzq = 60;
-            int margenDer = 25;
-            int margenSup = 20;
-            int margenInf = 55;
+            int margenIzq = 42;
+            int margenDer = 12;
+            int margenSup = 12;
+            int margenInf = 52;
 
             Rectangle areaGrafico = new Rectangle(
                 areaTotal.X + margenIzq,
@@ -112,17 +134,16 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
                 areaTotal.Height - margenSup - margenInf
             );
 
-            // Grid y eje Y
-            using Pen penGrid = new Pen(Color.FromArgb(220, 220, 220), 1);
-            using Font fontEje = new Font("Segoe UI", 8);
-            using SolidBrush brushTexto = new SolidBrush(Color.Black);
+            using Pen penGrid = new Pen(Color.FromArgb(225, 225, 225), 1);
+            using Font fontEje = new Font("Segoe UI", 7.5f);
+            using Font fontValor = new Font("Segoe UI", 8.5f, FontStyle.Bold);
 
             for (int v = 0; v <= 100; v += 10)
             {
                 int y = areaGrafico.Bottom - (int)(areaGrafico.Height * (v / 100f));
                 g.DrawLine(penGrid, areaGrafico.Left, y, areaGrafico.Right, y);
 
-                Rectangle rectLabel = new Rectangle(5, y - 8, margenIzq - 10, 16);
+                Rectangle rectLabel = new Rectangle(2, y - 7, margenIzq - 6, 14);
                 TextRenderer.DrawText(
                     g,
                     v.ToString(),
@@ -133,27 +154,44 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
                 );
             }
 
-            // símbolo %
-            using Font fontPercent = new Font("Segoe UI", 10, FontStyle.Bold);
-            TextRenderer.DrawText(
-                g,
-                "%",
-                fontPercent,
-                new Rectangle(10, areaGrafico.Top + areaGrafico.Height / 2 - 10, 20, 20),
-                Color.Black,
-                TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter
-            );
-
             int cantidad = filas.Count;
-            int espacio = 18;
-            int anchoDisponible = areaGrafico.Width - ((cantidad - 1) * espacio);
-            int anchoBarra = anchoDisponible / cantidad;
+
+            int espacio;
+            int anchoBarra;
+
+            if (cantidad == 1)
+            {
+                anchoBarra = Math.Min(180, areaGrafico.Width / 3);
+                espacio = 0;
+            }
+            else if (cantidad == 2)
+            {
+                anchoBarra = Math.Min(150, (areaGrafico.Width - 40) / 2);
+                espacio = 20;
+            }
+            else if (cantidad == 3)
+            {
+                anchoBarra = Math.Min(130, (areaGrafico.Width - 40) / 3);
+                espacio = 16;
+            }
+            else if (cantidad == 4)
+            {
+                anchoBarra = Math.Min(115, (areaGrafico.Width - 36) / 4);
+                espacio = 12;
+            }
+            else
+            {
+                espacio = 10;
+                int anchoDisponible = areaGrafico.Width - ((cantidad - 1) * espacio);
+                anchoBarra = Math.Max(55, anchoDisponible / cantidad);
+            }
 
             for (int i = 0; i < cantidad; i++)
             {
                 DataRow row = filas[i];
 
                 string asignatura = row["Asignatura"]?.ToString() ?? "";
+                string etiqueta = ObtenerCodigoAsignatura(asignatura);
                 decimal promedio = row["PromedioClase"] == DBNull.Value ? 0 : Convert.ToDecimal(row["PromedioClase"]);
                 string estado = row["Estado"]?.ToString()?.ToUpper() ?? "";
 
@@ -164,15 +202,14 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
                     colorBarra = Color.Goldenrod;
 
                 int altoBarra = (int)(areaGrafico.Height * ((float)promedio / 100f));
-                int x = areaGrafico.Left + i * (anchoBarra + espacio);
+                int anchoTotalBarras = (cantidad * anchoBarra) + ((cantidad - 1) * espacio);
+                int offsetX = areaGrafico.Left + Math.Max(0, (areaGrafico.Width - anchoTotalBarras) / 2);
                 int y = areaGrafico.Bottom - altoBarra;
-
+                int x = offsetX + i * (anchoBarra + espacio);
                 Rectangle rectBarra = new Rectangle(x, y, anchoBarra, altoBarra);
 
-                DibujarBarraRedondeada(g, rectBarra, colorBarra, 22);
+                DibujarBarraRedondeada(g, rectBarra, colorBarra, 10);
 
-                // valor centrado
-                using Font fontValor = new Font("Segoe UI", 10, FontStyle.Bold);
                 TextRenderer.DrawText(
                     g,
                     promedio.ToString("0"),
@@ -182,32 +219,45 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
                     TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter
                 );
 
-                // texto asignatura abajo
-                string nombreCorto = asignatura.Length > 18
-                    ? asignatura.Substring(0, 15) + "..."
-                    : asignatura;
-
-                Rectangle rectTexto = new Rectangle(x, areaGrafico.Bottom + 6, anchoBarra, 34);
+                Rectangle rectTexto = new Rectangle(x - 4, areaGrafico.Bottom + 4, anchoBarra + 8, 28);
                 TextRenderer.DrawText(
                     g,
-                    nombreCorto,
-                    new Font("Segoe UI", 8.5f),
+                    etiqueta,
+                    new Font("Segoe UI", 7.5f, FontStyle.Bold),
                     rectTexto,
                     Color.Black,
-                    TextFormatFlags.HorizontalCenter | TextFormatFlags.Top | TextFormatFlags.WordBreak
+                    TextFormatFlags.HorizontalCenter | TextFormatFlags.Top | TextFormatFlags.EndEllipsis
                 );
             }
 
-            // etiqueta inferior
-            Rectangle rectEstudiantes = new Rectangle(areaGrafico.Left, areaTotal.Bottom - 28, areaGrafico.Width, 20);
+            Rectangle rectTituloX = new Rectangle(areaGrafico.Left, areaTotal.Bottom - 20, areaGrafico.Width, 18);
             TextRenderer.DrawText(
                 g,
-                "ESTUDIANTES",
-                new Font("Segoe UI", 8.5f),
-                rectEstudiantes,
+                "ASIGNATURAS",
+                new Font("Segoe UI", 7.8f),
+                rectTituloX,
                 Color.Black,
                 TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter
             );
+        }
+        private void DibujarBarraRedondeadaHorizontal(Graphics g, Rectangle rect, Color color, int radio)
+        {
+            if (rect.Width <= 0 || rect.Height <= 0)
+                return;
+
+            using GraphicsPath path = new GraphicsPath();
+
+            int diametro = radio * 2;
+            if (diametro > rect.Height) diametro = rect.Height;
+            if (diametro > rect.Width) diametro = rect.Width;
+
+            path.StartFigure();
+            path.AddArc(rect.X, rect.Y, diametro, diametro, 90, 180);
+            path.AddArc(rect.Right - diametro, rect.Y, diametro, diametro, 270, 180);
+            path.CloseFigure();
+
+            using SolidBrush brush = new SolidBrush(color);
+            g.FillPath(brush, path);
         }
         private void DibujarBarraRedondeada(Graphics g, Rectangle rect, Color color, int radio)
         {
@@ -274,15 +324,13 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
         {
             dgvBoleta.Rows.Clear();
 
+            dtReporteCompleto = new DataTable();
             dtGraficoCompleto = new DataTable();
             paginaGrafico = 0;
 
             lblRegistros.Text = "Registros del 0 al 0 total de 0 registros";
             lblRegistros.BackColor = this.BackColor;
             lblPaginaGrafico.Text = "Página 0 de 0";
-
-            //btnAnteriorGrafico.Enabled = false;
-            //btnSiguienteGrafico.Enabled = false;
 
             panelGrafico.Invalidate();
         }
@@ -315,24 +363,60 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
         }
         private void FiltrarGrid()
         {
+            if (dtReporteCompleto == null || dtReporteCompleto.Rows.Count == 0)
+            {
+                dgvBoleta.Rows.Clear();
+                dtGraficoCompleto = new DataTable();
+                paginaGrafico = 0;
+                ActualizarBotonesGrafico();
+                panelGrafico.Invalidate();
+                lblRegistros.Text = "Registros del 0 al 0 total de 0 registros";
+                return;
+            }
+
             string filtro = txtBuscar.Text.Trim().ToLower();
 
-            foreach (DataGridViewRow row in dgvBoleta.Rows)
+            IEnumerable<DataRow> filasFiltradas = dtReporteCompleto.AsEnumerable();
+
+            if (!string.IsNullOrWhiteSpace(filtro))
             {
-                if (row.IsNewRow) continue;
+                filasFiltradas = filasFiltradas.Where(row =>
+                {
+                    string asignatura = row["Asignatura"]?.ToString()?.ToLower() ?? "";
+                    string docente = row["Docente"]?.ToString()?.ToLower() ?? "";
+                    string estado = row["Estado"]?.ToString()?.ToLower() ?? "";
 
-                string asignatura = row.Cells["Asignatura"].Value?.ToString()?.ToLower() ?? "";
-                string docente = row.Cells["Docente"].Value?.ToString()?.ToLower() ?? "";
-                string estado = row.Cells["Estado"].Value?.ToString()?.ToLower() ?? "";
-
-                bool visible =
-                    asignatura.Contains(filtro) ||
-                    docente.Contains(filtro) ||
-                    estado.Contains(filtro);
-
-                row.Visible = visible;
+                    return asignatura.Contains(filtro)
+                        || docente.Contains(filtro)
+                        || estado.Contains(filtro);
+                });
             }
+
+            DataTable dtFiltrado = dtReporteCompleto.Clone();
+
+            foreach (DataRow row in filasFiltradas)
+                dtFiltrado.ImportRow(row);
+
+            dgvBoleta.Rows.Clear();
+
+            if (dtFiltrado.Rows.Count == 0)
+            {
+                dtGraficoCompleto = dtFiltrado.Copy();
+                paginaGrafico = 0;
+                ActualizarBotonesGrafico();
+                panelGrafico.Invalidate();
+                lblRegistros.Text = "Registros del 0 al 0 total de 0 registros";
+                return;
+            }
+
+            LlenarGridBoleta(dtFiltrado);
+
+            dtGraficoCompleto = dtFiltrado.Copy();
+            paginaGrafico = 0;
+            ActualizarBotonesGrafico();
+            panelGrafico.Invalidate();
         }
+
         private void FrmConsolidadoAsignaturas_Load(object sender, EventArgs e)
         {
             CargarParciales();
@@ -389,7 +473,6 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
                 return;
             }
 
-
             int parcial = Convert.ToInt32(cbParcial.SelectedItem);
             string nombreGrado = cbGrado.SelectedItem.ToString();
             string seccion = cbSeccion.SelectedItem.ToString();
@@ -403,10 +486,11 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
             }
 
             DataTable dt = ObtenerBoletaParcial(parcial, gradoId, seccion, anio);
+            dtReporteCompleto = dt?.Copy() ?? new DataTable();
 
             ConfigurarGridBoleta();
 
-            if (dt == null || dt.Rows.Count == 0)
+            if (dtReporteCompleto == null || dtReporteCompleto.Rows.Count == 0)
             {
                 dgvBoleta.Rows.Clear();
                 lblRegistros.Text = "Registros del 0 al 0 total de 0 registros";
@@ -414,8 +498,9 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
                 return;
             }
 
-            LlenarGridBoleta(dt);
-            dtGraficoCompleto = dt.Copy();
+            LlenarGridBoleta(dtReporteCompleto);
+
+            dtGraficoCompleto = dtReporteCompleto.Copy();
             paginaGrafico = 0;
             ActualizarBotonesGrafico();
             panelGrafico.Invalidate();
@@ -424,9 +509,7 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
             {
                 col.SortMode = DataGridViewColumnSortMode.NotSortable;
             }
-
         }
-
         private int ObtenerGradoId(string nombreGrado)
         {
             using (SqlConnection cn = conexion.ObtenerConexion())
@@ -530,19 +613,12 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
 
                 string estado = row["Estado"]?.ToString()?.ToUpper() ?? "";
 
-                string accion = estado == "EXCELENTE"
-                    ? "FELICITAR DOCENTE"
-                    : estado == "CRITICO"
-                        ? "VER DETALLE"
-                        : "VER DETALLE";
-
                 dgvBoleta.Rows.Add(
                     i,
                     row["Asignatura"]?.ToString() ?? "",
                     row["Docente"]?.ToString() ?? "",
                     promedio.ToString("0.00"),
-                    estado,
-                    accion
+                    estado
                 );
 
                 i++;
@@ -788,7 +864,94 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
             }
 
             if (cbGrado.Items.Count > 0)
-                cbGrado.SelectedIndex = 0;
+                cbGrado.SelectedIndex = 1;
+        }
+
+        private string ObtenerCodigoAsignatura(string asignatura)
+        {
+            if (string.IsNullOrWhiteSpace(asignatura))
+                return "N/A";
+
+            string nombreBase = ObtenerPrimerNombreAsignatura(asignatura);
+
+            return nombreBase switch
+            {
+                "BIBLIA" => "BIB",
+                "CIENCIAS NATURALES" => "CNAT",
+                "CIENCIAS SOCIALES" => "CSOC",
+                "COMPUTACIÓN" => "COMP",
+                "EDUCACION ARTISTICA" => "EART",
+                "MATEMÁTICA" => "MAT",
+                "MATEMATICA" => "MAT",
+                "ESPAÑOL" => "ESP",
+                "INGLÉS" => "ING",
+                "INGLES" => "ING",
+                _ => GenerarCodigoMnemónico(nombreBase)
+            };
+        }
+
+        private string ObtenerPrimerNombreAsignatura(string asignatura)
+        {
+            if (string.IsNullOrWhiteSpace(asignatura))
+                return "N/A";
+
+            string primeraParte = asignatura.Split('/')[0].Trim().ToUpper();
+
+            return RemoverTildes(primeraParte);
+        }
+
+        private string GenerarCodigoMnemónico(string texto)
+        {
+            if (string.IsNullOrWhiteSpace(texto))
+                return "N/A";
+
+            string limpio = texto
+                .Replace("-", " ")
+                .Trim();
+
+            string[] palabras = limpio
+                .Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+
+            if (palabras.Length == 1)
+            {
+                string p = palabras[0];
+                return p.Length <= 4 ? p : p.Substring(0, 4);
+            }
+
+            if (palabras.Length == 2)
+            {
+                string a = palabras[0].Length >= 2 ? palabras[0].Substring(0, 2) : palabras[0];
+                string b = palabras[1].Length >= 2 ? palabras[1].Substring(0, 2) : palabras[1];
+                return (a + b).ToUpper();
+            }
+
+            StringBuilder sb = new StringBuilder();
+            foreach (string p in palabras)
+            {
+                if (!string.IsNullOrWhiteSpace(p))
+                    sb.Append(p[0]);
+            }
+
+            string codigo = sb.ToString().ToUpper();
+            return codigo.Length <= 5 ? codigo : codigo.Substring(0, 5);
+        }
+
+        private string RemoverTildes(string texto)
+        {
+            if (string.IsNullOrWhiteSpace(texto))
+                return texto;
+
+            return texto
+                .Replace("Á", "A")
+                .Replace("É", "E")
+                .Replace("Í", "I")
+                .Replace("Ó", "O")
+                .Replace("Ú", "U")
+                .Replace("á", "a")
+                .Replace("é", "e")
+                .Replace("í", "i")
+                .Replace("ó", "o")
+                .Replace("ú", "u");
         }
         private void CargarSecciones()
         {

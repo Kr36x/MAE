@@ -166,14 +166,9 @@ namespace GestionAcademicaV2.Pantallas
             pbMostrarContrasenia.Refresh();
         }
 
-        private void btnConexion_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void LoginBoton_Click(object sender, EventArgs e)
@@ -224,6 +219,14 @@ namespace GestionAcademicaV2.Pantallas
         {
             txtUsuario.Text = "";
             txtContrasenia.Text = "";
+        }
+
+        private void txtContrasenia_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                LoginBoton_Click(sender, e);
+            }
         }
     }
 }
