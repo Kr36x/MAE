@@ -42,7 +42,7 @@ namespace GestionAcademicaV2.Pantallas
             CargarDatosUsuario();
             OcultarTodosLosSubmenus();
             MarcarActivo(btnInicio);
-
+            AbrirFormularioEnPanel(new FrmDocenteInicio2(usuarioActual.UsuarioID));
             // Si luego haces un dashboard docente, aquí lo abres.
             // AbrirFormularioEnPanel(new FrmDashboardDocente(idDocente));
         }
@@ -339,17 +339,8 @@ namespace GestionAcademicaV2.Pantallas
 
         private void btnInicio_Click(object sender, EventArgs e)
         {
-            OcultarTodosLosSubmenus();
             MarcarActivo(btnInicio);
-
-            if (formularioActivo != null)
-            {
-                formularioActivo.Close();
-                formularioActivo.Dispose();
-                formularioActivo = null;
-            }
-
-            pnlInfo2.Controls.Clear();
+            AbrirFormularioEnPanel(new FrmDocenteInicio2(usuarioActual.UsuarioID));
         }
 
         private void btnAsistencia2_Click(object sender, EventArgs e)

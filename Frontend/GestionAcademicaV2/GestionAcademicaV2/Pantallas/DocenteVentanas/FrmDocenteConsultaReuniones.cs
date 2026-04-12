@@ -773,5 +773,10 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
         }
 
         #endregion
+
+        private void guna2Panel6_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

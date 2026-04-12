@@ -168,7 +168,7 @@
             txtUsuario.BorderRadius = 8;
             txtUsuario.BorderThickness = 2;
             txtUsuario.CustomizableEdges = customizableEdges5;
-            txtUsuario.DefaultText = "maria.martinez";
+            txtUsuario.DefaultText = "juan.perez";
             txtUsuario.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txtUsuario.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
             txtUsuario.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
@@ -225,7 +225,7 @@
             txtContrasenia.BorderRadius = 8;
             txtContrasenia.BorderThickness = 2;
             txtContrasenia.CustomizableEdges = customizableEdges9;
-            txtContrasenia.DefaultText = "Admin123*";
+            txtContrasenia.DefaultText = "Docente123*";
             txtContrasenia.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txtContrasenia.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
             txtContrasenia.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);

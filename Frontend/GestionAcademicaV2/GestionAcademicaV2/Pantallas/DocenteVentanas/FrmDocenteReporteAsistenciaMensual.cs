@@ -35,6 +35,8 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
         private bool formularioCargado = false;
 
         private bool ocultarFinesDeSemana = true;
+        private string columnaOrdenActual = "TP";
+        private bool ordenAscendente = false;
         public FrmDocenteReporteAsistenciaMensual(int docenteId)
         {
             InitializeComponent();
@@ -81,6 +83,8 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
             chkMostrarFinesDeSemana.UncheckedState.FillColor = System.Drawing.Color.White;
             chkMostrarFinesDeSemana.UncheckedState.BorderRadius = 2;
             chkMostrarFinesDeSemana.UncheckedState.BorderThickness = 1;
+
+            dgvAsistencia.ColumnHeaderMouseClick += dgvAsistencia_ColumnHeaderMouseClick;
         }
 
         private void chkMostrarFinesDeSemana_CheckedChanged(object sender, EventArgs e)
@@ -114,6 +118,130 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
             timerBusqueda.Stop();
             timerBusqueda.Start();
         }
+
+        private void dgvAsistencia_ColumnHeaderMouseClick(object? sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.ColumnIndex < 0) return;
+
+            string nombreColumna = dgvAsistencia.Columns[e.ColumnIndex].Name;
+
+            if (nombreColumna != "TP" && nombreColumna != "TF" && nombreColumna != "TE")
+                return;
+
+            if (columnaOrdenActual == nombreColumna)
+                ordenAscendente = !ordenAscendente;
+            else
+            {
+                columnaOrdenActual = nombreColumna;
+                ordenAscendente = false;
+            }
+
+            OrdenarGridTotales(nombreColumna, ordenAscendente);
+        }
+        private void OrdenarGridTotales(string columnaPrincipal, bool ascendente)
+        {
+            if (dgvAsistencia.Rows.Count == 0) return;
+            if (!dgvAsistencia.Columns.Contains("TP") ||
+                !dgvAsistencia.Columns.Contains("TF") ||
+                !dgvAsistencia.Columns.Contains("TE") ||
+                !dgvAsistencia.Columns.Contains("Nombre"))
+                return;
+
+            int idxID = dgvAsistencia.Columns["ID"].Index;
+            int idxNombre = dgvAsistencia.Columns["Nombre"].Index;
+            int idxTP = dgvAsistencia.Columns["TP"].Index;
+            int idxTF = dgvAsistencia.Columns["TF"].Index;
+            int idxTE = dgvAsistencia.Columns["TE"].Index;
+
+            var filas = dgvAsistencia.Rows
+                .Cast<DataGridViewRow>()
+                .Where(r => !r.IsNewRow)
+                .ToList();
+
+            int ObtenerEntero(DataGridViewRow r, int index)
+            {
+                object valor = r.Cells[index].Value;
+                if (valor == null || valor == DBNull.Value) return 0;
+
+                int numero;
+                return int.TryParse(valor.ToString(), out numero) ? numero : 0;
+            }
+
+            string ObtenerTexto(DataGridViewRow r, int index)
+            {
+                return r.Cells[index].Value?.ToString() ?? "";
+            }
+
+            IEnumerable<DataGridViewRow> filasOrdenadas;
+
+            switch (columnaPrincipal)
+            {
+                case "TP":
+                    filasOrdenadas = ascendente
+                        ? filas.OrderBy(r => ObtenerEntero(r, idxTP))
+                               .ThenBy(r => ObtenerEntero(r, idxTF))
+                               .ThenBy(r => ObtenerEntero(r, idxTE))
+                               .ThenBy(r => ObtenerTexto(r, idxNombre))
+                        : filas.OrderByDescending(r => ObtenerEntero(r, idxTP))
+                               .ThenByDescending(r => ObtenerEntero(r, idxTF))
+                               .ThenByDescending(r => ObtenerEntero(r, idxTE))
+                               .ThenBy(r => ObtenerTexto(r, idxNombre));
+                    break;
+
+                case "TF":
+                    filasOrdenadas = ascendente
+                        ? filas.OrderBy(r => ObtenerEntero(r, idxTF))
+                               .ThenBy(r => ObtenerEntero(r, idxTP))
+                               .ThenBy(r => ObtenerEntero(r, idxTE))
+                               .ThenBy(r => ObtenerTexto(r, idxNombre))
+                        : filas.OrderByDescending(r => ObtenerEntero(r, idxTF))
+                               .ThenByDescending(r => ObtenerEntero(r, idxTP))
+                               .ThenByDescending(r => ObtenerEntero(r, idxTE))
+                               .ThenBy(r => ObtenerTexto(r, idxNombre));
+                    break;
+
+                case "TE":
+                    filasOrdenadas = ascendente
+                        ? filas.OrderBy(r => ObtenerEntero(r, idxTE))
+                               .ThenBy(r => ObtenerEntero(r, idxTP))
+                               .ThenBy(r => ObtenerEntero(r, idxTF))
+                               .ThenBy(r => ObtenerTexto(r, idxNombre))
+                        : filas.OrderByDescending(r => ObtenerEntero(r, idxTE))
+                               .ThenByDescending(r => ObtenerEntero(r, idxTP))
+                               .ThenByDescending(r => ObtenerEntero(r, idxTF))
+                               .ThenBy(r => ObtenerTexto(r, idxNombre));
+                    break;
+
+                default:
+                    return;
+            }
+
+            var datosFilas = filasOrdenadas
+                .Select(r =>
+                {
+                    object[] valores = new object[dgvAsistencia.Columns.Count];
+                    for (int i = 0; i < dgvAsistencia.Columns.Count; i++)
+                        valores[i] = r.Cells[i].Value;
+                    return valores;
+                })
+                .ToList();
+
+            dgvAsistencia.SuspendLayout();
+            dgvAsistencia.Rows.Clear();
+
+            int correlativo = 1;
+            foreach (var valores in datosFilas)
+            {
+                valores[idxID] = correlativo.ToString();
+                dgvAsistencia.Rows.Add(valores);
+                correlativo++;
+            }
+
+            dgvAsistencia.ResumeLayout();
+            AplicarAlturaFijaFilas();
+            ActualizarLabelRegistros();
+        }
+
         private void btnDescargarPdf_Click(object sender, EventArgs e)
         {
             if (dgvAsistencia.Rows.Count == 0)
@@ -618,12 +746,14 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
             ConfigurarDataGridView(anioActual, mesActual);
             LlenarGridDesdeDataTable(dt, anioActual, mesActual);
             ActualizarLabelRegistros();
-
             ActualizarTituloMes();
 
             foreach (DataGridViewColumn col in dgvAsistencia.Columns)
             {
-                col.SortMode = DataGridViewColumnSortMode.NotSortable;
+                if (col.Name == "TP" || col.Name == "TF" || col.Name == "TE")
+                    col.SortMode = DataGridViewColumnSortMode.Programmatic;
+                else
+                    col.SortMode = DataGridViewColumnSortMode.NotSortable;
             }
         }
 
@@ -733,6 +863,9 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
 
             List<DateTime> fechasVisibles = ObtenerFechasVisiblesDelMes(anio, mes);
 
+            dgvAsistencia.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None;
+            //dgvAsistencia.RowTemplate.Height = 35;
+
             dgvAsistencia.AllowUserToAddRows = false;
             dgvAsistencia.AllowUserToDeleteRows = false;
             dgvAsistencia.AllowUserToResizeRows = false;
@@ -745,7 +878,7 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
             dgvAsistencia.BorderStyle = BorderStyle.None;
             dgvAsistencia.EnableHeadersVisualStyles = false;
             dgvAsistencia.ColumnHeadersHeight = 40;
-            dgvAsistencia.RowTemplate.Height = 40;
+            dgvAsistencia.RowTemplate.Height = 35;
             dgvAsistencia.ScrollBars = ScrollBars.Both;
 
             dgvAsistencia.CellBorderStyle = DataGridViewCellBorderStyle.Single;
@@ -775,6 +908,7 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
             colId.HeaderText = "N°";
             colId.Width = 50;
             colId.Frozen = true;
+            colId.SortMode = DataGridViewColumnSortMode.NotSortable;
             dgvAsistencia.Columns.Add(colId);
 
             var colNombre = new DataGridViewTextBoxColumn();
@@ -782,7 +916,9 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
             colNombre.HeaderText = "ESTUDIANTES";
             colNombre.Width = 220;
             colNombre.Frozen = true;
+            colNombre.SortMode = DataGridViewColumnSortMode.NotSortable;
             colNombre.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            colNombre.DefaultCellStyle.WrapMode = DataGridViewTriState.False;
             dgvAsistencia.Columns.Add(colNombre);
 
             var colTP = new DataGridViewTextBoxColumn();
@@ -790,6 +926,7 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
             colTP.HeaderText = "TP";
             colTP.Width = 50;
             colTP.Frozen = true;
+            colTP.SortMode = DataGridViewColumnSortMode.Programmatic;
             colTP.HeaderCell.Style.BackColor = System.Drawing.Color.FromArgb(120, 220, 80);
             colTP.HeaderCell.Style.ForeColor = System.Drawing.Color.White;
             dgvAsistencia.Columns.Add(colTP);
@@ -799,6 +936,7 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
             colTF.HeaderText = "TF";
             colTF.Width = 50;
             colTF.Frozen = true;
+            colTF.SortMode = DataGridViewColumnSortMode.Programmatic;
             colTF.HeaderCell.Style.BackColor = System.Drawing.Color.Red;
             colTF.HeaderCell.Style.ForeColor = System.Drawing.Color.White;
             dgvAsistencia.Columns.Add(colTF);
@@ -808,8 +946,9 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
             colTE.HeaderText = "TE";
             colTE.Width = 50;
             colTE.Frozen = true;
+            colTE.SortMode = DataGridViewColumnSortMode.Programmatic;
             colTE.HeaderCell.Style.BackColor = System.Drawing.Color.Gold;
-            colTE.HeaderCell.Style.ForeColor = System.Drawing.Color.White;
+            colTE.HeaderCell.Style.ForeColor = System.Drawing.Color.Black;
             dgvAsistencia.Columns.Add(colTE);
 
             foreach (DateTime fecha in fechasVisibles)
@@ -818,6 +957,7 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
                 colDia.Name = $"D{fecha.Day}";
                 colDia.HeaderText = fecha.Day.ToString();
                 colDia.Width = 42;
+                colDia.SortMode = DataGridViewColumnSortMode.NotSortable;
                 colDia.HeaderCell.Style.BackColor = System.Drawing.Color.FromArgb(92, 184, 92);
                 colDia.HeaderCell.Style.ForeColor = System.Drawing.Color.White;
                 dgvAsistencia.Columns.Add(colDia);
@@ -828,6 +968,17 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
 
             dgvAsistencia.CellPainting -= dgvAsistencia_CellPainting;
             dgvAsistencia.CellPainting += dgvAsistencia_CellPainting;
+        }
+
+        private void AplicarAlturaFijaFilas()
+        {
+            dgvAsistencia.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None;
+
+            foreach (DataGridViewRow fila in dgvAsistencia.Rows)
+            {
+                if (!fila.IsNewRow)
+                    fila.Height = 40;
+            }
         }
         private void dgvAsistencia_CellPainting(object? sender, DataGridViewCellPaintingEventArgs e)
         {
@@ -998,8 +1149,8 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
                 dgvAsistencia.Rows.Add(row);
                 correlativo++;
             }
-
             CalcularTotalesTodasLasFilas();
+            AplicarAlturaFijaFilas();
         }
         private string MapearEstadoASimbolo(string estado)
         {

@@ -213,6 +213,7 @@
             btnInicio.Size = new Size(217, 45);
             btnInicio.TabIndex = 20;
             btnInicio.Text = "INICIO";
+            btnInicio.Click += btnInicio_Click;
             // 
             // btnGestionAcademica
             // 
