@@ -11,7 +11,7 @@
     <Compile Update="Pantallas\AdminVentanas\CargaDocente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Pantallas\AdminVentanas\FrmActaReunion.cs">
+    <Compile Update="Pantallas\AdminVentanas\FrmGestionReunionesCrearActa.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Pantallas\AdminVentanas\FrmConfigCicloEscolar.cs">
@@ -23,10 +23,10 @@
     <Compile Update="Pantallas\AdminVentanas\FrmDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Pantallas\AdminVentanas\FrmDetalleReunion.cs">
+    <Compile Update="Pantallas\AdminVentanas\FrmGestionReunionesDetalle.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Pantallas\AdminVentanas\FrmEditarTutor.cs">
+    <Compile Update="Pantallas\AdminVentanas\FrmGestionVinculacionTutoresEditarTutor.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Pantallas\AdminVentanas\FrmEstudiantes.cs">
@@ -53,16 +53,16 @@
     <Compile Update="Pantallas\AdminVentanas\FrmMatricula.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Pantallas\AdminVentanas\FrmNuevaAsignatura.cs">
+    <Compile Update="Pantallas\AdminVentanas\FrmGestionAsignaturasFormulario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Pantallas\AdminVentanas\FrmNuevaSeccion.cs">
+    <Compile Update="Pantallas\AdminVentanas\FrmGestionGradosSecciones.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Pantallas\AdminVentanas\FrmNuevoGrado.cs">
+    <Compile Update="Pantallas\AdminVentanas\FrmGestionGradosFormulario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Pantallas\AdminVentanas\FrmNuevoGradoSeccion.cs">
+    <Compile Update="Pantallas\AdminVentanas\FrmNuevoGradoSeccion_SinUso.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Pantallas\AdminVentanas\FrmOfertaAcademica.cs">
@@ -74,49 +74,43 @@
     <Compile Update="Pantallas\AdminVentanas\FrmUsuariosPersonal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Pantallas\AdminVentanas\FrmVincularEstudiante.cs">
+    <Compile Update="Pantallas\AdminVentanas\FrmGestionVinculacionTutoresVincularEstudiante.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Pantallas\AdminVentanas\ReporteDocentes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Pantallas\DocenteVentanas\FrmBoletaPrebasica.cs">
+    <Compile Update="Pantallas\DocenteVentanas\FrmAdminConsolidadoAsignaturas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Pantallas\DocenteVentanas\FrmConsolidadoAsignaturas.cs">
+    <Compile Update="Pantallas\DocenteVentanas\FrmControlReuniones_Obsoleto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Pantallas\DocenteVentanas\FrmControlReuniones.cs">
+    <Compile Update="Pantallas\DocenteVentanas\FrmPlanificacionActividadesEditarActividad.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Pantallas\DocenteVentanas\FrmEditarActividad.cs">
+    <Compile Update="Pantallas\DocenteVentanas\FrmConsolidadoAsignaturasGraficoAmpliado.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Pantallas\DocenteVentanas\frmGraficoBoletaAmpliado.cs">
+    <Compile Update="Pantallas\DocenteVentanas\FrmPlanificacionActividadesNuevaActividad.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Pantallas\DocenteVentanas\FrmNuevaActividad.cs">
+    <Compile Update="Pantallas\DocenteVentanas\FrmDocentePlanificacionActividades.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Pantallas\DocenteVentanas\FrmPlanificacionActividades.cs">
+    <Compile Update="Pantallas\DocenteVentanas\FrmDocenteRegistroAsistencia.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Pantallas\DocenteVentanas\FrmRegistroAsistencia.cs">
+    <Compile Update="Pantallas\DocenteVentanas\FrmDocenteRegistroCalificaciones.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Pantallas\DocenteVentanas\FrmRegistroCalificaciones.cs">
+    <Compile Update="Pantallas\DocenteVentanas\FrmDocenteReporteSemanalCalificaciones.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Pantallas\DocenteVentanas\FrmReporteSemanal.cs">
+    <Compile Update="Pantallas\DocenteVentanas\SeleccionReportes_Defensa.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Pantallas\DocenteVentanas\FrmSeleccionBoleta.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="Pantallas\DocenteVentanas\FrmSeleccionReportes.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="Pantallas\DocenteVentanas\FrmVerReunionesDocente.cs">
+    <Compile Update="Pantallas\DocenteVentanas\FrmDocenteConsultaReuniones.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Pantallas\Login.cs">

@@ -426,7 +426,7 @@ namespace GestionAcademicaV2.Pantallas
         private void btnConsolidadoAsignatura_Click(object sender, EventArgs e)
         {
             MarcarActivo(btnConsolidadoAsignatura);
-            AbrirFormularioEnPanel(new FrmConsolidadoAsignaturas());
+            AbrirFormularioEnPanel(new FrmAdminConsolidadoAsignaturas());
         }
 
         #endregion

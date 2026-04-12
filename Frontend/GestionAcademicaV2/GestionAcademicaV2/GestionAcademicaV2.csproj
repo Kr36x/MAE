@@ -26,7 +26,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Pantallas\DocenteVentanas\FrmReporteSemanal.cs" />
+    <Compile Update="Pantallas\DocenteVentanas\FrmDocenteReporteSemanalCalificaciones.cs" />
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -35,31 +35,31 @@
   </ItemGroup>
 
 	<ItemGroup>
-		<Compile Update="Pantallas\AdminVentanas\FrmNuevaReunion.cs">
+		<Compile Update="Pantallas\AdminVentanas\FrmGestionReunionesNueva.cs">
 			<SubType>Form</SubType>
 		</Compile>
 
-		<Compile Update="Pantallas\AdminVentanas\FrmNuevaReunion.Designer.cs">
-			<DependentUpon>FrmNuevaReunion.cs</DependentUpon>
+		<Compile Update="Pantallas\AdminVentanas\FrmGestionReunionesNueva.Designer.cs">
+			<DependentUpon>FrmGestionReunionesNueva.cs</DependentUpon>
 		</Compile>
 
-		<EmbeddedResource Update="Pantallas\AdminVentanas\FrmNuevaReunion.resx">
-			<DependentUpon>FrmNuevaReunion.cs</DependentUpon>
+		<EmbeddedResource Update="Pantallas\AdminVentanas\FrmGestionReunionesNueva.resx">
+			<DependentUpon>FrmGestionReunionesNueva.cs</DependentUpon>
 			<SubType>Designer</SubType>
 		</EmbeddedResource>
 	</ItemGroup>
 
 	<ItemGroup>
-		<Compile Update="Pantallas\DocenteVentanas\FrmReporteAsistencia.cs">
+		<Compile Update="Pantallas\DocenteVentanas\FrmDocenteReporteAsistenciaMensual.cs">
 			<SubType>Form</SubType>
 		</Compile>
 
-		<Compile Update="Pantallas\DocenteVentanas\FrmReporteAsistencia.Designer.cs">
-			<DependentUpon>FrmReporteAsistencia.cs</DependentUpon>
+		<Compile Update="Pantallas\DocenteVentanas\FrmDocenteReporteAsistenciaMensual.Designer.cs">
+			<DependentUpon>FrmDocenteReporteAsistenciaMensual.cs</DependentUpon>
 		</Compile>
 
-		<EmbeddedResource Update="Pantallas\DocenteVentanas\FrmReporteAsistencia.resx">
-			<DependentUpon>FrmReporteAsistencia.cs</DependentUpon>
+		<EmbeddedResource Update="Pantallas\DocenteVentanas\FrmDocenteReporteAsistenciaMensual.resx">
+			<DependentUpon>FrmDocenteReporteAsistenciaMensual.cs</DependentUpon>
 			<SubType>Designer</SubType>
 		</EmbeddedResource>
 

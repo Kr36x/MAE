@@ -307,30 +307,25 @@ namespace GestionAcademicaV2.Pantallas
             }
         }
 
-        public void MostrarBoletaPorNivel(string nivel, int estudianteID)
-        {
-            if (nivel == "PREBASICA")
-                AbrirFormularioEnPanel(new FrmBoletaPrebasica(estudianteID));
-        }
 
         public void MostrarReporteAsistencia(int docenteId)
         {
-            AbrirFormularioEnPanel(new FrmReporteAsistencia(docenteId));
+            AbrirFormularioEnPanel(new FrmDocenteReporteAsistenciaMensual(docenteId));
         }
 
         public void MostrarReporteCalificacion(int docenteId)
         {
-            AbrirFormularioEnPanel(new FrmReporteSemanal(docenteId));
+            AbrirFormularioEnPanel(new FrmDocenteReporteSemanalCalificaciones(docenteId));
         }
 
         public void MostrarConsolidadoAsignaturas(int docenteId)
         {
-            AbrirFormularioEnPanel(new FrmConsolidadoAsignaturas());
+            AbrirFormularioEnPanel(new FrmAdminConsolidadoAsignaturas());
         }
 
         public void MostrarControlReuniones(int docenteId)
         {
-            AbrirFormularioEnPanel(new FrmControlReuniones());
+            AbrirFormularioEnPanel(new FrmControlReuniones_Obsoleto());
         }
 
         public void MoverPantallaAdmin(int docenteid)
@@ -360,13 +355,13 @@ namespace GestionAcademicaV2.Pantallas
         private void btnAsistencia2_Click(object sender, EventArgs e)
         {
             MarcarActivo(btnAsistencia2);
-            AbrirFormularioEnPanel(new FrmRegistroAsistencia(idDocente));
+            AbrirFormularioEnPanel(new FrmDocenteRegistroAsistencia(idDocente));
         }
 
         private void btnCalificaciones2_Click(object sender, EventArgs e)
         {
             MarcarActivo(btnCalificaciones2);
-            AbrirFormularioEnPanel(new FrmRegistroCalificaciones(idDocente));
+            AbrirFormularioEnPanel(new FrmDocenteRegistroCalificaciones(idDocente));
         }
 
         private void btnPlanificacion_Click(object sender, EventArgs e)
@@ -378,26 +373,26 @@ namespace GestionAcademicaV2.Pantallas
         private void btnReporteAsistencia_Click(object sender, EventArgs e)
         {
             MarcarActivo(btnReporteAsistencia);
-            AbrirFormularioEnPanel(new FrmReporteAsistencia(usuarioActual.UsuarioID));
+            AbrirFormularioEnPanel(new FrmDocenteReporteAsistenciaMensual(usuarioActual.UsuarioID));
         }
 
         private void btnReporteSemanal_Click(object sender, EventArgs e)
         {
             MarcarActivo(btnReporteSemanal);
-            AbrirFormularioEnPanel(new FrmReporteSemanal(usuarioActual.UsuarioID));
+            AbrirFormularioEnPanel(new FrmDocenteReporteSemanalCalificaciones(usuarioActual.UsuarioID));
         }
 
         private void btnReportesSeleccion_Click(object sender, EventArgs e)
         {
             MarcarActivo(btnReporteSemanal);
-            AbrirFormularioEnPanel(new FrmSeleccionReportes(this,idDocente));
+            AbrirFormularioEnPanel(new SeleccionReportes_Defensa(this,idDocente));
         }
 
         private void btnReuniones_Click(object sender, EventArgs e)
         {
             OcultarTodosLosSubmenus();
             MarcarActivo(btnReuniones);
-            AbrirFormularioEnPanel(new FrmVerReunionesDocente(idDocente));
+            AbrirFormularioEnPanel(new FrmDocenteConsultaReuniones(idDocente));
         }
 
         #endregion

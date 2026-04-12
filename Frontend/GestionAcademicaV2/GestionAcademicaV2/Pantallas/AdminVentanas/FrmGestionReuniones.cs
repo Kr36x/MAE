@@ -783,7 +783,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
         private void btnNuevaActividad_Click(object sender, EventArgs e)
         {
-            using FrmNuevaReunion frm = new FrmNuevaReunion();
+            using FrmGestionReunionesNueva frm = new FrmGestionReunionesNueva();
             if (frm.ShowDialog() == DialogResult.OK)
             {
                 CargarMesesDisponibles();
@@ -927,7 +927,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
                 if (accion == "CREAR ACTA")
                 {
-                    using FrmActaReunion frm = new FrmActaReunion(reunionId);
+                    using FrmGestionReunionesCrearActa frm = new FrmGestionReunionesCrearActa(reunionId);
                     if (frm.ShowDialog() == DialogResult.OK)
                         CargarReuniones();
                 }
@@ -983,7 +983,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
                 DataRow row = dt.Rows[0];
 
-                using FrmDetalleReunion frm = new FrmDetalleReunion(
+                using FrmGestionReunionesDetalle frm = new FrmGestionReunionesDetalle(
                     row["FechaHoraTexto"]?.ToString() ?? "",
                     row["Docente"]?.ToString() ?? "",
                     row["Estudiante"]?.ToString() ?? "",
