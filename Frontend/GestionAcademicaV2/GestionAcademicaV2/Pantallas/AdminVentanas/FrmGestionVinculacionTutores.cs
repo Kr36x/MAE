@@ -1341,7 +1341,7 @@
                 int tutorId = Convert.ToInt32(drv["TutorID"]);
                 int usuarioId = Convert.ToInt32(drv["UsuarioID"]);
 
-                using FrmEditarTutor frm = new FrmEditarTutor(usuarioId, tutorId);
+                using FrmGestionVinculacionTutoresEditarTutor frm = new FrmGestionVinculacionTutoresEditarTutor(usuarioId, tutorId);
 
                 if (frm.ShowDialog() == DialogResult.OK)
                 {
@@ -1386,7 +1386,7 @@
 
                 // Aquí asumo que crearás un constructor nuevo en FrmVincularEstudiante
                 // para recibir tutor id, nombre y parentesco.
-                using FrmVincularEstudiante frm = new FrmVincularEstudiante(
+                using FrmGestionVinculacionTutoresVincularEstudiante frm = new FrmGestionVinculacionTutoresVincularEstudiante(
                     _tutorIdSeleccionado,
                     _nombreTutorSeleccionado,
                     _parentescoTutorSeleccionado

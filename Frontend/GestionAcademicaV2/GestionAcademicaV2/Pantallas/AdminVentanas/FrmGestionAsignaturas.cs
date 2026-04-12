@@ -560,7 +560,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
         private void btnNuevaAsignatura_Click(object sender, EventArgs e)
         {
-            using FrmNuevaAsignatura frm = new FrmNuevaAsignatura();
+            using FrmGestionAsignaturasFormulario frm = new FrmGestionAsignaturasFormulario();
             if (frm.ShowDialog() == DialogResult.OK)
             {
                 CargarAreas();
@@ -643,7 +643,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
             if (rectEditar.Contains(mouse))
             {
-                using FrmNuevaAsignatura frm = new FrmNuevaAsignatura(asignaturaId);
+                using FrmGestionAsignaturasFormulario frm = new FrmGestionAsignaturasFormulario(asignaturaId);
                 if (frm.ShowDialog() == DialogResult.OK)
                 {
                     CargarAreas();

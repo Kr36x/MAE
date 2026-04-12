@@ -34,8 +34,8 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
         private string _nombreGradoSeleccionado = "";
         private string _nivelSeleccionado = "";
 
-        private FrmNuevaSeccion? _frmSeccionesAbierto;
-        private FrmNuevoGrado? _frmNuevoGradoAbierto;
+        private FrmGestionGradosSecciones? _frmSeccionesAbierto;
+        private FrmGestionGradosFormulario? _frmNuevoGradoAbierto;
 
         public FrmGestionGrado()
         {
@@ -435,7 +435,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
         private void MostrarNuevoGrado()
         {
-            FrmNuevoGrado frm = new FrmNuevoGrado();
+            FrmGestionGradosFormulario frm = new FrmGestionGradosFormulario();
             frm.OperacionRealizada += (s, ev) =>
             {
                 CargarGradosDesdeBD();
@@ -454,7 +454,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
         private void MostrarSeccionesDeGrado(int gradoId, string nombreGrado, string nivel)
         {
-            FrmNuevaSeccion frm = new FrmNuevaSeccion(gradoId, nombreGrado, nivel);
+            FrmGestionGradosSecciones frm = new FrmGestionGradosSecciones(gradoId, nombreGrado, nivel);
             frm.TopLevel = false;
             frm.FormBorderStyle = FormBorderStyle.None;
             frm.Dock = DockStyle.Fill;
