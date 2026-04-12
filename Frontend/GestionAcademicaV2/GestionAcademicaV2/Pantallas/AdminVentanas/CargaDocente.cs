@@ -93,8 +93,8 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
                 DataTable tabla = util.EjecutarConsulta("SELECT * FROM vMAE_TraeGrados ORDER BY GradoID");
 
                 DataRow filaTodos = tabla.NewRow();
-                filaTodos["GradoID"] = 0;              
-                filaTodos["NombreGrado"] = "TODOS";    
+                filaTodos["GradoID"] = 0;
+                filaTodos["NombreGrado"] = "TODOS";
 
                 tabla.Rows.InsertAt(filaTodos, 0);
 
@@ -167,7 +167,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
                 DataRow filaTodas = dt.NewRow();
                 filaTodas["SeccionID"] = 0;
-                filaTodas["Letra"] = "TODAS";  
+                filaTodas["Letra"] = "TODAS";
 
                 dt.Rows.InsertAt(filaTodas, 0);
 
@@ -316,6 +316,12 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
                 CargarAsignaturasDocente(docenteID);
             }
+        }
+
+        private void btNuevaCarga_Click(object sender, EventArgs e)
+        {
+            Pantallas.AdminVentanas.AsignacionCarga forma = new Pantallas.AdminVentanas.AsignacionCarga();
+            forma.Show();
         }
     }
 }

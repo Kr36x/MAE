@@ -189,6 +189,7 @@
             btNuevaCarga.Size = new Size(167, 46);
             btNuevaCarga.TabIndex = 10;
             btNuevaCarga.Text = "NUEVA CARGA ACADÉMICA";
+            btNuevaCarga.Click += btNuevaCarga_Click;
             // 
             // guna2HtmlLabel11
             // 

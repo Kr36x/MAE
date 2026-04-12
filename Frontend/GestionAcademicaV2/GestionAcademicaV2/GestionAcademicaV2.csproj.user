@@ -5,6 +5,9 @@
     <Compile Update="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Pantallas\AdminVentanas\AsignacionCarga.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Pantallas\AdminVentanas\CargaDocente.cs">
       <SubType>Form</SubType>
     </Compile>
