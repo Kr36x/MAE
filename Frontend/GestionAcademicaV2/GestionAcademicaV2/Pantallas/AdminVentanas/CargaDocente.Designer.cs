@@ -84,14 +84,14 @@
             dgvDocentes = new Guna.UI2.WinForms.Guna2DataGridView();
             DocenteID = new DataGridViewTextBoxColumn();
             Nombre = new DataGridViewTextBoxColumn();
-            Identidad = new DataGridViewTextBoxColumn();
-            Especialidad = new DataGridViewTextBoxColumn();
+            Asignaturas = new DataGridViewTextBoxColumn();
+            Grados = new DataGridViewTextBoxColumn();
+            Secciones = new DataGridViewTextBoxColumn();
             guna2ContainerControl3 = new Guna.UI2.WinForms.Guna2ContainerControl();
             guna2HtmlLabel10 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             dgvAsignatura = new Guna.UI2.WinForms.Guna2DataGridView();
             AsignaturaID = new DataGridViewTextBoxColumn();
             Asignatura = new DataGridViewTextBoxColumn();
-            NombreGrado = new DataGridViewTextBoxColumn();
             guna2HtmlLabel12 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).BeginInit();
             ctnFiltros.SuspendLayout();
@@ -245,6 +245,7 @@
             txtBuscarDocente.ShadowDecoration.CustomizableEdges = customizableEdges8;
             txtBuscarDocente.Size = new Size(295, 31);
             txtBuscarDocente.TabIndex = 1;
+            txtBuscarDocente.KeyPress += txtBuscarDocente_KeyPress;
             // 
             // cbbSeccion
             // 
@@ -407,7 +408,7 @@
             guna2ContainerControl2.Location = new Point(69, 451);
             guna2ContainerControl2.Name = "guna2ContainerControl2";
             guna2ContainerControl2.ShadowDecoration.CustomizableEdges = customizableEdges20;
-            guna2ContainerControl2.Size = new Size(560, 214);
+            guna2ContainerControl2.Size = new Size(610, 214);
             guna2ContainerControl2.TabIndex = 6;
             guna2ContainerControl2.Text = "guna2ContainerControl2";
             // 
@@ -420,7 +421,7 @@
             guna2HtmlLabel9.ForeColor = Color.White;
             guna2HtmlLabel9.Location = new Point(0, 0);
             guna2HtmlLabel9.Name = "guna2HtmlLabel9";
-            guna2HtmlLabel9.Size = new Size(560, 30);
+            guna2HtmlLabel9.Size = new Size(610, 30);
             guna2HtmlLabel9.TabIndex = 9;
             guna2HtmlLabel9.Text = "DOCENTES ASIGNADOS";
             // 
@@ -439,7 +440,7 @@
             dgvDocentes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dgvDocentes.ColumnHeadersHeight = 30;
             dgvDocentes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dgvDocentes.Columns.AddRange(new DataGridViewColumn[] { DocenteID, Nombre, Identidad, Especialidad });
+            dgvDocentes.Columns.AddRange(new DataGridViewColumn[] { DocenteID, Nombre, Asignaturas, Grados, Secciones });
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = Color.White;
             dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
@@ -449,12 +450,12 @@
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             dgvDocentes.DefaultCellStyle = dataGridViewCellStyle3;
             dgvDocentes.GridColor = Color.FromArgb(231, 229, 255);
-            dgvDocentes.Location = new Point(20, 45);
+            dgvDocentes.Location = new Point(17, 45);
             dgvDocentes.Name = "dgvDocentes";
             dgvDocentes.ReadOnly = true;
             dgvDocentes.RowHeadersVisible = false;
             dgvDocentes.RowTemplate.Height = 30;
-            dgvDocentes.Size = new Size(522, 150);
+            dgvDocentes.Size = new Size(575, 150);
             dgvDocentes.TabIndex = 0;
             dgvDocentes.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
             dgvDocentes.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -477,39 +478,56 @@
             dgvDocentes.ThemeStyle.RowsStyle.Height = 30;
             dgvDocentes.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
             dgvDocentes.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            dgvDocentes.CellClick += dgvDocentes_CellClick;
             dgvDocentes.CellDoubleClick += dgvDocentes_CellDoubleClick;
+            dgvDocentes.CellFormatting += dgvDocentes_CellFormatting;
             // 
             // DocenteID
             // 
+            DocenteID.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
             DocenteID.DataPropertyName = "DocenteID";
             DocenteID.FillWeight = 60.9137039F;
             DocenteID.HeaderText = "ID";
             DocenteID.Name = "DocenteID";
             DocenteID.ReadOnly = true;
+            DocenteID.Width = 40;
             // 
             // Nombre
             // 
+            Nombre.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             Nombre.DataPropertyName = "Nombre";
             Nombre.FillWeight = 113.028763F;
             Nombre.HeaderText = "NOMBRE";
             Nombre.Name = "Nombre";
             Nombre.ReadOnly = true;
             // 
-            // Identidad
+            // Asignaturas
             // 
-            Identidad.DataPropertyName = "Identidad";
-            Identidad.FillWeight = 113.028763F;
-            Identidad.HeaderText = "IDENTIDAD";
-            Identidad.Name = "Identidad";
-            Identidad.ReadOnly = true;
+            Asignaturas.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            Asignaturas.DataPropertyName = "Asignatura";
+            Asignaturas.FillWeight = 113.028763F;
+            Asignaturas.HeaderText = "ASIGNATURA";
+            Asignaturas.Name = "Asignaturas";
+            Asignaturas.ReadOnly = true;
             // 
-            // Especialidad
+            // Grados
             // 
-            Especialidad.DataPropertyName = "Especialidad";
-            Especialidad.FillWeight = 113.028763F;
-            Especialidad.HeaderText = "ESPECIALIDAD";
-            Especialidad.Name = "Especialidad";
-            Especialidad.ReadOnly = true;
+            Grados.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            Grados.DataPropertyName = "Grado";
+            Grados.FillWeight = 113.028763F;
+            Grados.HeaderText = "GRADO";
+            Grados.Name = "Grados";
+            Grados.ReadOnly = true;
+            Grados.Width = 90;
+            // 
+            // Secciones
+            // 
+            Secciones.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            Secciones.DataPropertyName = "Seccion";
+            Secciones.HeaderText = "SECCIÓN";
+            Secciones.Name = "Secciones";
+            Secciones.ReadOnly = true;
+            Secciones.Width = 60;
             // 
             // guna2ContainerControl3
             // 
@@ -519,10 +537,10 @@
             guna2ContainerControl3.Controls.Add(guna2HtmlLabel10);
             guna2ContainerControl3.Controls.Add(dgvAsignatura);
             guna2ContainerControl3.CustomizableEdges = customizableEdges21;
-            guna2ContainerControl3.Location = new Point(635, 451);
+            guna2ContainerControl3.Location = new Point(685, 451);
             guna2ContainerControl3.Name = "guna2ContainerControl3";
             guna2ContainerControl3.ShadowDecoration.CustomizableEdges = customizableEdges22;
-            guna2ContainerControl3.Size = new Size(341, 214);
+            guna2ContainerControl3.Size = new Size(291, 214);
             guna2ContainerControl3.TabIndex = 7;
             guna2ContainerControl3.Text = "guna2ContainerControl3";
             // 
@@ -535,7 +553,7 @@
             guna2HtmlLabel10.ForeColor = Color.White;
             guna2HtmlLabel10.Location = new Point(0, 0);
             guna2HtmlLabel10.Name = "guna2HtmlLabel10";
-            guna2HtmlLabel10.Size = new Size(341, 30);
+            guna2HtmlLabel10.Size = new Size(291, 30);
             guna2HtmlLabel10.TabIndex = 1;
             guna2HtmlLabel10.Text = "ASIGNATURAS ASIGNADAS";
             // 
@@ -554,7 +572,7 @@
             dgvAsignatura.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             dgvAsignatura.ColumnHeadersHeight = 30;
             dgvAsignatura.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dgvAsignatura.Columns.AddRange(new DataGridViewColumn[] { AsignaturaID, Asignatura, NombreGrado });
+            dgvAsignatura.Columns.AddRange(new DataGridViewColumn[] { AsignaturaID, Asignatura });
             dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = Color.White;
             dataGridViewCellStyle6.Font = new Font("Segoe UI", 9F);
@@ -564,12 +582,12 @@
             dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
             dgvAsignatura.DefaultCellStyle = dataGridViewCellStyle6;
             dgvAsignatura.GridColor = Color.FromArgb(231, 229, 255);
-            dgvAsignatura.Location = new Point(18, 45);
+            dgvAsignatura.Location = new Point(20, 45);
             dgvAsignatura.Name = "dgvAsignatura";
             dgvAsignatura.ReadOnly = true;
             dgvAsignatura.RowHeadersVisible = false;
             dgvAsignatura.RowTemplate.Height = 30;
-            dgvAsignatura.Size = new Size(302, 150);
+            dgvAsignatura.Size = new Size(254, 150);
             dgvAsignatura.TabIndex = 0;
             dgvAsignatura.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
             dgvAsignatura.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -592,6 +610,7 @@
             dgvAsignatura.ThemeStyle.RowsStyle.Height = 30;
             dgvAsignatura.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
             dgvAsignatura.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            dgvAsignatura.CellFormatting += dgvAsignatura_CellFormatting;
             // 
             // AsignaturaID
             // 
@@ -608,14 +627,6 @@
             Asignatura.HeaderText = "ASIGNATURA";
             Asignatura.Name = "Asignatura";
             Asignatura.ReadOnly = true;
-            // 
-            // NombreGrado
-            // 
-            NombreGrado.DataPropertyName = "NombreGrado";
-            NombreGrado.FillWeight = 82.73029F;
-            NombreGrado.HeaderText = "GRADO";
-            NombreGrado.Name = "NombreGrado";
-            NombreGrado.ReadOnly = true;
             // 
             // guna2HtmlLabel12
             // 
@@ -686,15 +697,15 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel10;
         private Guna.UI2.WinForms.Guna2DataGridView dgvAsignatura;
         private Guna.UI2.WinForms.Guna2DateTimePicker dtpAnio;
-        private DataGridViewTextBoxColumn DocenteID;
-        private DataGridViewTextBoxColumn Nombre;
-        private DataGridViewTextBoxColumn Identidad;
-        private DataGridViewTextBoxColumn Especialidad;
-        private DataGridViewTextBoxColumn AsignaturaID;
-        private DataGridViewTextBoxColumn Asignatura;
-        private DataGridViewTextBoxColumn NombreGrado;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel11;
         private Guna.UI2.WinForms.Guna2Button btNuevaCarga;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel12;
+        private DataGridViewTextBoxColumn DocenteID;
+        private DataGridViewTextBoxColumn Nombre;
+        private DataGridViewTextBoxColumn Asignaturas;
+        private DataGridViewTextBoxColumn Grados;
+        private DataGridViewTextBoxColumn Secciones;
+        private DataGridViewTextBoxColumn AsignaturaID;
+        private DataGridViewTextBoxColumn Asignatura;
     }
 }

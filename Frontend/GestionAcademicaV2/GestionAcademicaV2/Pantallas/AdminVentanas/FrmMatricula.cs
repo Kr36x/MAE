@@ -537,6 +537,8 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
                 cbbGrado.DataSource = tabla;
                 cbbGrado.DisplayMember = "NombreGrado";
                 cbbGrado.ValueMember = "GradoID";
+                cbbGrado.SelectedIndex = -1;
+
             }
             catch (Exception ex)
             {
@@ -565,76 +567,76 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
         private void btBuscar_Click(object sender, EventArgs e)
         {
-            try
-            {
-                string identidad = txtIdentidadEstudiante.Text.Trim();
+            //try
+            //{
+            //    string identidad = txtIdentidadEstudiante.Text.Trim();
 
-                if (string.IsNullOrEmpty(identidad))
-                {
-                    MessageBox.Show("Ingrese un número de identidad.");
-                    return;
-                }
-                EjecutarUtilidades util = new EjecutarUtilidades();
-                DataSet ds = util.EjecutarDataSet(
-                    "EXEC spMAE_BuscarFichaMatriculaPorIdentidad '" + identidad + "'");
+            //    if (string.IsNullOrEmpty(identidad))
+            //    {
+            //        MessageBox.Show("Ingrese un número de identidad.");
+            //        return;
+            //    }
+            //    EjecutarUtilidades util = new EjecutarUtilidades();
+            //    DataSet ds = util.EjecutarDataSet(
+            //        "EXEC spMAE_BuscarFichaMatriculaPorIdentidad '" + identidad + "'");
 
-                if (ds.Tables[0].Columns.Contains("ErrorMensaje"))
-                {
-                    MessageBox.Show("Error SQL: " + ds.Tables[0].Rows[0]["ErrorMensaje"].ToString());
-                    return;
-                }
+            //    if (ds.Tables[0].Columns.Contains("ErrorMensaje"))
+            //    {
+            //        MessageBox.Show("Error SQL: " + ds.Tables[0].Rows[0]["ErrorMensaje"].ToString());
+            //        return;
+            //    }
 
-                if (ds.Tables[0].Rows.Count == 0)
-                {
-                    MessageBox.Show("No existe registro del estudiante.");
-                    return;
-                }
+            //    if (ds.Tables[0].Rows.Count == 0)
+            //    {
+            //        MessageBox.Show("No existe registro del estudiante.");
+            //        return;
+            //    }
 
-                DataRow est = ds.Tables[0].Rows[0];
+            //    DataRow est = ds.Tables[0].Rows[0];
 
-                txtNombreEstudiante.Text = est["Nombre"].ToString();
-                cbbGenero.SelectedItem = est["Sexo"].ToString();
-                dtpFechaNacimiento.Value = Convert.ToDateTime(est["FechaNacimiento"]);
-                txtDireccion.Text = est["Direccion"].ToString();
-                txtTelefono.Text = est["Telefono"].ToString();
-                cbbGrado.SelectedItem = est["NombreGrado"].ToString();
-                cbbMano.Text = est["Mano"].ToString();
-                txtAlergias.Text = est["Alergia"].ToString();
+            //    txtNombreEstudiante.Text = est["Nombre"].ToString();
+            //    cbbGenero.SelectedItem = est["Sexo"].ToString();
+            //    dtpFechaNacimiento.Value = Convert.ToDateTime(est["FechaNacimiento"]);
+            //    txtDireccion.Text = est["Direccion"].ToString();
+            //    txtTelefono.Text = est["Telefono"].ToString();
+            //    cbbGrado.SelectedItem = est["NombreGrado"].ToString();
+            //    cbbMano.Text = est["Mano"].ToString();
+            //    txtAlergias.Text = est["Alergia"].ToString();
 
-                txtNombrePadre.Text = "";
-                txtIdentidadPadre.Text = "";
-                txtTelefonoPadre.Text = "";
-                txtTrabajoPadre.Text = "";
+            //    txtNombrePadre.Text = "";
+            //    txtIdentidadPadre.Text = "";
+            //    txtTelefonoPadre.Text = "";
+            //    txtTrabajoPadre.Text = "";
 
-                txtNombreMadre.Text = "";
-                txtIdentidadMadre.Text = "";
-                txtTelefonoMadre.Text = "";
-                txtTrabajoMadre.Text = "";
+            //    txtNombreMadre.Text = "";
+            //    txtIdentidadMadre.Text = "";
+            //    txtTelefonoMadre.Text = "";
+            //    txtTrabajoMadre.Text = "";
 
-                foreach (DataRow tutor in ds.Tables[1].Rows)
-                {
-                    string parentesco = tutor["Parentesco"].ToString().ToUpper();
+            //    foreach (DataRow tutor in ds.Tables[1].Rows)
+            //    {
+            //        string parentesco = tutor["Parentesco"].ToString().ToUpper();
 
-                    if (parentesco == "PADRE")
-                    {
-                        txtNombrePadre.Text = tutor["Nombre"].ToString();
-                        txtIdentidadPadre.Text = tutor["Identidad"].ToString();
-                        txtTelefonoPadre.Text = tutor["Telefono"].ToString();
-                        txtTrabajoPadre.Text = tutor["LugarTrabajo"].ToString();
-                    }
-                    else if (parentesco == "MADRE")
-                    {
-                        txtNombreMadre.Text = tutor["Nombre"].ToString();
-                        txtIdentidadMadre.Text = tutor["Identidad"].ToString();
-                        txtTelefonoMadre.Text = tutor["Telefono"].ToString();
-                        txtTrabajoMadre.Text = tutor["LugarTrabajo"].ToString();
-                    }
-                }
-            }
-            catch (SqlException ex)
-            {
-                MessageBox.Show("Error de base de datos: " + ex.Message);
-            }
+            //        if (parentesco == "PADRE")
+            //        {
+            //            txtNombrePadre.Text = tutor["Nombre"].ToString();
+            //            txtIdentidadPadre.Text = tutor["Identidad"].ToString();
+            //            txtTelefonoPadre.Text = tutor["Telefono"].ToString();
+            //            txtTrabajoPadre.Text = tutor["LugarTrabajo"].ToString();
+            //        }
+            //        else if (parentesco == "MADRE")
+            //        {
+            //            txtNombreMadre.Text = tutor["Nombre"].ToString();
+            //            txtIdentidadMadre.Text = tutor["Identidad"].ToString();
+            //            txtTelefonoMadre.Text = tutor["Telefono"].ToString();
+            //            txtTrabajoMadre.Text = tutor["LugarTrabajo"].ToString();
+            //        }
+            //    }
+            //}
+            //catch (SqlException ex)
+            //{
+            //    MessageBox.Show("Error de base de datos: " + ex.Message);
+            //}
         }
 
         private void txtIdentidadEstudiante_KeyPress(object sender, KeyPressEventArgs e)
@@ -657,18 +659,26 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
         }
         private void CargarSeccionesPorGrado(int gradoID)
         {
-            EjecutarUtilidades util = new EjecutarUtilidades();
-
-            SqlParameter[] p =
+            try
             {
+                EjecutarUtilidades util = new EjecutarUtilidades();
+
+                SqlParameter[] p =
+                {
                 new SqlParameter("@GradoID", gradoID)
             };
 
-            DataTable dt = util.EjecutarSPParametros("spMAE_SeccionesPorGrado", p);
+                DataTable dt = util.EjecutarSPParametros("spMAE_SeccionesPorGrado", p);
 
-            cbbSeccion.DataSource = dt;
-            cbbSeccion.DisplayMember = "Letra";
-            cbbSeccion.ValueMember = "SeccionID";
+                cbbSeccion.DataSource = dt;
+                cbbSeccion.DisplayMember = "Letra";
+                cbbSeccion.ValueMember = "SeccionID";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar secciones: " + ex.Message,
+                                "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
         private void guna2HtmlLabel1_Click(object sender, EventArgs e)
         {
