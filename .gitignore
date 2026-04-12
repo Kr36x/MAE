@@ -1,15 +1,24 @@
 # Visual Studio
 .vs/
-bin/
-obj/
 *.user
 *.suo
-*.cache
-*.pdb
+*.userosscache
+*.sln.docstates
+
+# Archivos locales de proyecto
+*.csproj.user
 
 # Build
-Debug/
-Release/
+[Bb]in/
+[Oo]bj/
 
-# Otros
+# Logs
 *.log
+
+# Archivos temporales
+*.tmp
+*.temp
+
+# Rider / VS Code opcional
+.idea/
+.vscode/
