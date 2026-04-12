@@ -290,7 +290,7 @@
             guna2ContainerControl1.Location = new Point(58, 113);
             guna2ContainerControl1.Name = "guna2ContainerControl1";
             guna2ContainerControl1.ShadowDecoration.CustomizableEdges = customizableEdges24;
-            guna2ContainerControl1.Size = new Size(930, 534);
+            guna2ContainerControl1.Size = new Size(937, 534);
             guna2ContainerControl1.TabIndex = 5;
             guna2ContainerControl1.Text = "guna2ContainerControl1";
             // 
@@ -1873,7 +1873,7 @@
             guna2HtmlLabel4.ForeColor = Color.White;
             guna2HtmlLabel4.Location = new Point(0, 0);
             guna2HtmlLabel4.Name = "guna2HtmlLabel4";
-            guna2HtmlLabel4.Size = new Size(917, 31);
+            guna2HtmlLabel4.Size = new Size(924, 31);
             guna2HtmlLabel4.TabIndex = 0;
             guna2HtmlLabel4.Text = "RANKING DE ESTUDIANTES CON MAYOR VULNERABILIDAD ACADÉMICA (TOP 10)";
             // 

@@ -21,6 +21,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
         private void CargarUsuarios(string rol = "", string busqueda = "")
         {
+            // Metodo que carga los usuarios en el datagrip usuarios
             try
             {
                 EjecutarUtilidades util = new EjecutarUtilidades();
@@ -67,6 +68,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
         private void ConfigurarColumnas()
         {
+            // Metodo para configurar columnas del datagrip
             if (!dgvUsuarios.Columns.Contains("colEstado"))
             {
                 DataGridViewImageColumn colEstado = new DataGridViewImageColumn();
@@ -89,6 +91,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
         private void AplicarFiltros()
         {
+            // Metodo para aplicar los filtros en el form
             string rol = cbbRol.SelectedIndex > 0 ? cbbRol.Text : "";
             string busqueda = txtBuscar.Text.Trim();
 
@@ -97,27 +100,32 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
         private void FrmUsuariosPersonal_Load(object sender, EventArgs e)
         {
+            // Codigo del load
             CargarUsuarios();
         }
 
         private void cbbRol_SelectedIndexChanged(object sender, EventArgs e)
         {
+            // Aplicar filtro al cambiar el combobox de rol
             AplicarFiltros();
         }
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
+            // Aplicar filtro al cambiar el textbox Buscar
             AplicarFiltros();
         }
 
         private void btNuevoUsuario_Click(object sender, EventArgs e)
         {
+            // Codigo del boton nuevo usuario y abrir el form gestion de usuarios
             Pantallas.AdminVentanas.FrmGestionUsuarios forma = new Pantallas.AdminVentanas.FrmGestionUsuarios();
             forma.Show();
         }
 
         private void dgvUsuarios_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
+            // Establecer el formato a las columnar creadas en el grip
             if (e.RowIndex < 0) return;
 
             // Imagen Editar
@@ -144,6 +152,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
         private void ActualizarEstadoUsuario(int usuarioID, int nuevoEstado)
         {
+            // Metodo utilizado para cambiar usuario
             EjecutarUtilidades util = new EjecutarUtilidades();
 
             SqlParameter[] parametros = new SqlParameter[]
@@ -156,7 +165,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
         }
         private void dgvUsuarios_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-
+            // Codigo que cambia el estado en el datagrip de usuarios
             try
             {
                 if (e.RowIndex >= 0 && dgvUsuarios.Columns[e.ColumnIndex].Name == "EstadoTexto")
@@ -199,6 +208,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
         private void dgvUsuarios_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            // Configuracion para el boton activar o desactivar usuarios
             if (e.RowIndex < 0) return;
 
             if (dgvUsuarios.Columns[e.ColumnIndex].Name == "colEstado")

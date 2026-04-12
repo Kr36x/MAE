@@ -269,8 +269,16 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
             // Codificacion para el boton editar Matricula
             try
             {
-                EjecutarUtilidades util = new EjecutarUtilidades();
                 // Validaciones
+                if(txtTelefonoEstudiante.TextLength<9)
+                {
+                    txtTelefonoEstudiante.Focus();
+                    MessageBox.Show("El número de teléfono debe tener 8 dígitos.");
+                    return;
+                }
+
+                EjecutarUtilidades util = new EjecutarUtilidades();
+                
 
                 DataTable dtSeccion = util.EjecutarConsulta(
                     "SELECT TOP 1 Letra FROM Seccion WHERE GradoID = " + cbbGrado.SelectedValue);

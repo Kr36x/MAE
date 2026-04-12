@@ -20,6 +20,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
         private void AplicarFiltros()
         {
+            // Metodo para aplicar filtros en el form
             string rol = cbbEspecialidad.SelectedIndex > 0 ? cbbEspecialidad.Text : "";
             string busqueda = txtBuscarDocente.Text.Trim();
 
@@ -27,6 +28,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
         }
         private void ActualizarEstadoUsuario(int usuarioID, int nuevoEstado)
         {
+            // Metodo para actualizar estado del docente
             EjecutarUtilidades util = new EjecutarUtilidades();
 
             SqlParameter[] parametros = new SqlParameter[]
@@ -40,6 +42,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
         private void CargarUsuarios(string rol = "", string busqueda = "")
         {
+            // Metodo para cargar usuarios
             try
             {
                 EjecutarUtilidades util = new EjecutarUtilidades();
@@ -84,6 +87,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
         }
         private void ConfigurarColumnas()
         {
+            //Metodo para configurar las columnas del grip
             if (!dgvDocentes.Columns.Contains("colEstado"))
             {
                 DataGridViewImageColumn colEstado = new DataGridViewImageColumn();
@@ -116,6 +120,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
         private void dgvDocentes_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
+            // Establecer formato a las columnas agregadas
             if (e.RowIndex < 0) return;
 
             // Imagen Editar
@@ -138,6 +143,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
         private void dgvDocentes_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            // Configuracion de botones del datagrip
             if (e.RowIndex < 0) return;
 
             if (dgvDocentes.Columns[e.ColumnIndex].Name == "colEstado")
