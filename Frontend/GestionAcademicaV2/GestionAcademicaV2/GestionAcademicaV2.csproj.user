@@ -86,6 +86,9 @@
     <Compile Update="Pantallas\DocenteVentanas\FrmControlReuniones_Obsoleto.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Pantallas\DocenteVentanas\FrmDocenteInicio2.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Pantallas\DocenteVentanas\FrmPlanificacionActividadesEditarActividad.cs">
       <SubType>Form</SubType>
     </Compile>

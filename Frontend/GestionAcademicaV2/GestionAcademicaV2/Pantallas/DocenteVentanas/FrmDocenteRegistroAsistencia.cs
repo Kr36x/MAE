@@ -1045,5 +1045,10 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
                     "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void FrmDocenteRegistroAsistencia_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
