@@ -66,18 +66,20 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges37 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges34 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges35 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges38 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges39 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges40 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges41 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges44 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges45 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges42 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges43 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges46 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges47 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges44 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges45 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges48 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges49 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges50 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges51 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges38 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges39 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             lblUsuario = new Guna.UI2.WinForms.Guna2HtmlLabel();
             lblRol = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
@@ -110,6 +112,7 @@
             PnlContenedorAdmin = new Guna.UI2.WinForms.Guna2Panel();
             pnlContenedor = new Guna.UI2.WinForms.Guna2Panel();
             pnlPrincipal = new Guna.UI2.WinForms.Guna2Panel();
+            btnConsolidadoAsignatura = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).BeginInit();
             pnlSubGestionAcademica.SuspendLayout();
@@ -583,20 +586,21 @@
             pnlSubReportes.AutoSize = true;
             pnlSubReportes.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             pnlSubReportes.BackColor = Color.SteelBlue;
+            pnlSubReportes.Controls.Add(btnConsolidadoAsignatura);
             pnlSubReportes.Controls.Add(btnRetencionEstudiantil);
             pnlSubReportes.Controls.Add(btnReporteDesercion);
             pnlSubReportes.Controls.Add(btnReporteDocentes);
             pnlSubReportes.Dock = DockStyle.Fill;
             pnlSubReportes.Location = new Point(3, 685);
             pnlSubReportes.Name = "pnlSubReportes";
-            pnlSubReportes.Size = new Size(220, 135);
+            pnlSubReportes.Size = new Size(220, 180);
             pnlSubReportes.TabIndex = 26;
             pnlSubReportes.Visible = false;
             // 
             // btnRetencionEstudiantil
             // 
             btnRetencionEstudiantil.BorderRadius = 5;
-            btnRetencionEstudiantil.CustomizableEdges = customizableEdges38;
+            btnRetencionEstudiantil.CustomizableEdges = customizableEdges40;
             btnRetencionEstudiantil.DisabledState.BorderColor = Color.DarkGray;
             btnRetencionEstudiantil.DisabledState.CustomBorderColor = Color.DarkGray;
             btnRetencionEstudiantil.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -610,7 +614,7 @@
             btnRetencionEstudiantil.ImageSize = new Size(40, 40);
             btnRetencionEstudiantil.Location = new Point(0, 90);
             btnRetencionEstudiantil.Name = "btnRetencionEstudiantil";
-            btnRetencionEstudiantil.ShadowDecoration.CustomizableEdges = customizableEdges39;
+            btnRetencionEstudiantil.ShadowDecoration.CustomizableEdges = customizableEdges41;
             btnRetencionEstudiantil.Size = new Size(220, 45);
             btnRetencionEstudiantil.TabIndex = 23;
             btnRetencionEstudiantil.Text = "RETENCIÓN ESTUDIANTIL";
@@ -640,11 +644,11 @@
             guna2Panel2.BackColor = Color.FromArgb(14, 102, 248);
             guna2Panel2.Controls.Add(pnlMenu);
             guna2Panel2.Controls.Add(pnlUsuario);
-            guna2Panel2.CustomizableEdges = customizableEdges40;
+            guna2Panel2.CustomizableEdges = customizableEdges42;
             guna2Panel2.Dock = DockStyle.Left;
             guna2Panel2.Location = new Point(0, 0);
             guna2Panel2.Name = "guna2Panel2";
-            guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges41;
+            guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges43;
             guna2Panel2.Size = new Size(223, 681);
             guna2Panel2.TabIndex = 0;
             // 
@@ -652,45 +656,67 @@
             // 
             pnlInfo.Controls.Add(PnlContenedorAdmin);
             pnlInfo.Controls.Add(guna2Panel2);
-            pnlInfo.CustomizableEdges = customizableEdges44;
+            pnlInfo.CustomizableEdges = customizableEdges46;
             pnlInfo.Dock = DockStyle.Fill;
             pnlInfo.Location = new Point(0, 0);
             pnlInfo.Name = "pnlInfo";
-            pnlInfo.ShadowDecoration.CustomizableEdges = customizableEdges45;
+            pnlInfo.ShadowDecoration.CustomizableEdges = customizableEdges47;
             pnlInfo.Size = new Size(1264, 681);
             pnlInfo.TabIndex = 1;
             // 
             // PnlContenedorAdmin
             // 
-            PnlContenedorAdmin.CustomizableEdges = customizableEdges42;
+            PnlContenedorAdmin.CustomizableEdges = customizableEdges44;
             PnlContenedorAdmin.Dock = DockStyle.Fill;
             PnlContenedorAdmin.Location = new Point(223, 0);
             PnlContenedorAdmin.Name = "PnlContenedorAdmin";
-            PnlContenedorAdmin.ShadowDecoration.CustomizableEdges = customizableEdges43;
+            PnlContenedorAdmin.ShadowDecoration.CustomizableEdges = customizableEdges45;
             PnlContenedorAdmin.Size = new Size(1041, 681);
             PnlContenedorAdmin.TabIndex = 1;
             // 
             // pnlContenedor
             // 
             pnlContenedor.Controls.Add(pnlInfo);
-            pnlContenedor.CustomizableEdges = customizableEdges46;
+            pnlContenedor.CustomizableEdges = customizableEdges48;
             pnlContenedor.Dock = DockStyle.Fill;
             pnlContenedor.Location = new Point(0, 0);
             pnlContenedor.Name = "pnlContenedor";
-            pnlContenedor.ShadowDecoration.CustomizableEdges = customizableEdges47;
+            pnlContenedor.ShadowDecoration.CustomizableEdges = customizableEdges49;
             pnlContenedor.Size = new Size(1264, 681);
             pnlContenedor.TabIndex = 4;
             // 
             // pnlPrincipal
             // 
             pnlPrincipal.Controls.Add(pnlContenedor);
-            pnlPrincipal.CustomizableEdges = customizableEdges48;
+            pnlPrincipal.CustomizableEdges = customizableEdges50;
             pnlPrincipal.Dock = DockStyle.Fill;
             pnlPrincipal.Location = new Point(0, 0);
             pnlPrincipal.Name = "pnlPrincipal";
-            pnlPrincipal.ShadowDecoration.CustomizableEdges = customizableEdges49;
+            pnlPrincipal.ShadowDecoration.CustomizableEdges = customizableEdges51;
             pnlPrincipal.Size = new Size(1264, 681);
             pnlPrincipal.TabIndex = 1;
+            // 
+            // btnConsolidadoAsignatura
+            // 
+            btnConsolidadoAsignatura.BorderRadius = 5;
+            btnConsolidadoAsignatura.CustomizableEdges = customizableEdges38;
+            btnConsolidadoAsignatura.DisabledState.BorderColor = Color.DarkGray;
+            btnConsolidadoAsignatura.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnConsolidadoAsignatura.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnConsolidadoAsignatura.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnConsolidadoAsignatura.Dock = DockStyle.Top;
+            btnConsolidadoAsignatura.FillColor = Color.Transparent;
+            btnConsolidadoAsignatura.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnConsolidadoAsignatura.ForeColor = Color.White;
+            btnConsolidadoAsignatura.Image = Properties.Resources.notasSemanales_white;
+            btnConsolidadoAsignatura.ImageAlign = HorizontalAlignment.Left;
+            btnConsolidadoAsignatura.ImageSize = new Size(40, 40);
+            btnConsolidadoAsignatura.Location = new Point(0, 135);
+            btnConsolidadoAsignatura.Name = "btnConsolidadoAsignatura";
+            btnConsolidadoAsignatura.ShadowDecoration.CustomizableEdges = customizableEdges39;
+            btnConsolidadoAsignatura.Size = new Size(220, 45);
+            btnConsolidadoAsignatura.TabIndex = 24;
+            btnConsolidadoAsignatura.Text = "CONSOLIDADO ASIGNATURA";
             // 
             // PantallaAdmin
             // 
@@ -753,5 +779,6 @@
         private Guna.UI2.WinForms.Guna2Panel pnlPrincipal;
         private Guna.UI2.WinForms.Guna2Button btnRetencionEstudiantil;
         private Guna.UI2.WinForms.Guna2Button btnConfigCicloEscolar;
+        private Guna.UI2.WinForms.Guna2Button btnConsolidadoAsignatura;
     }
 }

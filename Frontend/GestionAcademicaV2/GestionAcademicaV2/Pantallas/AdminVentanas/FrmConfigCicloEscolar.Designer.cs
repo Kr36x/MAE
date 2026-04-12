@@ -144,13 +144,14 @@
             btnNuevoCicloEscolar.FillColor = Color.FromArgb(16, 57, 129);
             btnNuevoCicloEscolar.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             btnNuevoCicloEscolar.ForeColor = Color.White;
+            btnNuevoCicloEscolar.Image = Properties.Resources.add_white;
             btnNuevoCicloEscolar.Location = new Point(713, 33);
             btnNuevoCicloEscolar.Margin = new Padding(2);
             btnNuevoCicloEscolar.Name = "btnNuevoCicloEscolar";
             btnNuevoCicloEscolar.ShadowDecoration.CustomizableEdges = customizableEdges4;
             btnNuevoCicloEscolar.Size = new Size(202, 31);
             btnNuevoCicloEscolar.TabIndex = 8;
-            btnNuevoCicloEscolar.Text = "+ CREAR CICLO ESCOLAR";
+            btnNuevoCicloEscolar.Text = "CREAR CICLO ESCOLAR";
             // 
             // guna2ContainerControl3
             // 
