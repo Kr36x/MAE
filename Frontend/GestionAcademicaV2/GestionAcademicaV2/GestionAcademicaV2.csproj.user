@@ -23,6 +23,9 @@
     <Compile Update="Pantallas\AdminVentanas\FrmDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Pantallas\AdminVentanas\FrmDetalleReunion.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Pantallas\AdminVentanas\FrmEditarTutor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,6 +90,9 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Pantallas\DocenteVentanas\FrmEditarActividad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Pantallas\DocenteVentanas\frmGraficoBoletaAmpliado.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Pantallas\DocenteVentanas\FrmNuevaActividad.cs">

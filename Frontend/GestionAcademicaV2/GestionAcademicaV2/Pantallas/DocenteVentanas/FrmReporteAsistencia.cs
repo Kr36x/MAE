@@ -9,6 +9,18 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
+
+using System.IO;
+using iText.Kernel.Colors;
+using iText.Kernel.Font;
+using iText.Kernel.Geom;
+using iText.Kernel.Pdf;
+using iText.Layout;
+using iText.Layout.Borders;
+using iText.Layout.Element;
+using iText.Layout.Properties;
+using iText.IO.Font.Constants;
+
 namespace GestionAcademicaV2.Pantallas.DocenteVentanas
 {
     public partial class FrmReporteAsistencia : Form
@@ -17,10 +29,18 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
         private readonly Conexion conexion = new Conexion();
         private int anioActual;
         private int mesActual;
+
+        private readonly System.Windows.Forms.Timer timerBusqueda = new System.Windows.Forms.Timer();
+        private const int MinimoCaracteresBusqueda = 3;
+        private bool formularioCargado = false;
+
+        private bool ocultarFinesDeSemana = true;
         public FrmReporteAsistencia(int docenteId)
         {
             InitializeComponent();
             this.docenteId = docenteId;
+            timerBusqueda.Interval = 350;
+            timerBusqueda.Tick += TimerBusqueda_Tick;
 
         }
 
@@ -40,9 +60,334 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
                 cbGrado.SelectedIndex = 0;
             }
 
-            
+            txtBuscar.TextChanged += txtBuscar_TextChanged;
+            btnPDF.Click += btnDescargarPdf_Click;
+            formularioCargado = true;
+
+            chkMostrarFinesDeSemana.CheckedChanged += chkMostrarFinesDeSemana_CheckedChanged;
+            chkMostrarFinesDeSemana.Checked = false;
+
+            chkMostrarFinesDeSemana.Text = "Mostrar fines de semana";
+            chkMostrarFinesDeSemana.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            chkMostrarFinesDeSemana.ForeColor = System.Drawing.Color.FromArgb(20, 20, 20);
+            chkMostrarFinesDeSemana.BackColor = System.Drawing.Color.Transparent;
+
+            chkMostrarFinesDeSemana.CheckedState.BorderColor = System.Drawing.Color.FromArgb(0, 100, 0);
+            chkMostrarFinesDeSemana.CheckedState.FillColor = System.Drawing.Color.FromArgb(0, 128, 0);
+            chkMostrarFinesDeSemana.CheckedState.BorderRadius = 2;
+            chkMostrarFinesDeSemana.CheckedState.BorderThickness = 1;
+
+            chkMostrarFinesDeSemana.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(150, 150, 150);
+            chkMostrarFinesDeSemana.UncheckedState.FillColor = System.Drawing.Color.White;
+            chkMostrarFinesDeSemana.UncheckedState.BorderRadius = 2;
+            chkMostrarFinesDeSemana.UncheckedState.BorderThickness = 1;
         }
 
+        private void chkMostrarFinesDeSemana_CheckedChanged(object sender, EventArgs e)
+        {
+            ocultarFinesDeSemana = !chkMostrarFinesDeSemana.Checked;
+            CargarReporte();
+        }
+
+        private List<DateTime> ObtenerFechasVisiblesDelMes(int anio, int mes)
+        {
+            List<DateTime> fechas = new List<DateTime>();
+            int totalDias = DateTime.DaysInMonth(anio, mes);
+
+            for (int dia = 1; dia <= totalDias; dia++)
+            {
+                DateTime fecha = new DateTime(anio, mes, dia);
+
+                if (ocultarFinesDeSemana &&
+                    (fecha.DayOfWeek == DayOfWeek.Saturday || fecha.DayOfWeek == DayOfWeek.Sunday))
+                    continue;
+
+                fechas.Add(fecha);
+            }
+
+            return fechas;
+        }
+        private void txtBuscar_TextChanged(object? sender, EventArgs e)
+        {
+            if (!formularioCargado) return;
+
+            timerBusqueda.Stop();
+            timerBusqueda.Start();
+        }
+        private void btnDescargarPdf_Click(object sender, EventArgs e)
+        {
+            if (dgvAsistencia.Rows.Count == 0)
+            {
+                MessageBox.Show("No hay datos para exportar.", "PDF", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            using (SaveFileDialog save = new SaveFileDialog())
+            {
+                save.Filter = "Archivo PDF (*.pdf)|*.pdf";
+                save.FileName = $"Reporte_Asistencia_{cbGrado.Text}_{cbSeccion.Text}_{anioActual}_{mesActual:D2}.pdf";
+
+                if (save.ShowDialog() == DialogResult.OK)
+                {
+                    try
+                    {
+                        ExportarReporteAsistenciaPdf(save.FileName);
+                        MessageBox.Show("PDF generado correctamente.", "PDF", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Ocurrió un error al generar el PDF:\n{ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+        }
+        private Cell CrearCeldaInfo(string titulo, string valor, PdfFont font, PdfFont fontBold)
+        {
+            Paragraph p = new Paragraph()
+                .Add(new Text(titulo + "\n").SetFont(fontBold).SetFontSize(10))
+                .Add(new Text(valor).SetFont(font).SetFontSize(10));
+
+            return new Cell()
+                .Add(p)
+                .SetBorder(new SolidBorder(new DeviceRgb(210, 210, 210), 1))
+                .SetPadding(6);
+        }
+        private void ExportarReporteAsistenciaPdf(string rutaArchivo)
+        {
+            DateTime fechaInicial = new DateTime(anioActual, mesActual, 1);
+            DateTime fechaFinal = fechaInicial.AddMonths(1).AddDays(-1);
+
+            using (PdfWriter writer = new PdfWriter(rutaArchivo))
+            using (PdfDocument pdf = new PdfDocument(writer))
+            using (Document document = new Document(pdf, PageSize.A4.Rotate()))
+            {
+                document.SetMargins(20, 20, 20, 20);
+
+                string rutaSegoe = System.IO.Path.Combine(
+                Environment.GetFolderPath(Environment.SpecialFolder.Fonts),
+                "segoeui.ttf"
+            );
+
+                string rutaSegoeBold = System.IO.Path.Combine(
+                    Environment.GetFolderPath(Environment.SpecialFolder.Fonts),
+                    "segoeuib.ttf"
+                );
+
+                PdfFont font = PdfFontFactory.CreateFont(
+                    rutaSegoe,
+                    iText.IO.Font.PdfEncodings.IDENTITY_H
+                );
+
+                PdfFont fontBold = PdfFontFactory.CreateFont(
+                    rutaSegoeBold,
+                    iText.IO.Font.PdfEncodings.IDENTITY_H
+                );
+
+                // Colores
+                DeviceRgb verdeOscuro = new DeviceRgb(0, 100, 0);
+                DeviceRgb verdeClaro = new DeviceRgb(92, 184, 92);
+                DeviceRgb azul = new DeviceRgb(0, 102, 204);
+                DeviceRgb verdeTP = new DeviceRgb(120, 220, 80);
+                DeviceRgb rojoTF = new DeviceRgb(255, 0, 0);
+                DeviceRgb amarilloTE = new DeviceRgb(255, 215, 0);
+                DeviceRgb grisBorde = new DeviceRgb(210, 210, 210);
+
+                // Encabezado
+                document.Add(
+                    new Paragraph("ATLANTIC ACADEMY BILINGUAL SCHOOL")
+                        .SetFont(font)
+                        .SetFontSize(14)
+                        .SetTextAlignment(TextAlignment.CENTER)
+                        .SetMarginBottom(2)
+                );
+
+                document.Add(
+                    new Paragraph("REPORTE DE ASISTENCIA DIARIA POR SECCIÓN")
+                        .SetFont(fontBold)
+                        .SetFontSize(18)
+                        .SetTextAlignment(TextAlignment.CENTER)
+                        .SetMarginBottom(10)
+                );
+
+                // Datos filtro
+                Table tablaInfo = new Table(UnitValue.CreatePercentArray(new float[] { 2, 2, 2, 3 }))
+                    .UseAllAvailableWidth();
+
+                tablaInfo.AddCell(CrearCeldaInfo("DOCENTE", lblDocente.Text, font, fontBold));
+                tablaInfo.AddCell(CrearCeldaInfo("GRADO", cbGrado.Text, font, fontBold));
+                tablaInfo.AddCell(CrearCeldaInfo("SECCIÓN", cbSeccion.Text, font, fontBold));
+                tablaInfo.AddCell(CrearCeldaInfo("FECHA", $"{fechaInicial:dd/MM/yyyy} AL {fechaFinal:dd/MM/yyyy}", font, fontBold));
+
+                document.Add(tablaInfo);
+
+                // Barra verde
+                document.Add(
+                    new Paragraph($"{fechaInicial.ToString("MMMM yyyy").ToUpper()} DEL {fechaInicial:dd} AL {fechaFinal:dd}")
+                        .SetFont(fontBold)
+                        .SetFontSize(12)
+                        .SetFontColor(ColorConstants.WHITE)
+                        .SetBackgroundColor(verdeOscuro)
+                        .SetTextAlignment(TextAlignment.CENTER)
+                        .SetPadding(6)
+                        .SetMarginTop(8)
+                        .SetMarginBottom(8)
+                );
+
+                // Tabla principal
+                int totalColumnas = dgvAsistencia.Columns.Count;
+                float[] widths = new float[totalColumnas];
+
+                for (int i = 0; i < totalColumnas; i++)
+                {
+                    string nombre = dgvAsistencia.Columns[i].Name;
+
+                    if (nombre == "ID") widths[i] = 35;
+                    else if (nombre == "Nombre") widths[i] = 180;
+                    else if (nombre == "TP" || nombre == "TF" || nombre == "TE") widths[i] = 40;
+                    else widths[i] = 28;
+                }
+
+                Table tabla = new Table(UnitValue.CreatePointArray(widths));
+                tabla.SetWidth(UnitValue.CreatePercentValue(100));
+
+                // Headers
+                foreach (DataGridViewColumn col in dgvAsistencia.Columns)
+                {
+                    DeviceRgb fondo = verdeOscuro;
+                    iText.Kernel.Colors.Color colorTexto = ColorConstants.WHITE;
+
+                    if (col.Name == "ID")
+                        fondo = azul;
+                    else if (col.Name == "TP")
+                        fondo = verdeTP;
+                    else if (col.Name == "TF")
+                        fondo = rojoTF;
+                    else if (col.Name == "TE")
+                    {
+                        fondo = amarilloTE;
+                        colorTexto = ColorConstants.BLACK;
+                    }
+                    else if (col.Name.StartsWith("D"))
+                        fondo = verdeClaro;
+
+                    tabla.AddHeaderCell(
+                        new Cell()
+                            .Add(new Paragraph(col.HeaderText).SetFont(fontBold).SetFontSize(9))
+                            .SetTextAlignment(TextAlignment.CENTER)
+                            .SetVerticalAlignment(VerticalAlignment.MIDDLE)
+                            .SetBackgroundColor(fondo)
+                            .SetFontColor(colorTexto)
+                            .SetBorder(new SolidBorder(grisBorde, 1))
+                            .SetPadding(4)
+                    );
+                }
+
+                // Filas
+                foreach (DataGridViewRow row in dgvAsistencia.Rows)
+                {
+                    if (row.IsNewRow) continue;
+
+                    foreach (DataGridViewColumn col in dgvAsistencia.Columns)
+                    {
+                        string valor = row.Cells[col.Name].Value?.ToString() ?? "";
+                        DeviceRgb? fondo = null;
+                        iText.Kernel.Colors.Color colorTexto = ColorConstants.BLACK;
+                        PdfFont fontActual = font;
+
+                        if (col.Name == "TP")
+                        {
+                            fondo = verdeTP;
+                            colorTexto = ColorConstants.WHITE;
+                            fontActual = fontBold;
+                        }
+                        else if (col.Name == "TF")
+                        {
+                            fondo = rojoTF;
+                            colorTexto = ColorConstants.WHITE;
+                            fontActual = fontBold;
+                        }
+                        else if (col.Name == "TE")
+                        {
+                            fondo = amarilloTE;
+                            colorTexto = ColorConstants.BLACK;
+                            fontActual = fontBold;
+                        }
+                        else if (col.Name.StartsWith("D"))
+                        {
+                            if (valor == "●")
+                            {
+                                colorTexto = new DeviceRgb(110, 193, 74);
+                                fontActual = fontBold;
+                            }
+                            else if (valor == "X")
+                            {
+                                colorTexto = ColorConstants.RED;
+                                fontActual = fontBold;
+                            }
+                            else if (valor == "E")
+                            {
+                                colorTexto = new DeviceRgb(184, 134, 11);
+                                fontActual = fontBold;
+                            }
+                            else if (valor == "F" || valor == "I" || valor == "N" || valor == "D")
+                            {
+                                colorTexto = ColorConstants.BLACK;
+                                fontActual = fontBold;
+                            }
+                        }
+
+                        Paragraph p = new Paragraph(valor).SetFont(fontActual).SetFontSize(9);
+
+                        Cell cell = new Cell()
+                            .Add(p)
+                            .SetBorder(new SolidBorder(grisBorde, 1))
+                            .SetPadding(4)
+                            .SetVerticalAlignment(VerticalAlignment.MIDDLE);
+
+                        if (col.Name == "Nombre")
+                            cell.SetTextAlignment(TextAlignment.LEFT);
+                        else
+                            cell.SetTextAlignment(TextAlignment.CENTER);
+
+                        if (fondo != null)
+                            cell.SetBackgroundColor(fondo);
+
+                        cell.SetFontColor(colorTexto);
+
+                        tabla.AddCell(cell);
+                    }
+                }
+
+                document.Add(tabla);
+
+                document.Add(
+                    new Paragraph(lblRegistros.Text)
+                        .SetFont(font)
+                        .SetFontSize(9)
+                        .SetMarginTop(8)
+                );
+            }
+        }
+
+        private void TimerBusqueda_Tick(object? sender, EventArgs e)
+        {
+            timerBusqueda.Stop();
+
+            string texto = txtBuscar.Text.Trim();
+
+            // Si está vacío, recarga todo
+            if (string.IsNullOrWhiteSpace(texto))
+            {
+                CargarReporte();
+                return;
+            }
+
+            // Si no llega al mínimo, no consultes todavía
+            if (texto.Length < MinimoCaracteresBusqueda)
+                return;
+
+            CargarReporte();
+        }
         private void ActualizarLabelRegistros()
         {
             int total = dgvAsistencia.Rows.Count;
@@ -247,7 +592,6 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
 
         private void cbSeccion_SelectedIndexChanged(object sender, EventArgs e)
         {
-            CargarReporte();
             CargarMeses();
         }
         private void CargarReporte()
@@ -285,9 +629,13 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
 
         private void ActualizarTituloMes()
         {
-            DateTime fecha = new DateTime(anioActual, mesActual, 1);
-            lblMes.Text = fecha.ToString("MMMM yyyy").ToUpper();
-            //lblFecha.Text = fecha.ToString("dd/MM/yyyy");
+            DateTime fechaInicial = new DateTime(anioActual, mesActual, 1);
+            DateTime fechaFinal = fechaInicial.AddMonths(1).AddDays(-1);
+
+            if (ocultarFinesDeSemana)
+                lblMes.Text = $"{fechaInicial.ToString("MMMM yyyy").ToUpper()} SOLO DÍAS HÁBILES";
+            else
+                lblMes.Text = $"{fechaInicial.ToString("MMMM yyyy").ToUpper()} DEL {fechaInicial:dd} AL {fechaFinal:dd}";
         }
 
         private DataTable ObtenerAsistencias(
@@ -341,13 +689,26 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
         //}
         private void btnBuscar_Click(object sender, EventArgs e)
         {
+            string texto = txtBuscar.Text.Trim();
+
+            if (!string.IsNullOrWhiteSpace(texto) && texto.Length < MinimoCaracteresBusqueda)
+            {
+                MessageBox.Show(
+                    $"Ingrese al menos {MinimoCaracteresBusqueda} caracteres para buscar.",
+                    "Búsqueda",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information
+                );
+                return;
+            }
+
             CargarReporte();
         }
         private void lblTitulo_Click(object sender, EventArgs e)
         {
             this.Text = "Reporte de Asistencia";
             this.StartPosition = FormStartPosition.CenterScreen;
-            this.BackColor = Color.FromArgb(239, 239, 239);
+            this.BackColor = System.Drawing.Color.FromArgb(239, 239, 239);
             this.WindowState = FormWindowState.Maximized;
         }
 
@@ -370,7 +731,7 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
             dgvAsistencia.Columns.Clear();
             dgvAsistencia.Rows.Clear();
 
-            int totalDias = DateTime.DaysInMonth(anio, mes);
+            List<DateTime> fechasVisibles = ObtenerFechasVisiblesDelMes(anio, mes);
 
             dgvAsistencia.AllowUserToAddRows = false;
             dgvAsistencia.AllowUserToDeleteRows = false;
@@ -380,39 +741,35 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
             dgvAsistencia.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvAsistencia.MultiSelect = false;
             dgvAsistencia.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
-            dgvAsistencia.BackgroundColor = Color.White;
+            dgvAsistencia.BackgroundColor = System.Drawing.Color.White;
             dgvAsistencia.BorderStyle = BorderStyle.None;
             dgvAsistencia.EnableHeadersVisualStyles = false;
             dgvAsistencia.ColumnHeadersHeight = 40;
             dgvAsistencia.RowTemplate.Height = 40;
             dgvAsistencia.ScrollBars = ScrollBars.Both;
 
-            // 👇 esto agrega separación visible entre celdas
             dgvAsistencia.CellBorderStyle = DataGridViewCellBorderStyle.Single;
-            dgvAsistencia.GridColor = Color.FromArgb(210, 210, 210);
+            dgvAsistencia.GridColor = System.Drawing.Color.FromArgb(210, 210, 210);
 
             dgvAsistencia.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             dgvAsistencia.AdvancedColumnHeadersBorderStyle.All = DataGridViewAdvancedCellBorderStyle.Single;
 
-            dgvAsistencia.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(0, 100, 0);
-            dgvAsistencia.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dgvAsistencia.ColumnHeadersDefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(0, 100, 0);
+            dgvAsistencia.ColumnHeadersDefaultCellStyle.ForeColor = System.Drawing.Color.White;
             dgvAsistencia.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);
             dgvAsistencia.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             dgvAsistencia.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvAsistencia.DefaultCellStyle.Font = new Font("Segoe UI", 10);
-            dgvAsistencia.DefaultCellStyle.SelectionBackColor = Color.White;
-            dgvAsistencia.DefaultCellStyle.SelectionForeColor = Color.Black;
+            dgvAsistencia.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.White;
+            dgvAsistencia.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
 
-            // 👇 diferencia visual entre filas
-            dgvAsistencia.DefaultCellStyle.BackColor = Color.White;
-            dgvAsistencia.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(248, 248, 248);
+            dgvAsistencia.DefaultCellStyle.BackColor = System.Drawing.Color.White;
+            dgvAsistencia.AlternatingRowsDefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(248, 248, 248);
 
-            // opcional: quita ese fondo azul de selección si haces click
-            dgvAsistencia.RowsDefaultCellStyle.SelectionBackColor = Color.FromArgb(245, 245, 245);
-            dgvAsistencia.AlternatingRowsDefaultCellStyle.SelectionBackColor = Color.FromArgb(235, 235, 235);
+            dgvAsistencia.RowsDefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(245, 245, 245);
+            dgvAsistencia.AlternatingRowsDefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(235, 235, 235);
 
-            // FIJAS
             var colId = new DataGridViewTextBoxColumn();
             colId.Name = "ID";
             colId.HeaderText = "N°";
@@ -433,8 +790,8 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
             colTP.HeaderText = "TP";
             colTP.Width = 50;
             colTP.Frozen = true;
-            colTP.HeaderCell.Style.BackColor = Color.FromArgb(120, 220, 80);
-            colTP.HeaderCell.Style.ForeColor = Color.White;
+            colTP.HeaderCell.Style.BackColor = System.Drawing.Color.FromArgb(120, 220, 80);
+            colTP.HeaderCell.Style.ForeColor = System.Drawing.Color.White;
             dgvAsistencia.Columns.Add(colTP);
 
             var colTF = new DataGridViewTextBoxColumn();
@@ -442,8 +799,8 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
             colTF.HeaderText = "TF";
             colTF.Width = 50;
             colTF.Frozen = true;
-            colTF.HeaderCell.Style.BackColor = Color.Red;
-            colTF.HeaderCell.Style.ForeColor = Color.White;
+            colTF.HeaderCell.Style.BackColor = System.Drawing.Color.Red;
+            colTF.HeaderCell.Style.ForeColor = System.Drawing.Color.White;
             dgvAsistencia.Columns.Add(colTF);
 
             var colTE = new DataGridViewTextBoxColumn();
@@ -451,18 +808,18 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
             colTE.HeaderText = "TE";
             colTE.Width = 50;
             colTE.Frozen = true;
-            colTE.HeaderCell.Style.BackColor = Color.Gold;
-            colTE.HeaderCell.Style.ForeColor = Color.White;
+            colTE.HeaderCell.Style.BackColor = System.Drawing.Color.Gold;
+            colTE.HeaderCell.Style.ForeColor = System.Drawing.Color.White;
             dgvAsistencia.Columns.Add(colTE);
 
-            for (int dia = 1; dia <= totalDias; dia++)
+            foreach (DateTime fecha in fechasVisibles)
             {
                 var colDia = new DataGridViewTextBoxColumn();
-                colDia.Name = $"D{dia}";
-                colDia.HeaderText = dia.ToString();
+                colDia.Name = $"D{fecha.Day}";
+                colDia.HeaderText = fecha.Day.ToString();
                 colDia.Width = 42;
-                colDia.HeaderCell.Style.BackColor = Color.FromArgb(92, 184, 92);
-                colDia.HeaderCell.Style.ForeColor = Color.White;
+                colDia.HeaderCell.Style.BackColor = System.Drawing.Color.FromArgb(92, 184, 92);
+                colDia.HeaderCell.Style.ForeColor = System.Drawing.Color.White;
                 dgvAsistencia.Columns.Add(colDia);
             }
 
@@ -482,25 +839,25 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
 
             string valor = dgvAsistencia.Rows[e.RowIndex].Cells[e.ColumnIndex].Value?.ToString() ?? "";
 
-            Color? colorTexto = null;
+            System.Drawing.Color? colorTexto = null;
             Font fuente = new Font("Segoe UI", 10, FontStyle.Bold);
 
             if (valor == "●")
             {
-                colorTexto = Color.FromArgb(110, 193, 74);
+                colorTexto = System.Drawing.Color.FromArgb(110, 193, 74);
                 fuente = new Font("Segoe UI", 14, FontStyle.Bold);
             }
             else if (valor == "X")
             {
-                colorTexto = Color.Red;
+                colorTexto = System.Drawing.Color.Red;
             }
             else if (valor == "E")
             {
-                colorTexto = Color.Goldenrod;
+                colorTexto = System.Drawing.Color.Goldenrod;
             }
             else if (valor == "F" || valor == "I" || valor == "N" || valor == "D")
             {
-                colorTexto = Color.Black;
+                colorTexto = System.Drawing.Color.Black;
             }
 
             if (colorTexto == null) return;
@@ -532,7 +889,7 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
                 if (valor == "●")
                 {
                     e.Value = "●";
-                    e.CellStyle.ForeColor = Color.FromArgb(110, 193, 74); // verde bonito
+                    e.CellStyle.ForeColor = System.Drawing.Color.FromArgb(110, 193, 74); // verde bonito
                     e.CellStyle.Font = new Font("Segoe UI", 14, FontStyle.Bold);
                     e.FormattingApplied = true;
                 }
@@ -540,21 +897,21 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
                 // FALTA (X ROJA)
                 else if (valor == "X")
                 {
-                    e.CellStyle.ForeColor = Color.Red;
+                    e.CellStyle.ForeColor = System.Drawing.Color.Red;
                     e.CellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);
                 }
 
                 // EXCUSA (E AMARILLA)
                 else if (valor == "E")
                 {
-                    e.CellStyle.ForeColor = Color.Goldenrod;
+                    e.CellStyle.ForeColor = System.Drawing.Color.Goldenrod;
                     e.CellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);
                 }
 
                 // OTROS (F, I, N, D)
                 else if (valor == "F" || valor == "I" || valor == "N" || valor == "D")
                 {
-                    e.CellStyle.ForeColor = Color.Black;
+                    e.CellStyle.ForeColor = System.Drawing.Color.Black;
                     e.CellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);
                 }
             }
@@ -562,22 +919,22 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
             // 🎯 COLORES DE TOTALES
             if (dgvAsistencia.Columns[e.ColumnIndex].Name == "TP")
             {
-                e.CellStyle.BackColor = Color.FromArgb(120, 220, 80);
-                e.CellStyle.ForeColor = Color.White;
+                e.CellStyle.BackColor = System.Drawing.Color.FromArgb(120, 220, 80);
+                e.CellStyle.ForeColor = System.Drawing.Color.White;
                 e.CellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);
             }
 
             if (dgvAsistencia.Columns[e.ColumnIndex].Name == "TF")
             {
-                e.CellStyle.BackColor = Color.Red;
-                e.CellStyle.ForeColor = Color.White;
+                e.CellStyle.BackColor = System.Drawing.Color.Red;
+                e.CellStyle.ForeColor = System.Drawing.Color.White;
                 e.CellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);
             }
 
             if (dgvAsistencia.Columns[e.ColumnIndex].Name == "TE")
             {
-                e.CellStyle.BackColor = Color.Gold;
-                e.CellStyle.ForeColor = Color.Black;
+                e.CellStyle.BackColor = System.Drawing.Color.Gold;
+                e.CellStyle.ForeColor = System.Drawing.Color.Black;
                 e.CellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);
             }
         }
@@ -589,7 +946,7 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
             if (dt == null || dt.Rows.Count == 0)
                 return;
 
-            int totalDias = DateTime.DaysInMonth(anio, mes);
+            List<DateTime> fechasVisibles = ObtenerFechasVisiblesDelMes(anio, mes);
 
             var grupos = dt.AsEnumerable()
                 .GroupBy(r => r["Estudiante"].ToString())
@@ -600,36 +957,45 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
 
             foreach (var grupo in grupos)
             {
-                string[] fila = new string[5 + totalDias];
+                DataGridViewRow row = new DataGridViewRow();
+                row.CreateCells(dgvAsistencia);
 
-                fila[0] = correlativo.ToString();
-                fila[1] = grupo.Key;
-                fila[2] = "0";
-                fila[3] = "0";
-                fila[4] = "0";
+                row.Cells[dgvAsistencia.Columns["ID"].Index].Value = correlativo.ToString();
+                row.Cells[dgvAsistencia.Columns["Nombre"].Index].Value = grupo.Key;
+                row.Cells[dgvAsistencia.Columns["TP"].Index].Value = "0";
+                row.Cells[dgvAsistencia.Columns["TF"].Index].Value = "0";
+                row.Cells[dgvAsistencia.Columns["TE"].Index].Value = "0";
 
-                for (int i = 1; i <= totalDias; i++)
+                foreach (DateTime fecha in fechasVisibles)
                 {
-                    fila[4 + i] = "";
+                    string nombreColumna = $"D{fecha.Day}";
+                    if (dgvAsistencia.Columns.Contains(nombreColumna))
+                        row.Cells[dgvAsistencia.Columns[nombreColumna].Index].Value = "";
                 }
 
                 foreach (var item in grupo
                              .Where(x => x["Fecha"] != DBNull.Value && x["Estado"] != DBNull.Value)
-                             .GroupBy(x => Convert.ToDateTime(x["Fecha"]).Day)
+                             .GroupBy(x => Convert.ToDateTime(x["Fecha"]).Date)
                              .Select(g => g.First()))
                 {
-                    DateTime fecha = Convert.ToDateTime(item["Fecha"]);
+                    DateTime fecha = Convert.ToDateTime(item["Fecha"]).Date;
 
                     if (fecha.Year != anio || fecha.Month != mes)
                         continue;
 
-                    int dia = fecha.Day;
-                    string estado = item["Estado"].ToString().Trim().ToUpper();
+                    if (ocultarFinesDeSemana &&
+                        (fecha.DayOfWeek == DayOfWeek.Saturday || fecha.DayOfWeek == DayOfWeek.Sunday))
+                        continue;
 
-                    fila[4 + dia] = MapearEstadoASimbolo(estado);
+                    string nombreColumna = $"D{fecha.Day}";
+                    if (!dgvAsistencia.Columns.Contains(nombreColumna))
+                        continue;
+
+                    string estado = item["Estado"]?.ToString()?.Trim().ToUpper() ?? "";
+                    row.Cells[dgvAsistencia.Columns[nombreColumna].Index].Value = MapearEstadoASimbolo(estado);
                 }
 
-                dgvAsistencia.Rows.Add(fila);
+                dgvAsistencia.Rows.Add(row);
                 correlativo++;
             }
 
@@ -648,6 +1014,8 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
                 case "E":
                 case "EXCUSA":
                 case "EXCUSADO":
+                case "JUSTIFICADO":
+                case "TARDE":
                     return "E";
 
                 case "F":
@@ -704,6 +1072,11 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
         }
 
         private void guna2HtmlLabel7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2Panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }

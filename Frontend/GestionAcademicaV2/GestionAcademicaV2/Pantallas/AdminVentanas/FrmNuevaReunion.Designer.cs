@@ -168,18 +168,22 @@
             // 
             // cbEstudiante
             // 
+            cbEstudiante.Font = new Font("Segoe UI", 10F);
             cbEstudiante.FormattingEnabled = true;
+            cbEstudiante.ItemHeight = 17;
             cbEstudiante.Location = new Point(14, 124);
             cbEstudiante.Name = "cbEstudiante";
-            cbEstudiante.Size = new Size(548, 23);
+            cbEstudiante.Size = new Size(548, 25);
             cbEstudiante.TabIndex = 43;
             // 
             // cbDocente
             // 
+            cbDocente.Font = new Font("Segoe UI", 10F);
             cbDocente.FormattingEnabled = true;
+            cbDocente.ItemHeight = 17;
             cbDocente.Location = new Point(14, 39);
             cbDocente.Name = "cbDocente";
-            cbDocente.Size = new Size(548, 23);
+            cbDocente.Size = new Size(548, 25);
             cbDocente.TabIndex = 42;
             // 
             // guna2HtmlLabel15
@@ -517,7 +521,13 @@
             Controls.Add(guna2Panel3);
             Controls.Add(guna2Panel2);
             Controls.Add(guna2Panel1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
+            MaximumSize = new Size(620, 510);
+            MinimizeBox = false;
+            MinimumSize = new Size(620, 510);
             Name = "FrmNuevaReunion";
+            StartPosition = FormStartPosition.CenterParent;
             Text = "FrmNuevaReunion";
             guna2Panel2.ResumeLayout(false);
             guna2Panel2.PerformLayout();

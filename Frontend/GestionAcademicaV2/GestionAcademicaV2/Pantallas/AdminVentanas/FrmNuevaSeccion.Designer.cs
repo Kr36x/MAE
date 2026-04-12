@@ -84,7 +84,7 @@
             guna2Panel11.BorderThickness = 2;
             guna2Panel11.CustomizableEdges = customizableEdges1;
             guna2Panel11.FillColor = Color.FromArgb(89, 177, 89);
-            guna2Panel11.Location = new Point(1, 31);
+            guna2Panel11.Location = new Point(1, 30);
             guna2Panel11.Name = "guna2Panel11";
             guna2Panel11.ShadowDecoration.CustomizableEdges = customizableEdges2;
             guna2Panel11.Size = new Size(498, 10);
@@ -99,7 +99,7 @@
             guna2Panel15.Controls.Add(guna2HtmlLabel5);
             guna2Panel15.CustomizableEdges = customizableEdges3;
             guna2Panel15.FillColor = Color.FromArgb(89, 177, 89);
-            guna2Panel15.Location = new Point(1, 3);
+            guna2Panel15.Location = new Point(1, 2);
             guna2Panel15.Name = "guna2Panel15";
             guna2Panel15.ShadowDecoration.CustomizableEdges = customizableEdges4;
             guna2Panel15.Size = new Size(498, 32);
@@ -131,10 +131,10 @@
             guna2Panel16.CustomBorderColor = Color.FromArgb(217, 217, 217);
             guna2Panel16.CustomizableEdges = customizableEdges9;
             guna2Panel16.FillColor = Color.White;
-            guna2Panel16.Location = new Point(1, 41);
+            guna2Panel16.Location = new Point(1, 35);
             guna2Panel16.Name = "guna2Panel16";
             guna2Panel16.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            guna2Panel16.Size = new Size(498, 278);
+            guna2Panel16.Size = new Size(498, 284);
             guna2Panel16.TabIndex = 32;
             // 
             // dgvSecciones
