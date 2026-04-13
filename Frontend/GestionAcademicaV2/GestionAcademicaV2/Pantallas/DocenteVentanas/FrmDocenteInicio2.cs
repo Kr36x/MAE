@@ -32,6 +32,10 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
 
         private readonly int usuarioId;
         private int docenteIdReal = 0;
+
+        private DataTable _dtDetalleAsignaturas = new DataTable();
+        private int _indiceAsignaturaActual = 0;
+
         public FrmDocenteInicio2(int docenteId)
         {
             InitializeComponent();
@@ -62,10 +66,10 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
             BackColor = colorFondo;
             pnlMainDashboard.BackColor = colorFondo;
             ConfigurarVistaBonita();
-            //MessageBox.Show($"FrmDocenteInicio2 recibió docenteId = {docenteId}");
         }
 
         #region CONFIGURACION UI
+
         private int ObtenerDocenteIdPorUsuarioId(int usuarioId)
         {
             int docenteId = 0;
@@ -74,9 +78,9 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
             {
                 using SqlConnection cn = conexion.ObtenerConexion();
                 using SqlCommand cmd = new SqlCommand(@"
-            SELECT DocenteID
-            FROM Docente
-            WHERE UsuarioID = @UsuarioID;", cn);
+                    SELECT DocenteID
+                    FROM Docente
+                    WHERE UsuarioID = @UsuarioID;", cn);
 
                 cmd.Parameters.AddWithValue("@UsuarioID", usuarioId);
 
@@ -98,6 +102,7 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
 
             return docenteId;
         }
+
         private void ConfigurarVista()
         {
             BackColor = colorFondo;
@@ -121,11 +126,15 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
             AplicarEstiloCard(guna2Panel15);
             AplicarEstiloCard(guna2Panel14);
 
+            if (panelControl != null)
+                AplicarEstiloCard(panelControl);
+
             EstilizarHeaderPrincipal();
             EstilizarKpis();
             EstilizarSeccionReunion();
             EstilizarGridAsignaturas();
             EstilizarBloquesResumen();
+            EstilizarPanelControl();
         }
 
         private void AplicarEstiloCard(Guna.UI2.WinForms.Guna2Panel panel)
@@ -160,6 +169,14 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
             guna2Panel3.BorderColor = Color.FromArgb(220, 220, 220);
             guna2Panel3.BorderThickness = 1;
             guna2Panel3.BorderRadius = 12;
+
+            if (panelControl != null)
+            {
+                panelControl.FillColor = Color.White;
+                panelControl.BorderColor = Color.FromArgb(220, 220, 220);
+                panelControl.BorderThickness = 1;
+                panelControl.BorderRadius = 10;
+            }
         }
 
         private void EstilizarHeaderPrincipal()
@@ -301,6 +318,80 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
             btnIrCalificaciones.BorderRadius = 8;
             btnIrCalificaciones.FillColor = colorVerde;
         }
+        private string ObtenerTextoMateriaGradoHtml(string asignatura, string grado, string seccion)
+        {
+            string nombre = ObtenerNombreAsignaturaCorto(asignatura).ToUpper().Trim();
+            string gradoSeccion = ObtenerGradoSeccionCorto(grado, seccion).ToUpper();
+
+            if (string.IsNullOrWhiteSpace(nombre))
+                return $"<div style='text-align:center;'>{gradoSeccion}</div>";
+
+            var palabras = nombre
+                .Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries)
+                .ToList();
+
+            if (palabras.Count == 1)
+                return $"<div style='text-align:center;'>{palabras[0]}<br/>{gradoSeccion}</div>";
+
+            if (palabras.Count == 2)
+                return $"<div style='text-align:center;'>{palabras[0]}<br/>{palabras[1]}<br/>{gradoSeccion}</div>";
+
+            if (palabras.Count == 3)
+                return $"<div style='text-align:center;'>{palabras[0]} {palabras[1]}<br/>{palabras[2]}<br/>{gradoSeccion}</div>";
+
+            int mitad = (int)Math.Ceiling(palabras.Count / 2.0);
+            string linea1 = string.Join(" ", palabras.Take(mitad));
+            string linea2 = string.Join(" ", palabras.Skip(mitad));
+
+            return $"<div style='text-align:center;'>{linea1}<br/>{linea2}<br/>{gradoSeccion}</div>";
+        }
+        private void EstilizarPanelControl()
+        {
+            if (panelControl == null)
+                return;
+
+            panelControl.FillColor = colorTarjeta;
+            panelControl.BorderColor = colorBorde;
+            panelControl.BorderThickness = 1;
+            panelControl.BorderRadius = 10;
+            panelControl.ShadowDecoration.Enabled = true;
+            panelControl.ShadowDecoration.BorderRadius = 10;
+            panelControl.ShadowDecoration.Depth = 12;
+            panelControl.ShadowDecoration.Color = Color.FromArgb(40, 0, 0, 0);
+
+            if (lblMateriaGrado != null)
+            {
+                lblMateriaGrado.AutoSize = false;
+                lblMateriaGrado.Height = 60;
+                lblMateriaGrado.TextAlignment = ContentAlignment.MiddleCenter;
+                lblMateriaGrado.BackColor = Color.Transparent;
+                lblMateriaGrado.ForeColor = colorTexto;
+                lblMateriaGrado.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            }
+
+            if (btnAsignaturaAnterior != null)
+            {
+                //btnAsignaturaAnterior.BorderRadius = 18;
+                btnAsignaturaAnterior.FillColor = colorVerde;
+                btnAsignaturaAnterior.ForeColor = Color.White;
+                btnAsignaturaAnterior.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            }
+
+            if (btnAsignaturaSiguiente != null)
+            {
+                //btnAsignaturaSiguiente.BorderRadius = 18;
+                btnAsignaturaSiguiente.FillColor = colorVerde;
+                btnAsignaturaSiguiente.ForeColor = Color.White;
+                btnAsignaturaSiguiente.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            }
+
+            if (lblCantidadAvance != null)
+            {
+                lblCantidadAvance.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+                lblCantidadAvance.ForeColor = colorTextoSuave;
+                lblCantidadAvance.BackColor = Color.Transparent;
+            }
+        }
 
         private void ConfigurarGridAsignaturas()
         {
@@ -421,11 +512,37 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
             lblActividadesCalificadas.Text = "<b>Actividades calificadas:</b> 0";
             lblEstudiantesEvaluados.Text = "<b>Estudiantes evaluados:</b> 0 / 0";
             lblPorcentajeEvaluacion.Text = "0%";
+
+            lblResumen.Text = "RESUMEN ACTIVIDADES";
+            lblAvance.Text = "AVANCE DE EVALUACIÓN";
+            lblCantidadAvance.Text = "Carga 0 de 0";
+
+            if (lblMateriaGrado != null)
+                lblMateriaGrado.Text = "";
         }
 
         #endregion
 
         #region DASHBOARD SP
+
+        private void CargarDetalleAsignaturasDesdeSP()
+        {
+            using SqlConnection cn = conexion.ObtenerConexion();
+            using SqlCommand cmd = new SqlCommand("spMAE_DashboardDocenteDetalleCargas", cn);
+
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@DocenteID", docenteId);
+            cmd.Parameters.AddWithValue("@Anio", _anioActivo == 0 ? 0 : _anioActivo);
+
+            using SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+
+            cn.Open();
+            da.Fill(dt);
+
+            _dtDetalleAsignaturas = dt;
+            _indiceAsignaturaActual = 0;
+        }
 
         private void InicializarContextoDocente()
         {
@@ -433,6 +550,7 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
             _cicloTexto = "";
             _anioActivo = 0;
         }
+
         private bool TieneColumna(IDataRecord reader, string nombreColumna)
         {
             for (int i = 0; i < reader.FieldCount; i++)
@@ -442,6 +560,7 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
             }
             return false;
         }
+
         private void CargarDashboardDesdeSP()
         {
             using SqlConnection cn = conexion.ObtenerConexion();
@@ -464,10 +583,7 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
             DataTable dtKpi = ds.Tables[1];
             DataTable dtReunion = ds.Tables[2];
             DataTable dtAsignaturasRaw = ds.Tables[3];
-            DataTable dtResumen = ds.Tables[4];
-            DataTable dtEvaluacion = ds.Tables[5];
 
-            // HEADER
             if (dtHeader.Rows.Count > 0)
             {
                 DataRow row = dtHeader.Rows[0];
@@ -479,13 +595,11 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
                 string nombre = row["NombreDocente"]?.ToString() ?? "Docente";
 
                 lblSaludoDocente.Text = $"Bienvenido, {nombre}";
-                //lblSaludoDocente.Text = $"Bienvenido, {nombre} (Usr:{docenteId} / Doc:{_docenteIdReal})";
                 lblFechaActual.Text = $"Fecha: {DateTime.Now:dd/MM/yyyy}";
                 lblHoraActual.Text = $"Hora: {DateTime.Now:hh:mm tt}".ToLower();
                 guna2HtmlLabel8.Text = $"Ciclo: {_cicloTexto}";
             }
 
-            // KPI
             if (dtKpi.Rows.Count > 0)
             {
                 DataRow row = dtKpi.Rows[0];
@@ -506,7 +620,6 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
                 lblSubAvance.Text = avanceParcial >= 100 ? "completado" : "planificado";
             }
 
-            // PRÓXIMA REUNIÓN
             if (dtReunion.Rows.Count > 0)
             {
                 DataRow row = dtReunion.Rows[0];
@@ -529,7 +642,6 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
                 lblReunionMedioValor.Text = "<b>Medio:</b> -";
             }
 
-            // ASIGNATURAS
             _dtCargas = dtAsignaturasRaw.Copy();
             dgvAsignaturas.Rows.Clear();
 
@@ -569,54 +681,45 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
 
             dgvAsignaturas.ClearSelection();
 
-            // RESUMEN ACTIVIDADES
-            if (dtResumen.Rows.Count > 0)
-            {
-                DataRow row = dtResumen.Rows[0];
-
-                int parcialActual = row["ParcialActual"] == DBNull.Value ? 0 : Convert.ToInt32(row["ParcialActual"]);
-                int actividadesCreadas = row["ActividadesCreadas"] == DBNull.Value ? 0 : Convert.ToInt32(row["ActividadesCreadas"]);
-                decimal totalAcumulado = row["TotalAcumulado"] == DBNull.Value ? 0 : Convert.ToDecimal(row["TotalAcumulado"]);
-                decimal restante = row["Restante"] == DBNull.Value ? 100 : Convert.ToDecimal(row["Restante"]);
-
-                lblParcialActivo.Text = $"<b>Parcial activo:</b> {ConvertirParcialARomano(parcialActual)}";
-                lblActividadesCreadas.Text = $"<b>Actividades creadas:</b> {actividadesCreadas}";
-                lblTotalAcumulado.Text = $"<b>Total acumulado:</b> {totalAcumulado:N2} / 100.00";
-                lblRestante.Text = $"<b>Restante:</b> {restante:N2}";
-                lblPorcentajeActividades.Text = $"{totalAcumulado:0.#}%";
-
-                int valorBarra = Convert.ToInt32(Math.Round(totalAcumulado, 0));
-                valorBarra = Math.Max(0, Math.Min(100, valorBarra));
-                prgActividades.Value = valorBarra;
-
-                lblValorAvance.Text = $"{totalAcumulado:0.#}%";
-            }
-
-            // AVANCE EVALUACIÓN
-            if (dtEvaluacion.Rows.Count > 0)
-            {
-                DataRow row = dtEvaluacion.Rows[0];
-
-                int actividadesPlanificadas = row["ActividadesPlanificadas"] == DBNull.Value ? 0 : Convert.ToInt32(row["ActividadesPlanificadas"]);
-                int actividadesCalificadas = row["ActividadesCalificadas"] == DBNull.Value ? 0 : Convert.ToInt32(row["ActividadesCalificadas"]);
-                int estudiantesEvaluados = row["EstudiantesEvaluados"] == DBNull.Value ? 0 : Convert.ToInt32(row["EstudiantesEvaluados"]);
-                int estudiantesTotales = row["EstudiantesTotales"] == DBNull.Value ? 0 : Convert.ToInt32(row["EstudiantesTotales"]);
-                decimal porcentajeEvaluacion = row["PorcentajeEvaluacion"] == DBNull.Value ? 0 : Convert.ToDecimal(row["PorcentajeEvaluacion"]);
-
-                lblActividadesPlan.Text = $"<b>Actividades planificadas:</b> {actividadesPlanificadas}";
-                lblActividadesCalificadas.Text = $"<b>Actividades calificadas:</b> {actividadesCalificadas}";
-                lblEstudiantesEvaluados.Text = $"<b>Estudiantes evaluados:</b> {estudiantesEvaluados} / {estudiantesTotales}";
-                lblPorcentajeEvaluacion.Text = $"{porcentajeEvaluacion:0.#}%";
-
-                int valorBarra = Convert.ToInt32(Math.Round(porcentajeEvaluacion, 0));
-                valorBarra = Math.Max(0, Math.Min(100, valorBarra));
-                prgEvaluacion.Value = valorBarra;
-            }
+            CargarDetalleAsignaturasDesdeSP();
+            MostrarDetalleAsignaturaActual();
         }
 
         #endregion
 
         #region HELPERS
+
+        private string ObtenerGradoSeccionCorto(string grado, string seccion)
+        {
+            string gradoTexto = FormatearGradoSeccionCorto(grado, seccion);
+            return gradoTexto.ToUpper();
+        }
+
+        private string ObtenerNombreAsignaturaCorto(string asignatura)
+        {
+            if (string.IsNullOrWhiteSpace(asignatura))
+                return "-";
+
+            string texto = asignatura.Trim();
+
+            if (texto.Contains("/"))
+                texto = texto.Split('/')[0].Trim();
+
+            return texto;
+        }
+
+        private string ObtenerTextoMateriaGrado(string asignatura, string grado, string seccion)
+        {
+            string asignaturaCorta = ObtenerNombreAsignaturaCorto(asignatura).ToUpper();
+            string gradoSeccion = ObtenerGradoSeccionCorto(grado, seccion);
+
+            return $"{asignaturaCorta}{Environment.NewLine}{gradoSeccion}";
+        }
+
+        private int LimitarProgreso(int valor)
+        {
+            return Math.Max(0, Math.Min(100, valor));
+        }
 
         private string FormatearGradoSeccionCorto(string grado, string seccion)
         {
@@ -705,11 +808,13 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
 
             dgvAsignaturas.CellDoubleClick += dgvAsignaturas_CellDoubleClick;
             dgvAsignaturas.KeyDown += dgvAsignaturas_KeyDown;
+
+            btnAsignaturaAnterior.Click += btnAsignaturaAnterior_Click;
+            btnAsignaturaSiguiente.Click += btnAsignaturaSiguiente_Click;
         }
 
         private void btnVerReuniones_Click(object sender, EventArgs e)
         {
-
             AbrirFormularioEnContenedor(new FrmDocenteConsultaReuniones(docenteIdReal));
         }
 
@@ -721,6 +826,30 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
         private void btnIrCalificaciones_Click(object sender, EventArgs e)
         {
             AbrirFormularioEnContenedor(new FrmDocenteRegistroCalificaciones(docenteIdReal));
+        }
+
+        private void btnAsignaturaAnterior_Click(object? sender, EventArgs e)
+        {
+            if (_dtDetalleAsignaturas == null || _dtDetalleAsignaturas.Rows.Count == 0)
+                return;
+
+            _indiceAsignaturaActual--;
+            if (_indiceAsignaturaActual < 0)
+                _indiceAsignaturaActual = _dtDetalleAsignaturas.Rows.Count - 1;
+
+            MostrarDetalleAsignaturaActual();
+        }
+
+        private void btnAsignaturaSiguiente_Click(object? sender, EventArgs e)
+        {
+            if (_dtDetalleAsignaturas == null || _dtDetalleAsignaturas.Rows.Count == 0)
+                return;
+
+            _indiceAsignaturaActual++;
+            if (_indiceAsignaturaActual >= _dtDetalleAsignaturas.Rows.Count)
+                _indiceAsignaturaActual = 0;
+
+            MostrarDetalleAsignaturaActual();
         }
 
         private void dgvAsignaturas_CellDoubleClick(object? sender, DataGridViewCellEventArgs e)
@@ -767,6 +896,121 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
                 .ToList();
 
             return resultado;
+        }
+
+        private void MostrarDetalleAsignaturaActual()
+        {
+            if (_dtDetalleAsignaturas == null || _dtDetalleAsignaturas.Rows.Count == 0)
+            {
+                lblResumen.Text = "RESUMEN ACTIVIDADES";
+                lblAvance.Text = "AVANCE DE EVALUACIÓN";
+                lblCantidadAvance.Text = "0/0";
+
+                if (lblMateriaGrado != null)
+                    lblMateriaGrado.Text = "";
+
+                lblParcialActivo.Text = "<b>Parcial activo:</b> -";
+                lblActividadesCreadas.Text = "<b>Actividades creadas:</b> 0";
+                lblTotalAcumulado.Text = "<b>Total acumulado:</b> 0.00 / 100.00";
+                lblRestante.Text = "<b>Restante:</b> 100.00";
+                lblPorcentajeActividades.Text = "0%";
+                prgActividades.Value = 0;
+
+                lblActividadesPlan.Text = "<b>Actividades planificadas:</b> 0";
+                lblActividadesCalificadas.Text = "<b>Actividades calificadas:</b> 0";
+                lblEstudiantesEvaluados.Text = "<b>Estudiantes evaluados:</b> 0 / 0";
+                lblPorcentajeEvaluacion.Text = "0%";
+                prgEvaluacion.Value = 0;
+                return;
+            }
+
+            if (_indiceAsignaturaActual < 0)
+                _indiceAsignaturaActual = 0;
+
+            if (_indiceAsignaturaActual >= _dtDetalleAsignaturas.Rows.Count)
+                _indiceAsignaturaActual = _dtDetalleAsignaturas.Rows.Count - 1;
+
+            DataRow row = _dtDetalleAsignaturas.Rows[_indiceAsignaturaActual];
+
+            string asignaturaCompleta = _dtDetalleAsignaturas.Columns.Contains("Asignatura") && row["Asignatura"] != DBNull.Value
+                ? row["Asignatura"].ToString() ?? "-"
+                : "-";
+
+            string grado = _dtDetalleAsignaturas.Columns.Contains("Grado") && row["Grado"] != DBNull.Value
+                ? row["Grado"].ToString() ?? ""
+                : "";
+
+            string seccion = _dtDetalleAsignaturas.Columns.Contains("Seccion") && row["Seccion"] != DBNull.Value
+                ? row["Seccion"].ToString() ?? ""
+                : "";
+
+            string asignaturaCorta = ObtenerNombreAsignaturaCorto(asignaturaCompleta);
+            string gradoSeccion = ObtenerGradoSeccionCorto(grado, seccion);
+
+            lblResumen.Text = "RESUMEN ACTIVIDADES";
+            lblAvance.Text = "AVANCE DE EVALUACIÓN";
+
+            if (lblMateriaGrado != null)
+            {
+                lblMateriaGrado.Text = ObtenerTextoMateriaGradoHtml(asignaturaCompleta, grado, seccion);
+
+                if (lblMateriaGrado.Text.Length > 24)
+                    lblMateriaGrado.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+                else
+                    lblMateriaGrado.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            }
+
+            int parcialActual = _dtDetalleAsignaturas.Columns.Contains("ParcialActual") && row["ParcialActual"] != DBNull.Value
+                ? Convert.ToInt32(row["ParcialActual"])
+                : 0;
+
+            int actividadesCreadas = _dtDetalleAsignaturas.Columns.Contains("ActividadesCreadas") && row["ActividadesCreadas"] != DBNull.Value
+                ? Convert.ToInt32(row["ActividadesCreadas"])
+                : 0;
+
+            decimal totalAcumulado = _dtDetalleAsignaturas.Columns.Contains("TotalAcumulado") && row["TotalAcumulado"] != DBNull.Value
+                ? Convert.ToDecimal(row["TotalAcumulado"])
+                : 0;
+
+            decimal restante = _dtDetalleAsignaturas.Columns.Contains("Restante") && row["Restante"] != DBNull.Value
+                ? Convert.ToDecimal(row["Restante"])
+                : 100;
+
+            int actividadesPlanificadas = _dtDetalleAsignaturas.Columns.Contains("ActividadesPlanificadas") && row["ActividadesPlanificadas"] != DBNull.Value
+                ? Convert.ToInt32(row["ActividadesPlanificadas"])
+                : 0;
+
+            int actividadesCalificadas = _dtDetalleAsignaturas.Columns.Contains("ActividadesCalificadas") && row["ActividadesCalificadas"] != DBNull.Value
+                ? Convert.ToInt32(row["ActividadesCalificadas"])
+                : 0;
+
+            int estudiantesEvaluados = _dtDetalleAsignaturas.Columns.Contains("EstudiantesEvaluados") && row["EstudiantesEvaluados"] != DBNull.Value
+                ? Convert.ToInt32(row["EstudiantesEvaluados"])
+                : 0;
+
+            int estudiantesTotales = _dtDetalleAsignaturas.Columns.Contains("EstudiantesTotales") && row["EstudiantesTotales"] != DBNull.Value
+                ? Convert.ToInt32(row["EstudiantesTotales"])
+                : 0;
+
+            decimal porcentajeEvaluacion = _dtDetalleAsignaturas.Columns.Contains("PorcentajeEvaluacion") && row["PorcentajeEvaluacion"] != DBNull.Value
+                ? Convert.ToDecimal(row["PorcentajeEvaluacion"])
+                : 0;
+
+            string indicador = $"Carga {_indiceAsignaturaActual + 1} de {_dtDetalleAsignaturas.Rows.Count}";
+            lblCantidadAvance.Text = indicador;
+
+            lblParcialActivo.Text = $"<b>Parcial activo:</b> {ConvertirParcialARomano(parcialActual)}";
+            lblActividadesCreadas.Text = $"<b>Actividades creadas:</b> {actividadesCreadas}";
+            lblTotalAcumulado.Text = $"<b>Total acumulado:</b> {totalAcumulado:N2} / 100.00";
+            lblRestante.Text = $"<b>Restante:</b> {restante:N2}";
+            lblPorcentajeActividades.Text = $"{totalAcumulado:0.#}%";
+            prgActividades.Value = LimitarProgreso((int)Math.Round(totalAcumulado, 0));
+
+            lblActividadesPlan.Text = $"<b>Actividades planificadas:</b> {actividadesPlanificadas}";
+            lblActividadesCalificadas.Text = $"<b>Actividades calificadas:</b> {actividadesCalificadas}";
+            lblEstudiantesEvaluados.Text = $"<b>Estudiantes evaluados:</b> {estudiantesEvaluados} / {estudiantesTotales}";
+            lblPorcentajeEvaluacion.Text = $"{porcentajeEvaluacion:0.#}%";
+            prgEvaluacion.Value = LimitarProgreso((int)Math.Round(porcentajeEvaluacion, 0));
         }
 
         private void MostrarDetalleAsignatura(string asignatura, List<string> secciones)
@@ -886,6 +1130,11 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
 
         private void pnlMainDashboard_Paint(object sender, PaintEventArgs e)
         {
+        }
+
+        private void panelControl_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
