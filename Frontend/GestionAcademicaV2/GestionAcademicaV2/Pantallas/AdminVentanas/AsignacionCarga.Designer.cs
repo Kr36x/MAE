@@ -119,7 +119,7 @@
             guna2ContainerControl1.Location = new Point(39, 21);
             guna2ContainerControl1.Name = "guna2ContainerControl1";
             guna2ContainerControl1.ShadowDecoration.CustomizableEdges = customizableEdges28;
-            guna2ContainerControl1.Size = new Size(408, 430);
+            guna2ContainerControl1.Size = new Size(408, 420);
             guna2ContainerControl1.TabIndex = 0;
             guna2ContainerControl1.Text = "guna2ContainerControl1";
             // 
@@ -134,7 +134,7 @@
             txtCargaID.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtCargaID.Font = new Font("Segoe UI", 9F);
             txtCargaID.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtCargaID.Location = new Point(28, 365);
+            txtCargaID.Location = new Point(28, 364);
             txtCargaID.Name = "txtCargaID";
             txtCargaID.PlaceholderText = "";
             txtCargaID.SelectedText = "";
@@ -157,23 +157,21 @@
             cbbAnio.ForeColor = Color.Black;
             cbbAnio.ItemHeight = 25;
             cbbAnio.Items.AddRange(new object[] { "2025", "2026", "2027", "2028", "2029", "2030", "2031", "2032", "2033", "2034", "2035", "2036", "2037", "2038", "2039", "2040", "2041", "2042", "2043", "2044", "2045", "2046", "2047", "2048", "2049", "2050" });
-            cbbAnio.Location = new Point(83, 313);
+            cbbAnio.Location = new Point(282, 260);
             cbbAnio.Name = "cbbAnio";
             cbbAnio.ShadowDecoration.CustomizableEdges = customizableEdges4;
             cbbAnio.Size = new Size(97, 31);
             cbbAnio.TabIndex = 134;
-            cbbAnio.Visible = false;
             // 
             // lbAnio
             // 
             lbAnio.BackColor = Color.Transparent;
             lbAnio.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            lbAnio.Location = new Point(28, 322);
+            lbAnio.Location = new Point(282, 232);
             lbAnio.Name = "lbAnio";
-            lbAnio.Size = new Size(49, 17);
+            lbAnio.Size = new Size(29, 17);
             lbAnio.TabIndex = 133;
-            lbAnio.Text = "ESTADO";
-            lbAnio.Visible = false;
+            lbAnio.Text = "AÑO";
             // 
             // btEditar
             // 
@@ -189,12 +187,13 @@
             btEditar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btEditar.ForeColor = Color.White;
             btEditar.Image = (Image)resources.GetObject("btEditar.Image");
-            btEditar.Location = new Point(248, 382);
+            btEditar.Location = new Point(250, 365);
             btEditar.Name = "btEditar";
             btEditar.ShadowDecoration.CustomizableEdges = customizableEdges6;
             btEditar.Size = new Size(131, 35);
             btEditar.TabIndex = 132;
             btEditar.Text = "EDITAR";
+            btEditar.Click += btEditar_Click;
             // 
             // cbbEstado
             // 
@@ -210,7 +209,7 @@
             cbbEstado.ForeColor = Color.Black;
             cbbEstado.ItemHeight = 25;
             cbbEstado.Items.AddRange(new object[] { "INACTIVO", "ACTIVO" });
-            cbbEstado.Location = new Point(253, 313);
+            cbbEstado.Location = new Point(169, 313);
             cbbEstado.Name = "cbbEstado";
             cbbEstado.ShadowDecoration.CustomizableEdges = customizableEdges8;
             cbbEstado.Size = new Size(126, 31);
@@ -221,7 +220,7 @@
             // 
             lbEstado.BackColor = Color.Transparent;
             lbEstado.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            lbEstado.Location = new Point(198, 318);
+            lbEstado.Location = new Point(114, 318);
             lbEstado.Name = "lbEstado";
             lbEstado.Size = new Size(49, 17);
             lbEstado.TabIndex = 130;
@@ -244,10 +243,10 @@
             txtBuscarAsignatura.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             txtBuscarAsignatura.Location = new Point(114, 223);
             txtBuscarAsignatura.Name = "txtBuscarAsignatura";
-            txtBuscarAsignatura.PlaceholderText = "INGRESE ASIGNATURA A BUSCAR";
+            txtBuscarAsignatura.PlaceholderText = "BUSCAR ASIGNATURA";
             txtBuscarAsignatura.SelectedText = "";
             txtBuscarAsignatura.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            txtBuscarAsignatura.Size = new Size(265, 31);
+            txtBuscarAsignatura.Size = new Size(162, 31);
             txtBuscarAsignatura.TabIndex = 129;
             txtBuscarAsignatura.TextChanged += txtBuscarAsignatura_TextChanged;
             txtBuscarAsignatura.KeyPress += txtBuscarAsignatura_KeyPress;
@@ -292,7 +291,7 @@
             btCancelar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btCancelar.ForeColor = Color.White;
             btCancelar.Image = (Image)resources.GetObject("btCancelar.Image");
-            btCancelar.Location = new Point(130, 382);
+            btCancelar.Location = new Point(132, 365);
             btCancelar.Name = "btCancelar";
             btCancelar.ShadowDecoration.CustomizableEdges = customizableEdges14;
             btCancelar.Size = new Size(112, 35);
@@ -314,7 +313,7 @@
             btAsignar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btAsignar.ForeColor = Color.White;
             btAsignar.Image = (Image)resources.GetObject("btAsignar.Image");
-            btAsignar.Location = new Point(248, 382);
+            btAsignar.Location = new Point(250, 365);
             btAsignar.Name = "btAsignar";
             btAsignar.ShadowDecoration.CustomizableEdges = customizableEdges16;
             btAsignar.Size = new Size(131, 35);
@@ -349,8 +348,9 @@
             cbbAsignatura.Location = new Point(28, 259);
             cbbAsignatura.Name = "cbbAsignatura";
             cbbAsignatura.ShadowDecoration.CustomizableEdges = customizableEdges18;
-            cbbAsignatura.Size = new Size(351, 31);
+            cbbAsignatura.Size = new Size(248, 31);
             cbbAsignatura.TabIndex = 124;
+            cbbAsignatura.KeyPress += cbbAsignatura_KeyPress;
             // 
             // lbAsignatura
             // 
@@ -520,7 +520,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(492, 475);
+            ClientSize = new Size(492, 462);
             Controls.Add(guna2ContainerControl1);
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Name = "AsignacionCarga";

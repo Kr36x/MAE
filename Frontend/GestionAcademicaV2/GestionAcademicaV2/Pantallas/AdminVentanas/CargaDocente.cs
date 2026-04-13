@@ -453,7 +453,11 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
             if (dgvDocentes.Columns[e.ColumnIndex].Name == "colEditar")
             {
                 DataGridViewRow row = dgvDocentes.Rows[e.RowIndex];
-
+                int estado = 0;
+                if (row.Cells["Estado"].Value != null)
+                {
+                    estado = Convert.ToInt32(row.Cells["Estado"].Value);
+                }
                 AsignacionCarga forma = new AsignacionCarga(
                     Convert.ToInt32(row.Cells["CargaID"].Value),
                     Convert.ToInt32(row.Cells["DocenteID"].Value),
@@ -461,7 +465,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
                     row.Cells["Grados"].Value.ToString(),
                     row.Cells["Secciones"].Value.ToString(),
                     dtpAnio.Value.Year,
-                    Convert.ToInt32(row.Cells["Estado"].Value)
+                    estado
                 );
 
                 forma.Show();

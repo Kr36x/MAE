@@ -13,27 +13,28 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
     public partial class AsignacionCarga : Form
     {
         int carga = 0;
+        int docenteID_, grado_, seccion_, asignatura_, anio_, estado_;
+        string asignaturaTxt, gradoTxt, seccionTxt;
         public AsignacionCarga()
         {
             InitializeComponent();
         }
-        
-        public AsignacionCarga(int cargaID, int docenteID, string asignatura, string grado, string seccion, int anio,
-            int estado)
+
+        public AsignacionCarga(int cargaID, int docenteID, string asignatura, string grado, string seccion, int anio, int estado)
         {
             InitializeComponent();
-            carga = cargaID;
-            txtCargaID.Text = cargaID.ToString();
 
-            cbbDocentes.SelectedValue = docenteID;
-            cbbAsignatura.Text = asignatura;
-            cbbGrado.Text = grado;
-            cbbSeccion.Text = seccion;
-            cbbAnio.Text = anio.ToString();
-            cbbEstado.SelectedValue = estado;
+            carga = cargaID;
+
+            docenteID_ = docenteID;
+            asignaturaTxt = asignatura;
+            gradoTxt = grado;
+            seccionTxt = seccion;
+            anio_ = anio;
+            estado_ = estado;
         }
 
-        
+
         private void CargarDocentes()
         {
             // Aquí se cargan los docentes para poder buscar
@@ -45,6 +46,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
                 cbbDocentes.DataSource = dt;
                 cbbDocentes.DisplayMember = "Nombre";
                 cbbDocentes.ValueMember = "DocenteID";
+                cbbDocentes.SelectedIndex = -1;
             }
             catch (Exception ex)
             {
@@ -78,27 +80,51 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
                                 "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        private void CargarEstados()
+        {
+            // Llena el combobox de estado
+            DataTable dt = new DataTable();
+            dt.Columns.Add("ID");
+            dt.Columns.Add("Nombre");
 
+            dt.Rows.Add(1, "ACTIVO");
+            dt.Rows.Add(0, "INACTIVO");
+
+            cbbEstado.DataSource = dt;
+            cbbEstado.DisplayMember = "Nombre";
+            cbbEstado.ValueMember = "ID";
+        }
         private void AsignacionCarga_Load(object sender, EventArgs e)
         {
             // Códificación del load
-            if(carga==0)
+            CargarDocentes();
+            CargarGrados();
+            CargarAsignaturas();
+            CargarEstados();
+
+            if (carga == 0)
             {
-                CargarDocentes();
-                CargarGrados();
-                CargarAsignaturas();
-                lbEstado.Visible=false;
+                lbEstado.Visible = false;
                 cbbEstado.Visible = false;
                 btEditar.Visible = false;
             }
             else
             {
                 lbTitulo.Text = "EDITAR CARGA ACADÉMICA";
+                cbbGrado.Enabled = false;
+                cbbSeccion.Enabled = false;
                 cbbEstado.Visible = true;
                 btEditar.Visible = true;
                 lbEstado.Visible = true;
-            }
 
+                txtCargaID.Text = carga.ToString();
+                cbbDocentes.SelectedValue = docenteID_;
+                cbbAsignatura.Text = asignaturaTxt;
+                cbbGrado.Text = gradoTxt;
+                cbbSeccion.Text = seccionTxt;
+                cbbAnio.Text = anio_.ToString();
+                cbbEstado.SelectedValue = estado_;
+            }
         }
 
         private void cbbDocentes_SelectedIndexChanged(object sender, EventArgs e)
@@ -166,7 +192,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
         private void btInformacion_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Este formulario sirve para poder asignar una asignaturas a los docentes.",
+            MessageBox.Show("Este formulario sirve para poder asignar asignaturas a los docentes.",
                                 "Información",
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Information);
@@ -291,11 +317,25 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
                     return;
                 }
 
+                if (cbbDocentes.SelectedValue is DataRowView ||
+                    cbbGrado.SelectedValue is DataRowView ||
+                    cbbSeccion.SelectedValue is DataRowView ||
+                    cbbAsignatura.SelectedValue is DataRowView)
+                {
+                    MessageBox.Show("Seleccione valores válidos.");
+                    return;
+                }
+
+                if (!int.TryParse(cbbAnio.Text, out int anio))
+                {
+                    MessageBox.Show("Seleccione un año válido.");
+                    return;
+                }
+
                 int docenteID = Convert.ToInt32(cbbDocentes.SelectedValue);
                 int gradoID = Convert.ToInt32(cbbGrado.SelectedValue);
                 int seccionID = Convert.ToInt32(cbbSeccion.SelectedValue);
                 int asignaturaID = Convert.ToInt32(cbbAsignatura.SelectedValue);
-                int anio = Convert.ToInt32(cbbAnio.Text);
 
                 SqlParameter[] p =
                 {
@@ -307,15 +347,23 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
                 };
 
                 EjecutarUtilidades util = new EjecutarUtilidades();
-                object result = util.EjecutarSPScalar("spMAE_AgregarCargaAcademica", p);
 
-                if (result != null)
+                DataTable dt = util.EjecutarSPParametros("spMAE_AgregarCargaAcademica", p);
+
+                if (dt.Rows.Count > 0)
                 {
-                    int nuevoID = Convert.ToInt32(result);
+                    int nuevoID = Convert.ToInt32(dt.Rows[0]["CargaID"]);
+
                     MessageBox.Show("Carga académica asignada correctamente. ID: " + nuevoID);
+                }
+                else
+                {
+                    MessageBox.Show("No se devolvió ningún ID.");
                 }
 
                 CargarDocentes();
+                CargarAsignaturas();
+                CargarGrados();
             }
             catch (SqlException ex)
             {
@@ -324,6 +372,75 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
             catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex.Message);
+            }
+        }
+
+        private void btEditar_Click(object sender, EventArgs e)
+        {
+            // Codificación de boton para editar la carga académica
+            try
+            {
+                if (cbbDocentes.SelectedValue == null ||
+                    cbbAsignatura.SelectedValue == null ||
+                    cbbEstado.SelectedValue == null)
+                {
+                    MessageBox.Show("Debe completar todos los campos.");
+                    return;
+                }
+
+                if (cbbDocentes.SelectedValue is DataRowView ||
+                    cbbAsignatura.SelectedValue is DataRowView ||
+                    cbbEstado.SelectedValue is DataRowView)
+                {
+                    MessageBox.Show("Seleccione valores válidos.");
+                    return;
+                }
+
+                int cargaID = Convert.ToInt32(txtCargaID.Text);
+                int docenteID = Convert.ToInt32(cbbDocentes.SelectedValue);
+                int asignaturaID = Convert.ToInt32(cbbAsignatura.SelectedValue);
+                int estado = Convert.ToInt32(cbbEstado.SelectedValue);
+
+                SqlParameter[] p =
+                {
+                    new SqlParameter("@CargaID", cargaID),
+                    new SqlParameter("@DocenteID", docenteID),
+                    new SqlParameter("@AsignaturaID", asignaturaID),
+                    new SqlParameter("@Estado", estado)
+                };
+
+                EjecutarUtilidades util = new EjecutarUtilidades();
+
+
+                util.EjecutarSPParametros("spMAE_EditarCargaAcademica", p);
+
+                MessageBox.Show("Carga académica actualizada correctamente.");
+                this.Close();
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Error SQL: " + ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+        }
+
+        private void cbbAsignatura_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Validacion de solo letras
+            if (e.KeyChar == (char)Keys.Back)
+                return;
+
+            if (!char.IsLetter(e.KeyChar) && e.KeyChar != ' ')
+            {
+                e.Handled = true;
+
+                MessageBox.Show("Solo se aceptan letras.",
+                                "Validación",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Warning);
             }
         }
     }
