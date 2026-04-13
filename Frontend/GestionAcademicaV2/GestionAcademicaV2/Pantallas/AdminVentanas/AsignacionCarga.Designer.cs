@@ -492,7 +492,7 @@
             btInformacion.CustomizableEdges = customizableEdges25;
             btInformacion.Image = (Image)resources.GetObject("btInformacion.Image");
             btInformacion.ImageRotate = 0F;
-            btInformacion.Location = new Point(375, 6);
+            btInformacion.Location = new Point(344, 6);
             btInformacion.Name = "btInformacion";
             btInformacion.ShadowDecoration.CustomizableEdges = customizableEdges26;
             btInformacion.Size = new Size(25, 18);
@@ -512,7 +512,7 @@
             lbTitulo.Name = "lbTitulo";
             lbTitulo.Size = new Size(408, 30);
             lbTitulo.TabIndex = 111;
-            lbTitulo.Text = "ASIGNACIÓN DE CARGA ACADÉMICA";
+            lbTitulo.Text = "ASIGNAR CARGA ACADÉMICA";
             lbTitulo.TextAlignment = ContentAlignment.TopCenter;
             // 
             // AsignacionCarga

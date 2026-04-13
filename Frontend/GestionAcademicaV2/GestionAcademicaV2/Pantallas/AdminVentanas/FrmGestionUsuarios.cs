@@ -173,8 +173,29 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
                 };
 
                 DataTable dt = util.EjecutarSPParametros("spMAE_Crear_EditarUsuario", p);
-
-                MessageBox.Show("Datos guardados correctamente.");
+                if(usuarioID==0)
+                {
+                    MessageBox.Show("Datos guardados correctamente.");
+                    txtUsuario.Clear();
+                    txtContrasena.Clear();
+                    txtCorreo.Clear();
+                    cbbParentesco.SelectedIndex = -1;
+                    txtNombre.Clear();
+                    txtIdentidad.Clear();
+                    cbbSexo.SelectedIndex = -1;
+                    cbbParentesco.SelectedIndex = -1;
+                    txtPosicion.Clear();
+                    dtpFechaNacimiento.Value = DateTime.Now;
+                    txtDireccion.Clear();
+                    txtLugarTrabajo.Clear();
+                    txtTelefono.Clear();
+                    txtEspecialidad.Clear();
+                }
+                else
+                {
+                    MessageBox.Show("Los datos han sido editados correctamente.");
+                    this.Close();
+                }
             }
         }
 

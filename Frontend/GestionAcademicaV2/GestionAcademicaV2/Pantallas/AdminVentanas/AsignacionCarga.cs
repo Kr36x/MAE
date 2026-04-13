@@ -364,6 +364,9 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
                 CargarDocentes();
                 CargarAsignaturas();
                 CargarGrados();
+                txtBuscarAsignatura.Clear();
+                txtBuscarDocente.Clear();
+                cbbSeccion.SelectedIndex = -1;
             }
             catch (SqlException ex)
             {
@@ -414,7 +417,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
                 util.EjecutarSPParametros("spMAE_EditarCargaAcademica", p);
 
-                MessageBox.Show("Carga académica actualizada correctamente.");
+                MessageBox.Show("Carga académica editada correctamente.");
                 this.Close();
             }
             catch (SqlException ex)
