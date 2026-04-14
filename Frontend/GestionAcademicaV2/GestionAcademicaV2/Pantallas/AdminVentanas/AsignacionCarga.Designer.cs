@@ -30,8 +30,6 @@
         {
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges29 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges30 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges27 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges28 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -58,8 +56,9 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges27 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges28 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2ContainerControl1 = new Guna.UI2.WinForms.Guna2ContainerControl();
-            btAsignar = new Guna.UI2.WinForms.Guna2Button();
             txtCargaID = new Guna.UI2.WinForms.Guna2TextBox();
             cbbAnio = new Guna.UI2.WinForms.Guna2ComboBox();
             lbAnio = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -84,6 +83,7 @@
             btInformacion = new Guna.UI2.WinForms.Guna2PictureBox();
             lbTitulo = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2Panel9 = new Guna.UI2.WinForms.Guna2Panel();
+            btAsignar = new Guna.UI2.WinForms.Guna2Button();
             guna2ContainerControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)btInformacion).BeginInit();
             SuspendLayout();
@@ -119,34 +119,12 @@
             guna2ContainerControl1.Controls.Add(guna2Panel9);
             guna2ContainerControl1.Controls.Add(btAsignar);
             guna2ContainerControl1.CustomizableEdges = customizableEdges29;
-            guna2ContainerControl1.Location = new Point(12, 9);
+            guna2ContainerControl1.Location = new Point(56, 9);
             guna2ContainerControl1.Name = "guna2ContainerControl1";
             guna2ContainerControl1.ShadowDecoration.CustomizableEdges = customizableEdges30;
-            guna2ContainerControl1.Size = new Size(627, 453);
+            guna2ContainerControl1.Size = new Size(541, 453);
             guna2ContainerControl1.TabIndex = 0;
             guna2ContainerControl1.Text = "guna2ContainerControl1";
-            // 
-            // btAsignar
-            // 
-            btAsignar.BackColor = Color.White;
-            btAsignar.BorderColor = Color.Transparent;
-            btAsignar.BorderRadius = 5;
-            btAsignar.CustomizableEdges = customizableEdges27;
-            btAsignar.DisabledState.BorderColor = Color.DarkGray;
-            btAsignar.DisabledState.CustomBorderColor = Color.DarkGray;
-            btAsignar.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btAsignar.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btAsignar.FillColor = Color.FromArgb(16, 57, 129);
-            btAsignar.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            btAsignar.ForeColor = Color.White;
-            btAsignar.Image = Properties.Resources.add_white;
-            btAsignar.Location = new Point(477, 392);
-            btAsignar.Name = "btAsignar";
-            btAsignar.ShadowDecoration.CustomizableEdges = customizableEdges28;
-            btAsignar.Size = new Size(131, 35);
-            btAsignar.TabIndex = 136;
-            btAsignar.Text = "ASIGNAR";
-            btAsignar.Click += btAsignar_Click;
             // 
             // txtCargaID
             // 
@@ -159,7 +137,7 @@
             txtCargaID.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtCargaID.Font = new Font("Segoe UI", 9F);
             txtCargaID.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtCargaID.Location = new Point(28, 392);
+            txtCargaID.Location = new Point(50, 393);
             txtCargaID.Name = "txtCargaID";
             txtCargaID.PlaceholderText = "";
             txtCargaID.SelectedText = "";
@@ -181,17 +159,17 @@
             cbbAnio.ForeColor = Color.Black;
             cbbAnio.ItemHeight = 25;
             cbbAnio.Items.AddRange(new object[] { "2025", "2026", "2027", "2028", "2029", "2030", "2031", "2032", "2033", "2034", "2035", "2036", "2037", "2038", "2039", "2040", "2041", "2042", "2043", "2044", "2045", "2046", "2047", "2048", "2049", "2050" });
-            cbbAnio.Location = new Point(341, 279);
+            cbbAnio.Location = new Point(357, 248);
             cbbAnio.Name = "cbbAnio";
             cbbAnio.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            cbbAnio.Size = new Size(114, 31);
+            cbbAnio.Size = new Size(139, 31);
             cbbAnio.TabIndex = 134;
             // 
             // lbAnio
             // 
             lbAnio.BackColor = Color.Transparent;
             lbAnio.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            lbAnio.Location = new Point(341, 252);
+            lbAnio.Location = new Point(322, 257);
             lbAnio.Name = "lbAnio";
             lbAnio.Size = new Size(29, 17);
             lbAnio.TabIndex = 133;
@@ -211,7 +189,7 @@
             btEditar.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             btEditar.ForeColor = Color.White;
             btEditar.Image = Properties.Resources.edit_white;
-            btEditar.Location = new Point(477, 392);
+            btEditar.Location = new Point(348, 393);
             btEditar.Name = "btEditar";
             btEditar.ShadowDecoration.CustomizableEdges = customizableEdges6;
             btEditar.Size = new Size(131, 35);
@@ -232,10 +210,10 @@
             cbbEstado.ForeColor = Color.Black;
             cbbEstado.ItemHeight = 25;
             cbbEstado.Items.AddRange(new object[] { "INACTIVO", "ACTIVO" });
-            cbbEstado.Location = new Point(169, 333);
+            cbbEstado.Location = new Point(377, 299);
             cbbEstado.Name = "cbbEstado";
             cbbEstado.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            cbbEstado.Size = new Size(126, 31);
+            cbbEstado.Size = new Size(119, 31);
             cbbEstado.TabIndex = 131;
             cbbEstado.Visible = false;
             // 
@@ -243,7 +221,7 @@
             // 
             lbEstado.BackColor = Color.Transparent;
             lbEstado.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            lbEstado.Location = new Point(114, 338);
+            lbEstado.Location = new Point(322, 306);
             lbEstado.Name = "lbEstado";
             lbEstado.Size = new Size(49, 17);
             lbEstado.TabIndex = 130;
@@ -264,7 +242,7 @@
             txtBuscarAsignatura.Font = new Font("Segoe UI", 9F);
             txtBuscarAsignatura.ForeColor = Color.Black;
             txtBuscarAsignatura.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtBuscarAsignatura.Location = new Point(114, 243);
+            txtBuscarAsignatura.Location = new Point(136, 248);
             txtBuscarAsignatura.Name = "txtBuscarAsignatura";
             txtBuscarAsignatura.PlaceholderForeColor = Color.FromArgb(166, 163, 163);
             txtBuscarAsignatura.PlaceholderText = "BUSCAR ASIGNATURA";
@@ -291,13 +269,13 @@
             txtBuscarDocente.Font = new Font("Segoe UI", 9F);
             txtBuscarDocente.ForeColor = Color.Black;
             txtBuscarDocente.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtBuscarDocente.Location = new Point(90, 56);
+            txtBuscarDocente.Location = new Point(112, 76);
             txtBuscarDocente.Name = "txtBuscarDocente";
             txtBuscarDocente.PlaceholderForeColor = Color.FromArgb(166, 163, 163);
             txtBuscarDocente.PlaceholderText = "INGRESE NOMBRE A BUSCAR";
             txtBuscarDocente.SelectedText = "";
             txtBuscarDocente.ShadowDecoration.CustomizableEdges = customizableEdges12;
-            txtBuscarDocente.Size = new Size(365, 31);
+            txtBuscarDocente.Size = new Size(384, 31);
             txtBuscarDocente.TabIndex = 128;
             txtBuscarDocente.TextChanged += txtBuscarDocente_TextChanged;
             txtBuscarDocente.KeyPress += txtBuscarDocente_KeyPress;
@@ -315,7 +293,7 @@
             btCancelar.FillColor = Color.Gray;
             btCancelar.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             btCancelar.ForeColor = Color.White;
-            btCancelar.Location = new Point(359, 393);
+            btCancelar.Location = new Point(230, 394);
             btCancelar.Name = "btCancelar";
             btCancelar.ShadowDecoration.CustomizableEdges = customizableEdges14;
             btCancelar.Size = new Size(112, 35);
@@ -328,11 +306,11 @@
             lbAvisoAsignatura.BackColor = Color.Transparent;
             lbAvisoAsignatura.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold);
             lbAvisoAsignatura.ForeColor = Color.FromArgb(166, 163, 163);
-            lbAvisoAsignatura.Location = new Point(28, 312);
+            lbAvisoAsignatura.Location = new Point(50, 332);
             lbAvisoAsignatura.Name = "lbAvisoAsignatura";
-            lbAvisoAsignatura.Size = new Size(308, 15);
+            lbAvisoAsignatura.Size = new Size(229, 15);
             lbAvisoAsignatura.TabIndex = 125;
-            lbAvisoAsignatura.Text = "SLECCIONE LA ASIGNATURA QUE IMPARTIRÁ EL DOCENTE";
+            lbAvisoAsignatura.Text = "SELECCIONE ASIGNATURA QUE IMPARTIRÁ";
             // 
             // cbbAsignatura
             // 
@@ -346,7 +324,7 @@
             cbbAsignatura.Font = new Font("Segoe UI", 10F);
             cbbAsignatura.ForeColor = Color.Black;
             cbbAsignatura.ItemHeight = 25;
-            cbbAsignatura.Location = new Point(28, 279);
+            cbbAsignatura.Location = new Point(50, 299);
             cbbAsignatura.Name = "cbbAsignatura";
             cbbAsignatura.ShadowDecoration.CustomizableEdges = customizableEdges16;
             cbbAsignatura.Size = new Size(248, 31);
@@ -357,7 +335,7 @@
             // 
             lbAsignatura.BackColor = Color.Transparent;
             lbAsignatura.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            lbAsignatura.Location = new Point(28, 252);
+            lbAsignatura.Location = new Point(50, 257);
             lbAsignatura.Name = "lbAsignatura";
             lbAsignatura.Size = new Size(80, 17);
             lbAsignatura.TabIndex = 123;
@@ -368,29 +346,30 @@
             lbAvisoSeccion.BackColor = Color.Transparent;
             lbAvisoSeccion.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold);
             lbAvisoSeccion.ForeColor = Color.FromArgb(166, 163, 163);
-            lbAvisoSeccion.Location = new Point(341, 211);
+            lbAvisoSeccion.Location = new Point(319, 224);
             lbAvisoSeccion.Name = "lbAvisoSeccion";
             lbAvisoSeccion.Size = new Size(116, 15);
             lbAvisoSeccion.TabIndex = 122;
             lbAvisoSeccion.Text = "SELECCIONE SECCIÓN";
+            lbAvisoSeccion.Click += lbAvisoSeccion_Click;
             // 
             // lbAvisoGrado
             // 
             lbAvisoGrado.BackColor = Color.Transparent;
             lbAvisoGrado.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold);
             lbAvisoGrado.ForeColor = Color.FromArgb(166, 163, 163);
-            lbAvisoGrado.Location = new Point(28, 211);
+            lbAvisoGrado.Location = new Point(50, 224);
             lbAvisoGrado.Name = "lbAvisoGrado";
             lbAvisoGrado.Size = new Size(195, 15);
             lbAvisoGrado.TabIndex = 121;
-            lbAvisoGrado.Text = "GRADO AL QUE SE ASIGNARA CLASE";
+            lbAvisoGrado.Text = "GRADO AL QUE SE ASIGNARÁ CLASE";
             // 
             // lbAvisoDocente
             // 
             lbAvisoDocente.BackColor = Color.Transparent;
             lbAvisoDocente.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold);
             lbAvisoDocente.ForeColor = Color.FromArgb(166, 163, 163);
-            lbAvisoDocente.Location = new Point(28, 126);
+            lbAvisoDocente.Location = new Point(50, 149);
             lbAvisoDocente.Name = "lbAvisoDocente";
             lbAvisoDocente.Size = new Size(209, 15);
             lbAvisoDocente.TabIndex = 120;
@@ -408,17 +387,17 @@
             cbbSeccion.Font = new Font("Segoe UI", 10F);
             cbbSeccion.ForeColor = Color.Black;
             cbbSeccion.ItemHeight = 25;
-            cbbSeccion.Location = new Point(341, 178);
+            cbbSeccion.Location = new Point(319, 191);
             cbbSeccion.Name = "cbbSeccion";
             cbbSeccion.ShadowDecoration.CustomizableEdges = customizableEdges18;
-            cbbSeccion.Size = new Size(114, 31);
+            cbbSeccion.Size = new Size(177, 31);
             cbbSeccion.TabIndex = 119;
             // 
             // lbSeccion
             // 
             lbSeccion.BackColor = Color.Transparent;
             lbSeccion.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            lbSeccion.Location = new Point(341, 155);
+            lbSeccion.Location = new Point(319, 168);
             lbSeccion.Name = "lbSeccion";
             lbSeccion.Size = new Size(52, 17);
             lbSeccion.TabIndex = 118;
@@ -436,10 +415,10 @@
             cbbGrado.Font = new Font("Segoe UI", 10F);
             cbbGrado.ForeColor = Color.Black;
             cbbGrado.ItemHeight = 25;
-            cbbGrado.Location = new Point(28, 178);
+            cbbGrado.Location = new Point(50, 191);
             cbbGrado.Name = "cbbGrado";
             cbbGrado.ShadowDecoration.CustomizableEdges = customizableEdges20;
-            cbbGrado.Size = new Size(231, 31);
+            cbbGrado.Size = new Size(248, 31);
             cbbGrado.TabIndex = 117;
             cbbGrado.SelectedIndexChanged += cbbGrado_SelectedIndexChanged;
             // 
@@ -447,7 +426,7 @@
             // 
             lbGrado.BackColor = Color.Transparent;
             lbGrado.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            lbGrado.Location = new Point(28, 155);
+            lbGrado.Location = new Point(50, 168);
             lbGrado.Name = "lbGrado";
             lbGrado.Size = new Size(46, 17);
             lbGrado.TabIndex = 116;
@@ -465,10 +444,10 @@
             cbbDocentes.Font = new Font("Segoe UI", 10F);
             cbbDocentes.ForeColor = Color.Black;
             cbbDocentes.ItemHeight = 25;
-            cbbDocentes.Location = new Point(28, 93);
+            cbbDocentes.Location = new Point(50, 116);
             cbbDocentes.Name = "cbbDocentes";
             cbbDocentes.ShadowDecoration.CustomizableEdges = customizableEdges22;
-            cbbDocentes.Size = new Size(427, 31);
+            cbbDocentes.Size = new Size(446, 31);
             cbbDocentes.TabIndex = 115;
             cbbDocentes.TextTransform = Guna.UI2.WinForms.Enums.TextTransform.UpperCase;
             cbbDocentes.SelectedIndexChanged += cbbDocentes_SelectedIndexChanged;
@@ -478,7 +457,7 @@
             // 
             lbDocente.BackColor = Color.Transparent;
             lbDocente.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            lbDocente.Location = new Point(28, 63);
+            lbDocente.Location = new Point(50, 83);
             lbDocente.Name = "lbDocente";
             lbDocente.Size = new Size(56, 17);
             lbDocente.TabIndex = 114;
@@ -490,7 +469,7 @@
             btInformacion.CustomizableEdges = customizableEdges23;
             btInformacion.Image = Properties.Resources.info_white;
             btInformacion.ImageRotate = 0F;
-            btInformacion.Location = new Point(451, 17);
+            btInformacion.Location = new Point(414, 17);
             btInformacion.Name = "btInformacion";
             btInformacion.ShadowDecoration.CustomizableEdges = customizableEdges24;
             btInformacion.Size = new Size(20, 20);
@@ -507,7 +486,7 @@
             lbTitulo.ForeColor = Color.White;
             lbTitulo.Location = new Point(0, 14);
             lbTitulo.Name = "lbTitulo";
-            lbTitulo.Size = new Size(627, 30);
+            lbTitulo.Size = new Size(541, 30);
             lbTitulo.TabIndex = 111;
             lbTitulo.Text = "ASIGNAR CARGA ACADÉMICA";
             lbTitulo.TextAlignment = ContentAlignment.TopCenter;
@@ -525,8 +504,30 @@
             guna2Panel9.Location = new Point(0, 0);
             guna2Panel9.Name = "guna2Panel9";
             guna2Panel9.ShadowDecoration.CustomizableEdges = customizableEdges26;
-            guna2Panel9.Size = new Size(627, 44);
+            guna2Panel9.Size = new Size(541, 44);
             guna2Panel9.TabIndex = 135;
+            // 
+            // btAsignar
+            // 
+            btAsignar.BackColor = Color.White;
+            btAsignar.BorderColor = Color.Transparent;
+            btAsignar.BorderRadius = 5;
+            btAsignar.CustomizableEdges = customizableEdges27;
+            btAsignar.DisabledState.BorderColor = Color.DarkGray;
+            btAsignar.DisabledState.CustomBorderColor = Color.DarkGray;
+            btAsignar.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btAsignar.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btAsignar.FillColor = Color.FromArgb(16, 57, 129);
+            btAsignar.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btAsignar.ForeColor = Color.White;
+            btAsignar.Image = Properties.Resources.add_white;
+            btAsignar.Location = new Point(348, 393);
+            btAsignar.Name = "btAsignar";
+            btAsignar.ShadowDecoration.CustomizableEdges = customizableEdges28;
+            btAsignar.Size = new Size(131, 35);
+            btAsignar.TabIndex = 136;
+            btAsignar.Text = "ASIGNAR";
+            btAsignar.Click += btAsignar_Click;
             // 
             // AsignacionCarga
             // 

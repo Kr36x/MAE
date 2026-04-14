@@ -451,5 +451,10 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
         {
 
         }
+
+        private void lbAvisoSeccion_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -861,9 +861,28 @@ LEFT JOIN Seccion s
 LEFT JOIN Grado g
     ON s.GradoID = g.GradoID
 WHERE d.Estado = 1; 
+use AgroLinkDB
+CREATE OR ALTER PROCEDURE spMAE_ListarCargaAcademicaxDocentexSec 
+    @DocenteID INT, 
+    @SeccionID INT
+AS
+BEGIN
+    SELECT DISTINCT
+        CA.CargaID,
+        A.AsignaturaID, 
+        A.Nombre AS Asignatura
+    FROM CargaAcademica CA
+    INNER JOIN Asignatura A ON CA.AsignaturaID = A.AsignaturaID
+    WHERE 
+        CA.DocenteID = @DocenteID 
+        AND CA.SeccionID = @SeccionID
+        AND CA.Estado = 1
+    ORDER BY A.Nombre
+END
+GO
 
 
-
+exec spMAE_ListarCargaAcademicaxDocentexSec 2,3
 
 
 

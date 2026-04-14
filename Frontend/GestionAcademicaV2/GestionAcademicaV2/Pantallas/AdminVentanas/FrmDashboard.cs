@@ -83,24 +83,33 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
                         new SqlParameter("@Nivel", cbbNivel.Text)
                     }
                 );
-
-                for (int i = 0; i < dt.Rows.Count; i++)
+                if (dt.Rows.Count == 0)
                 {
-                    string grado = dt.Rows[i]["NombreGrado"].ToString().Trim();
-                    int promedio = Convert.ToInt32(dt.Rows[i]["PromedioGrado"]);
+                    lbDatosGrafico.Visible = true;
+                    lbDatos.Visible = true;
+                }
+                else
+                {
+                    lbDatosGrafico.Visible = false;
+                    lbDatos.Visible= false;
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        string grado = dt.Rows[i]["NombreGrado"].ToString().Trim();
+                        int promedio = Convert.ToInt32(dt.Rows[i]["PromedioGrado"]);
 
-                    int idx = sBarras.Points.AddXY(i, promedio);
-                    sMeta.Points.AddXY(i, 85);
+                        int idx = sBarras.Points.AddXY(i, promedio);
+                        sMeta.Points.AddXY(i, 85);
 
-                    sBarras.Points[idx].AxisLabel = grado;
-                    sBarras.Points[idx].Label = promedio + "%";
-                    //sBarras.Points[idx].Color = Color.CornflowerBlue;
-                    if (promedio < 70)
-                        sBarras.Points[idx].Color = Color.Tomato;
-                    else if (promedio < 90)
-                        sBarras.Points[idx].Color = Color.FromArgb(255, 230, 128);   // Amarillo
-                    else
-                        sBarras.Points[idx].Color = Color.CornflowerBlue;
+                        sBarras.Points[idx].AxisLabel = grado;
+                        sBarras.Points[idx].Label = promedio + "%";
+                        //sBarras.Points[idx].Color = Color.CornflowerBlue;
+                        if (promedio < 70)
+                            sBarras.Points[idx].Color = Color.Tomato;
+                        else if (promedio < 90)
+                            sBarras.Points[idx].Color = Color.FromArgb(255, 230, 128);   // Amarillo
+                        else
+                            sBarras.Points[idx].Color = Color.CornflowerBlue;
+                    }
                 }
             }
             catch (Exception ex)
@@ -269,6 +278,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
                 if (dt.Rows.Count == 0)
                 {
+                    
                     OcultarContenedores();
                     return;
                 }

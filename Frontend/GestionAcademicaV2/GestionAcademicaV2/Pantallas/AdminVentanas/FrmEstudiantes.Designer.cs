@@ -64,6 +64,7 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2ContainerControl1 = new Guna.UI2.WinForms.Guna2ContainerControl();
+            lbDatosEstudiantes = new Guna.UI2.WinForms.Guna2HtmlLabel();
             dgvEstudiantes = new Guna.UI2.WinForms.Guna2DataGridView();
             EstudianteID = new DataGridViewTextBoxColumn();
             NombreEstudiante = new DataGridViewTextBoxColumn();
@@ -108,6 +109,7 @@
             guna2ContainerControl1.BorderColor = Color.FromArgb(217, 217, 217);
             guna2ContainerControl1.BorderRadius = 8;
             guna2ContainerControl1.BorderThickness = 2;
+            guna2ContainerControl1.Controls.Add(lbDatosEstudiantes);
             guna2ContainerControl1.Controls.Add(dgvEstudiantes);
             guna2ContainerControl1.CustomizableEdges = customizableEdges1;
             guna2ContainerControl1.Location = new Point(46, 216);
@@ -117,6 +119,17 @@
             guna2ContainerControl1.TabIndex = 0;
             guna2ContainerControl1.Text = "guna2ContainerControl1";
             guna2ContainerControl1.Click += guna2ContainerControl1_Click;
+            // 
+            // lbDatosEstudiantes
+            // 
+            lbDatosEstudiantes.BackColor = Color.Transparent;
+            lbDatosEstudiantes.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbDatosEstudiantes.Location = new Point(385, 23);
+            lbDatosEstudiantes.Name = "lbDatosEstudiantes";
+            lbDatosEstudiantes.Size = new Size(239, 23);
+            lbDatosEstudiantes.TabIndex = 1;
+            lbDatosEstudiantes.Text = "NO HAY DATOS QUE MOSTRAR";
+            lbDatosEstudiantes.Visible = false;
             // 
             // dgvEstudiantes
             // 
@@ -551,6 +564,7 @@
             Text = "ESTUDIANTES";
             Load += FrmEstudiantes_Load;
             guna2ContainerControl1.ResumeLayout(false);
+            guna2ContainerControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvEstudiantes).EndInit();
             guna2ContainerControl2.ResumeLayout(false);
             guna2ContainerControl2.PerformLayout();
@@ -594,5 +608,6 @@
         private Guna.UI2.WinForms.Guna2Panel guna2Panel11;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lbDatosEstudiantes;
     }
 }

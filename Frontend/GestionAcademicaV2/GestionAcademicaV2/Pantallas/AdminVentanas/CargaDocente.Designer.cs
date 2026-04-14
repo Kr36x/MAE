@@ -93,10 +93,12 @@
             dtpAnio = new Guna.UI2.WinForms.Guna2DateTimePicker();
             guna2HtmlLabel7 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2ContainerControl1 = new Guna.UI2.WinForms.Guna2ContainerControl();
+            lbDatosGrafico = new Guna.UI2.WinForms.Guna2HtmlLabel();
             chartDocentes = new System.Windows.Forms.DataVisualization.Charting.Chart();
             guna2HtmlLabel8 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2Panel8 = new Guna.UI2.WinForms.Guna2Panel();
             guna2ContainerControl2 = new Guna.UI2.WinForms.Guna2ContainerControl();
+            lbDatosDocente = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel9 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2Panel6 = new Guna.UI2.WinForms.Guna2Panel();
             dgvDocentes = new Guna.UI2.WinForms.Guna2DataGridView();
@@ -106,6 +108,7 @@
             Grados = new DataGridViewTextBoxColumn();
             Secciones = new DataGridViewTextBoxColumn();
             guna2ContainerControl3 = new Guna.UI2.WinForms.Guna2ContainerControl();
+            lbDatosAsignatura = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel10 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2Panel7 = new Guna.UI2.WinForms.Guna2Panel();
             dgvAsignatura = new Guna.UI2.WinForms.Guna2DataGridView();
@@ -388,6 +391,7 @@
             guna2ContainerControl1.BorderColor = Color.FromArgb(217, 217, 217);
             guna2ContainerControl1.BorderRadius = 7;
             guna2ContainerControl1.BorderThickness = 2;
+            guna2ContainerControl1.Controls.Add(lbDatosGrafico);
             guna2ContainerControl1.Controls.Add(chartDocentes);
             guna2ContainerControl1.Controls.Add(guna2HtmlLabel8);
             guna2ContainerControl1.Controls.Add(guna2Panel8);
@@ -399,6 +403,19 @@
             guna2ContainerControl1.Size = new Size(907, 242);
             guna2ContainerControl1.TabIndex = 5;
             guna2ContainerControl1.Text = "guna2ContainerControl1";
+            // 
+            // lbDatosGrafico
+            // 
+            lbDatosGrafico.AutoSize = false;
+            lbDatosGrafico.BackColor = Color.Transparent;
+            lbDatosGrafico.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbDatosGrafico.Location = new Point(243, 40);
+            lbDatosGrafico.Name = "lbDatosGrafico";
+            lbDatosGrafico.Size = new Size(402, 27);
+            lbDatosGrafico.TabIndex = 12;
+            lbDatosGrafico.Text = "NO HAY DATOS PARA MOSTRAR";
+            lbDatosGrafico.TextAlignment = ContentAlignment.TopCenter;
+            lbDatosGrafico.Visible = false;
             // 
             // chartDocentes
             // 
@@ -450,6 +467,7 @@
             guna2ContainerControl2.BorderColor = Color.FromArgb(217, 217, 217);
             guna2ContainerControl2.BorderRadius = 7;
             guna2ContainerControl2.BorderThickness = 2;
+            guna2ContainerControl2.Controls.Add(lbDatosDocente);
             guna2ContainerControl2.Controls.Add(guna2HtmlLabel9);
             guna2ContainerControl2.Controls.Add(guna2Panel6);
             guna2ContainerControl2.Controls.Add(dgvDocentes);
@@ -460,6 +478,17 @@
             guna2ContainerControl2.Size = new Size(610, 214);
             guna2ContainerControl2.TabIndex = 6;
             guna2ContainerControl2.Text = "guna2ContainerControl2";
+            // 
+            // lbDatosDocente
+            // 
+            lbDatosDocente.BackColor = Color.Transparent;
+            lbDatosDocente.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbDatosDocente.Location = new Point(228, 45);
+            lbDatosDocente.Name = "lbDatosDocente";
+            lbDatosDocente.Size = new Size(186, 17);
+            lbDatosDocente.TabIndex = 11;
+            lbDatosDocente.Text = "NO HAY DATOS PARA MOSTRAR";
+            lbDatosDocente.Visible = false;
             // 
             // guna2HtmlLabel9
             // 
@@ -603,6 +632,7 @@
             guna2ContainerControl3.BorderColor = Color.FromArgb(217, 217, 217);
             guna2ContainerControl3.BorderRadius = 7;
             guna2ContainerControl3.BorderThickness = 2;
+            guna2ContainerControl3.Controls.Add(lbDatosAsignatura);
             guna2ContainerControl3.Controls.Add(guna2HtmlLabel10);
             guna2ContainerControl3.Controls.Add(guna2Panel7);
             guna2ContainerControl3.Controls.Add(dgvAsignatura);
@@ -614,6 +644,17 @@
             guna2ContainerControl3.Size = new Size(291, 214);
             guna2ContainerControl3.TabIndex = 7;
             guna2ContainerControl3.Text = "guna2ContainerControl3";
+            // 
+            // lbDatosAsignatura
+            // 
+            lbDatosAsignatura.BackColor = Color.Transparent;
+            lbDatosAsignatura.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbDatosAsignatura.Location = new Point(63, 80);
+            lbDatosAsignatura.Name = "lbDatosAsignatura";
+            lbDatosAsignatura.Size = new Size(186, 17);
+            lbDatosAsignatura.TabIndex = 12;
+            lbDatosAsignatura.Text = "NO HAY DATOS PARA MOSTRAR";
+            lbDatosAsignatura.Visible = false;
             // 
             // guna2HtmlLabel10
             // 
@@ -701,6 +742,7 @@
             dgvAsignatura.ThemeStyle.RowsStyle.Height = 30;
             dgvAsignatura.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
             dgvAsignatura.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            dgvAsignatura.CellClick += dgvAsignatura_CellClick;
             dgvAsignatura.CellFormatting += dgvAsignatura_CellFormatting;
             // 
             // AsignaturaID
@@ -847,8 +889,10 @@
             guna2ContainerControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)chartDocentes).EndInit();
             guna2ContainerControl2.ResumeLayout(false);
+            guna2ContainerControl2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvDocentes).EndInit();
             guna2ContainerControl3.ResumeLayout(false);
+            guna2ContainerControl3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvAsignatura).EndInit();
             guna2Panel1.ResumeLayout(false);
             guna2Panel5.ResumeLayout(false);
@@ -905,5 +949,8 @@
         private Guna.UI2.WinForms.Guna2Panel guna2Panel7;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel9;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel8;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lbDatosDocente;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lbDatosAsignatura;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lbDatosGrafico;
     }
 }

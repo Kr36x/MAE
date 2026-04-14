@@ -91,10 +91,19 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
                         new SqlParameter("@SeccionID", seccionID)
                     };
                     //DataTable dt = util.EjecutarSPParametros("spMAE_TraeAsignaturasPorDocenteSeccion", p);
-                    DataTable dt = util.EjecutarSPParametros("spMAE_ListarCargaAcademicaxDocentexSecc", p);
-
-                    dgvAsignatura.DataSource = dt;
-                    ConfigurarColumnas2();
+                    DataTable dt = util.EjecutarSPParametros("spMAE_ListarCargaAcademicaxDocentexSec", p);
+                    if (dt.Rows.Count == 0)
+                    {
+                        dgvDocentes.DataSource = null;
+                        lbDatosAsignatura.Visible = true;
+                    }
+                    else
+                    {
+                        dgvAsignatura.DataSource = dt;
+                        dgvAsignatura.Columns["CargaID"].Visible = false;
+                        lbDatosAsignatura.Visible=false;
+                        ConfigurarColumnas2();
+                    }
                 }
             }
             catch (Exception ex)
@@ -154,13 +163,23 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
             };
 
                 DataTable dt = util.EjecutarSPParametros("spMAE_BuscarDocentesPorGradoSeccionAnio", parametros);
-                dgvDocentes.DataSource = dt;
-                dgvDocentes.Columns["CargaID"].Visible = false;
-                dgvDocentes.Columns["Estado"].Visible = false;
-                dgvDocentes.Columns["SeccionID"].Visible = false;
-                dgvDocentes.Columns["AsignaturaID"].Visible = false;
-
-                ConfigurarColumnas();
+                if (dt.Rows.Count == 0)
+                {
+                    dgvDocentes.Visible = false;
+                    lbDatosDocente.Visible = true;
+                }
+                else
+                {
+                    dgvDocentes.DataSource = dt;
+                    dgvDocentes.Columns["CargaID"].Visible = false;
+                    dgvDocentes.Columns["Estado"].Visible = false;
+                    dgvDocentes.Columns["SeccionID"].Visible = false;
+                    dgvDocentes.Columns["AsignaturaID"].Visible = false;
+                    dgvDocentes.Visible = true;
+                    lbDatosDocente.Visible=false;
+                    ConfigurarColumnas();
+                }
+                
             }
             catch (Exception ex)
             {
@@ -252,7 +271,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
                 };
                 //DataTable dt = util.EjecutarSPParametros("spMAE_ListarCargaAcademica", p);
                 DataTable dt = util.EjecutarSPParametros("spMAE_CargaAcademicaDocenteSeccion", p);
-
+                lbDatosGrafico.Visible = false;
                 if (dt != null && dt.Rows.Count > 0)
                 {
                     for (int i = 0; i < dt.Rows.Count; i++)
@@ -268,6 +287,9 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
                     {
                         area.AxisX.ScaleView.Zoom(0, 10);
                     }
+                }else
+                {
+                    lbDatosGrafico.Visible = true;
                 }
             }
             catch (Exception ex)
@@ -286,6 +308,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
             //CargarDocentes();
             BuscarDocentes2();
             CargarGraficoCargaAcademica();
+            //ConfigurarColumnas();
         }
 
         private void cbbGrado_SelectedIndexChanged(object sender, EventArgs e)
@@ -340,7 +363,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
         private void dgvDocentes_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+
             //if (dgvDocentes.CurrentRow != null)
             //{
             //    int docenteID = Convert.ToInt32(dgvDocentes.CurrentRow.Cells["DocenteID"].Value);
@@ -495,6 +518,54 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
                 colBorrar.HeaderText = "ELIMINAR";
                 colBorrar.ImageLayout = DataGridViewImageCellLayout.Zoom;
                 dgvAsignatura.Columns.Add(colBorrar);
+            }
+        }
+
+        private void dgvAsignatura_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0) return;
+
+            if (dgvAsignatura.Columns[e.ColumnIndex].Name == "colBorrar")
+            {
+                DataGridViewRow row = dgvAsignatura.Rows[e.RowIndex];
+
+                int cargaID = Convert.ToInt32(row.Cells["CargaID"].Value);
+
+                DialogResult resp = MessageBox.Show(
+                    "¿Desea eliminar esta carga académica?",
+                    "Confirmación",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question
+                );
+
+                if (resp == DialogResult.No)
+                    return;
+
+                try
+                {
+                    SqlParameter[] p =
+                    {
+                        new SqlParameter("@CargaID", cargaID)
+                    };
+
+                    EjecutarUtilidades util = new EjecutarUtilidades();
+                    util.EjecutarSPParametros("spMAE_InactivarCargaAcademica", p);
+
+                    MessageBox.Show("Carga académica inactivada correctamente.");
+
+                    int docenteID = Convert.ToInt32(dgvDocentes.CurrentRow.Cells["DocenteID"].Value);
+                    int seccionID = Convert.ToInt32(dgvDocentes.CurrentRow.Cells["SeccionID"].Value);
+
+                    CargarAsignaturasDocente(docenteID, seccionID);
+                }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show("Error SQL: " + ex.Message);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
             }
         }
     }

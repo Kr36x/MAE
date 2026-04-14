@@ -315,6 +315,7 @@
             guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             cbbNivel = new Guna.UI2.WinForms.Guna2ComboBox();
             ctnSecundario = new Guna.UI2.WinForms.Guna2ContainerControl();
+            lbDatosGrafico = new Guna.UI2.WinForms.Guna2HtmlLabel();
             chartGrados = new System.Windows.Forms.DataVisualization.Charting.Chart();
             lbAnio = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -323,6 +324,7 @@
             guna2HtmlLabel26 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             dtpAnio = new Guna.UI2.WinForms.Guna2DateTimePicker();
             pnlPrincipal = new Guna.UI2.WinForms.Guna2Panel();
+            lbDatos = new Guna.UI2.WinForms.Guna2HtmlLabel();
             cbbParcial = new Guna.UI2.WinForms.Guna2ComboBox();
             guna2HtmlLabel11 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel29 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -2604,6 +2606,7 @@
             ctnSecundario.BorderColor = Color.FromArgb(217, 221, 226);
             ctnSecundario.BorderRadius = 7;
             ctnSecundario.BorderThickness = 2;
+            ctnSecundario.Controls.Add(lbDatosGrafico);
             ctnSecundario.Controls.Add(chartGrados);
             ctnSecundario.Controls.Add(lbAnio);
             ctnSecundario.Controls.Add(guna2HtmlLabel3);
@@ -2616,6 +2619,17 @@
             ctnSecundario.Size = new Size(898, 281);
             ctnSecundario.TabIndex = 4;
             ctnSecundario.Text = "guna2ContainerControl2";
+            // 
+            // lbDatosGrafico
+            // 
+            lbDatosGrafico.BackColor = Color.Transparent;
+            lbDatosGrafico.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbDatosGrafico.Location = new Point(336, 55);
+            lbDatosGrafico.Name = "lbDatosGrafico";
+            lbDatosGrafico.Size = new Size(248, 23);
+            lbDatosGrafico.TabIndex = 13;
+            lbDatosGrafico.Text = "NO HAY DATOS PARA MOSTRAR";
+            lbDatosGrafico.Visible = false;
             // 
             // chartGrados
             // 
@@ -2745,11 +2759,22 @@
             pnlPrincipal.Controls.Add(ctnKinder);
             pnlPrincipal.CustomizableEdges = customizableEdges153;
             pnlPrincipal.FillColor = Color.White;
-            pnlPrincipal.Location = new Point(71, 158);
+            pnlPrincipal.Location = new Point(71, 155);
             pnlPrincipal.Name = "pnlPrincipal";
             pnlPrincipal.ShadowDecoration.CustomizableEdges = customizableEdges154;
-            pnlPrincipal.Size = new Size(896, 217);
+            pnlPrincipal.Size = new Size(896, 220);
             pnlPrincipal.TabIndex = 9;
+            // 
+            // lbDatos
+            // 
+            lbDatos.BackColor = Color.Transparent;
+            lbDatos.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbDatos.Location = new Point(368, 173);
+            lbDatos.Name = "lbDatos";
+            lbDatos.Size = new Size(353, 23);
+            lbDatos.TabIndex = 14;
+            lbDatos.Text = "SELECIONE NIVEL PARA MOSTRAR LOS DATOS";
+            lbDatos.Visible = false;
             // 
             // cbbParcial
             // 
@@ -2890,6 +2915,7 @@
             Controls.Add(ctnSecundario);
             Controls.Add(cbbNivel);
             Controls.Add(guna2Panel1);
+            Controls.Add(lbDatos);
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Name = "FrmDashboard";
             Text = "REPORTE DE RENDIMIENTO ACADÉMICO";
@@ -3071,5 +3097,7 @@
         private Guna.UI2.WinForms.Guna2Panel guna2Panel4;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel8;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lbDatosGrafico;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lbDatos;
     }
 }
