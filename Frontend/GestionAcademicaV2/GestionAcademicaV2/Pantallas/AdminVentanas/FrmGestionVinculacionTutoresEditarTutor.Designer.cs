@@ -153,6 +153,7 @@
             txtLugar.Font = new Font("Segoe UI", 9F);
             txtLugar.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             txtLugar.Location = new Point(443, 79);
+            txtLugar.MaxLength = 150;
             txtLugar.Multiline = true;
             txtLugar.Name = "txtLugar";
             txtLugar.PlaceholderText = "";
@@ -184,9 +185,9 @@
             txtTelefono.Font = new Font("Segoe UI", 9F);
             txtTelefono.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             txtTelefono.Location = new Point(443, 261);
-            txtTelefono.MaxLength = 13;
+            txtTelefono.MaxLength = 8;
             txtTelefono.Name = "txtTelefono";
-            txtTelefono.PlaceholderText = "Ej: 31415926";
+            txtTelefono.PlaceholderText = "Ej: 97895253";
             txtTelefono.SelectedText = "";
             txtTelefono.ShadowDecoration.CustomizableEdges = customizableEdges6;
             txtTelefono.Size = new Size(298, 36);

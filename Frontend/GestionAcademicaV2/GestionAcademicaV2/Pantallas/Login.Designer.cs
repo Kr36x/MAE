@@ -180,7 +180,7 @@
             txtUsuario.IconRight = Properties.Resources.user;
             txtUsuario.IconRightOffset = new Point(5, 0);
             txtUsuario.Location = new Point(312, 119);
-            txtUsuario.MaxLength = 32;
+            txtUsuario.MaxLength = 50;
             txtUsuario.Name = "txtUsuario";
             txtUsuario.PlaceholderText = "";
             txtUsuario.SelectedText = "";
@@ -235,7 +235,7 @@
             txtContrasenia.ForeColor = Color.Black;
             txtContrasenia.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             txtContrasenia.Location = new Point(312, 186);
-            txtContrasenia.MaxLength = 32;
+            txtContrasenia.MaxLength = 255;
             txtContrasenia.Name = "txtContrasenia";
             txtContrasenia.PasswordChar = '*';
             txtContrasenia.PlaceholderText = "";

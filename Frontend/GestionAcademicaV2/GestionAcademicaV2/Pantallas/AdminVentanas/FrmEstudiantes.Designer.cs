@@ -373,6 +373,7 @@
             txtBuscarEstudiante.Font = new Font("Segoe UI", 9F);
             txtBuscarEstudiante.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             txtBuscarEstudiante.Location = new Point(514, 56);
+            txtBuscarEstudiante.MaxLength = 150;
             txtBuscarEstudiante.Name = "txtBuscarEstudiante";
             txtBuscarEstudiante.PlaceholderText = "INGRESE NOMBRE A BUSCAR";
             txtBuscarEstudiante.SelectedText = "";

@@ -217,6 +217,7 @@
             txtNombre.ForeColor = Color.Black;
             txtNombre.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             txtNombre.Location = new Point(16, 50);
+            txtNombre.MaxLength = 100;
             txtNombre.Name = "txtNombre";
             txtNombre.PlaceholderText = "";
             txtNombre.SelectedText = "";
@@ -392,6 +393,7 @@
             txtEspecialidad.ForeColor = Color.Black;
             txtEspecialidad.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             txtEspecialidad.Location = new Point(274, 261);
+            txtEspecialidad.MaxLength = 100;
             txtEspecialidad.Name = "txtEspecialidad";
             txtEspecialidad.PlaceholderText = "";
             txtEspecialidad.SelectedText = "";
@@ -499,6 +501,7 @@
             txtUsuario.ForeColor = Color.Black;
             txtUsuario.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             txtUsuario.Location = new Point(16, 52);
+            txtUsuario.MaxLength = 50;
             txtUsuario.Name = "txtUsuario";
             txtUsuario.PlaceholderText = "";
             txtUsuario.SelectedText = "";
@@ -532,6 +535,7 @@
             txtContrasena.ForeColor = Color.Black;
             txtContrasena.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             txtContrasena.Location = new Point(274, 52);
+            txtContrasena.MaxLength = 255;
             txtContrasena.Name = "txtContrasena";
             txtContrasena.PasswordChar = '*';
             txtContrasena.PlaceholderText = "";
@@ -557,6 +561,7 @@
             txtCorreo.ForeColor = Color.Black;
             txtCorreo.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             txtCorreo.Location = new Point(16, 121);
+            txtCorreo.MaxLength = 150;
             txtCorreo.Name = "txtCorreo";
             txtCorreo.PlaceholderText = "";
             txtCorreo.SelectedText = "";
@@ -602,6 +607,7 @@
             txtLugarTrabajo.ForeColor = Color.Black;
             txtLugarTrabajo.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             txtLugarTrabajo.Location = new Point(274, 51);
+            txtLugarTrabajo.MaxLength = 150;
             txtLugarTrabajo.Multiline = true;
             txtLugarTrabajo.Name = "txtLugarTrabajo";
             txtLugarTrabajo.PlaceholderText = "";
