@@ -48,8 +48,26 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
             dgvReuniones.CellClick += dgvReuniones_CellClick;
             dgvReuniones.CellMouseEnter += dgvReuniones_CellMouseEnter;
             dgvReuniones.CellMouseLeave += dgvReuniones_CellMouseLeave;
-        }
 
+            dgvReuniones.Paint += dgvReuniones_Paint;
+        }
+        private void dgvReuniones_Paint(object sender, PaintEventArgs e)
+        {
+            if (dgvReuniones.Rows.Count == 0)
+            {
+                string mensaje = "No hay reuniones programadas para mostrar.";
+
+                using Font font = new Font("Segoe UI", 12F, FontStyle.Bold);
+                using SolidBrush brush = new SolidBrush(Color.FromArgb(120, 120, 120));
+
+                SizeF size = e.Graphics.MeasureString(mensaje, font);
+
+                float x = (dgvReuniones.Width - size.Width) / 2;
+                float y = (dgvReuniones.Height - size.Height) / 2;
+
+                e.Graphics.DrawString(mensaje, font, brush, x, y);
+            }
+        }
         private void FrmVerReunionesDocente_Load(object sender, EventArgs e)
         {
             ConfigurarCombos();
@@ -588,6 +606,7 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
             ActualizarTextoRegistros();
             ActualizarControlesPaginacion();
             dgvReuniones.Refresh();
+            dgvReuniones.Invalidate();
         }
 
         private void AjustarAlturaFilas()
