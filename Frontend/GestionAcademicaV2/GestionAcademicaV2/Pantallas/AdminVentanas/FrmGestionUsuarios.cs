@@ -26,117 +26,156 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
             CargarDatosUsuario();
         }
 
+        private string QuitarAcentos(string texto)
+        {
+            string normalizado = texto.Normalize(System.Text.NormalizationForm.FormD);
+            var sb = new StringBuilder();
+
+            foreach (char c in normalizado)
+            {
+                var categoria = System.Globalization.CharUnicodeInfo.GetUnicodeCategory(c);
+                if (categoria != System.Globalization.UnicodeCategory.NonSpacingMark)
+                    sb.Append(c);
+            }
+
+            return sb.ToString().Normalize(System.Text.NormalizationForm.FormC);
+        }
         private void guna2Button1_Click(object sender, EventArgs e)
         {
             // Validaciones
-            if(usuarioID == 0 && txtUsuario.Text=="")
-            {
-                txtUsuario.Focus();
-                MessageBox.Show("Debe colocar un usuario");
-                return;
-            }else if (usuarioID == 0 && txtContrasena.Text == "")
+
+            if (txtContrasena.Text == "")
             {
                 txtContrasena.Focus();
                 MessageBox.Show("Debe colocar una contraseña.");
                 return;
-            }else if(usuarioID==0 && txtContrasena.TextLength<8)
+            }
+            else if (txtContrasena.TextLength < 8)
             {
                 txtContrasena.Focus();
                 MessageBox.Show("La contraseña debe tener al menos 8 caracteres.");
                 return;
-            } else if (usuarioID == 0 && txtCorreo.Text == "")
+            }
+            else if (txtCorreo.Text == "")
             {
                 txtCorreo.Focus();
                 MessageBox.Show("Debe colocar un correo electronico.");
                 return;
             }
-            else if (!txtCorreo.Text.Contains("@"))
+            else if (!txtCorreo.Text.Contains("@") || !txtCorreo.Text.Contains("."))
             {
-                MessageBox.Show("El correo debe contener el símbolo @");
+                txtCorreo.Focus();
+                MessageBox.Show("El correo debe contener el símbolo @ y .");
                 return;
             }
-            else if (usuarioID == 0 && cbbRol.Text == "")
+            else if (cbbRol.Text == "")
             {
                 cbbRol.Focus();
                 MessageBox.Show("Debe seleccionar un Rol para el usuario.");
                 return;
-            } else if(usuarioID == 0 && txtNombre.Text=="")
+            }
+            else if (txtNombre.Text == "")
             {
                 txtNombre.Focus();
                 MessageBox.Show("Debe colocar un nombre al usuario.");
                 return;
             }
-            else if (usuarioID == 0 && txtIdentidad.Text=="")
+            if (!txtUsuario.Text.Contains("."))
+            {
+                MessageBox.Show("Ingrese el nombre completo");
+                return;
+            }
+            else if (txtIdentidad.Text == "")
             {
                 txtIdentidad.Focus();
                 MessageBox.Show("Coloque un número de identidad al usuario.");
                 return;
             }
-            else if(usuarioID == 0 && txtIdentidad.TextLength<15)
+            else if (txtIdentidad.TextLength < 15)
             {
                 txtIdentidad.Focus();
                 MessageBox.Show("El número de identidad debe tener 13 dígitos.");
                 return;
             }
-            else if (usuarioID == 0 && cbbRol.SelectedIndex == 0 && cbbSexo.Text == "")
+            else if (cbbRol.SelectedIndex == 0 && cbbSexo.Text == "")
             {
                 cbbSexo.Focus();
                 MessageBox.Show("Debe colocar el genero del usuario.");
                 return;
             }
-            else if (usuarioID == 0 && cbbRol.SelectedIndex == 1 && cbbSexo.Text == "")
+            else if (cbbRol.SelectedIndex == 1 && cbbSexo.Text == "")
             {
                 cbbSexo.Focus();
                 MessageBox.Show("Debe colocar el genero del usuario.");
                 return;
             }
-            else if (usuarioID == 0 && cbbRol.SelectedIndex==2 && cbbParentesco.Text=="")
+            else if (cbbRol.SelectedIndex == 2 && cbbParentesco.Text == "")
             {
                 cbbParentesco.Focus();
                 MessageBox.Show("Debe colocar un parentesco al tutor.");
                 return;
             }
-            else if (usuarioID == 0 && cbbRol.SelectedIndex == 1 && dtpFechaNacimiento.Value == DateTime.Now)
-            {
-                dtpFechaNacimiento.Focus();
-                MessageBox.Show("Debe seleccionar una fecha de nacimiento.");
-                return;
-            }
-            else if (usuarioID == 0 && cbbRol.SelectedIndex == 0 && txtPosicion.Text == "")
+            else if (cbbRol.SelectedIndex == 0 && txtPosicion.Text == "")
             {
                 txtPosicion.Focus();
                 MessageBox.Show("Debe colocar la posición del usuario Administrador.");
                 return;
             }
-            else if (usuarioID == 0 && cbbRol.SelectedIndex == 0 && txtDireccion.Text == "")
+            else if (cbbRol.SelectedIndex == 0 && txtDireccion.Text == "")
             {
                 txtDireccion.Focus();
-                MessageBox.Show("Debe colocar la dirección del Docente.");
+                MessageBox.Show("Debe colocar la dirección al usuario.");
                 return;
             }
-            else if (usuarioID == 0 && txtTelefono.Text == "")
+            else if (cbbRol.SelectedIndex == 1 && txtDireccion.Text == "")
+            {
+                txtDireccion.Focus();
+                MessageBox.Show("Debe colocar la dirección al usuario.");
+                return;
+            }
+            else if (txtTelefono.Text == "")
             {
                 txtTelefono.Focus();
                 MessageBox.Show("Debe colocar un número de teléfono al usuario.");
                 return;
             }
-            else if (usuarioID == 0 && txtTelefono.TextLength<9)
+            else if (txtTelefono.TextLength < 9)
             {
                 txtTelefono.Focus();
                 MessageBox.Show("El telefono debe tener 8 dígitos.");
                 return;
             }
-            else if (usuarioID != 0 && txtTelefono.TextLength < 9)
+            else if (cbbRol.SelectedIndex == 1 && txtEspecialidad.Text == "")
             {
-                txtTelefono.Focus();
-                MessageBox.Show("El telefono debe tener 8 dígitos.");
-                return;
-            }
-            else if (usuarioID == 0 && cbbRol.SelectedIndex == 1 && txtEspecialidad.Text == "")
-            {
-                cbbParentesco.Focus();
+                txtEspecialidad.Focus();
                 MessageBox.Show("Debe colocar la especialidad del Docente.");
                 return;
+            }
+            else if (cbbRol.SelectedIndex == 2 && txtLugarTrabajo.Text == "")
+            {
+                cbbParentesco.Focus();
+                MessageBox.Show("Debe colocar el lugar de trabajo del tutor.");
+                return;
+            }
+            // Validación de que se seleccione una fecha de nacimiento mayor a 18 años.
+            if (cbbRol.SelectedIndex == 1)
+            {
+                DateTime fecha = dtpFechaNacimiento.Value;
+                DateTime hoy = DateTime.Now;
+
+                int edad = hoy.Year - fecha.Year;
+
+                if (fecha.Date > hoy.AddYears(-edad))
+                    edad--;
+
+                if (edad < 18)
+                {
+                    dtpFechaNacimiento.Focus();
+                    MessageBox.Show("Debe ser mayor de 18 años.",
+                                    "Validación",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Warning);
+                }
             }
             else
             {
@@ -173,10 +212,8 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
                 };
 
                 DataTable dt = util.EjecutarSPParametros("spMAE_Crear_EditarUsuario", p);
-                if(usuarioID==0)
-                {
                     MessageBox.Show("Datos guardados correctamente.");
-                    txtUsuario.Clear();
+                    txtUsuario.Text="";
                     txtContrasena.Clear();
                     txtCorreo.Clear();
                     cbbParentesco.SelectedIndex = -1;
@@ -184,18 +221,13 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
                     txtIdentidad.Clear();
                     cbbSexo.SelectedIndex = -1;
                     cbbParentesco.SelectedIndex = -1;
+                    cbbRol.SelectedIndex = -1;
                     txtPosicion.Clear();
                     dtpFechaNacimiento.Value = DateTime.Now;
                     txtDireccion.Clear();
                     txtLugarTrabajo.Clear();
                     txtTelefono.Clear();
                     txtEspecialidad.Clear();
-                }
-                else
-                {
-                    MessageBox.Show("Los datos han sido editados correctamente.");
-                    this.Close();
-                }
             }
         }
 
@@ -620,11 +652,12 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
             if (usuarioID == 0)
             {
                 ctnDatosUsuario.Visible = false;
+                btCrear.Visible = true;
             }
             else
             {
                 lbTitulo.Text = "EDITAR USUARIO";
-                btCrear.Text = "EDITAR"; 
+                btEditar.Visible = true;
                 ctnDatosUsuario.Visible = true;
             }
 
@@ -677,23 +710,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
         private void dtpFechaNacimiento_ValueChanged(object sender, EventArgs e)
         {
-            // Validación de que se seleccione una fecha de nacimiento mayor a 18 años.
-            DateTime fecha = dtpFechaNacimiento.Value;
-            DateTime hoy = DateTime.Now;
 
-            int edad = hoy.Year - fecha.Year;
-
-            if (fecha.Date > hoy.AddYears(-edad))
-                edad--;
-
-            if (edad < 18)
-            {
-                dtpFechaNacimiento.Focus();
-                MessageBox.Show("Debe ser mayor de 18 años.",
-                                "Validación",
-                                MessageBoxButtons.OK,
-                                MessageBoxIcon.Warning);
-            }
 
         }
 
@@ -712,6 +729,148 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Warning);
             }
+        }
+
+        private void txtNombre_TextChanged(object sender, EventArgs e)
+        {
+            {
+                string nombreCompleto = QuitarAcentos(txtNombre.Text.Trim());
+
+                if (string.IsNullOrWhiteSpace(nombreCompleto))
+                {
+                    txtUsuario.Text = "";
+                    return;
+                }
+
+                string[] partes = nombreCompleto.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+
+                if (partes.Length == 1)
+                {
+                    // Solo un nombre → usarlo tal cual
+                    txtUsuario.Text = partes[0].ToLower();
+                }
+                else if (partes.Length == 2)
+                {
+                    // Dos palabras → nombre + apellido
+                    txtUsuario.Text = $"{partes[0].ToLower()}.{partes[1].ToLower()}";
+                }
+                else if (partes.Length == 3)
+                {
+                    // Tres o más → nombre + apellido
+                    txtUsuario.Text = $"{partes[0].ToLower()}.{partes[2].ToLower()}";
+                }
+                else
+                {
+                    txtUsuario.Text = $"{partes[0].ToLower()}.{partes[2].ToLower()}";
+                }
+            }
+        }
+
+        private void btEditar_Click(object sender, EventArgs e)
+        {
+            if (txtContrasena.Text == "")
+            {
+                txtContrasena.Focus();
+                MessageBox.Show("Debe colocar una contraseña.");
+                return;
+            }
+            else if (txtContrasena.TextLength < 8)
+            {
+                txtContrasena.Focus();
+                MessageBox.Show("La contraseña debe tener al menos 8 caracteres.");
+                return;
+            }
+            else if (txtCorreo.Text == "")
+            {
+                txtCorreo.Focus();
+                MessageBox.Show("Debe colocar un correo electronico.");
+                return;
+            }
+            else if (!txtCorreo.Text.Contains("@") || !txtCorreo.Text.Contains("."))
+            {
+                txtCorreo.Focus();
+                MessageBox.Show("El correo debe contener el símbolo @ y .");
+                return;
+            }
+            else if (cbbRol.SelectedIndex == 0 && txtPosicion.Text == "")
+            {
+                txtPosicion.Focus();
+                MessageBox.Show("Debe colocar la posición del usuario Administrador.");
+                return;
+            }
+            else if (cbbRol.SelectedIndex == 0 && txtDireccion.Text == "")
+            {
+                txtDireccion.Focus();
+                MessageBox.Show("Debe colocar la dirección al usuario.");
+                return;
+            }
+            else if (cbbRol.SelectedIndex == 1 && txtDireccion.Text == "")
+            {
+                txtDireccion.Focus();
+                MessageBox.Show("Debe colocar la dirección al usuario.");
+                return;
+            }
+            else if (txtTelefono.Text == "")
+            {
+                txtTelefono.Focus();
+                MessageBox.Show("Debe colocar un número de teléfono al usuario.");
+                return;
+            }
+            else if (txtTelefono.TextLength < 9)
+            {
+                txtTelefono.Focus();
+                MessageBox.Show("El telefono debe tener 8 dígitos.");
+                return;
+            }
+            else if (cbbRol.SelectedIndex == 1 && txtEspecialidad.Text == "")
+            {
+                txtEspecialidad.Focus();
+                MessageBox.Show("Debe colocar la especialidad del Docente.");
+                return;
+            }
+            else if (cbbRol.SelectedIndex == 2 && txtLugarTrabajo.Text == "")
+            {
+                cbbParentesco.Focus();
+                MessageBox.Show("Debe colocar el lugar de trabajo del tutor.");
+                return;
+            }
+                // Cargar los datos a la base de datos
+                EjecutarUtilidades util = new EjecutarUtilidades();
+
+                SqlParameter[] p =
+                {
+                    new SqlParameter("@usuario", txtUsuario.Text),
+                    new SqlParameter("@correo", txtCorreo.Text),
+                    new SqlParameter("@password", txtContrasena.Text),
+                    new SqlParameter("@rol", cbbRol.Text),
+                    new SqlParameter("@nombre", txtNombre.Text),
+                    new SqlParameter("@identidad", txtIdentidad.Text),
+                    new SqlParameter("@telefono", txtTelefono.Text),
+
+                    // Admin / Docente
+                    new SqlParameter("@sexoAD", cbbSexo.Visible ? (object)cbbSexo.Text.Substring(0,1) : DBNull.Value),
+                    new SqlParameter("@direccionAD", txtDireccion.Visible ? (object)txtDireccion.Text : DBNull.Value),
+
+                    // Admin
+                    new SqlParameter("@posicionA", txtPosicion.Visible ? (object)txtPosicion.Text : DBNull.Value),
+
+                    // Docente
+                    new SqlParameter("@fechaNacimientoD", dtpFechaNacimiento.Visible ? (object)dtpFechaNacimiento.Value : DBNull.Value),
+                    new SqlParameter("@especialidadD", txtEspecialidad.Visible ? (object)txtEspecialidad.Text : DBNull.Value),
+
+                    // Tutor
+                    new SqlParameter("@parentescoT", cbbParentesco.Visible ? (object)cbbParentesco.Text : DBNull.Value),
+                    new SqlParameter("@lugartrabajoT", txtLugarTrabajo.Visible ? (object)txtLugarTrabajo.Text : DBNull.Value),
+
+                    // CREAR o EDITAR según el constructor
+                    new SqlParameter("@usuarioID", usuarioID == 0 ? (object)DBNull.Value : usuarioID)
+                };
+
+                DataTable dt = util.EjecutarSPParametros("spMAE_Crear_EditarUsuario", p);
+                    MessageBox.Show("Los datos han sido editados correctamente.");
+                    this.Close();
+
+         
         }
     }
 }
