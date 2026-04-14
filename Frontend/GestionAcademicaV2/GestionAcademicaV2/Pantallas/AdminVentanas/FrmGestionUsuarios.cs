@@ -157,14 +157,13 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
                 MessageBox.Show("Debe colocar el lugar de trabajo del tutor.");
                 return;
             }
-            // Validación de que se seleccione una fecha de nacimiento mayor a 18 años.
+
             if (cbbRol.SelectedIndex == 1)
             {
                 DateTime fecha = dtpFechaNacimiento.Value;
                 DateTime hoy = DateTime.Now;
 
                 int edad = hoy.Year - fecha.Year;
-
                 if (fecha.Date > hoy.AddYears(-edad))
                     edad--;
 
@@ -175,12 +174,11 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
                                     "Validación",
                                     MessageBoxButtons.OK,
                                     MessageBoxIcon.Warning);
+                    return;
                 }
             }
-            else
-            {
-                // Cargar los datos a la base de datos
-                EjecutarUtilidades util = new EjecutarUtilidades();
+            // Cargar los datos a la base de datos
+            EjecutarUtilidades util = new EjecutarUtilidades();
 
                 SqlParameter[] p =
                 {
@@ -228,7 +226,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
                     txtLugarTrabajo.Clear();
                     txtTelefono.Clear();
                     txtEspecialidad.Clear();
-            }
+            
         }
 
         private void CargarDatosUsuario()
@@ -869,8 +867,6 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
                 DataTable dt = util.EjecutarSPParametros("spMAE_Crear_EditarUsuario", p);
                     MessageBox.Show("Los datos han sido editados correctamente.");
                     this.Close();
-
-         
         }
     }
 }

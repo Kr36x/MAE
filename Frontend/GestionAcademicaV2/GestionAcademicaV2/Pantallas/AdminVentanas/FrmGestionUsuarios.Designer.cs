@@ -60,6 +60,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges30 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges43 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges44 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges31 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges32 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges33 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges34 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges37 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -70,8 +72,6 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges42 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges39 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges40 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges31 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges32 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             LbIdentidad = new Guna.UI2.WinForms.Guna2HtmlLabel();
             txtIdentidad = new Guna.UI2.WinForms.Guna2TextBox();
             btCrear = new Guna.UI2.WinForms.Guna2Button();
@@ -102,6 +102,7 @@
             lbParentesco = new Guna.UI2.WinForms.Guna2HtmlLabel();
             btCancelar = new Guna.UI2.WinForms.Guna2Button();
             guna2ContainerControl2 = new Guna.UI2.WinForms.Guna2ContainerControl();
+            btEditar = new Guna.UI2.WinForms.Guna2Button();
             btInformacion = new Guna.UI2.WinForms.Guna2PictureBox();
             ctnDatosUsuario = new Guna.UI2.WinForms.Guna2ContainerControl();
             lbAvisoTrabajo = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -125,7 +126,6 @@
             lbAvisoUsuario = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             lbTitulo = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            btEditar = new Guna.UI2.WinForms.Guna2Button();
             guna2ContainerControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)btInformacion).BeginInit();
             ctnDatosUsuario.SuspendLayout();
@@ -677,6 +677,30 @@
             guna2ContainerControl2.TabIndex = 108;
             guna2ContainerControl2.Text = "guna2ContainerControl2";
             // 
+            // btEditar
+            // 
+            btEditar.BackColor = Color.White;
+            btEditar.BorderColor = Color.Transparent;
+            btEditar.BorderRadius = 5;
+            btEditar.BorderThickness = 1;
+            btEditar.CustomizableEdges = customizableEdges31;
+            btEditar.DisabledState.BorderColor = Color.DarkGray;
+            btEditar.DisabledState.CustomBorderColor = Color.DarkGray;
+            btEditar.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btEditar.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btEditar.FillColor = Color.FromArgb(16, 57, 129);
+            btEditar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btEditar.ForeColor = Color.White;
+            btEditar.Image = Properties.Resources.add_white;
+            btEditar.Location = new Point(470, 570);
+            btEditar.Name = "btEditar";
+            btEditar.ShadowDecoration.CustomizableEdges = customizableEdges32;
+            btEditar.Size = new Size(105, 35);
+            btEditar.TabIndex = 111;
+            btEditar.Text = "EDITAR";
+            btEditar.Visible = false;
+            btEditar.Click += btEditar_Click;
+            // 
             // btInformacion
             // 
             btInformacion.BackColor = Color.FromArgb(16, 57, 129);
@@ -1011,30 +1035,6 @@
             lbTitulo.TabIndex = 107;
             lbTitulo.Text = "NUEVO USUARIO";
             lbTitulo.TextAlignment = ContentAlignment.TopCenter;
-            // 
-            // btEditar
-            // 
-            btEditar.BackColor = Color.White;
-            btEditar.BorderColor = Color.Transparent;
-            btEditar.BorderRadius = 5;
-            btEditar.BorderThickness = 1;
-            btEditar.CustomizableEdges = customizableEdges31;
-            btEditar.DisabledState.BorderColor = Color.DarkGray;
-            btEditar.DisabledState.CustomBorderColor = Color.DarkGray;
-            btEditar.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btEditar.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btEditar.FillColor = Color.FromArgb(16, 57, 129);
-            btEditar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btEditar.ForeColor = Color.White;
-            btEditar.Image = Properties.Resources.add_white;
-            btEditar.Location = new Point(470, 570);
-            btEditar.Name = "btEditar";
-            btEditar.ShadowDecoration.CustomizableEdges = customizableEdges32;
-            btEditar.Size = new Size(105, 35);
-            btEditar.TabIndex = 111;
-            btEditar.Text = "EDITAR";
-            btEditar.Visible = false;
-            btEditar.Click += btEditar_Click;
             // 
             // FrmGestionUsuarios
             // 
