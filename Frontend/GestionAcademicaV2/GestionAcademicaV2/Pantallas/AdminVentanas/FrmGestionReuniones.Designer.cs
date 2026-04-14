@@ -53,6 +53,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges33 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges34 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -77,8 +79,6 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges42 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges45 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges46 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
             guna2Panel6 = new Guna.UI2.WinForms.Guna2Panel();
@@ -94,6 +94,8 @@
             lblRegistros = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2Panel8 = new Guna.UI2.WinForms.Guna2Panel();
             guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            cbRegistrosPorPagina = new Guna.UI2.WinForms.Guna2ComboBox();
+            guna2HtmlLabel7 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             btnNuevaActividad = new Guna.UI2.WinForms.Guna2Button();
             cbEstado = new Guna.UI2.WinForms.Guna2ComboBox();
             guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -116,8 +118,6 @@
             guna2Panel13 = new Guna.UI2.WinForms.Guna2Panel();
             guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             guna2Panel14 = new Guna.UI2.WinForms.Guna2Panel();
-            cbRegistrosPorPagina = new Guna.UI2.WinForms.Guna2ComboBox();
-            guna2HtmlLabel7 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2Panel6.SuspendLayout();
             guna2Panel10.SuspendLayout();
             guna2Panel7.SuspendLayout();
@@ -262,6 +262,7 @@
             txtBuscar.Font = new Font("Segoe UI", 9F);
             txtBuscar.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             txtBuscar.Location = new Point(736, 28);
+            txtBuscar.MaxLength = 100;
             txtBuscar.Name = "txtBuscar";
             txtBuscar.PlaceholderText = "";
             txtBuscar.SelectedText = "";
@@ -391,6 +392,34 @@
             guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges34;
             guna2Panel2.Size = new Size(1004, 106);
             guna2Panel2.TabIndex = 33;
+            // 
+            // cbRegistrosPorPagina
+            // 
+            cbRegistrosPorPagina.BackColor = Color.Transparent;
+            cbRegistrosPorPagina.BorderRadius = 3;
+            cbRegistrosPorPagina.CustomizableEdges = customizableEdges21;
+            cbRegistrosPorPagina.DrawMode = DrawMode.OwnerDrawFixed;
+            cbRegistrosPorPagina.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbRegistrosPorPagina.FocusedColor = Color.FromArgb(94, 148, 255);
+            cbRegistrosPorPagina.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            cbRegistrosPorPagina.Font = new Font("Segoe UI", 10F);
+            cbRegistrosPorPagina.ForeColor = Color.FromArgb(68, 88, 112);
+            cbRegistrosPorPagina.ItemHeight = 15;
+            cbRegistrosPorPagina.Location = new Point(613, 73);
+            cbRegistrosPorPagina.Name = "cbRegistrosPorPagina";
+            cbRegistrosPorPagina.ShadowDecoration.CustomizableEdges = customizableEdges22;
+            cbRegistrosPorPagina.Size = new Size(146, 21);
+            cbRegistrosPorPagina.TabIndex = 40;
+            // 
+            // guna2HtmlLabel7
+            // 
+            guna2HtmlLabel7.BackColor = Color.Transparent;
+            guna2HtmlLabel7.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            guna2HtmlLabel7.Location = new Point(613, 51);
+            guna2HtmlLabel7.Name = "guna2HtmlLabel7";
+            guna2HtmlLabel7.Size = new Size(132, 17);
+            guna2HtmlLabel7.TabIndex = 39;
+            guna2HtmlLabel7.Text = "CANTIDAD REGISTROS";
             // 
             // btnNuevaActividad
             // 
@@ -680,34 +709,6 @@
             guna2Panel14.ShadowDecoration.CustomizableEdges = customizableEdges46;
             guna2Panel14.Size = new Size(50, 110);
             guna2Panel14.TabIndex = 0;
-            // 
-            // cbRegistrosPorPagina
-            // 
-            cbRegistrosPorPagina.BackColor = Color.Transparent;
-            cbRegistrosPorPagina.BorderRadius = 3;
-            cbRegistrosPorPagina.CustomizableEdges = customizableEdges21;
-            cbRegistrosPorPagina.DrawMode = DrawMode.OwnerDrawFixed;
-            cbRegistrosPorPagina.DropDownStyle = ComboBoxStyle.DropDownList;
-            cbRegistrosPorPagina.FocusedColor = Color.FromArgb(94, 148, 255);
-            cbRegistrosPorPagina.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            cbRegistrosPorPagina.Font = new Font("Segoe UI", 10F);
-            cbRegistrosPorPagina.ForeColor = Color.FromArgb(68, 88, 112);
-            cbRegistrosPorPagina.ItemHeight = 15;
-            cbRegistrosPorPagina.Location = new Point(613, 73);
-            cbRegistrosPorPagina.Name = "cbRegistrosPorPagina";
-            cbRegistrosPorPagina.ShadowDecoration.CustomizableEdges = customizableEdges22;
-            cbRegistrosPorPagina.Size = new Size(146, 21);
-            cbRegistrosPorPagina.TabIndex = 40;
-            // 
-            // guna2HtmlLabel7
-            // 
-            guna2HtmlLabel7.BackColor = Color.Transparent;
-            guna2HtmlLabel7.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            guna2HtmlLabel7.Location = new Point(613, 51);
-            guna2HtmlLabel7.Name = "guna2HtmlLabel7";
-            guna2HtmlLabel7.Size = new Size(132, 17);
-            guna2HtmlLabel7.TabIndex = 39;
-            guna2HtmlLabel7.Text = "CANTIDAD REGISTROS";
             // 
             // FrmGestionReuniones
             // 

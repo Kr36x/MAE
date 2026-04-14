@@ -68,6 +68,7 @@
             lbRol = new Guna.UI2.WinForms.Guna2HtmlLabel();
             btNuevoUsuario = new Guna.UI2.WinForms.Guna2Button();
             ctnUsuarios = new Guna.UI2.WinForms.Guna2ContainerControl();
+            lbDatosUsuario = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             guna2HtmlLabel6 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             dgvUsuarios = new Guna.UI2.WinForms.Guna2DataGridView();
@@ -88,7 +89,6 @@
             guna2Panel11 = new Guna.UI2.WinForms.Guna2Panel();
             guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             guna2Panel8 = new Guna.UI2.WinForms.Guna2Panel();
-            lbDatosUsuario = new Guna.UI2.WinForms.Guna2HtmlLabel();
             ctnFiltros.SuspendLayout();
             ctnUsuarios.SuspendLayout();
             guna2Panel2.SuspendLayout();
@@ -166,6 +166,7 @@
             txtBuscar.Font = new Font("Segoe UI", 9F);
             txtBuscar.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             txtBuscar.Location = new Point(440, 100);
+            txtBuscar.MaxLength = 150;
             txtBuscar.Name = "txtBuscar";
             txtBuscar.PlaceholderText = "ESCRIBA EL NOMBRE O CORREO A BUSCAR";
             txtBuscar.SelectedText = "";
@@ -254,6 +255,17 @@
             ctnUsuarios.Size = new Size(913, 386);
             ctnUsuarios.TabIndex = 114;
             ctnUsuarios.Text = "guna2ContainerControl1";
+            // 
+            // lbDatosUsuario
+            // 
+            lbDatosUsuario.BackColor = Color.Transparent;
+            lbDatosUsuario.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbDatosUsuario.Location = new Point(341, 42);
+            lbDatosUsuario.Name = "lbDatosUsuario";
+            lbDatosUsuario.Size = new Size(239, 23);
+            lbDatosUsuario.TabIndex = 138;
+            lbDatosUsuario.Text = "NO HAY DATOS QUE MOSTRAR";
+            lbDatosUsuario.Visible = false;
             // 
             // guna2Panel2
             // 
@@ -533,17 +545,6 @@
             guna2Panel8.ShadowDecoration.CustomizableEdges = customizableEdges26;
             guna2Panel8.Size = new Size(50, 115);
             guna2Panel8.TabIndex = 0;
-            // 
-            // lbDatosUsuario
-            // 
-            lbDatosUsuario.BackColor = Color.Transparent;
-            lbDatosUsuario.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbDatosUsuario.Location = new Point(341, 42);
-            lbDatosUsuario.Name = "lbDatosUsuario";
-            lbDatosUsuario.Size = new Size(239, 23);
-            lbDatosUsuario.TabIndex = 138;
-            lbDatosUsuario.Text = "NO HAY DATOS QUE MOSTRAR";
-            lbDatosUsuario.Visible = false;
             // 
             // FrmUsuariosPersonal
             // 

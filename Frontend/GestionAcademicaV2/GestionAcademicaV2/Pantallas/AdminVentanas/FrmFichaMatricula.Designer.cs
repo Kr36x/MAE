@@ -215,6 +215,7 @@
             txtNombreEstudiante.ForeColor = Color.Black;
             txtNombreEstudiante.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             txtNombreEstudiante.Location = new Point(194, 63);
+            txtNombreEstudiante.MaxLength = 150;
             txtNombreEstudiante.Name = "txtNombreEstudiante";
             txtNombreEstudiante.PlaceholderText = "";
             txtNombreEstudiante.SelectedText = "";

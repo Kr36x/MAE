@@ -270,6 +270,7 @@
             txtBusqueda.Font = new Font("Segoe UI", 9F);
             txtBusqueda.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             txtBusqueda.Location = new Point(207, 92);
+            txtBusqueda.MaxLength = 100;
             txtBusqueda.Name = "txtBusqueda";
             txtBusqueda.PlaceholderText = "";
             txtBusqueda.SelectedText = "";
