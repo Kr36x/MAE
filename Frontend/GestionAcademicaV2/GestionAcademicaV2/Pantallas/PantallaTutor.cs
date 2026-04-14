@@ -20,6 +20,7 @@ namespace GestionAcademicaV2.Pantallas
         {
             InitializeComponent();
             usuarioActual = usuario;
+
         }
         private void AbrirFormularioEnPanel(Form formularioHijo)
         {
@@ -58,9 +59,32 @@ namespace GestionAcademicaV2.Pantallas
 
         private void PantallaTutor_Load(object sender, EventArgs e)
         {
+            CargarDatosUsuario();
             AbrirFormularioEnPanel(new FrmInicioTutor(usuarioActual.UsuarioID));
         }
+        private void CargarDatosUsuario()
+        {
+            lblUsuario.Text = FormatearNombre(usuarioActual?.Usuario ?? "Usuario");
+            lblRol.Text = usuarioActual?.Rol ?? "Tutor";
+            lblId.Text = "ID: " + (usuarioActual?.UsuarioID.ToString() ?? "N/A");
+        }
 
+        private string FormatearNombre(string usuario)
+        {
+            if (string.IsNullOrWhiteSpace(usuario))
+                return string.Empty;
+
+            string[] partes = usuario.Replace(".", " ")
+                                     .Split(' ', StringSplitOptions.RemoveEmptyEntries);
+
+            for (int i = 0; i < partes.Length; i++)
+            {
+                if (partes[i].Length > 0)
+                    partes[i] = char.ToUpper(partes[i][0]) + partes[i][1..].ToLower();
+            }
+
+            return string.Join(" ", partes);
+        }
         private void btnSalir_Click(object sender, EventArgs e)
         {
             var confirm = MessageBox.Show(

@@ -1,5 +1,6 @@
 ﻿using GestionAcademicaV2.Modelos;
 using Microsoft.Data.SqlClient;
+using Org.BouncyCastle.Asn1.Ocsp;
 using System;
 using System.Data;
 using System.Drawing;
@@ -51,6 +52,40 @@ namespace GestionAcademicaV2.Pantallas.TutorVentanas
             CargarDatosIniciales();
         }
 
+        private string ObtenerNombreTutor()
+        {
+            using SqlConnection cn = _conexion.ObtenerConexion();
+            using SqlCommand cmd = new SqlCommand(@"
+        SELECT TOP 1 Nombre
+        FROM Tutor
+        WHERE TutorID = @TutorID;", cn);
+
+            cmd.Parameters.AddWithValue("@TutorID", _idTutor);
+
+            cn.Open();
+            object? result = cmd.ExecuteScalar();
+
+            return result == null || result == DBNull.Value
+                ? "tutor"
+                : result.ToString() ?? "tutor";
+        }
+
+        private string FormatearNombre(string nombre)
+        {
+            if (string.IsNullOrWhiteSpace(nombre))
+                return string.Empty;
+
+            string[] partes = nombre.Replace(".", " ")
+                                    .Split(' ', StringSplitOptions.RemoveEmptyEntries);
+
+            for (int i = 0; i < partes.Length; i++)
+            {
+                if (partes[i].Length > 0)
+                    partes[i] = char.ToUpper(partes[i][0]) + partes[i][1..].ToLower();
+            }
+
+            return string.Join(" ", partes);
+        }
         private void ConfigurarFormulario()
         {
             lblTituloDashboard.Text = "INICIO TUTOR";
@@ -113,6 +148,8 @@ namespace GestionAcademicaV2.Pantallas.TutorVentanas
                         MessageBoxIcon.Warning);
                     return;
                 }
+                string nombreTutor = FormatearNombre(ObtenerNombreTutor());
+                lblSaludoDocente.Text = $"Bienvenido, {nombreTutor}.";
 
                 CargarAnios();
                 CargarEstudiantes();
@@ -820,7 +857,7 @@ btnVerReuniones.HoverState.FillColor = _colorOliveDark;
                 col.SortMode = DataGridViewColumnSortMode.NotSortable;
 
             if (dgvInfo.Columns.Contains("AsistenciaID"))
-                dgvInfo.Columns["AsistenciaID"].HeaderText = "ID";
+                dgvInfo.Columns["AsistenciaID"].Visible = false;
 
             if (dgvInfo.Columns.Contains("EstudianteID"))
                 dgvInfo.Columns["EstudianteID"].Visible = false;
