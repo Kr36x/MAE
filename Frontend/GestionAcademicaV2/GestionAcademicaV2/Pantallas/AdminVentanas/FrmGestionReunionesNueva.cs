@@ -100,6 +100,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
             cbHora.Items.Add("03");
             cbHora.Items.Add("04");
             cbHora.Items.Add("05");
+            cbHora.Items.Add("06");
         }
 
         private void CargarPeriodosBase()
@@ -240,7 +241,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
                 DateTime ahora = DateTime.Now;
 
                 DateTime inicio = fecha.AddHours(7);   // 7:00 AM
-                DateTime fin = fecha.AddHours(17);     // 5:00 PM
+                DateTime fin = fecha.AddHours(19);     // 7:00 PM
 
                 DateTime? primeraOpcion = null;
 
@@ -492,11 +493,11 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
             }
 
             TimeSpan horaMinima = new TimeSpan(7, 0, 0);
-            TimeSpan horaMaxima = new TimeSpan(17, 0, 0);
+            TimeSpan horaMaxima = new TimeSpan(19, 0, 0);
 
             if (fechaHoraSeleccionada.TimeOfDay < horaMinima || fechaHoraSeleccionada.TimeOfDay > horaMaxima)
             {
-                MessageBox.Show("La hora debe estar entre 7:00 AM y 5:00 PM.",
+                MessageBox.Show("La hora debe estar entre 7:00 AM y 7:00 PM.",
                     "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }

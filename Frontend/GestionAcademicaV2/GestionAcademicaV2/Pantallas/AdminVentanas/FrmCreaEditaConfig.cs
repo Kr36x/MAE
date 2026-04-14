@@ -4,6 +4,7 @@ using System;
 using System.Data;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using System.Linq;
 
 namespace GestionAcademicaV2.Pantallas.AdminVentanas
 {
@@ -30,6 +31,9 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
             {
                 CargarDatosParaEditar(idConfigSeleccionado);
             }
+
+            txtCicloEscolar.KeyPress += txtCicloEscolar_KeyPress;
+            txtCicloEscolar.TextChanged += txtCicloEscolar_TextChanged;
         }
 
         private void CargarDatosParaEditar(int idConfig)
@@ -264,7 +268,48 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
                     "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        private void txtCicloEscolar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Solo permitir números y teclas de control como Backspace
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
 
+            // Máximo 9 caracteres: AAAA-AAAA
+            if (!char.IsControl(e.KeyChar) && txtCicloEscolar.Text.Length >= 9)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtCicloEscolar_TextChanged(object sender, EventArgs e)
+        {
+            int cursor = txtCicloEscolar.SelectionStart;
+            string texto = txtCicloEscolar.Text.Replace("-", "");
+
+            // Solo dejar números
+            texto = new string(texto.Where(char.IsDigit).ToArray());
+
+            // Limitar a 8 dígitos
+            if (texto.Length > 8)
+                texto = texto.Substring(0, 8);
+
+            // Insertar guion automáticamente después de 4 dígitos
+            if (texto.Length > 4)
+                texto = texto.Insert(4, "-");
+
+            if (txtCicloEscolar.Text != texto)
+            {
+                txtCicloEscolar.Text = texto;
+
+                // Ajustar posición del cursor
+                if (cursor == 5 && !txtCicloEscolar.Text.EndsWith("-"))
+                    cursor++;
+
+                txtCicloEscolar.SelectionStart = Math.Min(cursor, txtCicloEscolar.Text.Length);
+            }
+        }
         private void btnCancelarApertura_Click(object sender, EventArgs e)
         {
             DialogResult resultado = MessageBox.Show(

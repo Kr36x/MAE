@@ -67,6 +67,8 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
             dgvReuniones.CellMouseEnter += dgvReuniones_CellMouseEnter;
             dgvReuniones.CellMouseLeave += dgvReuniones_CellMouseLeave;
+
+            cbRegistrosPorPagina.SelectedIndexChanged += cbRegistrosPorPagina_SelectedIndexChanged;
         }
 
         private void FrmControlReuniones_Load(object sender, EventArgs e)
@@ -77,9 +79,10 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
             CargarDocentes();
             CargarCiclosAcademicos();
             CargarMesesDisponibles();
+            CargarComboRegistrosPorPagina();
             CargarReuniones();
 
-            txtBuscar.PlaceholderText = "Ingresar nombre a buscar";
+            txtBuscar.PlaceholderText = "Ingresar texto a buscar";
             btnTexto.Text = "1";
         }
 
@@ -218,7 +221,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
             dgvReuniones.Columns["No"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             foreach (DataGridViewColumn col in dgvReuniones.Columns)
-                col.SortMode = DataGridViewColumnSortMode.NotSortable;
+                col.SortMode = DataGridViewColumnSortMode.Automatic;
 
             dgvReuniones.Columns["Tema"].DefaultCellStyle.ForeColor = System.Drawing.Color.DarkSlateGray;
             dgvReuniones.Columns["Tema"].DefaultCellStyle.Font = new Font("Segoe UI", 9.5F, FontStyle.Regular);
@@ -527,7 +530,19 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
             return dt;
         }
+        private void CargarComboRegistrosPorPagina()
+        {
+            cbRegistrosPorPagina.Items.Clear();
 
+            cbRegistrosPorPagina.Items.Add("5");
+            cbRegistrosPorPagina.Items.Add("10");
+            cbRegistrosPorPagina.Items.Add("20");
+            cbRegistrosPorPagina.Items.Add("50");
+            cbRegistrosPorPagina.Items.Add("Todos");
+
+            cbRegistrosPorPagina.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbRegistrosPorPagina.SelectedItem = "5";
+        }
         private void CargarReuniones()
         {
             try
@@ -571,16 +586,29 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
         private string ObtenerAccionSegunEstado(string estado, DateTime fechaReunion)
         {
+            DateTime ahora = DateTime.Now;
+            DateTime limiteActa = fechaReunion.AddHours(1.5);
+
             return estado switch
             {
                 "REALIZADA" => "PDF",
                 "CANCELADA" => "--",
-                "PROGRAMADA" when fechaReunion.Date <= DateTime.Today => "CREAR ACTA",
-                "PROGRAMADA" => "--",
+                "PROGRAMADA" when ahora >= fechaReunion && ahora <= limiteActa => "CREAR ACTA",
+                "PROGRAMADA" => "CANCELAR",
                 _ => "--"
             };
         }
+        private void CancelarReunion(int reunionId)
+        {
+            using SqlConnection cn = conexion.ObtenerConexion();
+            using SqlCommand cmd = new SqlCommand("spMAE_CancelarReunion", cn);
 
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@reunionID", reunionId);
+
+            cn.Open();
+            cmd.ExecuteScalar();
+        }
         #endregion
 
         #region FILTRO / BUSQUEDA / PAGINACION
@@ -623,9 +651,13 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
                 }
 
                 _totalRegistros = _dtReunionesFiltrado.Rows.Count;
-                _totalPaginas = _totalRegistros == 0
-                    ? 1
-                    : (int)Math.Ceiling((double)_totalRegistros / _tamanoPagina);
+
+                if (_tamanoPagina == int.MaxValue)
+                    _totalPaginas = _totalRegistros > 0 ? 1 : 1;
+                else
+                    _totalPaginas = _totalRegistros == 0
+                        ? 1
+                        : (int)Math.Ceiling((double)_totalRegistros / _tamanoPagina);
 
                 MostrarPagina();
             }
@@ -643,12 +675,20 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
             DataTable dtPagina = _dtReunionesFiltrado.Clone();
 
-            var filasPagina = _dtReunionesFiltrado.AsEnumerable()
-                .Skip((_paginaActual - 1) * _tamanoPagina)
-                .Take(_tamanoPagina);
+            if (_tamanoPagina == int.MaxValue)
+            {
+                foreach (DataRow fila in _dtReunionesFiltrado.Rows)
+                    dtPagina.ImportRow(fila);
+            }
+            else
+            {
+                var filasPagina = _dtReunionesFiltrado.AsEnumerable()
+                    .Skip((_paginaActual - 1) * _tamanoPagina)
+                    .Take(_tamanoPagina);
 
-            foreach (var fila in filasPagina)
-                dtPagina.ImportRow(fila);
+                foreach (var fila in filasPagina)
+                    dtPagina.ImportRow(fila);
+            }
 
             dgvReuniones.SuspendLayout();
             dgvReuniones.DataSource = null;
@@ -677,6 +717,12 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
                 return;
             }
 
+            if (_tamanoPagina == int.MaxValue)
+            {
+                lblRegistros.Text = $"Mostrando todos los {_totalRegistros} registros";
+                return;
+            }
+
             int desde = ((_paginaActual - 1) * _tamanoPagina) + 1;
             int hasta = Math.Min(_paginaActual * _tamanoPagina, _totalRegistros);
 
@@ -685,12 +731,20 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
         private void ActualizarControlesPaginacion()
         {
-            btnTexto.Text = _paginaActual.ToString();
-            lblAnterior.Enabled = _paginaActual > 1;
-            lblSiguiente.Enabled = _paginaActual < _totalPaginas;
+            btnTexto.Text = _tamanoPagina == int.MaxValue ? "Todo" : _paginaActual.ToString();
 
-            lblAnterior.ForeColor = lblAnterior.Enabled ? System.Drawing.Color.FromArgb(93, 93, 93) : System.Drawing.Color.LightGray;
-            lblSiguiente.ForeColor = lblSiguiente.Enabled ? System.Drawing.Color.FromArgb(93, 93, 93) : System.Drawing.Color.LightGray;
+            bool usaPaginacion = _tamanoPagina != int.MaxValue;
+
+            lblAnterior.Enabled = usaPaginacion && _paginaActual > 1;
+            lblSiguiente.Enabled = usaPaginacion && _paginaActual < _totalPaginas;
+
+            lblAnterior.ForeColor = lblAnterior.Enabled
+                ? System.Drawing.Color.FromArgb(93, 93, 93)
+                : System.Drawing.Color.LightGray;
+
+            lblSiguiente.ForeColor = lblSiguiente.Enabled
+                ? System.Drawing.Color.FromArgb(93, 93, 93)
+                : System.Drawing.Color.LightGray;
         }
 
         #endregion
@@ -720,6 +774,21 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
         private void dgvReuniones_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
         {
             dgvReuniones.Cursor = Cursors.Default;
+        }
+        private void cbRegistrosPorPagina_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbRegistrosPorPagina.SelectedItem == null)
+                return;
+
+            string valorSeleccionado = cbRegistrosPorPagina.SelectedItem.ToString();
+
+            if (valorSeleccionado == "Todos")
+                _tamanoPagina = int.MaxValue;
+            else if (!int.TryParse(valorSeleccionado, out _tamanoPagina))
+                _tamanoPagina = 5;
+
+            _paginaActual = 1;
+            AplicarFiltroBusqueda();
         }
         private void cbDocente_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -960,6 +1029,39 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
                         estado,
                         anio
                     );
+                }
+                else if (accion == "CANCELAR")
+                {
+                    DialogResult confirmacion = MessageBox.Show(
+                        "¿Desea cancelar esta reunión?",
+                        "Confirmar cancelación",
+                        MessageBoxButtons.YesNo,
+                        MessageBoxIcon.Question
+                    );
+
+                    if (confirmacion != DialogResult.Yes)
+                        return;
+
+                    try
+                    {
+                        CancelarReunion(reunionId);
+
+                        MessageBox.Show("Reunión cancelada correctamente.",
+                            "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        CargarMesesDisponibles();
+                        CargarReuniones();
+                    }
+                    catch (SqlException ex)
+                    {
+                        MessageBox.Show(ex.Message,
+                            "SQL", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error al cancelar la reunión: " + ex.Message,
+                            "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
 
                 return;

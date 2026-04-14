@@ -468,7 +468,7 @@
             // 
             // lblRegistros
             // 
-            lblRegistros.BackColor = Color.Transparent;
+            lblRegistros.BackColor = Color.White;
             lblRegistros.BackgroundImageLayout = ImageLayout.None;
             lblRegistros.Location = new Point(15, 278);
             lblRegistros.Name = "lblRegistros";
@@ -489,7 +489,7 @@
             txtBuscar.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             txtBuscar.Location = new Point(806, 372);
             txtBuscar.Name = "txtBuscar";
-            txtBuscar.PlaceholderText = "";
+            txtBuscar.PlaceholderText = "Ej: Maria, Biblia, etc.";
             txtBuscar.SelectedText = "";
             txtBuscar.ShadowDecoration.CustomizableEdges = customizableEdges26;
             txtBuscar.Size = new Size(150, 20);
@@ -652,7 +652,7 @@
             guna2HtmlLabel19.AutoSize = false;
             guna2HtmlLabel19.BackColor = Color.Transparent;
             guna2HtmlLabel19.Dock = DockStyle.Top;
-            guna2HtmlLabel19.Font = new Font("Microsoft Sans Serif", 14F);
+            guna2HtmlLabel19.Font = new Font("Microsoft Sans Serif", 16F);
             guna2HtmlLabel19.Location = new Point(0, 0);
             guna2HtmlLabel19.Name = "guna2HtmlLabel19";
             guna2HtmlLabel19.Size = new Size(200, 42);

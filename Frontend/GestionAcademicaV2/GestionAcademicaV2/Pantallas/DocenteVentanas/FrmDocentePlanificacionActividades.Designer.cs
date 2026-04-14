@@ -527,7 +527,6 @@
             lblAnterior.Size = new Size(46, 17);
             lblAnterior.TabIndex = 14;
             lblAnterior.Text = "Anterior";
-            lblAnterior.Click += lblAnterior_Click;
             // 
             // lblRegistros
             // 

@@ -79,6 +79,8 @@
             guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
             guna2Panel6 = new Guna.UI2.WinForms.Guna2Panel();
             btnTexto = new Guna.UI2.WinForms.Guna2Button();
+            lblSiguiente = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            lblAnterior = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2Panel10 = new Guna.UI2.WinForms.Guna2Panel();
             btnBuscar = new Guna.UI2.WinForms.Guna2Button();
             txtBuscar = new Guna.UI2.WinForms.Guna2TextBox();
@@ -109,8 +111,6 @@
             guna2Panel13 = new Guna.UI2.WinForms.Guna2Panel();
             guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             guna2Panel14 = new Guna.UI2.WinForms.Guna2Panel();
-            lblSiguiente = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            lblAnterior = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2Panel6.SuspendLayout();
             guna2Panel10.SuspendLayout();
             guna2Panel7.SuspendLayout();
@@ -188,6 +188,26 @@
             btnTexto.TabIndex = 29;
             btnTexto.Text = "5";
             btnTexto.TextAlign = HorizontalAlignment.Left;
+            // 
+            // lblSiguiente
+            // 
+            lblSiguiente.BackColor = Color.Transparent;
+            lblSiguiente.ForeColor = Color.FromArgb(93, 93, 93);
+            lblSiguiente.Location = new Point(935, 424);
+            lblSiguiente.Name = "lblSiguiente";
+            lblSiguiente.Size = new Size(52, 17);
+            lblSiguiente.TabIndex = 28;
+            lblSiguiente.Text = "Siguiente";
+            // 
+            // lblAnterior
+            // 
+            lblAnterior.BackColor = Color.Transparent;
+            lblAnterior.ForeColor = Color.FromArgb(93, 93, 93);
+            lblAnterior.Location = new Point(842, 424);
+            lblAnterior.Name = "lblAnterior";
+            lblAnterior.Size = new Size(46, 17);
+            lblAnterior.TabIndex = 27;
+            lblAnterior.Text = "Anterior";
             // 
             // guna2Panel10
             // 
@@ -587,7 +607,7 @@
             guna2HtmlLabel19.AutoSize = false;
             guna2HtmlLabel19.BackColor = Color.Transparent;
             guna2HtmlLabel19.Dock = DockStyle.Top;
-            guna2HtmlLabel19.Font = new Font("Microsoft Sans Serif", 14F);
+            guna2HtmlLabel19.Font = new Font("Microsoft Sans Serif", 16F);
             guna2HtmlLabel19.Location = new Point(0, 0);
             guna2HtmlLabel19.Name = "guna2HtmlLabel19";
             guna2HtmlLabel19.Size = new Size(200, 42);
@@ -628,26 +648,6 @@
             guna2Panel14.ShadowDecoration.CustomizableEdges = customizableEdges42;
             guna2Panel14.Size = new Size(50, 113);
             guna2Panel14.TabIndex = 0;
-            // 
-            // lblSiguiente
-            // 
-            lblSiguiente.BackColor = Color.Transparent;
-            lblSiguiente.ForeColor = Color.FromArgb(93, 93, 93);
-            lblSiguiente.Location = new Point(935, 424);
-            lblSiguiente.Name = "lblSiguiente";
-            lblSiguiente.Size = new Size(52, 17);
-            lblSiguiente.TabIndex = 28;
-            lblSiguiente.Text = "Siguiente";
-            // 
-            // lblAnterior
-            // 
-            lblAnterior.BackColor = Color.Transparent;
-            lblAnterior.ForeColor = Color.FromArgb(93, 93, 93);
-            lblAnterior.Location = new Point(842, 424);
-            lblAnterior.Name = "lblAnterior";
-            lblAnterior.Size = new Size(46, 17);
-            lblAnterior.TabIndex = 27;
-            lblAnterior.Text = "Anterior";
             // 
             // FrmDocenteConsultaReuniones
             // 

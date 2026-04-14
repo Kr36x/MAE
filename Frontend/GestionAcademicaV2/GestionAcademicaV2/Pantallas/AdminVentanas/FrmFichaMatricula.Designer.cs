@@ -1271,10 +1271,10 @@
             // guna2HtmlLabel19
             // 
             guna2HtmlLabel19.BackColor = Color.Transparent;
-            guna2HtmlLabel19.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            guna2HtmlLabel19.Location = new Point(15, 12);
+            guna2HtmlLabel19.Font = new Font("Microsoft Sans Serif", 16F);
+            guna2HtmlLabel19.Location = new Point(26, 21);
             guna2HtmlLabel19.Name = "guna2HtmlLabel19";
-            guna2HtmlLabel19.Size = new Size(206, 31);
+            guna2HtmlLabel19.Size = new Size(183, 27);
             guna2HtmlLabel19.TabIndex = 7;
             guna2HtmlLabel19.Text = "TELA, ATLÁNTIDA";
             // 

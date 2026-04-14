@@ -30,10 +30,10 @@
         {
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PantallaAdmin));
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PantallaAdmin));
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -169,7 +169,7 @@
             btnReporteDesercion.FillColor = Color.Transparent;
             btnReporteDesercion.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnReporteDesercion.ForeColor = Color.White;
-            btnReporteDesercion.Image = Properties.Resources.notasSemanales_white;
+            btnReporteDesercion.Image = (Image)resources.GetObject("btnReporteDesercion.Image");
             btnReporteDesercion.ImageAlign = HorizontalAlignment.Left;
             btnReporteDesercion.ImageSize = new Size(40, 40);
             btnReporteDesercion.Location = new Point(0, 45);
@@ -191,7 +191,7 @@
             btnReporteDocentes.FillColor = Color.Transparent;
             btnReporteDocentes.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnReporteDocentes.ForeColor = Color.White;
-            btnReporteDocentes.Image = Properties.Resources.asistenciaCheck_white;
+            btnReporteDocentes.Image = Properties.Resources.Reporte_docentes_menu;
             btnReporteDocentes.ImageAlign = HorizontalAlignment.Left;
             btnReporteDocentes.ImageSize = new Size(40, 40);
             btnReporteDocentes.Location = new Point(0, 0);
@@ -226,7 +226,7 @@
             btnInicio.FillColor = Color.Transparent;
             btnInicio.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnInicio.ForeColor = Color.White;
-            btnInicio.Image = (Image)resources.GetObject("btnInicio.Image");
+            btnInicio.Image = Properties.Resources.home_menu1;
             btnInicio.ImageAlign = HorizontalAlignment.Left;
             btnInicio.ImageSize = new Size(40, 40);
             btnInicio.Location = new Point(3, 64);
@@ -247,7 +247,7 @@
             btnGestionAcademica.FillColor = Color.Transparent;
             btnGestionAcademica.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnGestionAcademica.ForeColor = Color.White;
-            btnGestionAcademica.Image = Properties.Resources.gestion_white1;
+            btnGestionAcademica.Image = Properties.Resources.school_menu;
             btnGestionAcademica.ImageAlign = HorizontalAlignment.Left;
             btnGestionAcademica.ImageSize = new Size(40, 40);
             btnGestionAcademica.Location = new Point(3, 115);
@@ -286,7 +286,7 @@
             btnGestionGrado.FillColor = Color.Transparent;
             btnGestionGrado.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnGestionGrado.ForeColor = Color.White;
-            btnGestionGrado.Image = (Image)resources.GetObject("btnGestionGrado.Image");
+            btnGestionGrado.Image = Properties.Resources.grado_menu;
             btnGestionGrado.ImageAlign = HorizontalAlignment.Left;
             btnGestionGrado.ImageSize = new Size(40, 40);
             btnGestionGrado.Location = new Point(0, 180);
@@ -308,7 +308,7 @@
             btnGestionAsignaturas.FillColor = Color.Transparent;
             btnGestionAsignaturas.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnGestionAsignaturas.ForeColor = Color.White;
-            btnGestionAsignaturas.Image = (Image)resources.GetObject("btnGestionAsignaturas.Image");
+            btnGestionAsignaturas.Image = Properties.Resources.asignatura_menu;
             btnGestionAsignaturas.ImageAlign = HorizontalAlignment.Left;
             btnGestionAsignaturas.ImageSize = new Size(40, 40);
             btnGestionAsignaturas.Location = new Point(0, 135);
@@ -330,7 +330,7 @@
             btnDocentes.FillColor = Color.Transparent;
             btnDocentes.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnDocentes.ForeColor = Color.White;
-            btnDocentes.Image = (Image)resources.GetObject("btnDocentes.Image");
+            btnDocentes.Image = Properties.Resources.maestro_menu1;
             btnDocentes.ImageAlign = HorizontalAlignment.Left;
             btnDocentes.ImageSize = new Size(40, 40);
             btnDocentes.Location = new Point(0, 90);
@@ -352,7 +352,7 @@
             btnMatricula.FillColor = Color.Transparent;
             btnMatricula.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnMatricula.ForeColor = Color.White;
-            btnMatricula.Image = (Image)resources.GetObject("btnMatricula.Image");
+            btnMatricula.Image = Properties.Resources.matricula_menu;
             btnMatricula.ImageAlign = HorizontalAlignment.Left;
             btnMatricula.ImageSize = new Size(40, 40);
             btnMatricula.Location = new Point(0, 45);
@@ -374,7 +374,7 @@
             btnEstudiantes.FillColor = Color.Transparent;
             btnEstudiantes.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnEstudiantes.ForeColor = Color.White;
-            btnEstudiantes.Image = (Image)resources.GetObject("btnEstudiantes.Image");
+            btnEstudiantes.Image = Properties.Resources.estudiantes_menu;
             btnEstudiantes.ImageAlign = HorizontalAlignment.Left;
             btnEstudiantes.ImageSize = new Size(40, 40);
             btnEstudiantes.Location = new Point(0, 0);
@@ -395,7 +395,7 @@
             btnGestionInstitucional.FillColor = Color.Transparent;
             btnGestionInstitucional.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnGestionInstitucional.ForeColor = Color.White;
-            btnGestionInstitucional.Image = (Image)resources.GetObject("btnGestionInstitucional.Image");
+            btnGestionInstitucional.Image = Properties.Resources.image__2_;
             btnGestionInstitucional.ImageAlign = HorizontalAlignment.Left;
             btnGestionInstitucional.ImageSize = new Size(40, 40);
             btnGestionInstitucional.Location = new Point(3, 397);
@@ -456,7 +456,7 @@
             btnGestionReuniones.FillColor = Color.Transparent;
             btnGestionReuniones.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnGestionReuniones.ForeColor = Color.White;
-            btnGestionReuniones.Image = (Image)resources.GetObject("btnGestionReuniones.Image");
+            btnGestionReuniones.Image = Properties.Resources.reunion_menu;
             btnGestionReuniones.ImageAlign = HorizontalAlignment.Left;
             btnGestionReuniones.ImageSize = new Size(40, 40);
             btnGestionReuniones.Location = new Point(0, 90);
@@ -478,7 +478,7 @@
             btnVinculacionTutores.FillColor = Color.Transparent;
             btnVinculacionTutores.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnVinculacionTutores.ForeColor = Color.White;
-            btnVinculacionTutores.Image = (Image)resources.GetObject("btnVinculacionTutores.Image");
+            btnVinculacionTutores.Image = Properties.Resources.image__1_;
             btnVinculacionTutores.ImageAlign = HorizontalAlignment.Left;
             btnVinculacionTutores.ImageSize = new Size(40, 40);
             btnVinculacionTutores.Location = new Point(0, 45);
@@ -500,7 +500,7 @@
             btnGestionUsuarios.FillColor = Color.Transparent;
             btnGestionUsuarios.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnGestionUsuarios.ForeColor = Color.White;
-            btnGestionUsuarios.Image = Properties.Resources.asistenciaCheck_white;
+            btnGestionUsuarios.Image = Properties.Resources.gestionUsuarios_menu;
             btnGestionUsuarios.ImageAlign = HorizontalAlignment.Left;
             btnGestionUsuarios.ImageSize = new Size(40, 40);
             btnGestionUsuarios.Location = new Point(0, 0);
@@ -531,7 +531,7 @@
             btnReportes.FillColor = Color.Transparent;
             btnReportes.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnReportes.ForeColor = Color.White;
-            btnReportes.Image = (Image)resources.GetObject("btnReportes.Image");
+            btnReportes.Image = Properties.Resources.reportes_menu;
             btnReportes.ImageAlign = HorizontalAlignment.Left;
             btnReportes.ImageSize = new Size(40, 40);
             btnReportes.Location = new Point(3, 634);
@@ -605,7 +605,7 @@
             btnConsolidadoAsignatura.FillColor = Color.Transparent;
             btnConsolidadoAsignatura.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnConsolidadoAsignatura.ForeColor = Color.White;
-            btnConsolidadoAsignatura.Image = Properties.Resources.notasSemanales_white;
+            btnConsolidadoAsignatura.Image = Properties.Resources.Grafico_menu;
             btnConsolidadoAsignatura.ImageAlign = HorizontalAlignment.Left;
             btnConsolidadoAsignatura.ImageSize = new Size(40, 40);
             btnConsolidadoAsignatura.Location = new Point(0, 90);

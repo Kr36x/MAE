@@ -329,7 +329,7 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
             paginaGrafico = 0;
 
             lblRegistros.Text = "Registros del 0 al 0 total de 0 registros";
-            lblRegistros.BackColor = this.BackColor;
+            //lblRegistros.BackColor = this.;
             lblPaginaGrafico.Text = "Página 0 de 0";
 
             panelGrafico.Invalidate();

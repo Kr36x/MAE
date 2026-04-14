@@ -357,6 +357,7 @@
             guna2Panel3.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).BeginInit();
+            guna2Panel2.SuspendLayout();
             SuspendLayout();
             // 
             // guna2HtmlLabel2
@@ -2695,10 +2696,10 @@
             // guna2HtmlLabel19
             // 
             guna2HtmlLabel19.BackColor = Color.Transparent;
-            guna2HtmlLabel19.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            guna2HtmlLabel19.Location = new Point(788, 21);
+            guna2HtmlLabel19.Font = new Font("Microsoft Sans Serif", 16F);
+            guna2HtmlLabel19.Location = new Point(52, 24);
             guna2HtmlLabel19.Name = "guna2HtmlLabel19";
-            guna2HtmlLabel19.Size = new Size(206, 31);
+            guna2HtmlLabel19.Size = new Size(183, 27);
             guna2HtmlLabel19.TabIndex = 6;
             guna2HtmlLabel19.Text = "TELA, ATLÁNTIDA";
             // 
@@ -2893,6 +2894,7 @@
             // 
             // guna2Panel2
             // 
+            guna2Panel2.Controls.Add(guna2HtmlLabel19);
             guna2Panel2.CustomizableEdges = customizableEdges163;
             guna2Panel2.Dock = DockStyle.Right;
             guna2Panel2.Location = new Point(753, 0);
@@ -2911,7 +2913,6 @@
             Controls.Add(pnlPrincipal);
             Controls.Add(dtpAnio);
             Controls.Add(guna2HtmlLabel26);
-            Controls.Add(guna2HtmlLabel19);
             Controls.Add(ctnSecundario);
             Controls.Add(cbbNivel);
             Controls.Add(guna2Panel1);
@@ -2957,6 +2958,8 @@
             guna2Panel3.ResumeLayout(false);
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).EndInit();
+            guna2Panel2.ResumeLayout(false);
+            guna2Panel2.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }

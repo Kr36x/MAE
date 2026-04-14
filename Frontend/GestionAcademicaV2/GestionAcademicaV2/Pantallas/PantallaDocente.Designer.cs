@@ -327,7 +327,7 @@
             btnReportes2.FillColor = Color.Transparent;
             btnReportes2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnReportes2.ForeColor = Color.White;
-            btnReportes2.Image = (Image)resources.GetObject("btnReportes2.Image");
+            btnReportes2.Image = Properties.Resources.reportes_menu;
             btnReportes2.ImageAlign = HorizontalAlignment.Left;
             btnReportes2.ImageSize = new Size(40, 40);
             btnReportes2.Location = new Point(3, 307);

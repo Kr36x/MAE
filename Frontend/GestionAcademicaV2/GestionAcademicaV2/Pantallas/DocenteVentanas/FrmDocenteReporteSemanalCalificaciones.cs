@@ -59,7 +59,7 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
                 using Font tituloFont = new Font("Segoe UI", 12F, FontStyle.Bold);
                 using Font mensajeFont = new Font("Segoe UI", 10.5F, FontStyle.Regular);
 
-                using SolidBrush tituloBrush = new SolidBrush(Color.FromArgb(23, 120, 208));
+                using SolidBrush tituloBrush = new SolidBrush(Color.DarkGreen);
                 using SolidBrush mensajeBrush = new SolidBrush(Color.FromArgb(110, 110, 110));
 
                 string titulo = "INFORMACIÓN";

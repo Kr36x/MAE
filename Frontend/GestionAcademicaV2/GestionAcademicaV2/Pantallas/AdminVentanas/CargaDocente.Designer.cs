@@ -155,10 +155,10 @@
             // guna2HtmlLabel3
             // 
             guna2HtmlLabel3.BackColor = Color.Transparent;
-            guna2HtmlLabel3.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            guna2HtmlLabel3.Location = new Point(128, 16);
+            guna2HtmlLabel3.Font = new Font("Microsoft Sans Serif", 14F);
+            guna2HtmlLabel3.Location = new Point(135, 24);
             guna2HtmlLabel3.Name = "guna2HtmlLabel3";
-            guna2HtmlLabel3.Size = new Size(206, 31);
+            guna2HtmlLabel3.Size = new Size(165, 26);
             guna2HtmlLabel3.TabIndex = 3;
             guna2HtmlLabel3.Text = "TELA, ATLÁNTIDA";
             // 

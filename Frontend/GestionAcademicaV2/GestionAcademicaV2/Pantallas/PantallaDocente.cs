@@ -178,7 +178,7 @@ namespace GestionAcademicaV2.Pantallas
             btn.Font = new Font("Segoe UI", 9.5f, FontStyle.Bold);
             btn.TextAlign = HorizontalAlignment.Left;
             btn.ImageAlign = HorizontalAlignment.Left;
-            btn.Padding = new Padding(18, 0, 0, 0);
+            btn.Padding = new Padding(13, 0, 0, 0);
             btn.Margin = new Padding(0);
             btn.Size = new Size(220, 48);
             btn.BorderRadius = 0;
@@ -193,7 +193,7 @@ namespace GestionAcademicaV2.Pantallas
             btn.Font = new Font("Segoe UI", 9f, FontStyle.Regular);
             btn.TextAlign = HorizontalAlignment.Left;
             btn.ImageAlign = HorizontalAlignment.Left;
-            btn.Padding = new Padding(38, 0, 0, 0);
+            btn.Padding = new Padding(20, 0, 0, 0);
             btn.Margin = new Padding(0);
             btn.Size = new Size(220, 42);
             btn.BorderRadius = 0;

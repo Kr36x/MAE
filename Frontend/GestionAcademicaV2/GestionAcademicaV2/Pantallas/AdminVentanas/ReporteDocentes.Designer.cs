@@ -495,7 +495,7 @@
             guna2HtmlLabel19.AutoSize = false;
             guna2HtmlLabel19.BackColor = Color.Transparent;
             guna2HtmlLabel19.Dock = DockStyle.Top;
-            guna2HtmlLabel19.Font = new Font("Microsoft Sans Serif", 14F);
+            guna2HtmlLabel19.Font = new Font("Microsoft Sans Serif", 16F);
             guna2HtmlLabel19.Location = new Point(0, 0);
             guna2HtmlLabel19.Name = "guna2HtmlLabel19";
             guna2HtmlLabel19.Size = new Size(200, 42);

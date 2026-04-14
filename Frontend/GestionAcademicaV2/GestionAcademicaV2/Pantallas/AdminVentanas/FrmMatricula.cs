@@ -25,6 +25,7 @@ using System.IO;
 using System.Text;
 using System.Windows.Forms;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace GestionAcademicaV2.Pantallas.AdminVentanas
 {
@@ -1043,32 +1044,112 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
 
         private void txtTelefono_TextChanged(object sender, EventArgs e)
         {
-            // Formateo del telefono
-            if (txtTelefono.Text.Length == 4 && !txtTelefono.Text.Contains("-"))
+            int cursor = txtTelefono.SelectionStart;
+            string texto = txtTelefono.Text.Replace("-", "");
+
+            // Solo dejar números
+            texto = new string(texto.Where(char.IsDigit).ToArray());
+
+            // Limitar a 8 dígitos
+            if (texto.Length > 8)
+                texto = texto.Substring(0, 8);
+
+            // Insertar guion automáticamente después de 4 dígitos
+            if (texto.Length > 4)
+                texto = texto.Insert(4, "-");
+
+            if (txtTelefono.Text != texto)
             {
-                txtTelefono.Text += "-";
-                txtTelefono.SelectionStart = txtTelefono.Text.Length;
+                txtTelefono.Text = texto;
+
+                // Ajustar posición del cursor
+                if (cursor == 5 && !txtTelefono.Text.EndsWith("-"))
+                    cursor++;
+
+                txtTelefono.SelectionStart = Math.Min(cursor, txtTelefono.Text.Length);
             }
 
         }
 
         private void txtTelefonoPadre_TextChanged(object sender, EventArgs e)
         {
-            // Formateo del telefono
-            if (txtTelefonoPadre.Text.Length == 4 && !txtTelefono.Text.Contains("-"))
+            int cursor = txtTelefonoPadre.SelectionStart;
+            string texto = txtTelefonoPadre.Text.Replace("-", "");
+
+            // Solo dejar números
+            texto = new string(texto.Where(char.IsDigit).ToArray());
+
+            // Limitar a 8 dígitos
+            if (texto.Length > 8)
+                texto = texto.Substring(0, 8);
+
+            // Insertar guion automáticamente después de 4 dígitos
+            if (texto.Length > 4)
+                texto = texto.Insert(4, "-");
+
+            if (txtTelefonoPadre.Text != texto)
             {
-                txtTelefonoPadre.Text += "-";
-                txtTelefonoPadre.SelectionStart = txtTelefono.Text.Length;
+                txtTelefonoPadre.Text = texto;
+
+                // Ajustar posición del cursor
+                if (cursor == 5 && !txtTelefonoPadre.Text.EndsWith("-"))
+                    cursor++;
+
+                txtTelefonoPadre.SelectionStart = Math.Min(cursor, txtTelefonoPadre.Text.Length);
             }
         }
+        //private void txtCicloEscolar_TextChanged(object sender, EventArgs e)
+        //{
+        //    int cursor = txtCicloEscolar.SelectionStart;
+        //    string texto = txtCicloEscolar.Text.Replace("-", "");
 
+        //    // Solo dejar números
+        //    texto = new string(texto.Where(char.IsDigit).ToArray());
+
+        //    // Limitar a 8 dígitos
+        //    if (texto.Length > 8)
+        //        texto = texto.Substring(0, 8);
+
+        //    // Insertar guion automáticamente después de 4 dígitos
+        //    if (texto.Length > 4)
+        //        texto = texto.Insert(4, "-");
+
+        //    if (txtCicloEscolar.Text != texto)
+        //    {
+        //        txtCicloEscolar.Text = texto;
+
+        //        // Ajustar posición del cursor
+        //        if (cursor == 5 && !txtCicloEscolar.Text.EndsWith("-"))
+        //            cursor++;
+
+        //        txtCicloEscolar.SelectionStart = Math.Min(cursor, txtCicloEscolar.Text.Length);
+        //    }
+       // }
         private void txtTelefonoMadre_TextChanged(object sender, EventArgs e)
         {
-            // Formateo del telefono
-            if (txtTelefonoMadre.Text.Length == 4 && !txtTelefono.Text.Contains("-"))
+            int cursor = txtTelefonoMadre.SelectionStart;
+            string texto = txtTelefonoMadre.Text.Replace("-", "");
+
+            // Solo dejar números
+            texto = new string(texto.Where(char.IsDigit).ToArray());
+
+            // Limitar a 8 dígitos
+            if (texto.Length > 8)
+                texto = texto.Substring(0, 8);
+
+            // Insertar guion automáticamente después de 4 dígitos
+            if (texto.Length > 4)
+                texto = texto.Insert(4, "-");
+
+            if (txtTelefonoMadre.Text != texto)
             {
-                txtTelefonoMadre.Text += "-";
-                txtTelefonoMadre.SelectionStart = txtTelefono.Text.Length;
+                txtTelefonoMadre.Text = texto;
+
+                // Ajustar posición del cursor
+                if (cursor == 5 && !txtTelefonoMadre.Text.EndsWith("-"))
+                    cursor++;
+
+                txtTelefonoMadre.SelectionStart = Math.Min(cursor, txtTelefonoMadre.Text.Length);
             }
         }
 
