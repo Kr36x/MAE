@@ -51,6 +51,7 @@ namespace GestionAcademicaV2.Pantallas
 
             OcultarTodosLosSubmenus();
             MarcarActivo(btnInicio);
+            AbrirFormularioEnPanel(new FrmDashboard(this));
         }
 
         #region Configuración inicial
@@ -91,7 +92,6 @@ namespace GestionAcademicaV2.Pantallas
             // Submenú Reportes
             EstiloBotonSubmenu(btnReporteDocentes);
             EstiloBotonSubmenu(btnReporteDesercion);
-            EstiloBotonSubmenu(btnRetencionEstudiantil);
             EstiloBotonSubmenu(btnConsolidadoAsignatura);
 
             pnlSubGestionAcademica.BackColor = colorSubmenu;
@@ -126,7 +126,6 @@ namespace GestionAcademicaV2.Pantallas
             // EVENTOS SUBMENÚ REPORTES
             btnReporteDocentes.Click += btnReporteDocentes_Click;
             btnReporteDesercion.Click += btnReporteDesercion_Click;
-            btnRetencionEstudiantil.Click += btnRetencionEstudiantil_Click;
             btnConsolidadoAsignatura.Click += btnConsolidadoAsignatura_Click;
 
             // OPCIONALES
@@ -318,15 +317,8 @@ namespace GestionAcademicaV2.Pantallas
         {
             OcultarTodosLosSubmenus();
             MarcarActivo(btnInicio);
+            AbrirFormularioEnPanel(new FrmDashboard(this));
 
-            if (formularioActivo != null)
-            {
-                formularioActivo.Close();
-                formularioActivo.Dispose();
-                formularioActivo = null;
-            }
-
-            PnlContenedorAdmin.Controls.Clear();
         }
 
         #endregion
@@ -336,11 +328,6 @@ namespace GestionAcademicaV2.Pantallas
         private void btnDashboard_Click(object sender, EventArgs e)
         {
             //MarcarActivo(btnDashboard);
-        }
-        private void btnRetencionEstudiantil_Click(object sender, EventArgs e)
-        {
-            MarcarActivo(btnRetencionEstudiantil);
-            AbrirFormularioEnPanel(new FrmDashboard(this));
         }
         private void btnEstudiantes_Click(object sender, EventArgs e)
         {

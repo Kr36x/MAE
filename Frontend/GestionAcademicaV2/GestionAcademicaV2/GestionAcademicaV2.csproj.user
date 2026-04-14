@@ -65,7 +65,7 @@
     <Compile Update="Pantallas\AdminVentanas\FrmNuevoGradoSeccion_SinUso.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Pantallas\AdminVentanas\FrmOfertaAcademica.cs">
+    <Compile Update="Pantallas\AdminVentanas\FrmOfertaAcademica_SinUso.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Pantallas\AdminVentanas\FrmReporteDesercionRetencion.cs">

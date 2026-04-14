@@ -110,14 +110,21 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
         }
         private void FrmDashboard_Load(object sender, EventArgs e)
         {
-            lbAnio.Text=dtpAnio.Text;
+            lbAnio.Text = dtpAnio.Text;
             pnlPrincipal.Visible = false;
 
             CargarParciales();
             CargarPromediosPorGrado2();
             MostrarContenedoresPorNivel();
             CargarGraficoPorGrado();
-
+            txtPromedioPrekinder.BorderColor = Color.FromArgb(217, 221, 226);
+            txtExcelenciaPrekinder.BorderColor = Color.FromArgb(217, 221, 226);
+            txtPromedioKinder.BorderColor = Color.FromArgb(217, 221, 226);
+            txtExcelenciaKinder.BorderColor = Color.FromArgb(217, 221, 226);
+            txtPromedioPrepa.BorderColor = Color.FromArgb(217, 221, 226);
+            txtExcelenciaPrepa.BorderColor = Color.FromArgb(217, 221, 226);
+            txtPromedioPrimero.BorderColor = Color.FromArgb(217, 221, 226);
+            txtExcelenciaPrimero.BorderColor = Color.FromArgb(217, 221, 226);
         }
         private void CargarParciales()
         {
@@ -294,6 +301,9 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
                                 box1.FillColor = Color.Tomato;
                                 box2.FillColor = Color.Tomato;
                             }
+
+                            box1.BorderColor = Color.FromArgb(217, 221, 226);
+                            box2.BorderColor = Color.FromArgb(217, 221, 226);
                         };
 
                     switch (grado.ToUpper())
@@ -450,6 +460,11 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
         }
 
         private void guna2HtmlLabel2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2HtmlLabel1_Click(object sender, EventArgs e)
         {
 
         }

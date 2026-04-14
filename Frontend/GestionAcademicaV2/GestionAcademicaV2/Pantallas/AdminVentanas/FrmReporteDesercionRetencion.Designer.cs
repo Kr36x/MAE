@@ -242,10 +242,10 @@
             // guna2HtmlLabel1
             // 
             guna2HtmlLabel1.BackColor = Color.Transparent;
-            guna2HtmlLabel1.Font = new Font("Britannic Bold", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            guna2HtmlLabel1.Location = new Point(216, 20);
+            guna2HtmlLabel1.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            guna2HtmlLabel1.Location = new Point(240, 20);
             guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            guna2HtmlLabel1.Size = new Size(417, 29);
+            guna2HtmlLabel1.Size = new Size(476, 31);
             guna2HtmlLabel1.TabIndex = 1;
             guna2HtmlLabel1.Text = "ATLANTIC ACADEMY BILINGUAL SCHOOL";
             // 
@@ -253,7 +253,7 @@
             // 
             guna2HtmlLabel2.BackColor = Color.Transparent;
             guna2HtmlLabel2.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            guna2HtmlLabel2.Location = new Point(183, 51);
+            guna2HtmlLabel2.Location = new Point(226, 52);
             guna2HtmlLabel2.Name = "guna2HtmlLabel2";
             guna2HtmlLabel2.Size = new Size(503, 27);
             guna2HtmlLabel2.TabIndex = 2;
@@ -262,10 +262,10 @@
             // guna2HtmlLabel3
             // 
             guna2HtmlLabel3.BackColor = Color.Transparent;
-            guna2HtmlLabel3.Font = new Font("Britannic Bold", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            guna2HtmlLabel3.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
             guna2HtmlLabel3.Location = new Point(809, 20);
             guna2HtmlLabel3.Name = "guna2HtmlLabel3";
-            guna2HtmlLabel3.Size = new Size(179, 29);
+            guna2HtmlLabel3.Size = new Size(206, 31);
             guna2HtmlLabel3.TabIndex = 3;
             guna2HtmlLabel3.Text = "TELA, ATLÁNTIDA";
             // 

@@ -28,18 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -93,9 +93,9 @@
             // 
             // txtCicloEscolar
             // 
-            txtCicloEscolar.BorderColor = Color.Black;
+            txtCicloEscolar.BorderColor = Color.FromArgb(217, 221, 226);
             txtCicloEscolar.BorderRadius = 3;
-            txtCicloEscolar.CustomizableEdges = customizableEdges13;
+            txtCicloEscolar.CustomizableEdges = customizableEdges1;
             txtCicloEscolar.DefaultText = "";
             txtCicloEscolar.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txtCicloEscolar.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -103,13 +103,13 @@
             txtCicloEscolar.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             txtCicloEscolar.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtCicloEscolar.Font = new Font("Segoe UI", 9F);
-            txtCicloEscolar.ForeColor = Color.Black;
+            txtCicloEscolar.ForeColor = Color.FromArgb(166, 163, 163);
             txtCicloEscolar.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             txtCicloEscolar.Location = new Point(64, 124);
             txtCicloEscolar.Name = "txtCicloEscolar";
-            txtCicloEscolar.PlaceholderText = "";
+            txtCicloEscolar.PlaceholderText = "Ej: 2001-2002";
             txtCicloEscolar.SelectedText = "";
-            txtCicloEscolar.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            txtCicloEscolar.ShadowDecoration.CustomizableEdges = customizableEdges2;
             txtCicloEscolar.Size = new Size(225, 32);
             txtCicloEscolar.TabIndex = 14;
             // 
@@ -117,8 +117,9 @@
             // 
             guna2HtmlLabel4.BackColor = Color.Transparent;
             guna2HtmlLabel4.Font = new Font("Segoe UI Semilight", 8F);
+            guna2HtmlLabel4.ForeColor = Color.FromArgb(166, 163, 163);
             guna2HtmlLabel4.Location = new Point(64, 161);
-            guna2HtmlLabel4.Margin = new Padding(2, 2, 2, 2);
+            guna2HtmlLabel4.Margin = new Padding(2);
             guna2HtmlLabel4.Name = "guna2HtmlLabel4";
             guna2HtmlLabel4.Size = new Size(228, 15);
             guna2HtmlLabel4.TabIndex = 15;
@@ -137,9 +138,8 @@
             // cbbPeriodo
             // 
             cbbPeriodo.BackColor = Color.Transparent;
-            cbbPeriodo.BorderColor = Color.Black;
             cbbPeriodo.BorderRadius = 3;
-            cbbPeriodo.CustomizableEdges = customizableEdges15;
+            cbbPeriodo.CustomizableEdges = customizableEdges3;
             cbbPeriodo.DrawMode = DrawMode.OwnerDrawFixed;
             cbbPeriodo.DropDownStyle = ComboBoxStyle.DropDownList;
             cbbPeriodo.FocusedColor = Color.FromArgb(94, 148, 255);
@@ -148,9 +148,9 @@
             cbbPeriodo.ForeColor = Color.Black;
             cbbPeriodo.ItemHeight = 30;
             cbbPeriodo.Location = new Point(64, 238);
-            cbbPeriodo.Margin = new Padding(2, 2, 2, 2);
+            cbbPeriodo.Margin = new Padding(2);
             cbbPeriodo.Name = "cbbPeriodo";
-            cbbPeriodo.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            cbbPeriodo.ShadowDecoration.CustomizableEdges = customizableEdges4;
             cbbPeriodo.Size = new Size(226, 36);
             cbbPeriodo.TabIndex = 17;
             // 
@@ -158,8 +158,9 @@
             // 
             guna2HtmlLabel6.BackColor = Color.Transparent;
             guna2HtmlLabel6.Font = new Font("Segoe UI Semilight", 8F);
+            guna2HtmlLabel6.ForeColor = Color.FromArgb(166, 163, 163);
             guna2HtmlLabel6.Location = new Point(64, 278);
-            guna2HtmlLabel6.Margin = new Padding(2, 2, 2, 2);
+            guna2HtmlLabel6.Margin = new Padding(2);
             guna2HtmlLabel6.Name = "guna2HtmlLabel6";
             guna2HtmlLabel6.Size = new Size(255, 15);
             guna2HtmlLabel6.TabIndex = 18;
@@ -177,18 +178,20 @@
             // 
             // dtpFechaInicio
             // 
+            dtpFechaInicio.BorderColor = Color.FromArgb(217, 221, 226);
             dtpFechaInicio.BorderRadius = 5;
             dtpFechaInicio.BorderThickness = 1;
             dtpFechaInicio.Checked = true;
-            dtpFechaInicio.CustomizableEdges = customizableEdges17;
+            dtpFechaInicio.CustomizableEdges = customizableEdges5;
             dtpFechaInicio.FillColor = Color.White;
             dtpFechaInicio.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dtpFechaInicio.ForeColor = SystemColors.ControlText;
             dtpFechaInicio.Format = DateTimePickerFormat.Short;
             dtpFechaInicio.Location = new Point(412, 124);
             dtpFechaInicio.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
             dtpFechaInicio.MinDate = new DateTime(2008, 1, 1, 0, 0, 0, 0);
             dtpFechaInicio.Name = "dtpFechaInicio";
-            dtpFechaInicio.ShadowDecoration.CustomizableEdges = customizableEdges18;
+            dtpFechaInicio.ShadowDecoration.CustomizableEdges = customizableEdges6;
             dtpFechaInicio.Size = new Size(225, 32);
             dtpFechaInicio.TabIndex = 20;
             dtpFechaInicio.TextAlign = HorizontalAlignment.Center;
@@ -198,8 +201,9 @@
             // 
             guna2HtmlLabel9.BackColor = Color.Transparent;
             guna2HtmlLabel9.Font = new Font("Segoe UI Semilight", 8F);
+            guna2HtmlLabel9.ForeColor = Color.FromArgb(166, 163, 163);
             guna2HtmlLabel9.Location = new Point(412, 161);
-            guna2HtmlLabel9.Margin = new Padding(2, 2, 2, 2);
+            guna2HtmlLabel9.Margin = new Padding(2);
             guna2HtmlLabel9.Name = "guna2HtmlLabel9";
             guna2HtmlLabel9.Size = new Size(183, 15);
             guna2HtmlLabel9.TabIndex = 22;
@@ -217,10 +221,11 @@
             // 
             // dtpFechaFin
             // 
+            dtpFechaFin.BorderColor = Color.FromArgb(217, 221, 226);
             dtpFechaFin.BorderRadius = 5;
             dtpFechaFin.BorderThickness = 1;
             dtpFechaFin.Checked = true;
-            dtpFechaFin.CustomizableEdges = customizableEdges19;
+            dtpFechaFin.CustomizableEdges = customizableEdges7;
             dtpFechaFin.FillColor = Color.White;
             dtpFechaFin.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             dtpFechaFin.Format = DateTimePickerFormat.Short;
@@ -228,7 +233,7 @@
             dtpFechaFin.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
             dtpFechaFin.MinDate = new DateTime(2008, 1, 1, 0, 0, 0, 0);
             dtpFechaFin.Name = "dtpFechaFin";
-            dtpFechaFin.ShadowDecoration.CustomizableEdges = customizableEdges20;
+            dtpFechaFin.ShadowDecoration.CustomizableEdges = customizableEdges8;
             dtpFechaFin.Size = new Size(225, 32);
             dtpFechaFin.TabIndex = 24;
             dtpFechaFin.TextAlign = HorizontalAlignment.Center;
@@ -238,8 +243,9 @@
             // 
             guna2HtmlLabel10.BackColor = Color.Transparent;
             guna2HtmlLabel10.Font = new Font("Segoe UI Semilight", 8F);
+            guna2HtmlLabel10.ForeColor = Color.FromArgb(166, 163, 163);
             guna2HtmlLabel10.Location = new Point(412, 275);
-            guna2HtmlLabel10.Margin = new Padding(2, 2, 2, 2);
+            guna2HtmlLabel10.Margin = new Padding(2);
             guna2HtmlLabel10.Name = "guna2HtmlLabel10";
             guna2HtmlLabel10.Size = new Size(197, 15);
             guna2HtmlLabel10.TabIndex = 25;
@@ -248,7 +254,7 @@
             // btnAperturarCicloEscolar
             // 
             btnAperturarCicloEscolar.BorderRadius = 5;
-            btnAperturarCicloEscolar.CustomizableEdges = customizableEdges21;
+            btnAperturarCicloEscolar.CustomizableEdges = customizableEdges9;
             btnAperturarCicloEscolar.DisabledState.BorderColor = Color.DarkGray;
             btnAperturarCicloEscolar.DisabledState.CustomBorderColor = Color.DarkGray;
             btnAperturarCicloEscolar.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -257,9 +263,9 @@
             btnAperturarCicloEscolar.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             btnAperturarCicloEscolar.ForeColor = Color.White;
             btnAperturarCicloEscolar.Location = new Point(513, 338);
-            btnAperturarCicloEscolar.Margin = new Padding(2, 2, 2, 2);
+            btnAperturarCicloEscolar.Margin = new Padding(2);
             btnAperturarCicloEscolar.Name = "btnAperturarCicloEscolar";
-            btnAperturarCicloEscolar.ShadowDecoration.CustomizableEdges = customizableEdges22;
+            btnAperturarCicloEscolar.ShadowDecoration.CustomizableEdges = customizableEdges10;
             btnAperturarCicloEscolar.Size = new Size(124, 31);
             btnAperturarCicloEscolar.TabIndex = 26;
             btnAperturarCicloEscolar.Text = "APERTURAR";
@@ -268,7 +274,7 @@
             // btnCancelarApertura
             // 
             btnCancelarApertura.BorderRadius = 5;
-            btnCancelarApertura.CustomizableEdges = customizableEdges23;
+            btnCancelarApertura.CustomizableEdges = customizableEdges11;
             btnCancelarApertura.DisabledState.BorderColor = Color.DarkGray;
             btnCancelarApertura.DisabledState.CustomBorderColor = Color.DarkGray;
             btnCancelarApertura.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -277,10 +283,10 @@
             btnCancelarApertura.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             btnCancelarApertura.ForeColor = Color.White;
             btnCancelarApertura.Location = new Point(374, 338);
-            btnCancelarApertura.Margin = new Padding(2, 2, 2, 2);
+            btnCancelarApertura.Margin = new Padding(2);
             btnCancelarApertura.Name = "btnCancelarApertura";
             btnCancelarApertura.PressedColor = Color.DarkRed;
-            btnCancelarApertura.ShadowDecoration.CustomizableEdges = customizableEdges24;
+            btnCancelarApertura.ShadowDecoration.CustomizableEdges = customizableEdges12;
             btnCancelarApertura.Size = new Size(124, 31);
             btnCancelarApertura.TabIndex = 27;
             btnCancelarApertura.Text = "CANCELAR";
@@ -308,7 +314,7 @@
             Controls.Add(guna2HtmlLabel2);
             Controls.Add(guna2HtmlLabel3);
             FormBorderStyle = FormBorderStyle.FixedSingle;
-            Margin = new Padding(2, 2, 2, 2);
+            Margin = new Padding(2);
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "FrmCreaEditaConfig";

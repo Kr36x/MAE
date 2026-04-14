@@ -1,4 +1,5 @@
 ﻿using GestionAcademicaV2.Modelos;
+using Guna.UI2.WinForms;
 using Microsoft.Data.SqlClient;
 using System;
 using System.Data;

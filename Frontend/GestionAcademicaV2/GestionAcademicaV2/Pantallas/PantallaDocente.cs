@@ -81,7 +81,6 @@ namespace GestionAcademicaV2.Pantallas
 
             EstiloBotonSubmenu(btnReporteAsistencia);
             EstiloBotonSubmenu(btnReporteSemanal);
-            EstiloBotonSubmenu(btnBoletas);
 
             pnlSubGestionAcademica.BackColor = colorSubmenu;
             pnlSubReportes.BackColor = colorSubmenu;
@@ -473,7 +472,7 @@ namespace GestionAcademicaV2.Pantallas
             OcultarTextoBoton(btnPlanificacion);
             OcultarTextoBoton(btnReporteAsistencia);
             OcultarTextoBoton(btnReporteSemanal);
-            OcultarTextoBoton(btnBoletas);
+
 
             lblUsuario.Visible = false;
             lblRol.Visible = false;
@@ -492,7 +491,6 @@ namespace GestionAcademicaV2.Pantallas
             btnPlanificacion.Text = "PLANIFICACIÓN";
             btnReporteAsistencia.Text = "REPORTE ASISTENCIA";
             btnReporteSemanal.Text = "REPORTE SEMANAL";
-            btnBoletas.Text = "BOLETAS";
 
             lblUsuario.Visible = true;
             lblRol.Visible = true;

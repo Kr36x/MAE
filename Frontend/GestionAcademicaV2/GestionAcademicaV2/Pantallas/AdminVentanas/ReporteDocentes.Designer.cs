@@ -28,114 +28,90 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReporteDocentes));
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
-            guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges27 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges28 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             ctnFiltrosDocentes = new Guna.UI2.WinForms.Guna2ContainerControl();
-            btBuscarDocente = new Guna.UI2.WinForms.Guna2Button();
+            guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             txtBuscarDocente = new Guna.UI2.WinForms.Guna2TextBox();
+            btBuscarDocente = new Guna.UI2.WinForms.Guna2Button();
             lbBuscarDocente = new Guna.UI2.WinForms.Guna2HtmlLabel();
             cbbEspecialidad = new Guna.UI2.WinForms.Guna2ComboBox();
             lbEspecialidad = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             ctnDocentes = new Guna.UI2.WinForms.Guna2ContainerControl();
             guna2HtmlLabel6 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             dgvDocentes = new Guna.UI2.WinForms.Guna2DataGridView();
             UsuarioID = new DataGridViewTextBoxColumn();
             Usuario = new DataGridViewTextBoxColumn();
             Correo = new DataGridViewTextBoxColumn();
             Rol = new DataGridViewTextBoxColumn();
             Vinculacion = new DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).BeginInit();
+            guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
+            guna2Panel12 = new Guna.UI2.WinForms.Guna2Panel();
+            guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            guna2Panel9 = new Guna.UI2.WinForms.Guna2Panel();
+            guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            panel1 = new Panel();
+            guna2HtmlLabel10 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            guna2Panel10 = new Guna.UI2.WinForms.Guna2Panel();
+            guna2HtmlLabel19 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            guna2Panel11 = new Guna.UI2.WinForms.Guna2Panel();
+            guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            guna2Panel8 = new Guna.UI2.WinForms.Guna2Panel();
             ctnFiltrosDocentes.SuspendLayout();
             ctnDocentes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvDocentes).BeginInit();
+            guna2Panel5.SuspendLayout();
+            guna2Panel12.SuspendLayout();
+            guna2Panel9.SuspendLayout();
+            panel1.SuspendLayout();
+            guna2Panel10.SuspendLayout();
+            guna2Panel11.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).BeginInit();
             SuspendLayout();
-            // 
-            // guna2HtmlLabel4
-            // 
-            guna2HtmlLabel4.BackColor = Color.Transparent;
-            guna2HtmlLabel4.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            guna2HtmlLabel4.ForeColor = Color.Gray;
-            guna2HtmlLabel4.Location = new Point(176, 94);
-            guna2HtmlLabel4.Name = "guna2HtmlLabel4";
-            guna2HtmlLabel4.Size = new Size(672, 19);
-            guna2HtmlLabel4.TabIndex = 117;
-            guna2HtmlLabel4.Text = "EN ESTA SECCIÓN PUEDE GESTIONAR LA CARGA ACADÉMICA DE LOS DOCENTES PREVIAMENTE REGISTRADOS";
-            guna2HtmlLabel4.Click += guna2HtmlLabel4_Click;
-            // 
-            // guna2HtmlLabel3
-            // 
-            guna2HtmlLabel3.BackColor = Color.Transparent;
-            guna2HtmlLabel3.Font = new Font("Britannic Bold", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            guna2HtmlLabel3.Location = new Point(791, 27);
-            guna2HtmlLabel3.Name = "guna2HtmlLabel3";
-            guna2HtmlLabel3.Size = new Size(179, 29);
-            guna2HtmlLabel3.TabIndex = 116;
-            guna2HtmlLabel3.Text = "TELA, ATLÁNTIDA";
-            // 
-            // guna2HtmlLabel2
-            // 
-            guna2HtmlLabel2.BackColor = Color.Transparent;
-            guna2HtmlLabel2.Font = new Font("Britannic Bold", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            guna2HtmlLabel2.Location = new Point(176, 27);
-            guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            guna2HtmlLabel2.Size = new Size(417, 29);
-            guna2HtmlLabel2.TabIndex = 115;
-            guna2HtmlLabel2.Text = "ATLANTIC ACADEMY BILINGUAL SCHOOL";
-            // 
-            // guna2PictureBox1
-            // 
-            guna2PictureBox1.CustomizableEdges = customizableEdges1;
-            guna2PictureBox1.Image = Properties.Resources._2;
-            guna2PictureBox1.ImageRotate = 0F;
-            guna2PictureBox1.Location = new Point(57, 12);
-            guna2PictureBox1.Name = "guna2PictureBox1";
-            guna2PictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            guna2PictureBox1.Size = new Size(113, 101);
-            guna2PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            guna2PictureBox1.TabIndex = 114;
-            guna2PictureBox1.TabStop = false;
-            // 
-            // guna2HtmlLabel1
-            // 
-            guna2HtmlLabel1.BackColor = Color.Transparent;
-            guna2HtmlLabel1.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            guna2HtmlLabel1.Location = new Point(239, 62);
-            guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            guna2HtmlLabel1.Size = new Size(300, 27);
-            guna2HtmlLabel1.TabIndex = 113;
-            guna2HtmlLabel1.Text = "REPORTE DE PERSONAL DOCENTE";
             // 
             // ctnFiltrosDocentes
             // 
-            ctnFiltrosDocentes.BorderColor = Color.Gray;
-            ctnFiltrosDocentes.BorderRadius = 30;
+            ctnFiltrosDocentes.BorderColor = Color.FromArgb(217, 217, 217);
+            ctnFiltrosDocentes.BorderRadius = 7;
             ctnFiltrosDocentes.BorderThickness = 2;
+            ctnFiltrosDocentes.Controls.Add(guna2HtmlLabel5);
+            ctnFiltrosDocentes.Controls.Add(guna2Panel1);
             ctnFiltrosDocentes.Controls.Add(txtBuscarDocente);
             ctnFiltrosDocentes.Controls.Add(btBuscarDocente);
             ctnFiltrosDocentes.Controls.Add(lbBuscarDocente);
             ctnFiltrosDocentes.Controls.Add(cbbEspecialidad);
             ctnFiltrosDocentes.Controls.Add(lbEspecialidad);
-            ctnFiltrosDocentes.Controls.Add(guna2HtmlLabel5);
             ctnFiltrosDocentes.CustomizableEdges = customizableEdges9;
             ctnFiltrosDocentes.Location = new Point(57, 119);
             ctnFiltrosDocentes.Name = "ctnFiltrosDocentes";
@@ -144,32 +120,39 @@
             ctnFiltrosDocentes.TabIndex = 118;
             ctnFiltrosDocentes.Text = "guna2ContainerControl1";
             // 
-            // btBuscarDocente
+            // guna2HtmlLabel5
             // 
-            btBuscarDocente.BackColor = Color.Transparent;
-            btBuscarDocente.BorderRadius = 10;
-            btBuscarDocente.BorderThickness = 1;
-            btBuscarDocente.CustomizableEdges = customizableEdges5;
-            btBuscarDocente.DisabledState.BorderColor = Color.DarkGray;
-            btBuscarDocente.DisabledState.CustomBorderColor = Color.DarkGray;
-            btBuscarDocente.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btBuscarDocente.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btBuscarDocente.FillColor = SystemColors.HotTrack;
-            btBuscarDocente.Font = new Font("Segoe UI", 9F);
-            btBuscarDocente.ForeColor = Color.White;
-            btBuscarDocente.Image = (Image)resources.GetObject("btBuscarDocente.Image");
-            btBuscarDocente.Location = new Point(831, 56);
-            btBuscarDocente.Name = "btBuscarDocente";
-            btBuscarDocente.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            btBuscarDocente.Size = new Size(44, 36);
-            btBuscarDocente.TabIndex = 6;
-            btBuscarDocente.Visible = false;
+            guna2HtmlLabel5.AutoSize = false;
+            guna2HtmlLabel5.BackColor = Color.FromArgb(14, 102, 248);
+            guna2HtmlLabel5.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            guna2HtmlLabel5.ForeColor = Color.White;
+            guna2HtmlLabel5.Location = new Point(0, 7);
+            guna2HtmlLabel5.Name = "guna2HtmlLabel5";
+            guna2HtmlLabel5.Size = new Size(913, 20);
+            guna2HtmlLabel5.TabIndex = 149;
+            guna2HtmlLabel5.Text = null;
+            guna2HtmlLabel5.TextAlignment = ContentAlignment.MiddleCenter;
+            // 
+            // guna2Panel1
+            // 
+            guna2Panel1.BackColor = Color.Transparent;
+            guna2Panel1.BorderColor = Color.FromArgb(14, 102, 248);
+            guna2Panel1.BorderRadius = 7;
+            guna2Panel1.CustomBorderColor = Color.FromArgb(14, 102, 248);
+            guna2Panel1.CustomizableEdges = customizableEdges1;
+            guna2Panel1.Dock = DockStyle.Top;
+            guna2Panel1.FillColor = Color.FromArgb(14, 102, 248);
+            guna2Panel1.Location = new Point(0, 0);
+            guna2Panel1.Name = "guna2Panel1";
+            guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            guna2Panel1.Size = new Size(913, 20);
+            guna2Panel1.TabIndex = 148;
             // 
             // txtBuscarDocente
             // 
             txtBuscarDocente.BackColor = Color.Transparent;
-            txtBuscarDocente.BorderColor = Color.Black;
-            txtBuscarDocente.BorderRadius = 10;
+            txtBuscarDocente.BorderColor = Color.FromArgb(217, 217, 217);
+            txtBuscarDocente.BorderRadius = 5;
             txtBuscarDocente.CustomizableEdges = customizableEdges3;
             txtBuscarDocente.DefaultText = "";
             txtBuscarDocente.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
@@ -179,7 +162,7 @@
             txtBuscarDocente.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtBuscarDocente.Font = new Font("Segoe UI", 9F);
             txtBuscarDocente.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtBuscarDocente.Location = new Point(440, 56);
+            txtBuscarDocente.Location = new Point(28, 56);
             txtBuscarDocente.Name = "txtBuscarDocente";
             txtBuscarDocente.PlaceholderText = "ESCRIBA EL NOMBRE O CORREO A BUSCAR";
             txtBuscarDocente.SelectedText = "";
@@ -188,11 +171,33 @@
             txtBuscarDocente.TabIndex = 5;
             txtBuscarDocente.TextChanged += txtBuscarDocente_TextChanged;
             // 
+            // btBuscarDocente
+            // 
+            btBuscarDocente.BackColor = Color.Transparent;
+            btBuscarDocente.BorderColor = Color.Transparent;
+            btBuscarDocente.BorderRadius = 3;
+            btBuscarDocente.BorderThickness = 1;
+            btBuscarDocente.CustomizableEdges = customizableEdges5;
+            btBuscarDocente.DisabledState.BorderColor = Color.DarkGray;
+            btBuscarDocente.DisabledState.CustomBorderColor = Color.DarkGray;
+            btBuscarDocente.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btBuscarDocente.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btBuscarDocente.FillColor = SystemColors.HotTrack;
+            btBuscarDocente.Font = new Font("Segoe UI", 9F);
+            btBuscarDocente.ForeColor = Color.White;
+            btBuscarDocente.Image = Properties.Resources.black_lupa;
+            btBuscarDocente.Location = new Point(467, 56);
+            btBuscarDocente.Name = "btBuscarDocente";
+            btBuscarDocente.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            btBuscarDocente.Size = new Size(44, 36);
+            btBuscarDocente.TabIndex = 6;
+            btBuscarDocente.Visible = false;
+            // 
             // lbBuscarDocente
             // 
             lbBuscarDocente.BackColor = Color.Transparent;
             lbBuscarDocente.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbBuscarDocente.Location = new Point(440, 33);
+            lbBuscarDocente.Location = new Point(28, 33);
             lbBuscarDocente.Name = "lbBuscarDocente";
             lbBuscarDocente.Size = new Size(211, 17);
             lbBuscarDocente.TabIndex = 4;
@@ -201,8 +206,8 @@
             // cbbEspecialidad
             // 
             cbbEspecialidad.BackColor = Color.Transparent;
-            cbbEspecialidad.BorderColor = Color.Black;
-            cbbEspecialidad.BorderRadius = 10;
+            cbbEspecialidad.BorderColor = Color.FromArgb(217, 217, 217);
+            cbbEspecialidad.BorderRadius = 5;
             cbbEspecialidad.CustomizableEdges = customizableEdges7;
             cbbEspecialidad.DrawMode = DrawMode.OwnerDrawFixed;
             cbbEspecialidad.DropDownStyle = ComboBoxStyle.DropDownList;
@@ -212,7 +217,7 @@
             cbbEspecialidad.ForeColor = Color.FromArgb(68, 88, 112);
             cbbEspecialidad.ItemHeight = 30;
             cbbEspecialidad.Items.AddRange(new object[] { "MATEMATICAS", "CIENCIAS SOCIALES", "CIENCIAS NATURALES", "EDUC. CIVICA" });
-            cbbEspecialidad.Location = new Point(28, 56);
+            cbbEspecialidad.Location = new Point(529, 56);
             cbbEspecialidad.Name = "cbbEspecialidad";
             cbbEspecialidad.ShadowDecoration.CustomizableEdges = customizableEdges8;
             cbbEspecialidad.Size = new Size(369, 36);
@@ -224,36 +229,26 @@
             // 
             lbEspecialidad.BackColor = Color.Transparent;
             lbEspecialidad.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbEspecialidad.Location = new Point(28, 33);
+            lbEspecialidad.Location = new Point(529, 33);
             lbEspecialidad.Name = "lbEspecialidad";
             lbEspecialidad.Size = new Size(171, 17);
             lbEspecialidad.TabIndex = 2;
             lbEspecialidad.Text = "SELECCIONE LA ESPECIALIDAD";
             lbEspecialidad.Visible = false;
             // 
-            // guna2HtmlLabel5
-            // 
-            guna2HtmlLabel5.AutoSize = false;
-            guna2HtmlLabel5.BackColor = SystemColors.HotTrack;
-            guna2HtmlLabel5.BorderStyle = BorderStyle.Fixed3D;
-            guna2HtmlLabel5.Location = new Point(0, 0);
-            guna2HtmlLabel5.Name = "guna2HtmlLabel5";
-            guna2HtmlLabel5.Size = new Size(913, 27);
-            guna2HtmlLabel5.TabIndex = 0;
-            guna2HtmlLabel5.Text = null;
-            // 
             // ctnDocentes
             // 
             ctnDocentes.BackColor = Color.Transparent;
-            ctnDocentes.BorderColor = Color.Gray;
-            ctnDocentes.BorderRadius = 30;
+            ctnDocentes.BorderColor = Color.FromArgb(217, 217, 217);
+            ctnDocentes.BorderRadius = 7;
             ctnDocentes.BorderThickness = 2;
             ctnDocentes.Controls.Add(guna2HtmlLabel6);
+            ctnDocentes.Controls.Add(guna2Panel2);
             ctnDocentes.Controls.Add(dgvDocentes);
-            ctnDocentes.CustomizableEdges = customizableEdges11;
+            ctnDocentes.CustomizableEdges = customizableEdges13;
             ctnDocentes.Location = new Point(57, 234);
             ctnDocentes.Name = "ctnDocentes";
-            ctnDocentes.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            ctnDocentes.ShadowDecoration.CustomizableEdges = customizableEdges14;
             ctnDocentes.Size = new Size(913, 428);
             ctnDocentes.TabIndex = 119;
             ctnDocentes.Text = "guna2ContainerControl1";
@@ -261,28 +256,48 @@
             // guna2HtmlLabel6
             // 
             guna2HtmlLabel6.AutoSize = false;
-            guna2HtmlLabel6.BackColor = SystemColors.HotTrack;
-            guna2HtmlLabel6.BorderStyle = BorderStyle.Fixed3D;
-            guna2HtmlLabel6.Location = new Point(0, 0);
+            guna2HtmlLabel6.BackColor = Color.FromArgb(14, 102, 248);
+            guna2HtmlLabel6.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            guna2HtmlLabel6.ForeColor = Color.White;
+            guna2HtmlLabel6.Location = new Point(0, 12);
             guna2HtmlLabel6.Name = "guna2HtmlLabel6";
-            guna2HtmlLabel6.Size = new Size(913, 29);
-            guna2HtmlLabel6.TabIndex = 1;
+            guna2HtmlLabel6.Size = new Size(913, 20);
+            guna2HtmlLabel6.TabIndex = 145;
             guna2HtmlLabel6.Text = null;
+            guna2HtmlLabel6.TextAlignment = ContentAlignment.MiddleCenter;
+            // 
+            // guna2Panel2
+            // 
+            guna2Panel2.BackColor = Color.Transparent;
+            guna2Panel2.BorderColor = Color.FromArgb(14, 102, 248);
+            guna2Panel2.BorderRadius = 7;
+            guna2Panel2.CustomBorderColor = Color.FromArgb(14, 102, 248);
+            guna2Panel2.CustomizableEdges = customizableEdges11;
+            guna2Panel2.Dock = DockStyle.Top;
+            guna2Panel2.FillColor = Color.FromArgb(14, 102, 248);
+            guna2Panel2.Location = new Point(0, 0);
+            guna2Panel2.Name = "guna2Panel2";
+            guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            guna2Panel2.Size = new Size(913, 32);
+            guna2Panel2.TabIndex = 146;
             // 
             // dgvDocentes
             // 
+            dgvDocentes.AllowUserToAddRows = false;
+            dgvDocentes.AllowUserToDeleteRows = false;
+            dgvDocentes.AllowUserToResizeColumns = false;
+            dgvDocentes.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = Color.White;
             dgvDocentes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = SystemColors.HotTrack;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(14, 102, 248);
             dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             dataGridViewCellStyle2.ForeColor = Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(14, 102, 248);
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
             dgvDocentes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dgvDocentes.ColumnHeadersHeight = 30;
-            dgvDocentes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dgvDocentes.Columns.AddRange(new DataGridViewColumn[] { UsuarioID, Usuario, Correo, Rol, Vinculacion });
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = Color.White;
@@ -296,6 +311,7 @@
             dgvDocentes.Location = new Point(28, 42);
             dgvDocentes.Name = "dgvDocentes";
             dgvDocentes.RowHeadersVisible = false;
+            dgvDocentes.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dgvDocentes.RowTemplate.Height = 30;
             dgvDocentes.Size = new Size(863, 360);
             dgvDocentes.TabIndex = 0;
@@ -310,7 +326,7 @@
             dgvDocentes.ThemeStyle.HeaderStyle.BorderStyle = DataGridViewHeaderBorderStyle.None;
             dgvDocentes.ThemeStyle.HeaderStyle.Font = new Font("Segoe UI", 9F);
             dgvDocentes.ThemeStyle.HeaderStyle.ForeColor = Color.White;
-            dgvDocentes.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dgvDocentes.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dgvDocentes.ThemeStyle.HeaderStyle.Height = 30;
             dgvDocentes.ThemeStyle.ReadOnly = false;
             dgvDocentes.ThemeStyle.RowsStyle.BackColor = Color.White;
@@ -353,52 +369,206 @@
             Vinculacion.HeaderText = "VINCULACIÓN";
             Vinculacion.Name = "Vinculacion";
             // 
+            // guna2Panel5
+            // 
+            guna2Panel5.Controls.Add(guna2Panel12);
+            guna2Panel5.Controls.Add(guna2Panel9);
+            guna2Panel5.Controls.Add(panel1);
+            guna2Panel5.Controls.Add(guna2Panel10);
+            guna2Panel5.Controls.Add(guna2Panel11);
+            guna2Panel5.Controls.Add(guna2Panel8);
+            guna2Panel5.CustomizableEdges = customizableEdges27;
+            guna2Panel5.Dock = DockStyle.Top;
+            guna2Panel5.Location = new Point(0, 0);
+            guna2Panel5.Name = "guna2Panel5";
+            guna2Panel5.ShadowDecoration.CustomizableEdges = customizableEdges28;
+            guna2Panel5.Size = new Size(1028, 113);
+            guna2Panel5.TabIndex = 136;
+            // 
+            // guna2Panel12
+            // 
+            guna2Panel12.Controls.Add(guna2HtmlLabel2);
+            guna2Panel12.CustomizableEdges = customizableEdges15;
+            guna2Panel12.Dock = DockStyle.Fill;
+            guna2Panel12.Location = new Point(200, 80);
+            guna2Panel12.Name = "guna2Panel12";
+            guna2Panel12.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            guna2Panel12.Size = new Size(628, 33);
+            guna2Panel12.TabIndex = 6;
+            // 
+            // guna2HtmlLabel2
+            // 
+            guna2HtmlLabel2.AutoSize = false;
+            guna2HtmlLabel2.BackColor = Color.Transparent;
+            guna2HtmlLabel2.Dock = DockStyle.Fill;
+            guna2HtmlLabel2.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            guna2HtmlLabel2.ForeColor = Color.Gray;
+            guna2HtmlLabel2.Location = new Point(0, 0);
+            guna2HtmlLabel2.Name = "guna2HtmlLabel2";
+            guna2HtmlLabel2.Size = new Size(628, 33);
+            guna2HtmlLabel2.TabIndex = 130;
+            guna2HtmlLabel2.Text = "EN ESTA SECCIÓN PUEDE GESTIONAR LA CARGA ACADÉMICA DE LOS DOCENTES PREVIAMENTE REGISTRADOS";
+            guna2HtmlLabel2.TextAlignment = ContentAlignment.MiddleCenter;
+            // 
+            // guna2Panel9
+            // 
+            guna2Panel9.Controls.Add(guna2HtmlLabel3);
+            guna2Panel9.CustomizableEdges = customizableEdges17;
+            guna2Panel9.Dock = DockStyle.Top;
+            guna2Panel9.Location = new Point(200, 45);
+            guna2Panel9.Name = "guna2Panel9";
+            guna2Panel9.ShadowDecoration.CustomizableEdges = customizableEdges18;
+            guna2Panel9.Size = new Size(628, 35);
+            guna2Panel9.TabIndex = 5;
+            // 
+            // guna2HtmlLabel3
+            // 
+            guna2HtmlLabel3.AutoSize = false;
+            guna2HtmlLabel3.BackColor = Color.Transparent;
+            guna2HtmlLabel3.Dock = DockStyle.Fill;
+            guna2HtmlLabel3.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
+            guna2HtmlLabel3.Location = new Point(0, 0);
+            guna2HtmlLabel3.Name = "guna2HtmlLabel3";
+            guna2HtmlLabel3.Size = new Size(628, 35);
+            guna2HtmlLabel3.TabIndex = 27;
+            guna2HtmlLabel3.Text = "REPORTE DE PERSONAL DOCENTE";
+            guna2HtmlLabel3.TextAlignment = ContentAlignment.MiddleCenter;
+            // 
+            // panel1
+            // 
+            panel1.Controls.Add(guna2HtmlLabel10);
+            panel1.Dock = DockStyle.Top;
+            panel1.Location = new Point(200, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(628, 45);
+            panel1.TabIndex = 4;
+            // 
+            // guna2HtmlLabel10
+            // 
+            guna2HtmlLabel10.AutoSize = false;
+            guna2HtmlLabel10.BackColor = Color.Transparent;
+            guna2HtmlLabel10.Dock = DockStyle.Fill;
+            guna2HtmlLabel10.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            guna2HtmlLabel10.Location = new Point(0, 0);
+            guna2HtmlLabel10.Name = "guna2HtmlLabel10";
+            guna2HtmlLabel10.Size = new Size(628, 45);
+            guna2HtmlLabel10.TabIndex = 129;
+            guna2HtmlLabel10.Text = "ATLANTIC ACADEMY BILINGUAL SCHOOL";
+            guna2HtmlLabel10.TextAlignment = ContentAlignment.BottomCenter;
+            // 
+            // guna2Panel10
+            // 
+            guna2Panel10.Controls.Add(guna2HtmlLabel19);
+            guna2Panel10.CustomizableEdges = customizableEdges19;
+            guna2Panel10.Dock = DockStyle.Right;
+            guna2Panel10.Location = new Point(828, 0);
+            guna2Panel10.Name = "guna2Panel10";
+            guna2Panel10.ShadowDecoration.CustomizableEdges = customizableEdges20;
+            guna2Panel10.Size = new Size(200, 113);
+            guna2Panel10.TabIndex = 3;
+            // 
+            // guna2HtmlLabel19
+            // 
+            guna2HtmlLabel19.AutoSize = false;
+            guna2HtmlLabel19.BackColor = Color.Transparent;
+            guna2HtmlLabel19.Dock = DockStyle.Top;
+            guna2HtmlLabel19.Font = new Font("Microsoft Sans Serif", 14F);
+            guna2HtmlLabel19.Location = new Point(0, 0);
+            guna2HtmlLabel19.Name = "guna2HtmlLabel19";
+            guna2HtmlLabel19.Size = new Size(200, 42);
+            guna2HtmlLabel19.TabIndex = 129;
+            guna2HtmlLabel19.Text = "TELA, ATLÁNTIDA";
+            guna2HtmlLabel19.TextAlignment = ContentAlignment.BottomCenter;
+            // 
+            // guna2Panel11
+            // 
+            guna2Panel11.Controls.Add(guna2PictureBox1);
+            guna2Panel11.CustomizableEdges = customizableEdges23;
+            guna2Panel11.Dock = DockStyle.Left;
+            guna2Panel11.Location = new Point(50, 0);
+            guna2Panel11.Name = "guna2Panel11";
+            guna2Panel11.ShadowDecoration.CustomizableEdges = customizableEdges24;
+            guna2Panel11.Size = new Size(150, 113);
+            guna2Panel11.TabIndex = 1;
+            // 
+            // guna2PictureBox1
+            // 
+            guna2PictureBox1.CustomizableEdges = customizableEdges21;
+            guna2PictureBox1.Image = Properties.Resources._2;
+            guna2PictureBox1.ImageRotate = 0F;
+            guna2PictureBox1.Location = new Point(17, 7);
+            guna2PictureBox1.Name = "guna2PictureBox1";
+            guna2PictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges22;
+            guna2PictureBox1.Size = new Size(100, 100);
+            guna2PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            guna2PictureBox1.TabIndex = 127;
+            guna2PictureBox1.TabStop = false;
+            // 
+            // guna2Panel8
+            // 
+            guna2Panel8.CustomizableEdges = customizableEdges25;
+            guna2Panel8.Dock = DockStyle.Left;
+            guna2Panel8.Location = new Point(0, 0);
+            guna2Panel8.Name = "guna2Panel8";
+            guna2Panel8.ShadowDecoration.CustomizableEdges = customizableEdges26;
+            guna2Panel8.Size = new Size(50, 113);
+            guna2Panel8.TabIndex = 0;
+            // 
             // ReporteDocentes
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1028, 674);
+            Controls.Add(guna2Panel5);
             Controls.Add(ctnDocentes);
             Controls.Add(ctnFiltrosDocentes);
-            Controls.Add(guna2HtmlLabel4);
-            Controls.Add(guna2HtmlLabel3);
-            Controls.Add(guna2HtmlLabel2);
-            Controls.Add(guna2PictureBox1);
-            Controls.Add(guna2HtmlLabel1);
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Name = "ReporteDocentes";
             Text = "ReporteDocentes";
             Load += ReporteDocentes_Load;
-            ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).EndInit();
             ctnFiltrosDocentes.ResumeLayout(false);
             ctnFiltrosDocentes.PerformLayout();
             ctnDocentes.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvDocentes).EndInit();
+            guna2Panel5.ResumeLayout(false);
+            guna2Panel12.ResumeLayout(false);
+            guna2Panel9.ResumeLayout(false);
+            panel1.ResumeLayout(false);
+            guna2Panel10.ResumeLayout(false);
+            guna2Panel11.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
-
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel4;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private Guna.UI2.WinForms.Guna2ContainerControl ctnFiltrosDocentes;
         private Guna.UI2.WinForms.Guna2Button btBuscarDocente;
         private Guna.UI2.WinForms.Guna2TextBox txtBuscarDocente;
         private Guna.UI2.WinForms.Guna2HtmlLabel lbBuscarDocente;
         private Guna.UI2.WinForms.Guna2ComboBox cbbEspecialidad;
         private Guna.UI2.WinForms.Guna2HtmlLabel lbEspecialidad;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel5;
         private Guna.UI2.WinForms.Guna2ContainerControl ctnDocentes;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel6;
         private Guna.UI2.WinForms.Guna2DataGridView dgvDocentes;
         private DataGridViewTextBoxColumn UsuarioID;
         private DataGridViewTextBoxColumn Usuario;
         private DataGridViewTextBoxColumn Correo;
         private DataGridViewTextBoxColumn Rol;
         private DataGridViewTextBoxColumn Vinculacion;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel5;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel6;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel5;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel12;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel9;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
+        private Panel panel1;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel10;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel10;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel19;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel11;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel8;
     }
 }
