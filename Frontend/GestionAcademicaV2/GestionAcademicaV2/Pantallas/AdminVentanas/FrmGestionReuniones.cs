@@ -82,7 +82,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
             CargarComboRegistrosPorPagina();
             CargarReuniones();
 
-            txtBuscar.PlaceholderText = "Ingresar nombre a buscar";
+            txtBuscar.PlaceholderText = "Ingresar texto a buscar";
             btnTexto.Text = "1";
         }
 

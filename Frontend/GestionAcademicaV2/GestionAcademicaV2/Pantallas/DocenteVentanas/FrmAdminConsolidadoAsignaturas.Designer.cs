@@ -468,7 +468,7 @@
             // 
             // lblRegistros
             // 
-            lblRegistros.BackColor = Color.Transparent;
+            lblRegistros.BackColor = Color.White;
             lblRegistros.BackgroundImageLayout = ImageLayout.None;
             lblRegistros.Location = new Point(15, 278);
             lblRegistros.Name = "lblRegistros";
@@ -489,7 +489,7 @@
             txtBuscar.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             txtBuscar.Location = new Point(806, 372);
             txtBuscar.Name = "txtBuscar";
-            txtBuscar.PlaceholderText = "";
+            txtBuscar.PlaceholderText = "Ej: Maria, Biblia, etc.";
             txtBuscar.SelectedText = "";
             txtBuscar.ShadowDecoration.CustomizableEdges = customizableEdges26;
             txtBuscar.Size = new Size(150, 20);

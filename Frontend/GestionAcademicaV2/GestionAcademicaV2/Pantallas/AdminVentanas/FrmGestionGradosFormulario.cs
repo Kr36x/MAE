@@ -128,7 +128,20 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
             cbNivelGrado.SelectedIndex = 0;
             cbNivelGrado.Enabled = false;
 
-            string siguienteLetra = ObtenerSiguienteLetraDesdeBD(_gradoId);
+            string? siguienteLetra = ObtenerSiguienteLetraDesdeBD(_gradoId);
+
+            if (string.IsNullOrWhiteSpace(siguienteLetra))
+            {
+                MessageBox.Show(
+                    "Este grado ya tiene asignadas todas las secciones permitidas (A, B, C y D).",
+                    "No se puede registrar sección",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning
+                );
+
+                BeginInvoke(new Action(() => Close()));
+                return;
+            }
 
             cbSeccion.Items.Clear();
             cbSeccion.Items.Add(siguienteLetra);
@@ -263,7 +276,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
             cmd.ExecuteNonQuery();
         }
 
-        private string ObtenerSiguienteLetraDesdeBD(int gradoId)
+        private string? ObtenerSiguienteLetraDesdeBD(int gradoId)
         {
             DataTable dt = new DataTable();
 
@@ -289,7 +302,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
                     return letra;
             }
 
-            throw new Exception("Este grado ya tiene asignadas todas las secciones permitidas (A, B, C y D).");
+            return null;
         }
 
         private string ObtenerTurnoSugerido(int gradoId)
