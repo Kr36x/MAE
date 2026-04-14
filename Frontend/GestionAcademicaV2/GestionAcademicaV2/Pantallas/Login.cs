@@ -204,6 +204,12 @@ namespace GestionAcademicaV2.Pantallas
                     docente.Show();
                     this.Hide();
                 }
+                else if (usuarioActual.Rol == "Tutor" || usuarioActual.Rol == "TUTOR")
+                {
+                    PantallaTutor tutor = new PantallaTutor(usuarioActual);
+                    tutor.Show();
+                    this.Hide();
+                }
                 else
                 {
                     MessageBox.Show("Rol no reconocido: " + usuarioActual.Rol);
