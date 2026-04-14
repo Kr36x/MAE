@@ -19,7 +19,7 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
     {
         private readonly Conexion conexion = new Conexion();
         private readonly int docenteId;
-
+        private string _mensajeSinDatos = "";
         public FrmDocenteReporteSemanalCalificaciones(int docenteId)
         {
             InitializeComponent();
@@ -48,8 +48,37 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
             lblAsignatura.TextAlignment = ContentAlignment.MiddleCenter;
             lblAsignatura.Margin = new Padding(0);
             lblAsignatura.Padding = new Padding(0);
+            dgvNotas.Paint += dgvNotas_Paint;
 
             ConfigurarDatePickerSemana();
+        }
+        private void dgvNotas_Paint(object sender, PaintEventArgs e)
+        {
+            if (dgvNotas.Rows.Count == 0 && !string.IsNullOrWhiteSpace(_mensajeSinDatos))
+            {
+                using Font tituloFont = new Font("Segoe UI", 12F, FontStyle.Bold);
+                using Font mensajeFont = new Font("Segoe UI", 10.5F, FontStyle.Regular);
+
+                using SolidBrush tituloBrush = new SolidBrush(Color.FromArgb(23, 120, 208));
+                using SolidBrush mensajeBrush = new SolidBrush(Color.FromArgb(110, 110, 110));
+
+                string titulo = "INFORMACIÓN";
+                string mensaje = _mensajeSinDatos;
+
+                Rectangle rect = dgvNotas.ClientRectangle;
+
+                SizeF sizeTitulo = e.Graphics.MeasureString(titulo, tituloFont);
+                SizeF sizeMensaje = e.Graphics.MeasureString(mensaje, mensajeFont);
+
+                float xTitulo = (rect.Width - sizeTitulo.Width) / 2;
+                float xMensaje = (rect.Width - sizeMensaje.Width) / 2;
+
+                float yTitulo = (rect.Height / 2f) - 30;
+                float yMensaje = yTitulo + 28;
+
+                e.Graphics.DrawString(titulo, tituloFont, tituloBrush, xTitulo, yTitulo);
+                e.Graphics.DrawString(mensaje, mensajeFont, mensajeBrush, xMensaje, yMensaje);
+            }
         }
 
         private void ConfigurarDatePickerSemana()
@@ -322,10 +351,10 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
 
             if (dt == null || dt.Rows.Count == 0)
             {
-                MostrarMensajeSinDatos("No hay calificaciones registradas para esta semana.");
+                MostrarMensajeSinDatos("No se encontraron calificaciones para los filtros seleccionados.");
                 return;
             }
-
+            _mensajeSinDatos = "";
             ConfigurarDataGridViewNotas(dt);
             LlenarGridNotas(dt);
 
@@ -498,8 +527,11 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
 
         private void MostrarMensajeSinDatos(string mensaje)
         {
+            _mensajeSinDatos = mensaje;
+
             dgvNotas.Columns.Clear();
             dgvNotas.Rows.Clear();
+            dgvNotas.DataSource = null;
 
             dgvNotas.AllowUserToAddRows = false;
             dgvNotas.AllowUserToDeleteRows = false;
@@ -510,37 +542,12 @@ namespace GestionAcademicaV2.Pantallas.DocenteVentanas
             dgvNotas.MultiSelect = false;
             dgvNotas.BackgroundColor = Color.White;
             dgvNotas.BorderStyle = BorderStyle.None;
+            dgvNotas.CellBorderStyle = DataGridViewCellBorderStyle.Single;
             dgvNotas.EnableHeadersVisualStyles = false;
-            dgvNotas.ColumnHeadersHeight = 45;
-            dgvNotas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dgvNotas.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None;
-            dgvNotas.RowTemplate.Height = 80;
-            dgvNotas.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
             dgvNotas.ScrollBars = ScrollBars.None;
 
-            dgvNotas.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(23, 120, 208);
-            dgvNotas.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-            dgvNotas.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);
-            dgvNotas.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-
-            DataGridViewTextBoxColumn colMensaje = new DataGridViewTextBoxColumn();
-            colMensaje.Name = "Mensaje";
-            colMensaje.HeaderText = "INFORMACIÓN";
-            colMensaje.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            colMensaje.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            colMensaje.DefaultCellStyle.Font = new Font("Segoe UI", 11, FontStyle.Regular);
-            colMensaje.DefaultCellStyle.ForeColor = Color.DimGray;
-            colMensaje.DefaultCellStyle.BackColor = Color.FromArgb(230, 230, 250);
-            colMensaje.DefaultCellStyle.SelectionBackColor = Color.FromArgb(230, 230, 250);
-            colMensaje.DefaultCellStyle.SelectionForeColor = Color.DimGray;
-            dgvNotas.Columns.Add(colMensaje);
-
-            int rowIndex = dgvNotas.Rows.Add();
-            dgvNotas.Rows[rowIndex].Cells["Mensaje"].Value = mensaje;
-            dgvNotas.Rows[rowIndex].Height = 80;
-            dgvNotas.Rows[rowIndex].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-
             lblRegistros.Text = "Sin registros";
+            dgvNotas.Invalidate();
         }
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)

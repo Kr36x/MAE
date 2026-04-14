@@ -119,7 +119,7 @@ namespace GestionAcademicaV2.Pantallas
             lblRol.Location = new Point(65, 42);
             lblId.Location = new Point(65, 60);
 
-            AgregarSeparadorSuperiorUsuario();
+            //AgregarSeparadorSuperiorUsuario();
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
