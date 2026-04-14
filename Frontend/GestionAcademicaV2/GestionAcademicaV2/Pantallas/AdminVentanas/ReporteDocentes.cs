@@ -65,19 +65,28 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
                     bool estado = Convert.ToBoolean(row["Estado"]);
                     row["EstadoTexto"] = estado ? "ACTIVO" : "INACTIVO";
                 }
+                if (dt.Rows.Count == 0)
+                {
+                    dgvDocentes.Visible=false;
+                    lbDatosDocentes.Visible = true;
+                }
+                else
+                {
+                    dgvDocentes.Visible = true;
+                    lbDatosDocentes.Visible = false;
+                    dgvDocentes.DataSource = dt;
 
-                dgvDocentes.DataSource = dt;
+                    // Ocultar columna Estado real
+                    if (dgvDocentes.Columns.Contains("Estado"))
+                        dgvDocentes.Columns["Estado"].Visible = false;
 
-                // Ocultar columna Estado real
-                if (dgvDocentes.Columns.Contains("Estado"))
-                    dgvDocentes.Columns["Estado"].Visible = false;
+                    // Ocultar columna EstadoTexto
+                    if (dgvDocentes.Columns.Contains("EstadoTexto"))
+                        dgvDocentes.Columns["EstadoTexto"].Visible = false;
 
-                // Ocultar columna EstadoTexto
-                if (dgvDocentes.Columns.Contains("EstadoTexto"))
-                    dgvDocentes.Columns["EstadoTexto"].Visible = false;
-
-                // Configurar columnas de imagen
-                ConfigurarColumnas();
+                    // Configurar columnas de imagen
+                    ConfigurarColumnas();
+                }
             }
             catch (Exception ex)
             {

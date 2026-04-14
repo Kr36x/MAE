@@ -68,6 +68,7 @@
             cbbEspecialidad = new Guna.UI2.WinForms.Guna2ComboBox();
             lbEspecialidad = new Guna.UI2.WinForms.Guna2HtmlLabel();
             ctnDocentes = new Guna.UI2.WinForms.Guna2ContainerControl();
+            lbDatosDocentes = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel6 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             dgvDocentes = new Guna.UI2.WinForms.Guna2DataGridView();
@@ -242,6 +243,7 @@
             ctnDocentes.BorderColor = Color.FromArgb(217, 217, 217);
             ctnDocentes.BorderRadius = 7;
             ctnDocentes.BorderThickness = 2;
+            ctnDocentes.Controls.Add(lbDatosDocentes);
             ctnDocentes.Controls.Add(guna2HtmlLabel6);
             ctnDocentes.Controls.Add(guna2Panel2);
             ctnDocentes.Controls.Add(dgvDocentes);
@@ -252,6 +254,17 @@
             ctnDocentes.Size = new Size(913, 428);
             ctnDocentes.TabIndex = 119;
             ctnDocentes.Text = "guna2ContainerControl1";
+            // 
+            // lbDatosDocentes
+            // 
+            lbDatosDocentes.BackColor = Color.Transparent;
+            lbDatosDocentes.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbDatosDocentes.Location = new Point(347, 42);
+            lbDatosDocentes.Name = "lbDatosDocentes";
+            lbDatosDocentes.Size = new Size(239, 23);
+            lbDatosDocentes.TabIndex = 137;
+            lbDatosDocentes.Text = "NO HAY DATOS QUE MOSTRAR";
+            lbDatosDocentes.Visible = false;
             // 
             // guna2HtmlLabel6
             // 
@@ -344,30 +357,40 @@
             UsuarioID.DataPropertyName = "UsuarioID";
             UsuarioID.HeaderText = "ID";
             UsuarioID.Name = "UsuarioID";
+            UsuarioID.ReadOnly = true;
+            UsuarioID.Resizable = DataGridViewTriState.False;
             // 
             // Usuario
             // 
             Usuario.DataPropertyName = "Usuario";
             Usuario.HeaderText = "USUARIO";
             Usuario.Name = "Usuario";
+            Usuario.ReadOnly = true;
+            Usuario.Resizable = DataGridViewTriState.False;
             // 
             // Correo
             // 
             Correo.DataPropertyName = "Correo";
             Correo.HeaderText = "CORREO";
             Correo.Name = "Correo";
+            Correo.ReadOnly = true;
+            Correo.Resizable = DataGridViewTriState.False;
             // 
             // Rol
             // 
             Rol.DataPropertyName = "Rol";
             Rol.HeaderText = "ROL";
             Rol.Name = "Rol";
+            Rol.ReadOnly = true;
+            Rol.Resizable = DataGridViewTriState.False;
             // 
             // Vinculacion
             // 
             Vinculacion.DataPropertyName = "Vinculacion";
             Vinculacion.HeaderText = "VINCULACIÓN";
             Vinculacion.Name = "Vinculacion";
+            Vinculacion.ReadOnly = true;
+            Vinculacion.Resizable = DataGridViewTriState.False;
             // 
             // guna2Panel5
             // 
@@ -529,6 +552,7 @@
             ctnFiltrosDocentes.ResumeLayout(false);
             ctnFiltrosDocentes.PerformLayout();
             ctnDocentes.ResumeLayout(false);
+            ctnDocentes.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvDocentes).EndInit();
             guna2Panel5.ResumeLayout(false);
             guna2Panel12.ResumeLayout(false);
@@ -549,11 +573,6 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel lbEspecialidad;
         private Guna.UI2.WinForms.Guna2ContainerControl ctnDocentes;
         private Guna.UI2.WinForms.Guna2DataGridView dgvDocentes;
-        private DataGridViewTextBoxColumn UsuarioID;
-        private DataGridViewTextBoxColumn Usuario;
-        private DataGridViewTextBoxColumn Correo;
-        private DataGridViewTextBoxColumn Rol;
-        private DataGridViewTextBoxColumn Vinculacion;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel5;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel6;
@@ -570,5 +589,11 @@
         private Guna.UI2.WinForms.Guna2Panel guna2Panel11;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel8;
+        private DataGridViewTextBoxColumn UsuarioID;
+        private DataGridViewTextBoxColumn Usuario;
+        private DataGridViewTextBoxColumn Correo;
+        private DataGridViewTextBoxColumn Rol;
+        private DataGridViewTextBoxColumn Vinculacion;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lbDatosDocentes;
     }
 }

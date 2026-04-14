@@ -67,8 +67,22 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
                     (object)grado ?? DBNull.Value)
                 };
 
-                dgvEstudiantes.DataSource = util.EjecutarSPParametros("spMAE_BuscarEstudiantes", p);
-                
+                //dgvEstudiantes.DataSource = util.EjecutarSPParametros("spMAE_BuscarEstudiantes", p);
+                DataTable dt = util.EjecutarSPParametros("spMAE_BuscarEstudiantes", p);
+
+                // VALIDACIÓN DE DATOS
+                if (dt.Rows.Count == 0)
+                {
+                    dgvEstudiantes.Visible=false;
+                    lbDatosEstudiantes.Visible = true;
+                }
+                else
+                {
+                    dgvEstudiantes.Visible = true;
+                    lbDatosEstudiantes.Visible = false;
+                    dgvEstudiantes.DataSource = dt;
+                }
+
             }
             catch (Exception ex)
             {

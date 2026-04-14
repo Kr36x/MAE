@@ -88,6 +88,7 @@
             guna2Panel11 = new Guna.UI2.WinForms.Guna2Panel();
             guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             guna2Panel8 = new Guna.UI2.WinForms.Guna2Panel();
+            lbDatosUsuario = new Guna.UI2.WinForms.Guna2HtmlLabel();
             ctnFiltros.SuspendLayout();
             ctnUsuarios.SuspendLayout();
             guna2Panel2.SuspendLayout();
@@ -243,6 +244,7 @@
             ctnUsuarios.BorderColor = Color.FromArgb(217, 217, 217);
             ctnUsuarios.BorderRadius = 7;
             ctnUsuarios.BorderThickness = 2;
+            ctnUsuarios.Controls.Add(lbDatosUsuario);
             ctnUsuarios.Controls.Add(guna2Panel2);
             ctnUsuarios.Controls.Add(dgvUsuarios);
             ctnUsuarios.CustomizableEdges = customizableEdges13;
@@ -532,6 +534,17 @@
             guna2Panel8.Size = new Size(50, 115);
             guna2Panel8.TabIndex = 0;
             // 
+            // lbDatosUsuario
+            // 
+            lbDatosUsuario.BackColor = Color.Transparent;
+            lbDatosUsuario.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbDatosUsuario.Location = new Point(341, 42);
+            lbDatosUsuario.Name = "lbDatosUsuario";
+            lbDatosUsuario.Size = new Size(239, 23);
+            lbDatosUsuario.TabIndex = 138;
+            lbDatosUsuario.Text = "NO HAY DATOS QUE MOSTRAR";
+            lbDatosUsuario.Visible = false;
+            // 
             // FrmUsuariosPersonal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -548,6 +561,7 @@
             ctnFiltros.ResumeLayout(false);
             ctnFiltros.PerformLayout();
             ctnUsuarios.ResumeLayout(false);
+            ctnUsuarios.PerformLayout();
             guna2Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvUsuarios).EndInit();
             guna2Panel5.ResumeLayout(false);
@@ -590,5 +604,6 @@
         private Guna.UI2.WinForms.Guna2Panel guna2Panel11;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel8;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lbDatosUsuario;
     }
 }
