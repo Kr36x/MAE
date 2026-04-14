@@ -1342,5 +1342,10 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
         }
 
         #endregion
+
+        private void FrmGestionReuniones_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

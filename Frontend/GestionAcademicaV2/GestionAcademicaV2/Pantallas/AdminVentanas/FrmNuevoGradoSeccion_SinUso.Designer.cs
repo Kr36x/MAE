@@ -28,13 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmNuevoGradoSeccion_SinUso));
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -45,6 +40,12 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             ctnGradoSeccion = new Guna.UI2.WinForms.Guna2ContainerControl();
             btCancelarGrado = new Guna.UI2.WinForms.Guna2Button();
             btRegistrarGrado = new Guna.UI2.WinForms.Guna2Button();
@@ -63,16 +64,20 @@
             lbConfiguracionSeccion = new Guna.UI2.WinForms.Guna2HtmlLabel();
             lbConfiguracionGrado = new Guna.UI2.WinForms.Guna2HtmlLabel();
             btInformacionGrado = new Guna.UI2.WinForms.Guna2PictureBox();
-            guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            guna2HtmlLabel9 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            guna2Panel8 = new Guna.UI2.WinForms.Guna2Panel();
             ctnGradoSeccion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)btInformacionGrado).BeginInit();
             SuspendLayout();
             // 
             // ctnGradoSeccion
             // 
-            ctnGradoSeccion.BorderColor = Color.Gray;
-            ctnGradoSeccion.BorderRadius = 30;
+            ctnGradoSeccion.BorderColor = Color.FromArgb(217, 217, 217);
+            ctnGradoSeccion.BorderRadius = 7;
             ctnGradoSeccion.BorderThickness = 2;
+            ctnGradoSeccion.Controls.Add(btInformacionGrado);
+            ctnGradoSeccion.Controls.Add(guna2HtmlLabel9);
+            ctnGradoSeccion.Controls.Add(guna2Panel8);
             ctnGradoSeccion.Controls.Add(btCancelarGrado);
             ctnGradoSeccion.Controls.Add(btRegistrarGrado);
             ctnGradoSeccion.Controls.Add(lbAvisoTurno);
@@ -89,21 +94,20 @@
             ctnGradoSeccion.Controls.Add(lbGrado);
             ctnGradoSeccion.Controls.Add(lbConfiguracionSeccion);
             ctnGradoSeccion.Controls.Add(lbConfiguracionGrado);
-            ctnGradoSeccion.Controls.Add(btInformacionGrado);
-            ctnGradoSeccion.Controls.Add(guna2HtmlLabel1);
-            ctnGradoSeccion.CustomizableEdges = customizableEdges15;
-            ctnGradoSeccion.Location = new Point(22, 21);
+            ctnGradoSeccion.CustomizableEdges = customizableEdges17;
+            ctnGradoSeccion.Location = new Point(22, 12);
             ctnGradoSeccion.Name = "ctnGradoSeccion";
-            ctnGradoSeccion.ShadowDecoration.CustomizableEdges = customizableEdges16;
-            ctnGradoSeccion.Size = new Size(537, 315);
+            ctnGradoSeccion.ShadowDecoration.CustomizableEdges = customizableEdges18;
+            ctnGradoSeccion.Size = new Size(537, 324);
             ctnGradoSeccion.TabIndex = 0;
             ctnGradoSeccion.Text = "guna2ContainerControl1";
             // 
             // btCancelarGrado
             // 
-            btCancelarGrado.BorderRadius = 10;
+            btCancelarGrado.BorderColor = Color.Transparent;
+            btCancelarGrado.BorderRadius = 5;
             btCancelarGrado.BorderThickness = 1;
-            btCancelarGrado.CustomizableEdges = customizableEdges1;
+            btCancelarGrado.CustomizableEdges = customizableEdges5;
             btCancelarGrado.DisabledState.BorderColor = Color.DarkGray;
             btCancelarGrado.DisabledState.CustomBorderColor = Color.DarkGray;
             btCancelarGrado.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -111,30 +115,30 @@
             btCancelarGrado.FillColor = Color.Gray;
             btCancelarGrado.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btCancelarGrado.ForeColor = Color.White;
-            btCancelarGrado.Image = (Image)resources.GetObject("btCancelarGrado.Image");
-            btCancelarGrado.Location = new Point(259, 257);
+            btCancelarGrado.Location = new Point(259, 276);
             btCancelarGrado.Name = "btCancelarGrado";
-            btCancelarGrado.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            btCancelarGrado.ShadowDecoration.CustomizableEdges = customizableEdges6;
             btCancelarGrado.Size = new Size(124, 36);
             btCancelarGrado.TabIndex = 128;
             btCancelarGrado.Text = "CANCELAR";
             // 
             // btRegistrarGrado
             // 
-            btRegistrarGrado.BorderRadius = 10;
+            btRegistrarGrado.BorderColor = Color.Transparent;
+            btRegistrarGrado.BorderRadius = 5;
             btRegistrarGrado.BorderThickness = 1;
-            btRegistrarGrado.CustomizableEdges = customizableEdges3;
+            btRegistrarGrado.CustomizableEdges = customizableEdges7;
             btRegistrarGrado.DisabledState.BorderColor = Color.DarkGray;
             btRegistrarGrado.DisabledState.CustomBorderColor = Color.DarkGray;
             btRegistrarGrado.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btRegistrarGrado.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btRegistrarGrado.FillColor = SystemColors.HotTrack;
+            btRegistrarGrado.FillColor = Color.FromArgb(16, 57, 129);
             btRegistrarGrado.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btRegistrarGrado.ForeColor = Color.White;
-            btRegistrarGrado.Image = (Image)resources.GetObject("btRegistrarGrado.Image");
-            btRegistrarGrado.Location = new Point(389, 257);
+            btRegistrarGrado.Image = Properties.Resources.add_white;
+            btRegistrarGrado.Location = new Point(389, 276);
             btRegistrarGrado.Name = "btRegistrarGrado";
-            btRegistrarGrado.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            btRegistrarGrado.ShadowDecoration.CustomizableEdges = customizableEdges8;
             btRegistrarGrado.Size = new Size(124, 36);
             btRegistrarGrado.TabIndex = 127;
             btRegistrarGrado.Text = "REGISTRAR";
@@ -142,31 +146,31 @@
             // lbAvisoTurno
             // 
             lbAvisoTurno.BackColor = Color.Transparent;
-            lbAvisoTurno.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbAvisoTurno.ForeColor = Color.Gray;
-            lbAvisoTurno.Location = new Point(286, 230);
+            lbAvisoTurno.Font = new Font("Segoe UI", 7F, FontStyle.Bold);
+            lbAvisoTurno.ForeColor = Color.FromArgb(166, 163, 163);
+            lbAvisoTurno.Location = new Point(286, 249);
             lbAvisoTurno.Name = "lbAvisoTurno";
-            lbAvisoTurno.Size = new Size(203, 17);
+            lbAvisoTurno.Size = new Size(159, 14);
             lbAvisoTurno.TabIndex = 126;
             lbAvisoTurno.Text = "SELECCIONE SEGÚN CORRESPONDA";
             // 
             // lbAvisoSeccion
             // 
             lbAvisoSeccion.BackColor = Color.Transparent;
-            lbAvisoSeccion.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbAvisoSeccion.ForeColor = Color.Gray;
-            lbAvisoSeccion.Location = new Point(286, 146);
+            lbAvisoSeccion.Font = new Font("Segoe UI", 7F, FontStyle.Bold);
+            lbAvisoSeccion.ForeColor = Color.FromArgb(166, 163, 163);
+            lbAvisoSeccion.Location = new Point(286, 165);
             lbAvisoSeccion.Name = "lbAvisoSeccion";
-            lbAvisoSeccion.Size = new Size(212, 17);
+            lbAvisoSeccion.Size = new Size(167, 14);
             lbAvisoSeccion.TabIndex = 125;
             lbAvisoSeccion.Text = "SELECCIONE LA LETRA DE LA SECCIÓN";
             // 
             // cbbTurno
             // 
             cbbTurno.BackColor = Color.Transparent;
-            cbbTurno.BorderColor = Color.Black;
-            cbbTurno.BorderRadius = 10;
-            cbbTurno.CustomizableEdges = customizableEdges5;
+            cbbTurno.BorderColor = Color.FromArgb(217, 217, 217);
+            cbbTurno.BorderRadius = 5;
+            cbbTurno.CustomizableEdges = customizableEdges9;
             cbbTurno.DrawMode = DrawMode.OwnerDrawFixed;
             cbbTurno.DropDownStyle = ComboBoxStyle.DropDownList;
             cbbTurno.FocusedColor = Color.FromArgb(94, 148, 255);
@@ -175,9 +179,9 @@
             cbbTurno.ForeColor = Color.FromArgb(68, 88, 112);
             cbbTurno.ItemHeight = 30;
             cbbTurno.Items.AddRange(new object[] { "MATUTINO", "VESPERTINO" });
-            cbbTurno.Location = new Point(286, 192);
+            cbbTurno.Location = new Point(286, 211);
             cbbTurno.Name = "cbbTurno";
-            cbbTurno.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            cbbTurno.ShadowDecoration.CustomizableEdges = customizableEdges10;
             cbbTurno.Size = new Size(227, 36);
             cbbTurno.TabIndex = 124;
             // 
@@ -185,7 +189,7 @@
             // 
             lbTurno.BackColor = Color.Transparent;
             lbTurno.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbTurno.Location = new Point(286, 169);
+            lbTurno.Location = new Point(286, 188);
             lbTurno.Name = "lbTurno";
             lbTurno.Size = new Size(45, 17);
             lbTurno.TabIndex = 123;
@@ -194,9 +198,9 @@
             // cbbSeccion
             // 
             cbbSeccion.BackColor = Color.Transparent;
-            cbbSeccion.BorderColor = Color.Black;
-            cbbSeccion.BorderRadius = 10;
-            cbbSeccion.CustomizableEdges = customizableEdges7;
+            cbbSeccion.BorderColor = Color.FromArgb(217, 217, 217);
+            cbbSeccion.BorderRadius = 5;
+            cbbSeccion.CustomizableEdges = customizableEdges11;
             cbbSeccion.DrawMode = DrawMode.OwnerDrawFixed;
             cbbSeccion.DropDownStyle = ComboBoxStyle.DropDownList;
             cbbSeccion.FocusedColor = Color.FromArgb(94, 148, 255);
@@ -205,9 +209,9 @@
             cbbSeccion.ForeColor = Color.FromArgb(68, 88, 112);
             cbbSeccion.ItemHeight = 30;
             cbbSeccion.Items.AddRange(new object[] { "A", "B", "C", "D" });
-            cbbSeccion.Location = new Point(286, 108);
+            cbbSeccion.Location = new Point(286, 127);
             cbbSeccion.Name = "cbbSeccion";
-            cbbSeccion.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            cbbSeccion.ShadowDecoration.CustomizableEdges = customizableEdges12;
             cbbSeccion.Size = new Size(132, 36);
             cbbSeccion.TabIndex = 122;
             // 
@@ -215,7 +219,7 @@
             // 
             lbSeccion.BackColor = Color.Transparent;
             lbSeccion.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbSeccion.Location = new Point(286, 85);
+            lbSeccion.Location = new Point(286, 104);
             lbSeccion.Name = "lbSeccion";
             lbSeccion.Size = new Size(52, 17);
             lbSeccion.TabIndex = 121;
@@ -224,9 +228,9 @@
             // cbbNivel
             // 
             cbbNivel.BackColor = Color.Transparent;
-            cbbNivel.BorderColor = Color.Black;
-            cbbNivel.BorderRadius = 10;
-            cbbNivel.CustomizableEdges = customizableEdges9;
+            cbbNivel.BorderColor = Color.FromArgb(217, 217, 217);
+            cbbNivel.BorderRadius = 5;
+            cbbNivel.CustomizableEdges = customizableEdges13;
             cbbNivel.DrawMode = DrawMode.OwnerDrawFixed;
             cbbNivel.DropDownStyle = ComboBoxStyle.DropDownList;
             cbbNivel.FocusedColor = Color.FromArgb(94, 148, 255);
@@ -235,20 +239,20 @@
             cbbNivel.ForeColor = Color.FromArgb(68, 88, 112);
             cbbNivel.ItemHeight = 30;
             cbbNivel.Items.AddRange(new object[] { "PRE-BÁSICA", "BÁSICA", "MEDIA" });
-            cbbNivel.Location = new Point(22, 192);
+            cbbNivel.Location = new Point(22, 211);
             cbbNivel.Name = "cbbNivel";
-            cbbNivel.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            cbbNivel.ShadowDecoration.CustomizableEdges = customizableEdges14;
             cbbNivel.Size = new Size(227, 36);
             cbbNivel.TabIndex = 120;
             // 
             // lbAvisoNivel
             // 
             lbAvisoNivel.BackColor = Color.Transparent;
-            lbAvisoNivel.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbAvisoNivel.ForeColor = Color.Gray;
-            lbAvisoNivel.Location = new Point(22, 230);
+            lbAvisoNivel.Font = new Font("Segoe UI", 7F, FontStyle.Bold);
+            lbAvisoNivel.ForeColor = Color.FromArgb(166, 163, 163);
+            lbAvisoNivel.Location = new Point(22, 249);
             lbAvisoNivel.Name = "lbAvisoNivel";
-            lbAvisoNivel.Size = new Size(203, 17);
+            lbAvisoNivel.Size = new Size(159, 14);
             lbAvisoNivel.TabIndex = 119;
             lbAvisoNivel.Text = "SELECCIONE SEGÚN CORRESPONDA";
             // 
@@ -256,7 +260,7 @@
             // 
             lbNivel.BackColor = Color.Transparent;
             lbNivel.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbNivel.Location = new Point(22, 169);
+            lbNivel.Location = new Point(22, 188);
             lbNivel.Name = "lbNivel";
             lbNivel.Size = new Size(36, 17);
             lbNivel.TabIndex = 117;
@@ -265,20 +269,20 @@
             // lbAvisoGrado
             // 
             lbAvisoGrado.BackColor = Color.Transparent;
-            lbAvisoGrado.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbAvisoGrado.ForeColor = Color.Gray;
-            lbAvisoGrado.Location = new Point(22, 146);
+            lbAvisoGrado.Font = new Font("Segoe UI", 7F, FontStyle.Bold);
+            lbAvisoGrado.ForeColor = Color.FromArgb(166, 163, 163);
+            lbAvisoGrado.Location = new Point(22, 165);
             lbAvisoGrado.Name = "lbAvisoGrado";
-            lbAvisoGrado.Size = new Size(176, 17);
+            lbAvisoGrado.Size = new Size(135, 14);
             lbAvisoGrado.TabIndex = 116;
             lbAvisoGrado.Text = "INGRESE NOMBRE DEL GRADO";
             // 
             // txtGrado
             // 
-            txtGrado.BorderColor = Color.Black;
-            txtGrado.BorderRadius = 10;
+            txtGrado.BorderColor = Color.FromArgb(217, 217, 217);
+            txtGrado.BorderRadius = 5;
             txtGrado.CharacterCasing = CharacterCasing.Upper;
-            txtGrado.CustomizableEdges = customizableEdges11;
+            txtGrado.CustomizableEdges = customizableEdges15;
             txtGrado.DefaultText = "";
             txtGrado.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txtGrado.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -287,11 +291,11 @@
             txtGrado.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtGrado.Font = new Font("Segoe UI", 9F);
             txtGrado.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtGrado.Location = new Point(22, 108);
+            txtGrado.Location = new Point(22, 127);
             txtGrado.Name = "txtGrado";
             txtGrado.PlaceholderText = "";
             txtGrado.SelectedText = "";
-            txtGrado.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            txtGrado.ShadowDecoration.CustomizableEdges = customizableEdges16;
             txtGrado.Size = new Size(227, 36);
             txtGrado.TabIndex = 115;
             // 
@@ -299,7 +303,7 @@
             // 
             lbGrado.BackColor = Color.Transparent;
             lbGrado.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbGrado.Location = new Point(22, 85);
+            lbGrado.Location = new Point(22, 104);
             lbGrado.Name = "lbGrado";
             lbGrado.Size = new Size(46, 17);
             lbGrado.TabIndex = 114;
@@ -308,11 +312,11 @@
             // lbConfiguracionSeccion
             // 
             lbConfiguracionSeccion.AutoSize = false;
-            lbConfiguracionSeccion.BackColor = SystemColors.HotTrack;
+            lbConfiguracionSeccion.BackColor = Color.FromArgb(16, 57, 129);
             lbConfiguracionSeccion.BorderStyle = BorderStyle.FixedSingle;
             lbConfiguracionSeccion.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lbConfiguracionSeccion.ForeColor = Color.White;
-            lbConfiguracionSeccion.Location = new Point(286, 44);
+            lbConfiguracionSeccion.Location = new Point(286, 63);
             lbConfiguracionSeccion.Name = "lbConfiguracionSeccion";
             lbConfiguracionSeccion.Size = new Size(227, 26);
             lbConfiguracionSeccion.TabIndex = 113;
@@ -322,11 +326,11 @@
             // lbConfiguracionGrado
             // 
             lbConfiguracionGrado.AutoSize = false;
-            lbConfiguracionGrado.BackColor = SystemColors.HotTrack;
+            lbConfiguracionGrado.BackColor = Color.FromArgb(16, 57, 129);
             lbConfiguracionGrado.BorderStyle = BorderStyle.FixedSingle;
             lbConfiguracionGrado.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lbConfiguracionGrado.ForeColor = Color.White;
-            lbConfiguracionGrado.Location = new Point(22, 44);
+            lbConfiguracionGrado.Location = new Point(22, 63);
             lbConfiguracionGrado.Name = "lbConfiguracionGrado";
             lbConfiguracionGrado.Size = new Size(227, 26);
             lbConfiguracionGrado.TabIndex = 112;
@@ -335,33 +339,47 @@
             // 
             // btInformacionGrado
             // 
-            btInformacionGrado.BackColor = SystemColors.HotTrack;
-            btInformacionGrado.CustomizableEdges = customizableEdges13;
-            btInformacionGrado.Image = (Image)resources.GetObject("btInformacionGrado.Image");
+            btInformacionGrado.BackColor = Color.FromArgb(16, 57, 129);
+            btInformacionGrado.CustomizableEdges = customizableEdges1;
+            btInformacionGrado.Image = Properties.Resources.info_white;
             btInformacionGrado.ImageRotate = 0F;
-            btInformacionGrado.Location = new Point(373, 4);
+            btInformacionGrado.Location = new Point(357, 13);
             btInformacionGrado.Name = "btInformacionGrado";
-            btInformacionGrado.ShadowDecoration.CustomizableEdges = customizableEdges14;
-            btInformacionGrado.Size = new Size(25, 18);
+            btInformacionGrado.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            btInformacionGrado.Size = new Size(20, 20);
             btInformacionGrado.SizeMode = PictureBoxSizeMode.StretchImage;
             btInformacionGrado.TabIndex = 111;
             btInformacionGrado.TabStop = false;
             // 
-            // guna2HtmlLabel1
+            // guna2HtmlLabel9
             // 
-            guna2HtmlLabel1.AutoSize = false;
-            guna2HtmlLabel1.BackColor = SystemColors.HotTrack;
-            guna2HtmlLabel1.BorderStyle = BorderStyle.Fixed3D;
-            guna2HtmlLabel1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            guna2HtmlLabel1.ForeColor = Color.White;
-            guna2HtmlLabel1.Location = new Point(0, 0);
-            guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            guna2HtmlLabel1.Size = new Size(537, 28);
-            guna2HtmlLabel1.TabIndex = 0;
-            guna2HtmlLabel1.Text = "NUEVO GRADO Y SECCIÓN";
-            guna2HtmlLabel1.TextAlignment = ContentAlignment.TopCenter;
+            guna2HtmlLabel9.AutoSize = false;
+            guna2HtmlLabel9.BackColor = Color.FromArgb(16, 57, 129);
+            guna2HtmlLabel9.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            guna2HtmlLabel9.ForeColor = Color.White;
+            guna2HtmlLabel9.Location = new Point(0, 10);
+            guna2HtmlLabel9.Name = "guna2HtmlLabel9";
+            guna2HtmlLabel9.Size = new Size(537, 27);
+            guna2HtmlLabel9.TabIndex = 129;
+            guna2HtmlLabel9.Text = "DATOS DEL TUTOR";
+            guna2HtmlLabel9.TextAlignment = ContentAlignment.MiddleCenter;
             // 
-            // FrmNuevoGradoSeccion
+            // guna2Panel8
+            // 
+            guna2Panel8.BackColor = Color.Transparent;
+            guna2Panel8.BorderColor = Color.FromArgb(16, 57, 129);
+            guna2Panel8.BorderRadius = 7;
+            guna2Panel8.CustomBorderColor = Color.FromArgb(16, 57, 129);
+            guna2Panel8.CustomizableEdges = customizableEdges3;
+            guna2Panel8.Dock = DockStyle.Top;
+            guna2Panel8.FillColor = Color.FromArgb(16, 57, 129);
+            guna2Panel8.Location = new Point(0, 0);
+            guna2Panel8.Name = "guna2Panel8";
+            guna2Panel8.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            guna2Panel8.Size = new Size(537, 25);
+            guna2Panel8.TabIndex = 130;
+            // 
+            // FrmNuevoGradoSeccion_SinUso
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -369,7 +387,7 @@
             ClientSize = new Size(585, 353);
             Controls.Add(ctnGradoSeccion);
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
-            Name = "FrmNuevoGradoSeccion";
+            Name = "FrmNuevoGradoSeccion_SinUso";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Crear Nuevo Grado y Seccion";
             ctnGradoSeccion.ResumeLayout(false);
@@ -381,7 +399,6 @@
         #endregion
 
         private Guna.UI2.WinForms.Guna2ContainerControl ctnGradoSeccion;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private Guna.UI2.WinForms.Guna2PictureBox btInformacionGrado;
         private Guna.UI2.WinForms.Guna2HtmlLabel lbConfiguracionGrado;
         private Guna.UI2.WinForms.Guna2HtmlLabel lbAvisoGrado;
@@ -399,5 +416,7 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel lbAvisoSeccion;
         private Guna.UI2.WinForms.Guna2Button btCancelarGrado;
         private Guna.UI2.WinForms.Guna2Button btRegistrarGrado;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel9;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel8;
     }
 }

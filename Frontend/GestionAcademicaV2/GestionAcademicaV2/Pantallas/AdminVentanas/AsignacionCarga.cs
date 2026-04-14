@@ -446,5 +446,10 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
                                 MessageBoxIcon.Warning);
             }
         }
+
+        private void lbTitulo_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

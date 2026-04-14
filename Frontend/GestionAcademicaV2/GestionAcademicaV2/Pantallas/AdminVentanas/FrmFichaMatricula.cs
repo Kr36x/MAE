@@ -223,7 +223,7 @@ namespace GestionAcademicaV2.Pantallas.AdminVentanas
             CargarGrados();
             if (veroeditar == 2)
             {
-                lbTituloMatricula.Text = "EDITAR MATRICULA DE ESTUDIANTE";
+                lbTituloMatricula2.Text = "EDITAR MATRICULA DE ESTUDIANTE";
                 CargarFichaMatriculaEditar();
             }
             else

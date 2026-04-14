@@ -31,7 +31,6 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmGestionUsuarios));
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -143,8 +142,8 @@
             // txtIdentidad
             // 
             txtIdentidad.BackColor = Color.Transparent;
-            txtIdentidad.BorderColor = Color.Black;
-            txtIdentidad.BorderRadius = 10;
+            txtIdentidad.BorderColor = Color.FromArgb(217, 217, 217);
+            txtIdentidad.BorderRadius = 5;
             txtIdentidad.CharacterCasing = CharacterCasing.Upper;
             txtIdentidad.CustomizableEdges = customizableEdges1;
             txtIdentidad.DefaultText = "";
@@ -171,21 +170,22 @@
             // btCrear
             // 
             btCrear.BackColor = Color.White;
-            btCrear.BorderRadius = 10;
+            btCrear.BorderColor = Color.Transparent;
+            btCrear.BorderRadius = 5;
             btCrear.BorderThickness = 1;
             btCrear.CustomizableEdges = customizableEdges3;
             btCrear.DisabledState.BorderColor = Color.DarkGray;
             btCrear.DisabledState.CustomBorderColor = Color.DarkGray;
             btCrear.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btCrear.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btCrear.FillColor = SystemColors.HotTrack;
+            btCrear.FillColor = Color.FromArgb(16, 57, 129);
             btCrear.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btCrear.ForeColor = Color.White;
-            btCrear.Image = (Image)resources.GetObject("btCrear.Image");
-            btCrear.Location = new Point(425, 570);
+            btCrear.Image = Properties.Resources.add_white;
+            btCrear.Location = new Point(470, 570);
             btCrear.Name = "btCrear";
             btCrear.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            btCrear.Size = new Size(131, 35);
+            btCrear.Size = new Size(105, 35);
             btCrear.TabIndex = 3;
             btCrear.Text = "CREAR";
             btCrear.Click += guna2Button1_Click;
@@ -203,8 +203,8 @@
             // txtNombre
             // 
             txtNombre.BackColor = Color.Transparent;
-            txtNombre.BorderColor = Color.Black;
-            txtNombre.BorderRadius = 10;
+            txtNombre.BorderColor = Color.FromArgb(217, 217, 217);
+            txtNombre.BorderRadius = 5;
             txtNombre.CharacterCasing = CharacterCasing.Upper;
             txtNombre.CustomizableEdges = customizableEdges5;
             txtNombre.DefaultText = "";
@@ -238,8 +238,8 @@
             // cbbRol
             // 
             cbbRol.BackColor = Color.Transparent;
-            cbbRol.BorderColor = Color.Black;
-            cbbRol.BorderRadius = 10;
+            cbbRol.BorderColor = Color.FromArgb(217, 217, 217);
+            cbbRol.BorderRadius = 5;
             cbbRol.CustomizableEdges = customizableEdges7;
             cbbRol.DrawMode = DrawMode.OwnerDrawFixed;
             cbbRol.DropDownStyle = ComboBoxStyle.DropDownList;
@@ -270,8 +270,8 @@
             // cbbSexo
             // 
             cbbSexo.BackColor = Color.Transparent;
-            cbbSexo.BorderColor = Color.Black;
-            cbbSexo.BorderRadius = 10;
+            cbbSexo.BorderColor = Color.FromArgb(217, 217, 217);
+            cbbSexo.BorderRadius = 5;
             cbbSexo.CustomizableEdges = customizableEdges9;
             cbbSexo.DrawMode = DrawMode.OwnerDrawFixed;
             cbbSexo.DropDownStyle = ComboBoxStyle.DropDownList;
@@ -302,8 +302,8 @@
             // txtDireccion
             // 
             txtDireccion.BackColor = Color.Transparent;
-            txtDireccion.BorderColor = Color.Black;
-            txtDireccion.BorderRadius = 10;
+            txtDireccion.BorderColor = Color.FromArgb(217, 217, 217);
+            txtDireccion.BorderRadius = 5;
             txtDireccion.CharacterCasing = CharacterCasing.Upper;
             txtDireccion.CustomizableEdges = customizableEdges11;
             txtDireccion.DefaultText = "";
@@ -339,8 +339,8 @@
             // txtTelefono
             // 
             txtTelefono.BackColor = Color.Transparent;
-            txtTelefono.BorderColor = Color.Black;
-            txtTelefono.BorderRadius = 10;
+            txtTelefono.BorderColor = Color.FromArgb(217, 217, 217);
+            txtTelefono.BorderRadius = 5;
             txtTelefono.CharacterCasing = CharacterCasing.Upper;
             txtTelefono.CustomizableEdges = customizableEdges13;
             txtTelefono.DefaultText = "";
@@ -360,7 +360,6 @@
             txtTelefono.ShadowDecoration.CustomizableEdges = customizableEdges14;
             txtTelefono.Size = new Size(237, 31);
             txtTelefono.TabIndex = 10;
-            txtTelefono.TextAlign = HorizontalAlignment.Center;
             txtTelefono.Visible = false;
             txtTelefono.TextChanged += txtTelefono_TextChanged;
             txtTelefono.KeyPress += txtTelefono_KeyPress;
@@ -379,8 +378,8 @@
             // txtEspecialidad
             // 
             txtEspecialidad.BackColor = Color.Transparent;
-            txtEspecialidad.BorderColor = Color.Black;
-            txtEspecialidad.BorderRadius = 10;
+            txtEspecialidad.BorderColor = Color.FromArgb(217, 217, 217);
+            txtEspecialidad.BorderRadius = 5;
             txtEspecialidad.CharacterCasing = CharacterCasing.Upper;
             txtEspecialidad.CustomizableEdges = customizableEdges15;
             txtEspecialidad.DefaultText = "";
@@ -405,7 +404,8 @@
             // dtpFechaNacimiento
             // 
             dtpFechaNacimiento.BackColor = Color.Transparent;
-            dtpFechaNacimiento.BorderRadius = 10;
+            dtpFechaNacimiento.BorderColor = Color.FromArgb(217, 217, 217);
+            dtpFechaNacimiento.BorderRadius = 5;
             dtpFechaNacimiento.BorderThickness = 1;
             dtpFechaNacimiento.Checked = true;
             dtpFechaNacimiento.CustomizableEdges = customizableEdges17;
@@ -449,8 +449,8 @@
             // txtPosicion
             // 
             txtPosicion.BackColor = Color.Transparent;
-            txtPosicion.BorderColor = Color.Black;
-            txtPosicion.BorderRadius = 10;
+            txtPosicion.BorderColor = Color.FromArgb(217, 217, 217);
+            txtPosicion.BorderRadius = 5;
             txtPosicion.CharacterCasing = CharacterCasing.Upper;
             txtPosicion.CustomizableEdges = customizableEdges19;
             txtPosicion.DefaultText = "";
@@ -485,8 +485,8 @@
             // txtUsuario
             // 
             txtUsuario.BackColor = Color.Transparent;
-            txtUsuario.BorderColor = Color.Black;
-            txtUsuario.BorderRadius = 10;
+            txtUsuario.BorderColor = Color.FromArgb(217, 217, 217);
+            txtUsuario.BorderRadius = 5;
             txtUsuario.CharacterCasing = CharacterCasing.Upper;
             txtUsuario.CustomizableEdges = customizableEdges21;
             txtUsuario.DefaultText = "";
@@ -519,8 +519,8 @@
             // txtContrasena
             // 
             txtContrasena.BackColor = Color.Transparent;
-            txtContrasena.BorderColor = Color.Black;
-            txtContrasena.BorderRadius = 10;
+            txtContrasena.BorderColor = Color.FromArgb(217, 217, 217);
+            txtContrasena.BorderRadius = 5;
             txtContrasena.CustomizableEdges = customizableEdges23;
             txtContrasena.DefaultText = "";
             txtContrasena.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
@@ -537,14 +537,14 @@
             txtContrasena.PlaceholderText = "";
             txtContrasena.SelectedText = "";
             txtContrasena.ShadowDecoration.CustomizableEdges = customizableEdges24;
-            txtContrasena.Size = new Size(192, 31);
+            txtContrasena.Size = new Size(237, 31);
             txtContrasena.TabIndex = 2;
             // 
             // txtCorreo
             // 
             txtCorreo.BackColor = Color.Transparent;
-            txtCorreo.BorderColor = Color.Black;
-            txtCorreo.BorderRadius = 10;
+            txtCorreo.BorderColor = Color.FromArgb(217, 217, 217);
+            txtCorreo.BorderRadius = 5;
             txtCorreo.CharacterCasing = CharacterCasing.Lower;
             txtCorreo.CustomizableEdges = customizableEdges25;
             txtCorreo.DefaultText = "";
@@ -588,8 +588,8 @@
             // txtLugarTrabajo
             // 
             txtLugarTrabajo.BackColor = Color.Transparent;
-            txtLugarTrabajo.BorderColor = Color.Black;
-            txtLugarTrabajo.BorderRadius = 10;
+            txtLugarTrabajo.BorderColor = Color.FromArgb(217, 217, 217);
+            txtLugarTrabajo.BorderRadius = 5;
             txtLugarTrabajo.CharacterCasing = CharacterCasing.Upper;
             txtLugarTrabajo.CustomizableEdges = customizableEdges27;
             txtLugarTrabajo.DefaultText = "";
@@ -626,7 +626,8 @@
             // btCancelar
             // 
             btCancelar.BackColor = Color.White;
-            btCancelar.BorderRadius = 10;
+            btCancelar.BorderColor = Color.Transparent;
+            btCancelar.BorderRadius = 5;
             btCancelar.BorderThickness = 1;
             btCancelar.CustomizableEdges = customizableEdges29;
             btCancelar.DisabledState.BorderColor = Color.DarkGray;
@@ -636,19 +637,18 @@
             btCancelar.FillColor = Color.Gray;
             btCancelar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btCancelar.ForeColor = Color.White;
-            btCancelar.Image = (Image)resources.GetObject("btCancelar.Image");
-            btCancelar.Location = new Point(307, 570);
+            btCancelar.Location = new Point(359, 570);
             btCancelar.Name = "btCancelar";
             btCancelar.ShadowDecoration.CustomizableEdges = customizableEdges30;
-            btCancelar.Size = new Size(112, 35);
+            btCancelar.Size = new Size(94, 35);
             btCancelar.TabIndex = 103;
             btCancelar.Text = "CANCELAR";
             btCancelar.Click += btLimpiar_Click;
             // 
             // guna2ContainerControl2
             // 
-            guna2ContainerControl2.BorderColor = Color.Silver;
-            guna2ContainerControl2.BorderRadius = 30;
+            guna2ContainerControl2.BorderColor = Color.FromArgb(217, 217, 217);
+            guna2ContainerControl2.BorderRadius = 7;
             guna2ContainerControl2.BorderThickness = 2;
             guna2ContainerControl2.Controls.Add(btInformacion);
             guna2ContainerControl2.Controls.Add(ctnDatosUsuario);
@@ -666,14 +666,14 @@
             // 
             // btInformacion
             // 
-            btInformacion.BackColor = SystemColors.HotTrack;
+            btInformacion.BackColor = Color.FromArgb(16, 57, 129);
             btInformacion.CustomizableEdges = customizableEdges31;
-            btInformacion.Image = (Image)resources.GetObject("btInformacion.Image");
+            btInformacion.Image = Properties.Resources.info_white;
             btInformacion.ImageRotate = 0F;
-            btInformacion.Location = new Point(394, 5);
+            btInformacion.Location = new Point(392, 3);
             btInformacion.Name = "btInformacion";
             btInformacion.ShadowDecoration.CustomizableEdges = customizableEdges32;
-            btInformacion.Size = new Size(25, 18);
+            btInformacion.Size = new Size(20, 20);
             btInformacion.SizeMode = PictureBoxSizeMode.StretchImage;
             btInformacion.TabIndex = 110;
             btInformacion.TabStop = false;
@@ -681,8 +681,8 @@
             // 
             // ctnDatosUsuario
             // 
-            ctnDatosUsuario.BorderColor = Color.Gray;
-            ctnDatosUsuario.BorderRadius = 30;
+            ctnDatosUsuario.BorderColor = Color.FromArgb(217, 217, 217);
+            ctnDatosUsuario.BorderRadius = 7;
             ctnDatosUsuario.BorderThickness = 2;
             ctnDatosUsuario.Controls.Add(lbAvisoTrabajo);
             ctnDatosUsuario.Controls.Add(lbLugarTrabajo);
@@ -761,8 +761,8 @@
             // cbbParentesco
             // 
             cbbParentesco.BackColor = Color.Transparent;
-            cbbParentesco.BorderColor = Color.Black;
-            cbbParentesco.BorderRadius = 10;
+            cbbParentesco.BorderColor = Color.FromArgb(217, 217, 217);
+            cbbParentesco.BorderRadius = 5;
             cbbParentesco.CustomizableEdges = customizableEdges33;
             cbbParentesco.DrawMode = DrawMode.OwnerDrawFixed;
             cbbParentesco.DropDownStyle = ComboBoxStyle.DropDownList;
@@ -858,7 +858,7 @@
             // guna2HtmlLabel11
             // 
             guna2HtmlLabel11.AutoSize = false;
-            guna2HtmlLabel11.BackColor = SystemColors.HotTrack;
+            guna2HtmlLabel11.BackColor = Color.FromArgb(16, 57, 129);
             guna2HtmlLabel11.BorderStyle = BorderStyle.FixedSingle;
             guna2HtmlLabel11.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             guna2HtmlLabel11.ForeColor = Color.White;
@@ -882,8 +882,8 @@
             // 
             // ctnCredenciales
             // 
-            ctnCredenciales.BorderColor = Color.Gray;
-            ctnCredenciales.BorderRadius = 30;
+            ctnCredenciales.BorderColor = Color.FromArgb(217, 217, 217);
+            ctnCredenciales.BorderRadius = 7;
             ctnCredenciales.BorderThickness = 2;
             ctnCredenciales.Controls.Add(btVer);
             ctnCredenciales.Controls.Add(lbAvisoContrasena);
@@ -911,20 +911,19 @@
             // 
             btVer.BackColor = Color.Transparent;
             btVer.BorderRadius = 10;
-            btVer.BorderThickness = 1;
             btVer.CustomizableEdges = customizableEdges37;
             btVer.DisabledState.BorderColor = Color.DarkGray;
             btVer.DisabledState.CustomBorderColor = Color.DarkGray;
             btVer.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btVer.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btVer.FillColor = SystemColors.HotTrack;
+            btVer.FillColor = Color.Transparent;
             btVer.Font = new Font("Segoe UI", 9F);
             btVer.ForeColor = Color.White;
-            btVer.Image = Properties.Resources.ojo_abierto1;
-            btVer.Location = new Point(472, 52);
+            btVer.Image = Properties.Resources.ojo_abierto;
+            btVer.Location = new Point(487, 58);
             btVer.Name = "btVer";
             btVer.ShadowDecoration.CustomizableEdges = customizableEdges38;
-            btVer.Size = new Size(39, 31);
+            btVer.Size = new Size(20, 20);
             btVer.TabIndex = 105;
             btVer.Click += btVer_Click;
             // 
@@ -975,7 +974,7 @@
             // guna2HtmlLabel5
             // 
             guna2HtmlLabel5.AutoSize = false;
-            guna2HtmlLabel5.BackColor = SystemColors.HotTrack;
+            guna2HtmlLabel5.BackColor = Color.FromArgb(16, 57, 129);
             guna2HtmlLabel5.BorderStyle = BorderStyle.FixedSingle;
             guna2HtmlLabel5.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             guna2HtmlLabel5.ForeColor = Color.White;
@@ -989,7 +988,7 @@
             // lbTitulo
             // 
             lbTitulo.AutoSize = false;
-            lbTitulo.BackColor = SystemColors.HotTrack;
+            lbTitulo.BackColor = Color.FromArgb(16, 57, 129);
             lbTitulo.BorderStyle = BorderStyle.Fixed3D;
             lbTitulo.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lbTitulo.ForeColor = Color.White;

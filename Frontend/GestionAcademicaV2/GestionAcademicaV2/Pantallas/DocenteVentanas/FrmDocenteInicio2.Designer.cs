@@ -1136,7 +1136,7 @@
             guna2HtmlLabel10.Name = "guna2HtmlLabel10";
             guna2HtmlLabel10.Size = new Size(628, 33);
             guna2HtmlLabel10.TabIndex = 130;
-            guna2HtmlLabel10.Text = "EN ESTA SECCIÓN PODRA VISUALIZAR UN RESUMEN DE SU INFORMACION";
+            guna2HtmlLabel10.Text = "EN ESTA SECCIÓN PODRA VISUALIZAR UN RESUMEN OPERATIVO";
             guna2HtmlLabel10.TextAlignment = ContentAlignment.MiddleCenter;
             // 
             // guna2Panel10

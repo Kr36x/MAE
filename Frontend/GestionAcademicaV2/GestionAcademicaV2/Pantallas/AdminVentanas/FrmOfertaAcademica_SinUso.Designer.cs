@@ -43,6 +43,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
@@ -51,8 +53,6 @@
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -67,17 +67,17 @@
             lbNivelOferta = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             ctnSecciones = new Guna.UI2.WinForms.Guna2ContainerControl();
+            btNuevaSeccion = new Guna.UI2.WinForms.Guna2Button();
             dgvSecciones = new Guna.UI2.WinForms.Guna2DataGridView();
+            Id = new DataGridViewTextBoxColumn();
+            Seccion = new DataGridViewTextBoxColumn();
             guna2HtmlLabel7 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             ctnGrados = new Guna.UI2.WinForms.Guna2ContainerControl();
             guna2HtmlLabel6 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             dgvGrados = new Guna.UI2.WinForms.Guna2DataGridView();
-            Id = new DataGridViewTextBoxColumn();
-            Seccion = new DataGridViewTextBoxColumn();
             IdGrado = new DataGridViewTextBoxColumn();
             Grado = new DataGridViewTextBoxColumn();
             Nivel = new DataGridViewTextBoxColumn();
-            btNuevaSeccion = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).BeginInit();
             ctnFiltrosOferta.SuspendLayout();
             ctnSecciones.SuspendLayout();
@@ -100,20 +100,20 @@
             // guna2HtmlLabel3
             // 
             guna2HtmlLabel3.BackColor = Color.Transparent;
-            guna2HtmlLabel3.Font = new Font("Britannic Bold", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            guna2HtmlLabel3.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
             guna2HtmlLabel3.Location = new Point(763, 27);
             guna2HtmlLabel3.Name = "guna2HtmlLabel3";
-            guna2HtmlLabel3.Size = new Size(179, 29);
+            guna2HtmlLabel3.Size = new Size(206, 31);
             guna2HtmlLabel3.TabIndex = 121;
             guna2HtmlLabel3.Text = "TELA, ATLÁNTIDA";
             // 
             // guna2HtmlLabel2
             // 
             guna2HtmlLabel2.BackColor = Color.Transparent;
-            guna2HtmlLabel2.Font = new Font("Britannic Bold", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            guna2HtmlLabel2.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
             guna2HtmlLabel2.Location = new Point(148, 27);
             guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            guna2HtmlLabel2.Size = new Size(417, 29);
+            guna2HtmlLabel2.Size = new Size(476, 31);
             guna2HtmlLabel2.TabIndex = 120;
             guna2HtmlLabel2.Text = "ATLANTIC ACADEMY BILINGUAL SCHOOL";
             // 
@@ -290,8 +290,33 @@
             ctnSecciones.TabIndex = 127;
             ctnSecciones.Text = "guna2ContainerControl1";
             // 
+            // btNuevaSeccion
+            // 
+            btNuevaSeccion.BackColor = Color.Transparent;
+            btNuevaSeccion.BorderRadius = 10;
+            btNuevaSeccion.BorderThickness = 1;
+            btNuevaSeccion.CustomizableEdges = customizableEdges13;
+            btNuevaSeccion.DisabledState.BorderColor = Color.DarkGray;
+            btNuevaSeccion.DisabledState.CustomBorderColor = Color.DarkGray;
+            btNuevaSeccion.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btNuevaSeccion.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btNuevaSeccion.FillColor = Color.FromArgb(0, 192, 0);
+            btNuevaSeccion.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btNuevaSeccion.ForeColor = Color.White;
+            btNuevaSeccion.Image = (Image)resources.GetObject("btNuevaSeccion.Image");
+            btNuevaSeccion.Location = new Point(24, 42);
+            btNuevaSeccion.Name = "btNuevaSeccion";
+            btNuevaSeccion.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            btNuevaSeccion.Size = new Size(161, 36);
+            btNuevaSeccion.TabIndex = 8;
+            btNuevaSeccion.Text = "NUEVA SECCIÓN";
+            // 
             // dgvSecciones
             // 
+            dgvSecciones.AllowUserToAddRows = false;
+            dgvSecciones.AllowUserToDeleteRows = false;
+            dgvSecciones.AllowUserToResizeColumns = false;
+            dgvSecciones.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = Color.White;
             dgvSecciones.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -303,7 +328,6 @@
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
             dgvSecciones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dgvSecciones.ColumnHeadersHeight = 30;
-            dgvSecciones.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dgvSecciones.Columns.AddRange(new DataGridViewColumn[] { Id, Seccion });
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = Color.White;
@@ -317,6 +341,7 @@
             dgvSecciones.Location = new Point(24, 99);
             dgvSecciones.Name = "dgvSecciones";
             dgvSecciones.RowHeadersVisible = false;
+            dgvSecciones.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dgvSecciones.RowTemplate.Height = 30;
             dgvSecciones.Size = new Size(326, 244);
             dgvSecciones.TabIndex = 2;
@@ -331,7 +356,7 @@
             dgvSecciones.ThemeStyle.HeaderStyle.BorderStyle = DataGridViewHeaderBorderStyle.None;
             dgvSecciones.ThemeStyle.HeaderStyle.Font = new Font("Segoe UI", 9F);
             dgvSecciones.ThemeStyle.HeaderStyle.ForeColor = Color.White;
-            dgvSecciones.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dgvSecciones.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dgvSecciones.ThemeStyle.HeaderStyle.Height = 30;
             dgvSecciones.ThemeStyle.ReadOnly = false;
             dgvSecciones.ThemeStyle.RowsStyle.BackColor = Color.White;
@@ -341,6 +366,21 @@
             dgvSecciones.ThemeStyle.RowsStyle.Height = 30;
             dgvSecciones.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
             dgvSecciones.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            // 
+            // Id
+            // 
+            Id.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            Id.FillWeight = 7.614213F;
+            Id.HeaderText = "N°";
+            Id.Name = "Id";
+            Id.Width = 50;
+            // 
+            // Seccion
+            // 
+            Seccion.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Seccion.FillWeight = 146.192886F;
+            Seccion.HeaderText = "SECCIÓN";
+            Seccion.Name = "Seccion";
             // 
             // guna2HtmlLabel7
             // 
@@ -385,6 +425,11 @@
             // 
             // dgvGrados
             // 
+            dgvGrados.AllowUserToAddRows = false;
+            dgvGrados.AllowUserToDeleteRows = false;
+            dgvGrados.AllowUserToOrderColumns = true;
+            dgvGrados.AllowUserToResizeColumns = false;
+            dgvGrados.AllowUserToResizeRows = false;
             dataGridViewCellStyle4.BackColor = Color.White;
             dgvGrados.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -396,7 +441,6 @@
             dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
             dgvGrados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             dgvGrados.ColumnHeadersHeight = 30;
-            dgvGrados.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dgvGrados.Columns.AddRange(new DataGridViewColumn[] { IdGrado, Grado, Nivel });
             dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = Color.White;
@@ -410,6 +454,7 @@
             dgvGrados.Location = new Point(28, 42);
             dgvGrados.Name = "dgvGrados";
             dgvGrados.RowHeadersVisible = false;
+            dgvGrados.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dgvGrados.RowTemplate.Height = 30;
             dgvGrados.Size = new Size(537, 301);
             dgvGrados.TabIndex = 0;
@@ -424,7 +469,7 @@
             dgvGrados.ThemeStyle.HeaderStyle.BorderStyle = DataGridViewHeaderBorderStyle.None;
             dgvGrados.ThemeStyle.HeaderStyle.Font = new Font("Segoe UI", 9F);
             dgvGrados.ThemeStyle.HeaderStyle.ForeColor = Color.White;
-            dgvGrados.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dgvGrados.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dgvGrados.ThemeStyle.HeaderStyle.Height = 30;
             dgvGrados.ThemeStyle.ReadOnly = false;
             dgvGrados.ThemeStyle.RowsStyle.BackColor = Color.White;
@@ -434,21 +479,6 @@
             dgvGrados.ThemeStyle.RowsStyle.Height = 30;
             dgvGrados.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
             dgvGrados.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
-            // 
-            // Id
-            // 
-            Id.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            Id.FillWeight = 7.614213F;
-            Id.HeaderText = "N°";
-            Id.Name = "Id";
-            Id.Width = 50;
-            // 
-            // Seccion
-            // 
-            Seccion.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Seccion.FillWeight = 146.192886F;
-            Seccion.HeaderText = "SECCIÓN";
-            Seccion.Name = "Seccion";
             // 
             // IdGrado
             // 
@@ -471,27 +501,6 @@
             Nivel.HeaderText = "NIVEL";
             Nivel.Name = "Nivel";
             Nivel.Width = 120;
-            // 
-            // btNuevaSeccion
-            // 
-            btNuevaSeccion.BackColor = Color.Transparent;
-            btNuevaSeccion.BorderRadius = 10;
-            btNuevaSeccion.BorderThickness = 1;
-            btNuevaSeccion.CustomizableEdges = customizableEdges13;
-            btNuevaSeccion.DisabledState.BorderColor = Color.DarkGray;
-            btNuevaSeccion.DisabledState.CustomBorderColor = Color.DarkGray;
-            btNuevaSeccion.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btNuevaSeccion.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btNuevaSeccion.FillColor = Color.FromArgb(0, 192, 0);
-            btNuevaSeccion.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btNuevaSeccion.ForeColor = Color.White;
-            btNuevaSeccion.Image = (Image)resources.GetObject("btNuevaSeccion.Image");
-            btNuevaSeccion.Location = new Point(24, 42);
-            btNuevaSeccion.Name = "btNuevaSeccion";
-            btNuevaSeccion.ShadowDecoration.CustomizableEdges = customizableEdges14;
-            btNuevaSeccion.Size = new Size(161, 36);
-            btNuevaSeccion.TabIndex = 8;
-            btNuevaSeccion.Text = "NUEVA SECCIÓN";
             // 
             // FrmOfertaAcademica
             // 
